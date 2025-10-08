@@ -4,6 +4,7 @@ import type { BaseTool, ToolName, ToolDefinition, ToolResult, ToolExecutionConte
 import { VenueSearchTool } from './venue-search.js';
 import { EventSearchTool } from './event-search.js';
 import { DistanceCalculatorTool } from './distance-calculator.js';
+import { RouteCalculatorTool } from './route-calculator.js';  // ⭐ NEW
 import { AvailabilityValidatorTool } from './availability-validator.js';
 
 /**
@@ -26,6 +27,7 @@ export class ToolRegistry {
     this.register(new VenueSearchTool());
     this.register(new EventSearchTool());
     this.register(new DistanceCalculatorTool());
+    this.register(new RouteCalculatorTool());  // ⭐ NEW
     this.register(new AvailabilityValidatorTool());
 
     console.log(`✅ Registered ${this.tools.size} tools:`, Array.from(this.tools.keys()));

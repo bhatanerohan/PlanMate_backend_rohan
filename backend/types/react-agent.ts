@@ -43,11 +43,12 @@ export interface ConversationMessage {
 // ============================================================================
 
 export type ActionType = 
-  | 'search_venues'         // Google Places API
-  | 'search_events'         // Ticketmaster API
-  | 'calculate_distance'    // Route calculation
-  | 'validate_availability' // Check if venue/event is available
-  | 'finish';               // Task complete
+  | 'search_venues'
+  | 'search_events'
+  | 'calculate_distance'
+  | 'calculate_route'        // ⭐ NEW
+  | 'validate_availability'
+  | 'finish';
 
 export interface AgentAction {
   action: ActionType;
