@@ -4,13 +4,70 @@ import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { planApi } from '../services/api';
 import MessageList from './MessageList';
-import type { Message, MapMarker, Venue, Event, Route } from '../types';  // ⭐ Added Route
+import type { Message, MapMarker, Venue, Event, Route } from '../types';
 
 interface ChatInterfaceProps {
   messages: Message[];
-  onNewPlan: (message: Message, markers: MapMarker[], routes: Route[]) => void;  // ⭐ Added routes
+  onNewPlan: (message: Message, markers: MapMarker[], routes?: Route[], isRouteQuery?: boolean) => void;
   onMarkerSelect: (markerId: string) => void;
 }
+
+/**
+ * Smart venue filtering for route queries
+ * Extracts venue names mentioned in agent's final result and filters to show only those
+ */
+const filterSelectedVenues = (
+  allVenues: Venue[], 
+  agentResult: string
+): Venue[] => {
+  // If result contains route indicators, filter intelligently
+  const isRouteQuery = /route|plan.*via|from.*to/i.test(agentResult);
+  
+  if (!isRouteQuery) {
+    // Not a route query - return all venues (discovery mode)
+    return allVenues;
+  }
+
+  // Extract venue names that appear in the result
+  const selectedVenues = allVenues.filter(venue => {
+    // Check if venue name appears in the result
+    // Use case-insensitive search
+    const venueName = venue.name.toLowerCase();
+    const resultLower = agentResult.toLowerCase();
+    
+    // Also check for common abbreviations
+    const abbreviations: Record<string, string[]> = {
+      'massachusetts institute of technology': ['mit', 'mit main', 'massachusetts institute'],
+      'harvard university': ['harvard', 'harvard main'],
+      'museum of fine arts': ['mfa', 'museum of fine arts'],
+    };
+    
+    // Check full name
+    if (resultLower.includes(venueName)) {
+      return true;
+    }
+    
+    // Check abbreviations
+    const venueNameLower = venue.name.toLowerCase();
+    for (const [fullName, abbrevs] of Object.entries(abbreviations)) {
+      if (venueNameLower.includes(fullName)) {
+        return abbrevs.some(abbrev => resultLower.includes(abbrev));
+      }
+    }
+    
+    return false;
+  });
+
+  // If filtering resulted in venues, use those; otherwise fall back to all
+  // This prevents showing an empty map if parsing failed
+  if (selectedVenues.length > 0) {
+    console.log(`🎯 Filtered to ${selectedVenues.length} selected venues from ${allVenues.length} total`);
+    return selectedVenues;
+  }
+
+  console.log('⚠️ Could not identify selected venues, showing all');
+  return allVenues;
+};
 
 const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfaceProps) => {
   const [input, setInput] = useState('');
@@ -26,12 +83,15 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfacePro
         data: {
           venues: data.venues,
           events: data.events,
-          routes: data.routes  // ⭐ NEW
         },
       };
 
+      // Smart filtering: For route queries, show only venues mentioned in agent's result
+      const filteredVenues = filterSelectedVenues(data.venues, data.result || '');
+      
+      // Create markers only from filtered venues
       const markers: MapMarker[] = [
-        ...data.venues.map((venue: Venue, idx: number) => ({
+        ...filteredVenues.map((venue: Venue, idx: number) => ({
           id: `venue-${idx}`,
           position: {
             lat: venue.location.lat,
@@ -53,7 +113,10 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfacePro
         })),
       ];
 
-      onNewPlan(agentMessage, markers, data.routes);  // ⭐ Pass routes
+      const routes: Route[] = [];
+      const isRouteQuery = /route|plan.*via|from.*to/i.test(data.result || '');
+
+      onNewPlan(agentMessage, markers, routes, isRouteQuery);
     },
     onError: (error: any) => {
       const errorMessage: Message = {
@@ -62,7 +125,7 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfacePro
         content: `Error: ${error.response?.data?.error || error.message || 'Something went wrong'}`,
         timestamp: Date.now(),
       };
-      onNewPlan(errorMessage, [], []);  // ⭐ Empty routes on error
+      onNewPlan(errorMessage, [], []);
     },
   });
 
@@ -78,7 +141,7 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfacePro
       timestamp: Date.now(),
     };
     
-    onNewPlan(userMessage, [], []);  // ⭐ Empty routes for user message
+    onNewPlan(userMessage, [], []);
     
     const prompt = input;
     setInput('');
@@ -88,7 +151,7 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfacePro
   const examplePrompts = [
     "Find coffee shops near me",
     "Plan romantic dinner tonight in Boston",
-    "Weekend trip to NYC",
+    "Plan route from MFA to Harvard via MIT",
     "Find concerts this weekend",
   ];
 

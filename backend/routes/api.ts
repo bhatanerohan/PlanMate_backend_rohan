@@ -29,40 +29,76 @@ router.post('/plan', async (req: Request, res: Response) => {
     const agent = new ReActAgent(DEFAULT_SAFETY_CONFIG);
     const response = await agent.execute(prompt);
 
-    // Extract venues, events, and routes from tool results  ⭐ UPDATED
+    // Parse mode and selected venue IDs from agent's finish action
+    let mode: 'discovery' | 'route' = 'discovery';
+    let selectedVenueIds: Set<string> = new Set();
+
+    // Try to extract mode and selected_venue_ids from the last action
+    const lastMessage = response.state.conversationHistory[response.state.conversationHistory.length - 1];
+    if (lastMessage && lastMessage.role === 'assistant') {
+      try {
+        // Parse the assistant's last message for structured data
+        const match = lastMessage.content.match(/Parameters: ({[\s\S]*?})/);
+        if (match) {
+          const params = JSON.parse(match[1]);
+          mode = params.mode || 'discovery';
+          if (params.selected_venue_ids && Array.isArray(params.selected_venue_ids)) {
+            selectedVenueIds = new Set(params.selected_venue_ids);
+          }
+        }
+      } catch (e) {
+        console.warn('Could not parse finish parameters, defaulting to discovery mode');
+      }
+    }
+
+    console.log(`🎯 Detected mode: ${mode}`);
+    console.log(`📍 Selected venue IDs: ${Array.from(selectedVenueIds).join(', ') || 'none'}`);
+
+    // Extract venues based on mode
     const venues: any[] = [];
     const events: any[] = [];
-    const routes: any[] = [];  // ⭐ NEW
+    const routes: any[] = [];
 
-    response.state.toolResults.forEach(result => {
-      if (result.success && result.data) {
-        if (result.action === 'search_venues' && result.data.venues) {
-          venues.push(...result.data.venues);
+    if (mode === 'discovery') {
+      // Discovery mode: Return ALL venues from search results
+      response.state.toolResults.forEach(result => {
+        if (result.success && result.data) {
+          if (result.action === 'search_venues' && result.data.venues) {
+            venues.push(...result.data.venues);
+          }
+          if (result.action === 'search_events' && result.data.events) {
+            events.push(...result.data.events);
+          }
         }
-        if (result.action === 'search_events' && result.data.events) {
-          events.push(...result.data.events);
+      });
+
+      console.log(`📊 Discovery mode: Returning ${venues.length} venues, ${events.length} events`);
+    } else {
+      // Route mode: Return ONLY selected venues
+      response.state.toolResults.forEach(result => {
+        if (result.success && result.data) {
+          if (result.action === 'search_venues' && result.data.venues) {
+            const filteredVenues = result.data.venues.filter((v: any) => 
+              selectedVenueIds.size === 0 || selectedVenueIds.has(v.placeId)
+            );
+            venues.push(...filteredVenues);
+          }
+          if (result.action === 'search_events' && result.data.events) {
+            events.push(...result.data.events);
+          }
         }
-        // ⭐ NEW: Extract route data
-        if (result.action === 'calculate_route' && result.data.geometry) {
-          routes.push({
-            distance: result.data.distance,
-            distanceFormatted: result.data.distanceFormatted,
-            duration: result.data.duration,
-            durationFormatted: result.data.durationFormatted,
-            geometry: result.data.geometry,
-            mode: result.data.mode,
-            waypoints: result.data.waypoints
-          });
-        }
-      }
-    });
+      });
+
+      console.log(`🗺️ Route mode: Returning ${venues.length} selected venues`);
+    }
 
     return res.json({
       success: response.success,
       result: response.result,
+      mode,  // Send mode to frontend
       venues,
       events,
-      routes,  // ⭐ NEW
+      routes,
       iterations: response.iterations,
       tokensUsed: response.tokensUsed,
       executionTimeMs: response.executionTimeMs,

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ChatInterface from './components/ChatInterface';
 import MapView from './components/MapView';
-import type { Message, MapMarker, Route, Location } from './types';  // ⭐ Added Location
+import type { Message, MapMarker, Route, Location } from './types';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,15 +26,33 @@ function App() {
   ]);
   
   const [markers, setMarkers] = useState<MapMarker[]>([]);
-  const [routes, setRoutes] = useState<Route[]>([]);  // ⭐ NEW
+  const [routes, setRoutes] = useState<Route[]>([]); // Routes for path visualization
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
   const [userLocation, setUserLocation] = useState<Location | null>(null);
 
-  const handleNewPlan = (message: Message, newMarkers: MapMarker[], newRoutes: Route[] = []) => {  // ⭐ Added newRoutes
+  const handleNewPlan = (
+    message: Message, 
+    newMarkers: MapMarker[], 
+    newRoutes?: Route[],
+    isRouteQuery?: boolean // NEW: flag to indicate if this is a route planning query
+  ) => {
     setMessages((prev) => [...prev, message]);
+    
+    // For route queries, show markers immediately even before routes load
+    // This prevents the map from being empty while Mapbox API is fetching
     setMarkers(newMarkers);
-    setRoutes(newRoutes);  // ⭐ NEW
+
+    setIsRouteMode(isRouteQuery || false);  // NEW: Track mode
+    
+    // If routes are explicitly provided, use them; otherwise MapView will auto-generate
+    if (newRoutes && newRoutes.length > 0) {
+      setRoutes(newRoutes);
+    } else {
+      setRoutes([]); // Clear routes, let MapView auto-generate from markers
+    }
   };
+
+  const [isRouteMode, setIsRouteMode] = useState(false);
 
   const handleMarkerClick = (markerId: string) => {
     setSelectedMarkerId(markerId);
@@ -42,13 +60,7 @@ function App() {
 
   const handleLocationChange = (loc: Location) => {
     setUserLocation(loc);
-    // Optionally, add a system message when user changes location
-    setMessages((prev) => [...prev, {
-      id: String(prev.length + 1),
-      type: 'system',
-      content: `Location set to ${loc.name || `${loc.lat.toFixed(4)}, ${loc.lng.toFixed(4)}`}`,
-      timestamp: Date.now()
-    }]);
+    console.log('📍 User location updated:', loc);
   };
 
   return (
@@ -65,11 +77,12 @@ function App() {
         <div className="w-3/5 bg-gray-200">
           <MapView
             markers={markers}
-            routes={routes}  // ⭐ NEW
+            routes={routes}
             selectedMarkerId={selectedMarkerId}
             onMarkerClick={handleMarkerClick}
             userLocation={userLocation}
             onLocationChange={handleLocationChange}
+            isRouteMode={isRouteMode}  // NEW: Pass mode
           />
         </div>
       </div>

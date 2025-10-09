@@ -35,33 +35,13 @@ export interface Event {
   ticketsAvailable?: boolean;
 }
 
-// User location structure used for centering/searching
-export interface Location {
-  lat: number;
-  lng: number;
-  name?: string;
-}
-
-// ⭐ NEW
-export interface Route {
-  distance: number;
-  distanceFormatted: string;
-  duration: number;
-  durationFormatted: string;
-  geometry: {
-    type: 'LineString';
-    coordinates: number[][];  // [lng, lat] pairs
-  };
-  mode: 'walking' | 'driving' | 'cycling';
-  waypoints: Array<{ lat: number; lng: number }>;
-}
-
 export interface PlanResponse {
   success: boolean;
   result?: string;
+  mode?: 'discovery' | 'route';  // NEW: Add mode field
   venues: Venue[];
   events: Event[];
-  routes: Route[];  // ⭐ NEW
+  routes?: Route[];  // Add this line (optional because backend might not send it)
   iterations: number;
   tokensUsed: number;
   executionTimeMs: number;
@@ -77,7 +57,6 @@ export interface Message {
   data?: {
     venues?: Venue[];
     events?: Event[];
-    routes?: Route[];  // ⭐ NEW
   };
 }
 
@@ -90,4 +69,25 @@ export interface MapMarker {
   title: string;
   type: 'venue' | 'event';
   data: Venue | Event;
+}
+
+// Location interface for user location and geocoding
+export interface Location {
+  lat: number;
+  lng: number;
+  name: string;
+}
+
+// Route interface for rendering paths between markers
+export interface Route {
+  geometry: {
+    type: 'LineString';
+    coordinates: [number, number][]; // Array of [lng, lat] pairs
+  };
+  distance: number; // in kilometers
+  distanceFormatted: string; // e.g., "2.5 km"
+  duration: number; // in seconds
+  durationFormatted: string; // e.g., "15 min walk"
+  start?: string; // Starting point name
+  end?: string; // Ending point name
 }

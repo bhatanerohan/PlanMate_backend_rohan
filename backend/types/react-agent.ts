@@ -56,6 +56,13 @@ export interface AgentAction {
   parameters: Record<string, any>;
 }
 
+// Add this interface for structured finish parameters
+export interface FinishParameters {
+  result: string;
+  mode: 'discovery' | 'route';
+  selected_venue_ids?: string[];  // placeIds of selected venues
+}
+
 // ============================================================================
 // TOOL RESULTS
 // ============================================================================
