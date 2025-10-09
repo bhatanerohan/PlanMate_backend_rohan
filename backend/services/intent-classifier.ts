@@ -88,8 +88,9 @@ export async function classifyIntent(prompt: string): Promise<ClassificationResu
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      temperature: 0,
+      model: "gpt-5-mini",
+      // gpt-5-mini uses default temperature 1 if omitted; set to 1 for deterministic behavior
+      
       messages: [
         {
           role: "system",
