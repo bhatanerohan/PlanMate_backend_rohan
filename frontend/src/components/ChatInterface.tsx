@@ -4,12 +4,14 @@ import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { planApi } from '../services/api';
 import MessageList from './MessageList';
-import type { Message, MapMarker, Venue, Event, Route } from '../types';
+import type { Message, MapMarker, Venue, Event, Route, Location } from '../types';
 
 interface ChatInterfaceProps {
   messages: Message[];
   onNewPlan: (message: Message, markers: MapMarker[], routes?: Route[], isRouteQuery?: boolean) => void;
   onMarkerSelect: (markerId: string) => void;
+  userLocation?: Location | null;
+  onLocationChange?: (loc: Location) => void;
 }
 
 /**
@@ -92,12 +94,13 @@ const filterSelectedVenues = (
   console.log('⚠️  No venues matched filter, showing all venues as fallback');
   return allVenues;
 };
-const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfaceProps) => {
+const ChatInterface = ({ messages, onNewPlan, onMarkerSelect, userLocation}:  ChatInterfaceProps) => {
   const [input, setInput] = useState('');
 
   const planMutation = useMutation({
-    mutationFn: (prompt: string) => planApi.createPlan(prompt),
-    onSuccess: (data) => {
+    mutationFn: (vars: { prompt: string; userLocation?: Location | null }) =>
+      planApi.createPlan(vars.prompt, vars.userLocation || undefined),
+    onSuccess: (data, variables) => {
       const agentMessage: Message = {
         id: Date.now().toString(),
         type: 'agent',
@@ -108,12 +111,12 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfacePro
           events: data.events,
         },
       };
-
+  
       // Smart filtering: For route queries, show only venues mentioned in agent's result
       const filteredVenues = filterSelectedVenues(data.venues, data.result || '', data.mode);
       
       // Create markers only from filtered venues
-      const markers: MapMarker[] = [
+      let markers: MapMarker[] = [
         ...filteredVenues.map((venue: Venue, idx: number) => ({
           id: `venue-${idx}`,
           position: {
@@ -135,20 +138,91 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfacePro
           data: event,
         })),
       ];
-
+  
+      const isRouteQuery = (data.mode === 'route') || /route|plan.*via|from.*to/i.test(data.result || '');
+      
+      // Check if user location is mentioned ANYWHERE in the prompt
+      const originalPrompt = variables.prompt.toLowerCase();
+      const mentionsUserLocation = /(my location|here|me|current location|where i am)/i.test(originalPrompt);
+      
+      if (isRouteQuery && mentionsUserLocation && userLocation && Number.isFinite(userLocation.lat) && Number.isFinite(userLocation.lng)) {
+        console.log('🎯 User mentioned their location in route - determining position...');
+        
+        const userMarker: MapMarker = {
+          id: 'user-location',
+          position: { lat: userLocation.lat, lng: userLocation.lng },
+          title: userLocation.name || 'Your Location',
+          type: 'venue',
+          data: {
+            name: userLocation.name || 'Your Location',
+            address: 'Current location',
+            location: { 
+              lat: userLocation.lat, 
+              lng: userLocation.lng, 
+              coordinates: `${userLocation.lat},${userLocation.lng}` 
+            },
+            placeId: 'user-location'
+          } as unknown as Venue
+        };
+  
+        // Determine where to insert user location marker
+        // Check common patterns in the prompt
+        const startsWithUserLocation = /^(route |plan )?(from )?(my location|here|me|current location)/i.test(originalPrompt);
+        const endsWithUserLocation = /(to |via )?(my location|here|me|current location)\s*$/i.test(originalPrompt);
+        
+        // Parse the prompt to find position
+        // Split by "to", "via", "from" to understand waypoint order
+        const words = originalPrompt.split(/\s+(?:to|via|from)\s+/i);
+        const userLocationIndex = words.findIndex(segment => 
+          /(my location|here|me|current location)/i.test(segment)
+        );
+  
+        if (startsWithUserLocation || userLocationIndex === 0) {
+          // User location is at the START
+          console.log('  ✅ Position: START of route');
+          markers = [userMarker, ...markers];
+        } else if (endsWithUserLocation || userLocationIndex === words.length - 1) {
+          // User location is at the END
+          console.log('  ✅ Position: END of route');
+          markers = [...markers, userMarker];
+        } else if (userLocationIndex > 0) {
+          // User location is in the MIDDLE
+          console.log(`  ✅ Position: MIDDLE of route (index ${userLocationIndex})`);
+          markers.splice(userLocationIndex, 0, userMarker);
+        } else {
+          // Fallback: if we can't determine position, put it at start
+          console.log('  ⚠️  Position unclear, defaulting to START');
+          markers = [userMarker, ...markers];
+        }
+      } else if (isRouteQuery && mentionsUserLocation && (!userLocation || !Number.isFinite(userLocation.lat))) {
+        console.log('⚠️  User mentioned their location but location data is unavailable');
+      } else if (isRouteQuery) {
+        console.log('ℹ️  Route query with explicit start/end points - NOT adding user location');
+      }
+  
       const routes: Route[] = [];
-      const isRouteQuery = /route|plan.*via|from.*to/i.test(data.result || '');
-
+  
       onNewPlan(agentMessage, markers, routes, isRouteQuery);
     },
     onError: (error: any) => {
-      const errorMessage: Message = {
+      let errorMessage = 'Something went wrong. Please try again.';
+      
+      if (error.response?.data?.error === 'not_relevant') {
+        errorMessage = error.response.data.message || 
+          "I can only help with location-based queries like finding venues, planning routes, or discovering events.";
+      } else if (error.response?.data?.error) {
+        errorMessage = error.response.data.error;
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+  
+      const errorMessageObj: Message = {
         id: Date.now().toString(),
         type: 'system',
-        content: `Error: ${error.response?.data?.error || error.message || 'Something went wrong'}`,
+        content: `❌ ${errorMessage}`,
         timestamp: Date.now(),
       };
-      onNewPlan(errorMessage, [], []);
+      onNewPlan(errorMessageObj, [], []);
     },
   });
 
@@ -168,7 +242,32 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfacePro
     
     const prompt = input;
     setInput('');
-    planMutation.mutate(prompt);
+    // If user asked for "my location" but we don't have it, try to get geolocation first
+    const wantsMyLocation = /\bmy location\b|\bfrom my location\b|\bfrom me\b/i.test(prompt);
+
+    const sendRequest = (loc?: Location | undefined) => {
+      const locationToSend = (loc || userLocation) && Number.isFinite((loc || userLocation)!.lat) && Number.isFinite((loc || userLocation)!.lng)
+        ? (loc || userLocation)
+        : undefined;
+      planMutation.mutate({ prompt, userLocation: locationToSend });
+    };
+
+    if (wantsMyLocation && (!userLocation || !Number.isFinite(userLocation.lat) || !Number.isFinite(userLocation.lng))) {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((pos) => {
+          const loc: Location = { lat: pos.coords.latitude, lng: pos.coords.longitude, name: 'Current location' };
+          // Don't update app-level userLocation here; just send it with the request so markers/routes work immediately
+          sendRequest(loc);
+        }, (err) => {
+          console.warn('Geolocation failed, proceeding without user location', err);
+          sendRequest(undefined);
+        });
+        return; // wait for async geolocation callback
+      }
+    }
+
+    // Default: send immediately using existing userLocation if available
+    sendRequest();
   };
 
   const examplePrompts = [

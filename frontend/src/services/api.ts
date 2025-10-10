@@ -38,9 +38,17 @@ apiClient.interceptors.response.use(
 );
 
 export const planApi = {
-  async createPlan(prompt: string): Promise<PlanResponse> {
+  async createPlan(
+    prompt: string, 
+    userLocation?: { lat: number; lng: number; name: string }
+  ): Promise<PlanResponse> {
     const response = await apiClient.post<PlanResponse>('/api/plan', {
       prompt,
+      userLocation: userLocation ? {
+        lat: userLocation.lat,
+        lng: userLocation.lng,
+        name: userLocation.name
+      } : undefined
     });
     return response.data;
   },

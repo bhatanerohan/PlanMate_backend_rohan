@@ -46,7 +46,8 @@ export interface ConversationMessage {
 export type ActionType = 
   | 'search_venues'
   | 'search_events'
-  | 'calculate_distance'
+  | 'batch_search_venues'      // ← ADD THIS LINE
+  // | 'calculate_distance'
   | 'calculate_route'        // ⭐ NEW
   | 'validate_availability'
   | 'finish';

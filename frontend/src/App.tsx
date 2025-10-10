@@ -30,6 +30,8 @@ function App() {
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
   const [userLocation, setUserLocation] = useState<Location | null>(null);
 
+  const [isRouteMode, setIsRouteMode] = useState(false);
+
   const handleNewPlan = (
     message: Message, 
     newMarkers: MapMarker[], 
@@ -52,8 +54,6 @@ function App() {
     }
   };
 
-  const [isRouteMode, setIsRouteMode] = useState(false);
-
   const handleMarkerClick = (markerId: string) => {
     setSelectedMarkerId(markerId);
   };
@@ -71,6 +71,8 @@ function App() {
             messages={messages}
             onNewPlan={handleNewPlan}
             onMarkerSelect={setSelectedMarkerId}
+            userLocation={userLocation}
+            onLocationChange={handleLocationChange}
           />
         </div>
 
