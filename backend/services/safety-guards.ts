@@ -181,6 +181,15 @@ export class SafetyGuards {
         
         return queryChanged || locationChanged || coordinatesChanged;
 
+
+      case 'batch_search_venues':
+        // Different if searches array changed
+        const searchesChanged = this.hasSignificantChange(
+          JSON.stringify(lastParams.searches),
+          JSON.stringify(currentParams.searches)
+        );
+        return searchesChanged;
+
       case 'validate_availability':
         // Different if checking different venue/event
         const nameChanged = this.hasSignificantChange(lastParams.name, currentParams.name);

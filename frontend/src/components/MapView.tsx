@@ -32,7 +32,7 @@ const fetchMapboxRoutes = async (markers: MapMarker[], mapboxToken: string): Pro
 
     // Call Mapbox Directions API
     // Profile: walking (alternatives: driving, cycling)
-    const url = `https://api.mapbox.com/directions/v5/mapbox/walking/${coordinates}?geometries=geojson&overview=full&steps=true&access_token=${mapboxToken}`;
+    const url = `https://api.mapbox.com/directions/v5/mapbox/driving/${coordinates}?geometries=geojson&overview=full&steps=true&access_token=${mapboxToken}`;
     
     console.log('🗺️ Fetching route from Mapbox Directions API...');
     const response = await fetch(url);

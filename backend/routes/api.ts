@@ -9,7 +9,7 @@ const router = Router();
 
 router.post('/plan', async (req: Request, res: Response) => {
   try {
-    const { prompt } = req.body;
+    const { prompt, userLocation } = req.body;
 
     // Basic validation
     if (!prompt || typeof prompt !== 'string') {
@@ -17,6 +17,13 @@ router.post('/plan', async (req: Request, res: Response) => {
         success: false,
         error: 'Prompt is required and must be a string'
       });
+    }
+    
+    // Log user location if provided
+    if (userLocation) {
+      console.log(`📍 User location: ${userLocation.name || 'Unknown'} (${userLocation.lat}, ${userLocation.lng})`);
+    } else {
+      console.log(`📍 User location: Not provided`);
     }
 
     if (prompt.trim().length === 0) {
@@ -63,7 +70,7 @@ router.post('/plan', async (req: Request, res: Response) => {
     console.log('✅ Security check passed. Processing request...\n');
 
     const agent = new ReActAgent(DEFAULT_SAFETY_CONFIG);
-    const response = await agent.execute(prompt);
+    const response = await agent.execute(prompt,userLocation);
 
     // Extract mode and selected venue IDs from agent's finish parameters
     let mode: 'discovery' | 'route' = 'discovery';
@@ -100,61 +107,104 @@ router.post('/plan', async (req: Request, res: Response) => {
     }
 
     // Validate placeIds exist in search results
-    if (mode === 'route' && selectedVenueIds.size > 0) {
-      const allPlaceIds = new Set<string>();
-      response.state.toolResults.forEach(result => {
-        if (result.action === 'search_venues' && result.success && result.data?.venues) {
-          result.data.venues.forEach((v: any) => {
+if (mode === 'route' && selectedVenueIds.size > 0) {
+  const allPlaceIds = new Set<string>();
+  
+  response.state.toolResults.forEach(result => {
+    // Handle individual search_venues
+    if (result.action === 'search_venues' && result.success && result.data?.venues) {
+      result.data.venues.forEach((v: any) => {
+        if (v.placeId) allPlaceIds.add(v.placeId);
+      });
+    }
+    
+    // Handle batch_search_venues
+    if (result.action === 'batch_search_venues' && result.success && result.data?.results) {
+      result.data.results.forEach((searchResult: any) => {
+        if (searchResult.success && searchResult.venues) {
+          searchResult.venues.forEach((v: any) => {
             if (v.placeId) allPlaceIds.add(v.placeId);
           });
         }
       });
-      
-      const missingPlaceIds: string[] = [];
-      selectedVenueIds.forEach(id => {
-        if (!allPlaceIds.has(id)) {
-          missingPlaceIds.push(id);
-        }
-      });
-      
-      if (missingPlaceIds.length > 0) {
-        console.warn(`⚠️  ${missingPlaceIds.length} selected placeIds not found in search results`);
-      }
     }
+  });
+  
+  console.log(`🔍 Total unique placeIds in search results: ${allPlaceIds.size}`);
+  
+  const missingPlaceIds: string[] = [];
+  selectedVenueIds.forEach(id => {
+    if (!allPlaceIds.has(id)) {
+      missingPlaceIds.push(id);
+    }
+  });
+  
+  if (missingPlaceIds.length > 0) {
+    console.warn(`⚠️  WARNING: ${missingPlaceIds.length} selected placeIds not found in search results:`);
+    missingPlaceIds.forEach(id => console.warn(`   - ${id}`));
+    console.warn(`   This will cause venues to not appear on the map!`);
+  } else {
+    console.log(`✅ All selected placeIds found in search results`);
+  }
+}
 
     // Extract venues based on mode
-    const venues: any[] = [];
-    const events: any[] = [];
-    const routes: any[] = [];
+const venues: any[] = [];
+const events: any[] = [];
+const routes: any[] = [];
 
-    if (mode === 'discovery') {
-      response.state.toolResults.forEach(result => {
-        if (result.success && result.data) {
-          if (result.action === 'search_venues' && result.data.venues) {
-            venues.push(...result.data.venues);
+if (mode === 'discovery') {
+  response.state.toolResults.forEach(result => {
+    if (result.success && result.data) {
+      // Handle individual search_venues
+      if (result.action === 'search_venues' && result.data.venues) {
+        venues.push(...result.data.venues);
+      }
+      // Handle batch_search_venues
+      if (result.action === 'batch_search_venues' && result.data.results) {
+        result.data.results.forEach((searchResult: any) => {
+          if (searchResult.success && searchResult.venues) {
+            venues.push(...searchResult.venues);
           }
-          if (result.action === 'search_events' && result.data.events) {
-            events.push(...result.data.events);
-          }
-        }
-      });
-      console.log(`📊 Discovery: ${venues.length} venues, ${events.length} events`);
-    } else {
-      response.state.toolResults.forEach(result => {
-        if (result.success && result.data) {
-          if (result.action === 'search_venues' && result.data.venues) {
-            const filteredVenues = result.data.venues.filter((v: any) => 
+        });
+      }
+      // Handle events
+      if (result.action === 'search_events' && result.data.events) {
+        events.push(...result.data.events);
+      }
+    }
+  });
+  console.log(`📊 Discovery: ${venues.length} venues, ${events.length} events`);
+} else {
+  // Route mode: filter by selected placeIds
+  response.state.toolResults.forEach(result => {
+    if (result.success && result.data) {
+      // Handle individual search_venues
+      if (result.action === 'search_venues' && result.data.venues) {
+        const filteredVenues = result.data.venues.filter((v: any) => 
+          selectedVenueIds.size === 0 || selectedVenueIds.has(v.placeId)
+        );
+        venues.push(...filteredVenues);
+      }
+      // Handle batch_search_venues
+      if (result.action === 'batch_search_venues' && result.data.results) {
+        result.data.results.forEach((searchResult: any) => {
+          if (searchResult.success && searchResult.venues) {
+            const filteredVenues = searchResult.venues.filter((v: any) => 
               selectedVenueIds.size === 0 || selectedVenueIds.has(v.placeId)
             );
             venues.push(...filteredVenues);
           }
-          if (result.action === 'search_events' && result.data.events) {
-            events.push(...result.data.events);
-          }
-        }
-      });
-      console.log(`🗺️ Route: ${venues.length} selected venues`);
+        });
+      }
+      // Handle events
+      if (result.action === 'search_events' && result.data.events) {
+        events.push(...result.data.events);
+      }
     }
+  });
+  console.log(`🗺️ Route: ${venues.length} selected venues`);
+}
 
     return res.json({
       success: response.success,

@@ -1,0 +1,42 @@
+User Prompt: Find coffee shops near me
+
+[2025-10-10T22:05:43.936Z] LOG 
+================================================================================
+[2025-10-10T22:05:43.937Z] LOG 🔄 ITERATION 1
+[2025-10-10T22:05:43.938Z] LOG ================================================================================
+[2025-10-10T22:05:43.938Z] LOG 
+💭 THINKING...
+[2025-10-10T22:05:45.585Z] LOG    Reasoning: User requested coffee shops near their location, so I will perform a broad search for coffee shops in a general area.
+[2025-10-10T22:05:45.586Z] LOG    Action: search_venues
+[2025-10-10T22:05:45.586Z] LOG    Parameters: {
+  "query": "coffee shops",
+  "location": "Boston",
+  "limit": 10
+}
+[2025-10-10T22:05:45.587Z] LOG 
+⚡ ACTING...
+[2025-10-10T22:05:45.588Z] LOG ⚙️  Executing tool: search_venues
+[2025-10-10T22:05:45.589Z] LOG 🔍 [VenueSearchTool] Broad search: "coffee shops" in "Boston"
+[2025-10-10T22:05:45.589Z] LOG 📍 [Google Places] Text search: "coffee shops" in Boston
+[2025-10-10T22:05:45.590Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "coffee shops in Boston",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-10T22:05:46.399Z] LOG ✅ Found 10 places
+[2025-10-10T22:05:46.401Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2025-10-10T22:05:46.402Z] LOG    Success: true
+[2025-10-10T22:05:46.402Z] LOG    Data: {"venues":[{"name":"Jadu","address":"767 Centre St, Jamaica Plain, MA 02130, United States","location":{"lat":42.3102358,"lng":-71.1154133,"coordinates":"42.3102358,-71.1154133"},"rating":4.8,"priceLe...
+[2025-10-10T22:05:46.403Z] LOG 
+👁️  OBSERVING...
+[2025-10-10T22:05:46.403Z] LOG    Added observation to conversation history
+[2025-10-10T22:05:46.404Z] LOG    Total messages: 4
+[2025-10-10T22:05:46.404Z] LOG    Total tokens used: 2140
+[2025-10-10T22:05:46.404Z] LOG ⏱️ Iteration 1 took 2466ms
+[2025-10-10T22:05:46.404Z] LOG 
+================================================================================
+[2025-10-10T22:05:46.405Z] LOG 🔄 ITERATION 2
+[2025-10-10T22:05:46.405Z] LOG ================================================================================
+[2025-10-10T22:05:46.405Z] LOG 
+💭 THINKING...

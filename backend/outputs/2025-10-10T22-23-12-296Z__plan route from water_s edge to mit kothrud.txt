@@ -1,0 +1,127 @@
+User Prompt: plan route from water's edge to mit kothrud
+
+[2025-10-10T22:23:12.303Z] LOG 
+================================================================================
+[2025-10-10T22:23:12.305Z] LOG 🔄 ITERATION 1
+[2025-10-10T22:23:12.307Z] LOG ================================================================================
+[2025-10-10T22:23:12.307Z] LOG 
+💭 THINKING...
+[2025-10-10T22:23:14.493Z] LOG    Reasoning: I will use batch_search_venues to find the exact locations of 'Water's Edge' and 'MIT Kothrud' in Pune, Maharashtra, and then plan a route between them.
+[2025-10-10T22:23:14.500Z] LOG    Action: batch_search_venues
+[2025-10-10T22:23:14.502Z] LOG    Parameters: {
+  "searches": [
+    {
+      "query": "Water's Edge",
+      "location": "Pune, Maharashtra"
+    },
+    {
+      "query": "MIT Kothrud",
+      "location": "Pune, Maharashtra"
+    }
+  ]
+}
+[2025-10-10T22:23:14.504Z] LOG 
+⚡ ACTING...
+[2025-10-10T22:23:14.506Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-10T22:23:14.508Z] LOG 🔍 [BatchVenueSearchTool] Executing 2 searches in parallel
+[2025-10-10T22:23:14.511Z] LOG    1. Searching "Water's Edge" in "Pune, Maharashtra"
+[2025-10-10T22:23:14.513Z] LOG 📍 [Google Places] Text search: "Water's Edge" in Pune, Maharashtra
+[2025-10-10T22:23:14.514Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "Water's Edge in Pune, Maharashtra",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-10T22:23:14.557Z] LOG    2. Searching "MIT Kothrud" in "Pune, Maharashtra"
+[2025-10-10T22:23:14.562Z] LOG 📍 [Google Places] Text search: "MIT Kothrud" in Pune, Maharashtra
+[2025-10-10T22:23:14.566Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "MIT Kothrud in Pune, Maharashtra",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-10T22:23:15.131Z] LOG ✅ Found 8 places
+[2025-10-10T22:23:15.346Z] LOG ✅ Found 10 places
+[2025-10-10T22:23:15.353Z] LOG ✅ Batch complete: 2/2 searches succeeded, 18 total venues found in 845ms
+[2025-10-10T22:23:15.358Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-10T22:23:15.360Z] LOG    Success: true
+[2025-10-10T22:23:15.363Z] LOG    Data: {"results":[{"success":true,"query":"Water's Edge","location":"Pune, Maharashtra","venues":[{"name":"Water's Edge","address":"WATER'S EDGE, Jagtap Dairy Rd, Brahmavrind Housing Society, Vishal Nagar, ...
+[2025-10-10T22:23:15.365Z] LOG 
+👁️  OBSERVING...
+[2025-10-10T22:23:15.367Z] LOG    Added observation to conversation history
+[2025-10-10T22:23:15.369Z] LOG    Total messages: 4
+[2025-10-10T22:23:15.370Z] LOG    Total tokens used: 2212
+[2025-10-10T22:23:15.371Z] LOG ⏱️ Iteration 1 took 3063ms
+[2025-10-10T22:23:15.371Z] LOG 
+================================================================================
+[2025-10-10T22:23:15.372Z] LOG 🔄 ITERATION 2
+[2025-10-10T22:23:15.373Z] LOG ================================================================================
+[2025-10-10T22:23:15.374Z] LOG 
+💭 THINKING...
+[2025-10-10T22:23:17.511Z] LOG    Reasoning: I will now plan a route from Water's Edge to MIT Kothrud using the selected primary venues from the batch search results.
+[2025-10-10T22:23:17.513Z] LOG    Action: calculate_route
+[2025-10-10T22:23:17.513Z] LOG    Parameters: {
+  "waypoints": [
+    {
+      "lat": 18.5861,
+      "lng": 73.7491
+    },
+    {
+      "lat": 18.5041,
+      "lng": 73.8272
+    }
+  ],
+  "mode": "driving"
+}
+[2025-10-10T22:23:17.514Z] LOG 
+⚡ ACTING...
+[2025-10-10T22:23:17.515Z] LOG ⚙️  Executing tool: calculate_route
+[2025-10-10T22:23:17.515Z] LOG 🗺️  [RouteCalculatorTool] Calculating driving route with 2 waypoints
+[2025-10-10T22:23:17.516Z] LOG 🗺️  [Mapbox] Calculating driving route with 2 waypoints
+[2025-10-10T22:23:17.826Z] LOG ✅ Route calculated: 12.63 miles, 47 min
+[2025-10-10T22:23:17.828Z] LOG ✅ Tool 'calculate_route' completed: SUCCESS
+[2025-10-10T22:23:17.828Z] LOG    Success: true
+[2025-10-10T22:23:17.829Z] LOG    Data: {"distance":20330.125,"distanceFormatted":"12.63 miles","duration":2813.804,"durationFormatted":"47 min","geometry":{"coordinates":[[73.749438,18.586945],[73.74948,18.587704],[73.750302,18.587581],[73...
+[2025-10-10T22:23:17.829Z] LOG 
+👁️  OBSERVING...
+[2025-10-10T22:23:17.830Z] LOG    Added observation to conversation history
+[2025-10-10T22:23:17.830Z] LOG    Total messages: 6
+[2025-10-10T22:23:17.830Z] LOG    Total tokens used: 5553
+[2025-10-10T22:23:17.831Z] LOG ⏱️ Iteration 2 took 2457ms
+[2025-10-10T22:23:17.831Z] LOG 
+================================================================================
+[2025-10-10T22:23:17.831Z] LOG 🔄 ITERATION 3
+[2025-10-10T22:23:17.832Z] LOG ================================================================================
+[2025-10-10T22:23:17.832Z] LOG 
+💭 THINKING...
+[2025-10-10T22:23:22.936Z] LOG    Reasoning: I will now format the route details for the user, including the distance, duration, and step-by-step instructions.
+[2025-10-10T22:23:22.937Z] LOG    Action: finish
+[2025-10-10T22:23:22.938Z] LOG    Parameters: {
+  "result": "### Route: Water's Edge → MIT Kothrud\n- **Distance:** 12.63 miles\n- **Duration:** 47 min\n\n#### Directions:\n1. Drive north for 85 meters.\n2. Turn right onto Hirai Sitai Road for 0.24 miles.\n3. Turn left for 90 meters.\n4. Turn left onto Parkhe Wasti Road for 0.21 miles.\n5. Turn left onto Hinjawadi Road for 0.12 miles.\n\nEnjoy your drive!",
+  "mode": "route",
+  "selected_venues": [
+    "ChIJCZmb9C-5wjsRLZjDflmvpAc",
+    "ChIJ-QU65bm_wjsRPmm-Atro5Ss"
+  ]
+}
+[2025-10-10T22:23:22.938Z] LOG 
+✅ Agent decided task is complete
+[2025-10-10T22:23:22.939Z] LOG 📋 Finish parameters validated: {"hasResult":true,"mode":"route","selectedVenuesCount":2}
+[2025-10-10T22:23:22.941Z] LOG ⏱️ Iteration 3 took 5109ms (finish)
+[2025-10-10T22:23:22.941Z] LOG 
+================================================================================
+[2025-10-10T22:23:22.941Z] LOG 📊 EXECUTION SUMMARY
+[2025-10-10T22:23:22.942Z] LOG ================================================================================
+[2025-10-10T22:23:22.942Z] LOG Status: complete
+[2025-10-10T22:23:22.942Z] LOG Iterations: 3
+[2025-10-10T22:23:22.943Z] LOG Execution time: 10648ms
+[2025-10-10T22:23:22.943Z] LOG Total tokens: 14681
+[2025-10-10T22:23:22.943Z] LOG Actions executed: 2
+[2025-10-10T22:23:22.944Z] LOG ================================================================================
+
+
+--- Summary ---
+Status: complete
+Iterations: 3
+TotalTokens: 14681
+ExecutionTimeMs: 10651

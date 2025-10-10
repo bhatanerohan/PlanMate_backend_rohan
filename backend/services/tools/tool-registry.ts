@@ -3,6 +3,7 @@
 import type { BaseTool, ToolName, ToolDefinition, ToolResult, ToolExecutionContext } from '../../types/tools.js';
 import { VenueSearchTool } from './venue-search.js';
 import { EventSearchTool } from './event-search.js';
+import { BatchVenueSearchTool } from './batch-venue-search.js';  // ← ADD THIS
 // import { DistanceCalculatorTool } from './distance-calculator.js';
 import { RouteCalculatorTool } from './route-calculator.js';  // ⭐ NEW
 import { AvailabilityValidatorTool } from './availability-validator.js';
@@ -26,6 +27,7 @@ export class ToolRegistry {
   private registerDefaultTools(): void {
     this.register(new VenueSearchTool());
     this.register(new EventSearchTool());
+    this.register(new BatchVenueSearchTool());  // ← ADD THIS LINE
     // this.register(new DistanceCalculatorTool());
     this.register(new RouteCalculatorTool());  // ⭐ NEW
     this.register(new AvailabilityValidatorTool());

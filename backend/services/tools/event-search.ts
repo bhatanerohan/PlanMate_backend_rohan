@@ -147,30 +147,39 @@ export class EventSearchTool extends Tool {
       }
 
       // Format results for the agent - include venue coordinates for distance calculation
-      const formattedEvents = events.map(event => ({
-        name: event.name,
-        venue: {
-          name: event.venue.name,
-          address: event.venue.address,
-          city: event.venue.city,
-          state: event.venue.state,
-          location: event.venue.location ? {
-            lat: event.venue.location.lat,
-            lng: event.venue.location.lng,
-            coordinates: `${event.venue.location.lat},${event.venue.location.lng}`
-          } : undefined
-        },
-        date: event.date,
-        time: event.time,
-        priceRange: event.priceRange ? 
-          TicketmasterClient.formatPriceRange(event.priceRange) : 
-          'Price not available',
-        url: event.url,
-        category: event.category,
-        ticketsAvailable: event.ticketsAvailable
-      }));
+      // Format results for the agent - include venue coordinates for distance calculation
+const formattedEvents = events.map(event => ({
+  name: event.name,
+  venue: {
+    name: event.venue.name,
+    address: event.venue.address,
+    city: event.venue.city,
+    state: event.venue.state,
+    location: event.venue.location ? {
+      lat: event.venue.location.lat,
+      lng: event.venue.location.lng,
+      coordinates: `${event.venue.location.lat},${event.venue.location.lng}`
+    } : undefined
+  },
+  date: event.date,
+  time: event.time,
+  priceRange: event.priceRange ? 
+    TicketmasterClient.formatPriceRange(event.priceRange) : 
+    'Price not available',
+  url: event.url,
+  category: event.category,
+  ticketsAvailable: event.ticketsAvailable
+}));
 
-      const latency = Date.now() - startTime;
+// ========================================================================
+// DEDUPLICATE: Group same event at same venue
+// ========================================================================
+const deduplicatedEvents = this.deduplicateEvents(formattedEvents);
+console.log(`   📊 Deduplicated ${formattedEvents.length} events → ${deduplicatedEvents.length} unique events`);
+     
+
+
+const latency = Date.now() - startTime;
 
       if (formattedEvents.length === 0) {
         return this.success(
@@ -192,8 +201,9 @@ export class EventSearchTool extends Tool {
 
       return this.success(
         {
-          events: formattedEvents,
-          count: formattedEvents.length,
+          events: deduplicatedEvents,  // ← Changed from formattedEvents
+          count: deduplicatedEvents.length,  // ← Changed
+          originalCount: formattedEvents.length,  // ← New: track original count
           query,
           location,
           date: date || 'any time',
@@ -220,6 +230,47 @@ export class EventSearchTool extends Tool {
       );
     }
   }
+
+  /**
+ * Deduplicate events - group same show at same venue
+ * Returns unique events with combined date info
+ */
+private deduplicateEvents(events: any[]): any[] {
+  // Group by event name + venue name
+  const grouped = new Map<string, any[]>();
+  
+  events.forEach(event => {
+    const key = `${event.name}|||${event.venue.name}`;
+    if (!grouped.has(key)) {
+      grouped.set(key, []);
+    }
+    grouped.get(key)!.push(event);
+  });
+
+  // Create deduplicated list
+  const deduplicated: any[] = [];
+  
+  grouped.forEach((eventGroup, key) => {
+    if (eventGroup.length === 1) {
+      // Single showtime - keep as is
+      deduplicated.push(eventGroup[0]);
+    } else {
+      // Multiple showtimes - combine dates
+      const firstEvent = eventGroup[0];
+      const dates = [...new Set(eventGroup.map(e => e.date))].sort();
+      
+      deduplicated.push({
+        ...firstEvent,
+        date: dates.length === 1 ? dates[0] : `${dates[0]} - ${dates[dates.length - 1]}`,
+        time: eventGroup.length > 1 ? 'Multiple showtimes' : firstEvent.time,
+        showtimeCount: eventGroup.length,
+        allDates: dates // For frontend to show details
+      });
+    }
+  });
+
+  return deduplicated;
+}
 
   /**
    * Parse coordinates from string "lat,lng"

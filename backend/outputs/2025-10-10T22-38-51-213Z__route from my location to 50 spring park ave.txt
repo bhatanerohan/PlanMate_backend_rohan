@@ -1,0 +1,114 @@
+User Prompt: route from my location to 50 spring park ave
+
+[2025-10-10T22:38:51.216Z] LOG 
+================================================================================
+[2025-10-10T22:38:51.217Z] LOG 🔄 ITERATION 1
+[2025-10-10T22:38:51.218Z] LOG ================================================================================
+[2025-10-10T22:38:51.218Z] LOG 
+💭 THINKING...
+[2025-10-10T22:38:53.231Z] LOG    Reasoning: I need to find the primary venue at the destination address '50 Spring Park Ave' to create a route from the user's current location.
+[2025-10-10T22:38:53.233Z] LOG    Action: batch_search_venues
+[2025-10-10T22:38:53.234Z] LOG    Parameters: {
+  "searches": [
+    {
+      "query": "50 Spring Park Ave",
+      "location": "Boston",
+      "limit": 5
+    }
+  ]
+}
+[2025-10-10T22:38:53.235Z] LOG 
+⚡ ACTING...
+[2025-10-10T22:38:53.236Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-10T22:38:53.236Z] LOG 🔍 [BatchVenueSearchTool] Executing 1 searches in parallel
+[2025-10-10T22:38:53.237Z] LOG    1. Searching "50 Spring Park Ave" in "Boston"
+[2025-10-10T22:38:53.238Z] LOG 📍 [Google Places] Text search: "50 Spring Park Ave" in Boston
+[2025-10-10T22:38:53.239Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "50 Spring Park Ave in Boston",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-10T22:38:53.392Z] LOG ✅ Found 1 places
+[2025-10-10T22:38:53.395Z] LOG ✅ Batch complete: 1/1 searches succeeded, 1 total venues found in 159ms
+[2025-10-10T22:38:53.396Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-10T22:38:53.398Z] LOG    Success: true
+[2025-10-10T22:38:53.399Z] LOG    Data: {"results":[{"success":true,"query":"50 Spring Park Ave","location":"Boston","venues":[{"name":"50 Spring Park Ave","address":"50 Spring Park Ave, Jamaica Plain, MA 02130, USA","location":{"lat":42.31...
+[2025-10-10T22:38:53.400Z] LOG 
+👁️  OBSERVING...
+[2025-10-10T22:38:53.401Z] LOG    Added observation to conversation history
+[2025-10-10T22:38:53.402Z] LOG    Total messages: 4
+[2025-10-10T22:38:53.402Z] LOG    Total tokens used: 2197
+[2025-10-10T22:38:53.403Z] LOG ⏱️ Iteration 1 took 2185ms
+[2025-10-10T22:38:53.404Z] LOG 
+================================================================================
+[2025-10-10T22:38:53.404Z] LOG 🔄 ITERATION 2
+[2025-10-10T22:38:53.405Z] LOG ================================================================================
+[2025-10-10T22:38:53.406Z] LOG 
+💭 THINKING...
+[2025-10-10T22:38:55.224Z] LOG    Reasoning: Now I will calculate the route from the user's current location to the destination at 50 Spring Park Ave, Jamaica Plain, MA.
+[2025-10-10T22:38:55.226Z] LOG    Action: calculate_route
+[2025-10-10T22:38:55.227Z] LOG    Parameters: {
+  "waypoints": [
+    {
+      "lat": 42.323659250000006,
+      "lng": -71.10781874999999
+    },
+    {
+      "lat": 42.309999,
+      "lng": -71.103
+    }
+  ],
+  "mode": "walking"
+}
+[2025-10-10T22:38:55.229Z] LOG 
+⚡ ACTING...
+[2025-10-10T22:38:55.232Z] LOG ⚙️  Executing tool: calculate_route
+[2025-10-10T22:38:55.233Z] LOG 🗺️  [RouteCalculatorTool] Calculating walking route with 2 waypoints
+[2025-10-10T22:38:55.235Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2025-10-10T22:38:55.452Z] LOG ✅ Route calculated: 1.26 miles, 24 min
+[2025-10-10T22:38:55.454Z] LOG ✅ Tool 'calculate_route' completed: SUCCESS
+[2025-10-10T22:38:55.455Z] LOG    Success: true
+[2025-10-10T22:38:55.457Z] LOG    Data: {"distance":2032.414,"distanceFormatted":"1.26 miles","duration":1444.623,"durationFormatted":"24 min","geometry":{"coordinates":[[-71.10787,42.323689],[-71.108024,42.323525],[-71.107746,42.323389],[-...
+[2025-10-10T22:38:55.457Z] LOG 
+👁️  OBSERVING...
+[2025-10-10T22:38:55.458Z] LOG    Added observation to conversation history
+[2025-10-10T22:38:55.458Z] LOG    Total messages: 6
+[2025-10-10T22:38:55.459Z] LOG    Total tokens used: 4540
+[2025-10-10T22:38:55.459Z] LOG ⏱️ Iteration 2 took 2053ms
+[2025-10-10T22:38:55.461Z] LOG 
+================================================================================
+[2025-10-10T22:38:55.462Z] LOG 🔄 ITERATION 3
+[2025-10-10T22:38:55.462Z] LOG ================================================================================
+[2025-10-10T22:38:55.463Z] LOG 
+💭 THINKING...
+[2025-10-10T22:38:59.404Z] LOG    Reasoning: I have successfully calculated the route from the user's location to 50 Spring Park Ave. Now I will format the result for the user.
+[2025-10-10T22:38:59.405Z] LOG    Action: finish
+[2025-10-10T22:38:59.406Z] LOG    Parameters: {
+  "result": "### Route: Current Location → 50 Spring Park Ave\n1. Walk southwest on the walkway - 22 meters\n2. Turn left onto the walkway - 27 meters\n3. Turn right onto the walkway - 45 meters\n4. Turn left onto the walkway - 56 meters\n5. Turn left onto the walkway - 63 meters\n\n**Distance:** 1.26 miles\n**Estimated Duration:** 24 minutes",
+  "mode": "route",
+  "selected_venues": [
+    "ChIJzYoHm3B544kRUHEUfX5AuFQ"
+  ]
+}
+[2025-10-10T22:38:59.407Z] LOG 
+✅ Agent decided task is complete
+[2025-10-10T22:38:59.407Z] LOG 📋 Finish parameters validated: {"hasResult":true,"mode":"route","selectedVenuesCount":1}
+[2025-10-10T22:38:59.408Z] LOG ⏱️ Iteration 3 took 3945ms (finish)
+[2025-10-10T22:38:59.409Z] LOG 
+================================================================================
+[2025-10-10T22:38:59.409Z] LOG 📊 EXECUTION SUMMARY
+[2025-10-10T22:38:59.410Z] LOG ================================================================================
+[2025-10-10T22:38:59.410Z] LOG Status: complete
+[2025-10-10T22:38:59.410Z] LOG Iterations: 3
+[2025-10-10T22:38:59.411Z] LOG Execution time: 8197ms
+[2025-10-10T22:38:59.412Z] LOG Total tokens: 8906
+[2025-10-10T22:38:59.412Z] LOG Actions executed: 2
+[2025-10-10T22:38:59.412Z] LOG ================================================================================
+
+
+--- Summary ---
+Status: complete
+Iterations: 3
+TotalTokens: 8906
+ExecutionTimeMs: 8201

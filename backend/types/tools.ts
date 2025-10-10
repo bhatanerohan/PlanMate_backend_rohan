@@ -8,6 +8,7 @@
 export type ToolName = 
   | 'search_venues'
   | 'search_events'
+  | 'batch_search_venues'      // ← ADD THIS LINE
   // | 'calculate_distance'
   | 'calculate_route'        // ⭐ NEW
   | 'validate_availability'

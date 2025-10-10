@@ -7,7 +7,9 @@ import { getGooglePlacesClient, GooglePlacesClient } from '../api-clients/google
 /**
  * Venue Search Tool
  * Searches for venues using Google Places API
- * Supports both broad city search and coordinate-based radius search
+ * Features:
+ * - 3-tier progressive search: 1 mile → 5 miles → entire city
+ * - Never substitutes with different venues
  */
 export class VenueSearchTool extends Tool {
   name: ToolName = 'search_venues';
@@ -61,7 +63,10 @@ export class VenueSearchTool extends Tool {
       // Get Google Places client
       const placesClient = getGooglePlacesClient();
 
-      let places;
+      let places: any[] = [];
+      let searchType = 'broad';
+      let radiusUsed: number | undefined;
+      let radiusExpanded = false;
       
       // GEOGRAPHIC OPTIMIZATION: Use coordinates if provided
       if (near_coordinates) {
@@ -71,19 +76,69 @@ export class VenueSearchTool extends Tool {
           return this.error('Invalid coordinates format. Use "latitude,longitude" (e.g., "42.365,-71.054")');
         }
 
-        const radiusMeters = this.parseRadius(radius as string | undefined);
+        const requestedRadius = this.parseRadius(radius as string | undefined);
         
-        console.log(`🔍 [VenueSearchTool] Geographic search: "${query}" near (${coords.lat}, ${coords.lng}) within ${radiusMeters}m`);
+        console.log(`🔍 [VenueSearchTool] Geographic search: "${query}" near (${coords.lat}, ${coords.lng})`);
 
-        // Use nearby search with coordinates
+        // ========================================================================
+        // 3-TIER PROGRESSIVE SEARCH: 1 mile → 5 miles → entire city
+        // ========================================================================
+
+        // TIER 1: Try 1 mile (or requested radius if smaller)
+        const tier1Radius = Math.min(requestedRadius, 1609); // 1 mile = 1609 meters
+        console.log(`   🎯 TIER 1: Searching within ${(tier1Radius / 1609.34).toFixed(1)} miles...`);
+        
         places = await placesClient.nearbySearch(coords.lat, coords.lng, {
           query,
-          radius: radiusMeters,
+          radius: tier1Radius,
           maxResults: parseInt(limit as string) || 10
         });
 
+        if (places.length > 0) {
+          radiusUsed = tier1Radius;
+          console.log(`   ✅ Found ${places.length} venues at tier 1`);
+        } else {
+          console.log(`   ⚠️ No results in tier 1, expanding to tier 2...`);
+
+          // TIER 2: Try 5 miles
+          const tier2Radius = 8047; // 5 miles
+          console.log(`   🎯 TIER 2: Searching within ${(tier2Radius / 1609.34).toFixed(1)} miles...`);
+          
+          places = await placesClient.nearbySearch(coords.lat, coords.lng, {
+            query,
+            radius: tier2Radius,
+            maxResults: parseInt(limit as string) || 10
+          });
+
+          if (places.length > 0) {
+            radiusUsed = tier2Radius;
+            radiusExpanded = true;
+            console.log(`   ✅ Found ${places.length} venues at tier 2 (expanded search)`);
+          } else {
+            console.log(`   ⚠️ No results in tier 2, expanding to tier 3 (entire city)...`);
+
+            // TIER 3: City-wide search (no radius limit)
+            console.log(`   🎯 TIER 3: Searching entire ${location} area...`);
+            
+            places = await placesClient.textSearch({
+              query,
+              location,
+              maxResults: parseInt(limit as string) || 10
+            });
+
+            if (places.length > 0) {
+              radiusUsed = undefined; // City-wide has no radius
+              radiusExpanded = true;
+              searchType = 'city-wide';
+              console.log(`   ✅ Found ${places.length} venues in city-wide search`);
+            } else {
+              console.log(`   ❌ No venues found even in entire city`);
+            }
+          }
+        }
+
       } else {
-        // Broad city search (first search)
+        // Broad city search (no coordinates provided)
         console.log(`🔍 [VenueSearchTool] Broad search: "${query}" in "${location}"`);
         
         places = await placesClient.textSearch({
@@ -100,7 +155,7 @@ export class VenueSearchTool extends Tool {
         location: {
           lat: place.location.lat,
           lng: place.location.lng,
-          coordinates: `${place.location.lat},${place.location.lng}`  // Easy format for next search
+          coordinates: `${place.location.lat},${place.location.lng}`
         },
         rating: place.rating,
         priceLevel: GooglePlacesClient.formatPriceLevel(place.priceLevel),
@@ -110,6 +165,7 @@ export class VenueSearchTool extends Tool {
 
       const latency = Date.now() - startTime;
 
+      // NO RESULTS: Return clear message (DON'T substitute with different venues!)
       if (venues.length === 0) {
         return this.success(
           {
@@ -117,29 +173,37 @@ export class VenueSearchTool extends Tool {
             count: 0,
             query,
             location,
-            message: 'No venues found in this area. Try a broader search or different query.'
+            searchType,
+            message: near_coordinates
+              ? `No "${query}" found within 5 miles or in ${location}. The specific venue/chain may not exist in this area.`
+              : `No venues found for "${query}" in ${location}. Try a different search term.`
           },
           {
-            apiCalls: 1,
+            apiCalls: near_coordinates ? 3 : 1, // 3 tiers attempted
             latency,
             source: 'google_places'
           }
         );
       }
 
+      // SUCCESS: Return results with metadata
       return this.success(
         {
           venues,
           count: venues.length,
           query,
           location,
-          searchType: near_coordinates ? 'coordinate-based' : 'broad',
+          searchType,
+          radiusUsed: radiusUsed ? `${(radiusUsed / 1609.34).toFixed(1)} miles` : 'city-wide',
+          radiusExpanded,
           message: near_coordinates 
-            ? `Found ${venues.length} venues near coordinates` 
+            ? radiusUsed
+              ? `Found ${venues.length} venues within ${(radiusUsed / 1609.34).toFixed(1)} miles${radiusExpanded ? ' (expanded from 1 mile)' : ''}`
+              : `Found ${venues.length} venues in city-wide search (expanded from coordinate search)`
             : `Found ${venues.length} venues in ${location}`
         },
         {
-          apiCalls: 1,
+          apiCalls: near_coordinates ? (radiusExpanded ? (searchType === 'city-wide' ? 3 : 2) : 1) : 1,
           latency,
           source: 'google_places'
         }
@@ -155,36 +219,25 @@ export class VenueSearchTool extends Tool {
   }
 
   /**
-   * Get progressive radii to try (in meters)
-   * Starts small, expands if no results
-   * Maximum: 3.5 miles
+   * Get progressive radii for 3-tier search
+   * Tier 1: 1 mile (or requested radius)
+   * Tier 2: 5 miles
+   * Tier 3: City-wide (no radius)
    */
   private getProgressiveRadii(requestedRadius: number): number[] {
-    // Convert to miles for easier logic
-    const requestedMiles = requestedRadius / 1609.34;
+    const oneMile = 1609; // meters
+    const fiveMiles = 8047; // meters
     
-    if (requestedMiles <= 0.5) {
-      // Requested small radius, try: 0.5 → 1.0 → 2.0 → 3.5 miles
-      return [
-        Math.round(0.5 * 1609.34),  // 805m
-        Math.round(1.0 * 1609.34),  // 1609m
-        Math.round(2.0 * 1609.34),  // 3219m
-        Math.round(3.5 * 1609.34)   // 5633m
-      ];
-    } else if (requestedMiles <= 1.0) {
-      // Requested medium radius, try: 1.0 → 2.0 → 3.5 miles
-      return [
-        Math.round(1.0 * 1609.34),
-        Math.round(2.0 * 1609.34),
-        Math.round(3.5 * 1609.34)
-      ];
-    } else {
-      // Requested large radius, try: as-is → 3.5 miles
-      return [
-        requestedRadius,
-        Math.round(3.5 * 1609.34)
-      ];
+    // If requested radius is already >= 5 miles, just use it and then city-wide
+    if (requestedRadius >= fiveMiles) {
+      return [requestedRadius];
     }
+    
+    // Otherwise: tier 1 (1 mile or requested) → tier 2 (5 miles)
+    return [
+      Math.min(requestedRadius, oneMile),
+      fiveMiles
+    ];
   }
 
   /**
@@ -212,11 +265,11 @@ export class VenueSearchTool extends Tool {
    * Parse radius string to meters
    */
   private parseRadius(radius: string | undefined): number {
-    if (!radius) return 800; // Default 0.5 miles = 800m
+    if (!radius) return 1609; // Default 1 mile
 
     const match = radius.match(/^(\d+(?:\.\d+)?)\s*(miles?|mi|kilometers?|km|m)?$/i);
     
-    if (!match) return 800;
+    if (!match) return 1609;
 
     const value = parseFloat(match[1]);
     const unit = match[2]?.toLowerCase() || 'miles';
@@ -229,4 +282,18 @@ export class VenueSearchTool extends Tool {
       return Math.round(value); // Already in meters
     }
   }
+}
+
+// Export singleton instance
+let googlePlacesClient: GooglePlacesClient | null = null;
+
+export function getGooglePlacesClient(): GooglePlacesClient {
+  if (!googlePlacesClient) {
+    const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+    if (!apiKey) {
+      throw new Error('GOOGLE_PLACES_API_KEY not found in environment variables');
+    }
+    googlePlacesClient = new GooglePlacesClient(apiKey);
+  }
+  return googlePlacesClient;
 }
