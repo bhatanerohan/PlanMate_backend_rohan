@@ -142,13 +142,28 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfacePro
       onNewPlan(agentMessage, markers, routes, isRouteQuery);
     },
     onError: (error: any) => {
-      const errorMessage: Message = {
+
+      let errorMessage = 'Something went wrong. Please try again.';
+      
+      // Handle not_relevant errors specially
+      if (error.response?.data?.error === 'not_relevant') {
+        errorMessage = error.response.data.message || 
+          "I can only help with location-based queries like finding venues, planning routes, or discovering events.";
+      } else if (error.response?.data?.error) {
+        errorMessage = error.response.data.error;
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+
+
+      const errorMessageObj: Message = {
         id: Date.now().toString(),
         type: 'system',
-        content: `Error: ${error.response?.data?.error || error.message || 'Something went wrong'}`,
+        content: `❌ ${errorMessage}`,
         timestamp: Date.now(),
       };
-      onNewPlan(errorMessage, [], []);
+      onNewPlan(errorMessageObj, [], []);
+    
     },
   });
 

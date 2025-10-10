@@ -8,7 +8,7 @@
 export type ToolName = 
   | 'search_venues'
   | 'search_events'
-  | 'calculate_distance'
+  // | 'calculate_distance'
   | 'calculate_route'        // ⭐ NEW
   | 'validate_availability'
   | 'finish';

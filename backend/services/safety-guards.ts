@@ -181,13 +181,6 @@ export class SafetyGuards {
         
         return queryChanged || locationChanged || coordinatesChanged;
 
-      case 'calculate_distance':
-        // Different if origin OR destination changed
-        const originChanged = this.hasSignificantChange(lastParams.origin, currentParams.origin);
-        const destChanged = this.hasSignificantChange(lastParams.destination, currentParams.destination);
-        
-        return originChanged || destChanged;
-
       case 'validate_availability':
         // Different if checking different venue/event
         const nameChanged = this.hasSignificantChange(lastParams.name, currentParams.name);

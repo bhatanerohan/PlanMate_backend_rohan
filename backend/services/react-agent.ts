@@ -276,7 +276,7 @@ finish:
         },
         action: {
           type: 'string',
-          enum: ['search_venues', 'search_events', 'calculate_distance', 'validate_availability', 'finish'],
+          enum: ['search_venues', 'search_events', 'validate_availability', 'finish'],
           description: 'The action to take'
         },
         parameters: {
@@ -444,7 +444,7 @@ Strategy - PARALLEL SEARCH (NOT SEQUENTIAL):
 2. Search for each waypoint in parallel (don't wait for results)
 3. For each waypoint, select ONE primary venue
 4. **CRITICAL: TRACK THE placeId OF EACH SELECTED VENUE**
-5. Calculate distances between consecutive selected venues
+5. **SKIP distance calculations** - frontend will calculate real walking routes
 6. Return route with selected venues only
 7. **Call finish with result, mode="route", and selected_venues=[placeId1, placeId2, placeId3...]**
 
@@ -553,21 +553,19 @@ Output format:
    - Rating: [X★]
    - placeId: [Google Places ID]
    - Why selected: [if multiple results, explain selection]
-   → [distance], [time]
 
 **2. Stop: [Venue Name]**
    - Address: [full address]
    - Rating: [X★]
    - placeId: [Google Places ID]
    - Why selected: [if multiple results, explain selection]
-   → [distance], [time]
 
 **3. End: [Venue Name]**
    - Address: [full address]
    - Rating: [X★]
    - placeId: [Google Places ID]
 
-**Total:** X.X km, XX min walking time
+Note: Distances and walking times will be calculated and displayed on the map.
 
 **THEN CALL FINISH LIKE THIS:**
 {
@@ -626,10 +624,6 @@ search_venues:
 - Don't use radius restrictions for route planning
 - Let Google Places return the best matches
 
-calculate_distance:
-- Only use for route mode
-- Calculate between consecutive selected waypoints
-- Use full addresses for accuracy
 
 finish:
 - ALWAYS include mode field ("discovery" or "route")
@@ -666,7 +660,7 @@ When calling finish for DISCOVERY, use this format:
 ❌ NEVER DO
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-- Don't calculate distances for discovery queries
+- Don't calculate distances (frontend handles this with real data)
 - Don't use near_coordinates for route planning
 - Don't list ALL search results in route output
 - Don't use sub-locations when user wants main location

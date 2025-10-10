@@ -3,6 +3,7 @@
 import { Router, Request, Response } from 'express';
 import { ReActAgent } from '../services/react-agent.js';
 import { DEFAULT_SAFETY_CONFIG } from '../types/react-agent.js';
+import { classifyIntent } from '../services/intent-classifier.js';  // ← ADD THIS IMPORT
 
 const router = Router();
 
@@ -10,6 +11,7 @@ router.post('/plan', async (req: Request, res: Response) => {
   try {
     const { prompt } = req.body;
 
+    // Basic validation
     if (!prompt || typeof prompt !== 'string') {
       return res.status(400).json({
         success: false,
@@ -24,78 +26,101 @@ router.post('/plan', async (req: Request, res: Response) => {
       });
     }
 
-    console.log(`\n📝 Received planning request: "${prompt}"`);
+    console.log(`\n📝 Received request: "${prompt}"`);
 
-    const agent = new ReActAgent(DEFAULT_SAFETY_CONFIG);
-const response = await agent.execute(prompt);
-
-// Extract mode and selected venue IDs from agent's finish parameters
-let mode: 'discovery' | 'route' = 'discovery';
-let selectedVenueIds: Set<string> = new Set();
-
-// NEW: Use finish parameters directly from state if available
-if (response.state.finishParameters) {
-  mode = response.state.finishParameters.mode;
-  if (response.state.finishParameters.selected_venue_ids) {
-    selectedVenueIds = new Set(response.state.finishParameters.selected_venue_ids);
-  }
-  console.log(`🎯 Using finish parameters from state: mode=${mode}, venues=${selectedVenueIds.size}`);
-} else {
-  console.log('⚠️  No finish parameters in state, will try fallback parsing');
-  
-  // FALLBACK: Try to extract from last message (backwards compatibility)
-  const lastMessage = response.state.conversationHistory[response.state.conversationHistory.length - 1];
-  if (lastMessage && lastMessage.role === 'assistant') {
+    // ============================================================================
+    // STEP 1: INTENT CLASSIFICATION (Security Check Only)
+    // ============================================================================
+    console.log('🔒 Running security check...');
+    
+    let classification;
     try {
-      const match = lastMessage.content.match(/Parameters:\s*({[\s\S]*?})/);
-      if (match) {
-        const params = JSON.parse(match[1]);
-        mode = params.mode || mode;
-        if (params.selected_venues && Array.isArray(params.selected_venues)) {
-          selectedVenueIds = new Set(params.selected_venues);
-        } else if (params.selected_venue_ids && Array.isArray(params.selected_venue_ids)) {
-          selectedVenueIds = new Set(params.selected_venue_ids);
-        }
-      }
-    } catch (e) {
-      console.warn('Could not parse finish parameters from assistant message');
-    }
-  }
-}
-
-console.log(`🎯 Detected mode: ${mode}`);
-console.log(`🏢 Selected venue IDs: ${Array.from(selectedVenueIds).join(', ') || 'none'}`);
-
-// NEW: Validate placeIds exist in search results
-if (mode === 'route' && selectedVenueIds.size > 0) {
-  const allPlaceIds = new Set<string>();
-  response.state.toolResults.forEach(result => {
-    if (result.action === 'search_venues' && result.success && result.data?.venues) {
-      result.data.venues.forEach((v: any) => {
-        if (v.placeId) allPlaceIds.add(v.placeId);
+      classification = await classifyIntent(prompt);
+    } catch (error) {
+      console.error('❌ Security check failed:', error);
+      return res.status(500).json({
+        success: false,
+        error: 'Failed to process request. Please try again.'
       });
     }
-  });
-  
-  console.log(`🔍 Total unique placeIds in search results: ${allPlaceIds.size}`);
-  
-  // Check for mismatches
-  const missingPlaceIds: string[] = [];
-  selectedVenueIds.forEach(id => {
-    if (!allPlaceIds.has(id)) {
-      missingPlaceIds.push(id);
-    }
-  });
-  
-  if (missingPlaceIds.length > 0) {
-    console.warn(`⚠️  WARNING: ${missingPlaceIds.length} selected placeIds not found in search results:`);
-    missingPlaceIds.forEach(id => console.warn(`   - ${id}`));
-    console.warn(`   This will cause venues to not appear on the map!`);
-  } else {
-    console.log(`✅ All selected placeIds found in search results`);
-  }
-}
 
+    // ============================================================================
+    // STEP 2: REJECT IF NOT RELEVANT
+    // ============================================================================
+    if (!classification.isRelevant) {
+      console.log(`⛔ Query rejected: ${classification.reasoning}`);
+      
+      return res.status(400).json({
+        success: false,
+        error: 'not_relevant',
+        message: "I can only help with location-based queries like finding venues, planning routes, or discovering events."
+      });
+    }
+
+    // ============================================================================
+    // STEP 3: PROCEED TO REACT AGENT
+    // ============================================================================
+    console.log('✅ Security check passed. Processing request...\n');
+
+    const agent = new ReActAgent(DEFAULT_SAFETY_CONFIG);
+    const response = await agent.execute(prompt);
+
+    // Extract mode and selected venue IDs from agent's finish parameters
+    let mode: 'discovery' | 'route' = 'discovery';
+    let selectedVenueIds: Set<string> = new Set();
+
+    // Use finish parameters directly from state if available
+    if (response.state.finishParameters) {
+      mode = response.state.finishParameters.mode;
+      if (response.state.finishParameters.selected_venue_ids) {
+        selectedVenueIds = new Set(response.state.finishParameters.selected_venue_ids);
+      }
+      console.log(`🎯 Mode: ${mode}, Selected venues: ${selectedVenueIds.size}`);
+    } else {
+      console.log('⚠️  No finish parameters in state');
+      
+      // FALLBACK: Try to extract from last message
+      const lastMessage = response.state.conversationHistory[response.state.conversationHistory.length - 1];
+      if (lastMessage && lastMessage.role === 'assistant') {
+        try {
+          const match = lastMessage.content.match(/Parameters:\s*({[\s\S]*?})/);
+          if (match) {
+            const params = JSON.parse(match[1]);
+            mode = params.mode || mode;
+            if (params.selected_venues && Array.isArray(params.selected_venues)) {
+              selectedVenueIds = new Set(params.selected_venues);
+            } else if (params.selected_venue_ids && Array.isArray(params.selected_venue_ids)) {
+              selectedVenueIds = new Set(params.selected_venue_ids);
+            }
+          }
+        } catch (e) {
+          console.warn('Could not parse finish parameters');
+        }
+      }
+    }
+
+    // Validate placeIds exist in search results
+    if (mode === 'route' && selectedVenueIds.size > 0) {
+      const allPlaceIds = new Set<string>();
+      response.state.toolResults.forEach(result => {
+        if (result.action === 'search_venues' && result.success && result.data?.venues) {
+          result.data.venues.forEach((v: any) => {
+            if (v.placeId) allPlaceIds.add(v.placeId);
+          });
+        }
+      });
+      
+      const missingPlaceIds: string[] = [];
+      selectedVenueIds.forEach(id => {
+        if (!allPlaceIds.has(id)) {
+          missingPlaceIds.push(id);
+        }
+      });
+      
+      if (missingPlaceIds.length > 0) {
+        console.warn(`⚠️  ${missingPlaceIds.length} selected placeIds not found in search results`);
+      }
+    }
 
     // Extract venues based on mode
     const venues: any[] = [];
@@ -103,7 +128,6 @@ if (mode === 'route' && selectedVenueIds.size > 0) {
     const routes: any[] = [];
 
     if (mode === 'discovery') {
-      // Discovery mode: Return ALL venues from search results
       response.state.toolResults.forEach(result => {
         if (result.success && result.data) {
           if (result.action === 'search_venues' && result.data.venues) {
@@ -114,10 +138,8 @@ if (mode === 'route' && selectedVenueIds.size > 0) {
           }
         }
       });
-
-      console.log(`📊 Discovery mode: Returning ${venues.length} venues, ${events.length} events`);
+      console.log(`📊 Discovery: ${venues.length} venues, ${events.length} events`);
     } else {
-      // Route mode: Return ONLY selected venues
       response.state.toolResults.forEach(result => {
         if (result.success && result.data) {
           if (result.action === 'search_venues' && result.data.venues) {
@@ -131,14 +153,13 @@ if (mode === 'route' && selectedVenueIds.size > 0) {
           }
         }
       });
-
-      console.log(`🗺️ Route mode: Returning ${venues.length} selected venues`);
+      console.log(`🗺️ Route: ${venues.length} selected venues`);
     }
 
     return res.json({
       success: response.success,
       result: response.result,
-      mode,  // Send mode to frontend
+      mode,
       venues,
       events,
       routes,
@@ -158,7 +179,6 @@ if (mode === 'route' && selectedVenueIds.size > 0) {
     });
   }
 });
-
 router.get('/health', (req: Request, res: Response) => {
   res.json({
     status: 'ok',
