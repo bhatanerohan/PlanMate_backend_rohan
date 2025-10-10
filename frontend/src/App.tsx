@@ -65,8 +65,8 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex h-screen w-screen overflow-hidden bg-gray-100">
-        <div className="w-2/5 border-r border-gray-300 bg-white flex flex-col">
+      <div className="flex flex-col md:flex-row h-screen w-screen overflow-hidden bg-gray-100">
+        <div className="w-full md:w-2/5 md:border-r border-gray-300 bg-white flex flex-col">
           <ChatInterface
             messages={messages}
             onNewPlan={handleNewPlan}
@@ -76,7 +76,7 @@ function App() {
           />
         </div>
 
-        <div className="w-3/5 bg-gray-200">
+        <div className="w-full md:w-3/5 bg-gray-200">
           <MapView
             markers={markers}
             routes={routes}
