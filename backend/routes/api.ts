@@ -27,32 +27,75 @@ router.post('/plan', async (req: Request, res: Response) => {
     console.log(`\n📝 Received planning request: "${prompt}"`);
 
     const agent = new ReActAgent(DEFAULT_SAFETY_CONFIG);
-    const response = await agent.execute(prompt);
+const response = await agent.execute(prompt);
 
-    // Parse mode and selected venue IDs from agent's finish action
-    let mode: 'discovery' | 'route' = 'discovery';
-    let selectedVenueIds: Set<string> = new Set();
+// Extract mode and selected venue IDs from agent's finish parameters
+let mode: 'discovery' | 'route' = 'discovery';
+let selectedVenueIds: Set<string> = new Set();
 
-    // Try to extract mode and selected_venue_ids from the last action
-    const lastMessage = response.state.conversationHistory[response.state.conversationHistory.length - 1];
-    if (lastMessage && lastMessage.role === 'assistant') {
-      try {
-        // Parse the assistant's last message for structured data
-        const match = lastMessage.content.match(/Parameters: ({[\s\S]*?})/);
-        if (match) {
-          const params = JSON.parse(match[1]);
-          mode = params.mode || 'discovery';
-          if (params.selected_venue_ids && Array.isArray(params.selected_venue_ids)) {
-            selectedVenueIds = new Set(params.selected_venue_ids);
-          }
+// NEW: Use finish parameters directly from state if available
+if (response.state.finishParameters) {
+  mode = response.state.finishParameters.mode;
+  if (response.state.finishParameters.selected_venue_ids) {
+    selectedVenueIds = new Set(response.state.finishParameters.selected_venue_ids);
+  }
+  console.log(`🎯 Using finish parameters from state: mode=${mode}, venues=${selectedVenueIds.size}`);
+} else {
+  console.log('⚠️  No finish parameters in state, will try fallback parsing');
+  
+  // FALLBACK: Try to extract from last message (backwards compatibility)
+  const lastMessage = response.state.conversationHistory[response.state.conversationHistory.length - 1];
+  if (lastMessage && lastMessage.role === 'assistant') {
+    try {
+      const match = lastMessage.content.match(/Parameters:\s*({[\s\S]*?})/);
+      if (match) {
+        const params = JSON.parse(match[1]);
+        mode = params.mode || mode;
+        if (params.selected_venues && Array.isArray(params.selected_venues)) {
+          selectedVenueIds = new Set(params.selected_venues);
+        } else if (params.selected_venue_ids && Array.isArray(params.selected_venue_ids)) {
+          selectedVenueIds = new Set(params.selected_venue_ids);
         }
-      } catch (e) {
-        console.warn('Could not parse finish parameters, defaulting to discovery mode');
       }
+    } catch (e) {
+      console.warn('Could not parse finish parameters from assistant message');
     }
+  }
+}
 
-    console.log(`🎯 Detected mode: ${mode}`);
-    console.log(`📍 Selected venue IDs: ${Array.from(selectedVenueIds).join(', ') || 'none'}`);
+console.log(`🎯 Detected mode: ${mode}`);
+console.log(`🏢 Selected venue IDs: ${Array.from(selectedVenueIds).join(', ') || 'none'}`);
+
+// NEW: Validate placeIds exist in search results
+if (mode === 'route' && selectedVenueIds.size > 0) {
+  const allPlaceIds = new Set<string>();
+  response.state.toolResults.forEach(result => {
+    if (result.action === 'search_venues' && result.success && result.data?.venues) {
+      result.data.venues.forEach((v: any) => {
+        if (v.placeId) allPlaceIds.add(v.placeId);
+      });
+    }
+  });
+  
+  console.log(`🔍 Total unique placeIds in search results: ${allPlaceIds.size}`);
+  
+  // Check for mismatches
+  const missingPlaceIds: string[] = [];
+  selectedVenueIds.forEach(id => {
+    if (!allPlaceIds.has(id)) {
+      missingPlaceIds.push(id);
+    }
+  });
+  
+  if (missingPlaceIds.length > 0) {
+    console.warn(`⚠️  WARNING: ${missingPlaceIds.length} selected placeIds not found in search results:`);
+    missingPlaceIds.forEach(id => console.warn(`   - ${id}`));
+    console.warn(`   This will cause venues to not appear on the map!`);
+  } else {
+    console.log(`✅ All selected placeIds found in search results`);
+  }
+}
+
 
     // Extract venues based on mode
     const venues: any[] = [];

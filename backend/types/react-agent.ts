@@ -24,6 +24,7 @@ export interface AgentState {
   conversationHistory: ConversationMessage[];
   toolResults: ToolResult[];
   finalResult?: string;
+  finishParameters?: FinishParameters;  // ← NEW: Store finish parameters
   error?: string;
 }
 
@@ -89,9 +90,9 @@ export interface SafetyConfig {
 
 export const DEFAULT_SAFETY_CONFIG: SafetyConfig = {
   maxIterations: 15,             // Allow up to 15 think-act cycles
-  maxTokens: 50000,              // ~$0.15 at GPT-4 prices
+  maxTokens: 150000,              // ~$0.15 at GPT-4 prices
   maxConsecutiveSameActions: 3,  // Don't repeat same action 3x in a row
-  maxSameActionTotal: 6          // Don't call same action >6 times total
+  maxSameActionTotal: 15          // Don't call same action >6 times total
 };
 
 // ============================================================================

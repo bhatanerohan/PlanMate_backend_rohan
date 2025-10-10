@@ -16,17 +16,30 @@ interface ChatInterfaceProps {
  * Smart venue filtering for route queries
  * Extracts venue names mentioned in agent's final result and filters to show only those
  */
+/**
+ * Smart venue filtering for route queries
+ * Extracts venue names mentioned in agent's final result and filters to show only those
+ */
 const filterSelectedVenues = (
   allVenues: Venue[], 
-  agentResult: string
+  agentResult: string,
+  mode?: 'discovery' | 'route'
 ): Venue[] => {
+  // If mode is explicitly discovery, return all venues
+  if (mode === 'discovery') {
+    return allVenues;
+  }
+  
   // If result contains route indicators, filter intelligently
-  const isRouteQuery = /route|plan.*via|from.*to/i.test(agentResult);
+  const isRouteQuery = mode === 'route' || /route|plan.*via|from.*to/i.test(agentResult);
   
   if (!isRouteQuery) {
     // Not a route query - return all venues (discovery mode)
     return allVenues;
   }
+
+  console.log('🎯 Route mode detected, filtering to selected venues...');
+  console.log(`   Total venues available: ${allVenues.length}`);
 
   // Extract venue names that appear in the result
   const selectedVenues = allVenues.filter(venue => {
@@ -35,40 +48,50 @@ const filterSelectedVenues = (
     const venueName = venue.name.toLowerCase();
     const resultLower = agentResult.toLowerCase();
     
-    // Also check for common abbreviations
+    // Check if placeId appears in result (most reliable)
+    if (agentResult.includes(venue.placeId)) {
+      console.log(`   ✅ Found by placeId: ${venue.name} (${venue.placeId})`);
+      return true;
+    }
+    
+    // Check full name
+    if (resultLower.includes(venueName)) {
+      console.log(`   ✅ Found by name: ${venue.name}`);
+      return true;
+    }
+    
+    // Check for common abbreviations
     const abbreviations: Record<string, string[]> = {
       'massachusetts institute of technology': ['mit', 'mit main', 'massachusetts institute'],
       'harvard university': ['harvard', 'harvard main'],
       'museum of fine arts': ['mfa', 'museum of fine arts'],
     };
     
-    // Check full name
-    if (resultLower.includes(venueName)) {
-      return true;
-    }
-    
-    // Check abbreviations
     const venueNameLower = venue.name.toLowerCase();
     for (const [fullName, abbrevs] of Object.entries(abbreviations)) {
       if (venueNameLower.includes(fullName)) {
-        return abbrevs.some(abbrev => resultLower.includes(abbrev));
+        const found = abbrevs.some(abbrev => resultLower.includes(abbrev));
+        if (found) {
+          console.log(`   ✅ Found by abbreviation: ${venue.name}`);
+          return true;
+        }
       }
     }
     
     return false;
   });
 
+  console.log(`   Filtered to ${selectedVenues.length} selected venues`);
+
   // If filtering resulted in venues, use those; otherwise fall back to all
   // This prevents showing an empty map if parsing failed
   if (selectedVenues.length > 0) {
-    console.log(`🎯 Filtered to ${selectedVenues.length} selected venues from ${allVenues.length} total`);
     return selectedVenues;
   }
 
-  console.log('⚠️ Could not identify selected venues, showing all');
+  console.log('⚠️  No venues matched filter, showing all venues as fallback');
   return allVenues;
 };
-
 const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfaceProps) => {
   const [input, setInput] = useState('');
 
@@ -87,7 +110,7 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect }: ChatInterfacePro
       };
 
       // Smart filtering: For route queries, show only venues mentioned in agent's result
-      const filteredVenues = filterSelectedVenues(data.venues, data.result || '');
+      const filteredVenues = filterSelectedVenues(data.venues, data.result || '', data.mode);
       
       // Create markers only from filtered venues
       const markers: MapMarker[] = [
