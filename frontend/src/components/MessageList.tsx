@@ -17,7 +17,7 @@ const MessageList = ({ messages, isLoading, onMarkerSelect }: MessageListProps) 
   }, [messages, isLoading]);
 
   return (
-    <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-transparent">
+    <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-transparent" style={{ WebkitOverflowScrolling: 'touch' }}>
       {messages.map((message) => (
         <MessageBubble 
           key={message.id} 

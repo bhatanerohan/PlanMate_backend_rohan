@@ -350,9 +350,9 @@ const MapView = ({
   };
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full min-h-[40vh] md:min-h-full">
       {/* Location controls */}
-      <div className="absolute top-4 right-4 z-50 bg-white rounded-md shadow-md p-3 flex gap-2 items-center">
+      <div className="absolute top-4 right-4 z-50 bg-white rounded-md shadow-md p-3 flex gap-2 items-center touch-manipulation">
         <input
           className="border px-2 py-1 rounded-md w-48"
           placeholder="Search location or address"
@@ -361,7 +361,7 @@ const MapView = ({
           onKeyDown={(e) => { if (e.key === 'Enter') handleGeocodeSearch(); }}
         />
         <button className="bg-blue-500 text-white px-3 py-1 rounded-md" onClick={handleGeocodeSearch}>Go</button>
-        <button className="bg-gray-100 px-2 py-1 rounded-md" onClick={handleUseMyLocation}>
+        <button className="bg-gray-100 px-3 py-2 rounded-md text-sm" onClick={handleUseMyLocation}>
           {isLocating ? 'Locating...' : 'My location'}
         </button>
       </div>
@@ -449,14 +449,14 @@ const MapView = ({
             >
               {marker.type === 'venue' ? (
                 <div className="relative">
-                  <div className="w-10 h-10 bg-red-500 rounded-full border-3 border-white shadow-lg flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-red-500 rounded-full border-3 border-white shadow-lg flex items-center justify-center text-white font-bold text-sm sm:text-lg">
                     {index + 1}
                   </div>
                   <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-red-500 rotate-45"></div>
                 </div>
               ) : (
                 <div className="relative">
-                  <div className="w-10 h-10 bg-blue-500 rounded-full border-3 border-white shadow-lg flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full border-3 border-white shadow-lg flex items-center justify-center text-white font-bold text-sm sm:text-lg">
                     {index + 1}
                   </div>
                   <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-blue-500 rotate-45"></div>
@@ -468,13 +468,13 @@ const MapView = ({
 
         {/* User location marker if provided */}
         {userLocation && (
-          <Marker
-            longitude={userLocation.lng}
-            latitude={userLocation.lat}
-            anchor="center"
-          >
-            <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-lg animate-pulse"></div>
-          </Marker>
+        <Marker
+          longitude={userLocation.lng}
+          latitude={userLocation.lat}
+          anchor="center"
+        >
+          <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full border-2 border-white shadow-lg animate-pulse"></div>
+        </Marker>
         )}
 
         {/* Popup for selected marker */}
@@ -556,7 +556,7 @@ const PopupContent = ({ marker }: { marker: MapMarker }) => {
   if (marker.type === 'venue') {
     const venue = marker.data as Venue;
     return (
-      <div className="p-2 min-w-[200px]">
+    <div className="p-2 min-w-[160px] sm:min-w-[200px]">
         <h3 className="font-bold text-sm mb-2">{venue.name}</h3>
         <p className="text-xs text-gray-600 mb-1">{venue.address}</p>
         {venue.rating && (
@@ -572,7 +572,7 @@ const PopupContent = ({ marker }: { marker: MapMarker }) => {
   } else {
     const event = marker.data as Event;
     return (
-      <div className="p-2 min-w-[200px]">
+    <div className="p-2 min-w-[160px] sm:min-w-[200px]">
         <h3 className="font-bold text-sm mb-2">{event.name}</h3>
         <p className="text-xs text-gray-600 mb-1">{event.venue.name}</p>
         <p className="text-xs text-gray-700 mb-1">📅 {event.date}</p>
