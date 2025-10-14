@@ -283,11 +283,12 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect, userLocation}: Cha
     const wantsMyLocation = /\bmy location\b|\bfrom my location\b|\bfrom me\b|\bhere\b/i.test(prompt);
 
     const sendRequest = (loc?: Location | undefined) => {
-      const locationToSend = (loc || userLocation) && Number.isFinite((loc || userLocation)!.lat) && Number.isFinite((loc || userLocation)!.lng)
-        ? (loc || userLocation)
-        : undefined;
-      planMutation.mutate({ prompt, userLocation: locationToSend });
-    };
+      const locationToSend = userLocation && Number.isFinite(userLocation.lat) && Number.isFinite(userLocation.lng)
+      ? userLocation
+      : undefined;
+    
+    planMutation.mutate({ prompt, userLocation: locationToSend });
+      };
 
     if (wantsMyLocation && (!userLocation || !Number.isFinite(userLocation.lat) || !Number.isFinite(userLocation.lng))) {
       if (navigator.geolocation) {
@@ -307,7 +308,7 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect, userLocation}: Cha
 
   const examplePrompts = [
     "Find coffee shops near me",
-    "Plan romantic dinner tonight in Boston",
+    "route from my location to starbucks on newbury street to harvard square to fenway park",
     "Plan route from MFA to Harvard via MIT",
     "Find concerts this weekend",
   ];
