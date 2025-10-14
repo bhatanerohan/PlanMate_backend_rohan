@@ -24,8 +24,10 @@ export interface AgentState {
   conversationHistory: ConversationMessage[];
   toolResults: ToolResult[];
   finalResult?: string;
-  finishParameters?: FinishParameters;  // ← NEW: Store finish parameters
+  finishParameters?: FinishParameters;
   error?: string;
+  isInCorrectionMode?: boolean;  // ✅ NEW: Flag to prevent redundant searches during correction
+  correctionAttempts?: number;    // ✅ NEW: Track number of correction attempts
 }
 
 // ============================================================================
@@ -46,9 +48,8 @@ export interface ConversationMessage {
 export type ActionType = 
   | 'search_venues'
   | 'search_events'
-  | 'batch_search_venues'      // ← ADD THIS LINE
-  // | 'calculate_distance'
-  | 'calculate_route'        // ⭐ NEW
+  | 'batch_search_venues'
+  | 'calculate_route'
   | 'validate_availability'
   | 'finish';
 
@@ -58,11 +59,10 @@ export interface AgentAction {
   parameters: Record<string, any>;
 }
 
-// Add this interface for structured finish parameters
 export interface FinishParameters {
   result: string;
   mode: 'discovery' | 'route';
-  selected_venue_ids?: string[];  // placeIds of selected venues
+  selected_venue_ids?: string[];
 }
 
 // ============================================================================
@@ -79,21 +79,40 @@ export interface ToolResult {
 }
 
 // ============================================================================
+// EVALUATION TYPES (NEW!)
+// ============================================================================
+
+export interface EvaluationResult {
+  isValid: boolean;
+  issues: string[];
+  suggestions?: string;
+}
+
+export interface RouteEvaluation extends EvaluationResult {
+  expectedOrder: string[];
+  actualOrder: string[];
+  missingWaypoints: string[];
+  extraWaypoints: string[];
+}
+
+// ============================================================================
 // SAFETY CONFIGURATION
 // ============================================================================
 
 export interface SafetyConfig {
-  maxIterations: number;        // Maximum think-act-observe cycles
-  maxTokens: number;             // Maximum total tokens (prevent cost explosion)
-  maxConsecutiveSameActions: number;  // Prevent action loops
-  maxSameActionTotal: number;    // Limit repeated action types
+  maxIterations: number;
+  maxTokens: number;
+  maxConsecutiveSameActions: number;
+  maxSameActionTotal: number;
+  maxCorrectionAttempts: number;  // ✅ NEW: Maximum correction retry attempts
 }
 
 export const DEFAULT_SAFETY_CONFIG: SafetyConfig = {
-  maxIterations: 15,             // Allow up to 15 think-act cycles
-  maxTokens: 150000,              // ~$0.15 at GPT-4 prices
-  maxConsecutiveSameActions: 3,  // Don't repeat same action 3x in a row
-  maxSameActionTotal: 15          // Don't call same action >6 times total
+  maxIterations: 15,
+  maxTokens: 150000,
+  maxConsecutiveSameActions: 3,
+  maxSameActionTotal: 15,
+  maxCorrectionAttempts: 2  // ✅ NEW: Allow up to 2 correction retries
 };
 
 // ============================================================================

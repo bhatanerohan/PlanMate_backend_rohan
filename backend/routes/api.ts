@@ -213,6 +213,7 @@ if (mode === 'discovery') {
       venues,
       events,
       routes,
+      state: response.state,  // ✅ ADD THIS LINE
       iterations: response.iterations,
       tokensUsed: response.tokensUsed,
       executionTimeMs: response.executionTimeMs,

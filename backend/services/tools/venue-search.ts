@@ -284,16 +284,16 @@ export class VenueSearchTool extends Tool {
   }
 }
 
-// Export singleton instance
-let googlePlacesClient: GooglePlacesClient | null = null;
+// // Export singleton instance
+// let googlePlacesClient: GooglePlacesClient | null = null;
 
-export function getGooglePlacesClient(): GooglePlacesClient {
-  if (!googlePlacesClient) {
-    const apiKey = process.env.GOOGLE_PLACES_API_KEY;
-    if (!apiKey) {
-      throw new Error('GOOGLE_PLACES_API_KEY not found in environment variables');
-    }
-    googlePlacesClient = new GooglePlacesClient(apiKey);
-  }
-  return googlePlacesClient;
-}
+// export function getGooglePlacesClient(): GooglePlacesClient {
+//   if (!googlePlacesClient) {
+//     const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+//     if (!apiKey) {
+//       throw new Error('GOOGLE_PLACES_API_KEY not found in environment variables');
+//     }
+//     googlePlacesClient = new GooglePlacesClient(apiKey);
+//   }
+//   return googlePlacesClient;
+// }

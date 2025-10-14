@@ -205,6 +205,7 @@ const MapView = ({
 
   // Fetch road-following routes when markers change
   useEffect(() => {
+    console.log('🗺️ MapView effect — markers changed', { markersCount: markers.length, isRouteMode });
     const loadRoutes = async () => {
       if (providedRoutes && providedRoutes.length > 0) {
         // Use provided routes if available
@@ -233,6 +234,7 @@ const MapView = ({
 
       try {
         const fetchedRoutes = await fetchMapboxRoutes(markers, mapboxToken);
+        console.log('🗺️ MapView — fetched routes count:', fetchedRoutes.length);
         setRoutes(fetchedRoutes);
       } catch (error) {
         console.error('Failed to fetch routes:', error);
