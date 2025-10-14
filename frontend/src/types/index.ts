@@ -35,13 +35,33 @@ export interface Event {
   ticketsAvailable?: boolean;
 }
 
+// ⭐ NEW: Agent state types
+export interface FinishParameters {
+  result: string;
+  mode: 'discovery' | 'route';
+  selected_venue_ids?: string[];  // Array of placeIds
+}
+
+export interface AgentState {
+  status: string;
+  currentIteration: number;
+  startTime: number;
+  totalTokensUsed: number;
+  conversationHistory: any[];
+  toolResults: any[];
+  finalResult?: string;
+  finishParameters?: FinishParameters;  // ⭐ This is what we need
+  error?: string;
+}
+
 export interface PlanResponse {
   success: boolean;
   result?: string;
-  mode?: 'discovery' | 'route';  // NEW: Add mode field
+  mode?: 'discovery' | 'route';
   venues: Venue[];
   events: Event[];
-  routes?: Route[];  // Add this line (optional because backend might not send it)
+  routes?: Route[];
+  state?: AgentState;  // ⭐ Added state field
   iterations: number;
   tokensUsed: number;
   executionTimeMs: number;

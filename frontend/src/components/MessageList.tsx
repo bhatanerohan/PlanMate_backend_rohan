@@ -16,6 +16,10 @@ const MessageList = ({ messages, isLoading, onMarkerSelect }: MessageListProps) 
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isLoading]);
 
+  useEffect(() => {
+    console.log('💬 MessageList update — messages count:', messages.length, 'isLoading:', isLoading);
+  }, [messages, isLoading]);
+
   return (
     <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-transparent" style={{ WebkitOverflowScrolling: 'touch' }}>
       {messages.map((message) => (
@@ -53,6 +57,9 @@ interface MessageBubbleProps {
 }
 
 const MessageBubble = ({ message, onMarkerSelect }: MessageBubbleProps) => {
+  useEffect(() => {
+    console.log(`🔔 Rendering message ${message.id} of type ${message.type}`);
+  }, [message]);
   if (message.type === 'user') {
     return (
       <div className="flex justify-end">
