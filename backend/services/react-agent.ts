@@ -187,7 +187,7 @@ export class ReActAgent {
 
             if (!evaluation.isValid) {
               // Check max correction attempts
-              if (state.correctionAttempts >= this.config.maxCorrectionAttempts) {
+              if ((state.correctionAttempts ?? 0) >= this.config.maxCorrectionAttempts) {
                 console.log(`⚠️  Max correction attempts (${this.config.maxCorrectionAttempts}) reached, accepting current order`);
                 state.isInCorrectionMode = false;
                 // Proceed with current order (fall through to normal finish)
@@ -195,7 +195,7 @@ export class ReActAgent {
                 console.log('❌ Route order validation failed, asking agent to correct...');
                 
                 // Increment correction attempts
-                state.correctionAttempts++;
+                state.correctionAttempts = (state.correctionAttempts ?? 0) + 1;
                 state.isInCorrectionMode = true;
                 
                 // Generate correction feedback
@@ -537,23 +537,39 @@ finish:
     const toolDefinitions = toolRegistry.getToolDefinitions();
     
     const locationContext = userLocation 
-    ? `**USER LOCATION:** ${userLocation.name} at ${userLocation.lat}, ${userLocation.lng}
+  ? `**USER LOCATION:** ${userLocation.name} at ${userLocation.lat}, ${userLocation.lng}
 
-🎯 CRITICAL: When user mentions their location, NEVER search for it!
+🎯 CRITICAL: User location handling has TWO cases:
 
-User says "my location" / "here" / "me" / "current location" → Use coordinates above directly.
+**CASE 1: Discovery/Search (near me, nearest, etc.)**
+When user says "near me", "nearest", "around me", "close to me", "nearby":
+→ Use near_coordinates parameter: "${userLocation.lat},${userLocation.lng}"
 
-**Route Example:**
-"route from A to my location to B"
-→ batch_search_venues([{query:"A", ...}, {query:"B", ...}])  // Only 2 searches!
-→ finish: selected_venues=["A_placeId", "user-location", "B_placeId"]
+Examples:
+✅ "find coffee near me" → search_venues(query="coffee", near_coordinates="${userLocation.lat},${userLocation.lng}", radius="1 mile")
+✅ "nearest Starbucks" → search_venues(query="Starbucks", near_coordinates="${userLocation.lat},${userLocation.lng}", radius="0.5 miles")
+✅ "gyms around me" → search_venues(query="gyms", near_coordinates="${userLocation.lat},${userLocation.lng}", radius="2 miles")
+
+**CASE 2: Routes (my location as waypoint)**
+When user says "from my location", "from me", "from here":
+→ DON'T search for it! Use coordinates directly as waypoint.
+
+Examples:
+✅ "route from me to MIT" → batch_search_venues([{query:"MIT", ...}])
+   → finish: selected_venues=["user-location", "MIT_placeId"]
+✅ "route from A to my location to B" → batch_search_venues([{query:"A", ...}, {query:"B", ...}])
+   → finish: selected_venues=["A_placeId", "user-location", "B_placeId"]
 
 **DO NOT search for:** "my location", "here", "me", "current location", "where I am"
-These are NOT venue names - they refer to the coordinates provided above!
-` 
-    : `**USER LOCATION:** Not provided.
+These are NOT venue names - they refer to coordinates: ${userLocation.lat}, ${userLocation.lng}
 
-If user mentions "my location", "here", or "me" → ask them to enable location or provide address.
+**DON'T use near_coordinates when user specifies other locations:**
+❌ "coffee in Boston" → search_venues(query="coffee", location="Boston")  // NOT near_coordinates
+❌ "restaurants in Back Bay" → search_venues(query="restaurants", location="Back Bay")  // NOT near_coordinates
+` 
+  : `**USER LOCATION:** Not provided.
+
+If user mentions "near me", "nearest", "my location", "here" → inform them location is not available and suggest using "in [city]" instead.
 `;
 
     const toolDescriptions = toolDefinitions
