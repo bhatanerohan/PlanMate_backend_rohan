@@ -148,7 +148,7 @@ export class VenueSearchTool extends Tool {
         });
       }
 
-      // Format results for the agent
+      // Format results for the agent - INCLUDE ALL FIELDS INCLUDING photoUrl!
       const venues = places.map(place => ({
         name: place.name,
         address: place.address,
@@ -160,12 +160,15 @@ export class VenueSearchTool extends Tool {
         rating: place.rating,
         priceLevel: GooglePlacesClient.formatPriceLevel(place.priceLevel),
         placeId: place.placeId,
-        types: place.types
+        types: place.types,
+        photoUrl: place.photoUrl,         // ← FIX: Include photoUrl!
+        description: place.description,   // ← FIX: Include description!
+        photos: place.photos              // ← FIX: Include photos array!
       }));
 
       const latency = Date.now() - startTime;
 
-      // NO RESULTS: Return clear message (DON'T substitute with different venues!)
+      // NO RESULTS: Return clear message
       if (venues.length === 0) {
         return this.success(
           {
@@ -179,7 +182,7 @@ export class VenueSearchTool extends Tool {
               : `No venues found for "${query}" in ${location}. Try a different search term.`
           },
           {
-            apiCalls: near_coordinates ? 3 : 1, // 3 tiers attempted
+            apiCalls: near_coordinates ? 3 : 1,
             latency,
             source: 'google_places'
           }
@@ -220,20 +223,15 @@ export class VenueSearchTool extends Tool {
 
   /**
    * Get progressive radii for 3-tier search
-   * Tier 1: 1 mile (or requested radius)
-   * Tier 2: 5 miles
-   * Tier 3: City-wide (no radius)
    */
   private getProgressiveRadii(requestedRadius: number): number[] {
-    const oneMile = 1609; // meters
-    const fiveMiles = 8047; // meters
+    const oneMile = 1609;
+    const fiveMiles = 8047;
     
-    // If requested radius is already >= 5 miles, just use it and then city-wide
     if (requestedRadius >= fiveMiles) {
       return [requestedRadius];
     }
     
-    // Otherwise: tier 1 (1 mile or requested) → tier 2 (5 miles)
     return [
       Math.min(requestedRadius, oneMile),
       fiveMiles
@@ -275,25 +273,11 @@ export class VenueSearchTool extends Tool {
     const unit = match[2]?.toLowerCase() || 'miles';
 
     if (unit.startsWith('mi')) {
-      return Math.round(value * 1609.34); // Miles to meters
+      return Math.round(value * 1609.34);
     } else if (unit.startsWith('km')) {
-      return Math.round(value * 1000); // Km to meters
+      return Math.round(value * 1000);
     } else {
-      return Math.round(value); // Already in meters
+      return Math.round(value);
     }
   }
 }
-
-// // Export singleton instance
-// let googlePlacesClient: GooglePlacesClient | null = null;
-
-// export function getGooglePlacesClient(): GooglePlacesClient {
-//   if (!googlePlacesClient) {
-//     const apiKey = process.env.GOOGLE_PLACES_API_KEY;
-//     if (!apiKey) {
-//       throw new Error('GOOGLE_PLACES_API_KEY not found in environment variables');
-//     }
-//     googlePlacesClient = new GooglePlacesClient(apiKey);
-//   }
-//   return googlePlacesClient;
-// }

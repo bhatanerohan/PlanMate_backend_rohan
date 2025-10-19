@@ -37,8 +37,11 @@ export class PlanCreatorAgent {
     try {
       const response = await openai.chat.completions.create({
         model: 'gpt-4o-mini',
-        temperature: 0.3, // Slight creativity for variety
-        messages: [
+        temperature: 0.9,              // ⬆️ Research says 0.8-0.9 for creative tasks
+        frequency_penalty: 0.6,        // ➕ Reduces "bar bar bar" repetition
+        presence_penalty: 0.7,         // ➕ Encourages exploring new categories
+        top_p: 1.0,                    // Keep default when using temperature
+                messages: [
           {
             role: 'system',
             content: this.getSystemPrompt(userLocation)

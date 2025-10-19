@@ -1279,7 +1279,7 @@ finish:
 
 **CASE 1: Discovery/Search (near me, nearest, etc.)**
 When user says "near me", "nearest", "around me", "close to me", "nearby":
-→ Use near_coordinates parameter: "${userLocation.lat},${userLocation.lng}"
+→ Use near_coordinates parameter: "${userLocation.lat},${userLocation.lng}" but not if mentioned near a particular place
 
 Examples:
 ✅ "find coffee near me" → search_venues(query="coffee", near_coordinates="${userLocation.lat},${userLocation.lng}", radius="1 mile")

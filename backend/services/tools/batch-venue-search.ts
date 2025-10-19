@@ -91,7 +91,7 @@ export class BatchVenueSearchTool extends Tool {
             maxResults: search.limit || 10
           });
 
-          // Format results
+          // Format results - INCLUDE ALL FIELDS INCLUDING photoUrl!
           const venues = places.map(place => ({
             name: place.name,
             address: place.address,
@@ -103,7 +103,10 @@ export class BatchVenueSearchTool extends Tool {
             rating: place.rating,
             priceLevel: this.formatPriceLevel(place.priceLevel),
             placeId: place.placeId,
-            types: place.types
+            types: place.types,
+            photoUrl: place.photoUrl,         // ← FIX: Include photoUrl!
+            description: place.description,   // ← FIX: Include description!
+            photos: place.photos              // ← FIX: Include photos array!
           }));
 
           return {

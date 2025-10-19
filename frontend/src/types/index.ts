@@ -12,6 +12,9 @@ export interface Venue {
   priceLevel?: string;
   placeId: string;
   types?: string[];
+  photos?: string[];          // ← ADD
+  description?: string;       // ← ADD
+  photoUrl?: string;          // ← ADD (main photo)
 }
 
 export interface Event {

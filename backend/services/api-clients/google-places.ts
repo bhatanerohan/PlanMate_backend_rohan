@@ -20,6 +20,8 @@ export interface PlaceResult {
   types?: string[];
   placeId: string;
   photos?: string[];
+  description?: string;
+  photoUrl?: string;              // Main photo URL for display
   openingHours?: {
     openNow?: boolean;
     weekdayText?: string[];
@@ -50,7 +52,7 @@ export class GooglePlacesClient {
    */
   async textSearch(params: PlacesSearchParams): Promise<PlaceResult[]> {
     try {
-      console.log(`📍 [Google Places] Text search: "${params.query}"${params.location ? ` in ${params.location}` : ''}`);
+      console.log(`🔍 [Google Places] Text search: "${params.query}"${params.location ? ` in ${params.location}` : ''}`);
 
       const query = params.location 
         ? `${params.query} in ${params.location}`
@@ -96,7 +98,7 @@ export class GooglePlacesClient {
    */
   async nearbySearch(latitude: number, longitude: number, params: Partial<PlacesSearchParams>): Promise<PlaceResult[]> {
     try {
-      console.log(`📍 [Google Places] Nearby search at (${latitude}, ${longitude})`);
+      console.log(`🔍 [Google Places] Nearby search at (${latitude}, ${longitude})`);
 
       const requestParams = {
         location: `${latitude},${longitude}`,
@@ -163,8 +165,46 @@ export class GooglePlacesClient {
 
   /**
    * Format place data from Google API response
+   * UPDATED: Robust photo URL extraction for Option A (photos only)
    */
   private formatPlace(place: any): PlaceResult {
+    // Get main photo URL - handle both direct URLs and photo references
+    let photoUrl: string | undefined;
+    
+    try {
+      if (place.photos && Array.isArray(place.photos) && place.photos.length > 0) {
+        const firstPhoto = place.photos[0];
+        
+        // NEW: Check if Google returned a direct URL (newer API format)
+        if (firstPhoto.getUrl) {
+          // Some APIs return a function
+          photoUrl = firstPhoto.getUrl({ maxWidth: 800, maxHeight: 800 });
+        } else if (typeof firstPhoto === 'string' && firstPhoto.startsWith('http')) {
+          // Direct URL string
+          photoUrl = firstPhoto;
+        } else if (firstPhoto.photo_reference || firstPhoto.photoReference) {
+          // Legacy: Photo reference - construct URL
+          const photoRef = firstPhoto.photo_reference || firstPhoto.photoReference;
+          photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=${photoRef}&key=${this.apiKey}`;
+        }
+      }
+    } catch (err) {
+      console.warn(`⚠️ Failed to extract photo for ${place.name}:`, err);
+    }
+
+    // DEBUG: Log photo extraction result AND raw photo structure
+    if (place.photos && place.photos.length > 0) {
+      console.log(`📸 ${place.name} - RAW PHOTO DATA:`, JSON.stringify(place.photos[0], null, 2));
+    }
+    
+    console.log(`📸 ${place.name}:`, {
+      hasPhotos: !!(place.photos?.length),
+      photoCount: place.photos?.length || 0,
+      photoUrl: photoUrl ? '✅ Generated' : '❌ None',
+      photoUrlType: photoUrl?.includes('googleusercontent') ? 'CDN' : photoUrl?.includes('googleapis') ? 'API' : 'Unknown',
+      fullPhotoUrl: photoUrl?.substring(0, 100)
+    });
+
     return {
       name: place.name || 'Unknown',
       address: place.formatted_address || place.vicinity || 'Address not available',
@@ -177,9 +217,14 @@ export class GooglePlacesClient {
       status: place.business_status || (place.opening_hours?.open_now ? 'Open' : 'Closed'),
       types: place.types || [],
       placeId: place.place_id,
-      photos: place.photos?.map((photo: any) => 
-        `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo.photo_reference}&key=${this.apiKey}`
-      ) || [],
+      photos: place.photos?.map((photo: any) => {
+        const ref = photo.photo_reference || photo.photoReference;
+        return ref && this.apiKey
+          ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${ref}&key=${this.apiKey}`
+          : '';
+      }).filter((url: string) => url !== '') || [],
+      photoUrl,                     // ← Main photo for display
+      description: undefined,       // ← Option A: No descriptions (requires Place Details API)
       openingHours: place.opening_hours ? {
         openNow: place.opening_hours.open_now,
         weekdayText: place.opening_hours.weekday_text,
