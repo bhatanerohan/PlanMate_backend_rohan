@@ -78,6 +78,16 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect, userLocation}: Cha
     mutationFn: (vars: { prompt: string; userLocation?: Location | null }) =>
       planApi.createPlan(vars.prompt, vars.userLocation || undefined),
     onSuccess: (data, variables) => {
+      // SAFETY: Ensure data has required fields
+      if (!data.venues) {
+        console.error('❌ Response missing venues array');
+        data.venues = [];
+      }
+      if (!data.events) {
+        console.error('❌ Response missing events array');
+        data.events = [];
+      }
+
       const agentMessage: Message = {
         id: Date.now().toString(),
         type: 'agent',
@@ -96,9 +106,9 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect, userLocation}: Cha
 
       let markers: MapMarker[] = [];
 
-      // ═══════════════════════════════════════════════════════════════════
+      // ╔═══════════════════════════════════════════════════════════════╗
       // ROUTE MODE: Use backend's selected_venue_ids for ordering
-      // ═══════════════════════════════════════════════════════════════════
+      // ╚═══════════════════════════════════════════════════════════════╝
       if (isRouteQuery && backendSelectedVenues.length > 0) {
         console.log('🗺️ Route mode: Creating ordered markers from backend selected_venue_ids');
         console.log(`   Backend selected: ${backendSelectedVenues.length} waypoints`);
@@ -115,7 +125,7 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect, userLocation}: Cha
         backendSelectedVenues.forEach((placeId, index) => {
           if (placeId === 'user-location') {
             // Skip here, will insert later
-            console.log(`   ⏭️  Position ${index}: user-location (will insert later)`);
+            console.log(`   ⭐️  Position ${index}: user-location (will insert later)`);
             return;
           }
           
@@ -142,9 +152,9 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect, userLocation}: Cha
         console.log(`   Created ${markers.length} ordered markers from ${backendSelectedVenues.length} selected venues`);
         
       } else {
-        // ═══════════════════════════════════════════════════════════════════
+        // ╔═══════════════════════════════════════════════════════════════╗
         // DISCOVERY MODE: Show all venues and events
-        // ═══════════════════════════════════════════════════════════════════
+        // ╚═══════════════════════════════════════════════════════════════╝
         console.log('🔍 Discovery mode: Creating markers from all results');
         
         markers = [
@@ -173,9 +183,9 @@ const ChatInterface = ({ messages, onNewPlan, onMarkerSelect, userLocation}: Cha
         console.log(`   Created ${markers.length} markers (${data.venues.length} venues, ${data.events.length} events)`);
       }
 
-      // ═══════════════════════════════════════════════════════════════════
+      // ╔═══════════════════════════════════════════════════════════════╗
       // INSERT USER LOCATION (if applicable)
-      // ═══════════════════════════════════════════════════════════════════
+      // ╚═══════════════════════════════════════════════════════════════╝
       const originalPrompt = variables.prompt.toLowerCase();
       const mentionsUserLocation = /(my location|here|me|current location|where i am)/i.test(originalPrompt);
       

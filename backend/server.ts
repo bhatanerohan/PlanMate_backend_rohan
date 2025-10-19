@@ -91,13 +91,22 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   });
 });
 
-// Start server
-const server = app.listen(PORT, () => {
+// Start server with error handling for address in use
+let server = app.listen(PORT, () => {
   console.log('\n' + '='.repeat(50));
   console.log(`🚀 PlanMate API Server running on port ${PORT}`);
   console.log(`📍 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`🌐 http://localhost:${PORT}`);
   console.log('='.repeat(50) + '\n');
+});
+
+// Handle listen errors (e.g., EADDRINUSE) so nodemon doesn't crash silently
+server.on('error', (err: any) => {
+  if (err && err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. Please stop the process using it or set a different PORT.`);
+    process.exit(1);
+  }
+  console.error('Server error:', err);
 });
 
 // Graceful shutdown
