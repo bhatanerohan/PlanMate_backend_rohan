@@ -30,7 +30,7 @@ function App() {
     {
       id: '0',
       type: 'system',
-      content: 'Welcome to Explore! 🗺️ Tell me what you\'d like to do and I\'ll help you plan it.',
+      content: 'Welcome to PlanMate! 🗺️ Tell me what you\'d like to do and I\'ll help you plan it.',
       timestamp: Date.now(),
     },
   ]);
