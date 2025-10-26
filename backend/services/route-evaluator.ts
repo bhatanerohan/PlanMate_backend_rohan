@@ -14,7 +14,8 @@ export class RouteEvaluator {
   /**
    * Evaluate route based on query type
    * - Explicit routes: Verify exact order preservation
-   * - Itineraries: Verify categories and walkability
+   * - Itineraries with order hints: Verify sequence matches user intent
+   * - General itineraries: Skip validation (trust Agent 2)
    */
   async evaluateRoute(
     userPrompt: string,
@@ -56,9 +57,25 @@ export class RouteEvaluator {
 
     console.log(`   Readable order: ${readableVenues.join(' → ')}`);
 
-    // ITINERARY MODE: Different validation
+    // ITINERARY MODE: Check if user specified an order
     if (isItinerary) {
-      return this.evaluateItinerary(userPrompt, selectedVenues, placeIdToCategory, readableVenues);
+      const hasExplicitOrder = this.detectExplicitOrder(userPrompt);
+      
+      if (!hasExplicitOrder) {
+        // No explicit order specified → SKIP VALIDATION
+        console.log('   ⏭️  No explicit order in prompt, skipping validation');
+        return {
+          isValid: true,
+          expectedOrder: [],
+          actualOrder: readableVenues,
+          issues: [],
+          missingWaypoints: [],
+          extraWaypoints: []
+        };
+      }
+      
+      // User specified order (e.g., "museum then restaurant") → VALIDATE SEQUENCE
+      return this.evaluateSequence(userPrompt, selectedVenues, placeIdToCategory, readableVenues);
     }
 
     // EXPLICIT ROUTE MODE: Order preservation check
@@ -66,15 +83,42 @@ export class RouteEvaluator {
   }
 
   /**
-   * Evaluate itinerary - check categories and walkability, not exact order
+   * Detect if user specified an explicit order in their prompt
+   * Examples:
+   * - "museum then restaurant" → true
+   * - "visit A and then B" → true
+   * - "plan a day out" → false
+   * - "bar crawl" → false
    */
-  private async evaluateItinerary(
+  private detectExplicitOrder(prompt: string): boolean {
+    const lowerPrompt = prompt.toLowerCase();
+    
+    // Order indicators
+    const orderPatterns = [
+      /then/i,                    // "museum then restaurant"
+      /after/i,                   // "restaurant after museum"
+      /before/i,                  // "museum before lunch"
+      /followed by/i,             // "park followed by cafe"
+      /first.*then/i,             // "first museum then cafe"
+      /start.*end/i,              // "start at A end at B"
+      /begin.*finish/i,           // "begin at museum finish at restaurant"
+      /\d+\.\s+\w+.*\d+\.\s+/,   // "1. museum 2. restaurant" (numbered list)
+    ];
+    
+    return orderPatterns.some(pattern => pattern.test(lowerPrompt));
+  }
+
+  /**
+   * Evaluate sequence for itineraries with order hints
+   * Example: "museum then restaurant" → check museums come before restaurants
+   */
+  private async evaluateSequence(
     userPrompt: string,
     selectedVenues: string[],
     placeIdToCategory: Map<string, string>,
     readableVenues: string[]
   ): Promise<RouteEvaluation> {
-    console.log('   Mode: ITINERARY validation');
+    console.log('   Mode: SEQUENCE validation (checking order hints)');
 
     try {
       // Get categories of selected venues
@@ -85,46 +129,42 @@ export class RouteEvaluator {
       console.log(`   Selected categories: ${selectedCategories.join(', ')}`);
 
       const response = await openai.chat.completions.create({
-        model: 'gpt-4o-mini',
-        temperature: 0,
+        model: 'gpt-5-mini',
+        // temperature: 0,
+        reasoning_effort : "low",
         messages: [
           {
             role: 'system',
-            content: `You are validating an itinerary plan.
+            content: `You are validating if venue ORDER matches user's explicit sequence request.
 
-Check if the selected venues match the user's request:
+User specified an order in their prompt (e.g., "museum then restaurant", "park after cafe").
+Check if the selected venues follow that order.
 
-1. **Category Match**: Do the venue types make sense?
-   - Bar crawl → should have bars/clubs
-   - Food tour → should have restaurants/cafes
-   - Date night → should have bar/restaurant/dessert mix
+Examples:
+- User: "museum then restaurant"
+  Venues: [museum, restaurant] → VALID ✅
+  Venues: [restaurant, museum] → INVALID ❌
 
-2. **Reasonable Count**: 
-   - Too few stops (< 2)?
-   - Too many stops (> 6)?
-
-3. **Logical Sequence** (basic check):
-   - Progression makes sense?
-   - Not completely random?
-
-DO NOT check exact order - itineraries can be flexible.
-DO NOT require specific venue names - categories matter.
+- User: "park followed by cafe followed by restaurant"
+  Venues: [park, cafe, restaurant] → VALID ✅
+  Venues: [cafe, park, restaurant] → INVALID ❌
 
 Return JSON:
 {
   "isValid": true/false,
-  "issues": ["issue1", "issue2"] or [],
-  "suggestions": "what to fix" or ""
+  "issues": ["issue1"] or [],
+  "expectedSequence": ["park", "cafe", "restaurant"],
+  "actualSequence": ["cafe", "park", "restaurant"]
 }`
           },
           {
             role: 'user',
             content: `User request: "${userPrompt}"
 
-Selected venues (${selectedVenues.length}):
+Selected venues:
 ${readableVenues.map((name, i) => `${i + 1}. ${name} (${selectedCategories[i] || 'unknown'})`).join('\n')}
 
-Are these appropriate for the request?`
+Does the order match the user's request?`
           }
         ]
       });
@@ -144,27 +184,27 @@ Are these appropriate for the request?`
       const evaluation = JSON.parse(evaluationJson);
 
       if (evaluation.isValid) {
-        console.log('   ✅ Itinerary validation passed');
+        console.log('   ✅ Sequence validation passed');
       } else {
-        console.log('   ❌ Itinerary validation failed:');
+        console.log('   ❌ Sequence validation failed:');
         evaluation.issues.forEach((issue: string) => console.log(`      - ${issue}`));
       }
 
       return {
         isValid: evaluation.isValid,
-        expectedOrder: [], // Not applicable for itineraries
+        expectedOrder: evaluation.expectedSequence || [],
         actualOrder: readableVenues,
         issues: evaluation.issues || [],
         missingWaypoints: [],
         extraWaypoints: [],
-        suggestions: evaluation.suggestions || ''
+        suggestions: evaluation.isValid ? '' : 'Reorder venues to match the requested sequence'
       };
 
     } catch (error) {
-      console.error('❌ Itinerary evaluation error:', error);
+      console.error('❌ Sequence evaluation error:', error);
       
-      // Fail safe: Accept the itinerary on error
-      console.log('   ⚠️  Evaluation failed, accepting itinerary as-is');
+      // Fail safe: Accept the sequence on error
+      console.log('   ⚠️  Evaluation failed, accepting sequence as-is');
       return {
         isValid: true,
         expectedOrder: [],

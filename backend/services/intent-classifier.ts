@@ -10,15 +10,17 @@ const openai = new OpenAI({
 
 export interface EnhancedClassificationResult {
   isRelevant: boolean;
-  routeTo: 'agent1' | 'agent2' | null;
-  queryType: 'explicit_route' | 'itinerary_planning' | 'discovery' | 'not_relevant';
+  routeTo: 'agent1' | 'agent2' | 'agent4' | null;  // 🆕 Added agent4
+  queryType: 'explicit_route' | 'itinerary_planning' | 'discovery' | 'itinerary_modification' | 'not_relevant';  // 🆕 Added modification
+  // Keep legacy `category` for tests and other modules that expect high-level intent categories
+  category: import('../types/index.js').IntentCategory | 'not_relevant';
   reasoning: string;
   prompt: string;
 }
 
 interface GPTClassificationResponse {
   isRelevant: boolean;
-  routeTo: 'agent1' | 'agent2' | null;
+  routeTo: 'agent1' | 'agent2' | 'agent4' | null;
   queryType: string;
   reasoning: string;
 }
@@ -64,10 +66,15 @@ function detectManipulation(prompt: string): boolean {
 
 /**
  * Enhanced classifier - determines relevance AND routing
+ * Now includes detection for itinerary modifications
  * @param prompt - User input string
+ * @param hasCurrentItinerary - Whether user has an active itinerary to modify
  * @returns Enhanced classification with routing information
  */
-export async function classifyIntent(prompt: string): Promise<EnhancedClassificationResult> {
+export async function classifyIntent(
+  prompt: string, 
+  hasCurrentItinerary: boolean = false
+): Promise<EnhancedClassificationResult> {
   // Check for obvious manipulation first
   if (detectManipulation(prompt)) {
     console.warn(`🚨 Manipulation detected in prompt: "${prompt.substring(0, 100)}..."`);
@@ -75,6 +82,7 @@ export async function classifyIntent(prompt: string): Promise<EnhancedClassifica
       isRelevant: false,
       routeTo: null,
       queryType: 'not_relevant',
+      category: 'not_relevant',
       reasoning: 'Detected manipulation attempt in prompt',
       prompt: prompt
     };
@@ -95,7 +103,24 @@ Analyze the user's query and determine:
 2. What type of query is it?
 3. Which agent should handle it?
 
+=== CONTEXT ===
+User currently has an active itinerary: ${hasCurrentItinerary ? 'YES' : 'NO'}
+
 === QUERY TYPES & ROUTING ===
+
+**Type: itinerary_modification** (🆕 NEW - Phase 1: Single venue only)
+User wants to modify their existing itinerary.
+Keywords: "add", "remove", "delete", "replace", "change", "swap"
+Examples:
+- "add a coffee shop after the museum"
+- "remove the second stop"
+- "replace the bar with a cafe"
+- "change the restaurant to a pizza place"
+
+⚠️ CRITICAL: 
+- ONLY classify as "itinerary_modification" if hasCurrentItinerary is TRUE
+- If hasCurrentItinerary is FALSE, treat "add X" as new itinerary_planning
+→ Route to: agent4
 
 **Type: explicit_route**
 User specifies exact venues/locations to visit in order.
@@ -145,8 +170,8 @@ Examples:
 You MUST respond with ONLY valid JSON:
 {
   "isRelevant": true or false,
-  "routeTo": "agent1" or "agent2" or null,
-  "queryType": "explicit_route" or "itinerary_planning" or "discovery" or "not_relevant",
+  "routeTo": "agent1" or "agent2" or "agent4" or null,
+  "queryType": "explicit_route" or "itinerary_planning" or "discovery" or "itinerary_modification" or "not_relevant",
   "reasoning": "brief explanation in one sentence"
 }
 
@@ -188,27 +213,60 @@ No other text. Just JSON.`
     }
 
     // Validate routeTo values
-    if (result.routeTo && !['agent1', 'agent2'].includes(result.routeTo)) {
-      throw new Error('Invalid classification: routeTo must be "agent1" or "agent2"');
+    if (result.routeTo && !['agent1', 'agent2', 'agent4'].includes(result.routeTo)) {
+      throw new Error('Invalid classification: routeTo must be "agent1", "agent2", or "agent4"');
     }
 
     // Validate queryType values
-    const validQueryTypes = ['explicit_route', 'itinerary_planning', 'discovery', 'not_relevant'];
+    const validQueryTypes = ['explicit_route', 'itinerary_planning', 'discovery', 'itinerary_modification', 'not_relevant'];
     if (!validQueryTypes.includes(result.queryType)) {
       throw new Error('Invalid classification: queryType must be one of: ' + validQueryTypes.join(', '));
+    }
+
+    // 🆕 SAFETY CHECK: Don't allow modification without current itinerary
+    if (result.queryType === 'itinerary_modification' && !hasCurrentItinerary) {
+      console.warn('⚠️ Modification query without current itinerary, treating as new planning');
+      // Reclassify as itinerary_planning
+      result.queryType = 'itinerary_planning';
+      result.routeTo = 'agent1';
+      result.reasoning = 'No current itinerary to modify, creating new one';
     }
     
     console.log('🎯 Classification result:', {
       isRelevant: result.isRelevant,
       routeTo: result.routeTo,
       queryType: result.queryType,
-      reasoning: result.reasoning
+      reasoning: result.reasoning,
+      hasCurrentItinerary
     });
+
+    // Map `queryType` -> high-level `category` for backward compatibility with tests
+    let category: import('../types/index.js').IntentCategory | 'not_relevant' = 'not_relevant';
+    if (result.isRelevant) {
+      switch (result.queryType) {
+        case 'explicit_route':
+          category = 'venue_search';
+          break;
+        case 'itinerary_planning':
+          category = 'quick_itinerary';
+          break;
+        case 'discovery':
+          category = 'activity_event';
+          break;
+        case 'itinerary_modification':
+          // treat modifications as quick_itinerary changes for now
+          category = 'quick_itinerary';
+          break;
+        default:
+          category = 'not_relevant';
+      }
+    }
 
     return {
       isRelevant: result.isRelevant,
       routeTo: result.routeTo,
       queryType: result.queryType as any,
+      category,
       reasoning: result.reasoning.trim(),
       prompt: prompt
     };

@@ -1,0 +1,318 @@
+User Prompt: Find 4 venues in east manhattan: bar, bar, bar, club. These should be close together for a bar_crawl. Create an itinerary with these venues in a logical walking route.
+
+[2025-10-21T15:06:31.806Z] LOG 
+================================================================================
+[2025-10-21T15:06:31.808Z] LOG 🔄 ITERATION 1
+[2025-10-21T15:06:31.808Z] LOG ================================================================================
+[2025-10-21T15:06:31.809Z] LOG 
+💭 THINKING...
+[2025-10-21T15:06:34.735Z] LOG    Reasoning: User requested to find 4 venues (3 bars and 1 club) in East Manhattan for a bar crawl. I will search for these venues and ensure they are close together for a logical walking route.
+[2025-10-21T15:06:34.739Z] LOG    Action: batch_search_venues
+[2025-10-21T15:06:34.741Z] LOG    Parameters: {
+  "searches": [
+    {
+      "query": "bar",
+      "location": "East Manhattan",
+      "limit": 5
+    },
+    {
+      "query": "bar",
+      "location": "East Manhattan",
+      "limit": 5
+    },
+    {
+      "query": "bar",
+      "location": "East Manhattan",
+      "limit": 5
+    },
+    {
+      "query": "club",
+      "location": "East Manhattan",
+      "limit": 5
+    }
+  ]
+}
+[2025-10-21T15:06:34.743Z] LOG 
+⚡ ACTING...
+[2025-10-21T15:06:34.745Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-21T15:06:34.747Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-21T15:06:34.750Z] LOG    1. Searching "bar" in "East Manhattan"
+[2025-10-21T15:06:34.751Z] LOG 🔍 [Google Places] Text search: "bar" in East Manhattan
+[2025-10-21T15:06:34.752Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "bar in East Manhattan",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-21T15:06:34.757Z] LOG    2. Searching "bar" in "East Manhattan"
+[2025-10-21T15:06:34.758Z] LOG 🔍 [Google Places] Text search: "bar" in East Manhattan
+[2025-10-21T15:06:34.759Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "bar in East Manhattan",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-21T15:06:34.762Z] LOG    3. Searching "bar" in "East Manhattan"
+[2025-10-21T15:06:34.762Z] LOG 🔍 [Google Places] Text search: "bar" in East Manhattan
+[2025-10-21T15:06:34.764Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "bar in East Manhattan",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-21T15:06:34.767Z] LOG    4. Searching "club" in "East Manhattan"
+[2025-10-21T15:06:34.768Z] LOG 🔍 [Google Places] Text search: "club" in East Manhattan
+[2025-10-21T15:06:34.768Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "club in East Manhattan",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-21T15:06:35.581Z] LOG 📸 The Penrose Bar - RAW PHOTO DATA: {
+  "height": 6042,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108319541357267399159\">The Penrose Bar</a>"
+  ],
+  "photo_reference": "AciIO2fJb1YMPUlPc3-loXSRpG9UbrBjvts8O8I0faMqjz4SUVG4K71jp3kSqT8GHLg3aMVLxffcTFgGeGt0RUU68mDnJ93RUSbrdS3KF42Sgo9R5ae81mMzZxAHXwY1EBn2Ype4HL2aKwANYpINm0c3xy6v-QQ9kKSDjN85O1I6A4Mdpk9iKZtY9WSCRqFNPwtnUHiMDGR1D4T_BSVjh2H25Sn_KVuq5exh2yTSgCZfAcIptn499GphVcXClkmsH4gd-LYs3CTUNAUTxrlqqOkUHrGq6SYV0NyM8SPXrg2mu3flElcaIMw",
+  "width": 9063
+}
+[2025-10-21T15:06:35.583Z] LOG 📸 The Penrose Bar: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fJb1YMPUlPc3-loX"}
+[2025-10-21T15:06:35.585Z] LOG 📸 Avoca - RAW PHOTO DATA: {
+  "height": 838,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/103731731171828355411\">Avoca</a>"
+  ],
+  "photo_reference": "AciIO2dYmNtkbaoYfnLERv7oeW7SwspKCqEoqzwRjUg6y3NsgL_O0njHeP0s7IrN7-iiI6Y8QNSzm6M0d22QGJSGa9d7Fib1lKQq4d6KzfJBSmzzAYdEQTce6QDJcmnz3wcG3hjrYSBTREaKUSClQg83sT60p93dma21T4MErytv2gZ1OUB7tDPX3YI1z50tW74NJTZUDauu9LnQ5OdtwwEKmkRm1rcv08apdGNd3j-bkrN8oz-rtCMO7HMK0brAVVcBFiGu4Qf8u_iOG7EVLqdpIsjNyzj02HZlMk7r2HIG8_nKfOHdICM",
+  "width": 1125
+}
+[2025-10-21T15:06:35.586Z] LOG 📸 Avoca: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dYmNtkbaoYfnLERv"}
+[2025-10-21T15:06:35.589Z] LOG 📸 Sefton - RAW PHOTO DATA: {
+  "height": 2252,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108355018410652883108\">Edward Yoo</a>"
+  ],
+  "photo_reference": "AciIO2fOf-Z4MtopW4hipIB6NnvSFNjvlBgnvo3kS8GfqQSdDNuZCWSwoc7gdwDZu_E2Q0ejG0bXJBBplAi7IlTL6u5CaxuD6xivqSp-buFZlYE5nQN-GxFhV7Ge4I-G88bQkjPsO8d14nsQsqJHxOzrAHO5N5W4xSRYpmQiQ3GvGy-FSfPQpu7zdCPvUUkwablPwWePe-0-D3V8rwFug2nSEgGigjsuUMFUNFdNiv6Brm3qdJcJFtEvEvjKd1IaIgm5cooRMIlVqV1PtuPv1Wpj1upsCkmLsPnIW8stviQyA0-c4qNfEaXDLGzutY8Y7jPGIZxBTcE4CTvVhOU8h3T92nfzkoVuJhEvrizyO3WOAjOMYcscef3rgQpTiFsRVc0OELeosRveIUMIDPw3eecXfDKEMWoAL3-0vZBN7c8gLsETyRxT1d9U8KpKYei-dwddYIuqXo438ojgtg_Gn_mr2jpP8qdut1Cz2lLJgsgv8dl7U_l9ZeSxHMP4UHOWvaZX135D4ksmj76VeBS5d8Z5a8Ycc0gf85rN_XVyYpZV_L57K6Pq-w5_GBnUI4MW0Z7VfOXHv64T",
+  "width": 4000
+}
+[2025-10-21T15:06:35.590Z] LOG 📸 Sefton: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fOf-Z4MtopW4hipI"}
+[2025-10-21T15:06:35.591Z] LOG 📸 Hendrickson's - RAW PHOTO DATA: {
+  "height": 3072,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/109942680108363517983\">Fred Scott</a>"
+  ],
+  "photo_reference": "AciIO2f6MLgyR8cvBG1aJYMTZ4IzxHnZrHzcLHf3mJwmZBrwF33fYlfhV1bOYrkw66doMOYVdYTVBS1Stbo7CnpR5hiJLZErj7bIdQ6UWOlDzNZZLdZxuUDNQ6qsgmXINo2sy7L3Q3EzIDyg_X9czbzjoFLazsqQ5mxvXFL5KUJ5XWEE7GnhFBl2Q4wD8bRicM178km5qyLPWv8OWrvRPJwi7N5oyAnjw5s3Wl8N2Sa8za6pwcWPULYhdG1EG__xU0GKOV4MSKBNuIui3OXAQSf30gP3jpS724rlxVLq_rWgaeEwpGxNhx-3_nzMtC2jxyO2wPExGTtUu7cJiLvXuHM8vai38_aIIe4dGN6SrdXJXYCM2TFjF2CgDDPdpyDF38CpgR4G2HWBY6Z4Ab2smI-cl97RK5TtZV451eC-M7CQqxdKn-fnj2tGuPeucumYEmmzEa_0yyf3k-1emBOBfQJaJMzm9ZbulcMflHahMYGQk3uOoSOpOoJz5DgTVx_avPNwCpbu_0PE-JGcSepvIGbYcUMg2AxVonkI4ueBMUntUt-vDBdoeUe_8ri9ryS1b4XC3z3nDsIepG1z2A",
+  "width": 4080
+}
+[2025-10-21T15:06:35.592Z] LOG 📸 Hendrickson's: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2f6MLgyR8cvBG1aJY"}
+[2025-10-21T15:06:35.593Z] LOG 📸 Bedford Falls NYC - RAW PHOTO DATA: {
+  "height": 2448,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/116693989123662557910\">Maurizio Tentellini</a>"
+  ],
+  "photo_reference": "AciIO2eNqoGHHGwtpmjIQycmvZfaNce2M-kp26lHMSD_wFCQsdmxMaI1kYiuH2x_sPGLGV4jHOlMUfzLUadrIJKD6R15jp0PosdhX4eMHW3TO-ucLRPnfp_KiVVhrgiuufSWHEqUJU7mqM4KNaEv1vcQAwCeu_L-BiIsRXTV-ad3xuyWipNd8n0Ne_rOchD0OLxzOLQH5Gmjf2wlKQEeOHq3JjtcE2G2rSdOCXN5T1JrywGuftrbdg5xDDacOtlh8ODqGYxBjVjEndl0H23FFmMbA-4EkcZewwVvSEYBLikohJzKamkHkce0xTe_odtZ5UzM4LFVaeN2foyEe6dHSXCEB-AYZsOJ72DJ1k9tbJxtVJXSHWj594Y4NqMH2lBwPlSeM41Vc7ZnjcC7w3RFR8ApfdL78Vvgqd78EpKA7Pt4S51x0mEhgwRwpgoG1bePxsCiWyR2tVaLjQCr_Ct_GJGO4qDC2_biKoFiwbFQZiPOqBkpmKq440zyLfTOY_S2wOU6XV35Lb070k3Xjbz3paJEDrd0jOYW2WKHH3TECmHLpJKTBctTSmc6efNHRcc-CFy94d47Yh80_7abPA",
+  "width": 3264
+}
+[2025-10-21T15:06:35.594Z] LOG 📸 Bedford Falls NYC: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2eNqoGHHGwtpmjIQy"}
+[2025-10-21T15:06:35.595Z] LOG ✅ Found 5 places
+[2025-10-21T15:06:35.598Z] LOG 📸 The Penrose Bar - RAW PHOTO DATA: {
+  "height": 6042,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108319541357267399159\">The Penrose Bar</a>"
+  ],
+  "photo_reference": "AciIO2ev724UcYfem6fGUBHfUR2QA2RVOoEZDOb3PegDgAMElWh_692LqTK2pinzpjpl-1gQUba42VUZvvjC2hB6DVwbLq2x9ecemURGBdyhM3W_tT9hls7t7mlF2J5gqAS5dGAWn7_L8FB-eJqIhGNsI2asEf7CKk3lr5P6ptvHGph93CP-MYA1Q8ksFj0i9_TtTK_fC-_C3khxidWUPjoB1UG23VucWdsT-arvT3mi0d_uRARtVxKdsW_QoIBw3gIfXwXznrnJT2xdB6W25IhSEui00y_l8tjJrk9mGsXQPNjj49r2tyI",
+  "width": 9063
+}
+[2025-10-21T15:06:35.599Z] LOG 📸 The Penrose Bar: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2ev724UcYfem6fGUB"}
+[2025-10-21T15:06:35.601Z] LOG 📸 Avoca - RAW PHOTO DATA: {
+  "height": 838,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/103731731171828355411\">Avoca</a>"
+  ],
+  "photo_reference": "AciIO2cxinSdaGm5ldYBn1LjIXEyL6VR5i6tRM3qYHIEOTO_hSOL8zo-qfAeCIQzai9ovmHDTlAIoUwxeWqvAO03UQPZMxXk3CZFtjD0Mo1LEqNy4ifNmZ4xmfPpXuCSuqAY7VEU-U3HH2bcSffn2Z4MY9uilv65nDDbHP4cZs6M1bTbt0YxzTPMxN2LRN92QlBZGgKN5v5rPI0-3WoL12dRb2M_3SEtRyVNvXgfHkifHKEgIYhWFFCkYFp1iDpWAMkkDAkTDvIlB28tCeZ9Qc0I_629Cif_hocW3PDOQcWTiAnp_tORiAE",
+  "width": 1125
+}
+[2025-10-21T15:06:35.602Z] LOG 📸 Avoca: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2cxinSdaGm5ldYBn1"}
+[2025-10-21T15:06:35.603Z] LOG 📸 Sefton - RAW PHOTO DATA: {
+  "height": 2252,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108355018410652883108\">Edward Yoo</a>"
+  ],
+  "photo_reference": "AciIO2fMGTZpwU6RSxT9983PaiJzSKUvs-zynxrpEH0JYPOE_KLtuVJmSjBjsNaj9ZfHiIHAHMb_NGSUqMSwOHHZECSGqWj2Mgb1AQhnoZ7iQHsnBwpW4GO6C10lavh9xbPeV2S8ltddI0lryBtknIJ8ak3LGCHPSFYbSoeTDCttz1mvI3f3_xrYDFQfWHwY75Gsgu-0uFd8m9-HDApr61RMgg4qHUFRDKm3KXaku1D5sb_wUc7Bg7GuGabN4vDzK4KS0g6xu3woNCh6Fz28JblyWUCDyFfeQ1ziVA7kysmCL7iPuYKW66uzgV19ytdBQM9xls1fS6fKKAPfkcadyMx9o803dlyZbiPo9_DiqSGTQGabBrQLXF3MtQsENxdpnQwNvKGSdd1Nd43wYIuh7q__sALyTFf66xY4cufTnCrHewlJmt_h9nI6-BVC7mCPjbBjy1NjhAFiEdz0GDwsNZbP7WcBSeFhjipb_wW3iWSEZ-jDLNnCByRCkOBvr-O1MJQt5IrXBoezjB7fAaEIC5mi6hIOEhXpeCPci4eSefT5mP10S41Cm-XB9QMXP6VLfdziOfibjDB4",
+  "width": 4000
+}
+[2025-10-21T15:06:35.604Z] LOG 📸 Sefton: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fMGTZpwU6RSxT998"}
+[2025-10-21T15:06:35.605Z] LOG 📸 Hendrickson's - RAW PHOTO DATA: {
+  "height": 3072,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/109942680108363517983\">Fred Scott</a>"
+  ],
+  "photo_reference": "AciIO2dDALut2JnnCh336NOGkKHqOXWRVDb97EJa2VEEmEmTmvkSG5LL8SlloC3cxs8jBxgiAfHrSkKVlTbbzlGGV78KIkhInxhEJEQ4t3hCHd-v58Nrj9VYUWKMcrQb-us95rnlni_2iCcws0DLinz5F_IAu6-FEhsmJhJzhXj7kQ_OXZsIRJ1E9if19rWAZtHA3oFN8DXka2X2gpdKmEnR-zJQmO6tPPh--5NlYfX6eA71dxU4ZIENGGMzP04l1Ebvncs5AEC60nEnh3A8JLG4XGxgBhzPIJhMrtoR0XTloRfobaDGHjYTKtqyoZaC3DtGTDaVv348nBS_DoQFwLQoQvHK41KhaA8BwAysPBQUETED3IzqRI1tKnUxztWc2fK4ur288XF_JLEf4r_OMX-Vwl03k70oopI2K9JtvGQhO74KJgMruQ_9vykOR-rrU7t85QoS6gpCyA0DpiIlZh9SgayD_nqAPjQOlhIam8WNp0WF82FK6Sh3dwnU-GY7-R-NpTeumRVakyP_rgY6NoB14WdHImrD-qRpje2Z9poJbHKKd2IXoxzpwYSJ9v8zVL2n0UEHKmB5JPmfmg",
+  "width": 4080
+}
+[2025-10-21T15:06:35.606Z] LOG 📸 Hendrickson's: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dDALut2JnnCh336N"}
+[2025-10-21T15:06:35.608Z] LOG 📸 Bedford Falls NYC - RAW PHOTO DATA: {
+  "height": 2448,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/116693989123662557910\">Maurizio Tentellini</a>"
+  ],
+  "photo_reference": "AciIO2fuJ4RBG6B95bvkgnGSX0Yd8crFhKSIoratacglAoqL4VtFyQYF8kXD8TwMwmVCVXLvtsF4wLpEMISbZdg0gdAMFlfSu779n5ty2mTeUeWBAC5k-CqQ0-xY1ZMsDXe1Aqo6sPKqPZam46CGsvlZ5PZUrhtyzfgNt2cqCNNpbxA7jOKBG5R7tMYXeKns6FlXZmHoAHFb_wSnF_gJXbzE-m1-mJC8kQifJ-5oFS7LaUVkXv97VOEAfpo3XIs5fLmTNxwuqpMBkZSJCPBdrq3a1DEkLQrkXm8e914XAMi1Yis0iH6k64q347iWSrnKEWLKwm_t2kPGL7FNJ2RY6CExUClvrKpFo4xk7MriWiiER3-OY7WoWb0gPelIxUM1LkmgRWc6fsUC56wHILjeoNr1U52QO4GPUT7EmbldUrL3toUprO-EMIGoVxElap0yWpg56mCHYDE8GkS7lUm5Vb11YT35knH1i3ggf8g0rkdEGKpHocaujmxY2aAVaYCfvBaR0wD_vDCIm2MHHl7JGrbJZUA4fhhg9KORgJQ_qqlpNMfnVWVsE5RdoltvyoNtGU-e75I9x7llegIDfw",
+  "width": 3264
+}
+[2025-10-21T15:06:35.609Z] LOG 📸 Bedford Falls NYC: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fuJ4RBG6B95bvkgn"}
+[2025-10-21T15:06:35.610Z] LOG ✅ Found 5 places
+[2025-10-21T15:06:35.613Z] LOG 📸 The Delancey Rooftop - RAW PHOTO DATA: {
+  "height": 4032,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/105358431584141910808\">Natalie Cheng</a>"
+  ],
+  "photo_reference": "AciIO2eO1ln2FKVka9SPW8D7V0dtyZp8CJD8MZXLXMEaNQM3y9Odvub1KZS_C37UkW1tN2E0GMKMUuUvWl5fx5f_3YTEjBMeW-HvjC0dXoMOcEngAzyjK5kilNKbDmZVSXQMvhxiUX458C8UCha-esWXK8pLvDjzS3968HncJk1divdCpjWuekO55gLhAy76D9WSJ-JALbEkg9hQ1ZpJxOjf4OTapJuAKR4H6bl9um8UkGSeVVyvaQZoGU_7qSxRdFh9VZuTIgQt7h-AUtoHYQpOjtLuBZETHOwAS6x8-1p5advdEwLAvKL0FYWt2KhNQ26KN5ArQEvnUHaqxddGuSMf4JHDp44TcHP453ZZSKOe_A-cD10QEVAVb6mY8WD-M0ANEXvMl4TXgMz0pG0JdWQLJ2ThnA9aAge9wfpehJHihDM3NQjwkWj5WDIocp1NmS5cCYhWT5fzkz2AQLOfvjp1rmDlnHURdUibEIpcDd06j-uwfX18p-Z-rmccwBZqmPeOQZPooZL62mhdSqjnn9I_kNf1gvF-I0QtHT8_I9iq0IzJxpMSP40vxqKgt9vK_hbBJvFNXHRou5p0HDtBhS5rc6Xvbchz2Q",
+  "width": 3024
+}
+[2025-10-21T15:06:35.616Z] LOG 📸 The Delancey Rooftop: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2eO1ln2FKVka9SPW8"}
+[2025-10-21T15:06:35.617Z] LOG 📸 Outer Heaven - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/117594955021405181955\">Caleb Ganzer</a>"
+  ],
+  "photo_reference": "AciIO2dBcbgUtVqVJFRDPeChrhjOIPrGacCW-ZslRp-CRyKfMK9Pmp0vW8UI7c1-XkoiuAj2rMEVu6cR7oq6QI33TiT1e_3lfUjg0HcnyQYpUKTuf1fWWo-2Z7DsnATNjSQ-7aDRmazgyqNoP2ZnHj--AgA6n1K7kYuhjiRhzizBA4QHLINO31oOuz-4jcMfZjrKflrHnxA10qdPr39CkmoQoOQfOf2uWVBf-He-U-rdpK6_2o-KzNrIpfTa5JZn-JqLBzS2aifOCEWGInumPbLux5ij9kpqfmOyk5kFuCNKRsxQRBcTB6STUew6fXBaWnytWYcI2EhV032avHHBpKVpQkvHy_QViUcqPvPgDI5Qp2lPu9bc1YiZucVvcgD4SVcfJCKv8Dky0cQ9AYJpdtA31LjoAtK9QCr7IXWiPwPd2Z9HGBrO4iRyUQic9EqbOAEeduOhVF6mqurw9u6Rn9wjkWteZ1kgk7lVkxHUFbvnCarxtdWT8fou7U4FdgFRGO89vJOZOn0BiuugR4SeHJcRxh5QEyvA9NdlsDbGSae88E1uShcITlSfTmK2SZxofuXdwf95IOB7",
+  "width": 4032
+}
+[2025-10-21T15:06:35.619Z] LOG 📸 Outer Heaven: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dBcbgUtVqVJFRDPe"}
+[2025-10-21T15:06:35.620Z] LOG 📸 Sapphire 60 - RAW PHOTO DATA: {
+  "height": 3840,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/116443755949116520474\">Sapphire New York</a>"
+  ],
+  "photo_reference": "AciIO2dcbc5EZNlFprC05bwUNHEfRLk75v5cVhLoO6ypV_-DuDP4oXW-v4zHXtuhzRIWQ0yVl3oAD-ClkECSX54jm_asm5POSMGIW9w31yRXy_S413huH3FU2zcxbLYtLc7MlMGnZlWkcsbMjiIJEgBSQF4JF6iCJR71Y3fWBwC0gagqrrRSOEbDzq5oyDMlrX_HZBbSLq8eBaZPl-IG5ubqySXmFhl4x_6yp7HQg0g_Y5bBCiv-NDGTn3-nUV2vZepCXgzd4p_WGB5Nr3pK-yTscenm4zP_FHiq27tyZkm70IRrRkKPAXQ",
+  "width": 5760
+}
+[2025-10-21T15:06:35.621Z] LOG 📸 Sapphire 60: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dcbc5EZNlFprC05b"}
+[2025-10-21T15:06:35.623Z] LOG 📸 Rumpus Room - RAW PHOTO DATA: {
+  "height": 400,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/102376734211355618789\">Rumpus Room bar</a>"
+  ],
+  "photo_reference": "AciIO2eXBrbWgbbVcJ-nF1UryEd9gZ_LTqx4pRhmKBZFDkwZ-Lna3RJFbr5t8DXFEgAqHK5EztVw0ij0GLxOZ7HSagxFHehF5K0hWkUdOHpVxCLMzGzBy-YtWAj2RzDIKPnc_KlYIkdL_ka4L8EZ876GgVqnMaUZb-r9esxsvyfPTZ5ozAI_vkiC2aKKGmzA1HCwhM4OJeTDkQRAWWORFv7gMys_mRvQQj0wQEoSyafoJPvyf8EoE2Acsu-kI2V2Vrn77gnIlD6B0NAh2lQQGSPQAM5OY6JVvVJqxPig9hVWKKME3XdVLH4",
+  "width": 640
+}
+[2025-10-21T15:06:35.624Z] LOG 📸 Rumpus Room: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2eXBrbWgbbVcJ-nF1"}
+[2025-10-21T15:06:35.625Z] LOG 📸 East Side Club - RAW PHOTO DATA: {
+  "height": 2048,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/105885804012820864410\">Damian Lewd</a>"
+  ],
+  "photo_reference": "AciIO2eFZkuRQAQ3qMXBMcky276k7Uf45gUYaMWQYyEkIcn0If5NPZCt9oAyWYXk3e4L6Ug3_4gxHq1jz-PU1xpjW8z1uLREuCQnjeQYFuC61WjWX11Mm1Bzx_kHMgAaIBLHEg3Riz8j_5yIJqkWrKMFf4o3ygYVGj0J7udF0SqEc46rsv1yFSuE4EuRE66XygwUGYjq5jIrZdlUxfusVoe40e2r5dwrJ2ocUe_nqWrXOBW8Lbij_uBBtgBozbyvIVrs1hm6W5uc5S8rcU0ZkcgpVmwubhzZykTxUr-9h5790cl7k5krvBnYELJeeFPVSRBKMierRLu_DN2ESSu2H5BplPGg2-1gCkg85eLB6E-p0C3XCotnLkJ8ZBVAm8zLt-rwZycKkY6CyzDhd88fkDLOF6jd8H1KgRA00JoA7U__-QaWLVmWmwiJpFw6_jf5QtsxtcB007_Jiiiq1CLR9msP1PXkyu92T4tAJ5W2mqfflfPRE8TQgTcq7At4z2OrChynMtuNOGrREeGCCgZDpvZRQNpKxYyteY5Zzh1hyxY-4cZzORq4A7ANCJZ1QelG846qM7DqgDz0XkgdfQ",
+  "width": 1536
+}
+[2025-10-21T15:06:35.626Z] LOG 📸 East Side Club: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2eFZkuRQAQ3qMXBMc"}
+[2025-10-21T15:06:35.628Z] LOG ✅ Found 5 places
+[2025-10-21T15:06:35.659Z] LOG 📸 The Penrose Bar - RAW PHOTO DATA: {
+  "height": 6042,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108319541357267399159\">The Penrose Bar</a>"
+  ],
+  "photo_reference": "AciIO2fimYAW52VElf5yy7t_pNi3ZwLZ_4g1qnaYUAoPLmkI-46qxhMtKGUXjVTkWlNjSgw6qzVIHWGvh0F278WUUQgAw2XqP7SkSr1cMYDgJ69A1vHkvYzXMl6bkyjYYAlroCRRs_H67x4lWusx-rvMq2GwJyats3AeNZeKERUdYq-NpJHvzMAYpHGZW8nEqtmGB13lNwXGE2ZqEButwIUuVpryDNmYmTrym8Cxxv_H8RRvYlwqeVwSMYMNS6VUnFyy-KxdhSb2Ygb1-43tQ0l81J5xkJXMy-4fzitnttI8t-irrsaYI7Q",
+  "width": 9063
+}
+[2025-10-21T15:06:35.663Z] LOG 📸 The Penrose Bar: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fimYAW52VElf5yy7"}
+[2025-10-21T15:06:35.666Z] LOG 📸 Avoca - RAW PHOTO DATA: {
+  "height": 838,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/103731731171828355411\">Avoca</a>"
+  ],
+  "photo_reference": "AciIO2fKk9t3XyWaJU2N-jizRBeLKEGsL__urBmEFP79jNvt9mbA-MJvRvPqw2gSjuCYhqItxGeB9sR6rRKOSQx4MmAxWzpZedElsXKsssJm-UUo_F5YyG8QznkUslY1_0LSWBNvk-d-kKnSP7GGPVxZxG0_64bX8AmOi38ca9GoHMFd9wPuEOaAmJpIjvNoMEhZm7a2uG53JhpbymJH7OMRORSc8_reYmhvYgTI1NciowzikrCl5N3l1BBVxPgye--BVnsRP0dNrBo_Zar2aelSuPzPaGhI9zMpT0_PS8xuq3lYSAibFR0",
+  "width": 1125
+}
+[2025-10-21T15:06:35.669Z] LOG 📸 Avoca: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fKk9t3XyWaJU2N-j"}
+[2025-10-21T15:06:35.671Z] LOG 📸 Sefton - RAW PHOTO DATA: {
+  "height": 2252,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108355018410652883108\">Edward Yoo</a>"
+  ],
+  "photo_reference": "AciIO2d7uyYojk5MTgzbGSU98tXtn9cceAauTgBLvn4sxj4pBtqpzyFQrkxcJR1ZZ3BT2OtqeGLDAp9D_xUHIzoLCMHcrn4yE54S9NlbN0Qeks_FO5YiVvCwGvBixbuAoczYxJbnrnXwP4IN2DTnvWg2XuO9o7ijF8zE805OplX3H1OmSrCWArDlfMUibdIaKJ6CTUckshL2lrfF6cabRkW55BXVb3yfsBdrM8ADhTr94tI3IWjTovqFduAONHxfdalZVJKM1k-9Yf_9nd7-igtpBXKHAGpz8h8G1a4rDt525pRN4JHqPDmJhwTObEhj4JK-wSlPpc8GzfyfnJn9vC63bHQ2_rNOLA9XgVEArhLtEH3frvpr2REsCoE_MM_bkyYdbTPO1c3OLB2WIL-NOaUO2a9CpV303v7369p4-0K92m1-i93KbHwvtPqluU1xWHJL4BEGY8EWGCRMEI3nqMm_w71lbJHa71C5QPI5wj7OItuSw4Y4HTxGv2R2PD8Wfc-Wsufru2TipUJ1md_JvtFZPoH4UAX1InMpb9NC4Vr5ENeD5ATH2y220zFbYZ9y3mNxl98E9yCp",
+  "width": 4000
+}
+[2025-10-21T15:06:35.673Z] LOG 📸 Sefton: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2d7uyYojk5MTgzbGS"}
+[2025-10-21T15:06:35.674Z] LOG 📸 Hendrickson's - RAW PHOTO DATA: {
+  "height": 3072,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/109942680108363517983\">Fred Scott</a>"
+  ],
+  "photo_reference": "AciIO2fNukeRUhf1twBTcMO49NGRxkoUyctFRn7_2g8R9LrhnRcjHp_X6unM64YsV0pMrR4XClsW8lvoaA4ooH8FbHCE14AeZOcfqOmth4RCJLKIk7kLii_r4dHDNKMSS2u-UCg8ERI57rEuhmLONGmV-nyKW-iBnI0EIdnU7US01jeoZOgwH0E0iJ3jh8JPEgZgr9uzxpSyBS_ggFVGKR_gx6omKXsIMA4lVYqSTaTtuG3ZqYFbrz0lnxrG5k9c2v0f8BtqBs-wt694fyegy4n76axKp4iwFpapk13-XWFPuDoODC9c7d6-bRRbmMOISYaSYtzR-sFwvaOowh7BpoeE6mwqVwcKj62ghYl-yjox1eqv_kGy9YmrbLRy2gJJ92AJB27Vwi0h4lFU500XnRSe3sDgPOBkRUKo4Mu5fIZTWVinxpRwVO2DlfOz8ns9uz0F3o5d9tbEQunZgum6_dQ0W7g7AmVrnNqDGs7gsBqpsZAFpQLKV04BwfOQMqw-w6eqD53_d1Gljb7FqIHalWDbxoGeZPFSieQNvphcxV2031nEi4Z3TUQy_CCm9AC8IAEbLcUA6RnNcWNTyA",
+  "width": 4080
+}
+[2025-10-21T15:06:35.676Z] LOG 📸 Hendrickson's: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fNukeRUhf1twBTcM"}
+[2025-10-21T15:06:35.677Z] LOG 📸 Bedford Falls NYC - RAW PHOTO DATA: {
+  "height": 2448,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/116693989123662557910\">Maurizio Tentellini</a>"
+  ],
+  "photo_reference": "AciIO2ddnhc991KJhgfu1M-PNankuDOTKNsv3zWBqM6G55k7VihuKfgPG_SSnlCUneju9RqxT9uSx6aO0KPJ7j2hQ1JCjoRnzullYIl2E1XaziFaZ-E5ZdubpDQLZzg1_34emWoS7Y3EtGZkP3NJPnFLXDvlmRGoLhpAkSggxJbMblX9YTywpyBrJiiIu6ED1TReQZmO9jfjkC2oTBtq8HKMXLlb_deOQOQX0raxfqAdfg9yPZFwKWRAsTg5YzJK6o46pN45GF9JnzQAgqA5sGckxZrxn6Knd-EYO0rJPhQcC37g4iSE0N6ujVxH9lz3uhIpSHJoQcTwp8dLkNMNGsb8ChSgyqRIHJb8LY0JbC1DlGC0QWYnwjE6rVt3kyg-lCOCuk4SfLxa_DFLP87auIywf76m-Mbncdfvnko8R3rjTiD0O2GcqsSy_XCzyWulmo5vYwlbsH6qq9Zn_pFnmTCpW8osONh8oWG4xy56Nu0KOXMu1kwcw65jor9hAdMkYBwg6UfvXqPuHn-dKQ1AGSu_hSWpNQTuuU4PVxFR-OaLyb1EQJX00AMnD28dod-HU9FQeFI4wmafZdo8Yg",
+  "width": 3264
+}
+[2025-10-21T15:06:35.679Z] LOG 📸 Bedford Falls NYC: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2ddnhc991KJhgfu1M"}
+[2025-10-21T15:06:35.680Z] LOG ✅ Found 5 places
+[2025-10-21T15:06:35.681Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 934ms
+[2025-10-21T15:06:35.682Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-21T15:06:35.683Z] LOG    Success: true
+[2025-10-21T15:06:35.685Z] LOG    Data: {"results":[{"success":true,"query":"bar","location":"East Manhattan","venues":[{"name":"The Penrose Bar","address":"1590 2nd Ave 2nd floor, New York, NY 10028, United States","location":{"lat":40.775...
+[2025-10-21T15:06:35.687Z] LOG 
+👁️  OBSERVING...
+[2025-10-21T15:06:35.689Z] LOG    Added observation to conversation history
+[2025-10-21T15:06:35.690Z] LOG    Total messages: 4
+[2025-10-21T15:06:35.691Z] LOG    Total tokens used: 2748
+[2025-10-21T15:06:35.692Z] LOG ⏱️ Iteration 1 took 3883ms
+[2025-10-21T15:06:35.693Z] LOG 
+================================================================================
+[2025-10-21T15:06:35.693Z] LOG 🔄 ITERATION 2
+[2025-10-21T15:06:35.694Z] LOG ================================================================================
+[2025-10-21T15:06:35.696Z] LOG 
+💭 THINKING...
+[2025-10-21T15:06:41.015Z] LOG    Reasoning: Selecting the best venues for a bar crawl based on the observations. I will choose three bars and one club that are close together for a logical walking route.
+[2025-10-21T15:06:41.017Z] LOG    Action: finish
+[2025-10-21T15:06:41.020Z] LOG    Parameters: {
+  "result": "Itinerary for Bar Crawl in East Manhattan:\n1. Avoca - 1678 1st Ave, New York, NY 10128\n2. Sefton - 1373 1st Ave, New York, NY 10021\n3. Hendrickson's - 1122 1st Ave, New York, NY 10065\n4. Sapphire 60 - 333 E 60th St, New York, NY 10022\n\nThese venues are all within walking distance of each other, making for a great bar crawl experience!",
+  "mode": "route",
+  "selected_venues": [
+    "ChIJDe3ctJVZwokRE3GOfnRJQtI",
+    "ChIJyX1BYZxZwokRgkBgQPvRK2A",
+    "ChIJJxuk6DhZwokRii01n7jCgQg",
+    "ChIJ15X9N-ZYwokRcbF-sABC4kg"
+  ]
+}
+[2025-10-21T15:06:41.022Z] LOG 
+✅ Agent decided task is complete
+[2025-10-21T15:06:41.023Z] LOG 📋 Finish parameters validated: {"hasResult":true,"mode":"route","selectedVenuesCount":4}
+[2025-10-21T15:06:41.025Z] LOG 
+🔍 Running route order evaluation...
+[2025-10-21T15:06:41.027Z] LOG    Route type: ITINERARY
+[2025-10-21T15:06:41.029Z] LOG    Evaluating against: "Plan a bar crawl in east manhattan"
+[2025-10-21T15:06:41.031Z] LOG 
+🔍 EVALUATING ROUTE ORDER...
+[2025-10-21T15:06:41.034Z] LOG    User prompt: "Plan a bar crawl in east manhattan"
+[2025-10-21T15:06:41.035Z] LOG    Selected venues: 4
+[2025-10-21T15:06:41.036Z] LOG    Is itinerary: true
+[2025-10-21T15:06:41.038Z] LOG    Readable order: Avoca → Sefton → Hendrickson's → Sapphire 60
+[2025-10-21T15:06:41.041Z] LOG    Mode: ITINERARY validation
+[2025-10-21T15:06:41.043Z] LOG    Selected categories: bar, bar, bar, club
+[2025-10-21T15:06:41.732Z] LOG    ✅ Itinerary validation passed
+[2025-10-21T15:06:41.736Z] LOG ✅ Route order validation passed!
+[2025-10-21T15:06:41.739Z] LOG ⏱️ Iteration 2 took 6043ms (finish)
+[2025-10-21T15:06:41.741Z] LOG 
+================================================================================
+[2025-10-21T15:06:41.742Z] LOG 📊 EXECUTION SUMMARY
+[2025-10-21T15:06:41.743Z] LOG ================================================================================
+[2025-10-21T15:06:41.744Z] LOG Status: complete
+[2025-10-21T15:06:41.745Z] LOG Iterations: 2
+[2025-10-21T15:06:41.746Z] LOG Execution time: 9938ms
+[2025-10-21T15:06:41.747Z] LOG Total tokens: 6699
+[2025-10-21T15:06:41.747Z] LOG Actions executed: 1
+[2025-10-21T15:06:41.748Z] LOG Correction attempts: 0
+[2025-10-21T15:06:41.748Z] LOG ================================================================================
+
+
+--- Summary ---
+Status: complete
+Iterations: 2
+TotalTokens: 6699
+ExecutionTimeMs: 9946

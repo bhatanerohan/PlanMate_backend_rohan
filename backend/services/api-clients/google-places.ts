@@ -2,11 +2,6 @@
 
 import axios from 'axios';
 
-/**
- * Google Places API Client
- * Docs: https://developers.google.com/maps/documentation/places/web-service
- */
-
 export interface PlaceResult {
   name: string;
   address: string;
@@ -21,7 +16,7 @@ export interface PlaceResult {
   placeId: string;
   photos?: string[];
   description?: string;
-  photoUrl?: string;              // Main photo URL for display
+  photoUrl?: string;
   openingHours?: {
     openNow?: boolean;
     weekdayText?: string[];
@@ -49,6 +44,7 @@ export class GooglePlacesClient {
 
   /**
    * Text Search - Search for places by text query
+   * NOW WITH DESCRIPTIONS via Place Details API
    */
   async textSearch(params: PlacesSearchParams): Promise<PlaceResult[]> {
     try {
@@ -61,11 +57,9 @@ export class GooglePlacesClient {
       const requestParams = {
         query: query,
         key: this.apiKey,
-        radius: params.radius || 5000, // 5km default
+        radius: params.radius || 5000,
         type: params.type,
       };
-
-      console.log('🔎 [Google Places] Request params:\n' + JSON.stringify(requestParams, null, 2));
 
       const response = await axios.get(`${this.baseUrl}/textsearch/json`, { params: requestParams });
 
@@ -78,12 +72,13 @@ export class GooglePlacesClient {
         return [];
       }
 
-      const places = response.data.results
-        .slice(0, params.maxResults || 10)
-        .map((place: any) => this.formatPlace(place));
+      const places = response.data.results.slice(0, params.maxResults || 10);
+      
+      // 🆕 Fetch descriptions in parallel
+      const placesWithDescriptions = await this.enrichWithDescriptions(places);
 
-      console.log(`✅ Found ${places.length} places`);
-      return places;
+      console.log(`✅ Found ${placesWithDescriptions.length} places`);
+      return placesWithDescriptions;
 
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -95,6 +90,7 @@ export class GooglePlacesClient {
 
   /**
    * Nearby Search - Search for places near a location
+   * NOW WITH DESCRIPTIONS via Place Details API
    */
   async nearbySearch(latitude: number, longitude: number, params: Partial<PlacesSearchParams>): Promise<PlaceResult[]> {
     try {
@@ -108,8 +104,6 @@ export class GooglePlacesClient {
         key: this.apiKey,
       };
 
-      console.log('🔎 [Google Places] Request params:\n' + JSON.stringify(requestParams, null, 2));
-
       const response = await axios.get(`${this.baseUrl}/nearbysearch/json`, { params: requestParams });
 
       if (response.data.status !== 'OK' && response.data.status !== 'ZERO_RESULTS') {
@@ -120,11 +114,12 @@ export class GooglePlacesClient {
         return [];
       }
 
-      const places = response.data.results
-        .slice(0, params.maxResults || 10)
-        .map((place: any) => this.formatPlace(place));
+      const places = response.data.results.slice(0, params.maxResults || 10);
+      
+      // 🆕 Fetch descriptions in parallel
+      const placesWithDescriptions = await this.enrichWithDescriptions(places);
 
-      return places;
+      return placesWithDescriptions;
 
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -141,11 +136,9 @@ export class GooglePlacesClient {
     try {
       const requestParams = {
         place_id: placeId,
-        fields: 'name,formatted_address,geometry,rating,price_level,opening_hours,types,photos',
+        fields: 'name,formatted_address,geometry,rating,price_level,opening_hours,types,photos,editorial_summary',
         key: this.apiKey,
       };
-
-      console.log('🔎 [Google Places] Request params:\n' + JSON.stringify(requestParams, null, 2));
 
       const response = await axios.get(`${this.baseUrl}/details/json`, { params: requestParams });
 
@@ -164,8 +157,43 @@ export class GooglePlacesClient {
   }
 
   /**
+   * 🆕 Enrich places with descriptions from Place Details API
+   * Fetches editorial summaries in parallel for better performance
+   */
+  private async enrichWithDescriptions(places: any[]): Promise<PlaceResult[]> {
+    console.log(`📝 Fetching descriptions for ${places.length} places...`);
+    
+    const enrichmentPromises = places.map(async (place) => {
+      try {
+        // Fetch place details with editorial_summary field
+        const detailsResponse = await axios.get(`${this.baseUrl}/details/json`, {
+          params: {
+            place_id: place.place_id,
+            fields: 'editorial_summary',
+            key: this.apiKey
+          }
+        });
+
+        if (detailsResponse.data.status === 'OK' && detailsResponse.data.result?.editorial_summary?.overview) {
+          place.editorial_summary = detailsResponse.data.result.editorial_summary.overview;
+          console.log(`   ✅ ${place.name}: Got description (${place.editorial_summary.length} chars)`);
+        } else {
+          console.log(`   ⚠️  ${place.name}: No editorial summary available`);
+        }
+
+      } catch (error) {
+        console.log(`   ⚠️  ${place.name}: Failed to fetch details`);
+      }
+
+      return this.formatPlace(place);
+    });
+
+    return await Promise.all(enrichmentPromises);
+  }
+
+  /**
    * Format place data from Google API response
-   * UPDATED: Robust photo URL extraction for Option A (photos only)
+   * NOW INCLUDES DESCRIPTIONS from editorial_summary
    */
   private formatPlace(place: any): PlaceResult {
     // Get main photo URL - handle both direct URLs and photo references
@@ -175,15 +203,11 @@ export class GooglePlacesClient {
       if (place.photos && Array.isArray(place.photos) && place.photos.length > 0) {
         const firstPhoto = place.photos[0];
         
-        // NEW: Check if Google returned a direct URL (newer API format)
         if (firstPhoto.getUrl) {
-          // Some APIs return a function
           photoUrl = firstPhoto.getUrl({ maxWidth: 800, maxHeight: 800 });
         } else if (typeof firstPhoto === 'string' && firstPhoto.startsWith('http')) {
-          // Direct URL string
           photoUrl = firstPhoto;
         } else if (firstPhoto.photo_reference || firstPhoto.photoReference) {
-          // Legacy: Photo reference - construct URL
           const photoRef = firstPhoto.photo_reference || firstPhoto.photoReference;
           photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=${photoRef}&key=${this.apiKey}`;
         }
@@ -191,19 +215,6 @@ export class GooglePlacesClient {
     } catch (err) {
       console.warn(`⚠️ Failed to extract photo for ${place.name}:`, err);
     }
-
-    // DEBUG: Log photo extraction result AND raw photo structure
-    if (place.photos && place.photos.length > 0) {
-      console.log(`📸 ${place.name} - RAW PHOTO DATA:`, JSON.stringify(place.photos[0], null, 2));
-    }
-    
-    console.log(`📸 ${place.name}:`, {
-      hasPhotos: !!(place.photos?.length),
-      photoCount: place.photos?.length || 0,
-      photoUrl: photoUrl ? '✅ Generated' : '❌ None',
-      photoUrlType: photoUrl?.includes('googleusercontent') ? 'CDN' : photoUrl?.includes('googleapis') ? 'API' : 'Unknown',
-      fullPhotoUrl: photoUrl?.substring(0, 100)
-    });
 
     return {
       name: place.name || 'Unknown',
@@ -223,8 +234,8 @@ export class GooglePlacesClient {
           ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${ref}&key=${this.apiKey}`
           : '';
       }).filter((url: string) => url !== '') || [],
-      photoUrl,                     // ← Main photo for display
-      description: undefined,       // ← Option A: No descriptions (requires Place Details API)
+      photoUrl,
+      description: place.editorial_summary || undefined,  // 🆕 Editorial summary from Place Details!
       openingHours: place.opening_hours ? {
         openNow: place.opening_hours.open_now,
         weekdayText: place.opening_hours.weekday_text,

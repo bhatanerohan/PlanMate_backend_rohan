@@ -1,0 +1,377 @@
+User Prompt: Find 4 venues in boston: restaurant, bar, bar, theater, music venue. These should be close together for a night_out. Create an itinerary with these venues in a logical walking route.
+
+[2025-10-23T02:21:10.979Z] LOG 
+================================================================================
+[2025-10-23T02:21:10.980Z] LOG 🔄 ITERATION 1
+[2025-10-23T02:21:10.980Z] LOG ================================================================================
+[2025-10-23T02:21:10.981Z] LOG 
+💭 THINKING...
+[2025-10-23T02:21:13.576Z] LOG    Reasoning: User requested 4 venues in Boston: restaurant, bar, bar, theater, music venue. I will search for these venues in a batch to find options that are close together for a night out.
+[2025-10-23T02:21:13.578Z] LOG    Action: batch_search_venues
+[2025-10-23T02:21:13.579Z] LOG    Parameters: {
+  "searches": [
+    {
+      "query": "restaurant",
+      "location": "Boston",
+      "limit": 5
+    },
+    {
+      "query": "bar",
+      "location": "Boston",
+      "limit": 5
+    },
+    {
+      "query": "bar",
+      "location": "Boston",
+      "limit": 5
+    },
+    {
+      "query": "theater",
+      "location": "Boston",
+      "limit": 5
+    },
+    {
+      "query": "music venue",
+      "location": "Boston",
+      "limit": 5
+    }
+  ]
+}
+[2025-10-23T02:21:13.581Z] LOG 
+⚡ ACTING...
+[2025-10-23T02:21:13.582Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-23T02:21:13.584Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-23T02:21:13.585Z] LOG    1. Searching "restaurant" in "Boston"
+[2025-10-23T02:21:13.586Z] LOG 🔍 [Google Places] Text search: "restaurant" in Boston
+[2025-10-23T02:21:13.586Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "restaurant in Boston",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-23T02:21:13.602Z] LOG    2. Searching "bar" in "Boston"
+[2025-10-23T02:21:13.604Z] LOG 🔍 [Google Places] Text search: "bar" in Boston
+[2025-10-23T02:21:13.605Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "bar in Boston",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-23T02:21:13.608Z] LOG    3. Searching "bar" in "Boston"
+[2025-10-23T02:21:13.608Z] LOG 🔍 [Google Places] Text search: "bar" in Boston
+[2025-10-23T02:21:13.609Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "bar in Boston",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-23T02:21:13.611Z] LOG    4. Searching "theater" in "Boston"
+[2025-10-23T02:21:13.612Z] LOG 🔍 [Google Places] Text search: "theater" in Boston
+[2025-10-23T02:21:13.614Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "theater in Boston",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-23T02:21:13.618Z] LOG    5. Searching "music venue" in "Boston"
+[2025-10-23T02:21:13.620Z] LOG 🔍 [Google Places] Text search: "music venue" in Boston
+[2025-10-23T02:21:13.622Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "music venue in Boston",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-23T02:21:14.246Z] LOG 📸 MGM Music Hall at Fenway - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108165955110408038160\">Neal Robert</a>"
+  ],
+  "photo_reference": "AciIO2c-U8hgoyFNeBfd85TyDDhbh-kne95hJ1HwbwZYEmk3JOYEZxyaFburDgM3w6417mV2HTLxGUD7NSQlKuYofbu6jaR3B6f6h7JwPlP-O5AqXSszF7khuiFPvIfSAG8Tb8n4d-nlNBDa7glUhBeZEkLATvOxNz3e_ImirXCiTgIKTiqAuEU527h3oF1QG9r2ErshSuhqQmF8-2a7wFExOtj-3aHaGFhImNDHO939ST7kMVHX-qqCwlH9QXCCnWH5ul-hJtiiegnBd2SKJfHGx-1IkuIzFaysjTBvDJvi_xiH7EdPVj_GjsWH5-_GUmUQIr807S-nlIhic32Xp0by5wgYxU2Tbt-gKbey66HynviJctomnS1P3ou3Qh_Q5H5HdWSQKD27B-Efqm1Mb56dYXAsTgVI_yU90StMECOfXn1f4yNLAyHEKJk9IGzPcewVsf9g1AtC-ieLwYsMHzQrvlyBClqM5mls_iHwDkFj6BXo94riVrfqkauovW3mFi2q4IClsDI92Eo_5QmgkIPAKs-9PZujyE88W9ocMzBmq8DCq-MTdisRtULzH6QZpfpEDok4_bpA",
+  "width": 4032
+}
+[2025-10-23T02:21:14.247Z] LOG 📸 MGM Music Hall at Fenway: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2c-U8hgoyFNeBfd85"}
+[2025-10-23T02:21:14.249Z] LOG 📸 Paradise Rock Club - RAW PHOTO DATA: {
+  "height": 2988,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/116217928836555117622\">Charles Vlahakis</a>"
+  ],
+  "photo_reference": "AciIO2dJD-nvGdyRNMQibacRChv-Jn9Ud79q5bNJyyYe0smjvB_7xBUQRVC13euOQOuy1rPr1EhmGI_8NN6D7K7wG_lzfrDdaEtve_V0Bd_q9anceNTLgH_OXXqf9MpY5LqALEfP41_E5CoTE5x-Vzm_k_1uCBVnmzhUGLzSQSSRCLtFAI-2AjVIkn5mfpbZRLvLf0ow1yVbrTPrcE87SDXbHsSasC9H6fa6aRtW7eBH2F7jnFfz120f7PkOY6OM7PDJdEHGVoiH1a93EO3I8i7WzIxzEfVjgCuB9dzYm130MOZckIv8KeptX7ehJv9ORzs3o3Fd6qmnbpEpUPgB6ig8iho9GMl1XdKPyj8Sf2rZLSt6ByXFA-1ck5YwQDjgTHo4iA_fi94AhX5jBuTIa2Tes9bA1EPfaHQFSJBkV4S1zYaf77TSxDxnk5vEFS5wfEGrxjdHp7LRSS2p17HImuReQFbil1MPSktU0OkTpK7sJQmz3OqwQtoAOSfM2D10CWcBOcn_1VulvKnYrgaTizR079PC4uXJHkUhMf1kmkaDBxz3go5IbRg8Rgei6DZ7se2Fi3yOkdZ5",
+  "width": 5312
+}
+[2025-10-23T02:21:14.251Z] LOG 📸 Paradise Rock Club: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dJD-nvGdyRNMQiba"}
+[2025-10-23T02:21:14.251Z] LOG 📸 Leader Bank Pavilion - RAW PHOTO DATA: {
+  "height": 2252,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/102049230290631526303\">Tyler</a>"
+  ],
+  "photo_reference": "AciIO2f7XnTMWksTeVhJYwkoQ5PT3Zzad3r8B6XOHXFbOXutmFjjYbZkkjRBlxzHiXh5U5JfPqxgve7V-wCkKekDtCeJ94zZIEtZRBtYUZEw53qnu6ZfLPE6FS0hnothl22NinKlmuCXcpoE52QV9hmq591WN0kEYq3_A_1uFonAmtiP6TlnGTJSpGE8J_NHSJtJA1-xZ9pbhW9J_Vd1bJ3WH8ta1QgGVleLWTVYTbalX6UvvY0q6DkoYcb5M7-n8dy6AnxFrmZRhDbfldgz5YYDkRbM0lIzFamTrLv9ljABgSgrPROiofND9Dt7EZs8a5_8cedrMt1xuQeou4mNTl0moaM2hG2j9i-QR_B2YbEEOeIINx4ci30D-PKFIyBx4aQwMR2iGpLNyi9lyM7K2PAr1KAeJFzsFmpdYO6gpzyuchNRFe45gjrjLbEUr-zwNcUZ7I0iJeex5NQM4EMpFOfuEbO3xeP9IMnvkTERFol0rvQMIFLu6GMvfrwxVxsOR4fpHbNHzMXAdYV3BrX7LmX2qU43rZS2WZczhNRydSBv9Z5j_lWO5eUwmlLREnLgujvfpHQRbb0spG6peA",
+  "width": 4000
+}
+[2025-10-23T02:21:14.252Z] LOG 📸 Leader Bank Pavilion: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2f7XnTMWksTeVhJYw"}
+[2025-10-23T02:21:14.252Z] LOG 📸 Roadrunner - RAW PHOTO DATA: {
+  "height": 1080,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/105366534392351652564\">Andrew Capobianco</a>"
+  ],
+  "photo_reference": "AciIO2c8Kl2dpVgRycyxEKe_vb_qSXcKVniOUPHeyEaMSTEnlcog6UfwAwidrvlknUMCfaPG_ynaKBluIEan-G35NixOm6bo3xlJETu8i2Phfw6_5aRB8ZCx1svMC9vsFWjmAsuT2NectRXOJnfVn_9Lp_XpMMKSa8can3d_EhBUykyXMY5fduvddDOFDch3Qi21e3jLjJwbe0e9Eijs9xcGzQI5ybMqA2v7ueJH10uAsx3BM1Ev67XrbucwP8Q6tRgVa3AYpS5rgNaaI4LOzjAh8tsX5HKh8ZQSc5vcPXgbMughFBkE-_XMjf4Q1brj4KvRrKtLUB8j1M1LFNvzGJnXJSzXolFjG4PaIXlQbYA6aTN1Gu37zQ05BLa0lWB8C54JdAIHIinP_rT2JabuCbPGVIBFlpIPJdJjj6uxZSp1jHtP9AyeWLrzPl8j5xBYua3cr0DAbqIX5-nigeO4djTWaESdXCTf_0Bph8Cn_qzCjIU7MH7kW-MBMBOsO5shtGHMuUF83fwB8A5yrsG01gBTSKuygUVFDZt1oc3ddbYpTYd_zC6_aEdfD_q9DLcKVc7Bx84iV725",
+  "width": 1920
+}
+[2025-10-23T02:21:14.253Z] LOG 📸 Roadrunner: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2c8Kl2dpVgRycyxEK"}
+[2025-10-23T02:21:14.253Z] LOG 📸 Symphony Hall - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/103731631694558195149\">Elizabeth Kell</a>"
+  ],
+  "photo_reference": "AciIO2ds7EpG2WQX-DzT8lgvwv5W7th26kPT0jcEvRGdb9HGiJ6rxCSpRphNHAa6XqrhVkvcJynOxFM16eVg1FFqB2Xl_Cckba6sJBZbafqNke50UyTs_RKjcuawV1dXiExfiJO0FRA-L73rNFIkE5cwxQ_KI75MIg9WdYgmDt2fu_nEmg94kzl--FM7fj0LNH0mr9nL46Y2oiufC-OAB-O78WE4_cxbjofvax31DZV46AIA4ZbawoMMEVQ9zCPmV7QZePMkN8MGYQn68oEGQolzOnh6tNz84DNffcDKuk4vvCUpabW3craTryfi4PALnHalUWe13l9X21fJYro_OJy3LkUTNxQPxM-HMcT-EgftVPZ6N-jlmVP0dyxYiQvlW0OVqkJzhWFQwRHYwcJ1SEr5MGtmpHZX9yx1R4Ta5A72lHpNeIfeB70oNLNm4l0UmzI2siPB-bIR2dO_e99gd0YIITooCEL_oKfpCDODYFOImYu6uDt0_XCnlBJxdfTLnnYdaTJ7A29lfDxaKNbAfFKm2Lvc-llSzIqthiHFtmWysETzDVYbchFImQl3_lyz9rNDpPyvb5VcTsAtYg",
+  "width": 4032
+}
+[2025-10-23T02:21:14.254Z] LOG 📸 Symphony Hall: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2ds7EpG2WQX-DzT8l"}
+[2025-10-23T02:21:14.255Z] LOG ✅ Found 5 places
+[2025-10-23T02:21:14.371Z] LOG 📸 Estella Restaurant - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/100331318783350561453\">Tahnthawan Coffin</a>"
+  ],
+  "photo_reference": "AciIO2c36ERTQD8WgvVbi60AU5BxNreuTFf6j9jHk-Bi1I1kYBKUWaQ6Ck-yp3a6i1yPiaWL8GTPqnGYiIepI0NcRFwuLdVFrsqyI2g7a5HfCWy0bgUFnn2PrcBDG7oWQK3PsABKWtcKa1gGTy2SjjoTnOb4rmqRx2i0llaQrRtMi-wTnS73x3NXifcGdhryfSOPITHBRziR_EK1d5DwonUgXNAx14y1DAzJfM-zMtS5qM9yBJI54IB_YJk9BGxjv35tMiaxdmV1f6SWoE7JNQeA4jjhplYwPzmyOk6sPU2yZHS0O2c5578sqAV5jF-OQSvKhsogYaPMQNy4bmMKW5eChN1ZAPCT_3ayC0DxuDq7EmrAwB3aI6aTBHoHIHtk8spaanNdv1xQujvE7EdtllLE0akBoVvsDplJaOS8HmU1-uk2GxRszBvd6W4QRu3f_r0DCNIN0PQQpesxbjwm5NbfsbTY5RlM5qeqft6TJ10df38Rvg7QpcDBgWErQDhM5N3U35yqlpviwpjqEIM0BFHHfjXFK0eJ4s6zqhZEkQtHMul6ZC_MlFWO2JWkRc9heLi_hySwMw",
+  "width": 4032
+}
+[2025-10-23T02:21:14.372Z] LOG 📸 Estella Restaurant: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2c36ERTQD8WgvVbi6"}
+[2025-10-23T02:21:14.374Z] LOG 📸 Boston Sail Loft - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/114102508829482974100\">Serge Zaretsky</a>"
+  ],
+  "photo_reference": "AciIO2dQjLEyTQQ8pyp5jyBjE6syi7dVPsBaO8EOruTpdUPbVWlYBeXtwa7l1TRioHpvfmq0411JsviLK-tckb3MxjPoiL1xPyvE4xrTlc3RsPgEdJDgL93SagJ3IhU-X41o-DSXHN1vNmt0NLnVQcR6_SEm_YRn7VZNfbiLPqHvjvxFlRjAG4DyzhrHA6h873jHJ8NrGF89x2BYmzwYSu4KQ0ZOc-XnVDuOIdlKn2A_Gt01yHSdvdFSqK1T_-niahYPjHSTaTCvxEdx3dSAQts6G4F4v-l4ueWfY_8iezJqwaKiQzyQIDxNhA6lR12CkzjUnBsR6sAwfmGDTQHtY2TK5p_3oIS2DSEgph4roktbp5K_EzijWvl_L4uAK8gwvNqcmpDw6LiGQUtc7c8Uu5Vn35x6J200OLhcHoAtKyBVFrhyIRqWQlryNBUwafeXNISDBpHZUrL_P1Ex4YAJk-4vPnm8Hf4A8cBe-B3u6Uxgpx3nx9yRkgB09n_Eoo4cbXvYPNRlwl_6U1pcKVF3FUaF358EcS7gbRrw6FzK7f2ZCAQB87RI4LVJ51Ahj-OkmRbHCPh0iTMC",
+  "width": 4032
+}
+[2025-10-23T02:21:14.374Z] LOG 📸 Boston Sail Loft: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dQjLEyTQQ8pyp5jy"}
+[2025-10-23T02:21:14.375Z] LOG 📸 Yvonne's - RAW PHOTO DATA: {
+  "height": 3036,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/102097386434128820890\">anant chimmalgi</a>"
+  ],
+  "photo_reference": "AciIO2epG7J9r99pZMfFf23RCAqD2a7eF7D7zyo4px3IktQB2YKWQh9NQDG9bvIxtfYS4VY6zZEyeFtuTadyAp6Nge6sQ6LjXmUHPUN_u_HQJzwRUvQHnA9Fix2X1-I-lpVL6tLtPmAhtnVueJf8hADmxPWTT-UgvzpoKKzcvBU3fOd8cQhxO9Y95wTgajDBetJzmzoG7Y0WjnX0XhaKozRGWhzKQ9b2NFNhod6BWVZQnqUoQwSV-Lh0Ik0YJIq5G5x4-Mtn3gm_OmJUS3StQ7faqjXqyKh7mRibwOsZJz_HYECKl0MgUuKcpBZsKUok4yUxhSY5DlZ2CQFanT277-3MHf1hl2k27NytVwfelWlNwpWzkrc8DWYDiapproXS8e3pDdjGXEuNFMFx2ry7LRs_H8nynq5_tKo1CO_5wm8rZk2BAsg4GaW00fhCe8pCy_s5_dZzWv_aXgD3KdyQFsWPmSMo4yeOyMV60lkHfREsZ5zerG6U6kJhxx7J9Rx-TTCHMEIWVLHoaCQdirOGvcKyGkz89uev7xqS77ZDbB_ZL0Cc7DNAH3TtNK-FcLqsMVB3prlDGV_0",
+  "width": 4048
+}
+[2025-10-23T02:21:14.376Z] LOG 📸 Yvonne's: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2epG7J9r99pZMfFf2"}
+[2025-10-23T02:21:14.377Z] LOG 📸 Lolita Back Bay - RAW PHOTO DATA: {
+  "height": 4032,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108126959922023438551\">Lindsey Howard</a>"
+  ],
+  "photo_reference": "AciIO2cIaooiYqWFawSvSBROtKHn2qW_x5DA4tF2OeMnyNmDYGKYqjWmPb0-3WSrGRsyACMRQCes-8l-9YOC-ZErLRFlbfWvtlwhR3ehLj-NQlJdu_RUWZeZU8rakFHc_kVMdbAJX_5N6SKq7F51BPapdtqqoYdzBIViyK5E7QebK1r6jukTsJh57rweH4TWoLrW01QdHLtvdNQ7RPzTnB_4a39cx23lSCDaVcntxkOyUgqSnI_tjhOFUDYQe6Exe1VrrwtsyBzWGv5nmGl6hrFQsQ2nO9YzBUa7TzuTazBa5NJD7dqRkoFUu07HrgBYteX1223k-Z47p_HmjAS0ryNmDJorbog8OJ1qYZONaWEsAosJXp7O-YrtH1u5K3uL0FLs3bqYgg1I2b3rPiHuiu1ok-gGvcL4eDOPZJYmlHHoaamrwUGtcJ5gqsmkETV4pyytiDD5al5SlT_b0iea0GHGgd05m7fobL7JSKnIFx6YyU1C3i_nrjbUDSy_hblVeJV_IaFbhoeFoQ3h-w6adH8dethfkyt2skB_xZELuEDKgdcARla8Bs-eBVF6XgYub_5Tthv964fyW5_eAg",
+  "width": 3024
+}
+[2025-10-23T02:21:14.377Z] LOG 📸 Lolita Back Bay: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2cIaooiYqWFawSvSB"}
+[2025-10-23T02:21:14.378Z] LOG 📸 1928 Beacon Hill - RAW PHOTO DATA: {
+  "height": 1671,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/110285443377044926742\">1928 Beacon Hill</a>"
+  ],
+  "photo_reference": "AciIO2d9Xq83qx09bUAIr4o8oIXhTnsCjgWQyz40q_AGuRHYG0IJ5_w-OYMsLXJmphEi-OVWCaIWqc2-Tdrr4WhOfJd7eklpyRvdJY0dsCzXQfhqpvcx7lNfYEIpkqj1JYCAvwhDvIp1eR61k7Op9fN_dp0OdFLH1Q4izXiRR2UFA7-aDfVvVPNYuKsVS6jYL9ZHfYvMAQPeTU675Y9NM7SRXVOBq_YHKMw8Cdue4OmS7Q4EEpJJ4hNRh6RLquY5pjM_zM1KRtMikVBXRRfBLPOwM9pP-S_e0-BX7vIvBaBYUTxyj0uUx8I",
+  "width": 2350
+}
+[2025-10-23T02:21:14.378Z] LOG 📸 1928 Beacon Hill: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2d9Xq83qx09bUAIr4"}
+[2025-10-23T02:21:14.379Z] LOG ✅ Found 5 places
+[2025-10-23T02:21:14.380Z] LOG 📸 Emerson Colonial Theatre - RAW PHOTO DATA: {
+  "height": 3000,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/104165940216426487417\">Phil C</a>"
+  ],
+  "photo_reference": "AciIO2dKr1AMC9Oyy3csjIde_vmqiek2p56iZLqeP5Algf6CYZA7X8QEMo6p2zOSzW9IHYkOBY8I8nwhgxF7hW7mfcHhYAdh7M9PWPJr9iyM5GCoJvnP-VjgATdAOoUQ5ZQUvc7_-J2zK6pg7Kz8Nrm0MmfYlLeBBhDbnFpocT9fH6sip8XVb5FwQ2xm7zKWUnNoyz4tx616fLF2lstgxUhN_kEvATWLN7ZxHFWk80156rSdJ7cllOwVm9mYJ5ylXSIBSH_w6NqNH2xI74WV9AnD_G-hxvT__c6UMs__eWEWOYvmD1NSpu4IAULh7_uaCzDfUIsQ_63o6sEk0vlNggybbpF3Pr3fGVv2xjzrCvrqDg4igtESRKq7VTIA2Z9kifKUIgpnaUDhR4Ykdsoh2h6kibFz7L1uR-G1PpGmor3YxqU1gI-F_uiXi8eZe1SHxCvLdB-5MDu6Vgfa2Joq7XbnuNZ5j2bUrrj8yWmxQJtKzPTqLptCI3KSTlA0VjjsSgKGdPyhSvkr4ZHONuRQVVH5vKzxhMU31lhvv9lu_z81MO8kVJ4f4vL-G37ziOuTfS236rYPgWUW1NBofQ",
+  "width": 4000
+}
+[2025-10-23T02:21:14.381Z] LOG 📸 Emerson Colonial Theatre: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dKr1AMC9Oyy3csjI"}
+[2025-10-23T02:21:14.381Z] LOG 📸 Citizens Opera House - RAW PHOTO DATA: {
+  "height": 2252,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/103963887949195724232\">muscman70</a>"
+  ],
+  "photo_reference": "AciIO2fVUMKTDcE-5iMfcffcN4mOiFHMYoN06G4BbH0_z9_Br5SjPQhu27OUX-Mm_yzQk3KkxihLovqF3mNcDmaILpwERdtSsceHTLuOSQWgcUc1KyRy7275QL75KaDbnQFiwt_0KLZnPEbGbadNTs-GWtYi-7qBsjyxVBDCSSFOr3uGQ31hdBdl4ohvIG_I7wdpjvSl5bU5097Rs1YEt7i895x70tzX1FARZj5_HKpXcmEtaBqNfe8WuwESZWY_bf6DlpwuOLPabPQg1lL2E5PLJUbnBCHU1n9dNe2T-nsE-mVgrqESHOQRRsg3csAPjWAvLiiPf-cpJggg7yyVWzAipPxZgDasjlxu-kRa9dFvOlmTJljvKwS4X9N45loEdDqdwJiBPrPkVNphr6hBA4WdvKEjRzitESbSaXny3NWlOOW4EZFi9L1jBQ6i9JkhoHb1L-jZKJN25mx0xbLbtdzzO4kmDkcoHWPQhNClblPBYm6I-F_HuYeyalYGP_qZmHEb_wWBnTelNjQRJ021SIhCZhv4gOPbX47uT1ClND4UzvlgpfRivZmsqebNYgp-lgQ7NuP7kSR7DFnWGA",
+  "width": 4000
+}
+[2025-10-23T02:21:14.382Z] LOG 📸 Citizens Opera House: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fVUMKTDcE-5iMfcf"}
+[2025-10-23T02:21:14.382Z] LOG 📸 Boch Center - Shubert Theatre - RAW PHOTO DATA: {
+  "height": 2592,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/113640966053541521184\">Joel Cottrell</a>"
+  ],
+  "photo_reference": "AciIO2fQioktrCzgBEJbb0RSXKKujOcUF8jdRJeh7cIbFCxv-302ApqQKIhZJZ6UfOquFt_Z5Qgplxp-s_agPcVMqewlsePeNti1LAHW1y1zecf3HmPHnRozNbKa6Wr74ZdWkNwoU2k8-Gi_EGpjBW2PwgkhPm6CdpeUpVUZYEOlgjK7EieAgJwGGbxE528GFy2bNubau1154DlvhjJJ0LOoBfJ7svf8RTAPjpPzex-kiJbAjI8BS2Pua0JNKPC-tkxaAADUghJRs4yXkkHDDin4iSL_K2ykBhn0NITqyugvu6_q8w4ZpFZpk1sP1Sltp6qucHGM_mcQAF0WeKCWQ1rKd0_UWnPKCW8-9jSFUZ-Ye3Z2RcGZVpk0UAw5PpA20USMDtGRKWdzQNWjc0VoTW4qJU5Jh7_A-Q7WX6bJXHCDQz6RHFomBVKQsafEieRricP5t_fR_hAaXr8-2hqii4z-ggPNS8atRqDVNkAHxNirT8LPJ--d3c4AtVolnxs1w0CQX6FBR56nUGqpNedDICmXuBwKDOQBemKHTLk4mOnNE-QMN2oimarVhAQhi2kKVPQKsSVk5llu-wXc9g",
+  "width": 4608
+}
+[2025-10-23T02:21:14.383Z] LOG 📸 Boch Center - Shubert Theatre: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fQioktrCzgBEJbb0"}
+[2025-10-23T02:21:14.383Z] LOG 📸 Boch Center - Wang Theatre - RAW PHOTO DATA: {
+  "height": 3464,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/102126588058422010797\">Andy Tassy</a>"
+  ],
+  "photo_reference": "AciIO2dEZ6x3l0rrRmtkNUBcLoBxElgsE11EJReCtTzCFbElIqIwuzxVCX17IhrYYArNXgZQ0wbYxA-TbvH8BM8I2J5qt6pddaICnEjfZXz2vir-cXvc-UPJnVdMc7dsFn4RupDsSn3wZ4RntcJFmDrv3hvxyNBjPeWetgNkj7M72cUELzbqytLPugAOLFw8NPaHKX5jGC5yz2nd7oHa1tqBr77Rk5e1pEPWF08OrDUqswP4Rn6xrzGiGSPLDkB5kazVY-0oR5_2ffMAAFjNktbgEI8rCt3X7CrDuto__lZQPjdxEb8xe5mHoB1K9CTOpUVXWddpFNEoIgFmX_tZrY8Tj2_RYzf9o_mrpsQQZJ1T4v1AQ1luUW6_31I0H9WOj-4MV4ZPlCnhObgqkIlaQF3ZxIfutozi5HLoFRajZLjwdg9zLeHOAwtYLQLYivs4oEywVe2DinqDRNARu1b5NnfedM9Qp-5mELWEfHPM1S_dcWlIUG9QQvFylB9x-C6ttPXtM7yyJ_5z7kkZfffLHGbTof7fkn3vnUWXTONH4NMQE4oJtSeWQgs4bX6ai4znWuFC-VshA7uK",
+  "width": 4618
+}
+[2025-10-23T02:21:14.384Z] LOG 📸 Boch Center - Wang Theatre: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dEZ6x3l0rrRmtkNU"}
+[2025-10-23T02:21:14.384Z] LOG 📸 The Huntington at The Huntington Theatre - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/117268586478917616498\">Pranav Yamjala</a>"
+  ],
+  "photo_reference": "AciIO2exOoqnkqS3e5yT7fC0X3O8qNPk-Wjaiy9rv4JXHa42dxIm1iQz2tsBofyNQnmx0cfZ_pfBrXokp6NaTlM-8YpPdS1CdxQaBs7pzgOCrrzJi-O2U6SECjRzWbxJHx0ppUJKqM05_NAV7UrbqUj1Nwzynr51x78s7-F0cDy25Vxp2W3WFhyagw5aMZaQJoAK0gVcap-cYsl9pzEf7CAedTvyo5GKg5xGs0lTboHKsGYUqXhhTcwaVY7UZTNU6lzjs-JmFoIPpusyxeLa56Qzb4Kc_4aPPeJEC36JlBNKafMAJBTuez71x1EvqGI7D7bT64QeCDNz2S-APdCAhjnaDKOjLQtERo7P4RC_vMaeAzO7FJG7S3YfFhfXtUy5UdIaXsNclrqODx_VG4Pos5DHgCrnpEL7rKnG1AjhOyEeIkH8lnKGAqwBADXHsSk85PTsLm1yj03vHKs-403ibNKPzC13T3J0sCSMJwObxBMKYFP7m-l4Z0EBOpJk-t9bgmVT1KhMZ5fS-osHtvEfV7ktxSaCtie6nLyPfUEGqhjey7D7ssgnH_lHS1JKb_K6uXdnAFT27JcbLYrwHA",
+  "width": 4032
+}
+[2025-10-23T02:21:14.384Z] LOG 📸 The Huntington at The Huntington Theatre: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2exOoqnkqS3e5yT7f"}
+[2025-10-23T02:21:14.385Z] LOG ✅ Found 5 places
+[2025-10-23T02:21:14.564Z] LOG 📸 Extra Dirty Cocktail Club - RAW PHOTO DATA: {
+  "height": 1366,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/100357903657584843499\">Extra Dirty Cocktail Club</a>"
+  ],
+  "photo_reference": "AciIO2fhFMSXiOyQga4xv-YU82kbcA3nYa3gi4pu01clpFY-lpMugt6rIwjT0VgtMa0pFs94vSezx_HaIvodmhOT5j4eT7s7IDP8Vx2WdFU5crk1pAoiG60KrNr5j5kriJoPycbbmJ4JNpVfnPtCkuv5wsjTYg-ku8VZw1JM3mgkOSCQU-Xf4GAhMBpNHRWDdupMREY3stbE29sM9_IwFI-K-H0iZ4_iKwMXM02Ykf2-vKl9_RprHzbpJjIU9Dv8-VePAhuY9_G_iVkod3M3KEgfUL51MtRuueuXJ9-WVtiSeOUJ0tsMXNE",
+  "width": 2048
+}
+[2025-10-23T02:21:14.566Z] LOG 📸 Extra Dirty Cocktail Club: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fhFMSXiOyQga4xv-"}
+[2025-10-23T02:21:14.567Z] LOG 📸 Rooftop at The Envoy - RAW PHOTO DATA: {
+  "height": 3000,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/106416248199999190893\">Tony D&#39;Antonio</a>"
+  ],
+  "photo_reference": "AciIO2c40BKFpNaTsSLCVaoV-q-MTMAl7NZ8k9Q8oGw5mXdsJ5l7qVq3L6nQWWDfDyOpzWXaCv2EyGTLr40Be6a-vNQw5uR-ftwzQzar2hRNSc50ppcCcqzods9fSnbKyje9pBTzO4pblWyF4Rb1j4rSFEEuiw3wiVxv8fBif4Xm6BhHFUtso-azkLMjD3j-f9WGzSfYIFQqxrkSi8Gf9yPGBHQNKBdA5lV8cSzz1QU1irGCCKMkkD9_kUrRklt7QZa54pxFe-xCY1LL5OQ1rd3V6TU_00NnzoRJQzm6BTRZPaujDPrCrw-hZeI4RiUpx1pY4k1JS7-xLAO2Fj5DALIw1JAZYY93fp5PGAhF11JRMcPPwRle6WGkrqgygxzWpTJcCI3bN4xIrRmOsVVa38i-_sQwV0HvN3lgyKnYWmF8hpQvGSSMc8RBliiR6RFcCaljLJUBbgKscnGZS9I1KRyJ9umoUHQrtP4nn4U7RCjn0SSJcoQ6wrckMErRGtG647vynXC-6GjKcekzYkZ4s-5awh8PzQMlqLa518OkRgtObCuhXNK_NKpYAZClj_LmyzXBtbojRjeRJZsW9g",
+  "width": 4000
+}
+[2025-10-23T02:21:14.568Z] LOG 📸 Rooftop at The Envoy: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2c40BKFpNaTsSLCVa"}
+[2025-10-23T02:21:14.569Z] LOG 📸 89 Charles - RAW PHOTO DATA: {
+  "height": 2268,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/115406849697464711082\">Saul Horowitz</a>"
+  ],
+  "photo_reference": "AciIO2dTSROWEmZ_PvllO7JCWLGCeVYmGWIhX01Jf-Ayk4L3lItevPZVTR4_2ELMXry_zga3sElWgYjabCquVbJ_dgf2rHoXtsOEiNm1Id3gLfOR79Ky06zLJaGse4-5uq1GrilIyl6rTt4rq5fEuD0DZ3Q-Z0ItG49qA4sYcrKymWyXiMcZze4R2wHGFPah7Cf013Qr_l0KNxdRchj4yym4COEgAvIzDh25aI9OMgOrUzo9KxtGbEoaBz8r0nJHgQKyGgCmnRq91vndjL3hcK4QEYYJXhiUfxUJEms-clnTDO0tlqGhDZoXv2Q3foZbvNcpSh0UtnR1v0bC8VtYWfe-42qh4V-S955cDpuXKr3zcPMCQl54Ncbj8KaKPL-rQEp-kvhfaFuJ4JwSTwWOwUWagf6H78dj_Ka4DiQUP8rD6UzR_MQ0r4cKidyE5ornF6sci2ncMkaYJ2PBRk1blebt898tGpPpvfcHcc6K-mPoHK-yiGoLeNs-6KpLeTE4auym9K380zELA4jTqd0az7wbIbFyC0VxvDIMpcYavlSywRJi1vpUdhaEqeBFsFtd-4mkYvQ5-iraqbeUk9idVRpqYrDqoPd6yA",
+  "width": 4032
+}
+[2025-10-23T02:21:14.569Z] LOG 📸 89 Charles: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dTSROWEmZ_PvllO7"}
+[2025-10-23T02:21:14.570Z] LOG 📸 The Tam - RAW PHOTO DATA: {
+  "height": 2268,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/109869238774179146007\">S Fuchs</a>"
+  ],
+  "photo_reference": "AciIO2eIjCSrwyRNF1eBo1WsiNVMOCihswPqH0Hbt5NBvbBVHFw5UtTABsGWEn3mCCVcvmRu_Ksyym_muS6rkj8MtsN55dnaiiD26N_1-Fe_EP9pZ-wVfK8SkIhf7lvNOZbjAoOmct3HzLlahrxPJWwxPrjrgSuL0jP1gGsonal9ux0NC_FUzEK28IXVCIIBqiSL5s2eeYVc3_meePu6WMg601oOxWJ4k5kKG3GkLcJ7MWI8w7hh8dMqXqMqD1gphz64sA-sUEFTooPeY_zVO-jllYYyxj9bpfTzVmOdgl7VrPqHdwWXIrAZ14i3pDCgZ7knbuZLYr-X1b8vpFgeBD8Wm03w20eAKm-HZ9_StFmD39v3UCNqwszH1wDIoJJwY4tFLY8QL8hCH9G5mcytB1vjtGWnPHX6P49Gz0-U1Qhsi3Z4eSyz-OQ3bz8Aiuzkz3A-uKdGSNwk7YeeVg66xKpdW9v7Iqdg6jCZAaMsYi7GNz6L6tjYQj4rcVAWadG2LKj3m76IbLb8FgfsMgZ1F4PMo_umH5_ndPtA6YsN8NlHtWvIURjj5ZSWC_WqsJLydyWE6oncCA",
+  "width": 4032
+}
+[2025-10-23T02:21:14.570Z] LOG 📸 The Tam: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2eIjCSrwyRNF1eBo1"}
+[2025-10-23T02:21:14.571Z] LOG 📸 The Greatest Bar - RAW PHOTO DATA: {
+  "height": 1367,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108783921375948598048\">The Greatest Bar</a>"
+  ],
+  "photo_reference": "AciIO2fzmH4cGI7zNXRTvE1YdsJ4tqBo3ruJEr5t4xq3h6_NGy2nICZBBZ7Ym0H8i6Q3ZxbIq02b-Eer_7wewq3n9UpvLaWspRlle8H9F9kbYEbvSaRX3nFMJ1RsHXRqHJFOtcCxtq3tgNSOLPvjEOunYB4qlsQa0wsZOCUyBnKg0UZxOSvm2VeZKl3eoF3-SA-bJkTtCNI3LGHAJ9PJkq_JcZ6eOys5h4nyPkikqVkBkBlRv64XF-7hIQzQWC1-_5vDfOJZeRl5tf4dX6liP2DdLgiBm4o_ns-QSov_NmZfwooyYSbR0EQ",
+  "width": 2048
+}
+[2025-10-23T02:21:14.572Z] LOG 📸 The Greatest Bar: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fzmH4cGI7zNXRTvE"}
+[2025-10-23T02:21:14.572Z] LOG ✅ Found 5 places
+[2025-10-23T02:21:14.715Z] LOG 📸 Extra Dirty Cocktail Club - RAW PHOTO DATA: {
+  "height": 1366,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/100357903657584843499\">Extra Dirty Cocktail Club</a>"
+  ],
+  "photo_reference": "AciIO2cX66p8BnMM6i1GmZWDgyAEOA74KplCJwCjQfcoNMonWEPHVhvvj1225DBg7q1ASMIMB4OcEDGoH2DsI-3kYctocfpHASnubkx-AkNuYffqSLgn5lpgEyrHrnb0Ptf02b_4zwzTEzAUAbCO2oISSAAp168XLkhrAO3Sj-IdPb_nUIKeKX2ndRFA2dOJ3dXt3ECHY2E2yIQvPqbA5yH8IbdyPejP9ZOXPTLp3EwZ1k8wn4xu28IDb6aTjcgwgosnUhRQPT1Rd_-MM-q1EdXwGBgHyk9CVCfyrzKEK5yQM415jZJFFoE",
+  "width": 2048
+}
+[2025-10-23T02:21:14.716Z] LOG 📸 Extra Dirty Cocktail Club: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2cX66p8BnMM6i1GmZ"}
+[2025-10-23T02:21:14.716Z] LOG 📸 Rooftop at The Envoy - RAW PHOTO DATA: {
+  "height": 3000,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/106416248199999190893\">Tony D&#39;Antonio</a>"
+  ],
+  "photo_reference": "AciIO2e3hFXfjwtHwwKfWPJEIGIVmWGGopMOo5vfgbq99td9GD9gxk03-VoFvzRJz2p7hgB7M96WWfM10E39G0GQQ1TAJ2OdrwbYYXE_bvzOL0nreOewC-5SEEFMLbYlTzzSvS4YN3ZEVVZv6zeuA64z0581xyCxh-QIwYf8RFi74HiCZpzeSXGSfYiq3E8-jY9vpcgK68bvy2eQGgo1_S-QiTupoGKCsnyE7D_OJtJt3cx-UrgAn5XFRjgSNvsxx_9hY5UhNG0MWGy3dswpGKLZSQvbUePqrVIa3955MfIcdlf-rIzX7j4Ze_UL1FKrq5E8DUxrrgLEFoReBMXKBlyJmBseWxtczXmcdUSuOsfz8JSl_dpAr-MsQlaKUyqfwHgwz5l60oayj64aIZt3NVX4r5-1rJpWkxXdxsdZ0RvjVdZK2CFUq6_0_l_84VVsVRVrGdu2pmDYTiyDzt9_hO1jt1BZkq2ifIi1FD7EdQCkJbces8v61yfhz8SRA2q1DfcPp9zl5SKcePCFQjz_cDDbW-iKWk16DmRe_gNXzCJ3eUYFsvkbeGFiRHXhpkXi-vR2yszqioRneFbuiw",
+  "width": 4000
+}
+[2025-10-23T02:21:14.717Z] LOG 📸 Rooftop at The Envoy: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2e3hFXfjwtHwwKfWP"}
+[2025-10-23T02:21:14.717Z] LOG 📸 89 Charles - RAW PHOTO DATA: {
+  "height": 2268,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/115406849697464711082\">Saul Horowitz</a>"
+  ],
+  "photo_reference": "AciIO2dk1a3p8IpQFlodJZ1ab-JtFW6QnvgVF6sTl9sd1XtSchbJ-UgGYFCRcT6pKoFXPWxTJmmLi5PdPnwCVMLTyP4_-rPCzVwEJ9UpzTZVGUnk9z77GMISlYb52-rGJ0Zf3Yx9XGiG8dJzz2N6bY2AhzUvKBUktZbdrhGW-1W7f7lO9aJTXNTXSR-yjivU79A7Rgj4_GmlqH6C7OIBmiorvFDXXEdChMg9dSGMNGagfDlLN2x9x8pG4L_Vwrd3h07LSFF20T9oiTTRI2x9LsA6hwIJRw4q6Tj8IJLgvUK2GZg477jtm8Sv5qyyvsW3CT2-NjzYwLYeaMF1OceCd_DhADQxmEPGm9IgE0H2w2wLgQdO8SQDU4aAgY4yJ-J_1PQvR2ik6aQnLl1DeKW-q98lx9wSt4F52xxEeK96E4r5DUxP20RGAR4RjjrFTOnW8fB4kvldf1QAejWCa3EgveD_XJ8oC7G9sh_BdqkmMZ_CgYiaTf-sCxefnH4EFFO1GQYt3X9_u9foGTin_lNBy0omVEX93xo7fF1fv_GM4CCVd4OMN8Eiesfh6JYv93y3BYhaYr32tOcffZPMXhBJDn3A9naJECHWrg",
+  "width": 4032
+}
+[2025-10-23T02:21:14.718Z] LOG 📸 89 Charles: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dk1a3p8IpQFlodJZ"}
+[2025-10-23T02:21:14.718Z] LOG 📸 The Tam - RAW PHOTO DATA: {
+  "height": 2268,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/109869238774179146007\">S Fuchs</a>"
+  ],
+  "photo_reference": "AciIO2f3hFX6RND2udp-_xjXFPHyzAe3X3At-xS0PPXtNUVP6CwEjyRy30_-5zMhWvDjRRPGrvYgn1eR3lwtV4kKpGJHdgj2i0Vc9q9aFlOG-0mlA_LGMx837d_cIZIc2UmFOi9tpg8b9dubGjadhJgl9daBlZT7ZWKrZDAL6lan4npfNRBSGoFdNOL5zxETPfISCfx6eC4h9LqBL6spVfbRMzRiZ2baw3eabiGcSKHrunTTtGxzB3H4Yj2kn_Ves8EEWaeAykLnOH5RIwYrR3oAQGJcdXdcr6aRtyWf3Wu-C-IWvxdk5wp6QXNipJoI7LmXKJ9xiwrrM0DnmhWNGQ_erf1NgWBEKIKHxk_PzdHbRQ5-d8AkECIp14QvdTWwXZhE_NUMqha3G_2ASDoEP0G5I-4iqihhEGwV9q0WLhgF8iuyPqYccL1Y62W21UgPm1FvKphiOL2W9x6T6uXQO2ZHVmVhrqKabBEHL5pdASNLEAPnbDrWVHzHhap_garhMG76XtMBcV6YE7abihTM8urRbx-lBNNpJqGOq0BXYcFVn3htOVdi0nYWTgyMSIwwGnv1juqgCw",
+  "width": 4032
+}
+[2025-10-23T02:21:14.719Z] LOG 📸 The Tam: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2f3hFX6RND2udp-_x"}
+[2025-10-23T02:21:14.719Z] LOG 📸 The Greatest Bar - RAW PHOTO DATA: {
+  "height": 1367,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108783921375948598048\">The Greatest Bar</a>"
+  ],
+  "photo_reference": "AciIO2dO-kTtLgXjfyfSrOgpsBCBTnaqZJgIpdt9rAaNEaIASLWS8WeOvP5ZVSGSSAMB7HWRKYZkk6wI7DwcgNltuyoaAO3R-eDhCG8A3gL_Vfti_wwp7bpYv0dkrlF0r3OGFRy7816C81DwtKq1P-f7TNqY6EHqCo5ipndvzl_CLGDiY8WnTGQu0Gx7P0WYVAGc0mwLjnxGc6HhUw2Oi9T6cG-MsoBaQpwvAvTJ-QkeSTliyIy-BXWCrCcWUxGkAEihoGdoG46lZakNRe31gqhde_j94fdKyuQ5Fub0_WOrdRw_i4usrmc",
+  "width": 2048
+}
+[2025-10-23T02:21:14.719Z] LOG 📸 The Greatest Bar: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dO-kTtLgXjfyfSrO"}
+[2025-10-23T02:21:14.720Z] LOG ✅ Found 5 places
+[2025-10-23T02:21:14.720Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1136ms
+[2025-10-23T02:21:14.721Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-23T02:21:14.721Z] LOG    Success: true
+[2025-10-23T02:21:14.721Z] LOG    Data: {"results":[{"success":true,"query":"restaurant","location":"Boston","venues":[{"name":"Estella Restaurant","address":"49 Temple Pl, Boston, MA 02111, United States","location":{"lat":42.3548451,"lng"...
+[2025-10-23T02:21:14.722Z] LOG 
+👁️  OBSERVING...
+[2025-10-23T02:21:14.723Z] LOG    Added observation to conversation history
+[2025-10-23T02:21:14.723Z] LOG    Total messages: 4
+[2025-10-23T02:21:14.723Z] LOG    Total tokens used: 2758
+[2025-10-23T02:21:14.724Z] LOG ⏱️ Iteration 1 took 3743ms
+[2025-10-23T02:21:14.724Z] LOG 
+================================================================================
+[2025-10-23T02:21:14.725Z] LOG 🔄 ITERATION 2
+[2025-10-23T02:21:14.725Z] LOG ================================================================================
+[2025-10-23T02:21:14.725Z] LOG 
+💭 THINKING...
+[2025-10-23T02:21:20.540Z] LOG    Reasoning: Selecting venues for a night out in Boston based on the observations. I will choose one restaurant, two bars, one theater, and one music venue that are close together for a logical walking route.
+[2025-10-23T02:21:20.542Z] LOG    Action: finish
+[2025-10-23T02:21:20.542Z] LOG    Parameters: {
+  "result": "Itinerary for a Night Out in Boston:\n1. **Restaurant:** Yvonne's (ChIJWceaK4Nw44kR3HDuPVX0acU)\n2. **Bar:** The Tam (ChIJgRPEVHZ644kRdLHsr2CClRs)\n3. **Bar:** 89 Charles (ChIJ7XjjRwBx44kRkhwLqo7uCh0)\n4. **Theater:** Boch Center - Wang Theatre (ChIJR4mL53Z644kRzcCBVgqF-ug)\n5. **Music Venue:** MGM Music Hall at Fenway (ChIJEbj5w5J744kRV0MbtKFC7KU)",
+  "mode": "route",
+  "selected_venues": [
+    "ChIJWceaK4Nw44kR3HDuPVX0acU",
+    "user-location",
+    "ChIJgRPEVHZ644kRdLHsr2CClRs",
+    "ChIJ7XjjRwBx44kRkhwLqo7uCh0",
+    "ChIJR4mL53Z644kRzcCBVgqF-ug",
+    "ChIJEbj5w5J744kRV0MbtKFC7KU"
+  ]
+}
+[2025-10-23T02:21:20.543Z] LOG 
+✅ Agent decided task is complete
+[2025-10-23T02:21:20.543Z] LOG 📋 Finish parameters validated: {"hasResult":true,"mode":"route","selectedVenuesCount":6}
+[2025-10-23T02:21:20.544Z] LOG 
+🔍 Running route order evaluation...
+[2025-10-23T02:21:20.544Z] LOG    Route type: ITINERARY
+[2025-10-23T02:21:20.545Z] LOG    Evaluating against: "plan outing in boston"
+[2025-10-23T02:21:20.545Z] LOG 
+🔍 EVALUATING ROUTE ORDER...
+[2025-10-23T02:21:20.545Z] LOG    User prompt: "plan outing in boston"
+[2025-10-23T02:21:20.546Z] LOG    Selected venues: 6
+[2025-10-23T02:21:20.546Z] LOG    Is itinerary: true
+[2025-10-23T02:21:20.546Z] LOG    Readable order: Yvonne's → user-location → The Tam → 89 Charles → Boch Center - Wang Theatre → MGM Music Hall at Fenway
+[2025-10-23T02:21:20.547Z] LOG    ⏭️  No explicit order in prompt, skipping validation
+[2025-10-23T02:21:20.548Z] LOG ✅ Route order validation passed!
+[2025-10-23T02:21:20.548Z] LOG ⏱️ Iteration 2 took 5823ms (finish)
+[2025-10-23T02:21:20.549Z] LOG 
+================================================================================
+[2025-10-23T02:21:20.549Z] LOG 📊 EXECUTION SUMMARY
+[2025-10-23T02:21:20.549Z] LOG ================================================================================
+[2025-10-23T02:21:20.550Z] LOG Status: complete
+[2025-10-23T02:21:20.550Z] LOG Iterations: 2
+[2025-10-23T02:21:20.550Z] LOG Execution time: 9573ms
+[2025-10-23T02:21:20.551Z] LOG Total tokens: 6958
+[2025-10-23T02:21:20.551Z] LOG Actions executed: 1
+[2025-10-23T02:21:20.551Z] LOG Correction attempts: 0
+[2025-10-23T02:21:20.552Z] LOG ================================================================================
+
+
+--- Summary ---
+Status: complete
+Iterations: 2
+TotalTokens: 6958
+ExecutionTimeMs: 9576

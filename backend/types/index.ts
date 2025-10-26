@@ -30,6 +30,8 @@ export interface EnhancedClassificationResult {
   isRelevant: boolean;
   routeTo: RouteTo;
   queryType: QueryType;
+  // Added to keep compatibility with tests and older code expecting a `category` field
+  category: IntentCategory;
   reasoning: string;
   prompt: string;
 }

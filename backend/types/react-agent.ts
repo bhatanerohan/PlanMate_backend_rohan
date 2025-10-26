@@ -26,8 +26,8 @@ export interface AgentState {
   finalResult?: string;
   finishParameters?: FinishParameters;
   error?: string;
-  isInCorrectionMode?: boolean;  // ✅ NEW: Flag to prevent redundant searches during correction
-  correctionAttempts?: number;    // ✅ NEW: Track number of correction attempts
+  isInCorrectionMode?: boolean;
+  correctionAttempts?: number;
 }
 
 // ============================================================================
@@ -59,10 +59,17 @@ export interface AgentAction {
   parameters: Record<string, any>;
 }
 
+// 🆕 NEW: Alternative venues structure
+export interface AlternativeVenuesInfo {
+  alternatives: any[];  // Array of venue objects
+  searchQuery: string;  // Original query that found these venues
+}
+
 export interface FinishParameters {
   result: string;
   mode: 'discovery' | 'route';
   selected_venue_ids?: string[];
+  alternatives_map?: Record<string, AlternativeVenuesInfo>;  // 🆕 NEW: Map of primary placeId → alternatives
 }
 
 // ============================================================================
@@ -79,7 +86,7 @@ export interface ToolResult {
 }
 
 // ============================================================================
-// EVALUATION TYPES (NEW!)
+// EVALUATION TYPES
 // ============================================================================
 
 export interface EvaluationResult {
@@ -104,7 +111,7 @@ export interface SafetyConfig {
   maxTokens: number;
   maxConsecutiveSameActions: number;
   maxSameActionTotal: number;
-  maxCorrectionAttempts: number;  // ✅ NEW: Maximum correction retry attempts
+  maxCorrectionAttempts: number;
 }
 
 export const DEFAULT_SAFETY_CONFIG: SafetyConfig = {
@@ -112,7 +119,7 @@ export const DEFAULT_SAFETY_CONFIG: SafetyConfig = {
   maxTokens: 150000,
   maxConsecutiveSameActions: 3,
   maxSameActionTotal: 15,
-  maxCorrectionAttempts: 2  // ✅ NEW: Allow up to 2 correction retries
+  maxCorrectionAttempts: 2
 };
 
 // ============================================================================

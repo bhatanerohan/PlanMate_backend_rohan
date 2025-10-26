@@ -22,7 +22,7 @@ export class BatchVenueSearchTool extends Tool {
         properties: {
           searches: {
             type: 'string',
-            description: 'JSON array of search requests. Each request has: query (required), location (required), limit (optional). Example: [{"query":"Starbucks","location":"Newbury Street, Boston","limit":5},{"query":"Harvard","location":"Cambridge","limit":3}]'
+            description: 'JSON array of search requests. Each request has: query (required), location (required), limit (optional). Location can be city name OR coordinates "lat,lng". Example: [{"query":"Starbucks","location":"Newbury Street, Boston","limit":5},{"query":"Harvard","location":"42.365,-71.054","limit":3}]'
           }
         },
         required: ['searches']
@@ -85,11 +85,31 @@ export class BatchVenueSearchTool extends Tool {
         try {
           console.log(`   ${index + 1}. Searching "${search.query}" in "${search.location}"`);
           
-          const places = await placesClient.textSearch({
-            query: search.query,
-            location: search.location,
-            maxResults: search.limit || 10
-          });
+          let places;
+          
+          // 🆕 Check if location is in coordinate format (lat,lng)
+          const coordMatch = search.location.match(/^(-?\d+\.?\d*),\s*(-?\d+\.?\d*)$/);
+          
+          if (coordMatch) {
+            // Location is coordinates - use nearbySearch
+            const lat = parseFloat(coordMatch[1]);
+            const lng = parseFloat(coordMatch[2]);
+            
+            console.log(`   📍 Using nearbySearch at coordinates (${lat}, ${lng})`);
+            
+            places = await placesClient.nearbySearch(lat, lng, {
+              query: search.query,
+              radius: 1500,  // 5km radius for "near me" searches
+              maxResults: search.limit || 10
+            });
+          } else {
+            // Location is city/area name - use textSearch  
+            places = await placesClient.textSearch({
+              query: search.query,
+              location: search.location,
+              maxResults: search.limit || 10
+            });
+          }
 
           // Format results - INCLUDE ALL FIELDS INCLUDING photoUrl!
           const venues = places.map(place => ({
@@ -104,9 +124,9 @@ export class BatchVenueSearchTool extends Tool {
             priceLevel: this.formatPriceLevel(place.priceLevel),
             placeId: place.placeId,
             types: place.types,
-            photoUrl: place.photoUrl,         // ← FIX: Include photoUrl!
-            description: place.description,   // ← FIX: Include description!
-            photos: place.photos              // ← FIX: Include photos array!
+            photoUrl: place.photoUrl,
+            description: place.description,
+            photos: place.photos
           }));
 
           return {

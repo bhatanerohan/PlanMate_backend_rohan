@@ -1,0 +1,171 @@
+User Prompt: times squaare new yrok
+
+[2025-10-20T03:40:18.983Z] LOG 
+================================================================================
+[2025-10-20T03:40:18.984Z] LOG 🔄 ITERATION 1
+[2025-10-20T03:40:18.984Z] LOG ================================================================================
+[2025-10-20T03:40:18.985Z] LOG 
+💭 THINKING...
+[2025-10-20T03:40:19.802Z] LOG    Reasoning: User is looking for venues near Times Square in New York. I will search for venues in that area.
+[2025-10-20T03:40:19.803Z] LOG    Action: search_venues
+[2025-10-20T03:40:19.804Z] LOG    Parameters: {
+  "query": "venues",
+  "location": "Times Square, New York"
+}
+[2025-10-20T03:40:19.805Z] LOG 
+⚡ ACTING...
+[2025-10-20T03:40:19.805Z] LOG ⚙️  Executing tool: search_venues
+[2025-10-20T03:40:19.805Z] LOG 🔍 [VenueSearchTool] Broad search: "venues" in "Times Square, New York"
+[2025-10-20T03:40:19.806Z] LOG 🔍 [Google Places] Text search: "venues" in Times Square, New York
+[2025-10-20T03:40:19.806Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "venues in Times Square, New York",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-20T03:40:20.550Z] LOG 📸 The Times Center - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/103569470476425346459\">Cesar Camacho</a>"
+  ],
+  "photo_reference": "AciIO2cnqElIOWlPdBFx1VyDEl4KAEERJUqDGF9J2bPA1eJjAoCVXuD2W15-VX37TnXtFXLzCF36ZaoDOjE7QSKCnNwpsk7HtEPfpwqVs_a5kHjhlADY9SEctqTnHLq12tbLE1p1jjGFA2vtITB8Ich_mboaReHL8FP5bUjIPU-h85ZvgApJLXnQl_z7JGnlLb1q1ajVENA35MevWgRR-WXWZ8nn0qZHZwTtchfa08opjPLhnOomDj6qu0J4oZoVYysyhV2AlTorr2BTIIcANBPoGiY3XuiVbN_A4gsF-HGAudGSpMWJ7vgNknvSiHRloylX-zruLm3uLltKLn1159tWMMr62BT0D7XJ7UWGKVCDPEOz4A5Nmn1YNkgnxfdmwBOhPjJ_xw8Dqkp_9L3KJPqqAcyQ89RYWDCG1TDRg0tIJ1Zurelfiw3BYVBo7guibSMqWUd9dtvB-BXtOGsrGi4Td8KgRAaf1E-WwLu81VPh5mPTa1JMX4i0nl0T5VcJel-y-lK8cl1c9rMoB6wRAbnSYw3fI3qeA2kVvPtOLnrJfaLV0EyMoJKefk-lYQt3YEgt9FK13i9o",
+  "width": 4032
+}
+[2025-10-20T03:40:20.552Z] LOG 📸 The Times Center: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2cnqElIOWlPdBFx1V"}
+[2025-10-20T03:40:20.554Z] LOG 📸 Palladium Times Square - RAW PHOTO DATA: {
+  "height": 1860,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/106425019200139541329\">Palladium Times Square</a>"
+  ],
+  "photo_reference": "AciIO2dJenhr7W93d1G2G8bE-ratP36VjCFTY-FsgpQJh3owanoSJNxM9HQHvvZBuhE5a4VjuUslS91tn2I3xNRUoW0KFY9PRUDEfc-beWTHe6eMsebims1zH02jWgisroepHeQs8dbu51mCnxb8tBI_UUh5bnC0697H_eItEr2bdlxFQtslNJweOamim8ijGd8WsY9Qyu6zsgHlPZ3hI183YHSK6Q3DuqC9Vl4j7agvwYPEgApi7K2vIDsw4MB6D-MK35uifWnuK5UaWkfQ30tlF1hDti58__4rMLJOzJE4lor5N0JUxJ8",
+  "width": 2048
+}
+[2025-10-20T03:40:20.556Z] LOG 📸 Palladium Times Square: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dJenhr7W93d1G2G8"}
+[2025-10-20T03:40:20.558Z] LOG 📸 Sony Hall - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/118435527432088497881\">Marissa Massa</a>"
+  ],
+  "photo_reference": "AciIO2esFap69do2YNEx8JSto1l2c1PLohNgXRDkdHIqmK6gRN0MaL_uFzLub0thLA9_EmvpdvDMsRYAklYNVBqz-JfKfJ4GoNXCInNvUW4AgexHHo4dnZVIXH3FCOzwnGhn1i1ctbl_MI2zHywRRImxAEjnWVHYMhl63LV2zijExvqxsw-FiweGQYin5hKpvc6ln7EQkUQwrLSoVSktBu-RCwcCEmb_kfawwTIONATEuy--orsrjhKqnW6HW7DnHdQgNeeYFWc8nQfQ2eCp1oyiEJ0rXMGSoAWfquBeaWNVGRWJIRzr6YpzG4TxWyIoywMshJO0aiL1UzTP_MRwpUUt7mlzTEj5BTIHWzol_tpkQAUJN0EcaadvqRutUSJJ-BqPVAMy-a0m-1kg4GeWw5DzSw-eM0wnWisN2qJ4BG9smCHG6Z_8Mqa_9BUxiDLKqeBFDDk4hmVGtqVstf9-oWKRW9jPh6U-UOXkbU-ic7vBBoxugigUAdbyBGYHcb9mtndpeub6qKScrmEBZbwwxiY52HzEOJdP86jXPgkjIYf9-1F5UvRIOgCkMdRstY7R6KR31GnT9kbDED330w",
+  "width": 4032
+}
+[2025-10-20T03:40:20.559Z] LOG 📸 Sony Hall: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2esFap69do2YNEx8J"}
+[2025-10-20T03:40:20.561Z] LOG 📸 Gotham Hall - RAW PHOTO DATA: {
+  "height": 4000,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/102339996109933344479\">Mehul Patel</a>"
+  ],
+  "photo_reference": "AciIO2deABPNRQJ08aeeoFX3MtjZ9jTaElvyPnb37_hipw9qRcXPCk_UsCZL60LOIy-B9iicxCF6zor7E0yoMLJE1QtWCkF8AZ6dy9cBA7YZOWQdD_6rYYivNS-g-vi2C3hSFo-VFrWvzyclGFPOEdC8d82_82M4Wxcsj-cNybpROj_g-g9xNfXQ4iVICbEuJnQ7yAf1j01V19yYm_FmjFIAi3hWN2VnURP2MlrjwToW11llKTAzHiNl2OV_qyLVOu1nO9Gf_M6qRdFQ4Eg0PHwR4nt0NXGQjTpuPy0KUfCwKZqB0yKYY-hpr4suQsW_z03wHQAF4EQCixtoi1qvc9IoqzEZ9MDS89zbK-QvTbDHOKjv2HGrfd5bM3VrWuE0kj-MjH-IU2SzYCMsWMPl31utlNpZziUGxbbneQzLn7lraydcsnw7Qnjia8gw16r9viGuqUCY2Tmy68cIgtC2wSZ2mZdJ16tZwEVEwvp-ussVzwzkxR0efcoPb5OParko0-niSbAIGT-k9I0dpmJAdsVqvIdPfuxIaBdhFnHi76oKdsE4VM09Uwi8FoT1Y1pUTACJAwWO3g",
+  "width": 3000
+}
+[2025-10-20T03:40:20.562Z] LOG 📸 Gotham Hall: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2deABPNRQJ08aeeoF"}
+[2025-10-20T03:40:20.564Z] LOG 📸 Radio City Music Hall - RAW PHOTO DATA: {
+  "height": 3072,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/106298879916254427089\">Jack Douglas</a>"
+  ],
+  "photo_reference": "AciIO2epX0i7aNuD7xG03h6mavqCMCGrtvJr1jhw1Qg-PayrrEwBrKeSEvAUb5e3qeg9pdjAhn1cp_fkoBsc562I6UbvRKuMhWxOWVWgaZ5-eVgNzyFg9kaI6bIZhenzcbIXm_jswmkOLGBlSSVzJXHGf9rOFlZB6nHK1K3Qh2yWNPZ8STOdY7SZXdJiNQ6ly24DelfBALXuwBT6w1pP2vHec7Gr37xsVOYcy4UBQ8hatpIC1O2ctViz2Xhp90H3LoHaMSRI3ns0rbULEJQz8Rg6g_J0ER_gUBCaxNuLy1EhZ6Z0CsTGfKAQc6XTZ9S7ssaTP5qMu6g9ZFqd0ORDL1UUDDQAQOo3LGoynYi42v3Ye9EJdM8HloBEA3uhZ-UNsA-dD2IAYJBnTiCF4f8rcpTUx_SnlnaYy7sLuQTwfqSL-KeouAFbN8nLExXS-88QAY6SZzsSbGbEVJ1oN3bvpZxUX-panh0Rjo7XImYqeVhAjfrAPFkinl9nzE4pF4h98XipCCTdWGJWyXNrQ-Ll-NJux_fZCzkqv3YjpAMTAE0HJQxnjDmAPzXw7sTZXAfWDCfAZpcj-ETmpJs0Rw",
+  "width": 4096
+}
+[2025-10-20T03:40:20.565Z] LOG 📸 Radio City Music Hall: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2epX0i7aNuD7xG03h"}
+[2025-10-20T03:40:20.566Z] LOG 📸 The Times Square EDITION - RAW PHOTO DATA: {
+  "height": 810,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/106645324807113467617\">The Times Square EDITION</a>"
+  ],
+  "photo_reference": "AciIO2eBjSpk8kQN0VJXn0Znd9E83zQHVkrBr6X-zWHsDi_6XhB15mVE68iWXqFUMfUUv6p-z4zbLRIynUKbPTazenUM-2zUi99BgWzlFbOy5j0lEUJo0kcQUDwjhkKR9deP0FLzAp-cz3DN5OaGcbhbkPySsembM8iVHpmazNN0XuXA8PEM3Ixq1tv12-MFg3P2wCzr203VJzSH2NLRRkDbCvBOAOCIIzuam9HXaqZdJaPTj04KTezR4t-jxZfkMY8DNLTOzxkNzJrh2MLiu_BbAViBY9KH1mMxbgA2lVmTpEdWIanDm1Q",
+  "width": 1440
+}
+[2025-10-20T03:40:20.567Z] LOG 📸 The Times Square EDITION: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2eBjSpk8kQN0VJXn0"}
+[2025-10-20T03:40:20.567Z] LOG 📸 20 Times Square - RAW PHOTO DATA: {
+  "height": 4096,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/102303535928471022115\">J B</a>"
+  ],
+  "photo_reference": "AciIO2ffKYnIPBInY-aO2ehwF4ogjFUKJIojEfZMoZkDprwwi1PhHVlx0xa6-ZxZXK6zrvhXbLpfZiFlPtvbMXM9mSYgcZDenkzuIlsB7u1GzyPzDYbZtE8iZiAD56LlGUAs3qmiME84OHMAm6s9WvLHTp7GsN2dBvtOMEpOJ1WeHVo1COSzi87SZLLhFoDwcjQROsAPy8qMb722mq_ca3idsqGWc5SK62XKwOfpAsZKI8ZYz38KeXpHXjFQbuf4Secwq4OQvHCIhRx1bNgTwYIYdsRayNMeEGVmTwI-Zuw8nuT7L0wh8wxct3EcJ4Q9hMittAG4MXX9auRD0Cnl0OBuYnDaaphKayEipnFLDV26aXw0MVUWhA1Kg22stY7V82JaahtOeleDS_buXkIdoLy6DyV4DEJRXvvqb8cjbCZFgKt4-wyqhmgCE3SWlZXqUNKksHVw99W1CkhMRq9_Ud8awy9uTr4OoejFOE91tF7bzWpDwGFNBsRI76mHE2GLDERorWU9xqnvp5rGxaM2RTzjEcEova4DgZ0J9UlHhSANAV4b7sLICUCe6fWaiCVRkGWvZd2clYPj",
+  "width": 3072
+}
+[2025-10-20T03:40:20.568Z] LOG 📸 20 Times Square: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2ffKYnIPBInY-aO2e"}
+[2025-10-20T03:40:20.569Z] LOG 📸 Loft39 - RAW PHOTO DATA: {
+  "height": 3018,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/112015824591395577817\">Loft39</a>"
+  ],
+  "photo_reference": "AciIO2ere0z51M865JOrK2aoJg4aRvjuGLpS4sygGXD9-FrBtDVxQ9WPzl3XkH9GME2tD1Quhh_JruqXt1UDNmr6YNlKv9gxTZ0uKjL4fxhG_2vBnO2w0ldC7Bu5Zh0_ef5mYlqy7WjD-t4b-15VvpGX0ka3Dk15WsUe1gNtD6vPDmKVMMClyLLfilBuw05pY6Ialw_-TsheUicjevfWUK-PEVDNYYRk2vt0j1smOVhtO55XRtCjrzK0HaYYe1Pjfge5-ipocWclLlNpBhK0cOBuE6Ic39yUnyYv4TDJMb3JbAO6M_wGwDQ",
+  "width": 4032
+}
+[2025-10-20T03:40:20.570Z] LOG 📸 Loft39: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2ere0z51M865JOrK2"}
+[2025-10-20T03:40:20.571Z] LOG 📸 The Edison Ballroom - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/103405320597408866682\">Michele Lasich-Pagnotta</a>"
+  ],
+  "photo_reference": "AciIO2d3aNe3rb_vlO8F8LrVD9jYJs4mMxV2be-er6Y0juPMLVyro4S5bYQksdNMY58DIbOCSkBN2CF9zVzcCYcXbpi9Ixm7Cwm34c2LZcmmXAnpRKwQQe1Tg56j1oEF06IVDyqmRjTRYn-9IDhES9kSDDNGI_0VOLbUvoUoU9ulHY-rWkKi1fOrsBXPff9GK_6WLyIsqZlqXBj-ncWxIeDWaM4rVbMjeuEwBb2GzK3RsDgJkZ5gF-P09ulq38Sz3g6iChdWcgu8vtwwjd4aYpGXxwkj6DWVuZolXhX4JfqXqHZ5aSfsnVLv4PmJckRR7Ue0hSNyy3KxLp0wfRZvJj8prsk5ATtDFSl-pQgVKO5Owy5KZ7eGr6phJgF7SSX40hdEt4g6cJAObaIQpDLF8rTRb8cvDZPNcEoibrf89sY7yn5m-27e_l6TvQZAkgOMWAamu20i96ibUkR7-DFNMnY7kzwAEPbjsULF9KJz9QJGBiWUDuOZ5yJs6EBH7F-4z8uSLS5aS-CMIyN9ctjv81hgHtcUHr-wySVkRHgFMJQj2TDTGwBeacOVRwcVHV_eAmRZ2IJ09O2z",
+  "width": 4032
+}
+[2025-10-20T03:40:20.572Z] LOG 📸 The Edison Ballroom: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2d3aNe3rb_vlO8F8L"}
+[2025-10-20T03:40:20.573Z] LOG 📸 Madison Square Garden - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/103016961643673057586\">nicolas giblasse</a>"
+  ],
+  "photo_reference": "AciIO2ceHyCYnThpmYrTvGwJ6v_aGQW1VJtZ5lS0lo_y6K6tQ5xD4jsqY22FCTolSL3lmjEL5l33lkjrTZ7-EnRERI2rRVLQXGr29RrPQCOMAOh9nOI2G6yQoWPhSCC0K-INAyH3Qgw2yBNzarthdVV6jcjQBJKmNj9RFMrdJ9mesxkJUW-qkEEF-okpTqYkTkzl9CqMtVVOp4USwCT-MxDnT92rw-QiuCvYiy6eK4E9ZphMYq12muKWtf7X_kXUUvvpHHGReXQrg6LwNuGB4CS3_ex5wXYq7xd2m4JXMjV7GrMDwEaeom5X9pX5ooMnszO2QauIg3BCxuVMgGvIZBMU3vG94Mi2qxseBpXxMxXrdAYrhafxOdFtYNu5D_GHD88HIRmNei2YaVW1VJKG8Wf9QhA88k0x9N4xcvYZgDy76MyTBvass0dqyHHpMM-KHDGtU9ckoZpJ-OHSlvXbciarsrmtIY-Lh7xEdJYDmveGvtKqJ3qsNhrgP7_9s0MXJHYQ5Jysc2xAGn--bfFQSWtDv6Fg-iYhqwlJelrcnwIFsZWbmGlZzG2Id8sWi9esRdBf5vAHA9tx",
+  "width": 4032
+}
+[2025-10-20T03:40:20.573Z] LOG 📸 Madison Square Garden: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2ceHyCYnThpmYrTvG"}
+[2025-10-20T03:40:20.574Z] LOG ✅ Found 10 places
+[2025-10-20T03:40:20.575Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2025-10-20T03:40:20.575Z] LOG    Success: true
+[2025-10-20T03:40:20.576Z] LOG    Data: {"venues":[{"name":"The Times Center","address":"242 W 41st St, New York, NY 10036, United States","location":{"lat":40.7557487,"lng":-73.9895629,"coordinates":"40.7557487,-73.9895629"},"rating":4.6,"...
+[2025-10-20T03:40:20.576Z] LOG 
+👁️  OBSERVING...
+[2025-10-20T03:40:20.577Z] LOG    Added observation to conversation history
+[2025-10-20T03:40:20.578Z] LOG    Total messages: 4
+[2025-10-20T03:40:20.579Z] LOG    Total tokens used: 2649
+[2025-10-20T03:40:20.580Z] LOG ⏱️ Iteration 1 took 1595ms
+[2025-10-20T03:40:20.581Z] LOG 
+================================================================================
+[2025-10-20T03:40:20.582Z] LOG 🔄 ITERATION 2
+[2025-10-20T03:40:20.583Z] LOG ================================================================================
+[2025-10-20T03:40:20.584Z] LOG 
+💭 THINKING...
+[2025-10-20T03:40:24.388Z] LOG    Reasoning: User requested venues near Times Square, New York. I found several options and will present them now.
+[2025-10-20T03:40:24.389Z] LOG    Action: finish
+[2025-10-20T03:40:24.390Z] LOG    Parameters: {
+  "result": "Here are some venues near Times Square, New York:\n1. The Times Center\n2. Palladium Times Square\n3. Sony Hall\n4. Gotham Hall\n5. Radio City Music Hall\n6. The Times Square EDITION\n7. 20 Times Square\n8. Loft39\n9. The Edison Ballroom\n10. Madison Square Garden",
+  "mode": "discovery",
+  "selected_venues": [
+    "ChIJY5Def6xZwokRTKAUrJPGNLE",
+    "ChIJf9YYUIhZwokR0DCXuN7Mnbo",
+    "ChIJmVAzOVRYwokRz9Z560XWp78",
+    "ChIJb-mp6atZwokRkT0n5SYVkcA",
+    "ChIJPS8b1vhYwokRldqq2YHmxJI",
+    "ChIJ0zMGg5BZwokRmuMvKn7Fwz4",
+    "ChIJxQf-61VYwokRQQ650M9yUB0",
+    "ChIJ8Wescx5ZwokRJVyj9e5gI-I",
+    "ChIJxwitzVVYwokR0XC_DpPGQvc",
+    "ChIJhRwB-yFawokR5Phil-QQ3zM"
+  ]
+}
+[2025-10-20T03:40:24.390Z] LOG 
+✅ Agent decided task is complete
+[2025-10-20T03:40:24.391Z] LOG 📋 Finish parameters validated: {"hasResult":true,"mode":"discovery","selectedVenuesCount":10}
+[2025-10-20T03:40:24.391Z] LOG ⏱️ Iteration 2 took 3807ms (finish)
+[2025-10-20T03:40:24.391Z] LOG 
+================================================================================
+[2025-10-20T03:40:24.392Z] LOG 📊 EXECUTION SUMMARY
+[2025-10-20T03:40:24.392Z] LOG ================================================================================
+[2025-10-20T03:40:24.393Z] LOG Status: complete
+[2025-10-20T03:40:24.393Z] LOG Iterations: 2
+[2025-10-20T03:40:24.394Z] LOG Execution time: 5412ms
+[2025-10-20T03:40:24.394Z] LOG Total tokens: 6066
+[2025-10-20T03:40:24.394Z] LOG Actions executed: 1
+[2025-10-20T03:40:24.394Z] LOG Correction attempts: 0
+[2025-10-20T03:40:24.395Z] LOG ================================================================================
+
+
+--- Summary ---
+Status: complete
+Iterations: 2
+TotalTokens: 6066
+ExecutionTimeMs: 5416

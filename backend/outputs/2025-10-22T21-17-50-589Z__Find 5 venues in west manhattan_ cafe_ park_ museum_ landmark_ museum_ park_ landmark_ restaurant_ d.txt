@@ -1,0 +1,430 @@
+User Prompt: Find 5 venues in west manhattan: cafe, park, museum, landmark, museum, park, landmark, restaurant, dessert. These should be close together for a day_out. Create an itinerary with these venues in a logical walking route.
+
+[2025-10-22T21:17:50.594Z] LOG 
+================================================================================
+[2025-10-22T21:17:50.595Z] LOG 🔄 ITERATION 1
+[2025-10-22T21:17:50.596Z] LOG ================================================================================
+[2025-10-22T21:17:50.597Z] LOG 
+💭 THINKING...
+[2025-10-22T21:17:53.590Z] LOG    Reasoning: User requested multiple venues in West Manhattan for a day out. I will perform a batch search for the specified venues to find suitable options that are close together.
+[2025-10-22T21:17:53.592Z] LOG    Action: batch_search_venues
+[2025-10-22T21:17:53.593Z] LOG    Parameters: {
+  "searches": [
+    {
+      "query": "cafe",
+      "location": "West Manhattan",
+      "limit": 5
+    },
+    {
+      "query": "park",
+      "location": "West Manhattan",
+      "limit": 5
+    },
+    {
+      "query": "museum",
+      "location": "West Manhattan",
+      "limit": 5
+    },
+    {
+      "query": "landmark",
+      "location": "West Manhattan",
+      "limit": 5
+    },
+    {
+      "query": "restaurant",
+      "location": "West Manhattan",
+      "limit": 5
+    },
+    {
+      "query": "dessert",
+      "location": "West Manhattan",
+      "limit": 5
+    }
+  ]
+}
+[2025-10-22T21:17:53.595Z] LOG 
+⚡ ACTING...
+[2025-10-22T21:17:53.595Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-22T21:17:53.596Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2025-10-22T21:17:53.597Z] LOG    1. Searching "cafe" in "West Manhattan"
+[2025-10-22T21:17:53.597Z] LOG 🔍 [Google Places] Text search: "cafe" in West Manhattan
+[2025-10-22T21:17:53.598Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "cafe in West Manhattan",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-22T21:17:53.605Z] LOG    2. Searching "park" in "West Manhattan"
+[2025-10-22T21:17:53.607Z] LOG 🔍 [Google Places] Text search: "park" in West Manhattan
+[2025-10-22T21:17:53.608Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "park in West Manhattan",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-22T21:17:53.610Z] LOG    3. Searching "museum" in "West Manhattan"
+[2025-10-22T21:17:53.610Z] LOG 🔍 [Google Places] Text search: "museum" in West Manhattan
+[2025-10-22T21:17:53.611Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "museum in West Manhattan",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-22T21:17:53.612Z] LOG    4. Searching "landmark" in "West Manhattan"
+[2025-10-22T21:17:53.612Z] LOG 🔍 [Google Places] Text search: "landmark" in West Manhattan
+[2025-10-22T21:17:53.613Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "landmark in West Manhattan",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-22T21:17:53.614Z] LOG    5. Searching "restaurant" in "West Manhattan"
+[2025-10-22T21:17:53.614Z] LOG 🔍 [Google Places] Text search: "restaurant" in West Manhattan
+[2025-10-22T21:17:53.615Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "restaurant in West Manhattan",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-22T21:17:53.616Z] LOG    6. Searching "dessert" in "West Manhattan"
+[2025-10-22T21:17:53.617Z] LOG 🔍 [Google Places] Text search: "dessert" in West Manhattan
+[2025-10-22T21:17:53.617Z] LOG 🔎 [Google Places] Request params:
+{
+  "query": "dessert in West Manhattan",
+  "key": "AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+  "radius": 5000
+}
+[2025-10-22T21:17:54.353Z] LOG 📸 Landmark West!: {"hasPhotos":false,"photoCount":0,"photoUrl":"❌ None","photoUrlType":"Unknown"}
+[2025-10-22T21:17:54.355Z] LOG 📸 Upper West Side/Central Park West Historic District - RAW PHOTO DATA: {
+  "height": 2624,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108585025234485852384\">David Herszenson</a>"
+  ],
+  "photo_reference": "AciIO2dqXdwhpRRt59mvG4QeIhUEGFj6myvEtkpBqiftva3bfa9EylteFifWtWgSmlX2Cg_c6SEtKNFNshi5qOn3cxSIa2bF0r3AyWtWcvvaxtykY4jQCMhiJTYN2wPF6xxuJC42zY649Ho7rxUdzdkoq-J1JxHaAHoyHikZ0eXmqxRgElxWIYoHyuSD6I46MHYliNzS8j6ZxJapphCXgWRFSCb9X7_SXZ1040RUe_8VOnj9E5ztf1F7OHexSkYx7jyGkOa9xmYmskkv8CjZAC7YfdjjcfYdIkE__oVEaluVxlY5oBejw2R-p5EH54DEZl0y3sH35UbBbBSFmEfta42GrNwqaELiNVI3v1iWOCquofzGrol--27RLBAKUiQwKYlAwvoRpJk_5H32Lg4XGDn6s2jCfR6_HVe1nveB9P3WoyIjN3yvSsIO2rt0oYhNQmmDpdYJsfeyx-KK_UVGoMZ0kL0zkWVlObHjvu-PNqnqAPjcqaGtNvkarDlSMHDPLZW57UKDwUdXMuhA_U3ZKT3mCie04uELHvbRMnwCd-jO62oDCZzDMF-gKc-i423XEMKPHUQXeBIh",
+  "width": 3924
+}
+[2025-10-22T21:17:54.356Z] LOG 📸 Upper West Side/Central Park West Historic District: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dqXdwhpRRt59mvG4"}
+[2025-10-22T21:17:54.357Z] LOG 📸 Landmark on the Park - RAW PHOTO DATA: {
+  "height": 2988,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/114864429562380057947\">Cami Braccia</a>"
+  ],
+  "photo_reference": "AciIO2dqllhlX5v7UjYxHoc7JNW3xNx0713bQwWLW1-33P3xQl-JX5oRulpx_DwxDA9irdx2VvpUFQodRNJv-ZGzV7_iy6-Fj179BX6bYTtirzxpiBKoHJHaTnkep8p3u0vUazrNqRt-uG5RoBb3mX7SEPcna3JVlzPiLUDscjWSib5SqTGuNDpKRqHfQIpeunuxCJTRrpMFFBpiNltGH_YDvh8HuFoXYdNokYqEidx8JoPIdPSu-aaLb7GhizjRWYQyS9ZFHgYhdgxG6ORvluUeENJ75KYt-IDBBx0YpyqDoWe8RdzwosR9hTiTqg4ISY-lQtJ8yB0Ru-6o6LbKldAREEQcDRy2bV8FnkRaOjxh6GtbAJv8RKtCjPp2ffN0McEeL5HFdZQcDQiqgpSCTFiiklBcKeg3PhcpEhNIlOqGxzfX-ZNbdy3QqcA9FmFcWglJRSQUlIxfcZKSl72QNOsopxLCSaQliSaasiaCNJU0SU8Ac2lySG07nrb1fIk53sGemMzZgLurQfvNGFXgXxGal-AIRhmIbw9XO8m68g3FjRFLTTCwn_emy3YcZk-Nx7j0-cmXvnMXLmlTWw",
+  "width": 5312
+}
+[2025-10-22T21:17:54.357Z] LOG 📸 Landmark on the Park: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dqllhlX5v7UjYxHo"}
+[2025-10-22T21:17:54.358Z] LOG 📸 Riverside-West End Historic District - RAW PHOTO DATA: {
+  "height": 4032,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/108585025234485852384\">David Herszenson</a>"
+  ],
+  "photo_reference": "AciIO2cdISFiozKp0WAcTHZezrmnj5njyRjLkoDa3wXx8uskFgFBhFjyyRQGghtM55KIDiwP50z5Js6JHOv7_BuZaLGD7-kubJNK7YhUxcXtT6jupL0mFKcAIGipAcMAmOJvTlkqUEEID2UwRnHseOLsae8_iSpNLfprnLSYXe6gPw1Yczh3SqPvtYIcHZwTstzFEotVB_6UTk8SeZ_AUvtXcLGsY3v-oDonK0eiiNCupu7eKczsEGVtKC_2r2PXXD-LQA1bVqWp3A-vJRCaXr8qgZmCbn-fdBCKNIsh6_IN58nAtODirs3lBIJAAPv9G-oPn8VT2_XmUM7IeCaG0vokDFXRHByWmide9FMGOR3hzxSwLkLomRq6eiXe1uDI71LuKj1xhqVLTphMvc1MMQLMCYuWNVVRk0StwCfPTX2Bxa2-ZYenJhZoX6oUtk-rwiLww1ygpETbwb60UE5UOZd_jnookvYD-4M0xjcc_RBDFmlCqXImv_TPipFPR49tOkVpdY28BXNvsGQ-BDdcxUw95w-7S43q8wW_3gMFXGwczFSqCTEXuPaJPWWARinbiL9-H46SAHPK",
+  "width": 3024
+}
+[2025-10-22T21:17:54.358Z] LOG 📸 Riverside-West End Historic District: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2cdISFiozKp0WAcTH"}
+[2025-10-22T21:17:54.359Z] LOG 📸 Landmark - RAW PHOTO DATA: {
+  "height": 4032,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/104680334513644191012\">Jia-Jun Hong</a>"
+  ],
+  "photo_reference": "AciIO2c9uZnzyfIbIefePo1YIAf37jq4WQukur0UaEvrngINxxi2VixQptLxMxQ_e352Pl9vKExPgLTugpipFUrCgpB-5eXzgmVNSjxoDle0gyQPjdSBIPPfBlJ7OL20bEoRLFbQ87wm--sKu5n9O0eFT_5Pnw0PJvxt8LuNsJ3vpw1ZWUHE_RVYD8qOKIrfrFMnVdYBTBJ7n3ogtyeua9lowYQnWwfjRZUKfYZeyHAwJJuHq74jYFwbsclF3sR1JdysxTSFDTjBqvmIe0UVk3O-BrgqTHR8oV-F69VnljQ9Bo6TJif7p8ZZ3BnhUAmoCtJtVsknnsR4zKY5tF4rTMBORmF4lCDJf0bo27k99nsJgWVdTb7k7-sh3DwAPvVZn1vErY-sl2MF5agUgaEqB-3Ke7A8WkHbF7DMAka-S9MllXETuvItJGPSt2IpQpZMXEiG_LE_YE1txUXXHksGREEwgKmwoA5IIy2Yj7PE52t8u76OqiqFTeRo9Uf64qLoXZ0nCxgAhOcLdjlqBBX9kT67yerbuVwNb4TwO7s1u5BzAMGTfcbHLN80xwDJjkx4OOzWu_RmCA",
+  "width": 3024
+}
+[2025-10-22T21:17:54.359Z] LOG 📸 Landmark: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2c9uZnzyfIbIefePo"}
+[2025-10-22T21:17:54.360Z] LOG ✅ Found 5 places
+[2025-10-22T21:17:54.390Z] LOG 📸 Levain Bakery - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/105711994202468669368\">DoYeob Kim</a>"
+  ],
+  "photo_reference": "AciIO2e2Gcz32kFyv_rmcDeuXcbZb6Q40xah1RpwSQnyRl0aT0C7Dr9pr8ceU9fV0QB2b7rwI-XvNbG3LmKs3LefC47tqXFc11fTyC5R-aamQH7oCJQo4rJC2xhxBDQElIUrU-gvaBRX-hrlodQF3VT0blqPYTnhdhhev6FbIL5hLp8tm2VrFoCMfkOrPXeyvTD0AbEfRCZyAt-vexlLQ6FvblPipj-r4HmGeaGdaBm2XhyVLGZJwTE278ZYEe2ixWH3Ql-xN1QQ4GR3QHFQLEHh0J037xcL4MRACCCu8Xr9_TykpOmwmRQlY9g8Jxhj4qbBw_N5t8pJiWql7SwH3ehf_uSGZ8msI6MuZIXi8m4v97NB-QsLIezc8R_QSCkr_M7JzUj6ant51ea9gJth-LhKeks_1wRdhlyv6NlY0eEotJDLXCQ4ZnSPP5fjfDQ1H3hHZICNmEaBQOPlkuFMMI8d6XGkrY90H-l4gtgpwtZM0QFEIazWMr9OIKKCS9QrsU0WS5S0c7b_YGSoEI5eg9iPL_wLEnQWqdj5OS5YQciTYSyX56oGbf6LJIw8qwmhCdC9Px38sCSmm_4WmQ",
+  "width": 4032
+}
+[2025-10-22T21:17:54.391Z] LOG 📸 Levain Bakery: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2e2Gcz32kFyv_rmcD"}
+[2025-10-22T21:17:54.392Z] LOG 📸 Milk Bar - RAW PHOTO DATA: {
+  "height": 4032,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/104014860497540788500\">Nabilla S</a>"
+  ],
+  "photo_reference": "AciIO2f4FwDwOiS5rusiy3wUVeta8snLweyAPUicGK8R_cEdk7TMnxK1G5DWCopPGabX_GfkZ7zsyHd6L1kNDg5u0NNeGMDFzqz77_64_1qMcTXX-9DN-BsSgTq0Zxs9V3wwTs-N4VjzEVnGGAVq6LrEF0FR7nbzFOEJyTx1nvrdu6n3oMT_g9j0vA8Cs9obeA6aEUFagXavaFXPUibxkzzRs2VXfaMJqzzak0u_KtCc5CRshSVnbGFsITzlesVMWbhbKNdCBI8GzTn1ycbfo9rW09aXX68k9-wb6rfvRI8ZhYVTmXqkxGgkMoh6zI-tnarVQxQQ_Inv0BnKoXVF0kmrGyX3elEsYH3mBZefEODHvbuOWesYyEjUM4jbiXGOcZEhgjKa8F1XFR3P4jI-huapvI-Ubdb3vJXXTdHOxBJKzjHrR8KpTV4aeeRcQNZVrqnQQ4NZqaqDM7xeDrgsZD9zOLl6TXIeuBkTB0QUo9_rN4l13qtrJs-ZjyJwjmBfiVVQ5LKO2lQeNuPMKNwCi6-TJxm_UcqRmupw92np1dDeTU5wvFkCviq6JyT0b3eeI77YIJsX_hYj",
+  "width": 3024
+}
+[2025-10-22T21:17:54.393Z] LOG 📸 Milk Bar: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2f4FwDwOiS5rusiy3"}
+[2025-10-22T21:17:54.395Z] LOG 📸 Bibble & Sip - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/112468297178444926630\">Alexandra Dékány</a>"
+  ],
+  "photo_reference": "AciIO2cZSaVk_8KPOysEWfFoszahviYQBerQxeRUepo4YCOR0blu-A8LBS-Q5WUTAKbnM1Ze6RUDLrkuvlagpqTe_6iECQ6FhNJpGiw5oyvqXd0mRjUX3a5gEEJICC3lqlCVBnMhiau2Q1i0YjOhUnjMxRGuucn8avIWOlLWAdHyjzgK-31lKUYjox2PYN8mrHd6G_4mEOzhg5D91fQOmMDtgqS7BeLuaF5fuWhqqylWX_wPWN98LAXLAwt5C9RbQUTHYrT-LaTxxuOW_qU8YYPPscZHJhN7LPypFGEy0Xfc9OKPRaqd3H1ZPZ6BsVXYlSfN9mqfoxQ40sl8IJbzxXIVa0iKQO9I4sxdz4v9_3AbFp4zkRUsSRU9ZNtEd0CftcuyK3KoT-s3q_75hFW9v5YOiSQYYurlvjBQLeQxyzIFt_ax657WU_VyGHLgcd1CV9ghgOkH9fcAT6RP0bZH-DejzqyfsmuwzEqIfUtcaL0895N0gA0MKGR__VU3PqDqSIAM5S1kitT0et9KIVISuvQ-kYv21o9WGNTvuq6r07Fz7ThWuAffzFcxhpyW_cq9vd-uZbhMJnYb",
+  "width": 4032
+}
+[2025-10-22T21:17:54.396Z] LOG 📸 Bibble & Sip: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2cZSaVk_8KPOysEWf"}
+[2025-10-22T21:17:54.397Z] LOG 📸 Venchi Chocolate and Gelato Columbus Av - RAW PHOTO DATA: {
+  "height": 5712,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/106132560637163370565\">Ashley Boykin</a>"
+  ],
+  "photo_reference": "AciIO2dIkPDuDeIjF-JtHhFn8edE5RpQAoctGmWT0w5vIuF0riPMOV_TNvolw9EV_Kdr3EpCYe3MMTo87CjC75RsT56jw_ypeNd5t9WHSWnxK-qQGDcwWpfGrwH75S0681Pl0J4ddGRP7KmSqunDqRu-ICAfSxLdmKboLNyItEFGhj12d1I7pmocyTrRi9Y_cjwNyBH24lGtDhxnha_zBDkwLJAEWHQasP6ICOpbdTa05yTLkUMhu3FXaZh5IXWv4eNJ3IRnvjouzJTe-njjBI33pVI-ai2M9eF49P9O5xm0YreSRb8TW8W39FTLst5PwbGJtuS44sg9ruQem8iXPYz56c-OVVuK6hTG_Tk862fBeLVPUJa1R85P28OOrWcZ0pYn_JLUddVFijzZve5-h0GDdDA22UItrvz0bFC-NXkkFipHNUloE186L2EvU12mv0u0NvDRiqXyJ-lf0Rpva-P2KFbDB6jLW-e-tR5aH3X1g-0sTqHChZ8Ni8N0x5DaPtlWNHfTI8nPrnxfI-Zu49DsUTTfJVE9soe3Fp3QXWuRUWUVe6Et3QM07QT8uwTlGhzWFSWkkY268UC9mg9dVqfrJtFJ9hM",
+  "width": 4284
+}
+[2025-10-22T21:17:54.398Z] LOG 📸 Venchi Chocolate and Gelato Columbus Av: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dIkPDuDeIjF-JtHh"}
+[2025-10-22T21:17:54.399Z] LOG 📸 Magnolia Bakery - RAW PHOTO DATA: {
+  "height": 3006,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/113017436598393193790\">Ludmila Moura</a>"
+  ],
+  "photo_reference": "AciIO2eyvAQtnr7OTtEIk7AKpenFu5VtTaCQxqpf1UCCWxXayRqzWrt7m4kKVU9TdwhXp7YNPqbdbWfGL2KydrkboHheokop7_pstRSpn5nmfQQxK2sJj3pMlXNxiwtabwKIeLR294B81NXZYtVxoE-7Ye9dCYcxZKuugZUuasGvHDVzxarudxNnSIXSGb20aWlciAng2Ox7EDujIsfTT4sOzezL3NWtav5NgFmT8ZICOwqGkPDVUwdF1-CHF7JkaYwAAlDF21vxFjjBGAYegwgu1BDvat2QHnhzYhEcf30rwLLfFY6lYGVDFGADEBqj4fdaF4xuP2IJYUmvOYXiuEWfQs9-iFG7eBm9zkkk3_GzyPdc_zrrqb2iEhEHESca9KajtYGi5yduHfIskCO_NkQCsARhYOS8F0-NKN-c1IJRZryCa4dTormtYX9xdQcDpL1y7ZVYqTBG40mo1ZIgCyDDjgH03lcszaxGoyTSCiWYd9VQL2egpi_heM_VbgQzEYVxGBql8mHj8Dtjw7s6PgEOZMIAiTD-c_kORpx51q6H-8-srbvDq90PGQB6aW7YlPQ__aUE2zn3",
+  "width": 5344
+}
+[2025-10-22T21:17:54.399Z] LOG 📸 Magnolia Bakery: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2eyvAQtnr7OTtEIk7"}
+[2025-10-22T21:17:54.400Z] LOG ✅ Found 5 places
+[2025-10-22T21:17:54.541Z] LOG 📸 Charlotte Cafe - RAW PHOTO DATA: {
+  "height": 4032,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/117059204358418811848\">Charlotte Cafe</a>"
+  ],
+  "photo_reference": "AciIO2fuiDOCK0StjA3WuJvG8okbW6Mrk-ltnEwgtGbLGGYe-wbrVTs5cM6dLNQ7RItj0H4TkC339Uf8nZcG_w_0b6B-CB4Ob5-d55EXGGdWJIogW9GVzFnPHdkXnkmm_wGF7GFXs6fZ8OiPi7pismKx4PZOS_ZhXd5m52rr2zVb_39IWp5kcT8zW_cnW6qjgwItcpEqdoPY0_1RUY9qzpMCUw3Db6mp3saF2QmZxs8Tib6uoeXnKIhNA1Av89kXB7AWJXsNn-6a1JDSf8LAOLaCgESHt1B0xJbXV6HWjF1QHKF-f_fuk8M",
+  "width": 3024
+}
+[2025-10-22T21:17:54.543Z] LOG 📸 Charlotte Cafe: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fuiDOCK0StjA3WuJ"}
+[2025-10-22T21:17:54.544Z] LOG 📸 Sote Coffee Roasters - RAW PHOTO DATA: {
+  "height": 2193,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/102663545016943810639\">Andy Noel</a>"
+  ],
+  "photo_reference": "AciIO2eH90NkNyx5x56ypjMHvSpT6wkPfnVFN8D7_5RAFyIxV5HCD3AVHVN7alw13zCVSD1O1NYTax_6EWhibJZslXyJcWKhuYilV12F_QSNO0tJlNJfhO7Mx6nlmpFTRbafMvGBTjlDREnVSO1sUqzZ_bUVyOw3_DwKVCDmnpfA8p308hLl2BvMEI1VdbRv3gnw7xbk9oNJoxy7rlx3kyuSUd8-tiiB-9bj02LgrxMpX-7GgIlO7S2i9EQTUUClDR19XqSthT8JpfZL4jY0vuBIVNrrgcThYR0UIf2BPRXu2evLzdpSen4kYZ7YcK2UqGU1DgwXnIrzz-VLxAfI5wUjvLHSsrhMoeXfDyAOcwDy8EkEvoCt0n_HuqfNWrvQh5O_M66zlD3YHIcUfJzhxQe88JArKnmVyg4Ol731Mnnt3tM2L1OKZLcA7ZXy1-FrOaKBW0QwiKdfv6lTxDOS3k4Oqr-bygQHl_PLWvV5ACBRzuGM8eCwDB-jjL3Vi3-O8Z4JxHnXdsLzc5uW1ARUAzoLDL9keYq_3xIDUC-s02Lt7ZBjbWTT07i4qsuScs9l8lkUTkLSm640uTRdXg",
+  "width": 1645
+}
+[2025-10-22T21:17:54.545Z] LOG 📸 Sote Coffee Roasters: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2eH90NkNyx5x56ypj"}
+[2025-10-22T21:17:54.545Z] LOG 📸 Picky Barista - RAW PHOTO DATA: {
+  "height": 1920,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/101936043262320743820\">Susan Ettenheim</a>"
+  ],
+  "photo_reference": "AciIO2fpoQsODK0tJFFKkKoDjVu1Aw8L1TlpTE4kz19pcZadcjEY4dbIhSL6t9dcpa8kSqVaikddmOWGT1S0nd3ma1dfWMOYfXK3DhFb4K019WQHic1C09SiaJ_a8lAZpoBRwzieQY76LNTNZ6W-xH1esaizvVIjMU6YGDh1b5rj4KfxiON2EX09WrOu_wl5BF633oR-JsjJsFnC72LHUQoW7FP7Rc2QW3zJ1nLrmuehnJPw6_GFqOuMVuAbf_CDOQG3OXdsTlxif3L4pLOlVprdW8vEPTQeOEewql-V0dhobn1T7raDTgOO1iWt4hLaqBl6ZCmHrRqHAMEgl2ehUH8p7Lpan3mPxnantmvCkoicBBHlCG2aronZFWuRcxi-1X3Az9xJ9c3mDtR7EpcxnMe9ocdNkjDHrfIv52-5AvsDK5qNqDbMKID3BHFYGW69mT5tKApCFeYkYfB9zZPi2MQLW0TvUMCR2d661SoVtrmWS7wZRgy3sJreNDcTGHsyG5qNu15DGFYo57E_uWB1fOksnKR2yj9fo7WvZUlXnhm8bfo18fMBV5iw6EkUVskeEvrn3pjs3JBZlyBbh7Hh4I0ux2_EFtU",
+  "width": 1440
+}
+[2025-10-22T21:17:54.546Z] LOG 📸 Picky Barista: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fpoQsODK0tJFFKkK"}
+[2025-10-22T21:17:54.546Z] LOG 📸 ARTISAN CAFE - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/117403496289235051656\">Jennifer Stoloff</a>"
+  ],
+  "photo_reference": "AciIO2dTcvdeh9fVsrv2oNtKqvuFB7PPr2qJTYFLbrfrIbBl_KFhx1_ryDve4Bp6K8frB_22Z1ujGb1HmNxfncpYWc3k5kbCyl2-fNzIyYJY6mABNTsVsJITC-4A3wTocHhK-ns2wvrluAaxPGV-sllRDJ_mDkNjmCxpUUcwv3Bk9esXkprGuvvu_tiaeb8oF5QoIy73nIqjAVUZT7V7HGd6_6bSePmDoD5MtUsxlNqKg5AyEZJVfDaIRVh3yLucfXV7GnkW-IyP9PLgZ3BfSvr4daEmnOBRLnz_Bj-9X5YfGBZM3TR6xp8DA3ztLurzXSUi34BtEYqtW7l8iRdt85127GsQSomI_ZsH3oawprSgBtFR06oogVcJp55zgYgUL8rXKKobyhkXjbAz_o9LZp6C6xusnBO41VPPV6geT-mhElSdoxYnC6kQ3WGEzu-EYCQIytjtZYsklrS1rZoyoOhZiocmBB2_uXpfYDjNi2Wh93NsB4qwyrlWaFH7vnvX9Det9KxgKlpNJ9pFjP3A1ErxHgup64Q1JlyQ0vbjduRNYyQ07mT9pAQd16kC6UmWTsv9q0JrZPCZ",
+  "width": 4032
+}
+[2025-10-22T21:17:54.547Z] LOG 📸 ARTISAN CAFE: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dTcvdeh9fVsrv2oN"}
+[2025-10-22T21:17:54.547Z] LOG 📸 Frame Coffee - RAW PHOTO DATA: {
+  "height": 4000,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/100096857517386661710\">Evans Formica</a>"
+  ],
+  "photo_reference": "AciIO2cIuqRdn4JukrycBQJt4u0UsK_jS7QZRxmDOXYxTXRlfX4SBKfYQ8A-k96KDXrQUnAE8V5WG-q9RJ--xy2ehDpjsZZoyyemLZmb1T3RR3SMT5lGqJkvSYgixmpmeKSFVtQXxUURI-5HII7xSkh7qGHUDXA5-5sXhgSEKyY_BiBIX3XkfRZiq3OEIDnGRmVWmo1Rbg_4toVbTC7b6hQpyfbYpuc_t4n96DMml6Bflk8E6KYp-skiLBi5vnGyyxaIlJ3caHiqNRi_rrFmjUdMw3S4AcFlVH6AhXVtnMox_cT2VB5tcyazRhnTsbjC4Kphh6MqwCjb9JxSlF5H3sNr-wkVEra38zgsW50sVOEykY2VqzNQ73f3i2dTcZ1LdvAjgcjL1sw309Mr_jVhXIpOlpEv9u9aWckQjMy4VrjpPJh-JBvCHOinb3S3rVNmaW7-N5FruN8M7D3seKsZ8e90Ji94I2u2PkAGDY4pbRfPhdalxnFfB_qAByD4y2KjYxxT4BpzTTMOVoEEY6JecfCmP7DuaCkMGBO03kyEj8XcL6XuVP7WXUkvgac3wHe2L-KvpzA-Ne6BmtWjRezEKY4H027_CtUpiQ",
+  "width": 3000
+}
+[2025-10-22T21:17:54.547Z] LOG 📸 Frame Coffee: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2cIuqRdn4JukrycBQ"}
+[2025-10-22T21:17:54.548Z] LOG ✅ Found 5 places
+[2025-10-22T21:17:54.594Z] LOG 📸 American Museum of Natural History - RAW PHOTO DATA: {
+  "height": 1200,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/111651506800814884865\">Paul Ou</a>"
+  ],
+  "photo_reference": "AciIO2fP4j8rl9vqT9cfrHpS3jp6Laluj9LZtOiRRmeLHOOgZGen_iRdA4HuEf5VWbBYLm40d8iWnzP3nmgTkh-NGvS-dpbtsKu976Otpzq3jb7FmXWL5q1CU9lKYaArg2C0bQTnlW7hrzvCTvCNxa-ajqGwNE-Yg22koxlzG0gn-svqwRDMPj1Vrp51lVQXiuxtxvlPqxZHGUWSLPpLQan9J2urg897to98QS-cEhzB-cqh4V2NHsQQ7Y3Q1AnluJ8pHBpQ8DQUG9tY4wQLUHcr62CihHjt1-iT1_c_nB-zPOo6-YbUhlLNOJiC-sccpIHHjNZMfXtsSVHLLQLNfJI0OnMly1IZh3ZA_9pipuS_A-BbykfXRmE9te4GCJWnBiWxr9Qzfu5lajFsrTaTNguIvk0t0NjnT6THWPPdfYEE1KuZxflf9nGKPgBwGAMaLbCti1zk6TN6KI69oGeGDYnfqFgrYjDR_Vs8ps9WlDrtCwY9MYeFpU9eY9Jexuvz-WV7k47Udu-WfkS6zx8AZFPV3Zu4KFdR3u1KCL_qEn9TS7m-kjEa3KywtGuGQa1rz8jH5hBg74DUXYJljA",
+  "width": 1600
+}
+[2025-10-22T21:17:54.595Z] LOG 📸 American Museum of Natural History: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fP4j8rl9vqT9cfrH"}
+[2025-10-22T21:17:54.596Z] LOG 📸 The Metropolitan Museum of Art - RAW PHOTO DATA: {
+  "height": 12000,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/110394467847650748547\">Alex Moskal</a>"
+  ],
+  "photo_reference": "AciIO2eFlpL_LOXV0TkipL1nvj1t1DB9_NP-7jlB_9R25huN2gN-RHtfuhcqDjtA0ccizi2j_PirzgiolPO208bMQdh5N5rNGngxLLkyW6eqaaaRMiXrsMOoLz2a7z3ha_VorNqLnNc7MbX1Wwt8GPpoPOqtMExPmSUFqBCYuBtpBacek9uj-12Y4rNHwiBO51mteGZYCBWl0NhOP-DtwvIuk9vzhBpw5ube2aVAeurZjSv-Fju3TsVYdba_E5QsCCjLHadHMATNuWrBZbVsaHCPJJ1lCptmfM_fthK_EEUt2CPP0cG721j0QE7euTwVNhUmIqM2sTWUGSe7aLJWPFJirXePHVD_YTNfumdOUzcL19zlKOtHOTFSl80GUEd2jjL6iYEuKTddxCp6pqXXxaL_oUntWzrUtG_kBqZVSOeTjbHJSTBp0r30LLLtMK-mRPtjaSnHjg7f3itRwDKdeUQE3L6SuudkddtLAi9GySCSkpkb-BzM1H6BGJ3Wvt0e52VX7i9FXpUqi1eg06__vkpN-gZ01rpFaCfiwTiEZGWdglLbJygiUHvo2CbvGYD0PTPn8IrZwGeb",
+  "width": 9000
+}
+[2025-10-22T21:17:54.596Z] LOG 📸 The Metropolitan Museum of Art: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2eFlpL_LOXV0TkipL"}
+[2025-10-22T21:17:54.596Z] LOG 📸 Solomon R. Guggenheim Museum - RAW PHOTO DATA: {
+  "height": 794,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/101948760137100881813\">Solomon R. Guggenheim Museum</a>"
+  ],
+  "photo_reference": "AciIO2coxg5PQaUyH8KCoKXD2y1Fk7SZU-JDr_zaa3H-RGDRxwDQkLpejXmEuzWnIJrJ6TvibowhL9nSE__dO-_dVq2EsucEUtWB5mv2C6SxGaI0gv4j6ldb-SqekFNc4i80eDvAOxoM-yirAmbPmOQer6-q-JXKS-s9x_KDsmtyhjvuWkW3VI2bQvhdDv-D-cIIp90L6UgjLsiZRxDOYgktIl0xHTAKRNFCC0VQ_W6bqFqgJafL93lH4YSYtbUNSXaovx2pflENq3csk9OfjBr6gE9E9giBrrPhbllXhlRy-KjZAF4a66Y",
+  "width": 1000
+}
+[2025-10-22T21:17:54.597Z] LOG 📸 Solomon R. Guggenheim Museum: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2coxg5PQaUyH8KCoK"}
+[2025-10-22T21:17:54.597Z] LOG 📸 Color Factory NYC - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/117030028974715342469\">Roger Lafleur</a>"
+  ],
+  "photo_reference": "AciIO2en1NTf6bVP6hqWjGKT_D99_lcS6i_Uvd_BumDzepmUT_J9DVGZKROff5XEQTFCnCaGpEkbxWadYILjIjveBlw8oQukII3qpsIVgAxR6ndPpr18UV_1EGh4-f0qXVgf_JJVTu6ynKyUdotnX4qsvT0KnEvZ7xIUr7g2H5R9QCNuiP1-acD_hIF4eekOcuXdiRF_frIfuxT5VbbmDwCw7rkKDg503T5xbT-eb2EhEP2W8PPr_wKPefIKryflaX_xJs_tHcQlPeEtu4Jn9-9hfCm-_6f5gCCcZaioPQKBS9iUB1BNMGzSy_ueqgd355d_yNZQLK47UT7SU-j63r5Gd6elDFUs6UuxljQha5iuHGjjKGw0N5SpUrj9tgzfXkxqMvU1lfuVzAJ01q5z1pA9CuVT4JA5w4bH96w0V9OnKwKucrTry3D50ZJxHoTUx-VFLKLu2HrCx0KemkGg95DMVuxOQ0IS3Nu37DN53FMC_or42LifYx3pnBZ69avqLzQ8w_AwqKu3xsxfhnD3v5ZrgqUKvyL8GnhvlNNMw8UygV5scpLj7JqrvZGsXrS1C_K_9w-WpWM4",
+  "width": 4032
+}
+[2025-10-22T21:17:54.598Z] LOG 📸 Color Factory NYC: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2en1NTf6bVP6hqWjG"}
+[2025-10-22T21:17:54.598Z] LOG 📸 The Museum of Modern Art - RAW PHOTO DATA: {
+  "height": 797,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/110084771099728789053\">Bryan Shu . The truth</a>"
+  ],
+  "photo_reference": "AciIO2c1AGJaZqZfVO2BYirpvusWCYizUUokX9rFUmwCAL1YZmSctCBrOFAQCOTtRYRTvzN3RhqQ1ppOZKmsAt9Js83J2-esPNUEzYZnDctGxg6MKYwdRK4Ca2Jqj9Qr6vmsxF_PCuE_8SBGAqGTRY1WkScuShggjPj7M-akxsbX-NiMsCfd-fCdPh-UwF31Bo2ZLKpiOBx4VbdzJku25-k9SJdeF9Tvbq50lDRgcsm0fILsf3JijYVaLFv1cE86xzXCLLdbgLm64IicjbFvdW-9kD1yMiMdyvlssE5HrjWfZrhc0mdprGoQulXUVZMHX6UbEG91rBbgByi5zXGTcWQCAm25S1aw8PDbQRRZ0Mhql4NO5XPJgEK858KObGuMXmaeazdvZ6DCo-fNOD6i9Vu2yHCYw5SF7Ts9fzn4l48hMAkGlXe4Uhf5lv_n3l2BkueP6ER7lA0Q0Dj7v6MSyU2HZu4smrS1b2okBHCMdH8Akx6jmSobehE54c3pJPXEYND0GeNozyCJd_ATnZfai58n3xlIxWCyCakR67HaIxHT0hVz1sANTNgYE9GTg1BqpOtruwc4b3gTXpIEFQ",
+  "width": 1242
+}
+[2025-10-22T21:17:54.599Z] LOG 📸 The Museum of Modern Art: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2c1AGJaZqZfVO2BYi"}
+[2025-10-22T21:17:54.599Z] LOG ✅ Found 5 places
+[2025-10-22T21:17:54.721Z] LOG 📸 Tatiana by Kwame Onwuachi - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/110796622178687547705\">G. R.</a>"
+  ],
+  "photo_reference": "AciIO2dNDiYhde5Nqpl8c0IqO8Vt_Cw1KTAVKXMA1XehQWarvDqOD-PVhB3ki_h1Of50-C9dJNQNLnVd8aed4Ok7CSsUw2oXDWWvhR3UI4VSXKjONbpt3Ungm11SwGIHgJXw2viOeV5rHHWcF9nlOcCO3jKBDbhghFsvf2C-QPfCb2txq6yKl3IGTSXmkVRlTD8m5Kd1iVIZI_LxXodln0HEEsnHVcSWQ8nu4blneQ1v9j3zVCQxP1_2XMd77UHU9SzZ0W1rwVWht3xJPrJyLh_4Ixiht6J8A7F3udheqD8ICbfZtV8YcEYJg7i3UmpR2qR1jloU7qGfznCWVxuHigttWlziKD2R1TK64581smBo6RrLeuBMUCmyTxUnD8pWo3lZpQeHd69CgxLfYgK82ppcagcLKsQWM32oOIYE59ndYHL-9dgAPmJFQrXxWx5X6jC88slH8WtX0rKKEAna-FERuRBlgViryIJsk2VzDEpMoJTyoPSNMuLYnKOwWXCUMZmw5Vvrl8S4qKfAw2S1yowV6puWtnWtvLCVIBCooOkkzjUueqgh3f686SN06ZQjpDoBn0xu9Q",
+  "width": 4032
+}
+[2025-10-22T21:17:54.722Z] LOG 📸 Tatiana by Kwame Onwuachi: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dNDiYhde5Nqpl8c0"}
+[2025-10-22T21:17:54.722Z] LOG 📸 The Milling Room - RAW PHOTO DATA: {
+  "height": 1430,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/110035851079232888198\">The Milling Room</a>"
+  ],
+  "photo_reference": "AciIO2diSVZZYTfsJJdOoVhwvJs6r_Yb-DSvF1OD41doj2HJJO9R5qYO09wozPBGB942SrjoROaWspjnUGVIiadB0kf4UFUfPziyMQfeNGlRhVwk3m3DQk1f3HdJ6jLYXCJb1GiEJwVONH-Lj8cbzw-uh4DUDX2HA7gb9icOcprSa5EwQoXdJKQtA89OXWddvwed6DpGJA9tp2P4k8nK2U_Wn3m8K0mJtYcUX-gGEGeFWnPgLIL7tEtbai501CoQm7EOSoe6gWx2OL7Cj0oW6DR48FvCpJGXO_b8M2pofQLB3l6WbSO7wp4",
+  "width": 2048
+}
+[2025-10-22T21:17:54.723Z] LOG 📸 The Milling Room: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2diSVZZYTfsJJdOoV"}
+[2025-10-22T21:17:54.723Z] LOG 📸 TESSA - RAW PHOTO DATA: {
+  "height": 4553,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/102119050734171212729\">Liz Davenport</a>"
+  ],
+  "photo_reference": "AciIO2dyTjp6rfwWLI8lIQhIEVt_8Mo6SEWlIzNmn37M0n3_9ahCzSzTqx7_XR12J8n2Anwyzm8F_zJNz-nq15YbC2zJCHMUOLtesJi6gQfnl3vsoyxs3WHMpsOE1_SFEA58ktBUkwiLosM_8nJDg57ter7rmYxSCx0CEIS-OqYXyMnyBdbWG9zpqG9KZBibn6fvR-epdyOsSSWT0yjZHiml5g1XF2x8cLDOohQIshUDgBDh9-1bQaLrzGPUdn6YDWFirmUuJDUdaeHyTmPNu3jbT3tRXHCSnYtJHNcC8lE7BOjG-ckacRyOy-9UUCj1d2uiY9oE0p6IcjnwLuvmJHZb5S-nmkTJ_xqtUJxNTC2fyknQuPC51Xb_oG0FXMN0opaiX4HGIukUduVHcM20BWMjj8OaQNYCUxHMUvuisOnCPj7XDlGG73DGudwKz8-hRZ1a4-tbQs22LBtHOjdwxqTSu60ZUVOJLMgQ8e5Iirn235i6GvHZoeeYYFheuZ2dfYTHr0ayl-q78-St7tv437_mLa3hT8TDSL-Hos5wZgrHCkkKICox0HrJllw_runVqV5qdL_YXnS0hzvGVg",
+  "width": 6815
+}
+[2025-10-22T21:17:54.724Z] LOG 📸 TESSA: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2dyTjp6rfwWLI8lIQ"}
+[2025-10-22T21:17:54.724Z] LOG 📸 Nice Matin - RAW PHOTO DATA: {
+  "height": 3036,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/117604434792749771818\">Becksguy</a>"
+  ],
+  "photo_reference": "AciIO2fU-D4atwaWXnd7NfFY8li46gyH0-AuBOz2eAtCXbX0TqyMCvhZn4yAdohYeyUZDixDIySGl-3DG4j0AaM9OpA9EyzdErg8IfygVZPZnq0JphgHpPyz-VuVDquRb7AMk8DRglJk_ephUt_MnZMObxFQ-Z8YBNzC7Tjxcy0zUimxil_w8InNKUOH4d6F9B7uAbwV50x6N4D0m0g-G8393TzymBztIJaNvrwqBdNf1nAPx6b-fzjL9xNRar3FNywLHBwdvwK_NOtIcchevKSt2KjxBqGKmneWNCrvc_3AWkoeu7DTFw6sQl-fhELB6Rdd5cZltC2rQTT7UVZ6X3ea-0-Qx-v3KUYUHnIFXXBtzE-CyUlKiKsamdVus-nKC1MH6NgAbOk7BdbnuHzKmmYsRJgIJUiG0xZ9MmVmnpCnrLFU3LmADoGiYGWpMoB_A2QLRs2k3Q_F0m02IJZ3MDAQEMviKxagmsgalc4EvTq87Fa38WgygUu9mEGVF8JEmXPISoTL1samps84Ssrw4r9inIjggqzRU3P6ODgFAptVm_i9ExHNM9guGK5wfo7fG34xrBueoQ",
+  "width": 4048
+}
+[2025-10-22T21:17:54.725Z] LOG 📸 Nice Matin: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fU-D4atwaWXnd7Nf"}
+[2025-10-22T21:17:54.725Z] LOG 📸 Dagon - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/107057329654047554735\">Joanne Lee</a>"
+  ],
+  "photo_reference": "AciIO2creqgIeuWNb1iDKl-NIEdhYBWPEoOgY2M9NpHYQ_IXfmolCKdcKy7Z0CKZA9MVE5dIsyQsbbHkUXK5s_baW9CWsBMwLL3VClbDvnOHeX7YFg6-ysWtHVvenblEQCF1W7ZRAdLGD2I0Pe3nIMgH2GOTEcMjJ5AU0yqa_xL8QAihqqlaxXQuRoGwGBD4HkzUTloWiw_JJT58dfOzpdij-ni8eqKYdEk3DTvHhv3TzZK-5qPupLi74Dxg9RPB9_dlQIV2leD1X5GeNj2bOpyf1lDCiA7NGAsh3ear7xs4i_Vvne9WJrkGRLPmLryUawP3fGiUoWwncGJv7d-U9O_9tby7AvXqj6Ysk8VV5W9AvAb7eDzbXilweTQr3eITsoiqoy6TiLsHcIxdo_laHNNYp4_CmuM8cu39CyvVszuZRIbHaSqSOy5Pgb7e_HwnNAtu-_KglA6EovnQQe0P98oNBFwjUMP4f3IgyDuIvPCdOyzSbfMvm0kiSN_MLH8L7u42Oohu1uk5QWGN-vrHeOk-Pr24TpvNe6xhDo6Ohm4xIz1XpenzJujGDYAg6yI0mY0YZTeDwNu3HOlE2w",
+  "width": 4032
+}
+[2025-10-22T21:17:54.726Z] LOG 📸 Dagon: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2creqgIeuWNb1iDKl"}
+[2025-10-22T21:17:54.726Z] LOG ✅ Found 5 places
+[2025-10-22T21:17:54.739Z] LOG 📸 Riverside Park - RAW PHOTO DATA: {
+  "height": 4032,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/106247321676774957425\">Dennis Agostino</a>"
+  ],
+  "photo_reference": "AciIO2di_Sblo7qx6MU8osC_kgayAWFLP4BDpkS9H5n_ZkN2XimZZCDWBQbHgmkpeSs_BjmUC3ZAOKp07zVcZ2z0yhXP7Rg1nEUgbFrchP1CNu8_aCmy-Rzc5Mq76MTRxTmZNgw1sMaimpoQaK11oJqXTzSJqGyOqDhBc5jHBhTwn5488o0jlRfCx4wgik_8oz4hf651E4AAwl_pfE_hJTo4hPDxkSjfNuFz-oXQt_a8563SmwEfIwiu7Fm_3_FWqH_M8v8jzfCvpdMwz6zcLn8KVzC5IUJnOSaUMd6ZVsziMnctLcBnCC7EqKmGcijq2b0aEwZjq5fY3DC_KyYTyp9EzYjCBAPmHMv0TlW-UNUMxr8pbGWfZGQKmPEW1kDUuGKGJp8JWzAavoIdvIXcYox4fwScTmrx0WZoH8OYp_zVk9GywIbPl_Nk0BmqgTgCX7rkP2yccsQoBgfBRgarp4X1ivOf6WxN7ryUASoJu37TH29GCZHHDPu3aAHIzk8-8C66YbBThMuriQVnkxIeR7O-RgNrXnLRtvhHJ3mj_XvzKaUk9WW51EuV11SQNv6nhWJ-Yt4kXBI6eFpliA",
+  "width": 3024
+}
+[2025-10-22T21:17:54.741Z] LOG 📸 Riverside Park: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2di_Sblo7qx6MU8os"}
+[2025-10-22T21:17:54.742Z] LOG 📸 Little Island - RAW PHOTO DATA: {
+  "height": 12000,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/106222520516317843469\">legzlie. puccini</a>"
+  ],
+  "photo_reference": "AciIO2ccaQLR2g01-5jy0LGnN2YpozfkNwBGOG609lC8IBZWgV_eaBQHOj1HUKOPzxL0nMoKYyX0hdCdWFNVEpCiHJ6bsqofKhhh-RaDDAxoJvsMngk8ZrEq25FEbgpWvzm6xVuwCBKMfGiNMUnAqDpykg-cYX4PNn_KZALYcqAgLT71mCXOVDc9b4F7mrwfSzbC1YjnGXotgJx59s0Rk92NQO5OxW-IVlT0t0anoI3lF_cG2KieZrC7-6T1gRtVPBk6Eyaj7fWq9og5zTv3eyezh-LxlEzsftuh8n-NXNARNtXIA17_GbDwdKHVCkmEu1orL51GCspgesg5tM_8tFzqtW5zky3ntv9HTeE1N2nXwr3PeI0E7itoETLqcHtbgs4Ea5-Ja-c7T0z7YbXQGIvD6RqhuDm-wfAPu6U9R_gNhawCbr6kqW2frjSTdJyPSZbCHpAjni2Y5bpXiCqFVXh0H_IHoDPKPuw92PA42ZX4a7RyvnL9HSYW8Uou3vEC3YR-iAjc5uYmuCM8f5d_Eczx011sk3kn0YOWfQN-1pyiJEbDsGcLC5lO7jBY4fVrGsHHwuRFVi6xOaq65A",
+  "width": 9000
+}
+[2025-10-22T21:17:54.742Z] LOG 📸 Little Island: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2ccaQLR2g01-5jy0L"}
+[2025-10-22T21:17:54.743Z] LOG 📸 Riverside Park South - RAW PHOTO DATA: {
+  "height": 2600,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/105738985286614860566\">Gabriel Flores (Gabo)</a>"
+  ],
+  "photo_reference": "AciIO2eofdMTFuILd9vnfFVS-UqhS_VOLFenkGsWaDSYBgie0ua8g1d8Llj-u88x88PEwWX5IW2r1hl8qX2thRimG6vy0EHmFgv3CJnoqutOpgha0OZOog-KZBQcdxotw-40hTYKcPrvy_TkUw3XRtJEoq7j9daO1QMYETeBqEsHGaXXvLmjDE730wWCmYk2lrDh1aCWeTzZxDpUXZ8oh4yY08_ENaGJR1e34P7X6AIypHkPAixCOPTN3tNgdyaceOpL4Wjg2yRS32ieKPoyjY6WwxS1j_hWTC-MtEsTDy7uOT7fimMBGbWM6RAAlxXfy-wmYzg_FaywBUO8_5qiXZuzic_71qn9VIMj0SO0rj8lyooTEjtTgYkPISd6kYi7i2_cfkVWEqWqaavJQTQSVmeSQMTUN-upWh_fKYUgOzUCkqPEELScYIpVMNawd6zQR6UN4NlFVQhHEBR6urboaSop26P8JU0MifK8ogEi3jF8HNWsGu40UQMreXogO9QnLBk0Y6hNvYcoSpLH2Ufh6k34leLTLjPuhzxpYzEthK6cSQMhCfziOif2PQ4m4rJqXUwsS4ufYc6s",
+  "width": 4624
+}
+[2025-10-22T21:17:54.743Z] LOG 📸 Riverside Park South: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2eofdMTFuILd9vnfF"}
+[2025-10-22T21:17:54.744Z] LOG 📸 Theodore Roosevelt Park - RAW PHOTO DATA: {
+  "height": 6936,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/111830075969492591999\">Cecilia VC</a>"
+  ],
+  "photo_reference": "AciIO2fstrsAahf8nEnX4XF9YLWY5WQLAvePT_pMj1DgYr2EG_L9gm68djRAOMF0DP11YDaEq0EDQOANqueCyU6MX0SMpWqMF92YKOetYk7HzXT6YHpyrc2A-uKO8s-74idr9KIRNmbPmi_vf2CqO3paAvfWsQX0JgQpFUzcqi_zjeX6DKWxLGCsMvMYvY9viBf7-z-ygRati_WclncMREERqte0LkBtsxvuJ3y1gpQ9KMn6x3E3_ZOUMFh8kUn9tnve0eIs4reepYmNMToUhlkuFLcxJaN2ox63_yGPTl0T5FLSRhvSOusNeNPvIQ4TnHfAA6NqxzGJ2Hzi1HX4FR7x1_PF_q0Xx-hcubRG8eqDq45cAeqY2wkfuwWLZ7MOQJGXM9XYqx4OfpEjPXAsZyhFR2P_qk93gphoP9H-JYWgtp4vXQ7MgAD48bxuSN_6kTq6fksmZteNU2_BcOmGykBCLIEVEcO8DXcb0Ez_337bt3X55GYdRXT17TwuyxUuHq3FQbbVDNj87OaXkEbxmEqYAGLs_RNDXKd74iKTeu5Xp0PZj7--9kfg3c80Yfkwj2zNlsELTbav",
+  "width": 9248
+}
+[2025-10-22T21:17:54.744Z] LOG 📸 Theodore Roosevelt Park: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2fstrsAahf8nEnX4X"}
+[2025-10-22T21:17:54.745Z] LOG 📸 Bryant Park - RAW PHOTO DATA: {
+  "height": 3024,
+  "html_attributions": [
+    "<a href=\"https://maps.google.com/maps/contrib/103418155308695710222\">Christopher Igbojekwe</a>"
+  ],
+  "photo_reference": "AciIO2csMDZ5GZwUJ5HfMrU1bk3XLVBp5tAmBQNDP-0QpG9jj0vZspcbgKIDS7Gdz9nb2peIIkV2TnlVe8or_cHBcFWb5OWo2nqwk_GjDfnfAGnz5Kpo-FbTkR5hPy8bz39vSv47Q_nWOk0bCPZfcGK7h2g9pTYrpxPWoe64cHxjqnvFNwnR9apstDADfcuspM0ttRQuYhaNZXrTAtPX-nxbHISZt8C6v6hmemcf13OCQQ_lUBAzIDMeIYpASWmfa9npXKNxWk_s0NODjfjmBtjg7-ptxFW-YznmRe1KMJoAJSXclX8-pmNO4aCVJGSbW43R27QB_kO-UO7pfnvoP00qMIwePsnPFDT_8_q0lLPMFwqSYs6lQm-77G4Tq6UsjVGaceA9kMOKIRmJQmkOz_zprGapgqqHq5H65VAgrAzkc8XR75Cg_0Qar0tGwePZK53F6WZFY8_qIWV-ac46C5_ZirlZrJrZXRBmYwUhvMmDYXcHk_08mgKGOnCK8bguIcNSlbVPy1vqn5FIvZpFC2DUmeNwop2QmgrnXMiXxkY1Au2yP4OI7nZE0db2Z3uhxv03tt6Zq7Ly",
+  "width": 4032
+}
+[2025-10-22T21:17:54.745Z] LOG 📸 Bryant Park: {"hasPhotos":true,"photoCount":1,"photoUrl":"✅ Generated","photoUrlType":"API","fullPhotoUrl":"https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AciIO2csMDZ5GZwUJ5HfMr"}
+[2025-10-22T21:17:54.746Z] LOG ✅ Found 5 places
+[2025-10-22T21:17:54.746Z] LOG ✅ Batch complete: 6/6 searches succeeded, 30 total venues found in 1150ms
+[2025-10-22T21:17:54.746Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-22T21:17:54.747Z] LOG    Success: true
+[2025-10-22T21:17:54.747Z] LOG    Data: {"results":[{"success":true,"query":"cafe","location":"West Manhattan","venues":[{"name":"Charlotte Cafe","address":"2541 Broadway, New York, NY 10025, United States","location":{"lat":40.7941636,"lng...
+[2025-10-22T21:17:54.748Z] LOG 
+👁️  OBSERVING...
+[2025-10-22T21:17:54.748Z] LOG    Added observation to conversation history
+[2025-10-22T21:17:54.748Z] LOG    Total messages: 4
+[2025-10-22T21:17:54.749Z] LOG    Total tokens used: 2776
+[2025-10-22T21:17:54.749Z] LOG ⏱️ Iteration 1 took 4153ms
+[2025-10-22T21:17:54.749Z] LOG 
+================================================================================
+[2025-10-22T21:17:54.750Z] LOG 🔄 ITERATION 2
+[2025-10-22T21:17:54.750Z] LOG ================================================================================
+[2025-10-22T21:17:54.750Z] LOG 
+💭 THINKING...
+[2025-10-22T21:18:02.077Z] LOG    Reasoning: Selecting venues for a logical walking route based on the observations from the batch search.
+[2025-10-22T21:18:02.078Z] LOG    Action: finish
+[2025-10-22T21:18:02.079Z] LOG    Parameters: {
+  "result": "Itinerary for a Day Out in West Manhattan:\n\n1. **Cafe**: Sote Coffee Roasters (329 Amsterdam Ave)\n2. **Park**: Riverside Park (R25M+R3)\n3. **Museum**: American Museum of Natural History (200 Central Prk W)\n4. **Landmark**: Upper West Side/Central Park West Historic District (W 82nd St & Columbus Ave)\n5. **Restaurant**: The Milling Room (446 Columbus Ave)\n6. **Dessert**: Levain Bakery (167 W 74th St)\n7. **Park**: Little Island (Pier 55 at Hudson River Park)\n8. **Landmark**: Riverside-West End Historic District (319 W 88th St)\n\nThis route provides a mix of cafes, parks, museums, landmarks, restaurants, and dessert spots that are close together for a pleasant day out.",
+  "mode": "route",
+  "selected_venues": [
+    "ChIJwR4noh5ZwokREcz36jnEQbo",
+    "ChIJL1DP2C72wokRh3Lfn4T0Z3w",
+    "ChIJCXoPsPRYwokRsV1MYnKBfaI",
+    "ChIJJQcnN5NZwokRD-KDsFWX0jY",
+    "ChIJUe3TgIVYwokR5cm1iYg1TAU",
+    "ChIJ6SmehIlYwokRaO14xlmbWZU",
+    "ChIJL-CJmTFZwokRsPcqje_bn7w",
+    "ChIJJdo4ihhZwokRE3O6cSww2DM"
+  ]
+}
+[2025-10-22T21:18:02.080Z] LOG 
+✅ Agent decided task is complete
+[2025-10-22T21:18:02.080Z] LOG 📋 Finish parameters validated: {"hasResult":true,"mode":"route","selectedVenuesCount":8}
+[2025-10-22T21:18:02.081Z] LOG 
+🔍 Running route order evaluation...
+[2025-10-22T21:18:02.081Z] LOG    Route type: ITINERARY
+[2025-10-22T21:18:02.082Z] LOG    Evaluating against: "plan a day out in west manhattan"
+[2025-10-22T21:18:02.083Z] LOG 
+🔍 EVALUATING ROUTE ORDER...
+[2025-10-22T21:18:02.083Z] LOG    User prompt: "plan a day out in west manhattan"
+[2025-10-22T21:18:02.083Z] LOG    Selected venues: 8
+[2025-10-22T21:18:02.084Z] LOG    Is itinerary: true
+[2025-10-22T21:18:02.084Z] LOG    Readable order: Sote Coffee Roasters → Riverside Park → American Museum of Natural History → Upper West Side/Central Park West Historic District → The Milling Room → Levain Bakery → Little Island → Riverside-West End Historic District
+[2025-10-22T21:18:02.085Z] LOG    ⏭️  No explicit order in prompt, skipping validation
+[2025-10-22T21:18:02.085Z] LOG ✅ Route order validation passed!
+[2025-10-22T21:18:02.085Z] LOG ⏱️ Iteration 2 took 7335ms (finish)
+[2025-10-22T21:18:02.086Z] LOG 
+================================================================================
+[2025-10-22T21:18:02.086Z] LOG 📊 EXECUTION SUMMARY
+[2025-10-22T21:18:02.086Z] LOG ================================================================================
+[2025-10-22T21:18:02.087Z] LOG Status: complete
+[2025-10-22T21:18:02.087Z] LOG Iterations: 2
+[2025-10-22T21:18:02.087Z] LOG Execution time: 11500ms
+[2025-10-22T21:18:02.088Z] LOG Total tokens: 7361
+[2025-10-22T21:18:02.088Z] LOG Actions executed: 1
+[2025-10-22T21:18:02.088Z] LOG Correction attempts: 0
+[2025-10-22T21:18:02.089Z] LOG ================================================================================
+
+
+--- Summary ---
+Status: complete
+Iterations: 2
+TotalTokens: 7361
+ExecutionTimeMs: 11503

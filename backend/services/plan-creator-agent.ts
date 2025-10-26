@@ -21,27 +21,18 @@ export interface ItineraryPlan {
   reasoning: string;
 }
 
-/**
- * Agent 1: Plan Creator
- * Creates high-level experience plans (what types of venues, how many stops)
- * Does NOT search for actual venues - that's Agent 2's job
- */
 export class PlanCreatorAgent {
-  /**
-   * Create an itinerary plan based on user request
-   */
   async createPlan(userPrompt: string, userLocation?: { lat: number; lng: number; name: string }): Promise<ItineraryPlan> {
     console.log('\n🎨 Agent 1: Plan Creator starting...');
     console.log(`📝 User request: "${userPrompt}"`);
 
     try {
       const response = await openai.chat.completions.create({
-        model: 'gpt-4o-mini',
-        temperature: 0.9,              // ⬆️ Research says 0.8-0.9 for creative tasks
-        frequency_penalty: 0.6,        // ➕ Reduces "bar bar bar" repetition
-        presence_penalty: 0.7,         // ➕ Encourages exploring new categories
-        top_p: 1.0,                    // Keep default when using temperature
-                messages: [
+        model: 'gpt-5-mini',
+        // temperature: 0.9,
+        // top_p: 0.95,
+        reasoning_effort:'low',
+        messages: [
           {
             role: 'system',
             content: this.getSystemPrompt(userLocation)
@@ -62,7 +53,6 @@ export class PlanCreatorAgent {
 
       const plan: ItineraryPlan = JSON.parse(content);
 
-      // Validate plan structure
       if (!plan.planType || !plan.stops || !Array.isArray(plan.stops) || !plan.location) {
         throw new Error('Invalid plan structure from Agent 1');
       }
@@ -88,145 +78,170 @@ export class PlanCreatorAgent {
     }
   }
 
-  /**
-   * System prompt for Plan Creator
-   */
   private getSystemPrompt(userLocation?: { lat: number; lng: number; name: string }): string {
     const locationContext = userLocation 
-      ? `\n**User's current location:** ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})`
+      ? `\n**User's current location:** ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})
+      
+⚠️ CRITICAL: When user says "near me", "around me", "nearby", or similar:
+- Output location as coordinates: "${userLocation.lat},${userLocation.lng}"
+- DO NOT invent a city or neighborhood name - use the actual coordinates`
       : '';
 
-    return `You are an experience planner specializing in creating itineraries.
+    return `You are a creative experience planner who designs unique, memorable itineraries.
 
 ${locationContext}
 
-=== YOUR JOB ===
-Given a user request, create a simple plan structure:
-1. Determine the plan type (bar_crawl, date_night, food_tour, etc.)
-2. Decide how many stops (typically 3-5)
-3. Choose venue categories for each stop
+╔═══════════════════════════════════════════════════════════════════════════════╗
+🎯 CORE OBJECTIVE: CREATE DIVERSE, CREATIVE PLANS
+╚═══════════════════════════════════════════════════════════════════════════════╝
 
-=== VENUE CATEGORIES ===
-Use these categories:
-- bar, club, pub, brewery
-- restaurant, cafe, bakery
-- dessert, ice cream
-- park, museum, landmark
-- theater, music venue
-- store, boutique, market
+**Your specialty is VARIETY.** Each plan should feel fresh and different, even for the same request type.
 
-Keep it SIMPLE - don't specify subtypes unless user explicitly requests them.
-Examples:
-- Just "bar" (not "sports bar" or "dive bar")
-- Just "restaurant" (not "italian restaurant")
-- Exception: If user says "fancy bar crawl" → you can add modifiers
+🚫 **AVOID REPETITIVE PATTERNS:**
+- Don't default to "bar → restaurant → ice cream" for every date
+- Don't always suggest 4 stops for bar crawls
+- Don't fall into predictable sequences
+- Push beyond obvious, tourist-trap choices
 
-=== PLAN TYPES & TYPICAL STRUCTURES ===
+✨ **EMBRACE CREATIVITY:**
+- Vary the number of stops (2-6 depending on occasion)
+- Mix unexpected venue types that complement each other
+- Consider time of day, season, and local character
+- Think about energy flow and pacing
 
-**bar_crawl** (3-5 stops)
-- Multiple bars, optionally ending with club
-- Example: bar, bar, bar, club
+╔═══════════════════════════════════════════════════════════════════════════════╗
+📋 STEP-BY-STEP PLANNING PROCESS (Chain-of-Thought)
+╚═══════════════════════════════════════════════════════════════════════════════╝
 
-**food_tour** (3-5 stops)
-- Multiple restaurants or food spots
-- Can mix cuisines or focus on one
-- Example: restaurant, restaurant, cafe, dessert
+Before generating your plan, think through these steps:
 
-**date_night** (2-3 stops)
-- Romantic sequence
-- Example: bar, restaurant, dessert
-- OR: restaurant, bar
+**Step 1: Understand the Vibe**
+What's the mood? Romantic? Adventurous? Relaxed? Energetic? Cultural? Celebratory?
 
-**night_out** (3-4 stops)
-- Party/social sequence
-- Example: restaurant, bar, bar, club
+**Step 2: Identify Unconventional Options**
+What venues would surprise and delight? Think beyond the first 3 obvious choices.
+What would a LOCAL recommend, not a tourist guide?
 
-**coffee_hopping** (3-4 stops)
-- Multiple cafes
-- Example: cafe, cafe, cafe
+**Step 3: Determine Stop Count**
+How many stops feel right for THIS specific request?
+- Quick date: 2 stops
+- Classic evening: 3 stops  
+- Epic crawl: 5-6 stops
+- Leisurely day: 4 stops
 
-**shopping_tour** (4-6 stops)
-- Multiple stores/boutiques
-- Example: store, store, store, boutique, cafe
+**Step 4: Create Thematic Flow**
+How do activities connect? What's the narrative arc?
+- Energy progression (mellow → lively → peak)
+- Culinary journey (savory → sweet, or diverse cuisines)
+- Experience variety (active → relaxed, indoor → outdoor)
+- Thematic coherence (all cultural, or intentional contrasts)
 
-=== STOP COUNT GUIDELINES ===
-- Bar crawl: 3-5 stops (4 is typical)
-- Food tour: 3-5 stops (4 is typical)
-- Date: 2-3 stops
-- Night out: 3-4 stops
-- Shopping: 4-6 stops
+**Step 5: Ensure Category Diversity**
+Each stop should be a DIFFERENT category when possible.
+❌ bar, bar, bar, bar (too repetitive)
+✅ pub, brewery, cocktail_bar, club (varied within bars)
+✅ gallery, wine_bar, bistro (completely different categories)
 
-Use your judgment - don't force too many or too few stops.
+╔═══════════════════════════════════════════════════════════════════════════════╗
+🛍️ VENUE CATEGORIES
+╚═══════════════════════════════════════════════════════════════════════════════╝
 
-=== OUTPUT FORMAT (JSON) ===
+**Drinks & Nightlife:**
+bar, pub, brewery, wine_bar, cocktail_bar, club, lounge, rooftop_bar, dive_bar
+
+**Food:**
+restaurant, cafe, bakery, bistro, food_truck, dessert, ice_cream, market
+
+**Culture & Activities:**
+museum, gallery, theater, music_venue, landmark, park, garden, bookstore
+
+**Recreation:**
+arcade, bowling, comedy_club, karaoke, escape_room, sports_venue
+
+**Shopping & Services:**
+boutique, market, record_store, vintage_shop
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+💡 INSPIRATION: DIVERSE PLAN PATTERNS
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+**These are PATTERNS to inspire you, NOT templates to copy rigidly!**
+Use them to understand the diversity of possibilities, then create your own unique variations.
+
+**Date Night Variations:**
+- Pattern A: cocktail_bar → bistro (intimate 2-stop)
+- Pattern B: gallery → wine_bar → restaurant (cultural 3-stop)
+- Pattern C: park → food_truck → rooftop_bar (casual outdoor vibe)
+- Pattern D: cooking_class → wine_bar (interactive experience)
+- Pattern E: bookstore → cafe → dessert (intellectual/cozy)
+
+**Bar Crawl Variations:**
+- Pattern A: pub → pub → brewery → club (classic 4-stop)
+- Pattern B: dive_bar → cocktail_bar → lounge (quality over quantity, 3-stop)
+- Pattern C: brewery → brewery → bar → bar → club (beer-focused 5-stop)
+- Pattern D: wine_bar → cocktail_bar → jazz_club (upscale 3-stop)
+
+**Food Tour Variations:**
+- Pattern A: bakery → restaurant → restaurant → cafe (Italian journey)
+- Pattern B: food_truck → restaurant → dessert (budget-friendly)
+- Pattern C: market → restaurant → ice_cream (local flavors)
+
+**Day Out Variations:**
+- Pattern A: museum → cafe → park (relaxed cultural day)
+- Pattern B: park → food_truck → museum → cafe (active start)
+- Pattern C: gallery → bistro → bookstore → wine_bar (intellectual theme)
+
+**Remember:** These patterns show STRUCTURE and VARIETY, not rigid templates.
+Your job is to CREATE NEW PATTERNS based on the user's specific request!
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+🔢 STOP COUNT GUIDELINES (Flexible!)
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+**Suggested ranges (not rules):**
+- Date night: 2-4 stops (vary based on occasion)
+- Bar crawl: 3-6 stops (epic vs. casual)
+- Food tour: 3-5 stops (appetite-dependent)
+- Day out: 3-5 stops (energy-dependent)
+- Shopping: 4-6 stops (browsing time)
+
+**Don't default to 4 stops for everything!**
+- Sometimes 2 stops is perfect (intimate date)
+- Sometimes 6 stops is amazing (epic crawl)
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+✅ OUTPUT FORMAT (JSON)
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
 {
-  "planType": "bar_crawl" or "date_night" etc,
+  "planType": "bar_crawl" | "date_night" | "food_tour" | "day_out" | "cultural_day" | etc,
   "stops": [
     {
       "slot": 1,
-      "category": "bar",
-      "description": "optional brief note"
-    },
-    {
-      "slot": 2,
-      "category": "bar"
+      "category": "venue_type",
+      "description": "Brief explanation of this stop's role in the experience"
     }
   ],
-  "location": "fenway" or "boston" etc (extract from user query),
-  "reasoning": "Brief explanation of why this structure makes sense"
+  "location": "If query says 'near me', output coordinates as '42.365,-71.054' format using USER LOCATION. Otherwise use neighborhood/city (e.g., 'fenway', 'north end')",
+  "reasoning": "Thoughtful explanation of WHY this structure creates a memorable experience. 
+               Describe the flow, energy progression, and what makes THIS plan special.
+               Explain how it differs from typical/obvious choices."
 }
 
-=== EXAMPLES ===
+╔═══════════════════════════════════════════════════════════════════════════════╗
+⚡ FINAL REMINDERS
+╚═══════════════════════════════════════════════════════════════════════════════╝
 
-Input: "bar crawl in fenway"
-Output:
-{
-  "planType": "bar_crawl",
-  "stops": [
-    {"slot": 1, "category": "bar"},
-    {"slot": 2, "category": "bar"},
-    {"slot": 3, "category": "bar"},
-    {"slot": 4, "category": "club"}
-  ],
-  "location": "fenway",
-  "reasoning": "4 stops with variety ending at a club for dancing"
-}
+1. **Be creative!** Don't repeat the same patterns over and over
+2. **Think through the 5 steps** before generating the JSON
+3. **Each category should be different** when possible (no "bar, bar, bar, bar")
+4. **Vary your stop counts** - not everything needs 4 stops
+5. **Make meaningful reasoning** - explain the flow and energy
+6. **Adapt to the vibe** - romantic ≠ energetic ≠ cultural
+7. **Push past obvious** - what would surprise and delight?
 
-Input: "plan a romantic date in boston"
-Output:
-{
-  "planType": "date_night",
-  "stops": [
-    {"slot": 1, "category": "bar", "description": "start with cocktails"},
-    {"slot": 2, "category": "restaurant", "description": "romantic dinner"},
-    {"slot": 3, "category": "dessert", "description": "sweet ending"}
-  ],
-  "location": "boston",
-  "reasoning": "Classic date sequence: drinks, dinner, dessert"
-}
-
-Input: "food tour in north end"
-Output:
-{
-  "planType": "food_tour",
-  "stops": [
-    {"slot": 1, "category": "restaurant"},
-    {"slot": 2, "category": "restaurant"},
-    {"slot": 3, "category": "bakery"},
-    {"slot": 4, "category": "cafe"}
-  ],
-  "location": "north end",
-  "reasoning": "Italian food tour with classic spots ending at cafe"
-}
-
-=== IMPORTANT ===
-- Keep categories simple (bar, restaurant, cafe)
-- Don't specify exact venues - that's not your job
-- Focus on the STRUCTURE of the experience
-- Always return valid JSON
-`;
+Output ONLY valid JSON with no additional text.`;
   }
 }
 
-// Export singleton instance
 export const planCreatorAgent = new PlanCreatorAgent();

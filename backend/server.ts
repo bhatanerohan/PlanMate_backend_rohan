@@ -7,13 +7,16 @@ import apiRoutes from './routes/api.js';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = Number(process.env.PORT || 3001);
 
 // CORS Configuration
+// Allow local dev frontend and an optional local frontend URL supplied via env
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174', // Vite alternate port
   process.env.FRONTEND_URL, // Your Vercel URL
+  'http://10.0.0.15:5173',
+  process.env.LOCAL_FRONTEND_URL, // e.g. http://192.168.1.100:5173
   /\.vercel\.app$/, // All Vercel preview deployments
   /\.railway\.app$/ // Railway domains
 ].filter(Boolean); // Remove undefined values
@@ -92,11 +95,13 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 });
 
 // Start server with error handling for address in use
-let server = app.listen(PORT, () => {
+let server = app.listen(PORT, '0.0.0.0', () => {  // bind to all interfaces for LAN access
+  const localIp = process.env.LOCAL_IP || 'YOUR_IP';
   console.log('\n' + '='.repeat(50));
   console.log(`🚀 PlanMate API Server running on port ${PORT}`);
   console.log(`📍 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`🌐 http://localhost:${PORT}`);
+  console.log(`🌐 Local:   http://localhost:${PORT}`);
+  console.log(`🌐 Network: http://${localIp}:${PORT}`);
   console.log('='.repeat(50) + '\n');
 });
 

@@ -12,9 +12,23 @@ export interface Venue {
   priceLevel?: string;
   placeId: string;
   types?: string[];
-  photos?: string[];          // ← ADD
-  description?: string;       // ← ADD
-  photoUrl?: string;          // ← ADD (main photo)
+  photos?: string[];
+  description?: string;
+  photoUrl?: string;
+  videos?: YouTubeVideo[];
+}
+
+export interface YouTubeVideo {
+  videoId: string;
+  title: string;
+  description: string;
+  thumbnailUrl: string;
+  thumbnailHigh?: string;
+  channelTitle: string;
+  publishedAt: string;
+  duration: string;
+  viewCount?: string;
+  likeCount?: string;
 }
 
 export interface Event {
@@ -38,11 +52,11 @@ export interface Event {
   ticketsAvailable?: boolean;
 }
 
-// ⭐ NEW: Agent state types
 export interface FinishParameters {
   result: string;
   mode: 'discovery' | 'route';
-  selected_venue_ids?: string[];  // Array of placeIds
+  selected_venue_ids?: string[];
+  alternatives_map?: Record<string, Venue[]>;  // 🆕 NEW: Map of primary placeId → alternative venues
 }
 
 export interface AgentState {
@@ -53,7 +67,7 @@ export interface AgentState {
   conversationHistory: any[];
   toolResults: any[];
   finalResult?: string;
-  finishParameters?: FinishParameters;  // ⭐ This is what we need
+  finishParameters?: FinishParameters;
   error?: string;
 }
 
@@ -61,15 +75,18 @@ export interface PlanResponse {
   success: boolean;
   result?: string;
   mode?: 'discovery' | 'route';
+  queryType?: 'explicit_route' | 'itinerary_planning' | 'discovery' | 'itinerary_modification' | 'not_relevant';
   venues: Venue[];
   events: Event[];
   routes?: Route[];
-  state?: AgentState;  // ⭐ Added state field
+  alternativesMap?: Record<string, Venue[]>;  // 🆕 NEW: Map of primary placeId → alternative venues
+  state?: AgentState;
   iterations: number;
   tokensUsed: number;
   executionTimeMs: number;
   stoppedReason?: string;
   error?: string;
+  isModification?: boolean;
 }
 
 export interface Message {
@@ -80,6 +97,7 @@ export interface Message {
   data?: {
     venues?: Venue[];
     events?: Event[];
+    alternativesMap?: Record<string, Venue[]>;  // 🆕 NEW: Include alternatives in message data
   };
 }
 
@@ -92,25 +110,32 @@ export interface MapMarker {
   title: string;
   type: 'venue' | 'event';
   data: Venue | Event;
+  metadata?: {
+    isPrimary?: boolean;
+    isAlternative?: boolean;
+    stopNumber?: number;
+    primaryPlaceId?: string;
+    primaryVenueName?: string;
+    primaryStopNumber?: number;
+  };
+
 }
 
-// Location interface for user location and geocoding
 export interface Location {
   lat: number;
   lng: number;
   name: string;
 }
 
-// Route interface for rendering paths between markers
 export interface Route {
   geometry: {
     type: 'LineString';
-    coordinates: [number, number][]; // Array of [lng, lat] pairs
+    coordinates: [number, number][];
   };
-  distance: number; // in kilometers
-  distanceFormatted: string; // e.g., "2.5 km"
-  duration: number; // in seconds
-  durationFormatted: string; // e.g., "15 min walk"
-  start?: string; // Starting point name
-  end?: string; // Ending point name
+  distance: number;
+  distanceFormatted: string;
+  duration: number;
+  durationFormatted: string;
+  start?: string;
+  end?: string;
 }
