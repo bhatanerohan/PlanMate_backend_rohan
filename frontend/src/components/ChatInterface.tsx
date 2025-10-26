@@ -403,8 +403,10 @@ const ChatInterface = forwardRef(({
 
   const examplePrompts = [
     "Find coffee shops near me",
-    "Plan a bar crawl in Fenway",
     "Route from MFA to Harvard via MIT",
+    "Plan a day out in midtown NYC where I could try out halal food trucks",
+    "Plan a day out in Boston",
+    "Plan a route from my location to Harvard University to starbucks near MIT"
   ];
 
   const modificationPrompts = [
@@ -421,7 +423,7 @@ const ChatInterface = forwardRef(({
     <div className="flex flex-col h-full">
       <div className="p-3 border-b border-gray-200 bg-primary-500 text-white flex items-center justify-between">
         <div>
-          <h1 className="text-lg font-bold">PlanMate</h1>
+          <h1 className="text-lg font-bold">Explore</h1>
           <p className="text-xs text-primary-50 hidden sm:block">Your AI Travel Planning Assistant</p>
         </div>
         <div className="text-xs text-primary-50 sm:hidden">🗺️</div>
