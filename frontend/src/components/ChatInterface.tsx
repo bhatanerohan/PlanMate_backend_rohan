@@ -362,16 +362,16 @@ const ChatInterface = forwardRef(({
     const wantsMyLocation = /\bmy location\b|\bfrom my location\b|\bfrom me\b|\bhere\b/i.test(command);
 
     const sendRequest = (loc?: Location | undefined) => {
-      const locationToSend = userLocation && Number.isFinite(userLocation.lat) && Number.isFinite(userLocation.lng)
-        ? userLocation
-        : undefined;
-    
+      const locationToSend = loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
+        ? loc
+        : (userLocation && Number.isFinite(userLocation.lat) && Number.isFinite(userLocation.lng) ? userLocation : undefined);
+
       planMutation.mutate({ 
         prompt: command, 
         userLocation: locationToSend,
         currentItinerary: currentItinerary || undefined
       });
-    };
+    }; 
 
     if (wantsMyLocation && (!userLocation || !Number.isFinite(userLocation.lat) || !Number.isFinite(userLocation.lng))) {
       if (navigator.geolocation) {
