@@ -1,12 +1,13 @@
-// backend/routes/api.ts - Updated section for handling alternatives
+// backend/routes/api.ts - SIMPLIFIED (Agent 1 Dormant, Direct to Gemini)
 
 import { Router, Request, Response } from 'express';
 import { ReActAgent } from '../services/react-agent.js';
 import { DEFAULT_SAFETY_CONFIG } from '../types/react-agent.js';
 import { classifyIntent } from '../services/intent-classifier.js';
-import { planCreatorAgent } from '../services/plan-creator-agent.js';
+import { planCreatorAgent } from '../services/plan-creator-agent.js';  // ✅ Keep imported but don't use
 import { videoEnrichmentAgent } from '../services/video-enrichment-agent.js';
 import { modificationAgent, type CurrentItinerary } from '../services/modification-agent.js';
+import { geminiGroundingAgent } from '../services/gemini-grounding-agent.js';
 
 const router = Router();
 
@@ -14,7 +15,6 @@ router.post('/plan', async (req: Request, res: Response) => {
   try {
     const { prompt, userLocation, currentItinerary } = req.body;
 
-    // Basic validation
     if (!prompt || typeof prompt !== 'string') {
       return res.status(400).json({
         success: false,
@@ -24,8 +24,6 @@ router.post('/plan', async (req: Request, res: Response) => {
     
     if (userLocation) {
       console.log(`📍 User location: ${userLocation.name || 'Unknown'} (${userLocation.lat}, ${userLocation.lng})`);
-    } else {
-      console.log(`📍 User location: Not provided`);
     }
 
     if (currentItinerary) {
@@ -44,7 +42,7 @@ router.post('/plan', async (req: Request, res: Response) => {
     console.log('='.repeat(80));
 
     // ============================================================================
-    // STEP 1: ENHANCED INTENT CLASSIFICATION
+    // STEP 1: INTENT CLASSIFICATION
     // ============================================================================
     console.log('\n🔍 Running intent classification...');
     
@@ -62,7 +60,8 @@ router.post('/plan', async (req: Request, res: Response) => {
     console.log(`📊 Classification result:`, {
       isRelevant: classification.isRelevant,
       routeTo: classification.routeTo,
-      queryType: classification.queryType
+      queryType: classification.queryType,
+      useGeminiGrounding: classification.useGeminiGrounding
     });
 
     // ============================================================================
@@ -82,13 +81,14 @@ router.post('/plan', async (req: Request, res: Response) => {
     // STEP 3: ROUTE TO APPROPRIATE AGENT(S)
     // ============================================================================
     
-    let finalPrompt = prompt;
     let agentResponse;
     let mode: 'discovery' | 'route' = 'discovery';
     let venues: any[] = [];
     let events: any[] = [];
 
-    // ROUTE C: Modification → Agent 4
+    // ============================================================================
+    // ROUTE A: MODIFICATION → Agent 4 (no changes)
+    // ============================================================================
     if (classification.routeTo === 'agent4') {
       console.log('\n🔧 Routing: Agent 4 (Modification Agent)');
       console.log('─'.repeat(80));
@@ -117,8 +117,6 @@ router.post('/plan', async (req: Request, res: Response) => {
       let finalVenues = modificationResult.updatedVenues;
       
       if (currentItinerary.hasUserLocation && currentItinerary.userLocationIndex !== undefined && userLocation) {
-        console.log(`🔄 Preserving user-location at index ${currentItinerary.userLocationIndex}`);
-        
         const userLocationVenue = {
           name: userLocation.name || 'Your Location',
           address: 'Current location',
@@ -135,18 +133,10 @@ router.post('/plan', async (req: Request, res: Response) => {
         
         finalVenues = [...modificationResult.updatedVenues];
         finalVenues.splice(currentItinerary.userLocationIndex, 0, userLocationVenue);
-        
-        console.log(`   ✅ User-location inserted at position ${currentItinerary.userLocationIndex}`);
       }
 
-      console.log('✅ Modification successful');
-      
-      // 🆕 PRESERVE: Keep existing alternatives from current itinerary
-      // Build alternativesMap from currentItinerary if it exists
       const preservedAlternativesMap: Record<string, any[]> = {};
-      
       if (currentItinerary && (currentItinerary as any).alternativesMap) {
-        console.log('🔄 Preserving alternatives from current itinerary');
         Object.assign(preservedAlternativesMap, (currentItinerary as any).alternativesMap);
       }
       
@@ -158,7 +148,7 @@ router.post('/plan', async (req: Request, res: Response) => {
         venues: finalVenues,
         events: [],
         routes: [],
-        alternativesMap: preservedAlternativesMap,  // 🔧 FIX: Preserve alternatives
+        alternativesMap: preservedAlternativesMap,
         iterations: 1,
         tokensUsed: 0,
         executionTimeMs: 0,
@@ -167,70 +157,96 @@ router.post('/plan', async (req: Request, res: Response) => {
       });
     }
     
-    // ROUTE A: Itinerary Planning → Agent 1 → Agent 2
-    else if (classification.routeTo === 'agent1') {
-      console.log('\n🎨 Routing: Agent 1 (Plan Creator) → Agent 2 (ReAct)');
+    // ============================================================================
+    // ROUTE B: GEMINI GROUNDING (Planning + Discovery)
+    // 🔧 SIMPLIFIED: Skip Agent 1, go directly to Gemini
+    // ============================================================================
+    
+    if (classification.useGeminiGrounding && classification.routeTo === 'gemini') {
+      console.log('\n🌟 SIMPLIFIED FLOW: Gemini (Plan + Ground) → Agent 2 (Enrich)');
       console.log('─'.repeat(80));
-
-      const plan = await planCreatorAgent.createPlan(prompt, userLocation);
-
-      const categorySearches = plan.stops.map(stop => stop.category).join(', ');
-      finalPrompt = `Find ${plan.stops.length} venues in ${plan.location}: ${categorySearches}. ` +
-                   `These should be close together for a ${plan.planType}. ` +
-                   `Create an itinerary with these venues in a logical walking route.`;
-
-      console.log(`\n🔄 Converted plan to Agent 2 prompt:`);
-      console.log(`   "${finalPrompt}"`);
-      console.log('─'.repeat(80));
-
-      console.log('\n🤖 Agent 2 (ReAct) starting...');
-      const agent2 = new ReActAgent(DEFAULT_SAFETY_CONFIG);
-      agentResponse = await agent2.execute(finalPrompt, userLocation, {
-        isItinerary: true,
-        originalPrompt: prompt
-      });
-
-      console.log(`\n📊 Agent 2 Response:`, {
-        success: agentResponse.success,
-        hasState: !!agentResponse.state,
-        hasFinishParams: !!agentResponse.state?.finishParameters,
-        finishMode: agentResponse.state?.finishParameters?.mode,
-        selectedVenueCount: agentResponse.state?.finishParameters?.selected_venue_ids?.length || 0,
-        alternativesCount: agentResponse.state?.finishParameters?.alternatives_map 
-          ? Object.keys(agentResponse.state.finishParameters.alternatives_map).length 
-          : 0,  // 🆕 NEW
-        toolResultsCount: agentResponse.state?.toolResults?.length || 0
-      });
-    } 
-    // ROUTE B: Direct to Agent 2 (explicit route or discovery)
+      console.log('⏭️  SKIPPING Agent 1 (Plan Creator is dormant)');
+      
+      // Call Gemini directly (handles both planning and grounding)
+      console.log('\n🌟 Calling Gemini with grounding (planning + recommendations)...');
+      const geminiResult = await geminiGroundingAgent.getRecommendations(
+        prompt,
+        userLocation
+      );
+      
+      console.log(`✨ Gemini returned ${geminiResult.venues.length} recommendations`);
+      if (geminiResult.plan) {
+        console.log(`📋 Plan: ${geminiResult.plan.type}, ${geminiResult.plan.total_stops} stops`);
+      }
+      console.log(`   Grounding used: Maps=${geminiResult.grounding_used}, Search=${geminiResult.search_used}`);
+      
+      if (geminiResult.venues.length === 0) {
+        console.warn('⚠️ Gemini returned no venues, falling back to direct Agent 2');
+        
+        // Fallback to direct Agent 2
+        const agent2 = new ReActAgent(DEFAULT_SAFETY_CONFIG);
+        agentResponse = await agent2.execute(prompt, userLocation);
+        mode = 'discovery';
+      } else {
+        // Agent 2 enriches with Places API
+        console.log('\n🤖 Agent 2 (ReAct) enriching with Google Places API...');
+        const agent2 = new ReActAgent(DEFAULT_SAFETY_CONFIG);
+        
+        agentResponse = await agent2.executeWithGrounding(
+          prompt,
+          geminiResult.venues,
+          userLocation,
+          {
+            isItinerary: classification.queryType === 'itinerary_planning',
+            originalPrompt: prompt,
+            geminiRecommendations: geminiResult.venues,
+            useGroundingMode: true
+          }
+        );
+        
+        // Set mode based on query type
+        mode = classification.queryType === 'itinerary_planning' ? 'route' : 'discovery';
+      }
+    }
+    
+    // ============================================================================
+    // ROUTE C: DIRECT TO AGENT 2 (No grounding, specific routes)
+    // ============================================================================
     else if (classification.routeTo === 'agent2') {
-      console.log('\n🎯 Routing: Agent 2 (ReAct) directly');
-      console.log(`   Query type: ${classification.queryType}`);
+      console.log('\n🎯 Direct execution: Agent 2 only (no grounding)');
       console.log('─'.repeat(80));
-
+      
+      const agent2 = new ReActAgent(DEFAULT_SAFETY_CONFIG);
+      agentResponse = await agent2.execute(prompt, userLocation);
+      
+      // Mode determined by finish parameters
+      if (agentResponse.state.finishParameters?.mode) {
+        mode = agentResponse.state.finishParameters.mode;
+      }
+    }
+    
+    // ============================================================================
+    // FALLBACK: If no agent response yet, use direct Agent 2
+    // ============================================================================
+    else if (!agentResponse) {
+      console.log('\n⚠️ No matching route, falling back to Agent 2');
+      
       const agent2 = new ReActAgent(DEFAULT_SAFETY_CONFIG);
       agentResponse = await agent2.execute(prompt, userLocation);
     }
-    else {
-      return res.status(500).json({
-        success: false,
-        error: 'Invalid routing decision from classifier'
-      });
-    }
 
     // ============================================================================
-    // STEP 4: PROCESS AGENT 2 RESPONSE
+    // STEP 4: PROCESS AGENT RESPONSE
     // ============================================================================
 
-    if (classification.routeTo === 'agent1') {
-      mode = 'route';
-      console.log('🎨 Itinerary mode detected (from Agent 1)');
+    if (!agentResponse) {
+      throw new Error('No agent response received');
     }
 
     let selectedVenueIds: Set<string> = new Set();
 
     if (agentResponse.state.finishParameters) {
-      if (classification.routeTo !== 'agent1') {
+      if (agentResponse.state.finishParameters.mode) {
         mode = agentResponse.state.finishParameters.mode;
       }
       
@@ -240,14 +256,7 @@ router.post('/plan', async (req: Request, res: Response) => {
       console.log(`\n🎯 Mode: ${mode}, Selected venues: ${selectedVenueIds.size}`);
     }
 
-    // 🆕 NEW: Extract alternatives map from finish parameters
     const alternativesMap = agentResponse.state.finishParameters?.alternatives_map || {};
-    console.log(`\n🔄 Alternatives captured: ${Object.keys(alternativesMap).length} stops with alternatives`);
-    if (Object.keys(alternativesMap).length > 0) {
-      Object.entries(alternativesMap).forEach(([placeId, info]: [string, any]) => {
-        console.log(`   ${placeId.substring(0, 20)}...: ${info.alternatives.length} alternatives (${info.searchQuery})`);
-      });
-    }
 
     // Extract venues and events
     agentResponse.state.toolResults.forEach(result => {
@@ -297,8 +306,6 @@ router.post('/plan', async (req: Request, res: Response) => {
 
     // Reorder for route mode
     if (mode === 'route' && selectedVenueIds.size > 0) {
-      console.log(`🔄 Reordering ${enrichedVenues.length} venues based on ${selectedVenueIds.size} selected IDs`);
-      
       const venueMap = new Map<string, any>();
       enrichedVenues.forEach(v => {
         if (v.placeId) {
@@ -308,30 +315,25 @@ router.post('/plan', async (req: Request, res: Response) => {
 
       const orderedVenues: any[] = [];
       selectedVenueIds.forEach(placeId => {
-        if (placeId === 'user-location') {
-          return;
-        }
+        if (placeId === 'user-location') return;
         const venue = venueMap.get(placeId);
-        if (venue) {
-          orderedVenues.push(venue);
-        }
+        if (venue) orderedVenues.push(venue);
       });
 
       enrichedVenues.length = 0;
       enrichedVenues.push(...orderedVenues);
-      
-      console.log(`✅ Reordered to ${enrichedVenues.length} venues in correct sequence`);
     }
 
-    // 🆕 NEW: Build simplified alternatives map for frontend
-    // Map placeId → array of alternative venues (not nested object)
     const simplifiedAlternativesMap: Record<string, any[]> = {};
     Object.entries(alternativesMap).forEach(([placeId, info]: [string, any]) => {
       simplifiedAlternativesMap[placeId] = info.alternatives;
     });
 
     console.log('\n' + '='.repeat(80));
-    console.log('✅ REQUEST COMPLETED');
+    console.log('✅ REQUEST COMPLETED (SIMPLIFIED FLOW)');
+    console.log(`   Grounding used: ${classification.useGeminiGrounding}`);
+    console.log(`   Agent 1: SKIPPED (dormant)`);
+    console.log(`   Venues: ${enrichedVenues.length}`);
     console.log('='.repeat(80) + '\n');
 
     const responseData = {
@@ -342,13 +344,14 @@ router.post('/plan', async (req: Request, res: Response) => {
       venues: enrichedVenues || [],
       events: events || [],
       routes: [],
-      alternativesMap: simplifiedAlternativesMap,  // 🆕 NEW: Include alternatives map
+      alternativesMap: simplifiedAlternativesMap,
       state: agentResponse.state,
       iterations: agentResponse.iterations,
       tokensUsed: agentResponse.tokensUsed,
       executionTimeMs: agentResponse.executionTimeMs,
       stoppedReason: agentResponse.stoppedReason,
-      error: agentResponse.error
+      error: agentResponse.error,
+      geminiGroundingUsed: classification.useGeminiGrounding
     };
 
     return res.json(responseData);
