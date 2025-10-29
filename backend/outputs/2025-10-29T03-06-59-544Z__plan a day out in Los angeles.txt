@@ -1,0 +1,137 @@
+User Prompt: plan a day out in Los angeles
+
+[2025-10-29T03:06:59.545Z] LOG 📍 Using fallback location (no user location): Los
+[2025-10-29T03:06:59.546Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T03:06:59.546Z] LOG    1. "The Broad" in "Los"
+[2025-10-29T03:06:59.547Z] LOG    2. "Grand Central Market" in "Los"
+[2025-10-29T03:06:59.547Z] LOG    3. "Angels Flight Railway" in "Los"
+[2025-10-29T03:06:59.547Z] LOG    4. "Perch" in "Los"
+[2025-10-29T03:06:59.548Z] LOG 
+🔍 Executing batch search for 4 venues...
+[2025-10-29T03:06:59.548Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:06:59.549Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-29T03:06:59.549Z] LOG    1. Searching "The Broad" in "Los"
+[2025-10-29T03:06:59.549Z] LOG 🔍 [Google Places] Text search: "The Broad" in Los
+[2025-10-29T03:06:59.552Z] LOG    2. Searching "Grand Central Market" in "Los"
+[2025-10-29T03:06:59.553Z] LOG 🔍 [Google Places] Text search: "Grand Central Market" in Los
+[2025-10-29T03:06:59.556Z] LOG    3. Searching "Angels Flight Railway" in "Los"
+[2025-10-29T03:06:59.557Z] LOG 🔍 [Google Places] Text search: "Angels Flight Railway" in Los
+[2025-10-29T03:06:59.561Z] LOG    4. Searching "Perch" in "Los"
+[2025-10-29T03:06:59.562Z] LOG 🔍 [Google Places] Text search: "Perch" in Los
+[2025-10-29T03:06:59.993Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:07:00.003Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:07:00.061Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:07:00.117Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:07:00.137Z] LOG    ✅ Angels Flight Railway: Got description (94 chars)
+[2025-10-29T03:07:00.139Z] LOG ✅ Found 1 places
+[2025-10-29T03:07:00.152Z] LOG    ✅ Perch: Got description (100 chars)
+[2025-10-29T03:07:00.153Z] LOG ✅ Found 1 places
+[2025-10-29T03:07:00.211Z] LOG    ✅ The Broad: Got description (99 chars)
+[2025-10-29T03:07:00.212Z] LOG ✅ Found 1 places
+[2025-10-29T03:07:00.229Z] LOG    ✅ Grand Central Market: Got description (94 chars)
+[2025-10-29T03:07:00.230Z] LOG ✅ Found 1 places
+[2025-10-29T03:07:00.230Z] LOG ✅ Batch complete: 4/4 searches succeeded, 4 total venues found in 681ms
+[2025-10-29T03:07:00.231Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:07:00.232Z] LOG    Tool execution result: success=true
+[2025-10-29T03:07:00.232Z] LOG    ✅ Tool returned 4 search results
+[2025-10-29T03:07:00.233Z] LOG    ✅ Merged: The Broad
+[2025-10-29T03:07:00.233Z] LOG       Places placeId: ChIJXaYsEk3GwoARvx7RKBUE8Zg
+[2025-10-29T03:07:00.234Z] LOG       Gemini description: ...
+[2025-10-29T03:07:00.234Z] LOG    ✅ Merged: Grand Central Market
+[2025-10-29T03:07:00.235Z] LOG       Places placeId: ChIJ53JDjkvGwoAR2NMG6_1OnUg
+[2025-10-29T03:07:00.235Z] LOG       Gemini description: ...
+[2025-10-29T03:07:00.236Z] LOG    ✅ Merged: Angels Flight Railway
+[2025-10-29T03:07:00.236Z] LOG       Places placeId: ChIJ_SlqhEzGwoARrIIERV62_po
+[2025-10-29T03:07:00.236Z] LOG       Gemini description: ...
+[2025-10-29T03:07:00.237Z] LOG    ✅ Merged: Perch
+[2025-10-29T03:07:00.237Z] LOG       Places placeId: ChIJqbKnF0vGwoARREUrVhYGqTU
+[2025-10-29T03:07:00.237Z] LOG       Gemini description: ...
+[2025-10-29T03:07:00.237Z] LOG ✅ Phase 1 complete: Found 4/4 exact venues
+[2025-10-29T03:07:00.237Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T03:07:00.238Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-29T03:07:00.238Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:07:00.238Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-29T03:07:00.239Z] LOG    1. Searching "Museum" in "34.0545021,-118.2501802"
+[2025-10-29T03:07:00.239Z] LOG    📍 Using nearbySearch at coordinates (34.0545021, -118.2501802)
+[2025-10-29T03:07:00.239Z] LOG 🔍 [Google Places] Nearby search at (34.0545021, -118.2501802)
+[2025-10-29T03:07:00.241Z] LOG    2. Searching "Food Court" in "34.050872,-118.2490552"
+[2025-10-29T03:07:00.241Z] LOG    📍 Using nearbySearch at coordinates (34.050872, -118.2490552)
+[2025-10-29T03:07:00.241Z] LOG 🔍 [Google Places] Nearby search at (34.050872, -118.2490552)
+[2025-10-29T03:07:00.243Z] LOG    3. Searching "Historical Landmark" in "34.0516174,-118.2506142"
+[2025-10-29T03:07:00.244Z] LOG    📍 Using nearbySearch at coordinates (34.0516174, -118.2506142)
+[2025-10-29T03:07:00.244Z] LOG 🔍 [Google Places] Nearby search at (34.0516174, -118.2506142)
+[2025-10-29T03:07:00.246Z] LOG    4. Searching "French Restaurant/Rooftop Bar" in "34.0489961,-118.2514107"
+[2025-10-29T03:07:00.246Z] LOG    📍 Using nearbySearch at coordinates (34.0489961, -118.2514107)
+[2025-10-29T03:07:00.246Z] LOG 🔍 [Google Places] Nearby search at (34.0489961, -118.2514107)
+[2025-10-29T03:07:00.774Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:07:00.850Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:07:00.857Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:07:00.931Z] LOG    ⚠️  Corporation Food Hall: No editorial summary available
+[2025-10-29T03:07:00.936Z] LOG    ✅ The Broad: Got description (99 chars)
+[2025-10-29T03:07:00.981Z] LOG    ✅ Bradbury Building: Got description (98 chars)
+[2025-10-29T03:07:00.998Z] LOG    ⚠️  DTLA After Dark Night Market: No editorial summary available
+[2025-10-29T03:07:01.009Z] LOG    ⚠️  Taste Food Hall: No editorial summary available
+[2025-10-29T03:07:01.023Z] LOG    ⚠️  Klaudette's Kitchen: No editorial summary available
+[2025-10-29T03:07:01.049Z] LOG    ✅ Angels Flight Railway: Got description (94 chars)
+[2025-10-29T03:07:01.051Z] LOG    ✅ The Museum of Contemporary Art, Los Angeles: Got description (94 chars)
+[2025-10-29T03:07:01.053Z] LOG    ⚠️  Plaza Olvera: No editorial summary available
+[2025-10-29T03:07:01.071Z] LOG    ⚠️  The Bonaventure Galleria: No editorial summary available
+[2025-10-29T03:07:01.079Z] LOG    ✅ GRAMMY Museum: Got description (100 chars)
+[2025-10-29T03:07:01.080Z] LOG    ⚠️  Los Angeles Union Station: No editorial summary available
+[2025-10-29T03:07:01.083Z] LOG    ⚠️  Little Tokyo National Historic District: No editorial summary available
+[2025-10-29T03:07:01.095Z] LOG    ✅ Chinese American Museum: Got description (96 chars)
+[2025-10-29T03:07:01.126Z] LOG    ✅ The Geffen Contemporary at MOCA: Got description (95 chars)
+[2025-10-29T03:07:01.372Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:07:01.458Z] LOG    ✅ Perch: Got description (100 chars)
+[2025-10-29T03:07:01.516Z] LOG    ✅ Spire 73: Got description (86 chars)
+[2025-10-29T03:07:01.533Z] LOG    ✅ 71Above: Got description (87 chars)
+[2025-10-29T03:07:01.536Z] LOG    ⚠️  Cara Cara: No editorial summary available
+[2025-10-29T03:07:01.544Z] LOG    ⚠️  Zinqué - DTLA: No editorial summary available
+[2025-10-29T03:07:01.547Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 1308ms
+[2025-10-29T03:07:01.548Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:07:01.549Z] LOG    ✅ Venue 1 (The Broad): 4 alternatives
+[2025-10-29T03:07:01.549Z] LOG       1. The Museum of Contemporary Art, Los Angeles (4.4⭐)
+[2025-10-29T03:07:01.550Z] LOG       2. GRAMMY Museum (4.4⭐)
+[2025-10-29T03:07:01.551Z] LOG       3. The Geffen Contemporary at MOCA (4.4⭐)
+[2025-10-29T03:07:01.551Z] LOG    ✅ Venue 2 (Grand Central Market): 4 alternatives
+[2025-10-29T03:07:01.552Z] LOG       1. Corporation Food Hall (4.5⭐)
+[2025-10-29T03:07:01.552Z] LOG       2. DTLA After Dark Night Market (4.4⭐)
+[2025-10-29T03:07:01.553Z] LOG       3. Taste Food Hall (4.3⭐)
+[2025-10-29T03:07:01.553Z] LOG    ✅ Venue 3 (Angels Flight Railway): 4 alternatives
+[2025-10-29T03:07:01.554Z] LOG       1. Bradbury Building (4.5⭐)
+[2025-10-29T03:07:01.554Z] LOG       2. Plaza Olvera (4.5⭐)
+[2025-10-29T03:07:01.554Z] LOG       3. Los Angeles Union Station (4.5⭐)
+[2025-10-29T03:07:01.555Z] LOG    ✅ Venue 4 (Perch): 4 alternatives
+[2025-10-29T03:07:01.556Z] LOG       1. Cara Cara (4.4⭐)
+[2025-10-29T03:07:01.556Z] LOG       2. Zinqué - DTLA (4.4⭐)
+[2025-10-29T03:07:01.557Z] LOG       3. Spire 73 (4.1⭐)
+[2025-10-29T03:07:01.558Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-29T03:07:01.560Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T03:07:01.560Z] LOG    Primary venues: 4 stops
+[2025-10-29T03:07:01.561Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T03:07:01.562Z] LOG    Removed 0 venues already in route
+[2025-10-29T03:07:01.563Z] LOG    Removed 0 duplicate alternatives
+[2025-10-29T03:07:01.563Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-29T03:07:01.564Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T03:07:01.565Z] LOG    Primary venues: 4
+[2025-10-29T03:07:01.565Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-29T03:07:01.566Z] LOG    Execution time: 2020ms
+[2025-10-29T03:07:01.567Z] LOG 
+📋 Final alternatives:
+[2025-10-29T03:07:01.567Z] LOG    The Broad: 4 alternatives
+[2025-10-29T03:07:01.568Z] LOG    Grand Central Market: 4 alternatives
+[2025-10-29T03:07:01.569Z] LOG    Angels Flight Railway: 4 alternatives
+[2025-10-29T03:07:01.569Z] LOG    Perch: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 4

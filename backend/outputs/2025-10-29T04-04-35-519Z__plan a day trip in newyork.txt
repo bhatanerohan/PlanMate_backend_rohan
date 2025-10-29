@@ -1,0 +1,164 @@
+User Prompt: plan a day trip in newyork
+
+[2025-10-29T04:04:35.520Z] LOG 📍 Using extracted city from user location: New York
+[2025-10-29T04:04:35.520Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T04:04:35.521Z] LOG    1. "Statue of Liberty" in "New York Harbor (accessible from Lower Manhattan)"
+[2025-10-29T04:04:35.521Z] LOG    2. "One World Observatory" in "Lower Manhattan"
+[2025-10-29T04:04:35.522Z] LOG    3. "Times Square" in "Midtown Manhattan"
+[2025-10-29T04:04:35.522Z] LOG    4. "Top of The Rock" in "Midtown Manhattan"
+[2025-10-29T04:04:35.524Z] LOG    5. "Central Park" in "Uptown Manhattan"
+[2025-10-29T04:04:35.524Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-29T04:04:35.526Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T04:04:35.529Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T04:04:35.531Z] LOG    1. Searching "Statue of Liberty" in "New York Harbor (accessible from Lower Manhattan)"
+[2025-10-29T04:04:35.531Z] LOG 🔍 [Google Places] Text search: "Statue of Liberty" in New York Harbor (accessible from Lower Manhattan)
+[2025-10-29T04:04:35.541Z] LOG    2. Searching "One World Observatory" in "Lower Manhattan"
+[2025-10-29T04:04:35.542Z] LOG 🔍 [Google Places] Text search: "One World Observatory" in Lower Manhattan
+[2025-10-29T04:04:35.546Z] LOG    3. Searching "Times Square" in "Midtown Manhattan"
+[2025-10-29T04:04:35.548Z] LOG 🔍 [Google Places] Text search: "Times Square" in Midtown Manhattan
+[2025-10-29T04:04:35.552Z] LOG    4. Searching "Top of The Rock" in "Midtown Manhattan"
+[2025-10-29T04:04:35.552Z] LOG 🔍 [Google Places] Text search: "Top of The Rock" in Midtown Manhattan
+[2025-10-29T04:04:35.555Z] LOG    5. Searching "Central Park" in "Uptown Manhattan"
+[2025-10-29T04:04:35.556Z] LOG 🔍 [Google Places] Text search: "Central Park" in Uptown Manhattan
+[2025-10-29T04:04:35.561Z] ERROR step-logger write error: {"errno":-4058,"code":"ENOENT","syscall":"open","path":"C:\\Rohan\\PlanmateV2\\PlanMate_backend_rohan\\backend\\outputs\\2025-10-29T04:04:21.401Z-1761710661401-c8j6o9.json"}
+[2025-10-29T04:04:35.565Z] ERROR step-logger write error: {"errno":-4058,"code":"ENOENT","syscall":"open","path":"C:\\Rohan\\PlanmateV2\\PlanMate_backend_rohan\\backend\\outputs\\2025-10-29T04:04:21.401Z-1761710661401-c8j6o9.json"}
+[2025-10-29T04:04:36.064Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T04:04:36.129Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T04:04:36.208Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T04:04:36.242Z] LOG    ⚠️  Central Pk N: No editorial summary available
+[2025-10-29T04:04:36.246Z] LOG ✅ Found 1 places
+[2025-10-29T04:04:36.256Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T04:04:36.330Z] LOG    ✅ One World Observatory: Got description (93 chars)
+[2025-10-29T04:04:36.331Z] LOG ✅ Found 1 places
+[2025-10-29T04:04:36.397Z] LOG    ✅ Statue of Liberty: Got description (100 chars)
+[2025-10-29T04:04:36.399Z] LOG ✅ Found 1 places
+[2025-10-29T04:04:36.440Z] LOG    ✅ Top of The Rock: Got description (96 chars)
+[2025-10-29T04:04:36.441Z] LOG ✅ Found 1 places
+[2025-10-29T04:04:36.473Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T04:04:36.671Z] LOG    ✅ Times Square: Got description (100 chars)
+[2025-10-29T04:04:36.675Z] LOG ✅ Found 1 places
+[2025-10-29T04:04:36.677Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1148ms
+[2025-10-29T04:04:36.678Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T04:04:36.680Z] LOG    Tool execution result: success=true
+[2025-10-29T04:04:36.681Z] LOG    ✅ Tool returned 5 search results
+[2025-10-29T04:04:36.682Z] LOG    ✅ Merged: Statue of Liberty
+[2025-10-29T04:04:36.683Z] LOG       Places placeId: ChIJPTacEpBQwokRKwIlDXelxkA
+[2025-10-29T04:04:36.683Z] LOG       Gemini description: An iconic National Monument, the Statue of Liberty, opened i...
+[2025-10-29T04:04:36.684Z] LOG    ✅ Merged: One World Observatory
+[2025-10-29T04:04:36.684Z] LOG       Places placeId: ChIJTWE_0BtawokRVJNGH5RS448
+[2025-10-29T04:04:36.684Z] LOG       Gemini description: Located on the 100th-102nd floors of One World Trade Center,...
+[2025-10-29T04:04:36.685Z] LOG    ✅ Merged: Times Square
+[2025-10-29T04:04:36.685Z] LOG       Places placeId: ChIJmQJIxlVYwokRLgeuocVOGVU
+[2025-10-29T04:04:36.686Z] LOG       Gemini description: A bustling and vibrant destination in the heart of the Theat...
+[2025-10-29T04:04:36.686Z] LOG    ✅ Merged: Top of The Rock
+[2025-10-29T04:04:36.687Z] LOG       Places placeId: ChIJe7vKMf9YwokRIMYfDz7iF9o
+[2025-10-29T04:04:36.687Z] LOG       Gemini description: An observation deck atop Rockefeller Center, featuring an oc...
+[2025-10-29T04:04:36.688Z] LOG    ✅ Merged: Central Park
+[2025-10-29T04:04:36.689Z] LOG       Places placeId: ChIJ6XWMiRn2wokROZOJYqrTD4k
+[2025-10-29T04:04:36.690Z] LOG       Gemini description: A sprawling urban oasis, Central Park offers pedestrian path...
+[2025-10-29T04:04:36.690Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-29T04:04:36.690Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T04:04:36.691Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-29T04:04:36.691Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T04:04:36.692Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T04:04:36.693Z] LOG    1. Searching "landmark" in "40.6892494,-74.04450039999999"
+[2025-10-29T04:04:36.693Z] LOG    📍 Using nearbySearch at coordinates (40.6892494, -74.04450039999999)
+[2025-10-29T04:04:36.694Z] LOG 🔍 [Google Places] Nearby search at (40.6892494, -74.04450039999999)
+[2025-10-29T04:04:36.695Z] LOG    2. Searching "observation deck" in "40.7130062,-74.013173"
+[2025-10-29T04:04:36.697Z] LOG    📍 Using nearbySearch at coordinates (40.7130062, -74.013173)
+[2025-10-29T04:04:36.699Z] LOG 🔍 [Google Places] Nearby search at (40.7130062, -74.013173)
+[2025-10-29T04:04:36.700Z] LOG    3. Searching "plaza" in "40.7579747,-73.9855426"
+[2025-10-29T04:04:36.700Z] LOG    📍 Using nearbySearch at coordinates (40.7579747, -73.9855426)
+[2025-10-29T04:04:36.702Z] LOG 🔍 [Google Places] Nearby search at (40.7579747, -73.9855426)
+[2025-10-29T04:04:36.705Z] LOG    4. Searching "observation deck" in "40.7593495,-73.9794087"
+[2025-10-29T04:04:36.706Z] LOG    📍 Using nearbySearch at coordinates (40.7593495, -73.9794087)
+[2025-10-29T04:04:36.706Z] LOG 🔍 [Google Places] Nearby search at (40.7593495, -73.9794087)
+[2025-10-29T04:04:36.708Z] LOG    5. Searching "restaurant" in "40.7987768,-73.9537196"
+[2025-10-29T04:04:36.709Z] LOG    📍 Using nearbySearch at coordinates (40.7987768, -73.9537196)
+[2025-10-29T04:04:36.710Z] LOG 🔍 [Google Places] Nearby search at (40.7987768, -73.9537196)
+[2025-10-29T04:04:36.713Z] ERROR step-logger write error: {"errno":-4058,"code":"ENOENT","syscall":"open","path":"C:\\Rohan\\PlanmateV2\\PlanMate_backend_rohan\\backend\\outputs\\2025-10-29T04:04:21.401Z-1761710661401-c8j6o9.json"}
+[2025-10-29T04:04:36.716Z] ERROR step-logger write error: {"errno":-4058,"code":"ENOENT","syscall":"open","path":"C:\\Rohan\\PlanmateV2\\PlanMate_backend_rohan\\backend\\outputs\\2025-10-29T04:04:21.401Z-1761710661401-c8j6o9.json"}
+[2025-10-29T04:04:37.267Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T04:04:37.283Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T04:04:37.351Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T04:04:37.368Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T04:04:37.442Z] LOG    ⚠️  SUMMIT One Vanderbilt: No editorial summary available
+[2025-10-29T04:04:37.443Z] LOG    ⚠️  PENN 1: No editorial summary available
+[2025-10-29T04:04:37.467Z] LOG    ✅ Top of The Rock: Got description (96 chars)
+[2025-10-29T04:04:37.478Z] LOG    ⚠️  One Vanderbilt: No editorial summary available
+[2025-10-29T04:04:37.501Z] LOG    ⚠️  Josie Robertson Plaza: No editorial summary available
+[2025-10-29T04:04:37.511Z] LOG    ⚠️  Grand Central Plaza: No editorial summary available
+[2025-10-29T04:04:37.513Z] LOG    ✅ One World Observatory: Got description (93 chars)
+[2025-10-29T04:04:37.518Z] LOG    ⚠️  Brooklyn Bridge Lookout: No editorial summary available
+[2025-10-29T04:04:37.519Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T04:04:37.523Z] LOG    ⚠️  Sylla: No editorial summary available
+[2025-10-29T04:04:37.532Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2025-10-29T04:04:37.556Z] LOG    ✅ 75 Rockefeller Plaza: Got description (95 chars)
+[2025-10-29T04:04:37.561Z] LOG    ⚠️  Saint Louis Restaurant Keur Yayou Dara: No editorial summary available
+[2025-10-29T04:04:37.562Z] LOG    ⚠️  Tudor City Bridge: No editorial summary available
+[2025-10-29T04:04:37.575Z] LOG    ✅ Statue of Liberty: Got description (100 chars)
+[2025-10-29T04:04:37.576Z] LOG    ⚠️  Harborside: No editorial summary available
+[2025-10-29T04:04:37.598Z] LOG    ⚠️  1 WTC/Brookfield Place Viewpoint: No editorial summary available
+[2025-10-29T04:04:37.602Z] LOG    ✅ The Plaza: Got description (95 chars)
+[2025-10-29T04:04:37.607Z] LOG    ✅ Cafe du Soleil: Got description (99 chars)
+[2025-10-29T04:04:37.625Z] LOG    ✅ Statue of Liberty Lookout: Got description (98 chars)
+[2025-10-29T04:04:37.629Z] LOG    ✅ El Porton: Got description (98 chars)
+[2025-10-29T04:04:37.641Z] LOG    ⚠️  Courtside Seafood Restaurant: No editorial summary available
+[2025-10-29T04:04:37.652Z] LOG    ✅ Ellis Island: Got description (100 chars)
+[2025-10-29T04:04:37.664Z] LOG    ⚠️  Fort Gibson: No editorial summary available
+[2025-10-29T04:04:37.701Z] LOG    ✅ Fort Wood: Got description (97 chars)
+[2025-10-29T04:04:37.723Z] LOG    ⚠️  Black Tom Island: No editorial summary available
+[2025-10-29T04:04:37.724Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1032ms
+[2025-10-29T04:04:37.725Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T04:04:37.727Z] LOG    ✅ Venue 1 (Statue of Liberty): 4 alternatives
+[2025-10-29T04:04:37.727Z] LOG       1. Ellis Island (4.6⭐)
+[2025-10-29T04:04:37.728Z] LOG       2. Fort Wood (4.3⭐)
+[2025-10-29T04:04:37.728Z] LOG       3. Black Tom Island (4.8⭐)
+[2025-10-29T04:04:37.729Z] LOG    ✅ Venue 2 (One World Observatory): 4 alternatives
+[2025-10-29T04:04:37.729Z] LOG       1. Brooklyn Bridge Lookout (4.9⭐)
+[2025-10-29T04:04:37.730Z] LOG       2. Harborside (4.9⭐)
+[2025-10-29T04:04:37.730Z] LOG       3. 1 WTC/Brookfield Place Viewpoint (4.9⭐)
+[2025-10-29T04:04:37.731Z] LOG    ✅ Venue 3 (Times Square): 4 alternatives
+[2025-10-29T04:04:37.731Z] LOG       1. PENN 1 (4.2⭐)
+[2025-10-29T04:04:37.732Z] LOG       2. Josie Robertson Plaza (4.8⭐)
+[2025-10-29T04:04:37.732Z] LOG       3. 75 Rockefeller Plaza (4.7⭐)
+[2025-10-29T04:04:37.733Z] LOG    ✅ Venue 4 (Top of The Rock): 4 alternatives
+[2025-10-29T04:04:37.733Z] LOG       1. SUMMIT One Vanderbilt (4.7⭐)
+[2025-10-29T04:04:37.734Z] LOG       2. Tudor City Bridge (4.8⭐)
+[2025-10-29T04:04:37.735Z] LOG       3. One Vanderbilt (4.7⭐)
+[2025-10-29T04:04:37.735Z] LOG    ✅ Venue 5 (Central Pk N): 4 alternatives
+[2025-10-29T04:04:37.735Z] LOG       1. Saint Louis Restaurant Keur Yayou Dara (4.7⭐)
+[2025-10-29T04:04:37.736Z] LOG       2. Sylla (4.7⭐)
+[2025-10-29T04:04:37.736Z] LOG       3. Courtside Seafood Restaurant (4.2⭐)
+[2025-10-29T04:04:37.736Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-29T04:04:37.737Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T04:04:37.738Z] LOG    Primary venues: 5 stops
+[2025-10-29T04:04:37.739Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T04:04:37.739Z] LOG    Removed 0 venues already in route
+[2025-10-29T04:04:37.740Z] LOG    Removed 0 duplicate alternatives
+[2025-10-29T04:04:37.740Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-29T04:04:37.741Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T04:04:37.742Z] LOG    Primary venues: 5
+[2025-10-29T04:04:37.742Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-29T04:04:37.742Z] LOG    Execution time: 2223ms
+[2025-10-29T04:04:37.743Z] LOG 
+📋 Final alternatives:
+[2025-10-29T04:04:37.744Z] LOG    Statue of Liberty: 4 alternatives
+[2025-10-29T04:04:37.744Z] LOG    One World Observatory: 4 alternatives
+[2025-10-29T04:04:37.745Z] LOG    Times Square: 4 alternatives
+[2025-10-29T04:04:37.745Z] LOG    Top of The Rock: 4 alternatives
+[2025-10-29T04:04:37.745Z] LOG    Central Pk N: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

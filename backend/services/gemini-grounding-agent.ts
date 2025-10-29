@@ -1,16 +1,10 @@
-// backend/services/gemini-grounding-agent.ts
 
-import { GoogleGenAI } from '@google/genai';  // ✅ CORRECT PACKAGE
+
+import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
+import { startCapture } from './logger.js';
 
 dotenv.config();
-
-/**
- * Gemini Grounding Agent - Uses Google's Gemini with Maps grounding
- * 
- * Purpose: Understand context and provide venue recommendations with rich descriptions
- * Returns: Venue suggestions with synthesized insights from Maps + Search grounding
- */
 
 export interface GeminiVenueRecommendation {
   name: string;
@@ -41,6 +35,7 @@ export interface GeminiGroundingResult {
   grounding_used: boolean;
   search_used: boolean;
   total_venues_found: number;
+  raw_grounding_chunks?: any[];  // 🆕 For debugging
 }
 
 export class GeminiGroundingAgent {
@@ -52,37 +47,43 @@ export class GeminiGroundingAgent {
       throw new Error('GEMINI_API_KEY not found in environment variables');
     }
     
-    // Initialize with correct SDK
     this.ai = new GoogleGenAI({
       apiKey: apiKey
     });
   }
 
+  
+
   /**
-   * Main method: Get venue recommendations with grounding
-   * 🆕 NOW HANDLES PLANNING + GROUNDING (Agent 1 is dormant)
+   * Main method: Get venue recommendations with Maps grounding
    */
   async getRecommendations(
     userPrompt: string,
     userLocation?: { lat: number; lng: number; name: string }
   ): Promise<GeminiGroundingResult> {
-    
+    const stopCapture: any = startCapture(userPrompt);
+    let response: any = undefined;
+    let groundingChunks: any[] = [];
+
     console.log('\n🌟 Gemini Grounding Agent starting...');
     console.log(`📝 User prompt: "${userPrompt}"`);
+    if (userLocation) {
+      console.log(`📍 User location: ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})`);
+    }
     
     try {
-      // Build enhanced prompt for Gemini (handles planning + grounding)
       const geminiPrompt = this.buildGroundingPrompt(userPrompt, userLocation);
       
-      console.log('🔮 Calling Gemini with Maps grounding...');
+      console.log('🔮 Calling Gemini with proper Maps grounding configuration...');
       
-      // Build config with Maps grounding
+      // ✅ CORRECT CONFIG: Matches Python SDK structure
       const config: any = {
-        // Enable Google Maps tool
-        tools: [{ googleMaps: {} }],  // ✅ CORRECT SYNTAX for Maps grounding
+        tools: [
+          { googleMaps: {} }  // Enable Maps grounding tool
+        ]
       };
 
-      // Add location context if user location is available
+      // Add location context if available
       if (userLocation) {
         config.toolConfig = {
           retrievalConfig: {
@@ -92,49 +93,67 @@ export class GeminiGroundingAgent {
             }
           }
         };
+        console.log(`🗺️ Location context configured: (${userLocation.lat}, ${userLocation.lng})`);
       }
 
       // Call Gemini with Maps grounding
-      const response = await this.ai.models.generateContent({
-        model: 'gemini-2.0-flash-exp',
+      response = await this.ai.models.generateContent({
+        model: 'gemini-2.5-flash',  // ✅ Use 2.5, not 2.0-exp
         contents: geminiPrompt,
         config: config
       });
-
-      const text = response.text;
+      console.log(response);
+      const text = response?.text || '';
       
       console.log('✅ Gemini response received');
-      if (typeof text === 'string') {
-        console.log(`📄 Response length: ${text.length} characters`);
-      } else {
-        console.log('📄 Response is missing or undefined.');
-      }
+      console.log(`📄 Response length: ${text.length} characters`);
       
-      // Check if grounding was used
-      const groundingMetadata = response.candidates?.[0]?.groundingMetadata;
-      const grounding_used = !!groundingMetadata?.groundingChunks;
-      const search_used = false;  // We're using Maps, not Search
+      // Check grounding metadata
+      const candidate = response.candidates?.[0];
+      const groundingMetadata = candidate?.groundingMetadata;
       
-      console.log(`📊 Grounding status: Maps=${grounding_used}`);
+      console.log('\n🔍 Grounding Metadata Analysis:');
+      console.log('   candidate exists:', !!candidate);
+      console.log('   groundingMetadata exists:', !!groundingMetadata);
       
-      // Log grounding sources if available
+      const grounding_used = !!groundingMetadata?.groundingChunks && groundingMetadata.groundingChunks.length > 0;
+      const search_used = !!groundingMetadata?.searchEntryPoint;
+      
+      console.log(`📊 Grounding status: Maps=${grounding_used}, Search=${search_used}`);
+      
+      // Log grounding chunks details
       if (groundingMetadata?.groundingChunks) {
-        console.log(`📍 Grounding sources: ${groundingMetadata.groundingChunks.length} chunks`);
+        groundingChunks = groundingMetadata.groundingChunks;
+        console.log(`📍 Grounding chunks: ${groundingChunks.length} total`);
         
-        // Log first few sources
-        groundingMetadata.groundingChunks.slice(0, 3).forEach((chunk: any, idx: number) => {
+        // Log first 5 sources
+        groundingChunks.forEach((chunk: any, idx: number) => {
           if (chunk.maps) {
-            console.log(`   ${idx + 1}. ${chunk.maps.title} - ${chunk.maps.uri}`);
+            console.log(`   ${idx + 1}. [MAPS] ${chunk.maps.title}`);
+            if (chunk.maps.placeId) {
+              console.log(`      placeId: ${chunk.maps.placeId}`);
+            }
+            if (chunk.maps.uri) {
+              console.log(`      uri: ${chunk.maps.uri}`);
+            }
+          } else if (chunk.web) {
+            console.log(`   ${idx + 1}. [WEB] ${chunk.web.title}`);
           }
         });
+      } else {
+        console.log('⚠️ No grounding chunks found - Maps grounding may not have triggered');
+        console.log('   This could mean:');
+        console.log('   1. Query didn\'t need Maps data');
+        console.log('   2. Maps grounding not available for this query type');
+        console.log('   3. Location context not sufficient');
       }
       
       // Parse the response
-      const parsed = await this.parseGeminiResponse(text ?? '', grounding_used);
+      const parsed = await this.parseGeminiResponse(text, grounding_used);
       
       console.log(`✨ Parsed ${parsed.venues.length} venue recommendations`);
       if (parsed.plan) {
-        console.log(`📋 Plan details: ${parsed.plan.type}, ${parsed.plan.total_stops} stops`);
+        console.log(`📋 Plan: ${parsed.plan.type}, ${parsed.plan.total_stops} stops`);
       }
       
       return {
@@ -143,19 +162,18 @@ export class GeminiGroundingAgent {
         context: parsed.context,
         grounding_used,
         search_used,
-        total_venues_found: parsed.venues.length
+        total_venues_found: parsed.venues.length,
+        raw_grounding_chunks: groundingChunks
       };
       
     } catch (error) {
       console.error('❌ Gemini Grounding Agent error:', error);
       
-      // Log full error for debugging
       if (error instanceof Error) {
         console.error('   Error message:', error.message);
         console.error('   Error stack:', error.stack);
       }
       
-      // Graceful fallback - return empty result
       return {
         plan: undefined,
         venues: [],
@@ -164,13 +182,19 @@ export class GeminiGroundingAgent {
         search_used: false,
         total_venues_found: 0
       };
+    } finally {
+      try {
+        if (stopCapture) {
+          try { (stopCapture as any).appendRaw('gemini_raw_response', response); } catch (e) {}
+          try { (stopCapture as any).appendRaw('grounding_chunks', groundingChunks); } catch (e) {}
+          try { stopCapture('Completed'); } catch (e) {}
+        }
+      } catch (e) {}
     }
   }
 
-  /**
-   * Build optimized prompt for Gemini grounding
-   * 🆕 NOW HANDLES BOTH PLANNING + GROUNDING (Agent 1 is dormant)
-   */
+  
+
   private buildGroundingPrompt(
     userPrompt: string,
     userLocation?: { lat: number; lng: number; name: string }
@@ -178,157 +202,104 @@ export class GeminiGroundingAgent {
     
     let prompt = '';
     
-    // Context about user location
     if (userLocation) {
       prompt += `User's current location: ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})\n\n`;
     }
     
-    // Main request
     prompt += `User request: "${userPrompt}"\n\n`;
     
-    // 🆕 NEW: Gemini handles BOTH planning AND recommendation
-    prompt += `You are an expert travel planner and venue recommender. Your job is to:
+    // ✅ SIMPLIFIED: Let Gemini use Maps grounding naturally without forcing JSON format
+    prompt += `
+🎯 DISTANCE SCALE (choose based on request):
 
-STEP 1: PLAN THE EXPERIENCE
-- Analyze the user's request and decide what type of experience they want
-- Determine how many stops make sense (2-6 typically)
-- Consider timing, distance, and flow
-- Think about the theme and vibe
+**OVERRIDE:** If user says "walkable", "walking distance", "on foot" → ALWAYS use Neighborhood scale
 
-STEP 2: RECOMMEND SPECIFIC VENUES
-- Use Google Maps data to find real, highly-rated venues
-- Choose venues that create a cohesive experience
-- Ensure venues are close together (walkable when possible)
-- Consider the user's intent and preferences
+**Neighborhood** (0.5-1 mile, 10-20 min walk)
+- Triggers: "bar crawl in [area]", "day around [place]", "walking tour", "coffee shop hop"
+- Example: "bar crawl in SoHo" → 4-5 bars within 0.5 miles, walking
 
-For each venue, provide:
+**District** (1-2 miles, mix of walking + transit)  
+- Triggers: "explore downtown", "afternoon in [area]", "visit the waterfront"
+- Example: "explore downtown Boston" → 4-5 venues across 1-2 miles, walking + transit
 
-1. **Name**: Exact venue name as it appears on Google Maps
-2. **Description**: Rich 2-3 sentence description including:
-   - What makes it special or unique
-   - Atmosphere and vibe
-   - What people love about it (from reviews)
-   - Best for what occasion/audience
-   
-3. **Category**: Type of venue (bar, restaurant, museum, park, cafe, etc.)
-4. **Reasoning**: Brief explanation of why you picked this venue for THIS request
-5. **Rating**: Star rating from Google Maps if available
-6. **Review insights**: Synthesize what reviewers commonly mention
-7. **Price level**: $ to $$$$ if available
-8. **General location**: Neighborhood or area (e.g., "Fenway area", "North End")
+**City-wide** (3-10 miles, transit/driving)
+- Triggers: "explore [city]", "trip in [city]", "best of [city]", "visit [city]"
+- Example: "explore NYC" → 5-6 landmarks across boroughs, transit/driving
 
-**PLANNING GUIDELINES:**
-- For "bar crawl": 4-5 bars, prioritize walkability and variety
-- For "date night": 2-3 stops, prioritize romantic/intimate venues
-- For "food tour": 3-4 stops, diverse cuisines, authentic local spots
-- For "day out": 3-5 stops, mix of activities, consider energy flow
-- For "best [X]": 3-5 top recommendations, explain what makes each special
-
-**SELECTION CRITERIA:**
-- Choose venues that are close together (0.3-0.5 miles apart ideal)
-- Consider the time of day (brunch spots vs dinner spots)
-- Think about the occasion (casual vs upscale, loud vs quiet)
-- Prioritize highly-rated venues (4.0+ stars preferred)
-- Include practical details (price level, good for groups, outdoor seating)
-- Create a logical flow between venues
-
-**IMPORTANT:**
-- Use REAL venues from Google Maps data
-- Include current information (hours, status)
-- Cite Google Maps sources
-- Ensure venues actually exist and are open
-
-**FORMAT YOUR RESPONSE AS JSON:**
-\`\`\`json
+📋 RETURN JSON:
 {
   "plan": {
-    "type": "bar_crawl",
-    "total_stops": 4,
-    "estimated_duration": "3-4 hours",
-    "theme": "Sports bars around Fenway Park",
-    "reasoning": "Four venues within walking distance create ideal bar crawl flow"
+    "type": "Experience name",
+    "total_stops": 5,
+    "estimated_duration": "3-4 hours | Full day (8-10 hours)",
+    "travel_mode": "walking | walking + transit | transit/driving",
+    "theme": "Brief vibe description",
+    "scale": "neighborhood | district | city-wide"
   },
   "venues": [
     {
-      "name": "Bleacher Bar",
-      "description": "Legendary sports bar built into Fenway Park's center field wall. Perfect game-day atmosphere with craft beer selection and unique stadium views.",
-      "category": "bar",
-      "reasoning": "Perfect first stop - iconic Fenway location sets the theme",
+      "name": "Exact Google Maps name",
+      "description": "What makes it special (2-3 sentences)",
+      "category": "bar | restaurant | cafe | museum | park | landmark",
+      "reasoning": "Why it fits this request",
       "rating": 4.5,
-      "userRatingCount": 1247,
-      "reviewsSummary": "Visitors praise the unique views into the stadium and lively atmosphere during games. Some note it gets crowded.",
-      "priceLevel": "$$",
-      "general_location": "Fenway"
+      "reviewsSummary": "What people love",
+      "general_location": "Area/neighborhood"
     }
-  ],
-  "context": "These four bars create an ideal walking route around Fenway Park, covering just 0.3 miles. Start at Bleacher Bar for the iconic view, then move to Lansdowne Pub for live music..."
+  ]
 }
-\`\`\`
 
-Use Google Maps grounding to provide accurate, up-to-date recommendations with real venues.`;
+Focus on logical routes and cohesive experiences.`;
 
     return prompt;
   }
 
-  /**
-   * Parse Gemini's response into structured format
-   * 🆕 NOW INCLUDES PLANNING DATA
-   */
   private async parseGeminiResponse(
     text: string,
     groundingUsed: boolean
   ): Promise<{ plan?: any; venues: GeminiVenueRecommendation[]; context: string }> {
     
     try {
-      // Try to extract JSON from response
       const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
       
       if (jsonMatch) {
         const parsed = JSON.parse(jsonMatch[1]);
         
         if (parsed.venues && Array.isArray(parsed.venues)) {
-          // Map to our interface
           const venues: GeminiVenueRecommendation[] = parsed.venues.map((v: any) => ({
             name: v.name || 'Unknown',
             description: v.description || '',
             category: v.category || 'venue',
             reasoning: v.reasoning,
-            general_location: v.general_location || v.location,
-            placeId: v.placeId,
+            general_location: v.general_location || v.location || v.neighborhood,
+            placeId: v.placeId || v.place_id,
             rating: v.rating,
-            userRatingCount: v.userRatingCount || v.reviewCount,
-            reviewsSummary: v.reviewsSummary || v.reviewInsights,
-            priceLevel: v.priceLevel,
+            userRatingCount: v.userRatingCount || v.reviewCount || v.user_rating_count,
+            reviewsSummary: v.reviewsSummary || v.reviewInsights || v.review_summary,
+            priceLevel: v.priceLevel || v.price_level,
             gemini_confidence: groundingUsed ? 0.9 : 0.7
           }));
           
           return {
-            plan: parsed.plan,  // 🆕 NEW: Extract planning data
+            plan: parsed.plan,
             venues,
             context: parsed.context || 'Venue recommendations based on your request'
           };
         }
       }
       
-      // Fallback: Parse from natural language
       console.warn('⚠️ Could not parse JSON, attempting natural language parsing...');
       return this.parseNaturalLanguageResponse(text);
       
     } catch (error) {
       console.error('❌ Failed to parse Gemini response:', error);
-      
-      // Last resort: Try natural language parsing
       return this.parseNaturalLanguageResponse(text);
     }
   }
 
-  /**
-   * Fallback parser for natural language responses
-   */
   private parseNaturalLanguageResponse(text: string): { plan?: any; venues: GeminiVenueRecommendation[]; context: string } {
     const venues: GeminiVenueRecommendation[] = [];
     
-    // Simple pattern matching for venue names
     const venuePatterns = [
       /\d+\.\s*\*\*(.+?)\*\*/g,
       /\d+\.\s*(.+?)(?:\n|:)/g,
@@ -341,7 +312,7 @@ Use Google Maps grounding to provide accurate, up-to-date recommendations with r
         if (match[1] && match[1].length > 3) {
           venues.push({
             name: match[1].trim(),
-            description: 'Recommended venue (parse full description from text)',
+            description: 'Recommended venue',
             category: 'venue',
             gemini_confidence: 0.5
           });
@@ -357,14 +328,6 @@ Use Google Maps grounding to provide accurate, up-to-date recommendations with r
       context: 'Parsed from natural language response'
     };
   }
-
-  /**
-   * Validate that a recommendation has minimum required fields
-   */
-  private isValidRecommendation(venue: any): boolean {
-    return !!(venue.name && venue.description && venue.category);
-  }
 }
 
-// Export singleton instance
 export const geminiGroundingAgent = new GeminiGroundingAgent();

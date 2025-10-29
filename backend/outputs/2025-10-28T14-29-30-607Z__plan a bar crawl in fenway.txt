@@ -1,0 +1,131 @@
+User Prompt: plan a bar crawl in fenway
+
+[2025-10-28T14:29:30.609Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-28T14:29:30.611Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T14:29:30.613Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-28T14:29:30.615Z] LOG    1. Searching "Bleacher Bar" in "fenway"
+[2025-10-28T14:29:30.616Z] LOG 🔍 [Google Places] Text search: "Bleacher Bar" in fenway
+[2025-10-28T14:29:30.628Z] LOG    2. Searching "Lansdowne Pub" in "fenway"
+[2025-10-28T14:29:30.632Z] LOG 🔍 [Google Places] Text search: "Lansdowne Pub" in fenway
+[2025-10-28T14:29:30.641Z] LOG    3. Searching "Cheeky Monkey Brewing Company" in "fenway"
+[2025-10-28T14:29:30.643Z] LOG 🔍 [Google Places] Text search: "Cheeky Monkey Brewing Company" in fenway
+[2025-10-28T14:29:30.651Z] LOG    4. Searching "Cask 'N Flagon" in "fenway"
+[2025-10-28T14:29:30.655Z] LOG 🔍 [Google Places] Text search: "Cask 'N Flagon" in fenway
+[2025-10-28T14:29:31.100Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T14:29:31.175Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T14:29:31.179Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T14:29:31.232Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T14:29:31.288Z] LOG    ✅ Cask 'N Flagon: Got description (95 chars)
+[2025-10-28T14:29:31.289Z] LOG ✅ Found 1 places
+[2025-10-28T14:29:31.331Z] LOG    ✅ Bleacher Bar: Got description (99 chars)
+[2025-10-28T14:29:31.332Z] LOG ✅ Found 1 places
+[2025-10-28T14:29:31.355Z] LOG    ✅ Lansdowne Pub: Got description (99 chars)
+[2025-10-28T14:29:31.356Z] LOG ✅ Found 1 places
+[2025-10-28T14:29:31.404Z] LOG    ✅ Cheeky Monkey Brewing Company: Got description (99 chars)
+[2025-10-28T14:29:31.406Z] LOG ✅ Found 1 places
+[2025-10-28T14:29:31.407Z] LOG ✅ Batch complete: 4/4 searches succeeded, 4 total venues found in 794ms
+[2025-10-28T14:29:31.408Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T14:29:31.410Z] LOG    ✅ Merged: Bleacher Bar
+[2025-10-28T14:29:31.410Z] LOG       Places placeId: ChIJh-_ZLPZ544kRu4Hl0OcbiFg
+[2025-10-28T14:29:31.411Z] LOG       Gemini description: Kick off your crawl at this truly unique bar located directl...
+[2025-10-28T14:29:31.412Z] LOG    ✅ Merged: Lansdowne Pub
+[2025-10-28T14:29:31.413Z] LOG       Places placeId: ChIJBf7GDx1644kRSGuvDfSwJtE
+[2025-10-28T14:29:31.413Z] LOG       Gemini description: Just a short walk from Bleacher Bar, Lansdowne Pub offers a ...
+[2025-10-28T14:29:31.414Z] LOG    ✅ Merged: Cheeky Monkey Brewing Company
+[2025-10-28T14:29:31.414Z] LOG       Places placeId: ChIJ6bV0Gx1644kRjbtygVcbOq4
+[2025-10-28T14:29:31.414Z] LOG       Gemini description: Continue the fun at this energetic brewpub, located very clo...
+[2025-10-28T14:29:31.415Z] LOG    ✅ Merged: Cask 'N Flagon
+[2025-10-28T14:29:31.415Z] LOG       Places placeId: ChIJ44ZYNPZ544kRUbx5bOEX-Vc
+[2025-10-28T14:29:31.416Z] LOG       Gemini description: Conclude your Fenway bar crawl at this classic, raucous spor...
+[2025-10-28T14:29:31.416Z] LOG ✅ Phase 1 complete: Found 4/4 exact venues
+[2025-10-28T14:29:31.416Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-28T14:29:31.417Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-28T14:29:31.417Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T14:29:31.418Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-28T14:29:31.418Z] LOG    1. Searching "Bar" in "42.34710889999999,-71.0967912"
+[2025-10-28T14:29:31.419Z] LOG    📍 Using nearbySearch at coordinates (42.34710889999999, -71.0967912)
+[2025-10-28T14:29:31.420Z] LOG 🔍 [Google Places] Nearby search at (42.34710889999999, -71.0967912)
+[2025-10-28T14:29:31.421Z] LOG    2. Searching "Pub" in "42.3473061,-71.0951176"
+[2025-10-28T14:29:31.421Z] LOG    📍 Using nearbySearch at coordinates (42.3473061, -71.0951176)
+[2025-10-28T14:29:31.422Z] LOG 🔍 [Google Places] Nearby search at (42.3473061, -71.0951176)
+[2025-10-28T14:29:31.423Z] LOG    3. Searching "Brewpub / Restaurant" in "42.3474182,-71.0948124"
+[2025-10-28T14:29:31.423Z] LOG    📍 Using nearbySearch at coordinates (42.3474182, -71.0948124)
+[2025-10-28T14:29:31.424Z] LOG 🔍 [Google Places] Nearby search at (42.3474182, -71.0948124)
+[2025-10-28T14:29:31.427Z] LOG    4. Searching "Bar" in "42.3472675,-71.0980223"
+[2025-10-28T14:29:31.427Z] LOG    📍 Using nearbySearch at coordinates (42.3472675, -71.0980223)
+[2025-10-28T14:29:31.428Z] LOG 🔍 [Google Places] Nearby search at (42.3472675, -71.0980223)
+[2025-10-28T14:29:31.986Z] LOG 📝 Fetching descriptions for 3 places...
+[2025-10-28T14:29:32.014Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T14:29:32.032Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T14:29:32.140Z] LOG    ✅ Cheeky Monkey Brewing Company: Got description (99 chars)
+[2025-10-28T14:29:32.144Z] LOG    ⚠️  Mighty Squirrel Taproom & Kitchen: No editorial summary available
+[2025-10-28T14:29:32.198Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-28T14:29:32.200Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T14:29:32.204Z] LOG    ✅ Bukowski Tavern: Got description (82 chars)
+[2025-10-28T14:29:32.223Z] LOG    ✅ Cornwall's: Got description (98 chars)
+[2025-10-28T14:29:32.224Z] LOG    ⚠️  Mighty Squirrel Taproom & Kitchen: No editorial summary available
+[2025-10-28T14:29:32.234Z] LOG    ⚠️  Dugout Cafe: No editorial summary available
+[2025-10-28T14:29:32.238Z] LOG    ✅ Tavern of Tales: Café & Bar: Got description (94 chars)
+[2025-10-28T14:29:32.246Z] LOG    ✅ Five Horses Tavern - South End: Got description (95 chars)
+[2025-10-28T14:29:32.249Z] LOG    ✅ Bukowski Tavern: Got description (82 chars)
+[2025-10-28T14:29:32.258Z] LOG    ✅ The Bebop: Got description (97 chars)
+[2025-10-28T14:29:32.280Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-28T14:29:32.291Z] LOG    ⚠️  Dugout Cafe: No editorial summary available
+[2025-10-28T14:29:32.292Z] LOG    ✅ Tavern of Tales: Café & Bar: Got description (94 chars)
+[2025-10-28T14:29:32.306Z] LOG    ⚠️  The Stratus - Rooftop Bar Boston: No editorial summary available
+[2025-10-28T14:29:32.335Z] LOG    ✅ Time Out Market Boston: Got description (96 chars)
+[2025-10-28T14:29:32.343Z] LOG    ⚠️  The Stratus - Rooftop Bar Boston: No editorial summary available
+[2025-10-28T14:29:32.418Z] LOG    ✅ Time Out Market Boston: Got description (96 chars)
+[2025-10-28T14:29:32.419Z] LOG ✅ Batch complete: 4/4 searches succeeded, 18 total venues found in 1001ms
+[2025-10-28T14:29:32.419Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T14:29:32.420Z] LOG    ✅ Venue 1 (Bleacher Bar): 4 alternatives
+[2025-10-28T14:29:32.420Z] LOG       1. Yard House (4⭐)
+[2025-10-28T14:29:32.420Z] LOG       2. Dugout Cafe (4⭐)
+[2025-10-28T14:29:32.420Z] LOG       3. Time Out Market Boston (4.4⭐)
+[2025-10-28T14:29:32.421Z] LOG    ✅ Venue 2 (Lansdowne Pub): 4 alternatives
+[2025-10-28T14:29:32.421Z] LOG       1. Bukowski Tavern (4.4⭐)
+[2025-10-28T14:29:32.421Z] LOG       2. Mighty Squirrel Taproom & Kitchen (4.3⭐)
+[2025-10-28T14:29:32.422Z] LOG       3. The Bebop (4.5⭐)
+[2025-10-28T14:29:32.422Z] LOG    ✅ Venue 3 (Cheeky Monkey Brewing Company): 2 alternatives
+[2025-10-28T14:29:32.422Z] LOG       1. Mighty Squirrel Taproom & Kitchen (4.3⭐)
+[2025-10-28T14:29:32.423Z] LOG       2. Bukowski Tavern (4.4⭐)
+[2025-10-28T14:29:32.423Z] LOG    ✅ Venue 4 (Cask 'N Flagon): 4 alternatives
+[2025-10-28T14:29:32.423Z] LOG       1. Yard House (4⭐)
+[2025-10-28T14:29:32.424Z] LOG       2. Dugout Cafe (4⭐)
+[2025-10-28T14:29:32.424Z] LOG       3. Time Out Market Boston (4.4⭐)
+[2025-10-28T14:29:32.425Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-28T14:29:32.425Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-28T14:29:32.426Z] LOG    Primary venues: 4 stops
+[2025-10-28T14:29:32.426Z] LOG    ❌ Removed "Mighty Squirrel Taproom & Kitchen" - duplicate alternative
+[2025-10-28T14:29:32.426Z] LOG    ❌ Removed "Bukowski Tavern" - duplicate alternative
+[2025-10-28T14:29:32.427Z] LOG    🔧 Stop "ChIJ6bV0Gx1644kRjbty...": 2 → 0 alternatives
+[2025-10-28T14:29:32.427Z] LOG    ❌ Removed "Yard House" - duplicate alternative
+[2025-10-28T14:29:32.427Z] LOG    ❌ Removed "Dugout Cafe" - duplicate alternative
+[2025-10-28T14:29:32.428Z] LOG    ❌ Removed "Time Out Market Boston" - duplicate alternative
+[2025-10-28T14:29:32.428Z] LOG    ❌ Removed "Tavern of Tales: Café & Bar" - duplicate alternative
+[2025-10-28T14:29:32.429Z] LOG    🔧 Stop "ChIJ44ZYNPZ544kRUbx5...": 4 → 0 alternatives
+[2025-10-28T14:29:32.430Z] LOG 
+✅ Cleaning complete:
+[2025-10-28T14:29:32.430Z] LOG    Removed 0 venues already in route
+[2025-10-28T14:29:32.430Z] LOG    Removed 6 duplicate alternatives
+[2025-10-28T14:29:32.431Z] LOG    Final: 2 stops with alternatives
+
+[2025-10-28T14:29:32.431Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-28T14:29:32.432Z] LOG    Primary venues: 4
+[2025-10-28T14:29:32.432Z] LOG    Alternatives: 2 stops with alternatives
+[2025-10-28T14:29:32.432Z] LOG    Execution time: 1827ms
+[2025-10-28T14:29:32.433Z] LOG 
+📋 Final alternatives:
+[2025-10-28T14:29:32.433Z] LOG    Bleacher Bar: 4 alternatives
+[2025-10-28T14:29:32.433Z] LOG    Lansdowne Pub: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 2

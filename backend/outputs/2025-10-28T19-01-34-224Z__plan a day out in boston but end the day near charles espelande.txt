@@ -1,0 +1,153 @@
+User Prompt: plan a day out in boston but end the day near charles espelande
+
+[2025-10-28T19:01:34.225Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-28T19:01:34.227Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T19:01:34.228Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-28T19:01:34.229Z] LOG    1. Searching "Faneuil Hall Marketplace" in "boston but end the day near charles espelande"
+[2025-10-28T19:01:34.231Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in boston but end the day near charles espelande
+[2025-10-28T19:01:34.238Z] LOG    2. Searching "Salty Dog Seafood Grille & Bar" in "boston but end the day near charles espelande"
+[2025-10-28T19:01:34.241Z] LOG 🔍 [Google Places] Text search: "Salty Dog Seafood Grille & Bar" in boston but end the day near charles espelande
+[2025-10-28T19:01:34.250Z] LOG    3. Searching "Boston Common and Public Garden" in "boston but end the day near charles espelande"
+[2025-10-28T19:01:34.253Z] LOG 🔍 [Google Places] Text search: "Boston Common and Public Garden" in boston but end the day near charles espelande
+[2025-10-28T19:01:34.260Z] LOG    4. Searching "The Paramount" in "boston but end the day near charles espelande"
+[2025-10-28T19:01:34.263Z] LOG 🔍 [Google Places] Text search: "The Paramount" in boston but end the day near charles espelande
+[2025-10-28T19:01:34.271Z] LOG    5. Searching "Charles River Esplanades" in "boston but end the day near charles espelande"
+[2025-10-28T19:01:34.273Z] LOG 🔍 [Google Places] Text search: "Charles River Esplanades" in boston but end the day near charles espelande
+[2025-10-28T19:01:34.716Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T19:01:34.866Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2025-10-28T19:01:34.867Z] LOG ✅ Found 1 places
+[2025-10-28T19:01:34.901Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T19:01:35.026Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T19:01:35.038Z] LOG    ✅ Charles River Esplanade: Got description (99 chars)
+[2025-10-28T19:01:35.039Z] LOG ✅ Found 1 places
+[2025-10-28T19:01:35.155Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2025-10-28T19:01:35.156Z] LOG ✅ Found 1 places
+[2025-10-28T19:01:35.371Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T19:01:35.526Z] LOG    ✅ Salty Dog Seafood Grille & Bar: Got description (84 chars)
+[2025-10-28T19:01:35.527Z] LOG ✅ Found 1 places
+[2025-10-28T19:01:35.921Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T19:01:36.038Z] LOG    ✅ The Paramount: Got description (100 chars)
+[2025-10-28T19:01:36.039Z] LOG ✅ Found 1 places
+[2025-10-28T19:01:36.039Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1811ms
+[2025-10-28T19:01:36.040Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T19:01:36.041Z] LOG    ✅ Merged: Faneuil Hall Marketplace
+[2025-10-28T19:01:36.041Z] LOG       Places placeId: ChIJpyiwa4Zw44kRBQSGWKv4wgA
+[2025-10-28T19:01:36.041Z] LOG       Gemini description: A historic marketplace at the heart of Boston's Freedom Trai...
+[2025-10-28T19:01:36.042Z] LOG    ✅ Merged: Salty Dog Seafood Grille & Bar
+[2025-10-28T19:01:36.042Z] LOG       Places placeId: ChIJb7nX2YVw44kR1mzm1AYBh-4
+[2025-10-28T19:01:36.043Z] LOG       Gemini description: A straightforward seafood outpost located directly within Fa...
+[2025-10-28T19:01:36.043Z] LOG    ✅ Merged: Boston Common and Public Garden
+[2025-10-28T19:01:36.044Z] LOG       Places placeId: ChIJu2Argp5w44kRAecWXgt_18s
+[2025-10-28T19:01:36.044Z] LOG       Gemini description: The oldest public park in the United States, Boston Common, ...
+[2025-10-28T19:01:36.045Z] LOG    ✅ Merged: The Paramount
+[2025-10-28T19:01:36.046Z] LOG       Places placeId: ChIJpXQ2-55w44kRPOc6V9xvzec
+[2025-10-28T19:01:36.046Z] LOG       Gemini description: A beloved Boston institution in Beacon Hill, known for its A...
+[2025-10-28T19:01:36.047Z] LOG    ✅ Merged: Charles River Esplanades
+[2025-10-28T19:01:36.047Z] LOG       Places placeId: ChIJv9lnBgp644kRes_e1eIVHvA
+[2025-10-28T19:01:36.047Z] LOG       Gemini description: A beautiful and expansive parkland stretching along the bank...
+[2025-10-28T19:01:36.048Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-28T19:01:36.048Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-28T19:01:36.049Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-28T19:01:36.049Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T19:01:36.050Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-28T19:01:36.050Z] LOG    1. Searching "Market" in "42.360189,-71.0551145"
+[2025-10-28T19:01:36.051Z] LOG    📍 Using nearbySearch at coordinates (42.360189, -71.0551145)
+[2025-10-28T19:01:36.052Z] LOG 🔍 [Google Places] Nearby search at (42.360189, -71.0551145)
+[2025-10-28T19:01:36.056Z] LOG    2. Searching "Bar & Grill / Seafood Restaurant" in "42.3601072,-71.0555158"
+[2025-10-28T19:01:36.057Z] LOG    📍 Using nearbySearch at coordinates (42.3601072, -71.0555158)
+[2025-10-28T19:01:36.059Z] LOG 🔍 [Google Places] Nearby search at (42.3601072, -71.0555158)
+[2025-10-28T19:01:36.061Z] LOG    3. Searching "Park" in "42.3540639,-71.0700921"
+[2025-10-28T19:01:36.062Z] LOG    📍 Using nearbySearch at coordinates (42.3540639, -71.0700921)
+[2025-10-28T19:01:36.063Z] LOG 🔍 [Google Places] Nearby search at (42.3540639, -71.0700921)
+[2025-10-28T19:01:36.065Z] LOG    4. Searching "American Restaurant" in "42.3572944,-71.0701737"
+[2025-10-28T19:01:36.066Z] LOG    📍 Using nearbySearch at coordinates (42.3572944, -71.0701737)
+[2025-10-28T19:01:36.067Z] LOG 🔍 [Google Places] Nearby search at (42.3572944, -71.0701737)
+[2025-10-28T19:01:36.068Z] LOG    5. Searching "Park" in "42.3555785,-71.0788785"
+[2025-10-28T19:01:36.068Z] LOG    📍 Using nearbySearch at coordinates (42.3555785, -71.0788785)
+[2025-10-28T19:01:36.069Z] LOG 🔍 [Google Places] Nearby search at (42.3555785, -71.0788785)
+[2025-10-28T19:01:36.610Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T19:01:36.676Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T19:01:36.699Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T19:01:36.766Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2025-10-28T19:01:36.774Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T19:01:36.790Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T19:01:36.796Z] LOG    ⚠️  Star Market: No editorial summary available
+[2025-10-28T19:01:36.806Z] LOG    ✅ Golden Goose Market: Got description (100 chars)
+[2025-10-28T19:01:36.814Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2025-10-28T19:01:36.821Z] LOG    ✅ Back Deck: Got description (98 chars)
+[2025-10-28T19:01:36.834Z] LOG    ✅ Quincy Market: Got description (97 chars)
+[2025-10-28T19:01:36.837Z] LOG    ✅ Boston Public Market: Got description (99 chars)
+[2025-10-28T19:01:36.840Z] LOG    ✅ Copley Square Park: Got description (97 chars)
+[2025-10-28T19:01:36.895Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2025-10-28T19:01:36.897Z] LOG    ✅ Back Bay Fens: Got description (100 chars)
+[2025-10-28T19:01:36.898Z] LOG    ✅ Copley Square Park: Got description (97 chars)
+[2025-10-28T19:01:36.903Z] LOG    ✅ Titus Sparrow Park: Got description (99 chars)
+[2025-10-28T19:01:36.925Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2025-10-28T19:01:36.944Z] LOG    ✅ Salty Dog Seafood Grille & Bar: Got description (84 chars)
+[2025-10-28T19:01:36.947Z] LOG    ✅ Troquet on South: Got description (89 chars)
+[2025-10-28T19:01:36.950Z] LOG    ✅ Harvard Gardens: Got description (90 chars)
+[2025-10-28T19:01:36.951Z] LOG    ✅ Boston Sail Loft: Got description (92 chars)
+[2025-10-28T19:01:36.981Z] LOG    ✅ Norman B. Leventhal Park: Got description (83 chars)
+[2025-10-28T19:01:36.999Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2025-10-28T19:01:37.001Z] LOG    ✅ Rose Kennedy Greenway: Got description (100 chars)
+[2025-10-28T19:01:37.004Z] LOG    ✅ Joe's Waterfront: Got description (91 chars)
+[2025-10-28T19:01:37.014Z] LOG    ✅ 75 on Liberty Wharf: Got description (97 chars)
+[2025-10-28T19:01:37.019Z] LOG    ✅ Tias Waterfront: Got description (93 chars)
+[2025-10-28T19:01:37.029Z] LOG    ✅ Sonsie: Got description (100 chars)
+[2025-10-28T19:01:37.040Z] LOG    ⚠️  Teddy's on the Hill: No editorial summary available
+[2025-10-28T19:01:37.041Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 992ms
+[2025-10-28T19:01:37.041Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T19:01:37.042Z] LOG    ✅ Venue 1 (Faneuil Hall Marketplace): 4 alternatives
+[2025-10-28T19:01:37.042Z] LOG       1. Star Market (4.2⭐)
+[2025-10-28T19:01:37.043Z] LOG       2. Quincy Market (4.5⭐)
+[2025-10-28T19:01:37.043Z] LOG       3. Boston Public Market (4.6⭐)
+[2025-10-28T19:01:37.044Z] LOG    ✅ Venue 2 (Salty Dog Seafood Grille & Bar): 4 alternatives
+[2025-10-28T19:01:37.044Z] LOG       1. Boston Sail Loft (4.6⭐)
+[2025-10-28T19:01:37.045Z] LOG       2. 75 on Liberty Wharf (4.2⭐)
+[2025-10-28T19:01:37.045Z] LOG       3. Joe's Waterfront (4⭐)
+[2025-10-28T19:01:37.045Z] LOG    ✅ Venue 3 (Public Garden): 4 alternatives
+[2025-10-28T19:01:37.046Z] LOG       1. Boston Common (4.7⭐)
+[2025-10-28T19:01:37.046Z] LOG       2. Copley Square Park (4.5⭐)
+[2025-10-28T19:01:37.046Z] LOG       3. Rose Kennedy Greenway (4.6⭐)
+[2025-10-28T19:01:37.047Z] LOG    ✅ Venue 4 (The Paramount): 4 alternatives
+[2025-10-28T19:01:37.047Z] LOG       1. Back Deck (4.1⭐)
+[2025-10-28T19:01:37.048Z] LOG       2. Teddy's on the Hill (4.4⭐)
+[2025-10-28T19:01:37.048Z] LOG       3. Harvard Gardens (4.4⭐)
+[2025-10-28T19:01:37.049Z] LOG    ✅ Venue 5 (Charles River Esplanade): 4 alternatives
+[2025-10-28T19:01:37.049Z] LOG       1. Copley Square Park (4.5⭐)
+[2025-10-28T19:01:37.050Z] LOG       2. Boston Common (4.7⭐)
+[2025-10-28T19:01:37.050Z] LOG       3. Back Bay Fens (4.5⭐)
+[2025-10-28T19:01:37.051Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-28T19:01:37.051Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-28T19:01:37.052Z] LOG    Primary venues: 5 stops
+[2025-10-28T19:01:37.053Z] LOG    ❌ Removed "Copley Square Park" - duplicate alternative
+[2025-10-28T19:01:37.053Z] LOG    ❌ Removed "Boston Common" - duplicate alternative
+[2025-10-28T19:01:37.053Z] LOG    🔧 Stop "ChIJv9lnBgp644kRes_e...": 4 → 2 alternatives
+[2025-10-28T19:01:37.054Z] LOG 
+✅ Cleaning complete:
+[2025-10-28T19:01:37.054Z] LOG    Removed 0 venues already in route
+[2025-10-28T19:01:37.055Z] LOG    Removed 2 duplicate alternatives
+[2025-10-28T19:01:37.055Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-28T19:01:37.056Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-28T19:01:37.057Z] LOG    Primary venues: 5
+[2025-10-28T19:01:37.057Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-28T19:01:37.058Z] LOG    Execution time: 2832ms
+[2025-10-28T19:01:37.058Z] LOG 
+📋 Final alternatives:
+[2025-10-28T19:01:37.059Z] LOG    Faneuil Hall Marketplace: 4 alternatives
+[2025-10-28T19:01:37.059Z] LOG    Salty Dog Seafood Grille & Bar: 4 alternatives
+[2025-10-28T19:01:37.060Z] LOG    Public Garden: 4 alternatives
+[2025-10-28T19:01:37.060Z] LOG    The Paramount: 4 alternatives
+[2025-10-28T19:01:37.061Z] LOG    Charles River Esplanade: 2 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

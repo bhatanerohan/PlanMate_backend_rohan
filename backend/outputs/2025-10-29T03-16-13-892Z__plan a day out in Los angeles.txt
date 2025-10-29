@@ -1,0 +1,158 @@
+User Prompt: plan a day out in Los angeles
+
+[2025-10-29T03:16:13.894Z] LOG 📍 Using extracted city from user location: California
+[2025-10-29T03:16:13.895Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T03:16:13.896Z] LOG    1. "Hollywood Walk of Fame" in "Hollywood"
+[2025-10-29T03:16:13.897Z] LOG    2. "Hollywood Wax Museum" in "Hollywood"
+[2025-10-29T03:16:13.898Z] LOG    3. "Superba Food + Bread Hollywood" in "Hollywood"
+[2025-10-29T03:16:13.899Z] LOG    4. "Los Angeles County Museum of Art" in "Mid-Wilshire/Miracle Mile"
+[2025-10-29T03:16:13.900Z] LOG    5. "Griffith Observatory" in "Griffith Park"
+[2025-10-29T03:16:13.901Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-29T03:16:13.905Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:16:13.908Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T03:16:13.910Z] LOG    1. Searching "Hollywood Walk of Fame" in "Hollywood"
+[2025-10-29T03:16:13.911Z] LOG 🔍 [Google Places] Text search: "Hollywood Walk of Fame" in Hollywood
+[2025-10-29T03:16:13.937Z] LOG    2. Searching "Hollywood Wax Museum" in "Hollywood"
+[2025-10-29T03:16:13.942Z] LOG 🔍 [Google Places] Text search: "Hollywood Wax Museum" in Hollywood
+[2025-10-29T03:16:13.954Z] LOG    3. Searching "Superba Food + Bread Hollywood" in "Hollywood"
+[2025-10-29T03:16:13.960Z] LOG 🔍 [Google Places] Text search: "Superba Food + Bread Hollywood" in Hollywood
+[2025-10-29T03:16:13.972Z] LOG    4. Searching "Los Angeles County Museum of Art" in "Mid-Wilshire/Miracle Mile"
+[2025-10-29T03:16:13.974Z] LOG 🔍 [Google Places] Text search: "Los Angeles County Museum of Art" in Mid-Wilshire/Miracle Mile
+[2025-10-29T03:16:13.980Z] LOG    5. Searching "Griffith Observatory" in "Griffith Park"
+[2025-10-29T03:16:13.982Z] LOG 🔍 [Google Places] Text search: "Griffith Observatory" in Griffith Park
+[2025-10-29T03:16:14.488Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:16:14.621Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:16:14.629Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:16:14.672Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:16:14.681Z] LOG    ✅ Hollywood Wax Museum: Got description (80 chars)
+[2025-10-29T03:16:14.683Z] LOG ✅ Found 1 places
+[2025-10-29T03:16:14.728Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:16:14.796Z] LOG    ✅ Los Angeles County Museum of Art: Got description (100 chars)
+[2025-10-29T03:16:14.799Z] LOG ✅ Found 1 places
+[2025-10-29T03:16:14.801Z] LOG    ✅ Griffith Observatory: Got description (98 chars)
+[2025-10-29T03:16:14.802Z] LOG ✅ Found 1 places
+[2025-10-29T03:16:14.817Z] LOG    ✅ Hollywood Walk of Fame: Got description (82 chars)
+[2025-10-29T03:16:14.819Z] LOG ✅ Found 1 places
+[2025-10-29T03:16:14.902Z] LOG    ⚠️  Superba Food + Bread Hollywood: No editorial summary available
+[2025-10-29T03:16:14.904Z] LOG ✅ Found 1 places
+[2025-10-29T03:16:14.904Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 996ms
+[2025-10-29T03:16:14.905Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:16:14.905Z] LOG    Tool execution result: success=true
+[2025-10-29T03:16:14.906Z] LOG    ✅ Tool returned 5 search results
+[2025-10-29T03:16:14.906Z] LOG    ✅ Merged: Hollywood Walk of Fame
+[2025-10-29T03:16:14.907Z] LOG       Places placeId: ChIJXyC7WTu_woARPvVMCHBXd4U
+[2025-10-29T03:16:14.907Z] LOG       Gemini description: Stroll along the legendary sidewalk adorned with more than 2...
+[2025-10-29T03:16:14.908Z] LOG    ✅ Merged: Hollywood Wax Museum
+[2025-10-29T03:16:14.908Z] LOG       Places placeId: ChIJI56cmyO_woAR5--6TZV6Z3I
+[2025-10-29T03:16:14.909Z] LOG       Gemini description: Step into the world of celebrities and pop culture with life...
+[2025-10-29T03:16:14.910Z] LOG    ✅ Merged: Superba Food + Bread Hollywood
+[2025-10-29T03:16:14.910Z] LOG       Places placeId: ChIJa8iBzvq_woARBT8YLSK_h-s
+[2025-10-29T03:16:14.910Z] LOG       Gemini description: Enjoy a delicious and casual lunch at Superba Food + Bread, ...
+[2025-10-29T03:16:14.911Z] LOG    ✅ Merged: Los Angeles County Museum of Art
+[2025-10-29T03:16:14.911Z] LOG       Places placeId: ChIJsXqcyjy5woARNz6sOh0ZmwA
+[2025-10-29T03:16:14.912Z] LOG       Gemini description: Explore one of the largest art museums in the Western United...
+[2025-10-29T03:16:14.912Z] LOG    ✅ Merged: Griffith Observatory
+[2025-10-29T03:16:14.912Z] LOG       Places placeId: ChIJywjU6WG_woAR3NrWwrEH_3M
+[2025-10-29T03:16:14.913Z] LOG       Gemini description: Conclude your day at the famous Griffith Observatory, offeri...
+[2025-10-29T03:16:14.913Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-29T03:16:14.914Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T03:16:14.915Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-29T03:16:14.916Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:16:14.916Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T03:16:14.917Z] LOG    1. Searching "landmark" in "34.1016059,-118.3295694"
+[2025-10-29T03:16:14.917Z] LOG    📍 Using nearbySearch at coordinates (34.1016059, -118.3295694)
+[2025-10-29T03:16:14.918Z] LOG 🔍 [Google Places] Nearby search at (34.1016059, -118.3295694)
+[2025-10-29T03:16:14.922Z] LOG    2. Searching "tourist attraction" in "34.101716,-118.3381522"
+[2025-10-29T03:16:14.924Z] LOG    📍 Using nearbySearch at coordinates (34.101716, -118.3381522)
+[2025-10-29T03:16:14.925Z] LOG 🔍 [Google Places] Nearby search at (34.101716, -118.3381522)
+[2025-10-29T03:16:14.927Z] LOG    3. Searching "restaurant" in "34.0977501,-118.3326212"
+[2025-10-29T03:16:14.928Z] LOG    📍 Using nearbySearch at coordinates (34.0977501, -118.3326212)
+[2025-10-29T03:16:14.929Z] LOG 🔍 [Google Places] Nearby search at (34.0977501, -118.3326212)
+[2025-10-29T03:16:14.932Z] LOG    4. Searching "museum" in "34.0639323,-118.3592293"
+[2025-10-29T03:16:14.935Z] LOG    📍 Using nearbySearch at coordinates (34.0639323, -118.3592293)
+[2025-10-29T03:16:14.936Z] LOG 🔍 [Google Places] Nearby search at (34.0639323, -118.3592293)
+[2025-10-29T03:16:14.938Z] LOG    5. Searching "landmark" in "34.1184341,-118.3003935"
+[2025-10-29T03:16:14.939Z] LOG    📍 Using nearbySearch at coordinates (34.1184341, -118.3003935)
+[2025-10-29T03:16:14.940Z] LOG 🔍 [Google Places] Nearby search at (34.1184341, -118.3003935)
+[2025-10-29T03:16:15.547Z] LOG 📝 Fetching descriptions for 4 places...
+[2025-10-29T03:16:15.657Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:16:15.685Z] LOG    ✅ Los Angeles County Museum of Art: Got description (100 chars)
+[2025-10-29T03:16:15.753Z] LOG 📝 Fetching descriptions for 4 places...
+[2025-10-29T03:16:15.772Z] LOG    ✅ Academy Museum of Motion Pictures: Got description (91 chars)
+[2025-10-29T03:16:15.777Z] LOG    ✅ Petersen Automotive Museum: Got description (97 chars)
+[2025-10-29T03:16:15.785Z] LOG    ✅ La Brea Tar Pits and Museum: Got description (93 chars)
+[2025-10-29T03:16:15.806Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:16:15.828Z] LOG    ⚠️  The Walk Of Fun Hollywood: No editorial summary available
+[2025-10-29T03:16:15.843Z] LOG    ✅ Hollywood Wax Museum: Got description (80 chars)
+[2025-10-29T03:16:15.887Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:16:15.923Z] LOG    ⚠️  Ennis House: No editorial summary available
+[2025-10-29T03:16:15.926Z] LOG    ⚠️  Paseo de la fama: No editorial summary available
+[2025-10-29T03:16:15.930Z] LOG    ⚠️  Samuel Novarro House by Lloyd Wright: No editorial summary available
+[2025-10-29T03:16:15.932Z] LOG    ⚠️  洛杉矶星光大道: No editorial summary available
+[2025-10-29T03:16:15.974Z] LOG    ✅ Ripley's Believe It or Not!: Got description (96 chars)
+[2025-10-29T03:16:15.979Z] LOG    ✅ Mel's Drive-In Hollywood: Got description (99 chars)
+[2025-10-29T03:16:15.981Z] LOG    ✅ Hollywood Walk of Fame: Got description (82 chars)
+[2025-10-29T03:16:15.985Z] LOG    ✅ Bossa Nova Brazilian Cuisine: Got description (99 chars)
+[2025-10-29T03:16:15.988Z] LOG    ✅ Yamashiro Hollywood: Got description (100 chars)
+[2025-10-29T03:16:15.991Z] LOG    ⚠️  N Vermont Ave. Cigarette Garden: No editorial summary available
+[2025-10-29T03:16:16.009Z] LOG    ✅ Palms Thai Restaurant: Got description (100 chars)
+[2025-10-29T03:16:16.016Z] LOG    ✅ L’Antica Pizzeria da Michele: Got description (84 chars)
+[2025-10-29T03:16:16.032Z] LOG    ⚠️  Janis Joplin Room 105: No editorial summary available
+[2025-10-29T03:16:16.039Z] LOG    ⚠️  Hollywood Footprints: No editorial summary available
+[2025-10-29T03:16:16.046Z] LOG    ⚠️  Astronomers Monument: No editorial summary available
+[2025-10-29T03:16:16.147Z] LOG    ✅ TCL Chinese Theatre: Got description (98 chars)
+[2025-10-29T03:16:16.182Z] LOG    ✅ Crossroads of the World: Got description (100 chars)
+[2025-10-29T03:16:16.185Z] LOG ✅ Batch complete: 5/5 searches succeeded, 23 total venues found in 1269ms
+[2025-10-29T03:16:16.186Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:16:16.187Z] LOG    ✅ Venue 1 (Hollywood Walk of Fame): 4 alternatives
+[2025-10-29T03:16:16.188Z] LOG       1. Hollywood Footprints (4.4⭐)
+[2025-10-29T03:16:16.189Z] LOG       2. Janis Joplin Room 105 (4.5⭐)
+[2025-10-29T03:16:16.189Z] LOG       3. Crossroads of the World (4.2⭐)
+[2025-10-29T03:16:16.189Z] LOG    ✅ Venue 2 (Hollywood Wax Museum): 4 alternatives
+[2025-10-29T03:16:16.190Z] LOG       1. The Walk Of Fun Hollywood (4.9⭐)
+[2025-10-29T03:16:16.190Z] LOG       2. Ripley's Believe It or Not! (4.2⭐)
+[2025-10-29T03:16:16.191Z] LOG       3. 洛杉矶星光大道 (4.2⭐)
+[2025-10-29T03:16:16.191Z] LOG    ✅ Venue 3 (Superba Food + Bread Hollywood): 4 alternatives
+[2025-10-29T03:16:16.192Z] LOG       1. Yamashiro Hollywood (4.3⭐)
+[2025-10-29T03:16:16.193Z] LOG       2. Mel's Drive-In Hollywood (4.2⭐)
+[2025-10-29T03:16:16.193Z] LOG       3. L’Antica Pizzeria da Michele (4.5⭐)
+[2025-10-29T03:16:16.194Z] LOG    ✅ Venue 4 (Los Angeles County Museum of Art): 3 alternatives
+[2025-10-29T03:16:16.194Z] LOG       1. Petersen Automotive Museum (4.8⭐)
+[2025-10-29T03:16:16.194Z] LOG       2. La Brea Tar Pits and Museum (4.6⭐)
+[2025-10-29T03:16:16.195Z] LOG       3. Academy Museum of Motion Pictures (4.4⭐)
+[2025-10-29T03:16:16.195Z] LOG    ✅ Venue 5 (Griffith Observatory): 4 alternatives
+[2025-10-29T03:16:16.196Z] LOG       1. Ennis House (4.5⭐)
+[2025-10-29T03:16:16.196Z] LOG       2. Samuel Novarro House by Lloyd Wright (4.8⭐)
+[2025-10-29T03:16:16.197Z] LOG       3. Astronomers Monument (4.8⭐)
+[2025-10-29T03:16:16.197Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-29T03:16:16.199Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T03:16:16.201Z] LOG    Primary venues: 5 stops
+[2025-10-29T03:16:16.202Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T03:16:16.202Z] LOG    Removed 0 venues already in route
+[2025-10-29T03:16:16.203Z] LOG    Removed 0 duplicate alternatives
+[2025-10-29T03:16:16.204Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-29T03:16:16.204Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T03:16:16.205Z] LOG    Primary venues: 5
+[2025-10-29T03:16:16.205Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-29T03:16:16.206Z] LOG    Execution time: 2313ms
+[2025-10-29T03:16:16.207Z] LOG 
+📋 Final alternatives:
+[2025-10-29T03:16:16.208Z] LOG    Hollywood Walk of Fame: 4 alternatives
+[2025-10-29T03:16:16.209Z] LOG    Hollywood Wax Museum: 4 alternatives
+[2025-10-29T03:16:16.210Z] LOG    Superba Food + Bread Hollywood: 4 alternatives
+[2025-10-29T03:16:16.211Z] LOG    Los Angeles County Museum of Art: 3 alternatives
+[2025-10-29T03:16:16.212Z] LOG    Griffith Observatory: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

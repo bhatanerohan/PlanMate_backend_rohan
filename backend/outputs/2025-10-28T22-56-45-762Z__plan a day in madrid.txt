@@ -1,0 +1,325 @@
+User Prompt: plan a day in madrid
+
+[2025-10-28T22:56:45.763Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-28T22:56:45.764Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T22:56:45.765Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-28T22:56:45.767Z] LOG    1. Searching "Chocolatería San Ginés" in "madrid"
+[2025-10-28T22:56:45.768Z] LOG 🔍 [Google Places] Text search: "Chocolatería San Ginés" in madrid
+[2025-10-28T22:56:45.785Z] LOG    2. Searching "Museo Nacional del Prado" in "madrid"
+[2025-10-28T22:56:45.787Z] LOG 🔍 [Google Places] Text search: "Museo Nacional del Prado" in madrid
+[2025-10-28T22:56:45.791Z] LOG    3. Searching "Museo del Jamón" in "madrid"
+[2025-10-28T22:56:45.792Z] LOG 🔍 [Google Places] Text search: "Museo del Jamón" in madrid
+[2025-10-28T22:56:45.797Z] LOG    4. Searching "Retiro Park (Parque del Buen Retiro)" in "madrid"
+[2025-10-28T22:56:45.799Z] LOG 🔍 [Google Places] Text search: "Retiro Park (Parque del Buen Retiro)" in madrid
+[2025-10-28T22:56:45.802Z] LOG    5. Searching "Taberna LA CONCHA" in "madrid"
+[2025-10-28T22:56:45.803Z] LOG 🔍 [Google Places] Text search: "Taberna LA CONCHA" in madrid
+[2025-10-28T22:56:46.408Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T22:56:46.414Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T22:56:46.416Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T22:56:46.420Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T22:56:46.569Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T22:56:46.574Z] LOG    ✅ Museo Nacional del Prado: Got description (99 chars)
+[2025-10-28T22:56:46.575Z] LOG ✅ Found 1 places
+[2025-10-28T22:56:46.583Z] LOG    ✅ Chocolatería San Ginés: Got description (67 chars)
+[2025-10-28T22:56:46.584Z] LOG ✅ Found 1 places
+[2025-10-28T22:56:46.597Z] LOG    ⚠️  Museo del Jamón: No editorial summary available
+[2025-10-28T22:56:46.597Z] LOG ✅ Found 1 places
+[2025-10-28T22:56:46.611Z] LOG    ✅ El Retiro Park: Got description (96 chars)
+[2025-10-28T22:56:46.612Z] LOG ✅ Found 1 places
+[2025-10-28T22:56:46.724Z] LOG    ✅ Taberna LA CONCHA: Got description (99 chars)
+[2025-10-28T22:56:46.728Z] LOG ✅ Found 1 places
+[2025-10-28T22:56:46.730Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 964ms
+[2025-10-28T22:56:46.732Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T22:56:46.734Z] LOG    🔍 Phase 1 exactResult: {
+  "success": true,
+  "data": {
+    "results": [
+      {
+        "success": true,
+        "query": "Chocolatería San Ginés",
+        "location": "madrid",
+        "venues": [
+          {
+            "name": "Chocolatería San Ginés",
+            "address": "Pasadizo de San Ginés, 5, Centro, 28013 Madrid, Spain",
+            "location": {
+              "lat": 40.4169335,
+              "lng": -3.7069517,
+              "coordinates": "40.4169335,-3.7069517"
+            },
+            "rating": 4.3,
+            "priceLevel": "N/A",
+            "placeId": "ChIJHeRevn4oQg0R1cMSLDTWlWg",
+            "types": [
+              "cafe",
+              "store",
+              "restaurant",
+              "food",
+              "point_of_interest",
+              "establishment"
+            ],
+            "photoUrl": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AWn5SU5ZYYlWPfGDrMD8ARG0L09PlXl-wnEvptViUqDQy9Rv7TrthxcSe_s-zs6Lx8dbpY_fPm7DGHbqFcvWQw2lU3X4uxH2Q0fkIyDBmyCPJT-X6GD57Z2qk50Zuz01pYMW_FKQcSfahXljNgIIJ9LAwOdSWIV0wD9ovcA7TYSSTiRnCkwADrz6P_MGoNvovEHniYKB6GP5n5IUPpRYRR08AOWanZADLaMn7NWTMjHge__SEOfz-2P3N07BpMPo4iByYekZ0jxLFkU2ji8rv7npPjrW-zI4uKa_3z6qKXh243Tv2nQHXiE&key=AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+            "description": "Founded in 1894, this cafe is known for its chocolate with churros.",
+            "photos": [
+              "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AWn5SU5ZYYlWPfGDrMD8ARG0L09PlXl-wnEvptViUqDQy9Rv7TrthxcSe_s-zs6Lx8dbpY_fPm7DGHbqFcvWQw2lU3X4uxH2Q0fkIyDBmyCPJT-X6GD57Z2qk50Zuz01pYMW_FKQcSfahXljNgIIJ9LAwOdSWIV0wD9ovcA7TYSSTiRnCkwADrz6P_MGoNvovEHniYKB6GP5n5IUPpRYRR08AOWanZADLaMn7NWTMjHge__SEOfz-2P3N07BpMPo4iByYekZ0jxLFkU2ji8rv7npPjrW-zI4uKa_3z6qKXh243Tv2nQHXiE&key=AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      {
+        "success": true,
+        "query": "Museo Nacional del Prado",
+        "location": "madrid",
+        "venues": [
+          {
+            "name": "Museo Nacional del Prado",
+            "address": "Retiro, 28014 Madrid, Spain",
+            "location": {
+              "lat": 40.4137818,
+              "lng": -3.6921271,
+              "coordinates": "40.4137818,-3.6921271"
+            },
+            "rating": 4.7,
+            "priceLevel": "N/A",
+            "placeId": "ChIJ7aLYZp0oQg0RWoitk33wlBA",
+            "types": [
+              "tourist_attraction",
+              "museum",
+              "point_of_interest",
+              "establishment"
+            ],
+            "photoUrl": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AWn5SU7UXN_16Wfs19Kzp7hzY4BJdjGCe4aXxk-b36k9GjjaAOcdNtIlpIdm1MdZajUVfsg-GQjzSgUqDLWVUr5cspF_ddSxDRy3drrfTpD__8CCnBhdp6CD64ry3pwaBxZqnNKrDfCRPmJuFexzmphdRIqwsHgvSCjCDmIfsDPx5oclaApy4xHgjUyoTx58PDHpiGk9ZhpzPNdsK8i0kSWUUUM3_DPXh4NIIa6ewKbaGErkcLGpvXdokcPHDUbXah84SnXv4ZBM-SfPcdMJnbRRn54AkZ-E0ht7lFtH0zCpYcVwvelz0LS8P8p8sQRk79TUeUx8cEYcGo1TZ8C9GSDs_BPkkPtNHOBK065vPmSOZe4_cNo5MgmU1oWU6jsVAsY0pasPv6zi6AU5gWTR7imTA5VeT2Pum7dUdFZ09RmKN4Z1LFt1Ipz2-fBjqSECfmTzBHe8xp9bgrlohiSfQDZd3Gs6igStDkahmqjREcREZ1c7IPUqoh3fV4qJYKqi_oUS6R9S6CQakNR9QlBiqk6Ua7Iv4vXBz7QFseDds5qIZGjokB1n_iR8REzohKrm_G7mvukvQ201twm_yQ&key=AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+            "description": "Art museum with Velazquez, Goya and El Greco masterpieces in vast 12th- to 19th-century collection.",
+            "photos": [
+              "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AWn5SU7UXN_16Wfs19Kzp7hzY4BJdjGCe4aXxk-b36k9GjjaAOcdNtIlpIdm1MdZajUVfsg-GQjzSgUqDLWVUr5cspF_ddSxDRy3drrfTpD__8CCnBhdp6CD64ry3pwaBxZqnNKrDfCRPmJuFexzmphdRIqwsHgvSCjCDmIfsDPx5oclaApy4xHgjUyoTx58PDHpiGk9ZhpzPNdsK8i0kSWUUUM3_DPXh4NIIa6ewKbaGErkcLGpvXdokcPHDUbXah84SnXv4ZBM-SfPcdMJnbRRn54AkZ-E0ht7lFtH0zCpYcVwvelz0LS8P8p8sQRk79TUeUx8cEYcGo1TZ8C9GSDs_BPkkPtNHOBK065vPmSOZe4_cNo5MgmU1oWU6jsVAsY0pasPv6zi6AU5gWTR7imTA5VeT2Pum7dUdFZ09RmKN4Z1LFt1Ipz2-fBjqSECfmTzBHe8xp9bgrlohiSfQDZd3Gs6igStDkahmqjREcREZ1c7IPUqoh3fV4qJYKqi_oUS6R9S6CQakNR9QlBiqk6Ua7Iv4vXBz7QFseDds5qIZGjokB1n_iR8REzohKrm_G7mvukvQ201twm_yQ&key=AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      {
+        "success": true,
+        "query": "Museo del Jamón",
+        "location": "madrid",
+        "venues": [
+          {
+            "name": "Museo del Jamón",
+            "address": "C. Mayor, 7, Centro, 28013 Madrid, Spain",
+            "location": {
+              "lat": 40.4162931,
+              "lng": -3.7056364,
+              "coordinates": "40.4162931,-3.7056364"
+            },
+            "rating": 4.1,
+            "priceLevel": "$",
+            "placeId": "ChIJT-qy934oQg0RwzQqkgx7t-M",
+            "types": [
+              "bar",
+              "restaurant",
+              "point_of_interest",
+              "food",
+              "store",
+              "establishment"
+            ],
+            "photoUrl": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AWn5SU6BJKcBuSd8NQZlrkUXF24xc7vxhskgKF61W1plAb_0-T3rp7HNJ01AAZa0O2qGd1zinzFQWpCPEG1K0y6GYw5VNm875woEy89dVtZT1S9TnXcOqjUiAeFvxbIGvg_R-YIh0C3taXTRT0E0NMOWwyHR3PlBzfx3aB0W-id4CIEkFQUMBeLRYtYvcc3NRozkL3F-RwSt-NbzqR2nXurAiISB1fu_pgzSKhTIYwlwq8GQNXwtHpScDXFvnQJrrFV8WMwCszIFqAha4t0zymVuqKGNJXekqPYpjkB3_MxjdVDTr4ap351FQsF8OV8DngpWD_TlvesCa_Qevndbk9IPF7_2V29dnqvaJzqC9grhdUbh4ITfKTFIoS9O1UGB0iVMoCZOjhdCsvKJG_kAtK7Zi0G0_bFPdELQP0iuDNaBMDuIlO0-x7fYZtofUPYaSy4TNnD4-z_EQcJEudbJY9B6DnnncGB78rGcG1KeHQqCPklvLiWVtSe2GfTzXqHfFcm2MZt8GXjSCeh-4erFSrjJcvvRT5K1BvEjhNDlKlu-GWuxqUhKXq-B8E52c0j1nhRmRN12q89G&key=AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+            "photos": [
+              "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AWn5SU6BJKcBuSd8NQZlrkUXF24xc7vxhskgKF61W1plAb_0-T3rp7HNJ01AAZa0O2qGd1zinzFQWpCPEG1K0y6GYw5VNm875woEy89dVtZT1S9TnXcOqjUiAeFvxbIGvg_R-YIh0C3taXTRT0E0NMOWwyHR3PlBzfx3aB0W-id4CIEkFQUMBeLRYtYvcc3NRozkL3F-RwSt-NbzqR2nXurAiISB1fu_pgzSKhTIYwlwq8GQNXwtHpScDXFvnQJrrFV8WMwCszIFqAha4t0zymVuqKGNJXekqPYpjkB3_MxjdVDTr4ap351FQsF8OV8DngpWD_TlvesCa_Qevndbk9IPF7_2V29dnqvaJzqC9grhdUbh4ITfKTFIoS9O1UGB0iVMoCZOjhdCsvKJG_kAtK7Zi0G0_bFPdELQP0iuDNaBMDuIlO0-x7fYZtofUPYaSy4TNnD4-z_EQcJEudbJY9B6DnnncGB78rGcG1KeHQqCPklvLiWVtSe2GfTzXqHfFcm2MZt8GXjSCeh-4erFSrjJcvvRT5K1BvEjhNDlKlu-GWuxqUhKXq-B8E52c0j1nhRmRN12q89G&key=AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      {
+        "success": true,
+        "query": "Retiro Park (Parque del Buen Retiro)",
+        "location": "madrid",
+        "venues": [
+          {
+            "name": "El Retiro Park",
+            "address": "Retiro, 28009 Madrid, Spain",
+            "location": {
+              "lat": 40.415258,
+              "lng": -3.6834657,
+              "coordinates": "40.415258,-3.6834657"
+            },
+            "rating": 4.8,
+            "priceLevel": "N/A",
+            "placeId": "ChIJe4IR9Z8oQg0RrqMktRYnbJ4",
+            "types": [
+              "park",
+              "tourist_attraction",
+              "point_of_interest",
+              "establishment"
+            ],
+            "photoUrl": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AWn5SU51rGSNjcknLu0xm0amfr2InUciPQ6N1PHk17kHhFwGTWXObfbzucBmhP2I87C5ZxBbOAN5aiXl4Q80W0X-zYwRJxHfaulxTzQfD0fPQyhBQPWJkPIAObnJJX12bS1liLVO4tpY89Kzdy6iijS6ZrXCzekWWb4L2DwVI1iAw-OhGdcOi5NsEtut_wj5221DBtyxCF8MINPMGaXzn91PQIBgSfE3LRY5O4XRiYeMh7z0ElXNQH7UNMM0vW4Rlpz7IH_XMvRTipBSk8xc9qQHPaoey2aOqsbXDcPuG6Uzz__EApWvxoFVcfXMqzGCSHGaVIg2dxUWldtHH-q8MlZXSa1we5bAnUD4TZCE4e-3t9s-lDNkI6Rbi--Hdz7OFrIiydJAIZKRI12atc-BwDvvgXxsOYD3veW-Q01UDap7Y4EwORmxwcdaYeieJBtR_Pa7xKSqy9nUQl0aEKWCxEzyozqTm4XpofF6PwVITVOI2HgjLTnM8Rs5kmb-G4VEK3PgjWPpZUBAXpd9-b0efArttqQp1Y8IhkKULs4QgcI9pztvtHIeqaCTpR4KFjzrx2qfn5pdwm1oVdadgA&key=AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+            "description": "Expansive, 19th-century park with boating lake & rose garden, plus numerous fountains & statues.",
+            "photos": [
+              "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AWn5SU51rGSNjcknLu0xm0amfr2InUciPQ6N1PHk17kHhFwGTWXObfbzucBmhP2I87C5ZxBbOAN5aiXl4Q80W0X-zYwRJxHfaulxTzQfD0fPQyhBQPWJkPIAObnJJX12bS1liLVO4tpY89Kzdy6iijS6ZrXCzekWWb4L2DwVI1iAw-OhGdcOi5NsEtut_wj5221DBtyxCF8MINPMGaXzn91PQIBgSfE3LRY5O4XRiYeMh7z0ElXNQH7UNMM0vW4Rlpz7IH_XMvRTipBSk8xc9qQHPaoey2aOqsbXDcPuG6Uzz__EApWvxoFVcfXMqzGCSHGaVIg2dxUWldtHH-q8MlZXSa1we5bAnUD4TZCE4e-3t9s-lDNkI6Rbi--Hdz7OFrIiydJAIZKRI12atc-BwDvvgXxsOYD3veW-Q01UDap7Y4EwORmxwcdaYeieJBtR_Pa7xKSqy9nUQl0aEKWCxEzyozqTm4XpofF6PwVITVOI2HgjLTnM8Rs5kmb-G4VEK3PgjWPpZUBAXpd9-b0efArttqQp1Y8IhkKULs4QgcI9pztvtHIeqaCTpR4KFjzrx2qfn5pdwm1oVdadgA&key=AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      {
+        "success": true,
+        "query": "Taberna LA CONCHA",
+        "location": "madrid",
+        "venues": [
+          {
+            "name": "Taberna LA CONCHA",
+            "address": "C. de la Cava Baja, 7, Centro, 28005 Madrid, Spain",
+            "location": {
+              "lat": 40.4131972,
+              "lng": -3.7083752,
+              "coordinates": "40.4131972,-3.7083752"
+            },
+            "rating": 4.5,
+            "priceLevel": "$$",
+            "placeId": "ChIJvdlhrngoQg0RFmx7kraNRUg",
+            "types": [
+              "bar",
+              "restaurant",
+              "food",
+              "point_of_interest",
+              "establishment"
+            ],
+            "photoUrl": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AWn5SU4jMQAughlImADmTLmRwZpnOavaCNz5irE9Xh_bnW_FQha35R97zT4ROJ7zVMFEw5yNNQLN68-3tp4P3qsDvcrj8TXOpTMvzE9a73HZwpYZFMfYqf6VlSuX_e1O-uNGlE9QXjk-plkG0_TWpr5qdt_M-m7cbdsGLH8BrPxLO2nadaoUyOiSTPIEeOHE0TpsCM9aw4ArtVzr8cHKqYrqrjqK6oP0Cxu7kst7UfB0iN8QPF_oMqtzgNjBipbzoOjlw-krBXMWZhmraxs-n3izyiesOxJpZHGrRA0MzEGu3tk4FAJ1fnji00bKUc2zvAfj1KSMI6HINCPMBOb4-_UQfiwHsvtuRS21OoECwNVZgENwQu59k-sB_FGFD0XtGvvGccTUgt1N2XGa9sdJwkMyUrZKR7fxLxZt1bpPoFhAPY65T-baiSzcJ5VG6fn2DYc_sb1No2opgMTRRA8If0Kyz-G5-Eo9-5o9OJDTtCHcHKzNXorqilNH2AVD6AfTM0xdj89yKeO-Xkx7ENrQHCqbqC0dtlO9UFY8oVSZVpRlS5kJF3yH11E0aiybQw0g81euKsHy4KEBEAO7Zg&key=AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0",
+            "description": "Wine & cava by the bottle or the glass, plus beer, homemade vermouth & tapas, in a charming tavern.",
+            "photos": [
+              "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AWn5SU4jMQAughlImADmTLmRwZpnOavaCNz5irE9Xh_bnW_FQha35R97zT4ROJ7zVMFEw5yNNQLN68-3tp4P3qsDvcrj8TXOpTMvzE9a73HZwpYZFMfYqf6VlSuX_e1O-uNGlE9QXjk-plkG0_TWpr5qdt_M-m7cbdsGLH8BrPxLO2nadaoUyOiSTPIEeOHE0TpsCM9aw4ArtVzr8cHKqYrqrjqK6oP0Cxu7kst7UfB0iN8QPF_oMqtzgNjBipbzoOjlw-krBXMWZhmraxs-n3izyiesOxJpZHGrRA0MzEGu3tk4FAJ1fnji00bKUc2zvAfj1KSMI6HINCPMBOb4-_UQfiwHsvtuRS21OoECwNVZgENwQu59k-sB_FGFD0XtGvvGccTUgt1N2XGa9sdJwkMyUrZKR7fxLxZt1bpPoFhAPY65T-baiSzcJ5VG6fn2DYc_sb1No2opgMTRRA8If0Kyz-G5-Eo9-5o9OJDTtCHcHKzNXorqilNH2AVD6AfTM0xdj89yKeO-Xkx7ENrQHCqbqC0dtlO9UFY8oVSZVpRlS5kJF3yH11E0aiybQw0g81euKsHy4KEBEAO7Zg&key=AIzaSyAyEnVKpFZs3QtTkPDUDVd3SdOHG99wwl0"
+            ]
+          }
+        ],
+        "count": 1
+      }
+    ],
+    "totalSearches": 5,
+    "successfulSearches": 5,
+    "totalVenues": 5,
+    "message": "Completed 5/5 searches in parallel"
+  },
+  "metadata": {
+    "apiCalls": 5,
+    "latency": 964,
+    "source": "google_places_batch"
+  }
+}
+[2025-10-28T22:56:46.749Z] LOG    ✅ Merged: Chocolatería San Ginés
+[2025-10-28T22:56:46.750Z] LOG       Places placeId: ChIJHeRevn4oQg0R1cMSLDTWlWg
+[2025-10-28T22:56:46.752Z] LOG       Gemini description: Established in 1894, this legendary cafe is open 24/7 and fa...
+[2025-10-28T22:56:46.754Z] LOG    ✅ Merged: Museo Nacional del Prado
+[2025-10-28T22:56:46.755Z] LOG       Places placeId: ChIJ7aLYZp0oQg0RWoitk33wlBA
+[2025-10-28T22:56:46.756Z] LOG       Gemini description: One of the world's premier art museums, the Prado houses an ...
+[2025-10-28T22:56:46.757Z] LOG    ✅ Merged: Museo del Jamón
+[2025-10-28T22:56:46.758Z] LOG       Places placeId: ChIJT-qy934oQg0RwzQqkgx7t-M
+[2025-10-28T22:56:46.758Z] LOG       Gemini description: More than just a restaurant, Museo del Jamón is a chain of t...
+[2025-10-28T22:56:46.759Z] LOG    ✅ Merged: Retiro Park (Parque del Buen Retiro)
+[2025-10-28T22:56:46.760Z] LOG       Places placeId: ChIJe4IR9Z8oQg0RrqMktRYnbJ4
+[2025-10-28T22:56:46.761Z] LOG       Gemini description: A magnificent 350-acre park, Retiro Park is an oasis of tran...
+[2025-10-28T22:56:46.763Z] LOG    ✅ Merged: Taberna LA CONCHA
+[2025-10-28T22:56:46.763Z] LOG       Places placeId: ChIJvdlhrngoQg0RFmx7kraNRUg
+[2025-10-28T22:56:46.765Z] LOG       Gemini description: Nestled on the famous Cava Baja street in La Latina, Taberna...
+[2025-10-28T22:56:46.766Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-28T22:56:46.767Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-28T22:56:46.769Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-28T22:56:46.770Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T22:56:46.771Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-28T22:56:46.772Z] LOG    1. Searching "Dessert Shop / Cafe" in "40.4169335,-3.7069517"
+[2025-10-28T22:56:46.773Z] LOG    📍 Using nearbySearch at coordinates (40.4169335, -3.7069517)
+[2025-10-28T22:56:46.774Z] LOG 🔍 [Google Places] Nearby search at (40.4169335, -3.7069517)
+[2025-10-28T22:56:46.777Z] LOG    2. Searching "Museum" in "40.4137818,-3.6921271"
+[2025-10-28T22:56:46.779Z] LOG    📍 Using nearbySearch at coordinates (40.4137818, -3.6921271)
+[2025-10-28T22:56:46.780Z] LOG 🔍 [Google Places] Nearby search at (40.4137818, -3.6921271)
+[2025-10-28T22:56:46.783Z] LOG    3. Searching "Restaurant / Delicatessen" in "40.4162931,-3.7056364"
+[2025-10-28T22:56:46.784Z] LOG    📍 Using nearbySearch at coordinates (40.4162931, -3.7056364)
+[2025-10-28T22:56:46.785Z] LOG 🔍 [Google Places] Nearby search at (40.4162931, -3.7056364)
+[2025-10-28T22:56:46.788Z] LOG    4. Searching "Park" in "40.415258,-3.6834657"
+[2025-10-28T22:56:46.789Z] LOG    📍 Using nearbySearch at coordinates (40.415258, -3.6834657)
+[2025-10-28T22:56:46.790Z] LOG 🔍 [Google Places] Nearby search at (40.415258, -3.6834657)
+[2025-10-28T22:56:46.793Z] LOG    5. Searching "Bar / Tapas Bar" in "40.4131972,-3.7083752"
+[2025-10-28T22:56:46.794Z] LOG    📍 Using nearbySearch at coordinates (40.4131972, -3.7083752)
+[2025-10-28T22:56:46.795Z] LOG 🔍 [Google Places] Nearby search at (40.4131972, -3.7083752)
+[2025-10-28T22:56:47.343Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T22:56:47.403Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T22:56:47.440Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T22:56:47.457Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T22:56:47.483Z] LOG    ✅ El Retiro Park: Got description (96 chars)
+[2025-10-28T22:56:47.486Z] LOG    ✅ Museo Nacional del Prado: Got description (99 chars)
+[2025-10-28T22:56:47.518Z] LOG    ✅ Chocolatería San Ginés: Got description (67 chars)
+[2025-10-28T22:56:47.538Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T22:56:47.547Z] LOG    ✅ Plaza del Rey: Got description (96 chars)
+[2025-10-28T22:56:47.563Z] LOG    ⚠️  Barceló Park (with Dog Park): No editorial summary available
+[2025-10-28T22:56:47.572Z] LOG    ✅ María Eva Duarte de Perón Park: Got description (98 chars)
+[2025-10-28T22:56:47.581Z] LOG    ⚠️  Prado Boulevard: No editorial summary available
+[2025-10-28T22:56:47.604Z] LOG    ✅ Museum of Illusions Madrid: Got description (94 chars)
+[2025-10-28T22:56:47.622Z] LOG    ✅ Thyssen-Bornemisza National Museum: Got description (98 chars)
+[2025-10-28T22:56:47.626Z] LOG    ⚠️  Bandida Tapas & Cocktail Bar: No editorial summary available
+[2025-10-28T22:56:47.657Z] LOG    ⚠️  Eccolo Gelato: No editorial summary available
+[2025-10-28T22:56:47.659Z] LOG    ✅ Casa González: Got description (83 chars)
+[2025-10-28T22:56:47.665Z] LOG    ✅ El Tigre Sidra Bar: Got description (88 chars)
+[2025-10-28T22:56:47.679Z] LOG    ✅ TapaSpaña: Got description (99 chars)
+[2025-10-28T22:56:47.688Z] LOG    ⚠️  Minut Soufflés & Café: No editorial summary available
+[2025-10-28T22:56:47.693Z] LOG    ⚠️  Pura Delicia: Heladería Madrid, chocolatería y churrería: No editorial summary available
+[2025-10-28T22:56:47.695Z] LOG    ⚠️  Taberna Las Sobrinas: No editorial summary available
+[2025-10-28T22:56:47.699Z] LOG    ⚠️  Jarana Gastro Show: No editorial summary available
+[2025-10-28T22:56:47.701Z] LOG    ⚠️  Natif Coffee & Bakery: No editorial summary available
+[2025-10-28T22:56:47.707Z] LOG    ⚠️  El Minibar: No editorial summary available
+[2025-10-28T22:56:47.717Z] LOG    ✅ Museo Nacional Centro de Arte Reina Sofía: Got description (98 chars)
+[2025-10-28T22:56:47.720Z] LOG    ⚠️  Sotik: No editorial summary available
+[2025-10-28T22:56:47.721Z] LOG    ⚠️  CASA28: No editorial summary available
+[2025-10-28T22:56:47.726Z] LOG    ✅ CaixaForum Madrid: Got description (100 chars)
+[2025-10-28T22:56:47.734Z] LOG    ⚠️  Puccias: No editorial summary available
+[2025-10-28T22:56:47.736Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 965ms
+[2025-10-28T22:56:47.737Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T22:56:47.740Z] LOG    ✅ Venue 1 (Chocolatería San Ginés): 4 alternatives
+[2025-10-28T22:56:47.741Z] LOG       1. Pura Delicia: Heladería Madrid, chocolatería y churrería (4.3⭐)
+[2025-10-28T22:56:47.742Z] LOG       2. Eccolo Gelato (4.6⭐)
+[2025-10-28T22:56:47.743Z] LOG       3. Natif Coffee & Bakery (4.9⭐)
+[2025-10-28T22:56:47.745Z] LOG    ✅ Venue 2 (Museo Nacional del Prado): 4 alternatives
+[2025-10-28T22:56:47.746Z] LOG       1. Museo Nacional Centro de Arte Reina Sofía (4.5⭐)
+[2025-10-28T22:56:47.747Z] LOG       2. Thyssen-Bornemisza National Museum (4.7⭐)
+[2025-10-28T22:56:47.748Z] LOG       3. CaixaForum Madrid (4.5⭐)
+[2025-10-28T22:56:47.749Z] LOG    ✅ Venue 3 (Museo del Jamón): 4 alternatives
+[2025-10-28T22:56:47.749Z] LOG       1. Puccias (4.7⭐)
+[2025-10-28T22:56:47.750Z] LOG       2. CASA28 (4.4⭐)
+[2025-10-28T22:56:47.751Z] LOG       3. Casa González (4.6⭐)
+[2025-10-28T22:56:47.752Z] LOG    ✅ Venue 4 (El Retiro Park): 4 alternatives
+[2025-10-28T22:56:47.753Z] LOG       1. Prado Boulevard (4.6⭐)
+[2025-10-28T22:56:47.754Z] LOG       2. María Eva Duarte de Perón Park (4.1⭐)
+[2025-10-28T22:56:47.755Z] LOG       3. Barceló Park (with Dog Park) (3.7⭐)
+[2025-10-28T22:56:47.756Z] LOG    ✅ Venue 5 (Taberna LA CONCHA): 4 alternatives
+[2025-10-28T22:56:47.757Z] LOG       1. Bandida Tapas & Cocktail Bar (4.8⭐)
+[2025-10-28T22:56:47.759Z] LOG       2. El Minibar (4.7⭐)
+[2025-10-28T22:56:47.759Z] LOG       3. Taberna Las Sobrinas (4.5⭐)
+[2025-10-28T22:56:47.760Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-28T22:56:47.762Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-28T22:56:47.763Z] LOG    Primary venues: 5 stops
+[2025-10-28T22:56:47.765Z] LOG 
+✅ Cleaning complete:
+[2025-10-28T22:56:47.766Z] LOG    Removed 0 venues already in route
+[2025-10-28T22:56:47.767Z] LOG    Removed 0 duplicate alternatives
+[2025-10-28T22:56:47.768Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-28T22:56:47.769Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-28T22:56:47.770Z] LOG    Primary venues: 5
+[2025-10-28T22:56:47.771Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-28T22:56:47.772Z] LOG    Execution time: 2007ms
+[2025-10-28T22:56:47.773Z] LOG 
+📋 Final alternatives:
+[2025-10-28T22:56:47.775Z] LOG    Chocolatería San Ginés: 4 alternatives
+[2025-10-28T22:56:47.776Z] LOG    Museo Nacional del Prado: 4 alternatives
+[2025-10-28T22:56:47.777Z] LOG    Museo del Jamón: 4 alternatives
+[2025-10-28T22:56:47.778Z] LOG    El Retiro Park: 4 alternatives
+[2025-10-28T22:56:47.779Z] LOG    Taberna LA CONCHA: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

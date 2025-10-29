@@ -1,0 +1,151 @@
+User Prompt: plan a day out in los angeles
+
+[2025-10-29T03:17:08.952Z] LOG 📍 Using fallback location (no user location): Griffith Park
+[2025-10-29T03:17:08.953Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T03:17:08.954Z] LOG    1. "Griffith Observatory" in "Griffith Park"
+[2025-10-29T03:17:08.955Z] LOG    2. "Hollywood Walk of Fame" in "Hollywood"
+[2025-10-29T03:17:08.955Z] LOG    3. "The Original Farmers Market" in "Fairfax District"
+[2025-10-29T03:17:08.956Z] LOG    4. "The Getty" in "Brentwood"
+[2025-10-29T03:17:08.956Z] LOG    5. "Santa Monica Pier" in "Santa Monica"
+[2025-10-29T03:17:08.957Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-29T03:17:08.957Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:17:08.957Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T03:17:08.957Z] LOG    1. Searching "Griffith Observatory" in "Griffith Park"
+[2025-10-29T03:17:08.958Z] LOG 🔍 [Google Places] Text search: "Griffith Observatory" in Griffith Park
+[2025-10-29T03:17:08.963Z] LOG    2. Searching "Hollywood Walk of Fame" in "Hollywood"
+[2025-10-29T03:17:08.964Z] LOG 🔍 [Google Places] Text search: "Hollywood Walk of Fame" in Hollywood
+[2025-10-29T03:17:08.967Z] LOG    3. Searching "The Original Farmers Market" in "Fairfax District"
+[2025-10-29T03:17:08.968Z] LOG 🔍 [Google Places] Text search: "The Original Farmers Market" in Fairfax District
+[2025-10-29T03:17:08.972Z] LOG    4. Searching "The Getty" in "Brentwood"
+[2025-10-29T03:17:08.972Z] LOG 🔍 [Google Places] Text search: "The Getty" in Brentwood
+[2025-10-29T03:17:08.974Z] LOG    5. Searching "Santa Monica Pier" in "Santa Monica"
+[2025-10-29T03:17:08.975Z] LOG 🔍 [Google Places] Text search: "Santa Monica Pier" in Santa Monica
+[2025-10-29T03:17:09.151Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:17:09.236Z] LOG    ✅ Griffith Observatory: Got description (98 chars)
+[2025-10-29T03:17:09.237Z] LOG ✅ Found 1 places
+[2025-10-29T03:17:09.257Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:17:09.341Z] LOG    ✅ Hollywood Walk of Fame: Got description (82 chars)
+[2025-10-29T03:17:09.342Z] LOG ✅ Found 1 places
+[2025-10-29T03:17:09.427Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:17:09.464Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:17:09.576Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:17:09.578Z] LOG    ⚠️  Santa Monica Pier: No editorial summary available
+[2025-10-29T03:17:09.579Z] LOG ✅ Found 1 places
+[2025-10-29T03:17:09.617Z] LOG    ✅ The Original Farmers Market: Got description (100 chars)
+[2025-10-29T03:17:09.618Z] LOG ✅ Found 1 places
+[2025-10-29T03:17:09.692Z] LOG    ✅ The Getty: Got description (99 chars)
+[2025-10-29T03:17:09.693Z] LOG ✅ Found 1 places
+[2025-10-29T03:17:09.694Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 737ms
+[2025-10-29T03:17:09.694Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:17:09.695Z] LOG    Tool execution result: success=true
+[2025-10-29T03:17:09.696Z] LOG    ✅ Tool returned 5 search results
+[2025-10-29T03:17:09.696Z] LOG    ✅ Merged: Griffith Observatory
+[2025-10-29T03:17:09.696Z] LOG       Places placeId: ChIJywjU6WG_woAR3NrWwrEH_3M
+[2025-10-29T03:17:09.697Z] LOG       Gemini description: This iconic art deco landmark offers breathtaking panoramic ...
+[2025-10-29T03:17:09.697Z] LOG    ✅ Merged: Hollywood Walk of Fame
+[2025-10-29T03:17:09.697Z] LOG       Places placeId: ChIJXyC7WTu_woARPvVMCHBXd4U
+[2025-10-29T03:17:09.698Z] LOG       Gemini description: Stroll along this world-famous sidewalk emblazoned with over...
+[2025-10-29T03:17:09.698Z] LOG    ✅ Merged: The Original Farmers Market
+[2025-10-29T03:17:09.698Z] LOG       Places placeId: ChIJmeuOVTC5woARRgUknn4XqXE
+[2025-10-29T03:17:09.699Z] LOG       Gemini description: A historic, open-air market offering a sprawling collection ...
+[2025-10-29T03:17:09.699Z] LOG    ✅ Merged: The Getty
+[2025-10-29T03:17:09.699Z] LOG       Places placeId: ChIJbzYnQte8woARJaqqFVpKeNo
+[2025-10-29T03:17:09.699Z] LOG       Gemini description: A renowned free museum featuring an impressive collection of...
+[2025-10-29T03:17:09.700Z] LOG    ✅ Merged: Santa Monica Pier
+[2025-10-29T03:17:09.700Z] LOG       Places placeId: ChIJpwWbUtekwoAR0890MEJvzII
+[2025-10-29T03:17:09.700Z] LOG       Gemini description: This iconic seaside destination features an amusement park, ...
+[2025-10-29T03:17:09.701Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-29T03:17:09.701Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T03:17:09.701Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-29T03:17:09.701Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:17:09.702Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T03:17:09.702Z] LOG    1. Searching "landmark" in "34.1184341,-118.3003935"
+[2025-10-29T03:17:09.702Z] LOG    📍 Using nearbySearch at coordinates (34.1184341, -118.3003935)
+[2025-10-29T03:17:09.703Z] LOG 🔍 [Google Places] Nearby search at (34.1184341, -118.3003935)
+[2025-10-29T03:17:09.703Z] LOG    2. Searching "landmark" in "34.1016059,-118.3295694"
+[2025-10-29T03:17:09.704Z] LOG    📍 Using nearbySearch at coordinates (34.1016059, -118.3295694)
+[2025-10-29T03:17:09.704Z] LOG 🔍 [Google Places] Nearby search at (34.1016059, -118.3295694)
+[2025-10-29T03:17:09.705Z] LOG    3. Searching "market" in "34.0720115,-118.3603699"
+[2025-10-29T03:17:09.705Z] LOG    📍 Using nearbySearch at coordinates (34.0720115, -118.3603699)
+[2025-10-29T03:17:09.705Z] LOG 🔍 [Google Places] Nearby search at (34.0720115, -118.3603699)
+[2025-10-29T03:17:09.707Z] LOG    4. Searching "museum" in "34.0773438,-118.4732648"
+[2025-10-29T03:17:09.708Z] LOG    📍 Using nearbySearch at coordinates (34.0773438, -118.4732648)
+[2025-10-29T03:17:09.709Z] LOG 🔍 [Google Places] Nearby search at (34.0773438, -118.4732648)
+[2025-10-29T03:17:09.712Z] LOG    5. Searching "landmark" in "34.0093515,-118.4974682"
+[2025-10-29T03:17:09.713Z] LOG    📍 Using nearbySearch at coordinates (34.0093515, -118.4974682)
+[2025-10-29T03:17:09.713Z] LOG 🔍 [Google Places] Nearby search at (34.0093515, -118.4974682)
+[2025-10-29T03:17:09.824Z] LOG 📝 Fetching descriptions for 4 places...
+[2025-10-29T03:17:09.870Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:17:09.891Z] LOG    ⚠️  Ennis House: No editorial summary available
+[2025-10-29T03:17:09.966Z] LOG    ⚠️  Astronomers Monument: No editorial summary available
+[2025-10-29T03:17:09.975Z] LOG    ✅ Hollywood Walk of Fame: Got description (82 chars)
+[2025-10-29T03:17:09.976Z] LOG    ⚠️  N Vermont Ave. Cigarette Garden: No editorial summary available
+[2025-10-29T03:17:10.012Z] LOG    ⚠️  Hollywood Footprints: No editorial summary available
+[2025-10-29T03:17:10.029Z] LOG    ⚠️  Samuel Novarro House by Lloyd Wright: No editorial summary available
+[2025-10-29T03:17:10.063Z] LOG    ⚠️  Janis Joplin Room 105: No editorial summary available
+[2025-10-29T03:17:10.065Z] LOG    ✅ Crossroads of the World: Got description (100 chars)
+[2025-10-29T03:17:10.080Z] LOG    ✅ TCL Chinese Theatre: Got description (98 chars)
+[2025-10-29T03:17:10.206Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:17:10.278Z] LOG    ✅ The Getty: Got description (99 chars)
+[2025-10-29T03:17:10.292Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:17:10.350Z] LOG    ✅ The Original Farmers Market: Got description (100 chars)
+[2025-10-29T03:17:10.433Z] LOG    ✅ Whole Foods Market: Got description (100 chars)
+[2025-10-29T03:17:10.437Z] LOG    ✅ Ralphs: Got description (90 chars)
+[2025-10-29T03:17:10.449Z] LOG    ✅ Ralphs Fresh Fare: Got description (90 chars)
+[2025-10-29T03:17:10.453Z] LOG    ✅ Sprouts Farmers Market: Got description (95 chars)
+[2025-10-29T03:17:10.638Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:17:10.759Z] LOG    ✅ Original Muscle Beach Santa Monica: Got description (95 chars)
+[2025-10-29T03:17:10.783Z] LOG    ⚠️  Chester Bennington Memorial Plaque: No editorial summary available
+[2025-10-29T03:17:10.788Z] LOG    ⚠️  Will Rogers Highway Marker: No editorial summary available
+[2025-10-29T03:17:10.789Z] LOG    ⚠️  Santa Monica Pier Arch: No editorial summary available
+[2025-10-29T03:17:10.821Z] LOG    ⚠️  Beach Crossing Staircase: No editorial summary available
+[2025-10-29T03:17:10.822Z] LOG ✅ Batch complete: 5/5 searches succeeded, 20 total venues found in 1120ms
+[2025-10-29T03:17:10.823Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:17:10.824Z] LOG    ✅ Venue 1 (Griffith Observatory): 4 alternatives
+[2025-10-29T03:17:10.824Z] LOG       1. Ennis House (4.5⭐)
+[2025-10-29T03:17:10.824Z] LOG       2. Samuel Novarro House by Lloyd Wright (4.8⭐)
+[2025-10-29T03:17:10.825Z] LOG       3. Astronomers Monument (4.8⭐)
+[2025-10-29T03:17:10.825Z] LOG    ✅ Venue 2 (Hollywood Walk of Fame): 4 alternatives
+[2025-10-29T03:17:10.826Z] LOG       1. Hollywood Footprints (4.4⭐)
+[2025-10-29T03:17:10.826Z] LOG       2. Janis Joplin Room 105 (4.5⭐)
+[2025-10-29T03:17:10.826Z] LOG       3. Crossroads of the World (4.2⭐)
+[2025-10-29T03:17:10.827Z] LOG    ✅ Venue 3 (The Original Farmers Market): 4 alternatives
+[2025-10-29T03:17:10.827Z] LOG       1. Ralphs (4.2⭐)
+[2025-10-29T03:17:10.828Z] LOG       2. Ralphs Fresh Fare (4.2⭐)
+[2025-10-29T03:17:10.828Z] LOG       3. Whole Foods Market (4.3⭐)
+[2025-10-29T03:17:10.829Z] LOG    ⚠️ Venue 4 (The Getty): No alternatives found
+[2025-10-29T03:17:10.829Z] LOG    ✅ Venue 5 (Santa Monica Pier): 4 alternatives
+[2025-10-29T03:17:10.829Z] LOG       1. Original Muscle Beach Santa Monica (4.6⭐)
+[2025-10-29T03:17:10.829Z] LOG       2. Chester Bennington Memorial Plaque (3⭐)
+[2025-10-29T03:17:10.830Z] LOG       3. Santa Monica Pier Arch (4.7⭐)
+[2025-10-29T03:17:10.830Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-29T03:17:10.830Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T03:17:10.831Z] LOG    Primary venues: 5 stops
+[2025-10-29T03:17:10.831Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T03:17:10.831Z] LOG    Removed 0 venues already in route
+[2025-10-29T03:17:10.831Z] LOG    Removed 0 duplicate alternatives
+[2025-10-29T03:17:10.832Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-29T03:17:10.832Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T03:17:10.832Z] LOG    Primary venues: 5
+[2025-10-29T03:17:10.832Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-29T03:17:10.833Z] LOG    Execution time: 1881ms
+[2025-10-29T03:17:10.833Z] LOG 
+📋 Final alternatives:
+[2025-10-29T03:17:10.833Z] LOG    Griffith Observatory: 4 alternatives
+[2025-10-29T03:17:10.833Z] LOG    Hollywood Walk of Fame: 4 alternatives
+[2025-10-29T03:17:10.834Z] LOG    The Original Farmers Market: 4 alternatives
+[2025-10-29T03:17:10.834Z] LOG    Santa Monica Pier: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

@@ -117,23 +117,33 @@ router.post('/plan', async (req: Request, res: Response) => {
       let finalVenues = modificationResult.updatedVenues;
       
       if (currentItinerary.hasUserLocation && currentItinerary.userLocationIndex !== undefined && userLocation) {
-        const userLocationVenue = {
-          name: userLocation.name || 'Your Location',
-          address: 'Current location',
-          location: {
-            lat: userLocation.lat,
-            lng: userLocation.lng,
-            coordinates: `${userLocation.lat},${userLocation.lng}`
-          },
-          placeId: 'user-location',
-          rating: undefined,
-          priceLevel: 'N/A',
-          types: []
-        };
+        // Check if user location already exists in the updated venues
+        const hasUserLocationInVenues = finalVenues.some(v => v.placeId === 'user-location');
         
-        finalVenues = [...modificationResult.updatedVenues];
-        finalVenues.splice(currentItinerary.userLocationIndex, 0, userLocationVenue);
+        if (!hasUserLocationInVenues) {
+          console.log('📍 Re-inserting user location venue at index', currentItinerary.userLocationIndex);
+          
+          const userLocationVenue = {
+            name: userLocation.name || 'Your Location',
+            address: 'Current location',
+            location: {
+              lat: userLocation.lat,
+              lng: userLocation.lng,
+              coordinates: `${userLocation.lat},${userLocation.lng}`
+            },
+            placeId: 'user-location',
+            rating: undefined,
+            priceLevel: 'N/A',
+            types: []
+          };
+          
+          finalVenues = [...modificationResult.updatedVenues];
+          finalVenues.splice(currentItinerary.userLocationIndex, 0, userLocationVenue);
+        } else {
+          console.log('✅ User location already exists in venues, skipping insertion');
+        }
       }
+      
 
       const preservedAlternativesMap: Record<string, any[]> = {};
       if (currentItinerary && (currentItinerary as any).alternativesMap) {
@@ -282,26 +292,33 @@ router.post('/plan', async (req: Request, res: Response) => {
     // ============================================================================
     // STEP 5: AGENT 3 - VIDEO ENRICHMENT
     // ============================================================================
+    // Minimal change: skip calling Agent 3 when explicitly disabled via env var
     console.log('\n🎬 Running Agent 3: Video Enrichment...');
-    
-    let enrichedVenues = venues;
-    try {
-      enrichedVenues = await videoEnrichmentAgent.enrichVenues(
-        venues, 
-        mode,
-        {
-          maxVideosPerVenue: 3,
-          skipRouteMode: true,
-          skipUserLocation: true,
-        }
-      );
 
-      const stats = videoEnrichmentAgent.getStats(enrichedVenues);
-      console.log(`📊 Video enrichment stats:`, stats);
-      
-    } catch (error) {
-      console.error('⚠️ Video enrichment failed, continuing without videos:', error);
+    let enrichedVenues = venues;
+
+    if (process.env.ENABLE_YOUTUBE_ENRICHMENT === 'false') {
+      console.log('   ⏭️  Skipping Agent 3: video enrichment disabled via ENABLE_YOUTUBE_ENRICHMENT=false');
       enrichedVenues = venues;
+    } else {
+      try {
+        enrichedVenues = await videoEnrichmentAgent.enrichVenues(
+          venues,
+          mode,
+          {
+            maxVideosPerVenue: 3,
+            skipRouteMode: true,
+            skipUserLocation: true,
+          }
+        );
+
+        const stats = videoEnrichmentAgent.getStats(enrichedVenues);
+        console.log(`📊 Video enrichment stats:`, stats);
+
+      } catch (error) {
+        console.error('⚠️ Video enrichment failed, continuing without videos:', error);
+        enrichedVenues = venues;
+      }
     }
 
     // Reorder for route mode

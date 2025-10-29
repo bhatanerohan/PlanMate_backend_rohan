@@ -31,6 +31,13 @@ export class VideoEnrichmentAgent {
     mode: 'discovery' | 'route',
     options: EnrichmentOptions = {}
   ): Promise<EnrichedVenue[]> {
+    // Allow global opt-out via environment variable.
+    // Set ENABLE_YOUTUBE_ENRICHMENT=false to disable video enrichment entirely.
+    const enrichmentEnabled = process.env.ENABLE_YOUTUBE_ENRICHMENT !== 'false';
+    if (!enrichmentEnabled) {
+      console.log('   ⏭️  Video enrichment disabled via ENABLE_YOUTUBE_ENRICHMENT=false');
+      return venues;
+    }
     const {
       maxVideosPerVenue = 3,
       skipRouteMode = true, // By default, don't add videos in route mode

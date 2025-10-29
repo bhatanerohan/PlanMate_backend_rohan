@@ -1,0 +1,18 @@
+User Prompt: plan a day out in nyc ending the trip with the MET museum
+
+[2025-10-28T14:49:26.598Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-28T14:49:26.599Z] LOG 📝 User prompt: "plan a day out in nyc ending the trip with the MET museum"
+[2025-10-28T14:49:26.599Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-28T14:50:15.739Z] ERROR ❌ Gemini Grounding Agent error: {"name":"ApiError","status":503}
+[2025-10-28T14:50:15.770Z] ERROR    Error message: {"error":{"code":503,"message":"The model is overloaded. Please try again later.","status":"UNAVAILABLE"}}
+[2025-10-28T14:50:15.781Z] ERROR    Error stack: ApiError: {"error":{"code":503,"message":"The model is overloaded. Please try again later.","status":"UNAVAILABLE"}}
+    at throwErrorIfNotOK (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\node_modules\@google\genai\src\_api_client.ts:764:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at <anonymous> (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\node_modules\@google\genai\src\_api_client.ts:493:9)
+    at Models.Models.generateContent (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\node_modules\@google\genai\src\models.ts:76:14)
+    at GeminiGroundingAgent.getRecommendations (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\services\gemini-grounding-agent.ts:100:18)
+    at <anonymous> (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\routes\api.ts:172:28)
+
+--- Summary ---
+Completed

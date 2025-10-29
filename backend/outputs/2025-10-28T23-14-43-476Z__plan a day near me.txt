@@ -1,0 +1,106 @@
+User Prompt: plan a day near me
+
+[2025-10-28T23:14:43.477Z] LOG 📍 Using extracted city from user location: Current location
+[2025-10-28T23:14:43.478Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-28T23:14:43.479Z] LOG    1. "Tatte Bakery & Cafe" in "Current location"
+[2025-10-28T23:14:43.480Z] LOG    2. "Institute of Contemporary Art" in "Current location"
+[2025-10-28T23:14:43.480Z] LOG    3. "Limani Grille Seaport" in "Current location"
+[2025-10-28T23:14:43.481Z] LOG    4. "Boston Tea Party Ships & Museum" in "Current location"
+[2025-10-28T23:14:43.482Z] LOG    5. "Lucky's Lounge" in "Current location"
+[2025-10-28T23:14:43.483Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-28T23:14:43.484Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T23:14:43.485Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-28T23:14:43.487Z] LOG    1. Searching "Tatte Bakery & Cafe" in "Current location"
+[2025-10-28T23:14:43.488Z] LOG 🔍 [Google Places] Text search: "Tatte Bakery & Cafe" in Current location
+[2025-10-28T23:14:43.502Z] LOG    2. Searching "Institute of Contemporary Art" in "Current location"
+[2025-10-28T23:14:43.503Z] LOG 🔍 [Google Places] Text search: "Institute of Contemporary Art" in Current location
+[2025-10-28T23:14:43.508Z] LOG    3. Searching "Limani Grille Seaport" in "Current location"
+[2025-10-28T23:14:43.509Z] LOG 🔍 [Google Places] Text search: "Limani Grille Seaport" in Current location
+[2025-10-28T23:14:43.513Z] LOG    4. Searching "Boston Tea Party Ships & Museum" in "Current location"
+[2025-10-28T23:14:43.514Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Current location
+[2025-10-28T23:14:43.517Z] LOG    5. Searching "Lucky's Lounge" in "Current location"
+[2025-10-28T23:14:43.518Z] LOG 🔍 [Google Places] Text search: "Lucky's Lounge" in Current location
+[2025-10-28T23:14:44.068Z] LOG ⚠️  No results found
+[2025-10-28T23:14:44.071Z] LOG ⚠️  No results found
+[2025-10-28T23:14:44.074Z] LOG ⚠️  No results found
+[2025-10-28T23:14:44.404Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T23:14:44.513Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T23:14:44.576Z] LOG    ✅ Tatte: Got description (61 chars)
+[2025-10-28T23:14:44.578Z] LOG ✅ Found 1 places
+[2025-10-28T23:14:44.679Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2025-10-28T23:14:44.680Z] LOG ✅ Found 1 places
+[2025-10-28T23:14:44.681Z] LOG ✅ Batch complete: 5/5 searches succeeded, 2 total venues found in 1196ms
+[2025-10-28T23:14:44.682Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T23:14:44.683Z] LOG    Tool execution result: success=true
+[2025-10-28T23:14:44.684Z] LOG    ✅ Tool returned 5 search results
+[2025-10-28T23:14:44.686Z] LOG    ✅ Merged: Tatte Bakery & Cafe
+[2025-10-28T23:14:44.687Z] LOG       Places placeId: ChIJnVdstvV544kRaR10sdJqjiw
+[2025-10-28T23:14:44.687Z] LOG       Gemini description: Start your day at this beloved, cozy, and inviting cafe, ren...
+[2025-10-28T23:14:44.688Z] LOG    ✅ Merged: Institute of Contemporary Art
+[2025-10-28T23:14:44.689Z] LOG       Places placeId: ChIJxTCEOnlw44kROtPtIpMFsXo
+[2025-10-28T23:14:44.690Z] LOG       Gemini description: Immerse yourself in contemporary art at this striking museum...
+[2025-10-28T23:14:44.691Z] WARN    ⚠️ Could not find "Limani Grille Seaport" in Places API, skipping
+[2025-10-28T23:14:44.704Z] WARN    ⚠️ Could not find "Boston Tea Party Ships & Museum" in Places API, skipping
+[2025-10-28T23:14:44.705Z] WARN    ⚠️ Could not find "Lucky's Lounge" in Places API, skipping
+[2025-10-28T23:14:44.706Z] LOG ✅ Phase 1 complete: Found 2/5 exact venues
+[2025-10-28T23:14:44.706Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-28T23:14:44.709Z] LOG    Searching for alternatives near 2 venues...
+[2025-10-28T23:14:44.710Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T23:14:44.711Z] LOG 🔍 [BatchVenueSearchTool] Executing 2 searches in parallel
+[2025-10-28T23:14:44.712Z] LOG    1. Searching "restaurant" in "42.3438801,-71.09973529999999"
+[2025-10-28T23:14:44.713Z] LOG    📍 Using nearbySearch at coordinates (42.3438801, -71.09973529999999)
+[2025-10-28T23:14:44.714Z] LOG 🔍 [Google Places] Nearby search at (42.3438801, -71.09973529999999)
+[2025-10-28T23:14:44.717Z] LOG    2. Searching "Museum" in "42.3528151,-71.0432778"
+[2025-10-28T23:14:44.718Z] LOG    📍 Using nearbySearch at coordinates (42.3528151, -71.0432778)
+[2025-10-28T23:14:44.718Z] LOG 🔍 [Google Places] Nearby search at (42.3528151, -71.0432778)
+[2025-10-28T23:14:45.403Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T23:14:45.415Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T23:14:45.542Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2025-10-28T23:14:45.553Z] LOG    ✅ Rochambeau: Got description (97 chars)
+[2025-10-28T23:14:45.557Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2025-10-28T23:14:45.560Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2025-10-28T23:14:45.585Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2025-10-28T23:14:45.620Z] LOG    ✅ Abe & Louie's: Got description (86 chars)
+[2025-10-28T23:14:45.622Z] LOG    ✅ Deuxave: Got description (98 chars)
+[2025-10-28T23:14:45.636Z] LOG    ✅ Old State House: Got description (98 chars)
+[2025-10-28T23:14:45.656Z] LOG    ✅ Atlantic Fish Company: Got description (98 chars)
+[2025-10-28T23:14:45.688Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-28T23:14:45.690Z] LOG ✅ Batch complete: 2/2 searches succeeded, 10 total venues found in 979ms
+[2025-10-28T23:14:45.691Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T23:14:45.692Z] LOG    ✅ Venue 1 (Tatte): 4 alternatives
+[2025-10-28T23:14:45.693Z] LOG       1. Rochambeau (4.5⭐)
+[2025-10-28T23:14:45.694Z] LOG       2. Deuxave (4.6⭐)
+[2025-10-28T23:14:45.695Z] LOG       3. Atlantic Fish Company (4.6⭐)
+[2025-10-28T23:14:45.697Z] LOG    ✅ Venue 2 (Institute of Contemporary Art): 4 alternatives
+[2025-10-28T23:14:45.698Z] LOG       1. Museum of Illusions Boston (4.7⭐)
+[2025-10-28T23:14:45.699Z] LOG       2. WNDR Museum (4.6⭐)
+[2025-10-28T23:14:45.700Z] LOG       3. Boston Tea Party Ships & Museum (4.6⭐)
+[2025-10-28T23:14:45.701Z] LOG 
+📦 Phase 2 complete: 2 stops with alternatives
+[2025-10-28T23:14:45.703Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-28T23:14:45.704Z] LOG    Primary venues: 2 stops
+[2025-10-28T23:14:45.706Z] LOG 
+✅ Cleaning complete:
+[2025-10-28T23:14:45.707Z] LOG    Removed 0 venues already in route
+[2025-10-28T23:14:45.708Z] LOG    Removed 0 duplicate alternatives
+[2025-10-28T23:14:45.710Z] LOG    Final: 2 stops with alternatives
+
+[2025-10-28T23:14:45.711Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-28T23:14:45.712Z] LOG    Primary venues: 2
+[2025-10-28T23:14:45.713Z] LOG    Alternatives: 2 stops with alternatives
+[2025-10-28T23:14:45.714Z] LOG    Execution time: 2236ms
+[2025-10-28T23:14:45.715Z] LOG 
+📋 Final alternatives:
+[2025-10-28T23:14:45.717Z] LOG    Tatte: 4 alternatives
+[2025-10-28T23:14:45.718Z] LOG    Institute of Contemporary Art: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 2
+Alternatives: 2

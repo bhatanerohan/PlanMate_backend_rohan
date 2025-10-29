@@ -1,0 +1,199 @@
+User Prompt: plan a day out near me
+
+[2025-10-28T22:51:27.030Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-28T22:51:27.032Z] LOG 📝 User prompt: "plan a day out near me"
+[2025-10-28T22:51:27.034Z] LOG 📍 User location: Current location (42.33983870485079, -71.09027729240591)
+[2025-10-28T22:51:27.035Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-28T22:51:27.037Z] LOG 🗺️ Location context configured: (42.33983870485079, -71.09027729240591)
+[2025-10-28T22:51:51.887Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Tue, 28 Oct 2025 22:51:50 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=24683","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"```json\n{\n  \"plan\": {\n    \"type_of_experience\": \"A cultural and culinary day exploring Boston's Fenway/Symphony neighborhood, blending art, French charm, and classic American pub fare.\",\n    \"number_of_stops\": 4,\n    \"estimated_duration\": \"Approximately 7-8 hours (excluding travel to the first stop and optional longer stays at each venue).\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"Cafe sauvage\",\n      \"rich_description\": \"Start your day with a touch of Parisian charm at Cafe sauvage. This relaxed French restaurant offers sidewalk dining in warmer weather and a menu of traditional French fare, from pastries and coffee to more substantial brunch and lunch options. It's a favorite for its authentic atmosphere and delicious cuisine, perfect for easing into your day. [4]\",\n      \"category\": \"French Restaurant / Cafe\",\n      \"why_picked_it\": \"Chosen for its high rating, charming French ambiance, and suitable offerings for a morning coffee or brunch to kickstart the day. Its location provides a pleasant walk towards the museum. [4]\",\n      \"rating_and_review_insights\": \"Rated 4.6 with 848 reviews, patrons praise its authentic French cuisine, cozy atmosphere, and delightful sidewalk dining. [4]\",\n      \"neighborhood_area\": \"Fenway/Symphony area, near Northeastern University\"\n    },\n    {\n      \"name\": \"Museum of Fine Arts, Boston\",\n      \"rich_description\": \"Immerse yourself in art and culture at the renowned Museum of Fine Arts, Boston. This neoclassical and modern institution houses a vast collection spanning ancient Egyptian artifacts to contemporary American works, including masterpieces from around the globe. Spend a few hours exploring its diverse galleries. [2]\",\n      \"category\": \"Museum\",\n      \"why_picked_it\": \"Selected as the central cultural activity due to its world-class status, extensive collections, and close proximity to the user's initial location and subsequent dining options. [2]\",\n      \"rating_and_review_insights\": \"Boasting an impressive 4.8 rating from over 18,900 reviews, it's highly regarded for its diverse and comprehensive art collections. [2]\",\n      \"neighborhood_area\": \"Fenway/Symphony area\"\n    },\n    {\n      \"name\": \"MIDA (Boylston St)\",\n      \"rich_description\": \"After a morning of art, enjoy a delightful Italian lunch at MIDA's Boylston Street location. This contemporary Italian eatery is known for its handmade pasta dishes, craft cocktails, and a welcoming atmosphere. It's an excellent spot for a satisfying and flavorful meal. [5]\",\n      \"category\": \"Italian Restaurant\",\n      \"why_picked_it\": \"Chosen for its high rating, focus on fresh, handmade Italian food, and its convenient walkable distance from the Museum of Fine Arts for a refined lunch experience. [5]\",\n      \"rating_and_review_insights\": \"Holds a solid 4.5 rating from 176 reviews, with guests frequently praising the pasta and overall quality of the Italian cuisine. [5]\",\n      \"neighborhood_area\": \"Fenway/Boylston Street\"\n    },\n    {\n      \"name\": \"Citizen Public House & Oyster Bar\",\n      \"rich_description\": \"Conclude your day with a memorable dinner and drinks at Citizen Public House & Oyster Bar. This dim, cozy, yet lively English-style pub is famous for its extensive whiskey menu, fresh raw bar, and hearty pub fare. It's a perfect spot for an evening meal with a sophisticated yet relaxed vibe. [6]\",\n      \"category\": \"Restaurant / Pub / Oyster Bar\",\n      \"why_picked_it\": \"Selected for its excellent reviews, appealing pub-style ambiance, diverse menu (including seafood and a robust drink list), and proximity to the previous stop for a cohesive evening experience. [6]\",\n      \"rating_and_review_insights\": \"Rated 4.3 with 904 reviews, customers love its atmosphere, impressive whiskey selection, and the quality of its food, especially the raw bar. [6]\",\n      \"neighborhood_area\": \"Fenway/Boylston Street\"\n    }\n  ]\n}\n```"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{"groundingChunks":[{"maps":{"uri":"https://maps.google.com/?cid=4796793010542359650","title":"Gyroscope","placeId":"places/ChIJTwmVXrJ744kRYjR0HtShkUI"}},{"maps":{"uri":"https://maps.google.com/?cid=222448666873272554","title":"Anna’s Taqueria","placeId":"places/ChIJidSy0aV744kR6pi9SeJLFgM"}},{"maps":{"uri":"https://maps.google.com/?cid=16960648758584557261","title":"Woody's Grill & Tap","placeId":"places/ChIJaa-5vht644kRzT6aPy9UYOs"}},{"maps":{"uri":"https://maps.google.com/?cid=15199678625236709673","title":"El Jefe's Taqueria - Symphony","placeId":"places/ChIJvYo4h39744kRKfFUpS0b8NI"}},{"maps":{"uri":"https://maps.google.com/?cid=184189096109642025","title":"Longwood Grille & Bar","placeId":"places/ChIJsaVgS4x544kRKZEdzQFfjgI"}},{"maps":{"uri":"https://maps.google.com/?cid=13928827218382501001","title":"The Mission Bar & Grill","placeId":"places/ChIJG1llG49544kRiTR7mY4iTcE"}},{"maps":{"uri":"https://maps.google.com/?cid=2900798125717631253","title":"University Grill & Pizza","placeId":"places/ChIJgTVA8vB544kRFbGEuIa0QSg"}},{"maps":{"uri":"https://maps.google.com/?cid=17785586706257912161","title":"University House of Pizza","placeId":"places/ChIJj8-5wiF644kRYaFplOAY0_Y"}},{"maps":{"uri":"https://maps.google.com/?cid=13248855190823787517","title":"Kigo Kitchen","placeId":"places/ChIJNwCtehh644kR_VukwZlj3bc"}},{"maps":{"uri":"https://maps.google.com/?cid=2341596156675724343","title":"Mama's Place","placeId":"places/ChIJEVCJCY9544kRN5QTVkwFfyA"}},{"maps":{"uri":"https://maps.google.com/?cid=17799864193775724989","title":"Montecristo Mexican Grill Mission Hill","placeId":"places/ChIJbRQnHI9544kRvWkyMC3SBfc"}},{"maps":{"uri":"https://maps.google.com/?cid=5576373688508009086","title":"Panera Bread","placeId":"places/ChIJtz5ytQ1544kRfspaJlNCY00"}},{"maps":{"uri":"https://maps.google.com/?cid=16794598646557252623","title":"Papa's Pizza Company","placeId":"places/ChIJldwROIl544kRDxxNyXxmEuk"}},{"maps":{"uri":"https://maps.google.com/?cid=5058011798083614530","title":"Brigham Circle Chinese Food","placeId":"places/ChIJWal8O49544kRQjeCju6qMUY"}},{"maps":{"uri":"https://maps.google.com/?cid=11594881426218825173","title":"Chacho's Pizza & Subs","placeId":"places/ChIJTfSTQ4h544kR1TWMjjlL6aA"}},{"maps":{"uri":"https://maps.google.com/?cid=16365865115264464239","title":"Point Break Cafe","placeId":"places/ChIJNw8QlAehuokRb7VLvZw7H-M"}},{"maps":{"uri":"https://maps.google.com/?cid=3894592783877658628","title":"Wright's Tavern","placeId":"places/ChIJj8cjo7bL2IcRBNjTo4BfDDY"}},{"maps":{"uri":"https://maps.google.com/?cid=16963662356602389079","title":"Tavern on 12","placeId":"places/ChIJxf50t54xpIkRV4LzNgkJa-s"}},{"maps":{"uri":"https://maps.google.com/?cid=191082029559551456","title":"Halal Indian Cuisine","placeId":"places/ChIJdauEHo9544kR4JXb7hfcpgI"}},{"maps":{"uri":"https://maps.google.com/?cid=15410696468075029824","title":"The Walters Art Museum","placeId":"places/ChIJhbKKRJgEyIkRQKX60MnK3dU"}},{"maps":{"uri":"https://maps.google.com/?cid=12751659095357988804","title":"Infinity Museum","placeId":"places/ChIJT5eZ9sbFyIARxB-x02L-9rA"}},{"maps":{"uri":"https://maps.google.com/?cid=3387621536366450020","title":"Museum of Fine Arts, Boston","placeId":"places/ChIJS3rn5w1644kRZNWVxNY_Ay8"}},{"maps":{"uri":"https://maps.google.com/?cid=16375726853001377607","title":"Harvard Art Museums","placeId":"places/ChIJbaeXiER344kRR_f4e89EQuM"}},{"maps":{"uri":"https://maps.google.com/?cid=6321583363365811909","title":"Museum of Science","placeId":"places/ChIJLxyMQZZw44kRxTZwZ5PGulc"}},{"maps":{"uri":"https://maps.google.com/?cid=1355664693445276323","title":"MassArt Art Museum","placeId":"places/ChIJQ7X9Bph544kRozJYJ9tJ0BI"}},{"maps":{"uri":"https://maps.google.com/?cid=5730798868876720473","title":"Museum of the National Center of Afro-American Artists","placeId":"places/ChIJtyRDbtR744kRWXmbSjXjh08"}},{"maps":{"uri":"https://maps.google.com/?cid=2883131367109843303","title":"Museum of Illusions Pittsburgh","placeId":"places/ChIJkUgwC_31NIgRZ1le8bPwAig"}},{"maps":{"uri":"https://maps.google.com/?cid=5199955304902742238","title":"The Art Institute of Chicago","placeId":"places/ChIJlUbZ4qMsDogR3tCinMzzKUg"}},{"maps":{"uri":"https://maps.google.com/?cid=12369003841728793927","title":"Museum of Illusions - Las Vegas","placeId":"places/ChIJS8MzWanFyIARR82v03WHp6s"}},{"maps":{"uri":"https://maps.google.com/?cid=1439522919434489258","title":"Earth Experience - Middle Tennessee Museum of Natural History","placeId":"places/ChIJIQ-1iz74Y4gRqg3t4nc2-hM"}},{"maps":{"uri":"https://maps.google.com/?cid=5116233358131630732","title":"Independence Seaport Museum","placeId":"places/ChIJHQELFJDIxokRjJJw2yGDAEc"}},{"maps":{"uri":"https://maps.google.com/?cid=7113635584264053458","title":"Benjamin Franklin Museum","placeId":"places/ChIJfcym74TIxokR0iKjzd-1uGI"}},{"maps":{"uri":"https://maps.google.com/?cid=13320833796877360657","title":"The Museum of Kansas City","placeId":"places/ChIJr7FGhWf6wIcREZ7k7sIb3bg"}},{"maps":{"uri":"https://maps.google.com/?cid=6768919683528120258","title":"Play Street Museum - Gaithersburg","placeId":"places/ChIJjQNIhawttokRwtfXwZYI8F0"}},{"maps":{"uri":"https://maps.google.com/?cid=10144292371828842427","title":"The Menil Collection","placeId":"places/ChIJJzfbZH-_QIYRux-QWCrEx4w"}},{"maps":{"uri":"https://maps.google.com/?cid=5087244111269421195","title":"Senator John Heinz History Center","placeId":"places/ChIJr7aBzePzNIgRi2Dp2ZCFmUY"}},{"maps":{"uri":"https://maps.google.com/?cid=10168904206493305572","title":"B&O Railroad Museum","placeId":"places/ChIJbw6sK5wEyIkR5EoCp380H40"}},{"maps":{"uri":"https://maps.google.com/?cid=3005799861175381951","title":"Hutchings Museum","placeId":"places/ChIJlXDN3dOBTYcRv-9GXwy_tik"}},{"maps":{"uri":"https://maps.google.com/?cid=8090582883854034209","title":"Moonshot Museum","placeId":"places/ChIJwQrhvND1NIgRIaX5YUSGR3A"}},{"maps":{"uri":"https://maps.google.com/?cid=13970542484529551853","title":"MIDA","placeId":"places/ChIJrSFKORR644kR7Rnj3V5W4cE"}},{"maps":{"uri":"https://maps.google.com/?cid=4801486170787025576","title":"Buttermilk & Bourbon","placeId":"places/ChIJN_AW9wt644kRqBK2oztOokI"}},{"maps":{"uri":"https://maps.google.com/?cid=4379631879127996619","title":"Yard House","placeId":"places/ChIJqRk3ZPZ544kRy5hmYv2Txzw"}},{"maps":{"uri":"https://maps.google.com/?cid=6225045110987631252","title":"Hojoko","placeId":"places/ChIJzwTa-h1644kRlCoz94vNY1Y"}},{"maps":{"uri":"https://maps.google.com/?cid=10034224121693949623","title":"Cafe sauvage","placeId":"places/ChIJQ4eRAvZ744kRt0450qy5QIs"}},{"maps":{"uri":"https://maps.google.com/?cid=10587941390689003534","title":"MIDA","placeId":"places/ChIJhbgcaPR544kRDmis9pjs75I"}},{"maps":{"uri":"https://maps.google.com/?cid=4206520153204865011","title":"Citizen Public House & Oyster Bar","placeId":"places/ChIJT1p8_PV544kR8zdM0MqPYDo"}},{"maps":{"uri":"https://maps.google.com/?cid=4279612748889686853","title":"Abe & Louie's","placeId":"places/ChIJTRzF9w5644kRRYPN6R49ZDs"}},{"maps":{"uri":"https://maps.google.com/?cid=3682200557895330479","title":"Bab Al-Yemen Boston مطعم باب اليمن بوسطن","placeId":"places/ChIJWz0jd5x744kRr6oY9eXNGTM"}},{"maps":{"uri":"https://maps.google.com/?cid=16843587389364452635","title":"Thaitation","placeId":"places/ChIJk_WSLB5644kRGz1RTn1xwOk"}},{"maps":{"uri":"https://maps.google.com/?cid=14225169544974856412","title":"Yvonne's","placeId":"places/ChIJWceaK4Nw44kR3HDuPVX0acU"}},{"maps":{"uri":"https://maps.google.com/?cid=10238389123949594840","title":"The Westland","placeId":"places/ChIJ2SnOGxp644kR2Ag9takQFo4"}},{"maps":{"uri":"https://maps.google.com/?cid=4761506352532815013","title":"Rochambeau","placeId":"places/ChIJMU7XDK5744kRpfx70sxEFEI"}},{"maps":{"uri":"https://maps.google.com/?cid=14472603640599513502","title":"Audubon","placeId":"places/ChIJDaJJzfZ544kRnon1_FQE2cg"}},{"maps":{"uri":"https://maps.google.com/?cid=2903064501732029609","title":"Eastern Standard Kitchen and Drinks","placeId":"places/ChIJ6etNTx1644kRqbTIgcjBSSg"}},{"maps":{"uri":"https://maps.google.com/?cid=6514191650694706360","title":"Boston Burger Company - Boylston St.","placeId":"places/ChIJwRxfIBt644kRuDR56soOZ1o"}},{"maps":{"uri":"https://maps.google.com/?cid=3249210326147425985","title":"The Bebop","placeId":"places/ChIJj4g6Hxt644kRwWaMmpODFy0"}},{"maps":{"uri":"https://maps.google.com/?cid=16960648758584557261","title":"Woody's Grill & Tap","placeId":"places/ChIJaa-5vht644kRzT6aPy9UYOs"}},{"maps":{"uri":"https://maps.google.com/?cid=14776672168097122233","title":"Sufra Mediterranean Food","placeId":"places/ChIJJ_VSH3p744kRuYfU9QtJEc0"}},{"maps":{"uri":"https://maps.google.com/?cid=7688724638922698577","title":"Terra","placeId":"places/ChIJVVXF1A9644kRUe_HjlLWs2o"}}],"webSearchQueries":["restaurants near 42.33983870485079, -71.09027729240591","museums near 42.33983870485079, -71.09027729240591","restaurants near Museum of Fine Arts, Boston"]},"index":0}],"modelVersion":"gemini-2.5-flash","responseId":"7UgBaYCcOrDe_uMPv6W_0AI","usageMetadata":{"promptTokenCount":200,"candidatesTokenCount":1040,"totalTokenCount":6956,"cachedContentTokenCount":116,"promptTokensDetails":[{"modality":"TEXT","tokenCount":200}],"cacheTokensDetails":[{"modality":"TEXT","tokenCount":116}],"toolUsePromptTokenCount":3495,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":3495}],"thoughtsTokenCount":2221}}
+[2025-10-28T22:51:51.891Z] LOG ✅ Gemini response received
+[2025-10-28T22:51:51.892Z] LOG 📄 Response length: 3880 characters
+[2025-10-28T22:51:51.894Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-28T22:51:51.895Z] LOG    candidate exists: true
+[2025-10-28T22:51:51.896Z] LOG    groundingMetadata exists: true
+[2025-10-28T22:51:51.896Z] LOG 📊 Grounding status: Maps=true, Search=false
+[2025-10-28T22:51:51.897Z] LOG 📍 Grounding chunks: 59 total
+[2025-10-28T22:51:51.898Z] LOG    1. [MAPS] Gyroscope
+[2025-10-28T22:51:51.899Z] LOG       placeId: places/ChIJTwmVXrJ744kRYjR0HtShkUI
+[2025-10-28T22:51:51.900Z] LOG       uri: https://maps.google.com/?cid=4796793010542359650
+[2025-10-28T22:51:51.901Z] LOG    2. [MAPS] Anna’s Taqueria
+[2025-10-28T22:51:51.902Z] LOG       placeId: places/ChIJidSy0aV744kR6pi9SeJLFgM
+[2025-10-28T22:51:51.903Z] LOG       uri: https://maps.google.com/?cid=222448666873272554
+[2025-10-28T22:51:51.904Z] LOG    3. [MAPS] Woody's Grill & Tap
+[2025-10-28T22:51:51.905Z] LOG       placeId: places/ChIJaa-5vht644kRzT6aPy9UYOs
+[2025-10-28T22:51:51.905Z] LOG       uri: https://maps.google.com/?cid=16960648758584557261
+[2025-10-28T22:51:51.906Z] LOG    4. [MAPS] El Jefe's Taqueria - Symphony
+[2025-10-28T22:51:51.907Z] LOG       placeId: places/ChIJvYo4h39744kRKfFUpS0b8NI
+[2025-10-28T22:51:51.908Z] LOG       uri: https://maps.google.com/?cid=15199678625236709673
+[2025-10-28T22:51:51.909Z] LOG    5. [MAPS] Longwood Grille & Bar
+[2025-10-28T22:51:51.910Z] LOG       placeId: places/ChIJsaVgS4x544kRKZEdzQFfjgI
+[2025-10-28T22:51:51.911Z] LOG       uri: https://maps.google.com/?cid=184189096109642025
+[2025-10-28T22:51:51.912Z] LOG    6. [MAPS] The Mission Bar & Grill
+[2025-10-28T22:51:51.913Z] LOG       placeId: places/ChIJG1llG49544kRiTR7mY4iTcE
+[2025-10-28T22:51:51.915Z] LOG       uri: https://maps.google.com/?cid=13928827218382501001
+[2025-10-28T22:51:51.916Z] LOG    7. [MAPS] University Grill & Pizza
+[2025-10-28T22:51:51.917Z] LOG       placeId: places/ChIJgTVA8vB544kRFbGEuIa0QSg
+[2025-10-28T22:51:51.918Z] LOG       uri: https://maps.google.com/?cid=2900798125717631253
+[2025-10-28T22:51:51.920Z] LOG    8. [MAPS] University House of Pizza
+[2025-10-28T22:51:51.920Z] LOG       placeId: places/ChIJj8-5wiF644kRYaFplOAY0_Y
+[2025-10-28T22:51:51.921Z] LOG       uri: https://maps.google.com/?cid=17785586706257912161
+[2025-10-28T22:51:51.922Z] LOG    9. [MAPS] Kigo Kitchen
+[2025-10-28T22:51:51.923Z] LOG       placeId: places/ChIJNwCtehh644kR_VukwZlj3bc
+[2025-10-28T22:51:51.924Z] LOG       uri: https://maps.google.com/?cid=13248855190823787517
+[2025-10-28T22:51:51.926Z] LOG    10. [MAPS] Mama's Place
+[2025-10-28T22:51:51.928Z] LOG       placeId: places/ChIJEVCJCY9544kRN5QTVkwFfyA
+[2025-10-28T22:51:51.929Z] LOG       uri: https://maps.google.com/?cid=2341596156675724343
+[2025-10-28T22:51:51.930Z] LOG    11. [MAPS] Montecristo Mexican Grill Mission Hill
+[2025-10-28T22:51:51.931Z] LOG       placeId: places/ChIJbRQnHI9544kRvWkyMC3SBfc
+[2025-10-28T22:51:51.933Z] LOG       uri: https://maps.google.com/?cid=17799864193775724989
+[2025-10-28T22:51:51.934Z] LOG    12. [MAPS] Panera Bread
+[2025-10-28T22:51:51.936Z] LOG       placeId: places/ChIJtz5ytQ1544kRfspaJlNCY00
+[2025-10-28T22:51:51.937Z] LOG       uri: https://maps.google.com/?cid=5576373688508009086
+[2025-10-28T22:51:51.937Z] LOG    13. [MAPS] Papa's Pizza Company
+[2025-10-28T22:51:51.939Z] LOG       placeId: places/ChIJldwROIl544kRDxxNyXxmEuk
+[2025-10-28T22:51:51.940Z] LOG       uri: https://maps.google.com/?cid=16794598646557252623
+[2025-10-28T22:51:51.941Z] LOG    14. [MAPS] Brigham Circle Chinese Food
+[2025-10-28T22:51:51.942Z] LOG       placeId: places/ChIJWal8O49544kRQjeCju6qMUY
+[2025-10-28T22:51:51.943Z] LOG       uri: https://maps.google.com/?cid=5058011798083614530
+[2025-10-28T22:51:51.945Z] LOG    15. [MAPS] Chacho's Pizza & Subs
+[2025-10-28T22:51:51.947Z] LOG       placeId: places/ChIJTfSTQ4h544kR1TWMjjlL6aA
+[2025-10-28T22:51:51.948Z] LOG       uri: https://maps.google.com/?cid=11594881426218825173
+[2025-10-28T22:51:51.949Z] LOG    16. [MAPS] Point Break Cafe
+[2025-10-28T22:51:51.950Z] LOG       placeId: places/ChIJNw8QlAehuokRb7VLvZw7H-M
+[2025-10-28T22:51:51.951Z] LOG       uri: https://maps.google.com/?cid=16365865115264464239
+[2025-10-28T22:51:51.952Z] LOG    17. [MAPS] Wright's Tavern
+[2025-10-28T22:51:51.954Z] LOG       placeId: places/ChIJj8cjo7bL2IcRBNjTo4BfDDY
+[2025-10-28T22:51:51.954Z] LOG       uri: https://maps.google.com/?cid=3894592783877658628
+[2025-10-28T22:51:51.955Z] LOG    18. [MAPS] Tavern on 12
+[2025-10-28T22:51:51.956Z] LOG       placeId: places/ChIJxf50t54xpIkRV4LzNgkJa-s
+[2025-10-28T22:51:51.957Z] LOG       uri: https://maps.google.com/?cid=16963662356602389079
+[2025-10-28T22:51:51.958Z] LOG    19. [MAPS] Halal Indian Cuisine
+[2025-10-28T22:51:51.959Z] LOG       placeId: places/ChIJdauEHo9544kR4JXb7hfcpgI
+[2025-10-28T22:51:51.960Z] LOG       uri: https://maps.google.com/?cid=191082029559551456
+[2025-10-28T22:51:51.961Z] LOG    20. [MAPS] The Walters Art Museum
+[2025-10-28T22:51:51.962Z] LOG       placeId: places/ChIJhbKKRJgEyIkRQKX60MnK3dU
+[2025-10-28T22:51:51.963Z] LOG       uri: https://maps.google.com/?cid=15410696468075029824
+[2025-10-28T22:51:51.963Z] LOG    21. [MAPS] Infinity Museum
+[2025-10-28T22:51:51.964Z] LOG       placeId: places/ChIJT5eZ9sbFyIARxB-x02L-9rA
+[2025-10-28T22:51:51.965Z] LOG       uri: https://maps.google.com/?cid=12751659095357988804
+[2025-10-28T22:51:51.966Z] LOG    22. [MAPS] Museum of Fine Arts, Boston
+[2025-10-28T22:51:51.968Z] LOG       placeId: places/ChIJS3rn5w1644kRZNWVxNY_Ay8
+[2025-10-28T22:51:51.969Z] LOG       uri: https://maps.google.com/?cid=3387621536366450020
+[2025-10-28T22:51:51.970Z] LOG    23. [MAPS] Harvard Art Museums
+[2025-10-28T22:51:51.971Z] LOG       placeId: places/ChIJbaeXiER344kRR_f4e89EQuM
+[2025-10-28T22:51:51.973Z] LOG       uri: https://maps.google.com/?cid=16375726853001377607
+[2025-10-28T22:51:51.974Z] LOG    24. [MAPS] Museum of Science
+[2025-10-28T22:51:51.975Z] LOG       placeId: places/ChIJLxyMQZZw44kRxTZwZ5PGulc
+[2025-10-28T22:51:51.976Z] LOG       uri: https://maps.google.com/?cid=6321583363365811909
+[2025-10-28T22:51:51.977Z] LOG    25. [MAPS] MassArt Art Museum
+[2025-10-28T22:51:51.978Z] LOG       placeId: places/ChIJQ7X9Bph544kRozJYJ9tJ0BI
+[2025-10-28T22:51:51.980Z] LOG       uri: https://maps.google.com/?cid=1355664693445276323
+[2025-10-28T22:51:51.981Z] LOG    26. [MAPS] Museum of the National Center of Afro-American Artists
+[2025-10-28T22:51:51.983Z] LOG       placeId: places/ChIJtyRDbtR744kRWXmbSjXjh08
+[2025-10-28T22:51:51.984Z] LOG       uri: https://maps.google.com/?cid=5730798868876720473
+[2025-10-28T22:51:51.985Z] LOG    27. [MAPS] Museum of Illusions Pittsburgh
+[2025-10-28T22:51:51.986Z] LOG       placeId: places/ChIJkUgwC_31NIgRZ1le8bPwAig
+[2025-10-28T22:51:51.987Z] LOG       uri: https://maps.google.com/?cid=2883131367109843303
+[2025-10-28T22:51:51.989Z] LOG    28. [MAPS] The Art Institute of Chicago
+[2025-10-28T22:51:51.990Z] LOG       placeId: places/ChIJlUbZ4qMsDogR3tCinMzzKUg
+[2025-10-28T22:51:51.992Z] LOG       uri: https://maps.google.com/?cid=5199955304902742238
+[2025-10-28T22:51:51.993Z] LOG    29. [MAPS] Museum of Illusions - Las Vegas
+[2025-10-28T22:51:51.994Z] LOG       placeId: places/ChIJS8MzWanFyIARR82v03WHp6s
+[2025-10-28T22:51:51.994Z] LOG       uri: https://maps.google.com/?cid=12369003841728793927
+[2025-10-28T22:51:51.996Z] LOG    30. [MAPS] Earth Experience - Middle Tennessee Museum of Natural History
+[2025-10-28T22:51:51.997Z] LOG       placeId: places/ChIJIQ-1iz74Y4gRqg3t4nc2-hM
+[2025-10-28T22:51:51.997Z] LOG       uri: https://maps.google.com/?cid=1439522919434489258
+[2025-10-28T22:51:51.999Z] LOG    31. [MAPS] Independence Seaport Museum
+[2025-10-28T22:51:52.000Z] LOG       placeId: places/ChIJHQELFJDIxokRjJJw2yGDAEc
+[2025-10-28T22:51:52.000Z] LOG       uri: https://maps.google.com/?cid=5116233358131630732
+[2025-10-28T22:51:52.002Z] LOG    32. [MAPS] Benjamin Franklin Museum
+[2025-10-28T22:51:52.003Z] LOG       placeId: places/ChIJfcym74TIxokR0iKjzd-1uGI
+[2025-10-28T22:51:52.004Z] LOG       uri: https://maps.google.com/?cid=7113635584264053458
+[2025-10-28T22:51:52.004Z] LOG    33. [MAPS] The Museum of Kansas City
+[2025-10-28T22:51:52.005Z] LOG       placeId: places/ChIJr7FGhWf6wIcREZ7k7sIb3bg
+[2025-10-28T22:51:52.006Z] LOG       uri: https://maps.google.com/?cid=13320833796877360657
+[2025-10-28T22:51:52.007Z] LOG    34. [MAPS] Play Street Museum - Gaithersburg
+[2025-10-28T22:51:52.008Z] LOG       placeId: places/ChIJjQNIhawttokRwtfXwZYI8F0
+[2025-10-28T22:51:52.010Z] LOG       uri: https://maps.google.com/?cid=6768919683528120258
+[2025-10-28T22:51:52.011Z] LOG    35. [MAPS] The Menil Collection
+[2025-10-28T22:51:52.011Z] LOG       placeId: places/ChIJJzfbZH-_QIYRux-QWCrEx4w
+[2025-10-28T22:51:52.012Z] LOG       uri: https://maps.google.com/?cid=10144292371828842427
+[2025-10-28T22:51:52.013Z] LOG    36. [MAPS] Senator John Heinz History Center
+[2025-10-28T22:51:52.014Z] LOG       placeId: places/ChIJr7aBzePzNIgRi2Dp2ZCFmUY
+[2025-10-28T22:51:52.016Z] LOG       uri: https://maps.google.com/?cid=5087244111269421195
+[2025-10-28T22:51:52.017Z] LOG    37. [MAPS] B&O Railroad Museum
+[2025-10-28T22:51:52.017Z] LOG       placeId: places/ChIJbw6sK5wEyIkR5EoCp380H40
+[2025-10-28T22:51:52.018Z] LOG       uri: https://maps.google.com/?cid=10168904206493305572
+[2025-10-28T22:51:52.019Z] LOG    38. [MAPS] Hutchings Museum
+[2025-10-28T22:51:52.020Z] LOG       placeId: places/ChIJlXDN3dOBTYcRv-9GXwy_tik
+[2025-10-28T22:51:52.021Z] LOG       uri: https://maps.google.com/?cid=3005799861175381951
+[2025-10-28T22:51:52.022Z] LOG    39. [MAPS] Moonshot Museum
+[2025-10-28T22:51:52.023Z] LOG       placeId: places/ChIJwQrhvND1NIgRIaX5YUSGR3A
+[2025-10-28T22:51:52.024Z] LOG       uri: https://maps.google.com/?cid=8090582883854034209
+[2025-10-28T22:51:52.025Z] LOG    40. [MAPS] MIDA
+[2025-10-28T22:51:52.025Z] LOG       placeId: places/ChIJrSFKORR644kR7Rnj3V5W4cE
+[2025-10-28T22:51:52.026Z] LOG       uri: https://maps.google.com/?cid=13970542484529551853
+[2025-10-28T22:51:52.027Z] LOG    41. [MAPS] Buttermilk & Bourbon
+[2025-10-28T22:51:52.028Z] LOG       placeId: places/ChIJN_AW9wt644kRqBK2oztOokI
+[2025-10-28T22:51:52.029Z] LOG       uri: https://maps.google.com/?cid=4801486170787025576
+[2025-10-28T22:51:52.030Z] LOG    42. [MAPS] Yard House
+[2025-10-28T22:51:52.031Z] LOG       placeId: places/ChIJqRk3ZPZ544kRy5hmYv2Txzw
+[2025-10-28T22:51:52.031Z] LOG       uri: https://maps.google.com/?cid=4379631879127996619
+[2025-10-28T22:51:52.032Z] LOG    43. [MAPS] Hojoko
+[2025-10-28T22:51:52.033Z] LOG       placeId: places/ChIJzwTa-h1644kRlCoz94vNY1Y
+[2025-10-28T22:51:52.034Z] LOG       uri: https://maps.google.com/?cid=6225045110987631252
+[2025-10-28T22:51:52.035Z] LOG    44. [MAPS] Cafe sauvage
+[2025-10-28T22:51:52.036Z] LOG       placeId: places/ChIJQ4eRAvZ744kRt0450qy5QIs
+[2025-10-28T22:51:52.036Z] LOG       uri: https://maps.google.com/?cid=10034224121693949623
+[2025-10-28T22:51:52.038Z] LOG    45. [MAPS] MIDA
+[2025-10-28T22:51:52.039Z] LOG       placeId: places/ChIJhbgcaPR544kRDmis9pjs75I
+[2025-10-28T22:51:52.040Z] LOG       uri: https://maps.google.com/?cid=10587941390689003534
+[2025-10-28T22:51:52.041Z] LOG    46. [MAPS] Citizen Public House & Oyster Bar
+[2025-10-28T22:51:52.041Z] LOG       placeId: places/ChIJT1p8_PV544kR8zdM0MqPYDo
+[2025-10-28T22:51:52.042Z] LOG       uri: https://maps.google.com/?cid=4206520153204865011
+[2025-10-28T22:51:52.044Z] LOG    47. [MAPS] Abe & Louie's
+[2025-10-28T22:51:52.045Z] LOG       placeId: places/ChIJTRzF9w5644kRRYPN6R49ZDs
+[2025-10-28T22:51:52.045Z] LOG       uri: https://maps.google.com/?cid=4279612748889686853
+[2025-10-28T22:51:52.046Z] LOG    48. [MAPS] Bab Al-Yemen Boston مطعم باب اليمن بوسطن
+[2025-10-28T22:51:52.047Z] LOG       placeId: places/ChIJWz0jd5x744kRr6oY9eXNGTM
+[2025-10-28T22:51:52.048Z] LOG       uri: https://maps.google.com/?cid=3682200557895330479
+[2025-10-28T22:51:52.049Z] LOG    49. [MAPS] Thaitation
+[2025-10-28T22:51:52.050Z] LOG       placeId: places/ChIJk_WSLB5644kRGz1RTn1xwOk
+[2025-10-28T22:51:52.051Z] LOG       uri: https://maps.google.com/?cid=16843587389364452635
+[2025-10-28T22:51:52.051Z] LOG    50. [MAPS] Yvonne's
+[2025-10-28T22:51:52.052Z] LOG       placeId: places/ChIJWceaK4Nw44kR3HDuPVX0acU
+[2025-10-28T22:51:52.053Z] LOG       uri: https://maps.google.com/?cid=14225169544974856412
+[2025-10-28T22:51:52.054Z] LOG    51. [MAPS] The Westland
+[2025-10-28T22:51:52.054Z] LOG       placeId: places/ChIJ2SnOGxp644kR2Ag9takQFo4
+[2025-10-28T22:51:52.056Z] LOG       uri: https://maps.google.com/?cid=10238389123949594840
+[2025-10-28T22:51:52.057Z] LOG    52. [MAPS] Rochambeau
+[2025-10-28T22:51:52.057Z] LOG       placeId: places/ChIJMU7XDK5744kRpfx70sxEFEI
+[2025-10-28T22:51:52.058Z] LOG       uri: https://maps.google.com/?cid=4761506352532815013
+[2025-10-28T22:51:52.059Z] LOG    53. [MAPS] Audubon
+[2025-10-28T22:51:52.060Z] LOG       placeId: places/ChIJDaJJzfZ544kRnon1_FQE2cg
+[2025-10-28T22:51:52.061Z] LOG       uri: https://maps.google.com/?cid=14472603640599513502
+[2025-10-28T22:51:52.062Z] LOG    54. [MAPS] Eastern Standard Kitchen and Drinks
+[2025-10-28T22:51:52.062Z] LOG       placeId: places/ChIJ6etNTx1644kRqbTIgcjBSSg
+[2025-10-28T22:51:52.063Z] LOG       uri: https://maps.google.com/?cid=2903064501732029609
+[2025-10-28T22:51:52.064Z] LOG    55. [MAPS] Boston Burger Company - Boylston St.
+[2025-10-28T22:51:52.065Z] LOG       placeId: places/ChIJwRxfIBt644kRuDR56soOZ1o
+[2025-10-28T22:51:52.066Z] LOG       uri: https://maps.google.com/?cid=6514191650694706360
+[2025-10-28T22:51:52.067Z] LOG    56. [MAPS] The Bebop
+[2025-10-28T22:51:52.068Z] LOG       placeId: places/ChIJj4g6Hxt644kRwWaMmpODFy0
+[2025-10-28T22:51:52.069Z] LOG       uri: https://maps.google.com/?cid=3249210326147425985
+[2025-10-28T22:51:52.070Z] LOG    57. [MAPS] Woody's Grill & Tap
+[2025-10-28T22:51:52.071Z] LOG       placeId: places/ChIJaa-5vht644kRzT6aPy9UYOs
+[2025-10-28T22:51:52.072Z] LOG       uri: https://maps.google.com/?cid=16960648758584557261
+[2025-10-28T22:51:52.073Z] LOG    58. [MAPS] Sufra Mediterranean Food
+[2025-10-28T22:51:52.074Z] LOG       placeId: places/ChIJJ_VSH3p744kRuYfU9QtJEc0
+[2025-10-28T22:51:52.075Z] LOG       uri: https://maps.google.com/?cid=14776672168097122233
+[2025-10-28T22:51:52.076Z] LOG    59. [MAPS] Terra
+[2025-10-28T22:51:52.077Z] LOG       placeId: places/ChIJVVXF1A9644kRUe_HjlLWs2o
+[2025-10-28T22:51:52.078Z] LOG       uri: https://maps.google.com/?cid=7688724638922698577
+[2025-10-28T22:51:52.081Z] LOG ✨ Parsed 4 venue recommendations
+[2025-10-28T22:51:52.082Z] LOG 📋 Plan: undefined, undefined stops
+
+--- Summary ---
+Completed

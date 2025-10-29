@@ -1,0 +1,144 @@
+User Prompt: plan a day near me
+
+[2025-10-28T23:16:21.494Z] LOG 📍 Using extracted city from user location: Madrid
+[2025-10-28T23:16:21.495Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-28T23:16:21.496Z] LOG    1. "Museo Nacional del Prado" in "Madrid"
+[2025-10-28T23:16:21.497Z] LOG    2. "Parque del Retiro" in "Madrid"
+[2025-10-28T23:16:21.498Z] LOG    3. "Restaurante TriCiclo" in "Madrid"
+[2025-10-28T23:16:21.500Z] LOG    4. "Taberna Maceira" in "Madrid"
+[2025-10-28T23:16:21.501Z] LOG 
+🔍 Executing batch search for 4 venues...
+[2025-10-28T23:16:21.502Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T23:16:21.503Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-28T23:16:21.504Z] LOG    1. Searching "Museo Nacional del Prado" in "Madrid"
+[2025-10-28T23:16:21.504Z] LOG 🔍 [Google Places] Text search: "Museo Nacional del Prado" in Madrid
+[2025-10-28T23:16:21.509Z] LOG    2. Searching "Parque del Retiro" in "Madrid"
+[2025-10-28T23:16:21.510Z] LOG 🔍 [Google Places] Text search: "Parque del Retiro" in Madrid
+[2025-10-28T23:16:21.514Z] LOG    3. Searching "Restaurante TriCiclo" in "Madrid"
+[2025-10-28T23:16:21.516Z] LOG 🔍 [Google Places] Text search: "Restaurante TriCiclo" in Madrid
+[2025-10-28T23:16:21.521Z] LOG    4. Searching "Taberna Maceira" in "Madrid"
+[2025-10-28T23:16:21.522Z] LOG 🔍 [Google Places] Text search: "Taberna Maceira" in Madrid
+[2025-10-28T23:16:21.947Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T23:16:21.994Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T23:16:22.046Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T23:16:22.093Z] LOG    ✅ Taberna Maceira 2 (Huertas, 66): Got description (99 chars)
+[2025-10-28T23:16:22.094Z] LOG ✅ Found 1 places
+[2025-10-28T23:16:22.156Z] LOG    ✅ Museo Nacional del Prado: Got description (99 chars)
+[2025-10-28T23:16:22.159Z] LOG ✅ Found 1 places
+[2025-10-28T23:16:22.208Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T23:16:22.248Z] LOG    ⚠️  TriCiclo l Restaurante Mediterráneo Madrid: No editorial summary available
+[2025-10-28T23:16:22.250Z] LOG ✅ Found 1 places
+[2025-10-28T23:16:22.476Z] LOG    ✅ El Retiro Park: Got description (96 chars)
+[2025-10-28T23:16:22.477Z] LOG ✅ Found 1 places
+[2025-10-28T23:16:22.478Z] LOG ✅ Batch complete: 4/4 searches succeeded, 4 total venues found in 975ms
+[2025-10-28T23:16:22.479Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T23:16:22.480Z] LOG    Tool execution result: success=true
+[2025-10-28T23:16:22.481Z] LOG    ✅ Tool returned 4 search results
+[2025-10-28T23:16:22.482Z] LOG    ✅ Merged: Museo Nacional del Prado
+[2025-10-28T23:16:22.483Z] LOG       Places placeId: ChIJ7aLYZp0oQg0RWoitk33wlBA
+[2025-10-28T23:16:22.484Z] LOG       Gemini description: ...
+[2025-10-28T23:16:22.484Z] LOG    ✅ Merged: Parque del Retiro
+[2025-10-28T23:16:22.485Z] LOG       Places placeId: ChIJe4IR9Z8oQg0RrqMktRYnbJ4
+[2025-10-28T23:16:22.486Z] LOG       Gemini description: ...
+[2025-10-28T23:16:22.488Z] LOG    ✅ Merged: Restaurante TriCiclo
+[2025-10-28T23:16:22.489Z] LOG       Places placeId: ChIJbzIh_SkmQg0RdmTIzdzsDLg
+[2025-10-28T23:16:22.490Z] LOG       Gemini description: ...
+[2025-10-28T23:16:22.491Z] LOG    ✅ Merged: Taberna Maceira
+[2025-10-28T23:16:22.492Z] LOG       Places placeId: ChIJ5YRJ0ikmQg0R8Y1Kby--zmk
+[2025-10-28T23:16:22.493Z] LOG       Gemini description: ...
+[2025-10-28T23:16:22.494Z] LOG ✅ Phase 1 complete: Found 4/4 exact venues
+[2025-10-28T23:16:22.494Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-28T23:16:22.495Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-28T23:16:22.496Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T23:16:22.498Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-28T23:16:22.498Z] LOG    1. Searching "museum" in "40.4137818,-3.6921271"
+[2025-10-28T23:16:22.499Z] LOG    📍 Using nearbySearch at coordinates (40.4137818, -3.6921271)
+[2025-10-28T23:16:22.501Z] LOG 🔍 [Google Places] Nearby search at (40.4137818, -3.6921271)
+[2025-10-28T23:16:22.503Z] LOG    2. Searching "restaurant" in "40.415258,-3.6834657"
+[2025-10-28T23:16:22.504Z] LOG    📍 Using nearbySearch at coordinates (40.415258, -3.6834657)
+[2025-10-28T23:16:22.505Z] LOG 🔍 [Google Places] Nearby search at (40.415258, -3.6834657)
+[2025-10-28T23:16:22.507Z] LOG    3. Searching "restaurant" in "40.4128799,-3.697244599999999"
+[2025-10-28T23:16:22.508Z] LOG    📍 Using nearbySearch at coordinates (40.4128799, -3.697244599999999)
+[2025-10-28T23:16:22.509Z] LOG 🔍 [Google Places] Nearby search at (40.4128799, -3.697244599999999)
+[2025-10-28T23:16:22.511Z] LOG    4. Searching "restaurant" in "40.4130308,-3.6958997"
+[2025-10-28T23:16:22.512Z] LOG    📍 Using nearbySearch at coordinates (40.4130308, -3.6958997)
+[2025-10-28T23:16:22.513Z] LOG 🔍 [Google Places] Nearby search at (40.4130308, -3.6958997)
+[2025-10-28T23:16:23.112Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T23:16:23.126Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T23:16:23.142Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T23:16:23.270Z] LOG    ✅ Museo Nacional del Prado: Got description (99 chars)
+[2025-10-28T23:16:23.299Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T23:16:23.310Z] LOG    ⚠️  Lamucca del Carmen: No editorial summary available
+[2025-10-28T23:16:23.328Z] LOG    ⚠️  Restaurante Etíope Habesha: No editorial summary available
+[2025-10-28T23:16:23.332Z] LOG    ✅ Museum of Illusions Madrid: Got description (94 chars)
+[2025-10-28T23:16:23.338Z] LOG    ✅ Taberna El Sur: Got description (92 chars)
+[2025-10-28T23:16:23.342Z] LOG    ✅ Museo Nacional Centro de Arte Reina Sofía: Got description (98 chars)
+[2025-10-28T23:16:23.345Z] LOG    ✅ Ferretería Restaurante: Got description (81 chars)
+[2025-10-28T23:16:23.347Z] LOG    ✅ Thyssen-Bornemisza National Museum: Got description (98 chars)
+[2025-10-28T23:16:23.354Z] LOG    ✅ Restaurante Gloria Bendita Madrid: Got description (100 chars)
+[2025-10-28T23:16:23.357Z] LOG    ✅ National Museum of Decorative Arts: Got description (91 chars)
+[2025-10-28T23:16:23.360Z] LOG    ⚠️  Desh Restaurante: No editorial summary available
+[2025-10-28T23:16:23.363Z] LOG    ⚠️  The Matbah: No editorial summary available
+[2025-10-28T23:16:23.366Z] LOG    ⚠️  Lamucca del Carmen: No editorial summary available
+[2025-10-28T23:16:23.369Z] LOG    ⚠️  Restaurante Etíope Habesha: No editorial summary available
+[2025-10-28T23:16:23.382Z] LOG    ⚠️  Restaurante Etíope Habesha: No editorial summary available
+[2025-10-28T23:16:23.389Z] LOG    ⚠️  Lamucca del Carmen: No editorial summary available
+[2025-10-28T23:16:23.430Z] LOG    ⚠️  Desh Restaurante: No editorial summary available
+[2025-10-28T23:16:23.454Z] LOG    ✅ Taberna El Sur: Got description (92 chars)
+[2025-10-28T23:16:23.507Z] LOG    ✅ Areia Club: Got description (96 chars)
+[2025-10-28T23:16:23.803Z] LOG    ⚠️  The Matbah: No editorial summary available
+[2025-10-28T23:16:23.805Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 1308ms
+[2025-10-28T23:16:23.806Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T23:16:23.807Z] LOG    ✅ Venue 1 (Museo Nacional del Prado): 4 alternatives
+[2025-10-28T23:16:23.808Z] LOG       1. Thyssen-Bornemisza National Museum (4.7⭐)
+[2025-10-28T23:16:23.809Z] LOG       2. Museum of Illusions Madrid (4.4⭐)
+[2025-10-28T23:16:23.809Z] LOG       3. Museo Nacional Centro de Arte Reina Sofía (4.5⭐)
+[2025-10-28T23:16:23.811Z] LOG    ✅ Venue 2 (El Retiro Park): 4 alternatives
+[2025-10-28T23:16:23.811Z] LOG       1. Lamucca del Carmen (4.3⭐)
+[2025-10-28T23:16:23.812Z] LOG       2. Restaurante Etíope Habesha (4.6⭐)
+[2025-10-28T23:16:23.813Z] LOG       3. Areia Club (4.4⭐)
+[2025-10-28T23:16:23.814Z] LOG    ✅ Venue 3 (TriCiclo l Restaurante Mediterráneo Madrid): 4 alternatives
+[2025-10-28T23:16:23.815Z] LOG       1. Lamucca del Carmen (4.3⭐)
+[2025-10-28T23:16:23.816Z] LOG       2. Restaurante Etíope Habesha (4.6⭐)
+[2025-10-28T23:16:23.817Z] LOG       3. The Matbah (4.7⭐)
+[2025-10-28T23:16:23.819Z] LOG    ✅ Venue 4 (Taberna Maceira 2 (Huertas, 66)): 4 alternatives
+[2025-10-28T23:16:23.820Z] LOG       1. Lamucca del Carmen (4.3⭐)
+[2025-10-28T23:16:23.821Z] LOG       2. The Matbah (4.7⭐)
+[2025-10-28T23:16:23.823Z] LOG       3. Restaurante Etíope Habesha (4.6⭐)
+[2025-10-28T23:16:23.824Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-28T23:16:23.825Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-28T23:16:23.826Z] LOG    Primary venues: 4 stops
+[2025-10-28T23:16:23.827Z] LOG    ❌ Removed "Lamucca del Carmen" - duplicate alternative
+[2025-10-28T23:16:23.828Z] LOG    ❌ Removed "Restaurante Etíope Habesha" - duplicate alternative
+[2025-10-28T23:16:23.829Z] LOG    🔧 Stop "ChIJbzIh_SkmQg0RdmTI...": 4 → 2 alternatives
+[2025-10-28T23:16:23.831Z] LOG    ❌ Removed "Lamucca del Carmen" - duplicate alternative
+[2025-10-28T23:16:23.832Z] LOG    ❌ Removed "The Matbah" - duplicate alternative
+[2025-10-28T23:16:23.833Z] LOG    ❌ Removed "Restaurante Etíope Habesha" - duplicate alternative
+[2025-10-28T23:16:23.835Z] LOG    ❌ Removed "Desh Restaurante" - duplicate alternative
+[2025-10-28T23:16:23.836Z] LOG    🔧 Stop "ChIJ5YRJ0ikmQg0R8Y1K...": 4 → 0 alternatives
+[2025-10-28T23:16:23.836Z] LOG 
+✅ Cleaning complete:
+[2025-10-28T23:16:23.837Z] LOG    Removed 0 venues already in route
+[2025-10-28T23:16:23.838Z] LOG    Removed 6 duplicate alternatives
+[2025-10-28T23:16:23.839Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-28T23:16:23.840Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-28T23:16:23.841Z] LOG    Primary venues: 4
+[2025-10-28T23:16:23.842Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-28T23:16:23.843Z] LOG    Execution time: 2348ms
+[2025-10-28T23:16:23.844Z] LOG 
+📋 Final alternatives:
+[2025-10-28T23:16:23.845Z] LOG    Museo Nacional del Prado: 4 alternatives
+[2025-10-28T23:16:23.846Z] LOG    El Retiro Park: 4 alternatives
+[2025-10-28T23:16:23.848Z] LOG    TriCiclo l Restaurante Mediterráneo Madrid: 2 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 3

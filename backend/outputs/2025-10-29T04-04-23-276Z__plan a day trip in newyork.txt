@@ -1,0 +1,84 @@
+User Prompt: plan a day trip in newyork
+
+[2025-10-29T04:04:23.280Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-29T04:04:23.281Z] LOG 📝 User prompt: "plan a day trip in newyork"
+[2025-10-29T04:04:23.282Z] LOG 📍 User location: New York, New York, United States (40.712749, -74.005994)
+[2025-10-29T04:04:23.283Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-29T04:04:23.284Z] LOG 🗺️ Location context configured: (40.712749, -74.005994)
+[2025-10-29T04:04:23.306Z] ERROR step-logger write error: {"errno":-4058,"code":"ENOENT","syscall":"open","path":"C:\\Rohan\\PlanmateV2\\PlanMate_backend_rohan\\backend\\outputs\\2025-10-29T04:04:21.401Z-1761710661401-c8j6o9.json"}
+[2025-10-29T04:04:23.309Z] ERROR step-logger write error: {"errno":-4058,"code":"ENOENT","syscall":"open","path":"C:\\Rohan\\PlanmateV2\\PlanMate_backend_rohan\\backend\\outputs\\2025-10-29T04:04:21.401Z-1761710661401-c8j6o9.json"}
+[2025-10-29T04:04:35.480Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Wed, 29 Oct 2025 04:04:35 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=12076","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"```json\n{\n  \"plan\": {\n    \"type\": \"Iconic New York City Day Trip\",\n    \"total_stops\": 5,\n    \"estimated_duration\": \"Full day (8-10 hours)\",\n    \"travel_mode\": \"transit/driving\",\n    \"theme\": \"Experience the most famous landmarks and breathtaking views of Manhattan, from its historic roots to its towering modernity.\",\n    \"scale\": \"city-wide\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"Statue of Liberty\",\n      \"description\": \"An iconic National Monument, the Statue of Liberty, opened in 1886, symbolizes freedom and democracy. Visitors can take guided tours and explore the museum while enjoying panoramic harbor and city views. [5]\",\n      \"category\": \"landmark\",\n      \"reasoning\": \"A quintessential New York experience and a must-see for any visitor, offering historical significance and stunning views from the water and island.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Visitors praise the historical significance, the ferry ride experience, and the incredible views of the city skyline. [5]\",\n      \"general_location\": \"New York Harbor (accessible from Lower Manhattan)\"\n    },\n    {\n      \"name\": \"One World Observatory\",\n      \"description\": \"Located on the 100th-102nd floors of One World Trade Center, this observatory offers breathtaking 360-degree panoramic views of New York City, along with engaging exhibits and restaurants. [2]\",\n      \"category\": \"observation deck\",\n      \"reasoning\": \"Provides a modern, high-altitude perspective of the city, complementing the historical visit to the Statue of Liberty, and is conveniently located in Lower Manhattan near the ferry terminal.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Reviewers frequently highlight the incredible panoramic views, the immersive exhibits, and the fast elevator ride as standout features. [2]\",\n      \"general_location\": \"Lower Manhattan\"\n    },\n    {\n      \"name\": \"Times Square\",\n      \"description\": \"A bustling and vibrant destination in the heart of the Theater District, Times Square is famous for its bright lights, enormous digital billboards, diverse shopping, and proximity to Broadway shows. [3]\",\n      \"category\": \"plaza\",\n      \"reasoning\": \"A vibrant and iconic New York experience, offering a sensory overload and a perfect spot for lunch in Midtown, connecting the downtown morning with the uptown afternoon.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"People love the energetic atmosphere, the dazzling lights, and the experience of being in the 'Crossroads of the World'. [3]\",\n      \"general_location\": \"Midtown Manhattan\"\n    },\n    {\n      \"name\": \"Top of The Rock\",\n      \"description\": \"An observation deck atop Rockefeller Center, featuring an ocean-liner style design, offering spectacular 360-degree views of the city skyline, including the Empire State Building and Central Park. [0]\",\n      \"category\": \"observation deck\",\n      \"reasoning\": \"Offers a different and equally stunning perspective of the city compared to One World Observatory, with excellent views of Central Park and the Empire State Building, and is centrally located.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Visitors rave about the unobstructed views, especially of Central Park and the Empire State Building, and the well-maintained observation decks. [0]\",\n      \"general_location\": \"Midtown Manhattan\"\n    },\n    {\n      \"name\": \"Central Park\",\n      \"description\": \"A sprawling urban oasis, Central Park offers pedestrian paths, vast lawns, sports fields, a zoo, a carousel, and boat rentals. It's a peaceful escape amidst the bustling city. [9]\",\n      \"category\": \"park\",\n      \"reasoning\": \"A perfect way to unwind and experience New York's green lung after a day of sightseeing, offering a contrast to the urban landscape and a chance to relax or stroll.\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Guests consistently praise the park's beauty, its vastness, and the variety of activities available, from peaceful walks to enjoying the numerous attractions within. [9]\",\n      \"general_location\": \"Uptown Manhattan\"\n    }\n  ]\n}\n```"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{"groundingChunks":[{"maps":{"uri":"https://maps.google.com/?cid=15715278180902225440","title":"Top of The Rock","placeId":"places/ChIJe7vKMf9YwokRIMYfDz7iF9o"}},{"maps":{"uri":"https://maps.google.com/?cid=3734087314244816034","title":"Rockefeller Center","placeId":"places/ChIJ9U1mz_5YwokRosza1aAk0jM"}},{"maps":{"uri":"https://maps.google.com/?cid=10368221563270370132","title":"One World Observatory","placeId":"places/ChIJTWE_0BtawokRVJNGH5RS448"}},{"maps":{"uri":"https://maps.google.com/?cid=6132018978369701678","title":"Times Square","placeId":"places/ChIJmQJIxlVYwokRLgeuocVOGVU"}},{"maps":{"uri":"https://maps.google.com/?cid=15074921902713971043","title":"Empire State Building","placeId":"places/ChIJaXQRs6lZwokRY6EFpJnhNNE"}},{"maps":{"uri":"https://maps.google.com/?cid=4667599994556318251","title":"Statue of Liberty","placeId":"places/ChIJPTacEpBQwokRKwIlDXelxkA"}},{"maps":{"uri":"https://maps.google.com/?cid=6811134064814784110","title":"SUMMIT One Vanderbilt","placeId":"places/ChIJd7I1IO5ZwokRbv7YUlgChl4"}},{"maps":{"uri":"https://maps.google.com/?cid=12464733915334096084","title":"Statue of Liberty Lookout","placeId":"places/ChIJm9tkjRJawokR1LRAe3Sh-6w"}},{"maps":{"uri":"https://maps.google.com/?cid=920619648117626991","title":"Edge NYC","placeId":"places/ChIJ3aqq5Q1ZwokRb9hLO7Gyxgw"}},{"maps":{"uri":"https://maps.google.com/?cid=13393458397880860953","title":"Central Park","placeId":"places/ChIJ4zGFAZpYwokRGUGph3Mf37k"}},{"maps":{"uri":"https://maps.google.com/?cid=4656841281507319270","title":"One World Trade Center","placeId":"places/ChIJy7cGfBlawokR5l2e93hsoEA"}},{"maps":{"uri":"https://maps.google.com/?cid=13722545436693339154","title":"The Battery","placeId":"places/ChIJraKL-BJawokREpxDmF5GcL4"}},{"maps":{"uri":"https://maps.google.com/?cid=6358908248867355793","title":"The High Line","placeId":"places/ChIJ5bQPhMdZwokRkTwKhVxhP1g"}},{"maps":{"uri":"https://maps.google.com/?cid=2677070821511218780","title":"Brooklyn Bridge","placeId":"places/ChIJK3vOQyNawokRXEa9errdJiU"}},{"maps":{"uri":"https://maps.google.com/?cid=3455167610189095390","title":"Schermerhorn Row, South Street Seaport Museum","placeId":"places/ChIJ1wNgehRawokR3qHBnKI48y8"}},{"maps":{"uri":"https://maps.google.com/?cid=2026719009605146857","title":"The Channel Gardens","placeId":"places/ChIJ5yWju_5YwokR6dgLgzNaIBw"}},{"maps":{"uri":"https://maps.google.com/?cid=14799082352807939716","title":"Tenement Museum","placeId":"places/ChIJ20bVJYdZwokRhI7esP3mYM0"}},{"maps":{"uri":"https://maps.google.com/?cid=17818961529127107058","title":"RiseNY","placeId":"places/ChIJc5zurnxZwokR8vn4ERqrSfc"}},{"maps":{"uri":"https://maps.google.com/?cid=13053065496225115926","title":"Rockefeller Park","placeId":"places/ChIJD8YUwhFawokRFu9nJOnNJbU"}},{"maps":{"uri":"https://maps.google.com/?cid=2069269868024980599","title":"Pier 26 at Hudson River Park","placeId":"places/ChIJC15HFfZZwokRd2QMRPuFtxw"}}],"webSearchQueries":["popular tourist attractions in New York City"]},"index":0}],"modelVersion":"gemini-2.5-flash","responseId":"U5IBaZXIJuyJ-sAPv73n4Ao","usageMetadata":{"promptTokenCount":503,"candidatesTokenCount":971,"totalTokenCount":3186,"cachedContentTokenCount":60,"promptTokensDetails":[{"modality":"TEXT","tokenCount":503}],"cacheTokensDetails":[{"modality":"TEXT","tokenCount":60}],"toolUsePromptTokenCount":827,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":827}],"thoughtsTokenCount":885}}
+[2025-10-29T04:04:35.483Z] LOG ✅ Gemini response received
+[2025-10-29T04:04:35.483Z] LOG 📄 Response length: 4049 characters
+[2025-10-29T04:04:35.484Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-29T04:04:35.485Z] LOG    candidate exists: true
+[2025-10-29T04:04:35.486Z] LOG    groundingMetadata exists: true
+[2025-10-29T04:04:35.486Z] LOG 📊 Grounding status: Maps=true, Search=false
+[2025-10-29T04:04:35.487Z] LOG 📍 Grounding chunks: 20 total
+[2025-10-29T04:04:35.487Z] LOG    1. [MAPS] Top of The Rock
+[2025-10-29T04:04:35.487Z] LOG       placeId: places/ChIJe7vKMf9YwokRIMYfDz7iF9o
+[2025-10-29T04:04:35.488Z] LOG       uri: https://maps.google.com/?cid=15715278180902225440
+[2025-10-29T04:04:35.488Z] LOG    2. [MAPS] Rockefeller Center
+[2025-10-29T04:04:35.488Z] LOG       placeId: places/ChIJ9U1mz_5YwokRosza1aAk0jM
+[2025-10-29T04:04:35.489Z] LOG       uri: https://maps.google.com/?cid=3734087314244816034
+[2025-10-29T04:04:35.489Z] LOG    3. [MAPS] One World Observatory
+[2025-10-29T04:04:35.490Z] LOG       placeId: places/ChIJTWE_0BtawokRVJNGH5RS448
+[2025-10-29T04:04:35.490Z] LOG       uri: https://maps.google.com/?cid=10368221563270370132
+[2025-10-29T04:04:35.490Z] LOG    4. [MAPS] Times Square
+[2025-10-29T04:04:35.490Z] LOG       placeId: places/ChIJmQJIxlVYwokRLgeuocVOGVU
+[2025-10-29T04:04:35.491Z] LOG       uri: https://maps.google.com/?cid=6132018978369701678
+[2025-10-29T04:04:35.491Z] LOG    5. [MAPS] Empire State Building
+[2025-10-29T04:04:35.491Z] LOG       placeId: places/ChIJaXQRs6lZwokRY6EFpJnhNNE
+[2025-10-29T04:04:35.492Z] LOG       uri: https://maps.google.com/?cid=15074921902713971043
+[2025-10-29T04:04:35.492Z] LOG    6. [MAPS] Statue of Liberty
+[2025-10-29T04:04:35.492Z] LOG       placeId: places/ChIJPTacEpBQwokRKwIlDXelxkA
+[2025-10-29T04:04:35.492Z] LOG       uri: https://maps.google.com/?cid=4667599994556318251
+[2025-10-29T04:04:35.493Z] LOG    7. [MAPS] SUMMIT One Vanderbilt
+[2025-10-29T04:04:35.493Z] LOG       placeId: places/ChIJd7I1IO5ZwokRbv7YUlgChl4
+[2025-10-29T04:04:35.493Z] LOG       uri: https://maps.google.com/?cid=6811134064814784110
+[2025-10-29T04:04:35.494Z] LOG    8. [MAPS] Statue of Liberty Lookout
+[2025-10-29T04:04:35.494Z] LOG       placeId: places/ChIJm9tkjRJawokR1LRAe3Sh-6w
+[2025-10-29T04:04:35.494Z] LOG       uri: https://maps.google.com/?cid=12464733915334096084
+[2025-10-29T04:04:35.495Z] LOG    9. [MAPS] Edge NYC
+[2025-10-29T04:04:35.495Z] LOG       placeId: places/ChIJ3aqq5Q1ZwokRb9hLO7Gyxgw
+[2025-10-29T04:04:35.495Z] LOG       uri: https://maps.google.com/?cid=920619648117626991
+[2025-10-29T04:04:35.496Z] LOG    10. [MAPS] Central Park
+[2025-10-29T04:04:35.496Z] LOG       placeId: places/ChIJ4zGFAZpYwokRGUGph3Mf37k
+[2025-10-29T04:04:35.497Z] LOG       uri: https://maps.google.com/?cid=13393458397880860953
+[2025-10-29T04:04:35.498Z] LOG    11. [MAPS] One World Trade Center
+[2025-10-29T04:04:35.498Z] LOG       placeId: places/ChIJy7cGfBlawokR5l2e93hsoEA
+[2025-10-29T04:04:35.499Z] LOG       uri: https://maps.google.com/?cid=4656841281507319270
+[2025-10-29T04:04:35.499Z] LOG    12. [MAPS] The Battery
+[2025-10-29T04:04:35.500Z] LOG       placeId: places/ChIJraKL-BJawokREpxDmF5GcL4
+[2025-10-29T04:04:35.500Z] LOG       uri: https://maps.google.com/?cid=13722545436693339154
+[2025-10-29T04:04:35.501Z] LOG    13. [MAPS] The High Line
+[2025-10-29T04:04:35.501Z] LOG       placeId: places/ChIJ5bQPhMdZwokRkTwKhVxhP1g
+[2025-10-29T04:04:35.502Z] LOG       uri: https://maps.google.com/?cid=6358908248867355793
+[2025-10-29T04:04:35.502Z] LOG    14. [MAPS] Brooklyn Bridge
+[2025-10-29T04:04:35.503Z] LOG       placeId: places/ChIJK3vOQyNawokRXEa9errdJiU
+[2025-10-29T04:04:35.503Z] LOG       uri: https://maps.google.com/?cid=2677070821511218780
+[2025-10-29T04:04:35.504Z] LOG    15. [MAPS] Schermerhorn Row, South Street Seaport Museum
+[2025-10-29T04:04:35.504Z] LOG       placeId: places/ChIJ1wNgehRawokR3qHBnKI48y8
+[2025-10-29T04:04:35.504Z] LOG       uri: https://maps.google.com/?cid=3455167610189095390
+[2025-10-29T04:04:35.505Z] LOG    16. [MAPS] The Channel Gardens
+[2025-10-29T04:04:35.505Z] LOG       placeId: places/ChIJ5yWju_5YwokR6dgLgzNaIBw
+[2025-10-29T04:04:35.506Z] LOG       uri: https://maps.google.com/?cid=2026719009605146857
+[2025-10-29T04:04:35.506Z] LOG    17. [MAPS] Tenement Museum
+[2025-10-29T04:04:35.506Z] LOG       placeId: places/ChIJ20bVJYdZwokRhI7esP3mYM0
+[2025-10-29T04:04:35.507Z] LOG       uri: https://maps.google.com/?cid=14799082352807939716
+[2025-10-29T04:04:35.507Z] LOG    18. [MAPS] RiseNY
+[2025-10-29T04:04:35.508Z] LOG       placeId: places/ChIJc5zurnxZwokR8vn4ERqrSfc
+[2025-10-29T04:04:35.508Z] LOG       uri: https://maps.google.com/?cid=17818961529127107058
+[2025-10-29T04:04:35.509Z] LOG    19. [MAPS] Rockefeller Park
+[2025-10-29T04:04:35.509Z] LOG       placeId: places/ChIJD8YUwhFawokRFu9nJOnNJbU
+[2025-10-29T04:04:35.510Z] LOG       uri: https://maps.google.com/?cid=13053065496225115926
+[2025-10-29T04:04:35.511Z] LOG    20. [MAPS] Pier 26 at Hudson River Park
+[2025-10-29T04:04:35.511Z] LOG       placeId: places/ChIJC15HFfZZwokRd2QMRPuFtxw
+[2025-10-29T04:04:35.512Z] LOG       uri: https://maps.google.com/?cid=2069269868024980599
+[2025-10-29T04:04:35.515Z] LOG ✨ Parsed 5 venue recommendations
+[2025-10-29T04:04:35.516Z] LOG 📋 Plan: Iconic New York City Day Trip, 5 stops
+
+--- Summary ---
+Completed

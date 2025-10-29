@@ -1,0 +1,176 @@
+User Prompt: plan a bar crawl in la
+
+[2025-10-29T03:19:06.942Z] LOG 📍 Using fallback location (no user location): Downtown LA
+[2025-10-29T03:19:06.942Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T03:19:06.943Z] LOG    1. "Perch" in "Downtown LA"
+[2025-10-29T03:19:06.943Z] LOG    2. "Seven Grand" in "Downtown LA"
+[2025-10-29T03:19:06.944Z] LOG    3. "Library Bar" in "Downtown LA"
+[2025-10-29T03:19:06.945Z] LOG    4. "EightyTwo" in "Arts District"
+[2025-10-29T03:19:06.945Z] LOG    5. "Death & Co Los Angeles" in "Arts District"
+[2025-10-29T03:19:06.946Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-29T03:19:06.947Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:19:06.948Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T03:19:06.949Z] LOG    1. Searching "Perch" in "Downtown LA"
+[2025-10-29T03:19:06.950Z] LOG 🔍 [Google Places] Text search: "Perch" in Downtown LA
+[2025-10-29T03:19:06.962Z] LOG    2. Searching "Seven Grand" in "Downtown LA"
+[2025-10-29T03:19:06.963Z] LOG 🔍 [Google Places] Text search: "Seven Grand" in Downtown LA
+[2025-10-29T03:19:06.966Z] LOG    3. Searching "Library Bar" in "Downtown LA"
+[2025-10-29T03:19:06.969Z] LOG 🔍 [Google Places] Text search: "Library Bar" in Downtown LA
+[2025-10-29T03:19:06.972Z] LOG    4. Searching "EightyTwo" in "Arts District"
+[2025-10-29T03:19:06.972Z] LOG 🔍 [Google Places] Text search: "EightyTwo" in Arts District
+[2025-10-29T03:19:06.974Z] LOG    5. Searching "Death & Co Los Angeles" in "Arts District"
+[2025-10-29T03:19:06.974Z] LOG 🔍 [Google Places] Text search: "Death & Co Los Angeles" in Arts District
+[2025-10-29T03:19:07.432Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:19:07.462Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:19:07.490Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:19:07.550Z] LOG    ✅ Death & Co Los Angeles: Got description (86 chars)
+[2025-10-29T03:19:07.551Z] LOG ✅ Found 1 places
+[2025-10-29T03:19:07.564Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:19:07.613Z] LOG    ✅ EightyTwo: Got description (100 chars)
+[2025-10-29T03:19:07.614Z] LOG ✅ Found 1 places
+[2025-10-29T03:19:07.665Z] LOG    ✅ Seven Grand: Got description (99 chars)
+[2025-10-29T03:19:07.666Z] LOG ✅ Found 1 places
+[2025-10-29T03:19:07.714Z] LOG    ✅ Perch: Got description (100 chars)
+[2025-10-29T03:19:07.715Z] LOG ✅ Found 1 places
+[2025-10-29T03:19:07.865Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:19:08.034Z] LOG    ✅ Library Bar: Got description (98 chars)
+[2025-10-29T03:19:08.035Z] LOG ✅ Found 1 places
+[2025-10-29T03:19:08.036Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1088ms
+[2025-10-29T03:19:08.037Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:19:08.037Z] LOG    Tool execution result: success=true
+[2025-10-29T03:19:08.038Z] LOG    ✅ Tool returned 5 search results
+[2025-10-29T03:19:08.038Z] LOG    ✅ Merged: Perch
+[2025-10-29T03:19:08.039Z] LOG       Places placeId: ChIJqbKnF0vGwoARREUrVhYGqTU
+[2025-10-29T03:19:08.039Z] LOG       Gemini description: Start your crawl at this glamorous rooftop spot, offering st...
+[2025-10-29T03:19:08.039Z] LOG    ✅ Merged: Seven Grand
+[2025-10-29T03:19:08.040Z] LOG       Places placeId: ChIJd-OpVLTHwoARJ3fFiZG_xD4
+[2025-10-29T03:19:08.040Z] LOG       Gemini description: Step into this stylish watering hole with a hunting lodge de...
+[2025-10-29T03:19:08.040Z] LOG    ✅ Merged: Library Bar
+[2025-10-29T03:19:08.041Z] LOG       Places placeId: ChIJJSOuYrTHwoARTMd9zqezC_Q
+[2025-10-29T03:19:08.041Z] LOG       Gemini description: Discover a cozy haven with book-lined walls and leather couc...
+[2025-10-29T03:19:08.041Z] LOG    ✅ Merged: EightyTwo
+[2025-10-29T03:19:08.041Z] LOG       Places placeId: ChIJYRxXCTnGwoARRisFMg-cGS8
+[2025-10-29T03:19:08.042Z] LOG       Gemini description: Unwind and have some fun at this arcade bar, which combines ...
+[2025-10-29T03:19:08.042Z] LOG    ✅ Merged: Death & Co Los Angeles
+[2025-10-29T03:19:08.042Z] LOG       Places placeId: ChIJsTrlusrHwoARFlL8c4sNFjo
+[2025-10-29T03:19:08.043Z] LOG       Gemini description: Conclude your evening at this renowned speakeasy-style bar, ...
+[2025-10-29T03:19:08.043Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-29T03:19:08.043Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T03:19:08.044Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-29T03:19:08.044Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:19:08.045Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T03:19:08.045Z] LOG    1. Searching "bar" in "34.0489961,-118.2514107"
+[2025-10-29T03:19:08.045Z] LOG    📍 Using nearbySearch at coordinates (34.0489961, -118.2514107)
+[2025-10-29T03:19:08.046Z] LOG 🔍 [Google Places] Nearby search at (34.0489961, -118.2514107)
+[2025-10-29T03:19:08.046Z] LOG    2. Searching "bar" in "34.04702750000001,-118.2559336"
+[2025-10-29T03:19:08.047Z] LOG    📍 Using nearbySearch at coordinates (34.04702750000001, -118.2559336)
+[2025-10-29T03:19:08.047Z] LOG 🔍 [Google Places] Nearby search at (34.04702750000001, -118.2559336)
+[2025-10-29T03:19:08.048Z] LOG    3. Searching "bar" in "34.0491361,-118.2564556"
+[2025-10-29T03:19:08.049Z] LOG    📍 Using nearbySearch at coordinates (34.0491361, -118.2564556)
+[2025-10-29T03:19:08.049Z] LOG 🔍 [Google Places] Nearby search at (34.0491361, -118.2564556)
+[2025-10-29T03:19:08.050Z] LOG    4. Searching "bar" in "34.045387,-118.237457"
+[2025-10-29T03:19:08.051Z] LOG    📍 Using nearbySearch at coordinates (34.045387, -118.237457)
+[2025-10-29T03:19:08.052Z] LOG 🔍 [Google Places] Nearby search at (34.045387, -118.237457)
+[2025-10-29T03:19:08.054Z] LOG    5. Searching "bar" in "34.0457368,-118.2357341"
+[2025-10-29T03:19:08.055Z] LOG    📍 Using nearbySearch at coordinates (34.0457368, -118.2357341)
+[2025-10-29T03:19:08.055Z] LOG 🔍 [Google Places] Nearby search at (34.0457368, -118.2357341)
+[2025-10-29T03:19:08.613Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:19:08.674Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:19:08.701Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:19:08.745Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:19:08.751Z] LOG    ✅ Mignon: Got description (97 chars)
+[2025-10-29T03:19:08.773Z] LOG    ✅ Perch: Got description (100 chars)
+[2025-10-29T03:19:08.815Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-29T03:19:08.819Z] LOG    ✅ Perch: Got description (100 chars)
+[2025-10-29T03:19:08.823Z] LOG    ✅ Golden Gopher: Got description (95 chars)
+[2025-10-29T03:19:08.825Z] LOG    ✅ Far Bar: Got description (88 chars)
+[2025-10-29T03:19:08.834Z] LOG    ✅ The Mermaid: Got description (91 chars)
+[2025-10-29T03:19:08.839Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:19:08.854Z] LOG    ✅ Library Bar: Got description (98 chars)
+[2025-10-29T03:19:08.859Z] LOG    ✅ The Escondite: Got description (92 chars)
+[2025-10-29T03:19:08.882Z] LOG    ✅ EightyTwo: Got description (100 chars)
+[2025-10-29T03:19:08.887Z] LOG    ✅ Golden Gopher: Got description (95 chars)
+[2025-10-29T03:19:08.889Z] LOG    ⚠️  The Slipper Clutch: No editorial summary available
+[2025-10-29T03:19:08.895Z] LOG    ✅ Library Bar: Got description (98 chars)
+[2025-10-29T03:19:08.901Z] LOG    ✅ Perch: Got description (100 chars)
+[2025-10-29T03:19:08.903Z] LOG    ✅ The Escondite: Got description (92 chars)
+[2025-10-29T03:19:08.913Z] LOG    ✅ Death & Co Los Angeles: Got description (86 chars)
+[2025-10-29T03:19:08.924Z] LOG    ⚠️  The Slipper Clutch: No editorial summary available
+[2025-10-29T03:19:08.933Z] LOG    ✅ Library Bar: Got description (98 chars)
+[2025-10-29T03:19:08.943Z] LOG    ✅ Shoo Shoo Baby: Got description (79 chars)
+[2025-10-29T03:19:08.947Z] LOG    ✅ Golden Gopher: Got description (95 chars)
+[2025-10-29T03:19:08.948Z] LOG    ✅ Wolf & Crane Bar: Got description (86 chars)
+[2025-10-29T03:19:08.949Z] LOG    ✅ Death & Co Los Angeles: Got description (86 chars)
+[2025-10-29T03:19:08.959Z] LOG    ✅ The Escondite: Got description (92 chars)
+[2025-10-29T03:19:08.973Z] LOG    ✅ Golden Gopher: Got description (95 chars)
+[2025-10-29T03:19:08.984Z] LOG    ✅ Tom's Watch Bar - Los Angeles: Got description (88 chars)
+[2025-10-29T03:19:08.985Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 941ms
+[2025-10-29T03:19:08.986Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:19:08.987Z] LOG    ✅ Venue 1 (Perch): 4 alternatives
+[2025-10-29T03:19:08.987Z] LOG       1. Library Bar (4.3⭐)
+[2025-10-29T03:19:08.988Z] LOG       2. Tom's Watch Bar - Los Angeles (4.3⭐)
+[2025-10-29T03:19:08.989Z] LOG       3. Golden Gopher (4.4⭐)
+[2025-10-29T03:19:08.989Z] LOG    ✅ Venue 2 (Seven Grand): 4 alternatives
+[2025-10-29T03:19:08.990Z] LOG       1. Yard House (4.4⭐)
+[2025-10-29T03:19:08.990Z] LOG       2. Library Bar (4.3⭐)
+[2025-10-29T03:19:08.990Z] LOG       3. The Escondite (4.5⭐)
+[2025-10-29T03:19:08.991Z] LOG    ✅ Venue 3 (Library Bar): 4 alternatives
+[2025-10-29T03:19:08.991Z] LOG       1. Perch (4.4⭐)
+[2025-10-29T03:19:08.991Z] LOG       2. Golden Gopher (4.4⭐)
+[2025-10-29T03:19:08.992Z] LOG       3. The Escondite (4.5⭐)
+[2025-10-29T03:19:08.992Z] LOG    ✅ Venue 4 (EightyTwo): 4 alternatives
+[2025-10-29T03:19:08.992Z] LOG       1. Mignon (4.7⭐)
+[2025-10-29T03:19:08.993Z] LOG       2. Golden Gopher (4.4⭐)
+[2025-10-29T03:19:08.993Z] LOG       3. Far Bar (4.4⭐)
+[2025-10-29T03:19:08.994Z] LOG    ✅ Venue 5 (Death & Co Los Angeles): 4 alternatives
+[2025-10-29T03:19:08.994Z] LOG       1. Perch (4.4⭐)
+[2025-10-29T03:19:08.994Z] LOG       2. EightyTwo (4.5⭐)
+[2025-10-29T03:19:08.995Z] LOG       3. The Escondite (4.5⭐)
+[2025-10-29T03:19:08.995Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-29T03:19:08.996Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T03:19:08.996Z] LOG    Primary venues: 5 stops
+[2025-10-29T03:19:08.997Z] LOG    ❌ Removed "Library Bar" - already in primary route
+[2025-10-29T03:19:08.997Z] LOG    ❌ Removed "Death & Co Los Angeles" - already in primary route
+[2025-10-29T03:19:08.998Z] LOG    🔧 Stop "ChIJqbKnF0vGwoARREUr...": 4 → 2 alternatives
+[2025-10-29T03:19:08.998Z] LOG    ❌ Removed "Library Bar" - already in primary route
+[2025-10-29T03:19:08.998Z] LOG    ❌ Removed "Golden Gopher" - duplicate alternative
+[2025-10-29T03:19:08.999Z] LOG    🔧 Stop "ChIJd-OpVLTHwoARJ3fF...": 4 → 2 alternatives
+[2025-10-29T03:19:08.999Z] LOG    ❌ Removed "Perch" - already in primary route
+[2025-10-29T03:19:08.999Z] LOG    ❌ Removed "Golden Gopher" - duplicate alternative
+[2025-10-29T03:19:09.000Z] LOG    ❌ Removed "The Escondite" - duplicate alternative
+[2025-10-29T03:19:09.000Z] LOG    🔧 Stop "ChIJJSOuYrTHwoARTMd9...": 4 → 1 alternatives
+[2025-10-29T03:19:09.000Z] LOG    ❌ Removed "Golden Gopher" - duplicate alternative
+[2025-10-29T03:19:09.001Z] LOG    🔧 Stop "ChIJYRxXCTnGwoARRisF...": 4 → 3 alternatives
+[2025-10-29T03:19:09.001Z] LOG    ❌ Removed "Perch" - already in primary route
+[2025-10-29T03:19:09.001Z] LOG    ❌ Removed "EightyTwo" - already in primary route
+[2025-10-29T03:19:09.002Z] LOG    ❌ Removed "The Escondite" - duplicate alternative
+[2025-10-29T03:19:09.002Z] LOG    🔧 Stop "ChIJsTrlusrHwoARFlL8...": 4 → 1 alternatives
+[2025-10-29T03:19:09.002Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T03:19:09.003Z] LOG    Removed 6 venues already in route
+[2025-10-29T03:19:09.003Z] LOG    Removed 5 duplicate alternatives
+[2025-10-29T03:19:09.003Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-29T03:19:09.004Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T03:19:09.004Z] LOG    Primary venues: 5
+[2025-10-29T03:19:09.005Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-29T03:19:09.005Z] LOG    Execution time: 2065ms
+[2025-10-29T03:19:09.005Z] LOG 
+📋 Final alternatives:
+[2025-10-29T03:19:09.006Z] LOG    Perch: 2 alternatives
+[2025-10-29T03:19:09.007Z] LOG    Seven Grand: 2 alternatives
+[2025-10-29T03:19:09.007Z] LOG    Library Bar: 1 alternatives
+[2025-10-29T03:19:09.008Z] LOG    EightyTwo: 3 alternatives
+[2025-10-29T03:19:09.008Z] LOG    Death & Co Los Angeles: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

@@ -1,0 +1,208 @@
+User Prompt: plan a day near me
+
+[2025-10-28T23:14:05.498Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-28T23:14:05.502Z] LOG 📝 User prompt: "plan a day near me"
+[2025-10-28T23:14:05.503Z] LOG 📍 User location: Current location (42.33983710187155, -71.09028520688578)
+[2025-10-28T23:14:05.505Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-28T23:14:05.507Z] LOG 🗺️ Location context configured: (42.33983710187155, -71.09028520688578)
+[2025-10-28T23:14:43.276Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Tue, 28 Oct 2025 23:14:41 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=37528","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"```json\n{\n  \"plan\": {\n    \"type_of_experience\": \"Boston Seaport Cultural & Culinary Walk\",\n    \"number_of_stops\": 5,\n    \"estimated_duration\": \"6-8 hours\",\n    \"description\": \"Spend a delightful day exploring Boston's vibrant Seaport and Fort Point Channel areas, combining modern art, historical immersion, and fantastic culinary experiences, all within easy walking distance.\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"Tatte Bakery & Cafe\",\n      \"category\": \"Cafe\",\n      \"description\": \"Start your day at this beloved, cozy, and inviting cafe, renowned for its elegant comfort food, artisanal housemade bread, and delectable pastries. It offers a warm atmosphere perfect for fueling up before your adventures. Reviewers consistently praise the quality of their baked goods and coffee. [8]\",\n      \"why_picked\": \"An excellent choice for breakfast or a morning coffee due to its high ratings, inviting atmosphere, and diverse menu. Its location in the Seaport makes it a perfect starting point.\",\n      \"rating_and_review_insights\": \"Rated 4.5 stars with 1305 reviews. Patrons frequently highlight the delicious pastries, great coffee, and pleasant ambiance. [8]\",\n      \"neighborhood_area\": \"Seaport District\"\n    },\n    {\n      \"name\": \"Institute of Contemporary Art\",\n      \"category\": \"Museum\",\n      \"description\": \"Immerse yourself in contemporary art at this striking museum and performance space. Its glass-filled walls offer stunning views overlooking Boston Harbor, complementing a dynamic collection of rotating exhibits and permanent pieces. Visitors often highlight the beautiful Seaport location and the engaging nature of the exhibits. [0]\",\n      \"why_picked\": \"A prominent cultural landmark offering a modern art experience with breathtaking harbor views, easily walkable from Tatte. It provides a unique contrast to Boston's historical sites.\",\n      \"rating_and_review_insights\": \"Rated 4.4 stars with 4316 reviews. Praised for its architecture, scenic location, and engaging contemporary art exhibits, though some note visits typically last 2-3 hours. [0]\",\n      \"neighborhood_area\": \"Seaport District\"\n    },\n    {\n      \"name\": \"Limani Grille Seaport\",\n      \"category\": \"Seafood Restaurant\",\n      \"description\": \"Enjoy a modern Greek seafood experience at this stylish restaurant. Limani Grille brings the vibrant flavors of the Mediterranean to Boston's waterfront, offering fresh, well-prepared seafood dishes in a sophisticated yet casual setting. Outdoor seating is available. [18]\",\n      \"why_picked\": \"Offers a highly-rated and unique seafood dining experience perfectly suited for a waterfront lunch, and its exceptional proximity to the ICA ensures a seamless transition.\",\n      \"rating_and_review_insights\": \"Rated 4.4 stars with 419 reviews. Guests appreciate the modern Greek seafood focus and the pleasant dining atmosphere. [18]\",\n      \"neighborhood_area\": \"Seaport District\"\n    },\n    {\n      \"name\": \"Boston Tea Party Ships & Museum\",\n      \"category\": \"Museum\",\n      \"description\": \"Step back in time at this unique floating history museum. It transports visitors to 1773 with live reenactments, multimedia exhibits, and hands-on activities, making for an educational and exciting experience for all ages. Your visit concludes with a delightful tea sampling room. [0]\",\n      \"why_picked\": \"Provides a significant historical and interactive contrast to the modern art museum, offering an engaging afternoon activity that's a short, scenic walk over the Fort Point Channel from Limani Grille.\",\n      \"rating_and_review_insights\": \"Rated 4.6 stars with 8943 reviews. Reviewers consistently describe it as an educational and exciting experience suitable for all ages. [0]\",\n      \"neighborhood_area\": \"Fort Point Channel\"\n    },\n    {\n      \"name\": \"Lucky's Lounge\",\n      \"category\": \"Bar\",\n      \"description\": \"Cap off your day at Lucky's Lounge, a Sinatra-themed spot with a cool, retro vibe. This friendly and welcoming lounge is known for its comforting American food, classic cocktails, and often features live music, making it a lively place to unwind. [12]\",\n      \"why_picked\": \"Offers a relaxed yet unique atmosphere for evening drinks, located conveniently close to the Boston Tea Party Ships & Museum, providing a perfect and engaging end to your day.\",\n      \"rating_and_review_insights\": \"Rated 4.3 stars with 1336 reviews. Patrons enjoy the distinctive theme, comforting food, and well-crafted cocktails. [12]\",\n      \"neighborhood_area\": \"Fort Point Channel\"\n    }\n  ]\n}\n```"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{"groundingChunks":[{"maps":{"uri":"https://maps.google.com/?cid=16585852915432361728","title":"Little Wolf Coffee","placeId":"places/ChIJEYjOWABx44kRAA852VnJLOY"}},{"maps":{"uri":"https://maps.google.com/?cid=5403750816920016481","title":"Pressed Cafe","placeId":"places/ChIJJ2_DUfh744kRYZY-2bz6_Uo"}},{"maps":{"uri":"https://maps.google.com/?cid=17985088816274205518","title":"Sip Café","placeId":"places/ChIJafiMGoRw44kRTuvfQ_3el_k"}},{"maps":{"uri":"https://maps.google.com/?cid=7985296272106201485","title":"Reign Drink Lab","placeId":"places/ChIJLWnxc6V744kRjSEkzaZ40W4"}},{"maps":{"uri":"https://maps.google.com/?cid=6088508665610660404","title":"Tradesman Coffee Shop and Lounge","placeId":"places/ChIJzc_WY_Zx44kRNGqcgV-6flQ"}},{"maps":{"uri":"https://maps.google.com/?cid=6151752287156004724","title":"Dandelion Coffee & Provisions","placeId":"places/ChIJESML7Vlx44kRdGchnhxqX1U"}},{"maps":{"uri":"https://maps.google.com/?cid=18209483963321159451","title":"Cafe Darq","placeId":"places/ChIJU_TNczx744kRGw_uyC8Vtfw"}},{"maps":{"uri":"https://maps.google.com/?cid=18432633210086469260","title":"Phin Coffee House","placeId":"places/ChIJgdwyPgxx44kRjK5Fij7ezf8"}},{"maps":{"uri":"https://maps.google.com/?cid=8373444476162464348","title":"Tatte Bakery & Cafe","placeId":"places/ChIJEz2X2Hhw44kRXNoe_GJzNHQ"}},{"maps":{"uri":"https://maps.google.com/?cid=5426409139806345463","title":"Gracenote Coffee Boston","placeId":"places/ChIJK3NGjnh644kR9xgXwFx6Tks"}},{"maps":{"uri":"https://maps.google.com/?cid=15089487120260138610","title":"Esthetic Bean Coffee Shop","placeId":"places/ChIJr-GZKK9744kRcgbwnZagaNE"}},{"maps":{"uri":"https://maps.google.com/?cid=7862138353040887029","title":"Cocorico","placeId":"places/ChIJg7xrCQJ744kR9Qz6Oy3tG20"}},{"maps":{"uri":"https://maps.google.com/?cid=17114643290769588146","title":"Koko Coffee","placeId":"places/ChIJga4om2lx44kRsv_XS2Vtg-0"}},{"maps":{"uri":"https://maps.google.com/?cid=7514077082126073990","title":"Chinatown - Jaho Coffee Roaster & Wine Bar","placeId":"places/ChIJRzjLv3d644kRhkAHf0tdR2g"}},{"maps":{"uri":"https://maps.google.com/?cid=6363877406812065763","title":"Gracenote Coffee","placeId":"places/ChIJl-EeWeVx44kR488qw8gIUVg"}},{"maps":{"uri":"https://maps.google.com/?cid=10104845543385431314","title":"Seaport Cafe","placeId":"places/ChIJYf09g3hw44kREn2t43ufO4w"}},{"maps":{"uri":"https://maps.google.com/?cid=12622240087094555642","title":"Blank Street Coffee","placeId":"places/ChIJEXVMQ_Z744kR-nP31Hs0K68"}},{"maps":{"uri":"https://maps.google.com/?cid=13566218491661571532","title":"Lily’s COFFEE & CAFÉ","placeId":"places/ChIJFZ_v-Gtx44kRzNXSXNfjRLw"}},{"maps":{"uri":"https://maps.google.com/?cid=13244207426762816592","title":"Starbucks","placeId":"places/ChIJSSBB34F644kRULzJ23vgzLc"}},{"maps":{"uri":"https://maps.google.com/?cid=1018598441950475946","title":"Blue Bottle Coffee","placeId":"places/ChIJIRhOEjJx44kRqnY53eLJIg4"}},{"maps":{"uri":"https://maps.google.com/?cid=8840853673009337146","title":"Institute of Contemporary Art","placeId":"places/ChIJxTCEOnlw44kROtPtIpMFsXo","placeAnswerSources":{"reviewSnippets":[{"reviewId":"places/ChIJxTCEOnlw44kROtPtIpMFsXo/reviews/ChZDSUhNMG9nS0VJQ0FnSUMxOW9feEJBEAE","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s109617749075232279538!2s0x0:0x7ab1059322edd33a?hl=en-US","title":"User review of Institute of Contemporary Art"},{"reviewId":"places/ChIJxTCEOnlw44kROtPtIpMFsXo/reviews/ChdDSUhNMG9nS0VJQ0FnSURHNXItMXNRRRAB","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s100034995420307656338!2s0x0:0x7ab1059322edd33a?hl=en-US","title":"User review of Institute of Contemporary Art"},{"reviewId":"places/ChIJxTCEOnlw44kROtPtIpMFsXo/reviews/ChZDSUhNMG9nS0VJQ0FnSUNadUxpVmJBEAE","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s105099615459929644995!2s0x0:0x7ab1059322edd33a?hl=en-US","title":"User review of Institute of Contemporary Art"},{"reviewId":"places/ChIJxTCEOnlw44kROtPtIpMFsXo/reviews/ChZDSUhNMG9nS0VJQ0FnSUR1LXBTcEJREAE","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s111717136362340109239!2s0x0:0x7ab1059322edd33a?hl=en-US","title":"User review of Institute of Contemporary Art"},{"reviewId":"places/ChIJxTCEOnlw44kROtPtIpMFsXo/reviews/ChdDSUhNMG9nS0VJQ0FnSUNPdFlPTHhnRRAB","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s116963503254418140518!2s0x0:0x7ab1059322edd33a?hl=en-US","title":"User review of Institute of Contemporary Art"},{"reviewId":"places/ChIJxTCEOnlw44kROtPtIpMFsXo/reviews/ChdDSUhNMG9nS0VJQ0FnSURwdmF6ZzNnRRAB","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s105464885127429615466!2s0x0:0x7ab1059322edd33a?hl=en-US","title":"User review of Institute of Contemporary Art"},{"reviewId":"places/ChIJxTCEOnlw44kROtPtIpMFsXo/reviews/ChdDSUhNMG9nS0VNNzdxdnp4b3JIRG13RRAB","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s101553212565660904930!2s0x0:0x7ab1059322edd33a?hl=en-US","title":"User review of Institute of Contemporary Art"},{"reviewId":"places/ChIJxTCEOnlw44kROtPtIpMFsXo/reviews/ChdDSUhNMG9nS0VJQ0FnSUNtaW9UUTRBRRAB","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s107606765701320949455!2s0x0:0x7ab1059322edd33a?hl=en-US","title":"User review of Institute of Contemporary Art"}]}}},{"maps":{"uri":"https://maps.google.com/?cid=2951276788102859512","title":"Boston Sail Loft","placeId":"places/ChIJKz7ENohw44kR-Aq6LJoK9Sg"}},{"maps":{"uri":"https://maps.google.com/?cid=7117694564751100155","title":"Atlantic Fish Company","placeId":"places/ChIJ8XZQ9A5644kR-8i3134hx2I"}},{"maps":{"uri":"https://maps.google.com/?cid=593482518590695320","title":"Shaking Crab (Boston Common)","placeId":"places/ChIJxwFranZ644kRmKcAzTR5PAg"}},{"maps":{"uri":"https://maps.google.com/?cid=16021313810345493103","title":"The Oceanaire Seafood Room","placeId":"places/ChIJUxHf-oRw44kRbwK0pAYkV94"}},{"maps":{"uri":"https://maps.google.com/?cid=1924924654900321656","title":"Legal Sea Foods - Long Wharf","placeId":"places/ChIJjbhQv4dw44kReJ25Ysa0tho"}},{"maps":{"uri":"https://maps.google.com/?cid=10826618074696776435","title":"Ocean Prime","placeId":"places/ChIJi0PBfoJ644kR8_of7cbfP5Y"}},{"maps":{"uri":"https://maps.google.com/?cid=5410177653312638998","title":"The Daily Catch Waterfront","placeId":"places/ChIJjWt88ipx44kRFtB0TenPFEs"}},{"maps":{"uri":"https://maps.google.com/?cid=2939844587404906291","title":"The Barking Crab","placeId":"places/ChIJ2_smOn5w44kRM88fhxNtzCg"}},{"maps":{"uri":"https://maps.google.com/?cid=11373734107412080721","title":"The Banks Seafood and Steak","placeId":"places/ChIJgzmnaXZ744kRUagK-uie150"}},{"maps":{"uri":"https://maps.google.com/?cid=4620113031714205602","title":"Legal Sea Foods - Harborside","placeId":"places/ChIJg_AEp4J644kRom967VLwHUA"}},{"maps":{"uri":"https://maps.google.com/?cid=11935355669967721300","title":"The Daily Catch North End","placeId":"places/ChIJh5s-F4lw44kRVNNe4L7moqU"}},{"maps":{"uri":"https://maps.google.com/?cid=1850195991803436904","title":"Saltie Girl","placeId":"places/ChIJX531iwt644kRaJ9LqHM3rRk"}},{"maps":{"uri":"https://maps.google.com/?cid=14293922711976721448","title":"Chart House","placeId":"places/ChIJ6QwfVH1w44kRKLxCXvk2XsY"}},{"maps":{"uri":"https://maps.google.com/?cid=13328531444327232542","title":"Row 34 - Seaport | Boston","placeId":"places/ChIJ95EjMYB644kRHrS_JLt0-Lg"}},{"maps":{"uri":"https://maps.google.com/?cid=12327939283130174715","title":"75 on Liberty Wharf","placeId":"places/ChIJBacLCHhw44kR-8yON3ajFas"}},{"maps":{"uri":"https://maps.google.com/?cid=5077431844965051393","title":"Legal Sea Foods - Downtown Crossing","placeId":"places/ChIJ0-JnSZ1w44kRAexlklypdkY"}},{"maps":{"uri":"https://maps.google.com/?cid=4355678635826831015","title":"Ostra","placeId":"places/ChIJn5yKXp5w44kRp143VKR6cjw"}},{"maps":{"uri":"https://maps.google.com/?cid=13899913154008836721","title":"James Hook & Co","placeId":"places/ChIJO_bkQH5w44kRcep5YV5p5sA"}},{"maps":{"uri":"https://maps.google.com/?cid=3481496391458458115","title":"Limani Grille Seaport","placeId":"places/ChIJ5ZLxJK1x44kRA4qvs4XCUDA"}},{"maps":{"uri":"https://maps.google.com/?cid=12403581752179498710","title":"Bootleg Special Kitchen & Bar","placeId":"places/ChIJVVUV0nN644kR1h4t-eJfIqw"}},{"maps":{"uri":"https://maps.google.com/?cid=15127163986368509107","title":"Boston Tea Party Ships & Museum","placeId":"places/ChIJ4bwEPIBw44kRs7STmn977tE","placeAnswerSources":{"reviewSnippets":[{"reviewId":"places/ChIJ4bwEPIBw44kRs7STmn977tE/reviews/ChdDSUhNMG9nS0VJQ0FnSURmal9EcHlRRRAB","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s101635664565876027147!2s0x0:0xd1ee7b7f9a93b4b3?hl=en-US","title":"User review of Boston Tea Party Ships & Museum"},{"reviewId":"places/ChIJ4bwEPIBw44kRs7STmn977tE/reviews/ChdDSUhNMG9nS0VJQ0FnSUN6eDd6VjNBRRAB","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s102167902314390664830!2s0x0:0xd1ee7b7f9a93b4b3?hl=en-US","title":"User review of Boston Tea Party Ships & Museum"},{"reviewId":"places/ChIJ4bwEPIBw44kRs7STmn977tE/reviews/ChZDSUhNMG9nS0VMU2J4LUxWcmVUS1FREAE","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s101662766290198554004!2s0x0:0xd1ee7b7f9a93b4b3?hl=en-US","title":"User review of Boston Tea Party Ships & Museum"},{"reviewId":"places/ChIJ4bwEPIBw44kRs7STmn977tE/reviews/ChZDSUhNMG9nS0VJQ0FnSUN6OXNlUmNBEAE","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s115686598370556062056!2s0x0:0xd1ee7b7f9a93b4b3?hl=en-US","title":"User review of Boston Tea Party Ships & Museum"},{"reviewId":"places/ChIJ4bwEPIBw44kRs7STmn977tE/reviews/ChdDSUhNMG9nS0VJQ0FnSUN6MG8yVDRBRRAB","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s111586453479628303412!2s0x0:0xd1ee7b7f9a93b4b3?hl=en-US","title":"User review of Boston Tea Party Ships & Museum"},{"reviewId":"places/ChIJ4bwEPIBw44kRs7STmn977tE/reviews/ChZDSUhNMG9nS0VJQ0FnSUNKcDdQZlZREAE","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s108883114943648045742!2s0x0:0xd1ee7b7f9a93b4b3?hl=en-US","title":"User review of Boston Tea Party Ships & Museum"},{"reviewId":"places/ChIJ4bwEPIBw44kRs7STmn977tE/reviews/ChZDSUhNMG9nS0VJQ0FnTUNJX3JfT0pnEAE","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s110464567136872830302!2s0x0:0xd1ee7b7f9a93b4b3?hl=en-US","title":"User review of Boston Tea Party Ships & Museum"},{"reviewId":"places/ChIJ4bwEPIBw44kRs7STmn977tE/reviews/ChdDSUhNMG9nS0VJQ0FnSUNMLUlPd3V3RRAB","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s110585564181629183846!2s0x0:0xd1ee7b7f9a93b4b3?hl=en-US","title":"User review of Boston Tea Party Ships & Museum"},{"reviewId":"places/ChIJ4bwEPIBw44kRs7STmn977tE/reviews/ChdDSUhNMG9nS0VJQ0FnSURqdDlpQ3Z3RRAB","googleMapsUri":"https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s115597566189386832450!2s0x0:0xd1ee7b7f9a93b4b3?hl=en-US","title":"User review of Boston Tea Party Ships & Museum"}]}}},{"maps":{"uri":"https://maps.google.com/?cid=4008368056276276856","title":"BLIND DUCK","placeId":"places/ChIJs3j9ZA9744kReNZei4KVoDc"}},{"maps":{"uri":"https://maps.google.com/?cid=8578484730965923852","title":"Chemist Cocktail Bar","placeId":"places/ChIJZxpSnZdx44kRDBhWfGnmDHc"}},{"maps":{"uri":"https://maps.google.com/?cid=18432004144142934869","title":"Moon Bar","placeId":"places/ChIJXZsSDcB744kRVeMqthyiy_8"}},{"maps":{"uri":"https://maps.google.com/?cid=14592836257577401447","title":"OFFSUIT","placeId":"places/ChIJTWBMW9F744kRZ3xXlkIrhMo"}},{"maps":{"uri":"https://maps.google.com/?cid=2092747273372638354","title":"89 Charles","placeId":"places/ChIJ7XjjRwBx44kRkhwLqo7uCh0"}},{"maps":{"uri":"https://maps.google.com/?cid=9041332201681142978","title":"F1 Arcade Boston","placeId":"places/ChIJEb5_VTBx44kRwkSBAbxDeX0"}},{"maps":{"uri":"https://maps.google.com/?cid=9601349263883013894","title":"Biddy Early's","placeId":"places/ChIJVa7vEIFw44kRBo80DknYPoU"}},{"maps":{"uri":"https://maps.google.com/?cid=11732850915742383274","title":"Wink and Nod","placeId":"places/ChIJ07HSKsF744kRqvxwm75106I"}},{"maps":{"uri":"https://maps.google.com/?cid=1987638162333938036","title":"The Tam","placeId":"places/ChIJgRPEVHZ644kRdLHsr2CClRs"}},{"maps":{"uri":"https://maps.google.com/?cid=1862276779397884702","title":"Carrie Nation Cocktail Club","placeId":"places/ChIJXwQss4Rw44kRHit4Nd0i2Bk"}},{"maps":{"uri":"https://maps.google.com/?cid=7593245059011354758","title":"The Greatest Bar","placeId":"places/ChIJLSWl1I9w44kRhqDcgiagYGk"}},{"maps":{"uri":"https://maps.google.com/?cid=6768651709629147178","title":"LONG BAR & TERRACE","placeId":"places/ChIJ_UL5Pbh744kRKijJON4U710"}},{"maps":{"uri":"https://maps.google.com/?cid=11850278779448492423","title":"Lucky's Lounge","placeId":"places/ChIJMU1-F4B644kRh4FgssOldKQ"}},{"maps":{"uri":"https://maps.google.com/?cid=8197512238116036849","title":"The Fed at The Langham, Boston","placeId":"places/ChIJCTSH4nxx44kR8eDSwvJpw3E"}},{"maps":{"uri":"https://maps.google.com/?cid=17607853391259477779","title":"Rooftop at The Envoy","placeId":"places/ChIJJ4A28n5w44kRE6ctc16pW_Q"}},{"maps":{"uri":"https://maps.google.com/?cid=884365064002730255","title":"Roxanne's","placeId":"places/ChIJx3TAyt9x44kRD_mlE1flRQw"}},{"maps":{"uri":"https://maps.google.com/?cid=12695821913689746936","title":"Hecate","placeId":"places/ChIJzxisPch744kR-O0Y4cOeMLA"}},{"maps":{"uri":"https://maps.google.com/?cid=13704511825477624642","title":"Cheers","placeId":"places/ChIJB939tp9w44kRQuO7SeU0ML4"}},{"maps":{"uri":"https://maps.google.com/?cid=6115543958518901069","title":"Daiquiris & Daisies","placeId":"places/ChIJWQfE8Ddx44kRTSnOJ9TG3lQ"}},{"maps":{"uri":"https://maps.google.com/?cid=5691132589811207117","title":"1928 Beacon Hill","placeId":"places/ChIJqU8rp9tx44kRzYtYAfD2-k4"}}],"webSearchQueries":["coffee shops near Seaport Boston","Institute of Contemporary Art Boston","seafood restaurants near Institute of Contemporary Art Boston","Boston Tea Party Ships & Museum","bars near Boston Tea Party Ships & Museum"]},"index":0}],"modelVersion":"gemini-2.5-flash","responseId":"YU4BacTPJ7fL_uMP08us8AQ","usageMetadata":{"promptTokenCount":199,"candidatesTokenCount":1139,"totalTokenCount":11173,"cachedContentTokenCount":140,"promptTokensDetails":[{"modality":"TEXT","tokenCount":199}],"cacheTokensDetails":[{"modality":"TEXT","tokenCount":140}],"toolUsePromptTokenCount":6956,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":6956}],"thoughtsTokenCount":2879}}
+[2025-10-28T23:14:43.279Z] LOG ✅ Gemini response received
+[2025-10-28T23:14:43.280Z] LOG 📄 Response length: 4535 characters
+[2025-10-28T23:14:43.281Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-28T23:14:43.282Z] LOG    candidate exists: true
+[2025-10-28T23:14:43.282Z] LOG    groundingMetadata exists: true
+[2025-10-28T23:14:43.283Z] LOG 📊 Grounding status: Maps=true, Search=false
+[2025-10-28T23:14:43.284Z] LOG 📍 Grounding chunks: 62 total
+[2025-10-28T23:14:43.284Z] LOG    1. [MAPS] Little Wolf Coffee
+[2025-10-28T23:14:43.285Z] LOG       placeId: places/ChIJEYjOWABx44kRAA852VnJLOY
+[2025-10-28T23:14:43.286Z] LOG       uri: https://maps.google.com/?cid=16585852915432361728
+[2025-10-28T23:14:43.287Z] LOG    2. [MAPS] Pressed Cafe
+[2025-10-28T23:14:43.288Z] LOG       placeId: places/ChIJJ2_DUfh744kRYZY-2bz6_Uo
+[2025-10-28T23:14:43.289Z] LOG       uri: https://maps.google.com/?cid=5403750816920016481
+[2025-10-28T23:14:43.290Z] LOG    3. [MAPS] Sip Café
+[2025-10-28T23:14:43.291Z] LOG       placeId: places/ChIJafiMGoRw44kRTuvfQ_3el_k
+[2025-10-28T23:14:43.293Z] LOG       uri: https://maps.google.com/?cid=17985088816274205518
+[2025-10-28T23:14:43.294Z] LOG    4. [MAPS] Reign Drink Lab
+[2025-10-28T23:14:43.295Z] LOG       placeId: places/ChIJLWnxc6V744kRjSEkzaZ40W4
+[2025-10-28T23:14:43.296Z] LOG       uri: https://maps.google.com/?cid=7985296272106201485
+[2025-10-28T23:14:43.298Z] LOG    5. [MAPS] Tradesman Coffee Shop and Lounge
+[2025-10-28T23:14:43.299Z] LOG       placeId: places/ChIJzc_WY_Zx44kRNGqcgV-6flQ
+[2025-10-28T23:14:43.299Z] LOG       uri: https://maps.google.com/?cid=6088508665610660404
+[2025-10-28T23:14:43.300Z] LOG    6. [MAPS] Dandelion Coffee & Provisions
+[2025-10-28T23:14:43.301Z] LOG       placeId: places/ChIJESML7Vlx44kRdGchnhxqX1U
+[2025-10-28T23:14:43.302Z] LOG       uri: https://maps.google.com/?cid=6151752287156004724
+[2025-10-28T23:14:43.304Z] LOG    7. [MAPS] Cafe Darq
+[2025-10-28T23:14:43.305Z] LOG       placeId: places/ChIJU_TNczx744kRGw_uyC8Vtfw
+[2025-10-28T23:14:43.306Z] LOG       uri: https://maps.google.com/?cid=18209483963321159451
+[2025-10-28T23:14:43.307Z] LOG    8. [MAPS] Phin Coffee House
+[2025-10-28T23:14:43.308Z] LOG       placeId: places/ChIJgdwyPgxx44kRjK5Fij7ezf8
+[2025-10-28T23:14:43.309Z] LOG       uri: https://maps.google.com/?cid=18432633210086469260
+[2025-10-28T23:14:43.310Z] LOG    9. [MAPS] Tatte Bakery & Cafe
+[2025-10-28T23:14:43.311Z] LOG       placeId: places/ChIJEz2X2Hhw44kRXNoe_GJzNHQ
+[2025-10-28T23:14:43.313Z] LOG       uri: https://maps.google.com/?cid=8373444476162464348
+[2025-10-28T23:14:43.314Z] LOG    10. [MAPS] Gracenote Coffee Boston
+[2025-10-28T23:14:43.315Z] LOG       placeId: places/ChIJK3NGjnh644kR9xgXwFx6Tks
+[2025-10-28T23:14:43.316Z] LOG       uri: https://maps.google.com/?cid=5426409139806345463
+[2025-10-28T23:14:43.317Z] LOG    11. [MAPS] Esthetic Bean Coffee Shop
+[2025-10-28T23:14:43.318Z] LOG       placeId: places/ChIJr-GZKK9744kRcgbwnZagaNE
+[2025-10-28T23:14:43.319Z] LOG       uri: https://maps.google.com/?cid=15089487120260138610
+[2025-10-28T23:14:43.320Z] LOG    12. [MAPS] Cocorico
+[2025-10-28T23:14:43.321Z] LOG       placeId: places/ChIJg7xrCQJ744kR9Qz6Oy3tG20
+[2025-10-28T23:14:43.322Z] LOG       uri: https://maps.google.com/?cid=7862138353040887029
+[2025-10-28T23:14:43.323Z] LOG    13. [MAPS] Koko Coffee
+[2025-10-28T23:14:43.324Z] LOG       placeId: places/ChIJga4om2lx44kRsv_XS2Vtg-0
+[2025-10-28T23:14:43.326Z] LOG       uri: https://maps.google.com/?cid=17114643290769588146
+[2025-10-28T23:14:43.327Z] LOG    14. [MAPS] Chinatown - Jaho Coffee Roaster & Wine Bar
+[2025-10-28T23:14:43.328Z] LOG       placeId: places/ChIJRzjLv3d644kRhkAHf0tdR2g
+[2025-10-28T23:14:43.329Z] LOG       uri: https://maps.google.com/?cid=7514077082126073990
+[2025-10-28T23:14:43.330Z] LOG    15. [MAPS] Gracenote Coffee
+[2025-10-28T23:14:43.331Z] LOG       placeId: places/ChIJl-EeWeVx44kR488qw8gIUVg
+[2025-10-28T23:14:43.332Z] LOG       uri: https://maps.google.com/?cid=6363877406812065763
+[2025-10-28T23:14:43.333Z] LOG    16. [MAPS] Seaport Cafe
+[2025-10-28T23:14:43.334Z] LOG       placeId: places/ChIJYf09g3hw44kREn2t43ufO4w
+[2025-10-28T23:14:43.335Z] LOG       uri: https://maps.google.com/?cid=10104845543385431314
+[2025-10-28T23:14:43.336Z] LOG    17. [MAPS] Blank Street Coffee
+[2025-10-28T23:14:43.337Z] LOG       placeId: places/ChIJEXVMQ_Z744kR-nP31Hs0K68
+[2025-10-28T23:14:43.338Z] LOG       uri: https://maps.google.com/?cid=12622240087094555642
+[2025-10-28T23:14:43.339Z] LOG    18. [MAPS] Lily’s COFFEE & CAFÉ
+[2025-10-28T23:14:43.340Z] LOG       placeId: places/ChIJFZ_v-Gtx44kRzNXSXNfjRLw
+[2025-10-28T23:14:43.341Z] LOG       uri: https://maps.google.com/?cid=13566218491661571532
+[2025-10-28T23:14:43.342Z] LOG    19. [MAPS] Starbucks
+[2025-10-28T23:14:43.344Z] LOG       placeId: places/ChIJSSBB34F644kRULzJ23vgzLc
+[2025-10-28T23:14:43.345Z] LOG       uri: https://maps.google.com/?cid=13244207426762816592
+[2025-10-28T23:14:43.346Z] LOG    20. [MAPS] Blue Bottle Coffee
+[2025-10-28T23:14:43.347Z] LOG       placeId: places/ChIJIRhOEjJx44kRqnY53eLJIg4
+[2025-10-28T23:14:43.349Z] LOG       uri: https://maps.google.com/?cid=1018598441950475946
+[2025-10-28T23:14:43.351Z] LOG    21. [MAPS] Institute of Contemporary Art
+[2025-10-28T23:14:43.351Z] LOG       placeId: places/ChIJxTCEOnlw44kROtPtIpMFsXo
+[2025-10-28T23:14:43.353Z] LOG       uri: https://maps.google.com/?cid=8840853673009337146
+[2025-10-28T23:14:43.354Z] LOG    22. [MAPS] Boston Sail Loft
+[2025-10-28T23:14:43.356Z] LOG       placeId: places/ChIJKz7ENohw44kR-Aq6LJoK9Sg
+[2025-10-28T23:14:43.357Z] LOG       uri: https://maps.google.com/?cid=2951276788102859512
+[2025-10-28T23:14:43.358Z] LOG    23. [MAPS] Atlantic Fish Company
+[2025-10-28T23:14:43.359Z] LOG       placeId: places/ChIJ8XZQ9A5644kR-8i3134hx2I
+[2025-10-28T23:14:43.361Z] LOG       uri: https://maps.google.com/?cid=7117694564751100155
+[2025-10-28T23:14:43.362Z] LOG    24. [MAPS] Shaking Crab (Boston Common)
+[2025-10-28T23:14:43.363Z] LOG       placeId: places/ChIJxwFranZ644kRmKcAzTR5PAg
+[2025-10-28T23:14:43.364Z] LOG       uri: https://maps.google.com/?cid=593482518590695320
+[2025-10-28T23:14:43.365Z] LOG    25. [MAPS] The Oceanaire Seafood Room
+[2025-10-28T23:14:43.366Z] LOG       placeId: places/ChIJUxHf-oRw44kRbwK0pAYkV94
+[2025-10-28T23:14:43.367Z] LOG       uri: https://maps.google.com/?cid=16021313810345493103
+[2025-10-28T23:14:43.368Z] LOG    26. [MAPS] Legal Sea Foods - Long Wharf
+[2025-10-28T23:14:43.369Z] LOG       placeId: places/ChIJjbhQv4dw44kReJ25Ysa0tho
+[2025-10-28T23:14:43.370Z] LOG       uri: https://maps.google.com/?cid=1924924654900321656
+[2025-10-28T23:14:43.371Z] LOG    27. [MAPS] Ocean Prime
+[2025-10-28T23:14:43.373Z] LOG       placeId: places/ChIJi0PBfoJ644kR8_of7cbfP5Y
+[2025-10-28T23:14:43.374Z] LOG       uri: https://maps.google.com/?cid=10826618074696776435
+[2025-10-28T23:14:43.375Z] LOG    28. [MAPS] The Daily Catch Waterfront
+[2025-10-28T23:14:43.376Z] LOG       placeId: places/ChIJjWt88ipx44kRFtB0TenPFEs
+[2025-10-28T23:14:43.377Z] LOG       uri: https://maps.google.com/?cid=5410177653312638998
+[2025-10-28T23:14:43.378Z] LOG    29. [MAPS] The Barking Crab
+[2025-10-28T23:14:43.379Z] LOG       placeId: places/ChIJ2_smOn5w44kRM88fhxNtzCg
+[2025-10-28T23:14:43.380Z] LOG       uri: https://maps.google.com/?cid=2939844587404906291
+[2025-10-28T23:14:43.381Z] LOG    30. [MAPS] The Banks Seafood and Steak
+[2025-10-28T23:14:43.381Z] LOG       placeId: places/ChIJgzmnaXZ744kRUagK-uie150
+[2025-10-28T23:14:43.382Z] LOG       uri: https://maps.google.com/?cid=11373734107412080721
+[2025-10-28T23:14:43.383Z] LOG    31. [MAPS] Legal Sea Foods - Harborside
+[2025-10-28T23:14:43.384Z] LOG       placeId: places/ChIJg_AEp4J644kRom967VLwHUA
+[2025-10-28T23:14:43.385Z] LOG       uri: https://maps.google.com/?cid=4620113031714205602
+[2025-10-28T23:14:43.386Z] LOG    32. [MAPS] The Daily Catch North End
+[2025-10-28T23:14:43.387Z] LOG       placeId: places/ChIJh5s-F4lw44kRVNNe4L7moqU
+[2025-10-28T23:14:43.388Z] LOG       uri: https://maps.google.com/?cid=11935355669967721300
+[2025-10-28T23:14:43.388Z] LOG    33. [MAPS] Saltie Girl
+[2025-10-28T23:14:43.389Z] LOG       placeId: places/ChIJX531iwt644kRaJ9LqHM3rRk
+[2025-10-28T23:14:43.390Z] LOG       uri: https://maps.google.com/?cid=1850195991803436904
+[2025-10-28T23:14:43.391Z] LOG    34. [MAPS] Chart House
+[2025-10-28T23:14:43.392Z] LOG       placeId: places/ChIJ6QwfVH1w44kRKLxCXvk2XsY
+[2025-10-28T23:14:43.393Z] LOG       uri: https://maps.google.com/?cid=14293922711976721448
+[2025-10-28T23:14:43.394Z] LOG    35. [MAPS] Row 34 - Seaport | Boston
+[2025-10-28T23:14:43.395Z] LOG       placeId: places/ChIJ95EjMYB644kRHrS_JLt0-Lg
+[2025-10-28T23:14:43.396Z] LOG       uri: https://maps.google.com/?cid=13328531444327232542
+[2025-10-28T23:14:43.397Z] LOG    36. [MAPS] 75 on Liberty Wharf
+[2025-10-28T23:14:43.398Z] LOG       placeId: places/ChIJBacLCHhw44kR-8yON3ajFas
+[2025-10-28T23:14:43.399Z] LOG       uri: https://maps.google.com/?cid=12327939283130174715
+[2025-10-28T23:14:43.400Z] LOG    37. [MAPS] Legal Sea Foods - Downtown Crossing
+[2025-10-28T23:14:43.401Z] LOG       placeId: places/ChIJ0-JnSZ1w44kRAexlklypdkY
+[2025-10-28T23:14:43.402Z] LOG       uri: https://maps.google.com/?cid=5077431844965051393
+[2025-10-28T23:14:43.403Z] LOG    38. [MAPS] Ostra
+[2025-10-28T23:14:43.404Z] LOG       placeId: places/ChIJn5yKXp5w44kRp143VKR6cjw
+[2025-10-28T23:14:43.405Z] LOG       uri: https://maps.google.com/?cid=4355678635826831015
+[2025-10-28T23:14:43.406Z] LOG    39. [MAPS] James Hook & Co
+[2025-10-28T23:14:43.407Z] LOG       placeId: places/ChIJO_bkQH5w44kRcep5YV5p5sA
+[2025-10-28T23:14:43.407Z] LOG       uri: https://maps.google.com/?cid=13899913154008836721
+[2025-10-28T23:14:43.408Z] LOG    40. [MAPS] Limani Grille Seaport
+[2025-10-28T23:14:43.409Z] LOG       placeId: places/ChIJ5ZLxJK1x44kRA4qvs4XCUDA
+[2025-10-28T23:14:43.410Z] LOG       uri: https://maps.google.com/?cid=3481496391458458115
+[2025-10-28T23:14:43.411Z] LOG    41. [MAPS] Bootleg Special Kitchen & Bar
+[2025-10-28T23:14:43.412Z] LOG       placeId: places/ChIJVVUV0nN644kR1h4t-eJfIqw
+[2025-10-28T23:14:43.412Z] LOG       uri: https://maps.google.com/?cid=12403581752179498710
+[2025-10-28T23:14:43.413Z] LOG    42. [MAPS] Boston Tea Party Ships & Museum
+[2025-10-28T23:14:43.414Z] LOG       placeId: places/ChIJ4bwEPIBw44kRs7STmn977tE
+[2025-10-28T23:14:43.415Z] LOG       uri: https://maps.google.com/?cid=15127163986368509107
+[2025-10-28T23:14:43.416Z] LOG    43. [MAPS] BLIND DUCK
+[2025-10-28T23:14:43.416Z] LOG       placeId: places/ChIJs3j9ZA9744kReNZei4KVoDc
+[2025-10-28T23:14:43.417Z] LOG       uri: https://maps.google.com/?cid=4008368056276276856
+[2025-10-28T23:14:43.418Z] LOG    44. [MAPS] Chemist Cocktail Bar
+[2025-10-28T23:14:43.419Z] LOG       placeId: places/ChIJZxpSnZdx44kRDBhWfGnmDHc
+[2025-10-28T23:14:43.420Z] LOG       uri: https://maps.google.com/?cid=8578484730965923852
+[2025-10-28T23:14:43.420Z] LOG    45. [MAPS] Moon Bar
+[2025-10-28T23:14:43.421Z] LOG       placeId: places/ChIJXZsSDcB744kRVeMqthyiy_8
+[2025-10-28T23:14:43.422Z] LOG       uri: https://maps.google.com/?cid=18432004144142934869
+[2025-10-28T23:14:43.423Z] LOG    46. [MAPS] OFFSUIT
+[2025-10-28T23:14:43.424Z] LOG       placeId: places/ChIJTWBMW9F744kRZ3xXlkIrhMo
+[2025-10-28T23:14:43.425Z] LOG       uri: https://maps.google.com/?cid=14592836257577401447
+[2025-10-28T23:14:43.426Z] LOG    47. [MAPS] 89 Charles
+[2025-10-28T23:14:43.427Z] LOG       placeId: places/ChIJ7XjjRwBx44kRkhwLqo7uCh0
+[2025-10-28T23:14:43.428Z] LOG       uri: https://maps.google.com/?cid=2092747273372638354
+[2025-10-28T23:14:43.429Z] LOG    48. [MAPS] F1 Arcade Boston
+[2025-10-28T23:14:43.430Z] LOG       placeId: places/ChIJEb5_VTBx44kRwkSBAbxDeX0
+[2025-10-28T23:14:43.430Z] LOG       uri: https://maps.google.com/?cid=9041332201681142978
+[2025-10-28T23:14:43.431Z] LOG    49. [MAPS] Biddy Early's
+[2025-10-28T23:14:43.432Z] LOG       placeId: places/ChIJVa7vEIFw44kRBo80DknYPoU
+[2025-10-28T23:14:43.433Z] LOG       uri: https://maps.google.com/?cid=9601349263883013894
+[2025-10-28T23:14:43.434Z] LOG    50. [MAPS] Wink and Nod
+[2025-10-28T23:14:43.434Z] LOG       placeId: places/ChIJ07HSKsF744kRqvxwm75106I
+[2025-10-28T23:14:43.435Z] LOG       uri: https://maps.google.com/?cid=11732850915742383274
+[2025-10-28T23:14:43.436Z] LOG    51. [MAPS] The Tam
+[2025-10-28T23:14:43.437Z] LOG       placeId: places/ChIJgRPEVHZ644kRdLHsr2CClRs
+[2025-10-28T23:14:43.438Z] LOG       uri: https://maps.google.com/?cid=1987638162333938036
+[2025-10-28T23:14:43.439Z] LOG    52. [MAPS] Carrie Nation Cocktail Club
+[2025-10-28T23:14:43.441Z] LOG       placeId: places/ChIJXwQss4Rw44kRHit4Nd0i2Bk
+[2025-10-28T23:14:43.441Z] LOG       uri: https://maps.google.com/?cid=1862276779397884702
+[2025-10-28T23:14:43.442Z] LOG    53. [MAPS] The Greatest Bar
+[2025-10-28T23:14:43.443Z] LOG       placeId: places/ChIJLSWl1I9w44kRhqDcgiagYGk
+[2025-10-28T23:14:43.444Z] LOG       uri: https://maps.google.com/?cid=7593245059011354758
+[2025-10-28T23:14:43.444Z] LOG    54. [MAPS] LONG BAR & TERRACE
+[2025-10-28T23:14:43.445Z] LOG       placeId: places/ChIJ_UL5Pbh744kRKijJON4U710
+[2025-10-28T23:14:43.446Z] LOG       uri: https://maps.google.com/?cid=6768651709629147178
+[2025-10-28T23:14:43.447Z] LOG    55. [MAPS] Lucky's Lounge
+[2025-10-28T23:14:43.448Z] LOG       placeId: places/ChIJMU1-F4B644kRh4FgssOldKQ
+[2025-10-28T23:14:43.449Z] LOG       uri: https://maps.google.com/?cid=11850278779448492423
+[2025-10-28T23:14:43.450Z] LOG    56. [MAPS] The Fed at The Langham, Boston
+[2025-10-28T23:14:43.451Z] LOG       placeId: places/ChIJCTSH4nxx44kR8eDSwvJpw3E
+[2025-10-28T23:14:43.451Z] LOG       uri: https://maps.google.com/?cid=8197512238116036849
+[2025-10-28T23:14:43.452Z] LOG    57. [MAPS] Rooftop at The Envoy
+[2025-10-28T23:14:43.453Z] LOG       placeId: places/ChIJJ4A28n5w44kRE6ctc16pW_Q
+[2025-10-28T23:14:43.454Z] LOG       uri: https://maps.google.com/?cid=17607853391259477779
+[2025-10-28T23:14:43.455Z] LOG    58. [MAPS] Roxanne's
+[2025-10-28T23:14:43.456Z] LOG       placeId: places/ChIJx3TAyt9x44kRD_mlE1flRQw
+[2025-10-28T23:14:43.456Z] LOG       uri: https://maps.google.com/?cid=884365064002730255
+[2025-10-28T23:14:43.457Z] LOG    59. [MAPS] Hecate
+[2025-10-28T23:14:43.458Z] LOG       placeId: places/ChIJzxisPch744kR-O0Y4cOeMLA
+[2025-10-28T23:14:43.459Z] LOG       uri: https://maps.google.com/?cid=12695821913689746936
+[2025-10-28T23:14:43.460Z] LOG    60. [MAPS] Cheers
+[2025-10-28T23:14:43.461Z] LOG       placeId: places/ChIJB939tp9w44kRQuO7SeU0ML4
+[2025-10-28T23:14:43.462Z] LOG       uri: https://maps.google.com/?cid=13704511825477624642
+[2025-10-28T23:14:43.463Z] LOG    61. [MAPS] Daiquiris & Daisies
+[2025-10-28T23:14:43.464Z] LOG       placeId: places/ChIJWQfE8Ddx44kRTSnOJ9TG3lQ
+[2025-10-28T23:14:43.465Z] LOG       uri: https://maps.google.com/?cid=6115543958518901069
+[2025-10-28T23:14:43.465Z] LOG    62. [MAPS] 1928 Beacon Hill
+[2025-10-28T23:14:43.466Z] LOG       placeId: places/ChIJqU8rp9tx44kRzYtYAfD2-k4
+[2025-10-28T23:14:43.467Z] LOG       uri: https://maps.google.com/?cid=5691132589811207117
+[2025-10-28T23:14:43.469Z] LOG ✨ Parsed 5 venue recommendations
+[2025-10-28T23:14:43.470Z] LOG 📋 Plan: undefined, undefined stops
+
+--- Summary ---
+Completed

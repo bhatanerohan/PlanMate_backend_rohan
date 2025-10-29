@@ -1,0 +1,135 @@
+User Prompt: plan a bar crawl in miami
+
+[2025-10-28T18:57:51.644Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-28T18:57:51.645Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T18:57:51.646Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-28T18:57:51.647Z] LOG    1. Searching "The Clevelander Bar" in "miami"
+[2025-10-28T18:57:51.648Z] LOG 🔍 [Google Places] Text search: "The Clevelander Bar" in miami
+[2025-10-28T18:57:51.655Z] LOG    2. Searching "Mango's - Miami" in "miami"
+[2025-10-28T18:57:51.658Z] LOG 🔍 [Google Places] Text search: "Mango's - Miami" in miami
+[2025-10-28T18:57:51.666Z] LOG    3. Searching "Voodoo Lounge & Rooftop" in "miami"
+[2025-10-28T18:57:51.668Z] LOG 🔍 [Google Places] Text search: "Voodoo Lounge & Rooftop" in miami
+[2025-10-28T18:57:51.677Z] LOG    4. Searching "Mac's Club Deuce" in "miami"
+[2025-10-28T18:57:51.680Z] LOG 🔍 [Google Places] Text search: "Mac's Club Deuce" in miami
+[2025-10-28T18:57:52.158Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T18:57:52.171Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T18:57:52.292Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T18:57:52.296Z] LOG    ✅ The Clevelander Bar: Got description (83 chars)
+[2025-10-28T18:57:52.297Z] LOG ✅ Found 1 places
+[2025-10-28T18:57:52.378Z] LOG    ✅ Mac's Club Deuce: Got description (99 chars)
+[2025-10-28T18:57:52.379Z] LOG ✅ Found 1 places
+[2025-10-28T18:57:52.412Z] LOG    ✅ Mango's - Miami: Got description (81 chars)
+[2025-10-28T18:57:52.414Z] LOG ✅ Found 1 places
+[2025-10-28T18:57:52.588Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T18:57:52.764Z] LOG    ✅ Voodoo Lounge & Rooftop: Got description (95 chars)
+[2025-10-28T18:57:52.766Z] LOG ✅ Found 1 places
+[2025-10-28T18:57:52.767Z] LOG ✅ Batch complete: 4/4 searches succeeded, 4 total venues found in 1121ms
+[2025-10-28T18:57:52.767Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T18:57:52.768Z] LOG    ✅ Merged: The Clevelander Bar
+[2025-10-28T18:57:52.768Z] LOG       Places placeId: ChIJgxyJEpK02YgRIzITDeIUG9U
+[2025-10-28T18:57:52.768Z] LOG       Gemini description: An iconic, lively, open-air bar with a famous poolside scene...
+[2025-10-28T18:57:52.769Z] LOG    ✅ Merged: Mango's - Miami
+[2025-10-28T18:57:52.769Z] LOG       Places placeId: ChIJsQeCYpK02YgRSn7c430EGV4
+[2025-10-28T18:57:52.769Z] LOG       Gemini description: A legendary restaurant and nightclub on Ocean Drive, famous ...
+[2025-10-28T18:57:52.770Z] LOG    ✅ Merged: Voodoo Lounge & Rooftop
+[2025-10-28T18:57:52.770Z] LOG       Places placeId: ChIJCYXEZJK02YgRjfXK2PimCj4
+[2025-10-28T18:57:52.771Z] LOG       Gemini description: This nightclub and lounge offers a tranquil rooftop space wi...
+[2025-10-28T18:57:52.771Z] LOG    ✅ Merged: Mac's Club Deuce
+[2025-10-28T18:57:52.772Z] LOG       Places placeId: ChIJsQKYK5C02YgROGCkBY6cXBA
+[2025-10-28T18:57:52.772Z] LOG       Gemini description: Miami Beach's oldest bar, this unpretentious dive offers a l...
+[2025-10-28T18:57:52.773Z] LOG ✅ Phase 1 complete: Found 4/4 exact venues
+[2025-10-28T18:57:52.774Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-28T18:57:52.774Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-28T18:57:52.775Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T18:57:52.775Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-28T18:57:52.776Z] LOG    1. Searching "Bar" in "25.7808025,-80.1306927"
+[2025-10-28T18:57:52.776Z] LOG    📍 Using nearbySearch at coordinates (25.7808025, -80.1306927)
+[2025-10-28T18:57:52.776Z] LOG 🔍 [Google Places] Nearby search at (25.7808025, -80.1306927)
+[2025-10-28T18:57:52.780Z] LOG    2. Searching "Restaurant" in "25.7794293,-80.1311489"
+[2025-10-28T18:57:52.782Z] LOG    📍 Using nearbySearch at coordinates (25.7794293, -80.1311489)
+[2025-10-28T18:57:52.783Z] LOG 🔍 [Google Places] Nearby search at (25.7794293, -80.1311489)
+[2025-10-28T18:57:52.785Z] LOG    3. Searching "Night Club" in "25.7797441,-80.1309849"
+[2025-10-28T18:57:52.785Z] LOG    📍 Using nearbySearch at coordinates (25.7797441, -80.1309849)
+[2025-10-28T18:57:52.786Z] LOG 🔍 [Google Places] Nearby search at (25.7797441, -80.1309849)
+[2025-10-28T18:57:52.787Z] LOG    4. Searching "Bar" in "25.7852847,-80.1314653"
+[2025-10-28T18:57:52.788Z] LOG    📍 Using nearbySearch at coordinates (25.7852847, -80.1314653)
+[2025-10-28T18:57:52.789Z] LOG 🔍 [Google Places] Nearby search at (25.7852847, -80.1314653)
+[2025-10-28T18:57:53.429Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T18:57:53.534Z] LOG    ✅ Sola Miami Beach: Got description (92 chars)
+[2025-10-28T18:57:53.585Z] LOG    ⚠️  Delirio South Beach: No editorial summary available
+[2025-10-28T18:57:53.587Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T18:57:53.634Z] LOG    ⚠️  Wilde on the Porch: No editorial summary available
+[2025-10-28T18:57:53.643Z] LOG    ⚠️  The Twisted Tonic - Rooftop Bar: No editorial summary available
+[2025-10-28T18:57:53.647Z] LOG    ✅ Sola Miami Beach: Got description (92 chars)
+[2025-10-28T18:57:53.676Z] LOG    ⚠️  The Twisted Tonic - Rooftop Bar: No editorial summary available
+[2025-10-28T18:57:53.689Z] LOG    ⚠️  Wilde on the Porch: No editorial summary available
+[2025-10-28T18:57:53.691Z] LOG    ⚠️  Bar Idol: No editorial summary available
+[2025-10-28T18:57:53.709Z] LOG    ⚠️  Delirio South Beach: No editorial summary available
+[2025-10-28T18:57:53.798Z] LOG    ⚠️  Bar Idol: No editorial summary available
+[2025-10-28T18:57:53.918Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T18:57:54.042Z] LOG    ⚠️  South Beach Nightclubs: No editorial summary available
+[2025-10-28T18:57:54.046Z] LOG    ⚠️  Club M2 Miami: No editorial summary available
+[2025-10-28T18:57:54.067Z] LOG    ⚠️  VIP South Beach Miami Nightlife - Nightclub Party Packages: No editorial summary available
+[2025-10-28T18:57:54.080Z] LOG    ⚠️  Liquor Lounge: No editorial summary available
+[2025-10-28T18:57:54.102Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T18:57:54.117Z] LOG    ⚠️  Elite Miami nightlife Ent: No editorial summary available
+[2025-10-28T18:57:54.167Z] LOG    ✅ Sola Miami Beach: Got description (92 chars)
+[2025-10-28T18:57:54.190Z] LOG    ⚠️  Wilde on the Porch: No editorial summary available
+[2025-10-28T18:57:54.248Z] LOG    ✅ Tapelia: Got description (99 chars)
+[2025-10-28T18:57:54.251Z] LOG    ✅ Smith & Wollensky - Miami Beach: Got description (98 chars)
+[2025-10-28T18:57:54.265Z] LOG    ✅ Monty's Sunset - South Beach: Got description (93 chars)
+[2025-10-28T18:57:54.266Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 1491ms
+[2025-10-28T18:57:54.267Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T18:57:54.269Z] LOG    ✅ Venue 1 (The Clevelander Bar): 4 alternatives
+[2025-10-28T18:57:54.270Z] LOG       1. Sola Miami Beach (4.8⭐)
+[2025-10-28T18:57:54.271Z] LOG       2. The Twisted Tonic - Rooftop Bar (4.9⭐)
+[2025-10-28T18:57:54.271Z] LOG       3. Wilde on the Porch (4.6⭐)
+[2025-10-28T18:57:54.272Z] LOG    ✅ Venue 2 (Mango's - Miami): 4 alternatives
+[2025-10-28T18:57:54.272Z] LOG       1. Sola Miami Beach (4.8⭐)
+[2025-10-28T18:57:54.273Z] LOG       2. Wilde on the Porch (4.6⭐)
+[2025-10-28T18:57:54.273Z] LOG       3. Smith & Wollensky - Miami Beach (4.4⭐)
+[2025-10-28T18:57:54.273Z] LOG    ✅ Venue 3 (Voodoo Lounge & Rooftop): 4 alternatives
+[2025-10-28T18:57:54.274Z] LOG       1. Elite Miami nightlife Ent (3.1⭐)
+[2025-10-28T18:57:54.274Z] LOG       2. VIP South Beach Miami Nightlife - Nightclub Party Packages (4.5⭐)
+[2025-10-28T18:57:54.275Z] LOG       3. South Beach Nightclubs (4.6⭐)
+[2025-10-28T18:57:54.276Z] LOG    ✅ Venue 4 (Mac's Club Deuce): 4 alternatives
+[2025-10-28T18:57:54.277Z] LOG       1. Sola Miami Beach (4.8⭐)
+[2025-10-28T18:57:54.277Z] LOG       2. The Twisted Tonic - Rooftop Bar (4.9⭐)
+[2025-10-28T18:57:54.278Z] LOG       3. Wilde on the Porch (4.6⭐)
+[2025-10-28T18:57:54.279Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-28T18:57:54.279Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-28T18:57:54.280Z] LOG    Primary venues: 4 stops
+[2025-10-28T18:57:54.280Z] LOG    ❌ Removed "Sola Miami Beach" - duplicate alternative
+[2025-10-28T18:57:54.280Z] LOG    ❌ Removed "Wilde on the Porch" - duplicate alternative
+[2025-10-28T18:57:54.281Z] LOG    🔧 Stop "ChIJsQeCYpK02YgRSn7c...": 4 → 2 alternatives
+[2025-10-28T18:57:54.281Z] LOG    ❌ Removed "Sola Miami Beach" - duplicate alternative
+[2025-10-28T18:57:54.282Z] LOG    ❌ Removed "The Twisted Tonic - Rooftop Bar" - duplicate alternative
+[2025-10-28T18:57:54.282Z] LOG    ❌ Removed "Wilde on the Porch" - duplicate alternative
+[2025-10-28T18:57:54.283Z] LOG    ❌ Removed "Bar Idol" - duplicate alternative
+[2025-10-28T18:57:54.283Z] LOG    🔧 Stop "ChIJsQKYK5C02YgROGCk...": 4 → 0 alternatives
+[2025-10-28T18:57:54.284Z] LOG 
+✅ Cleaning complete:
+[2025-10-28T18:57:54.285Z] LOG    Removed 0 venues already in route
+[2025-10-28T18:57:54.285Z] LOG    Removed 6 duplicate alternatives
+[2025-10-28T18:57:54.286Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-28T18:57:54.286Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-28T18:57:54.287Z] LOG    Primary venues: 4
+[2025-10-28T18:57:54.287Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-28T18:57:54.288Z] LOG    Execution time: 2643ms
+[2025-10-28T18:57:54.288Z] LOG 
+📋 Final alternatives:
+[2025-10-28T18:57:54.289Z] LOG    The Clevelander Bar: 4 alternatives
+[2025-10-28T18:57:54.289Z] LOG    Mango's - Miami: 2 alternatives
+[2025-10-28T18:57:54.290Z] LOG    Voodoo Lounge & Rooftop: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 3

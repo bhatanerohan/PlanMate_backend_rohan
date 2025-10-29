@@ -1,0 +1,144 @@
+User Prompt: plan a day out in boston and end it with charles river
+
+[2025-10-28T19:07:22.433Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-28T19:07:22.434Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T19:07:22.435Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-28T19:07:22.436Z] LOG    1. Searching "Boston Common & Public Garden" in "boston and end it with charles river"
+[2025-10-28T19:07:22.436Z] LOG 🔍 [Google Places] Text search: "Boston Common & Public Garden" in boston and end it with charles river
+[2025-10-28T19:07:22.441Z] LOG    2. Searching "Beacon Hill Books & Cafe" in "boston and end it with charles river"
+[2025-10-28T19:07:22.442Z] LOG 🔍 [Google Places] Text search: "Beacon Hill Books & Cafe" in boston and end it with charles river
+[2025-10-28T19:07:22.446Z] LOG    3. Searching "The Paramount" in "boston and end it with charles river"
+[2025-10-28T19:07:22.448Z] LOG 🔍 [Google Places] Text search: "The Paramount" in boston and end it with charles river
+[2025-10-28T19:07:22.452Z] LOG    4. Searching "Charles River Esplanade" in "boston and end it with charles river"
+[2025-10-28T19:07:22.452Z] LOG 🔍 [Google Places] Text search: "Charles River Esplanade" in boston and end it with charles river
+[2025-10-28T19:07:22.458Z] LOG    5. Searching "CLINK." in "boston and end it with charles river"
+[2025-10-28T19:07:22.458Z] LOG 🔍 [Google Places] Text search: "CLINK." in boston and end it with charles river
+[2025-10-28T19:07:22.968Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T19:07:23.027Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T19:07:23.087Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T19:07:23.118Z] LOG    ✅ CLINK.: Got description (94 chars)
+[2025-10-28T19:07:23.119Z] LOG ✅ Found 1 places
+[2025-10-28T19:07:23.176Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T19:07:23.221Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2025-10-28T19:07:23.222Z] LOG ✅ Found 1 places
+[2025-10-28T19:07:23.250Z] LOG    ✅ Charles River Esplanade: Got description (99 chars)
+[2025-10-28T19:07:23.251Z] LOG ✅ Found 1 places
+[2025-10-28T19:07:23.322Z] LOG    ✅ The Paramount: Got description (100 chars)
+[2025-10-28T19:07:23.323Z] LOG ✅ Found 1 places
+[2025-10-28T19:07:23.854Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T19:07:24.002Z] LOG    ⚠️  Beacon Hill Books & Cafe: No editorial summary available
+[2025-10-28T19:07:24.002Z] LOG ✅ Found 1 places
+[2025-10-28T19:07:24.003Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1568ms
+[2025-10-28T19:07:24.003Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T19:07:24.004Z] LOG    ✅ Merged: Boston Common & Public Garden
+[2025-10-28T19:07:24.004Z] LOG       Places placeId: ChIJu2Argp5w44kRAecWXgt_18s
+[2025-10-28T19:07:24.004Z] LOG       Gemini description: Begin your day with a leisurely stroll through two of Boston...
+[2025-10-28T19:07:24.005Z] LOG    ✅ Merged: Beacon Hill Books & Cafe
+[2025-10-28T19:07:24.005Z] LOG       Places placeId: ChIJlTGo_U5x44kRXD5QYryFWgs
+[2025-10-28T19:07:24.005Z] LOG       Gemini description: Nestled on charming Charles Street in Beacon Hill, this deli...
+[2025-10-28T19:07:24.006Z] LOG    ✅ Merged: The Paramount
+[2025-10-28T19:07:24.006Z] LOG       Places placeId: ChIJpXQ2-55w44kRPOc6V9xvzec
+[2025-10-28T19:07:24.007Z] LOG       Gemini description: A true Boston institution since 1937, The Paramount on Charl...
+[2025-10-28T19:07:24.007Z] LOG    ✅ Merged: Charles River Esplanade
+[2025-10-28T19:07:24.008Z] LOG       Places placeId: ChIJv9lnBgp644kRes_e1eIVHvA
+[2025-10-28T19:07:24.008Z] LOG       Gemini description: After exploring Beacon Hill, take a leisurely stroll along t...
+[2025-10-28T19:07:24.009Z] LOG    ✅ Merged: CLINK.
+[2025-10-28T19:07:24.009Z] LOG       Places placeId: ChIJhyCyU5hw44kRgMudWICPiPQ
+[2025-10-28T19:07:24.010Z] LOG       Gemini description: Conclude your day with an unforgettable dinner at CLINK., lo...
+[2025-10-28T19:07:24.010Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-28T19:07:24.010Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-28T19:07:24.010Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-28T19:07:24.011Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T19:07:24.011Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-28T19:07:24.012Z] LOG    1. Searching "Park" in "42.3540639,-71.0700921"
+[2025-10-28T19:07:24.012Z] LOG    📍 Using nearbySearch at coordinates (42.3540639, -71.0700921)
+[2025-10-28T19:07:24.012Z] LOG 🔍 [Google Places] Nearby search at (42.3540639, -71.0700921)
+[2025-10-28T19:07:24.013Z] LOG    2. Searching "Bookstore / Cafe" in "42.3581979,-71.0703795"
+[2025-10-28T19:07:24.013Z] LOG    📍 Using nearbySearch at coordinates (42.3581979, -71.0703795)
+[2025-10-28T19:07:24.014Z] LOG 🔍 [Google Places] Nearby search at (42.3581979, -71.0703795)
+[2025-10-28T19:07:24.015Z] LOG    3. Searching "American Restaurant" in "42.3572944,-71.0701737"
+[2025-10-28T19:07:24.015Z] LOG    📍 Using nearbySearch at coordinates (42.3572944, -71.0701737)
+[2025-10-28T19:07:24.016Z] LOG 🔍 [Google Places] Nearby search at (42.3572944, -71.0701737)
+[2025-10-28T19:07:24.018Z] LOG    4. Searching "Park / Waterfront" in "42.3555785,-71.0788785"
+[2025-10-28T19:07:24.019Z] LOG    📍 Using nearbySearch at coordinates (42.3555785, -71.0788785)
+[2025-10-28T19:07:24.020Z] LOG 🔍 [Google Places] Nearby search at (42.3555785, -71.0788785)
+[2025-10-28T19:07:24.022Z] LOG    5. Searching "American Restaurant" in "42.361937,-71.0706112"
+[2025-10-28T19:07:24.023Z] LOG    📍 Using nearbySearch at coordinates (42.361937, -71.0706112)
+[2025-10-28T19:07:24.023Z] LOG 🔍 [Google Places] Nearby search at (42.361937, -71.0706112)
+[2025-10-28T19:07:24.612Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T19:07:24.656Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T19:07:24.730Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T19:07:24.761Z] LOG    ✅ Copley Square Park: Got description (97 chars)
+[2025-10-28T19:07:24.765Z] LOG    ⚠️  Beacon Hill Books & Cafe: No editorial summary available
+[2025-10-28T19:07:24.790Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2025-10-28T19:07:24.804Z] LOG    ✅ Rose Kennedy Greenway: Got description (100 chars)
+[2025-10-28T19:07:24.844Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T19:07:24.847Z] LOG    ✅ Titus Sparrow Park: Got description (99 chars)
+[2025-10-28T19:07:24.849Z] LOG    ✅ Trident Booksellers & Cafe: Got description (90 chars)
+[2025-10-28T19:07:24.850Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2025-10-28T19:07:24.877Z] LOG    ⚠️  Posman Books: No editorial summary available
+[2025-10-28T19:07:24.879Z] LOG    ✅ Sip Café: Got description (99 chars)
+[2025-10-28T19:07:24.884Z] LOG    ⚠️  I AM Books: No editorial summary available
+[2025-10-28T19:07:24.885Z] LOG    ✅ Back Deck: Got description (98 chars)
+[2025-10-28T19:07:24.917Z] LOG    ✅ Harvard Gardens: Got description (90 chars)
+[2025-10-28T19:07:24.925Z] LOG    ✅ Sonsie: Got description (100 chars)
+[2025-10-28T19:07:24.934Z] LOG    ✅ Back Deck: Got description (98 chars)
+[2025-10-28T19:07:24.947Z] LOG    ✅ Joe’s on Newbury: Got description (91 chars)
+[2025-10-28T19:07:24.952Z] LOG    ✅ Back Bay Social: Got description (94 chars)
+[2025-10-28T19:07:24.975Z] LOG    ✅ Harvard Gardens: Got description (90 chars)
+[2025-10-28T19:07:24.980Z] LOG    ✅ Sonsie: Got description (100 chars)
+[2025-10-28T19:07:24.982Z] LOG    ✅ Troquet on South: Got description (89 chars)
+[2025-10-28T19:07:25.012Z] LOG    ⚠️  Teddy's on the Hill: No editorial summary available
+[2025-10-28T19:07:25.013Z] LOG ✅ Batch complete: 5/5 searches succeeded, 20 total venues found in 1002ms
+[2025-10-28T19:07:25.014Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T19:07:25.014Z] LOG    ✅ Venue 1 (Public Garden): 4 alternatives
+[2025-10-28T19:07:25.015Z] LOG       1. Copley Square Park (4.5⭐)
+[2025-10-28T19:07:25.015Z] LOG       2. Boston Common (4.7⭐)
+[2025-10-28T19:07:25.016Z] LOG       3. Titus Sparrow Park (4.6⭐)
+[2025-10-28T19:07:25.016Z] LOG    ✅ Venue 2 (Beacon Hill Books & Cafe): 4 alternatives
+[2025-10-28T19:07:25.016Z] LOG       1. Trident Booksellers & Cafe (4.5⭐)
+[2025-10-28T19:07:25.017Z] LOG       2. I AM Books (4.9⭐)
+[2025-10-28T19:07:25.017Z] LOG       3. Sip Café (4.6⭐)
+[2025-10-28T19:07:25.017Z] LOG    ✅ Venue 3 (The Paramount): 4 alternatives
+[2025-10-28T19:07:25.018Z] LOG       1. Back Deck (4.1⭐)
+[2025-10-28T19:07:25.018Z] LOG       2. Teddy's on the Hill (4.4⭐)
+[2025-10-28T19:07:25.018Z] LOG       3. Harvard Gardens (4.4⭐)
+[2025-10-28T19:07:25.019Z] LOG    ⚠️ No alternatives found for venue 4
+[2025-10-28T19:07:25.019Z] LOG    ✅ Venue 5 (CLINK.): 4 alternatives
+[2025-10-28T19:07:25.020Z] LOG       1. Back Deck (4.1⭐)
+[2025-10-28T19:07:25.020Z] LOG       2. Back Bay Social (4.1⭐)
+[2025-10-28T19:07:25.020Z] LOG       3. Harvard Gardens (4.4⭐)
+[2025-10-28T19:07:25.021Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-28T19:07:25.021Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-28T19:07:25.022Z] LOG    Primary venues: 5 stops
+[2025-10-28T19:07:25.022Z] LOG    ❌ Removed "Back Deck" - duplicate alternative
+[2025-10-28T19:07:25.022Z] LOG    ❌ Removed "Harvard Gardens" - duplicate alternative
+[2025-10-28T19:07:25.023Z] LOG    ❌ Removed "Sonsie" - duplicate alternative
+[2025-10-28T19:07:25.023Z] LOG    🔧 Stop "ChIJhyCyU5hw44kRgMud...": 4 → 1 alternatives
+[2025-10-28T19:07:25.024Z] LOG 
+✅ Cleaning complete:
+[2025-10-28T19:07:25.024Z] LOG    Removed 0 venues already in route
+[2025-10-28T19:07:25.025Z] LOG    Removed 3 duplicate alternatives
+[2025-10-28T19:07:25.026Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-28T19:07:25.027Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-28T19:07:25.027Z] LOG    Primary venues: 5
+[2025-10-28T19:07:25.027Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-28T19:07:25.028Z] LOG    Execution time: 2595ms
+[2025-10-28T19:07:25.028Z] LOG 
+📋 Final alternatives:
+[2025-10-28T19:07:25.029Z] LOG    Public Garden: 4 alternatives
+[2025-10-28T19:07:25.029Z] LOG    Beacon Hill Books & Cafe: 4 alternatives
+[2025-10-28T19:07:25.030Z] LOG    The Paramount: 4 alternatives
+[2025-10-28T19:07:25.030Z] LOG    CLINK.: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

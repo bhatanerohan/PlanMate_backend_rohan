@@ -1,0 +1,118 @@
+User Prompt: plan a day near me
+
+[2025-10-28T23:33:02.090Z] LOG 📍 Using extracted city from user location: Madrid
+[2025-10-28T23:33:02.091Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-28T23:33:02.092Z] LOG    1. "Museo Nacional del Prado" in "Madrid"
+[2025-10-28T23:33:02.093Z] LOG    2. "Restaurante TriCiclo" in "Madrid"
+[2025-10-28T23:33:02.094Z] LOG    3. "Parque del Retiro" in "Madrid"
+[2025-10-28T23:33:02.095Z] LOG 
+🔍 Executing batch search for 3 venues...
+[2025-10-28T23:33:02.096Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T23:33:02.098Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-28T23:33:02.100Z] LOG    1. Searching "Museo Nacional del Prado" in "Madrid"
+[2025-10-28T23:33:02.102Z] LOG 🔍 [Google Places] Text search: "Museo Nacional del Prado" in Madrid
+[2025-10-28T23:33:02.119Z] LOG    2. Searching "Restaurante TriCiclo" in "Madrid"
+[2025-10-28T23:33:02.121Z] LOG 🔍 [Google Places] Text search: "Restaurante TriCiclo" in Madrid
+[2025-10-28T23:33:02.127Z] LOG    3. Searching "Parque del Retiro" in "Madrid"
+[2025-10-28T23:33:02.128Z] LOG 🔍 [Google Places] Text search: "Parque del Retiro" in Madrid
+[2025-10-28T23:33:02.647Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T23:33:02.922Z] LOG    ✅ Museo Nacional del Prado: Got description (99 chars)
+[2025-10-28T23:33:02.924Z] LOG ✅ Found 1 places
+[2025-10-28T23:33:02.926Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T23:33:02.938Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T23:33:03.172Z] LOG    ✅ El Retiro Park: Got description (96 chars)
+[2025-10-28T23:33:03.173Z] LOG ✅ Found 1 places
+[2025-10-28T23:33:03.363Z] LOG    ⚠️  TriCiclo l Restaurante Mediterráneo Madrid: No editorial summary available
+[2025-10-28T23:33:03.366Z] LOG ✅ Found 1 places
+[2025-10-28T23:33:03.368Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 1270ms
+[2025-10-28T23:33:03.369Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T23:33:03.370Z] LOG    Tool execution result: success=true
+[2025-10-28T23:33:03.371Z] LOG    ✅ Tool returned 3 search results
+[2025-10-28T23:33:03.373Z] LOG    ✅ Merged: Museo Nacional del Prado
+[2025-10-28T23:33:03.373Z] LOG       Places placeId: ChIJ7aLYZp0oQg0RWoitk33wlBA
+[2025-10-28T23:33:03.374Z] LOG       Gemini description: ...
+[2025-10-28T23:33:03.375Z] LOG    ✅ Merged: Restaurante TriCiclo
+[2025-10-28T23:33:03.377Z] LOG       Places placeId: ChIJbzIh_SkmQg0RdmTIzdzsDLg
+[2025-10-28T23:33:03.377Z] LOG       Gemini description: ...
+[2025-10-28T23:33:03.379Z] LOG    ✅ Merged: Parque del Retiro
+[2025-10-28T23:33:03.381Z] LOG       Places placeId: ChIJe4IR9Z8oQg0RrqMktRYnbJ4
+[2025-10-28T23:33:03.382Z] LOG       Gemini description: ...
+[2025-10-28T23:33:03.383Z] LOG ✅ Phase 1 complete: Found 3/3 exact venues
+[2025-10-28T23:33:03.384Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-28T23:33:03.386Z] LOG    Searching for alternatives near 3 venues...
+[2025-10-28T23:33:03.389Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T23:33:03.391Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-28T23:33:03.392Z] LOG    1. Searching "art_museum" in "40.4137818,-3.6921271"
+[2025-10-28T23:33:03.394Z] LOG    📍 Using nearbySearch at coordinates (40.4137818, -3.6921271)
+[2025-10-28T23:33:03.396Z] LOG 🔍 [Google Places] Nearby search at (40.4137818, -3.6921271)
+[2025-10-28T23:33:03.399Z] LOG    2. Searching "restaurant" in "40.4128799,-3.697244599999999"
+[2025-10-28T23:33:03.401Z] LOG    📍 Using nearbySearch at coordinates (40.4128799, -3.697244599999999)
+[2025-10-28T23:33:03.402Z] LOG 🔍 [Google Places] Nearby search at (40.4128799, -3.697244599999999)
+[2025-10-28T23:33:03.406Z] LOG    3. Searching "restaurant" in "40.415258,-3.6834657"
+[2025-10-28T23:33:03.408Z] LOG    📍 Using nearbySearch at coordinates (40.415258, -3.6834657)
+[2025-10-28T23:33:03.410Z] LOG 🔍 [Google Places] Nearby search at (40.415258, -3.6834657)
+[2025-10-28T23:33:03.981Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T23:33:04.016Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T23:33:04.061Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T23:33:04.146Z] LOG    ✅ Museo Nacional del Prado: Got description (99 chars)
+[2025-10-28T23:33:04.166Z] LOG    ✅ Museo Nacional Centro de Arte Reina Sofía: Got description (98 chars)
+[2025-10-28T23:33:04.200Z] LOG    ⚠️  Restaurante Etíope Habesha: No editorial summary available
+[2025-10-28T23:33:04.237Z] LOG    ⚠️  Restaurante Etíope Habesha: No editorial summary available
+[2025-10-28T23:33:04.246Z] LOG    ✅ Alhambra: Got description (96 chars)
+[2025-10-28T23:33:04.268Z] LOG    ✅ National Museum of Decorative Arts: Got description (91 chars)
+[2025-10-28T23:33:04.274Z] LOG    ✅ Ferretería Restaurante: Got description (81 chars)
+[2025-10-28T23:33:04.279Z] LOG    ✅ Areia Club: Got description (96 chars)
+[2025-10-28T23:33:04.286Z] LOG    ✅ San Fernando Fine Art Royal Academy: Got description (94 chars)
+[2025-10-28T23:33:04.295Z] LOG    ⚠️  The Matbah: No editorial summary available
+[2025-10-28T23:33:04.305Z] LOG    ✅ Museum of Contemporary Art: Got description (96 chars)
+[2025-10-28T23:33:04.311Z] LOG    ✅ Taberna El Sur: Got description (92 chars)
+[2025-10-28T23:33:04.315Z] LOG    ⚠️  Desh Restaurante: No editorial summary available
+[2025-10-28T23:33:04.321Z] LOG    ✅ Ferretería Restaurante: Got description (81 chars)
+[2025-10-28T23:33:04.338Z] LOG    ✅ Taberna El Sur: Got description (92 chars)
+[2025-10-28T23:33:04.342Z] LOG ✅ Batch complete: 3/3 searches succeeded, 15 total venues found in 951ms
+[2025-10-28T23:33:04.345Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T23:33:04.348Z] LOG    ✅ Venue 1 (Museo Nacional del Prado): 4 alternatives
+[2025-10-28T23:33:04.350Z] LOG       1. Museo Nacional Centro de Arte Reina Sofía (4.5⭐)
+[2025-10-28T23:33:04.351Z] LOG       2. San Fernando Fine Art Royal Academy (4.6⭐)
+[2025-10-28T23:33:04.352Z] LOG       3. National Museum of Decorative Arts (4.3⭐)
+[2025-10-28T23:33:04.354Z] LOG    ✅ Venue 2 (TriCiclo l Restaurante Mediterráneo Madrid): 4 alternatives
+[2025-10-28T23:33:04.355Z] LOG       1. Restaurante Etíope Habesha (4.6⭐)
+[2025-10-28T23:33:04.356Z] LOG       2. The Matbah (4.7⭐)
+[2025-10-28T23:33:04.357Z] LOG       3. Taberna El Sur (4.5⭐)
+[2025-10-28T23:33:04.358Z] LOG    ✅ Venue 3 (El Retiro Park): 4 alternatives
+[2025-10-28T23:33:04.360Z] LOG       1. Restaurante Etíope Habesha (4.6⭐)
+[2025-10-28T23:33:04.361Z] LOG       2. Areia Club (4.4⭐)
+[2025-10-28T23:33:04.362Z] LOG       3. Taberna El Sur (4.5⭐)
+[2025-10-28T23:33:04.362Z] LOG 
+📦 Phase 2 complete: 3 stops with alternatives
+[2025-10-28T23:33:04.365Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-28T23:33:04.367Z] LOG    Primary venues: 3 stops
+[2025-10-28T23:33:04.369Z] LOG    ❌ Removed "Restaurante Etíope Habesha" - duplicate alternative
+[2025-10-28T23:33:04.371Z] LOG    ❌ Removed "Taberna El Sur" - duplicate alternative
+[2025-10-28T23:33:04.373Z] LOG    ❌ Removed "Ferretería Restaurante" - duplicate alternative
+[2025-10-28T23:33:04.374Z] LOG    🔧 Stop "ChIJe4IR9Z8oQg0RrqMk...": 4 → 1 alternatives
+[2025-10-28T23:33:04.375Z] LOG 
+✅ Cleaning complete:
+[2025-10-28T23:33:04.376Z] LOG    Removed 0 venues already in route
+[2025-10-28T23:33:04.377Z] LOG    Removed 3 duplicate alternatives
+[2025-10-28T23:33:04.379Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-28T23:33:04.380Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-28T23:33:04.381Z] LOG    Primary venues: 3
+[2025-10-28T23:33:04.383Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-28T23:33:04.384Z] LOG    Execution time: 2293ms
+[2025-10-28T23:33:04.385Z] LOG 
+📋 Final alternatives:
+[2025-10-28T23:33:04.387Z] LOG    Museo Nacional del Prado: 4 alternatives
+[2025-10-28T23:33:04.389Z] LOG    TriCiclo l Restaurante Mediterráneo Madrid: 4 alternatives
+[2025-10-28T23:33:04.390Z] LOG    El Retiro Park: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 3
+Alternatives: 3

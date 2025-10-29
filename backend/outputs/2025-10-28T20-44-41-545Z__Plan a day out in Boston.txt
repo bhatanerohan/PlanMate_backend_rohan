@@ -1,0 +1,154 @@
+User Prompt: Plan a day out in Boston
+
+[2025-10-28T20:44:41.546Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-28T20:44:41.546Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T20:44:41.547Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-28T20:44:41.547Z] LOG    1. Searching "Faneuil Hall Marketplace" in "Boston"
+[2025-10-28T20:44:41.547Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Boston
+[2025-10-28T20:44:41.552Z] LOG    2. Searching "Old State House" in "Boston"
+[2025-10-28T20:44:41.553Z] LOG 🔍 [Google Places] Text search: "Old State House" in Boston
+[2025-10-28T20:44:41.555Z] LOG    3. Searching "Union Oyster House" in "Boston"
+[2025-10-28T20:44:41.556Z] LOG 🔍 [Google Places] Text search: "Union Oyster House" in Boston
+[2025-10-28T20:44:41.560Z] LOG    4. Searching "The Paul Revere House" in "Boston"
+[2025-10-28T20:44:41.563Z] LOG 🔍 [Google Places] Text search: "The Paul Revere House" in Boston
+[2025-10-28T20:44:41.567Z] LOG    5. Searching "Mike's Pastry" in "Boston"
+[2025-10-28T20:44:41.568Z] LOG 🔍 [Google Places] Text search: "Mike's Pastry" in Boston
+[2025-10-28T20:44:42.050Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T20:44:42.186Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T20:44:42.205Z] LOG    ✅ Mike's Pastry: Got description (93 chars)
+[2025-10-28T20:44:42.206Z] LOG ✅ Found 1 places
+[2025-10-28T20:44:42.242Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T20:44:42.251Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T20:44:42.300Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2025-10-28T20:44:42.300Z] LOG ✅ Found 1 places
+[2025-10-28T20:44:42.318Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-28T20:44:42.415Z] LOG    ✅ Union Oyster House: Got description (81 chars)
+[2025-10-28T20:44:42.416Z] LOG ✅ Found 1 places
+[2025-10-28T20:44:42.423Z] LOG    ✅ Old State House: Got description (98 chars)
+[2025-10-28T20:44:42.423Z] LOG ✅ Found 1 places
+[2025-10-28T20:44:42.445Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2025-10-28T20:44:42.446Z] LOG ✅ Found 1 places
+[2025-10-28T20:44:42.447Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 900ms
+[2025-10-28T20:44:42.448Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T20:44:42.449Z] LOG    ✅ Merged: Faneuil Hall Marketplace
+[2025-10-28T20:44:42.450Z] LOG       Places placeId: ChIJpyiwa4Zw44kRBQSGWKv4wgA
+[2025-10-28T20:44:42.450Z] LOG       Gemini description: Faneuil Hall Marketplace is a bustling historic market, ofte...
+[2025-10-28T20:44:42.451Z] LOG    ✅ Merged: Old State House
+[2025-10-28T20:44:42.451Z] LOG       Places placeId: ChIJh-tZaIRw44kR140lhfNrc_g
+[2025-10-28T20:44:42.452Z] LOG       Gemini description: The Old State House is a significant historical building con...
+[2025-10-28T20:44:42.452Z] LOG    ✅ Merged: Union Oyster House
+[2025-10-28T20:44:42.453Z] LOG       Places placeId: ChIJMVYI84Vw44kRKNGrFHLCsVc
+[2025-10-28T20:44:42.453Z] LOG       Gemini description: Established in 1826, the Union Oyster House is America's old...
+[2025-10-28T20:44:42.454Z] LOG    ✅ Merged: The Paul Revere House
+[2025-10-28T20:44:42.454Z] LOG       Places placeId: ChIJtT5ZHIlw44kRzCtDBAjPP3A
+[2025-10-28T20:44:42.454Z] LOG       Gemini description: Step back in time at The Paul Revere House, the oldest house...
+[2025-10-28T20:44:42.455Z] LOG    ✅ Merged: Mike's Pastry
+[2025-10-28T20:44:42.455Z] LOG       Places placeId: ChIJs0kxSjWo4okR6109vVboQ64
+[2025-10-28T20:44:42.455Z] LOG       Gemini description: Mike's Pastry is a world-renowned Italian bakery in Boston's...
+[2025-10-28T20:44:42.456Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-28T20:44:42.456Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-28T20:44:42.457Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-28T20:44:42.458Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-28T20:44:42.459Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-28T20:44:42.460Z] LOG    1. Searching "Market" in "42.360189,-71.0551145"
+[2025-10-28T20:44:42.460Z] LOG    📍 Using nearbySearch at coordinates (42.360189, -71.0551145)
+[2025-10-28T20:44:42.461Z] LOG 🔍 [Google Places] Nearby search at (42.360189, -71.0551145)
+[2025-10-28T20:44:42.462Z] LOG    2. Searching "Museum" in "42.3587352,-71.05745399999999"
+[2025-10-28T20:44:42.462Z] LOG    📍 Using nearbySearch at coordinates (42.3587352, -71.05745399999999)
+[2025-10-28T20:44:42.463Z] LOG 🔍 [Google Places] Nearby search at (42.3587352, -71.05745399999999)
+[2025-10-28T20:44:42.463Z] LOG    3. Searching "Seafood Restaurant" in "42.36128799999999,-71.05690799999999"
+[2025-10-28T20:44:42.464Z] LOG    📍 Using nearbySearch at coordinates (42.36128799999999, -71.05690799999999)
+[2025-10-28T20:44:42.464Z] LOG 🔍 [Google Places] Nearby search at (42.36128799999999, -71.05690799999999)
+[2025-10-28T20:44:42.465Z] LOG    4. Searching "Museum" in "42.3637235,-71.05365139999999"
+[2025-10-28T20:44:42.465Z] LOG    📍 Using nearbySearch at coordinates (42.3637235, -71.05365139999999)
+[2025-10-28T20:44:42.466Z] LOG 🔍 [Google Places] Nearby search at (42.3637235, -71.05365139999999)
+[2025-10-28T20:44:42.468Z] LOG    5. Searching "Bakery" in "42.3641693,-71.0542126"
+[2025-10-28T20:44:42.471Z] LOG    📍 Using nearbySearch at coordinates (42.3641693, -71.0542126)
+[2025-10-28T20:44:42.471Z] LOG 🔍 [Google Places] Nearby search at (42.3641693, -71.0542126)
+[2025-10-28T20:44:43.037Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T20:44:43.087Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T20:44:43.110Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T20:44:43.126Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T20:44:43.197Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2025-10-28T20:44:43.204Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2025-10-28T20:44:43.212Z] LOG    ✅ Museum of Science: Got description (99 chars)
+[2025-10-28T20:44:43.240Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2025-10-28T20:44:43.249Z] LOG    ✅ Bakey: Got description (93 chars)
+[2025-10-28T20:44:43.260Z] LOG    ✅ Boston Sail Loft: Got description (92 chars)
+[2025-10-28T20:44:43.277Z] LOG    ⚠️  Star Market: No editorial summary available
+[2025-10-28T20:44:43.283Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2025-10-28T20:44:43.286Z] LOG    ✅ Union Oyster House: Got description (81 chars)
+[2025-10-28T20:44:43.288Z] LOG    ⚠️  Corner Cafe & Bakery: No editorial summary available
+[2025-10-28T20:44:43.291Z] LOG    ⚠️  Tatte Bakery & Cafe: No editorial summary available
+[2025-10-28T20:44:43.291Z] LOG    ✅ Quincy Market: Got description (97 chars)
+[2025-10-28T20:44:43.300Z] LOG    ⚠️  Flour Bakery + Cafe: No editorial summary available
+[2025-10-28T20:44:43.319Z] LOG    ✅ Whole Foods Market: Got description (100 chars)
+[2025-10-28T20:44:43.323Z] LOG    ✅ Parziale's Bakery: Got description (99 chars)
+[2025-10-28T20:44:43.330Z] LOG    ✅ The Daily Catch North End: Got description (89 chars)
+[2025-10-28T20:44:43.331Z] LOG    ✅ Golden Goose Market: Got description (100 chars)
+[2025-10-28T20:44:43.339Z] LOG    ⚠️  Bella's Market: No editorial summary available
+[2025-10-28T20:44:43.341Z] LOG    ✅ The Barking Crab: Got description (95 chars)
+[2025-10-28T20:44:43.343Z] LOG    ✅ Chart House: Got description (87 chars)
+[2025-10-28T20:44:43.625Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-28T20:44:43.685Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2025-10-28T20:44:43.689Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2025-10-28T20:44:43.699Z] LOG    ✅ Museum of Science: Got description (99 chars)
+[2025-10-28T20:44:43.708Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2025-10-28T20:44:43.788Z] LOG    ✅ USS Constitution Museum: Got description (98 chars)
+[2025-10-28T20:44:43.789Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1330ms
+[2025-10-28T20:44:43.790Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-28T20:44:43.791Z] LOG    ✅ Venue 1 (Faneuil Hall Marketplace): 4 alternatives
+[2025-10-28T20:44:43.792Z] LOG       1. Star Market (4.2⭐)
+[2025-10-28T20:44:43.792Z] LOG       2. Bella's Market (4.2⭐)
+[2025-10-28T20:44:43.793Z] LOG       3. Whole Foods Market (4.3⭐)
+[2025-10-28T20:44:43.793Z] LOG    ✅ Venue 2 (Old State House): 4 alternatives
+[2025-10-28T20:44:43.793Z] LOG       1. Museum of Illusions Boston (4.7⭐)
+[2025-10-28T20:44:43.794Z] LOG       2. Museum of Science (4.7⭐)
+[2025-10-28T20:44:43.794Z] LOG       3. WNDR Museum (4.6⭐)
+[2025-10-28T20:44:43.794Z] LOG    ✅ Venue 3 (Union Oyster House): 4 alternatives
+[2025-10-28T20:44:43.795Z] LOG       1. Boston Sail Loft (4.6⭐)
+[2025-10-28T20:44:43.795Z] LOG       2. Chart House (4.3⭐)
+[2025-10-28T20:44:43.795Z] LOG       3. The Daily Catch North End (4.4⭐)
+[2025-10-28T20:44:43.796Z] LOG    ✅ Venue 4 (The Paul Revere House): 4 alternatives
+[2025-10-28T20:44:43.796Z] LOG       1. Museum of Illusions Boston (4.7⭐)
+[2025-10-28T20:44:43.796Z] LOG       2. WNDR Museum (4.6⭐)
+[2025-10-28T20:44:43.797Z] LOG       3. Museum of Science (4.7⭐)
+[2025-10-28T20:44:43.797Z] LOG    ✅ Venue 5 (Mike's Pastry): 4 alternatives
+[2025-10-28T20:44:43.797Z] LOG       1. Bakey (4.7⭐)
+[2025-10-28T20:44:43.798Z] LOG       2. Corner Cafe & Bakery (4.5⭐)
+[2025-10-28T20:44:43.798Z] LOG       3. Tatte Bakery & Cafe (4.5⭐)
+[2025-10-28T20:44:43.798Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-28T20:44:43.799Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-28T20:44:43.799Z] LOG    Primary venues: 5 stops
+[2025-10-28T20:44:43.799Z] LOG    ❌ Removed "Museum of Illusions Boston" - duplicate alternative
+[2025-10-28T20:44:43.800Z] LOG    ❌ Removed "WNDR Museum" - duplicate alternative
+[2025-10-28T20:44:43.800Z] LOG    ❌ Removed "Museum of Science" - duplicate alternative
+[2025-10-28T20:44:43.801Z] LOG    🔧 Stop "ChIJtT5ZHIlw44kRzCtD...": 4 → 1 alternatives
+[2025-10-28T20:44:43.801Z] LOG 
+✅ Cleaning complete:
+[2025-10-28T20:44:43.801Z] LOG    Removed 0 venues already in route
+[2025-10-28T20:44:43.801Z] LOG    Removed 3 duplicate alternatives
+[2025-10-28T20:44:43.802Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-28T20:44:43.802Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-28T20:44:43.802Z] LOG    Primary venues: 5
+[2025-10-28T20:44:43.802Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-28T20:44:43.803Z] LOG    Execution time: 2257ms
+[2025-10-28T20:44:43.803Z] LOG 
+📋 Final alternatives:
+[2025-10-28T20:44:43.803Z] LOG    Faneuil Hall Marketplace: 4 alternatives
+[2025-10-28T20:44:43.804Z] LOG    Old State House: 4 alternatives
+[2025-10-28T20:44:43.804Z] LOG    Union Oyster House: 4 alternatives
+[2025-10-28T20:44:43.804Z] LOG    The Paul Revere House: 1 alternatives
+[2025-10-28T20:44:43.805Z] LOG    Mike's Pastry: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

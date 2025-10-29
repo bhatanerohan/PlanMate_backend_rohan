@@ -48,7 +48,8 @@ export function startCapture(prompt: string) {
   console.warn = (...args: any[]) => { append('warn', args); orig.warn(...args); };
   (console as any).info = (...args: any[]) => { append('info', args); orig.info(...args); };
 
-  return function stopCapture(summary?: string) {
+  // Return a function that stops capture and also provide an appendRaw helper
+  const stop = function stopCapture(summary?: string) {
     try {
       console.log = orig.log;
       console.error = orig.error;
@@ -62,6 +63,22 @@ export function startCapture(prompt: string) {
 
     return filepath;
   };
+
+  // Helper to append raw objects (e.g., Gemini responses) in readable form
+  const appendRaw = (label: string, obj: any) => {
+    try {
+      const util = require('util');
+      const text = typeof obj === 'string' ? obj : util.inspect(obj, { depth: null, colors: false });
+      fs.appendFileSync(filepath, `\n[${new Date().toISOString()}] RAW ${label}\n${text}\n`);
+    } catch (e) {
+      // ignore
+    }
+  };
+
+  // Attach appendRaw to the stop function for external use
+  (stop as any).appendRaw = appendRaw;
+
+  return stop;
 }
 
 

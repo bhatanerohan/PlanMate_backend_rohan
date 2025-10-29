@@ -3,6 +3,47 @@
 import { useEffect, useRef } from 'react';
 import type { Message, Venue, Event } from '../types';
 
+// Render inline **bold** markers as <strong>
+function renderContentWithBold(text: string) {
+  if (!text) return null;
+  // Split on **bold** groups (including multiline)
+  const parts = text.split(/(\*\*(?:[\s\S]*?)\*\*)/g);
+  return parts.map((part, i) => {
+    if (!part) return null;
+    const match = part.match(/^\*\*(?:[\s\S]*?)\*\*$/);
+    if (match) {
+      const inner = part.slice(2, -2);
+      return <strong key={i} className="font-bold">{inner}</strong>;
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
+
+// Helper: calculate haversine distance (km)
+function toRad(degrees: number): number {
+  return degrees * (Math.PI / 180);
+}
+
+function calculateDistanceKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371; // km
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function formatDistanceKm(km: number): string {
+  if (!Number.isFinite(km)) return '';
+  if (km < 1) return `${Math.round(km * 1000)} m`;
+  return `${km.toFixed(1)} km`;
+}
+
 interface CurrentItinerary {
   venues: Venue[];
   originalPrompt: string;
@@ -69,12 +110,23 @@ const MessageList = ({ messages, isLoading, onMarkerSelect, currentItinerary }: 
                     {idx + 1}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate">
+                    <p className="text-sm font-bold text-gray-900 truncate">
                       {venue.name}
                     </p>
                     <p className="text-xs text-gray-500 truncate">
                       {venue.address}
                     </p>
+                    {/* Distance to next stop (if available) */}
+                    {idx < currentItinerary.venues.length - 1 && currentItinerary.venues[idx + 1]?.location && venue.location && (
+                      <p className="text-xs text-gray-400 mt-1">{
+                        `➡️ ${formatDistanceKm(calculateDistanceKm(
+                          venue.location.lat,
+                          venue.location.lng,
+                          currentItinerary.venues[idx + 1].location.lat,
+                          currentItinerary.venues[idx + 1].location.lng
+                        ))} to next stop`
+                      }</p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -153,42 +205,46 @@ const MessageBubble = ({ message, onMarkerSelect, currentItinerary }: MessageBub
       </div>
       <div className="flex-1">
         <div className="bg-[#0f1b28] rounded-lg p-4 border border-[#10222b]">
-          <p className="text-sm whitespace-pre-wrap text-gray-200 leading-relaxed">{message.content}</p>
+          <p className="text-sm whitespace-pre-wrap text-gray-200 leading-relaxed">{renderContentWithBold(message.content)}</p>
         </div>
         
-        {message.data?.venues && message.data.venues.length > 0 && (
-          <div className="mt-3 space-y-2">
-            {message.data.venues.map((venue: Venue, idx: number) => (
-              <VenueCard 
-                key={idx} 
-                venue={venue} 
-                onShowOnMap={() => {
-                  if (currentItinerary && currentItinerary.venues && currentItinerary.venues.length > 0) {
-                    if (venue.placeId === 'user-location') {
-                      onMarkerSelect('user-location');
-                      return;
-                    }
+        {message.data?.venues && message.data.venues.length > 0 && (() => {
+          const venues = message.data?.venues || [];
+          return (
+            <div className="mt-3 space-y-2">
+              {venues.map((venue: Venue, idx: number) => (
+                <VenueCard 
+                  key={idx} 
+                  venue={venue} 
+                  nextVenue={venues[idx + 1]}
+                  onShowOnMap={() => {
+                    if (currentItinerary && currentItinerary.venues && currentItinerary.venues.length > 0) {
+                      if (venue.placeId === 'user-location') {
+                        onMarkerSelect('user-location');
+                        return;
+                      }
 
-                    const idxInItin = currentItinerary.venues.findIndex((v: Venue) => v.placeId === venue.placeId);
-                    if (idxInItin !== -1) {
-                      onMarkerSelect(`primary-${idxInItin}`);
-                      return;
+                      const idxInItin = currentItinerary.venues.findIndex((v: Venue) => v.placeId === venue.placeId);
+                      if (idxInItin !== -1) {
+                        onMarkerSelect(`primary-${idxInItin}`);
+                        return;
+                      }
+                      // Fallback to venue-<idx> if not found in itinerary
+                      onMarkerSelect(`venue-${idx}`);
+                    } else {
+                      onMarkerSelect(`venue-${idx}`);
                     }
-                    // Fallback to venue-<idx> if not found in itinerary
-                    onMarkerSelect(`venue-${idx}`);
-                  } else {
-                    onMarkerSelect(`venue-${idx}`);
-                  }
-                }}
-              />
-            ))}
-            {message.data.venues.length > 5 && (
-              <div className="text-xs text-gray-400 text-center py-2">
-                Showing all {message.data.venues.length} venues
-              </div>
-            )}
-          </div>
-        )}
+                  }}
+                />
+              ))}
+              {venues.length > 5 && (
+                <div className="text-xs text-gray-400 text-center py-2">
+                  Showing all {venues.length} venues
+                </div>
+              )}
+            </div>
+          );
+        })()}
 
         {message.data?.events && message.data.events.length > 0 && (
           <div className="mt-3 space-y-2">
@@ -211,7 +267,7 @@ const MessageBubble = ({ message, onMarkerSelect, currentItinerary }: MessageBub
   );
 };
 
-const VenueCard = ({ venue, onShowOnMap }: { venue: Venue; onShowOnMap: () => void }) => (
+const VenueCard = ({ venue, nextVenue, onShowOnMap }: { venue: Venue; nextVenue?: Venue; onShowOnMap: () => void }) => (
   <div className="bg-[#071620] border border-[#0f2a3a] rounded-lg overflow-hidden hover:shadow-md transition-shadow">
     {venue.photoUrl && (
       <div className="w-full h-32 sm:h-40 overflow-hidden">
@@ -229,7 +285,7 @@ const VenueCard = ({ venue, onShowOnMap }: { venue: Venue; onShowOnMap: () => vo
     <div className="p-3">
       <div className="flex justify-between items-start gap-2">
         <div className="flex-1">
-          <h4 className="font-semibold text-sm text-gray-100">{venue.name}</h4>
+          <h4 className="font-bold text-sm text-gray-100">{venue.name}</h4>
           <p className="text-xs text-gray-400 mt-1">{venue.address}</p>
           
           {venue.description && (
@@ -290,6 +346,17 @@ const VenueCard = ({ venue, onShowOnMap }: { venue: Venue; onShowOnMap: () => vo
                 ))}
               </div>
             </div>
+          )}
+          {/* Distance to next stop when provided */}
+          {nextVenue && nextVenue.location && venue.location && (
+            <div className="mt-3 text-xs text-gray-400">{
+              `➡️ ${formatDistanceKm(calculateDistanceKm(
+                venue.location.lat,
+                venue.location.lng,
+                nextVenue.location.lat,
+                nextVenue.location.lng
+              ))} to next stop`
+            }</div>
           )}
         </div>
         

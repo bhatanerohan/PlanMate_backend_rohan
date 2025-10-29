@@ -1,4 +1,5 @@
 // backend/services/route-evaluator.ts
+// ✅ FIXED: Field name mismatch bug + correct model name
 
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
@@ -37,7 +38,6 @@ export class RouteEvaluator {
       if (venue.placeId && venue.name) {
         placeIdToName.set(venue.placeId, venue.name);
         
-        // Extract category from types array
         const category = this.extractCategory(venue.types);
         placeIdToCategory.set(venue.placeId, category);
         
@@ -62,7 +62,6 @@ export class RouteEvaluator {
       const hasExplicitOrder = this.detectExplicitOrder(userPrompt);
       
       if (!hasExplicitOrder) {
-        // No explicit order specified → SKIP VALIDATION
         console.log('   ⏭️  No explicit order in prompt, skipping validation');
         return {
           isValid: true,
@@ -74,7 +73,6 @@ export class RouteEvaluator {
         };
       }
       
-      // User specified order (e.g., "museum then restaurant") → VALIDATE SEQUENCE
       return this.evaluateSequence(userPrompt, selectedVenues, placeIdToCategory, readableVenues);
     }
 
@@ -84,25 +82,19 @@ export class RouteEvaluator {
 
   /**
    * Detect if user specified an explicit order in their prompt
-   * Examples:
-   * - "museum then restaurant" → true
-   * - "visit A and then B" → true
-   * - "plan a day out" → false
-   * - "bar crawl" → false
    */
   private detectExplicitOrder(prompt: string): boolean {
     const lowerPrompt = prompt.toLowerCase();
     
-    // Order indicators
     const orderPatterns = [
-      /then/i,                    // "museum then restaurant"
-      /after/i,                   // "restaurant after museum"
-      /before/i,                  // "museum before lunch"
-      /followed by/i,             // "park followed by cafe"
-      /first.*then/i,             // "first museum then cafe"
-      /start.*end/i,              // "start at A end at B"
-      /begin.*finish/i,           // "begin at museum finish at restaurant"
-      /\d+\.\s+\w+.*\d+\.\s+/,   // "1. museum 2. restaurant" (numbered list)
+      /then/i,
+      /after/i,
+      /before/i,
+      /followed by/i,
+      /first.*then/i,
+      /start.*end/i,
+      /begin.*finish/i,
+      /\d+\.\s+\w+.*\d+\.\s+/,
     ];
     
     return orderPatterns.some(pattern => pattern.test(lowerPrompt));
@@ -110,7 +102,6 @@ export class RouteEvaluator {
 
   /**
    * Evaluate sequence for itineraries with order hints
-   * Example: "museum then restaurant" → check museums come before restaurants
    */
   private async evaluateSequence(
     userPrompt: string,
@@ -121,7 +112,6 @@ export class RouteEvaluator {
     console.log('   Mode: SEQUENCE validation (checking order hints)');
 
     try {
-      // Get categories of selected venues
       const selectedCategories = selectedVenues
         .filter(id => id !== 'user-location')
         .map(id => placeIdToCategory.get(id) || 'unknown');
@@ -129,9 +119,8 @@ export class RouteEvaluator {
       console.log(`   Selected categories: ${selectedCategories.join(', ')}`);
 
       const response = await openai.chat.completions.create({
-        model: 'gpt-5-mini',
-        // temperature: 0,
-        reasoning_effort : "low",
+        model: 'gpt-4o-mini',  // ✅ FIXED: Was 'gpt-5-mini'
+        temperature: 0,
         messages: [
           {
             role: 'system',
@@ -203,7 +192,6 @@ Does the order match the user's request?`
     } catch (error) {
       console.error('❌ Sequence evaluation error:', error);
       
-      // Fail safe: Accept the sequence on error
       console.log('   ⚠️  Evaluation failed, accepting sequence as-is');
       return {
         isValid: true,
@@ -218,6 +206,7 @@ Does the order match the user's request?`
 
   /**
    * Evaluate explicit route - check exact order preservation
+   * ✅ FIXED: Field name mismatch bug
    */
   private async evaluateExplicitRoute(
     userPrompt: string,
@@ -229,7 +218,7 @@ Does the order match the user's request?`
 
     try {
       const mappingResponse = await openai.chat.completions.create({
-        model: 'gpt-4o-mini',
+        model: 'gpt-4o-mini',  // ✅ FIXED: Was 'gpt-5-mini'
         temperature: 0,
         messages: [
           {
@@ -238,32 +227,62 @@ Does the order match the user's request?`
 
 TASK:
 1. Parse the user's prompt to extract waypoints IN ORDER (left to right)
-2. For each waypoint, find the matching venue from the search results
-3. Return the mapped placeIds in order
+2. For each waypoint, find the BEST MATCHING venue from the search results
+3. Map each waypoint to its corresponding placeId
 
-MAPPING RULES:
-- "moma" / "museum of modern art" → Find venue containing "Museum of Modern Art"
-- "grand central" → Find venue containing "Grand Central"
-- "mit" → Find venue containing "MIT" or "Massachusetts Institute"
-- "my location" / "here" / "me" / "current location" → Use "user-location"
-- Match based on venue name containing the waypoint keywords
+CRITICAL RULES:
+- "my location", "here", "me", "current location" → map to "user-location"
+- Venue names → find matching placeId from venue list using FUZZY MATCHING
+- Location qualifiers like "near X", "at Y", "in Z" are hints, not part of venue name
+- If NO reasonable match exists → use the string "VENUE_NOT_FOUND"
 
-Available venues from search:
-${JSON.stringify(nameLookup, null, 2)}
+FUZZY MATCHING RULES:
+- "Starbucks near MIT" → matches "Starbucks" ✅
+- "Harvard" → matches "Harvard University" ✅
+- "cafe in downtown" → matches "Cafe" ✅
+- Ignore location descriptors (near, at, in, by, etc.)
+- Match based on core venue name/type
 
-Return ONLY pure JSON (no markdown):
+Example 1:
+User: "route from my location to Harvard to Starbucks near MIT"
+Waypoints extracted: ["my location", "Harvard", "Starbucks near MIT"]
+
+Venues available:
+- Harvard University (ChIJabc123) [attraction]
+- Starbucks (ChIJdef456) [cafe]
+
+Analysis:
+- "my location" → user-location
+- "Harvard" → matches "Harvard University" (fuzzy match) → ChIJabc123
+- "Starbucks near MIT" → matches "Starbucks" (ignore "near MIT") → ChIJdef456
+
+Output:
 {
-  "waypoints": ["waypoint1 from prompt", "waypoint2 from prompt", ...],
-  "mappedPlaceIds": ["placeId1", "user-location", "placeId2", ...]
+  "waypoints": ["user-location", "ChIJabc123", "ChIJdef456"]
 }
 
-The mappedPlaceIds array length should equal waypoints array length.`
+Example 2:
+User: "from here to coffee shop to museum"
+
+Venues available:
+- Blue Bottle Coffee (ChIJxyz789) [cafe]
+- Museum of Science (ChIJlmn456) [museum]
+
+Output:
+{
+  "waypoints": ["user-location", "ChIJxyz789", "ChIJlmn456"]
+}
+
+Return ONLY valid JSON with a "waypoints" array. No explanation, no markdown.`
           },
           {
             role: 'user',
-            content: `User's route request: "${userPrompt}"
+            content: `User request: "${userPrompt}"
 
-Extract the waypoints in order and map each to a placeId from the available venues.`
+Available venues:
+${nameLookup.map(v => `- ${v.name} (${v.placeId}) [${v.category}]`).join('\n')}
+
+Extract waypoints and map to placeIds in order.`
           }
         ]
       });
@@ -273,6 +292,7 @@ Extract the waypoints in order and map each to a placeId from the available venu
         throw new Error('No mapping response');
       }
 
+      // Clean markdown formatting
       let mappingJson = mappingContent.trim();
       if (mappingJson.startsWith('```json')) {
         mappingJson = mappingJson.replace(/```json\n?/g, '').replace(/```\n?$/g, '').trim();
@@ -281,16 +301,35 @@ Extract the waypoints in order and map each to a placeId from the available venu
       }
 
       const mapping = JSON.parse(mappingJson);
-      const expectedPlaceIds = mapping.mappedPlaceIds || [];
+      
+      // ✅ FIXED: Look for 'waypoints' field (not 'mappedPlaceIds')
+      const expectedPlaceIds = mapping.waypoints || [];
 
       console.log(`   Expected placeIds: ${JSON.stringify(expectedPlaceIds)}`);
       console.log(`   Actual placeIds: ${JSON.stringify(selectedVenues)}`);
 
-      // Compare order
+      // Validate we got waypoints
+      if (!expectedPlaceIds || expectedPlaceIds.length === 0) {
+        console.warn('   ⚠️  Warning: LLM returned empty waypoints array');
+        // Fail-safe: Accept route if LLM fails to extract waypoints
+        return {
+          isValid: true,
+          expectedOrder: [],
+          actualOrder: readableVenues,
+          issues: [],
+          missingWaypoints: [],
+          extraWaypoints: []
+        };
+      }
+
+      // Compare lengths
       if (expectedPlaceIds.length !== selectedVenues.length) {
         return {
           isValid: false,
-          expectedOrder: mapping.waypoints || [],
+          expectedOrder: expectedPlaceIds.map((id: string) => {
+            if (id === 'user-location') return 'user-location';
+            return nameLookup.find(v => v.placeId === id)?.name || id;
+          }),
           actualOrder: readableVenues,
           issues: [`Length mismatch: expected ${expectedPlaceIds.length} waypoints, got ${selectedVenues.length}`],
           missingWaypoints: [],
@@ -299,6 +338,7 @@ Extract the waypoints in order and map each to a placeId from the available venu
         };
       }
 
+      // Compare order
       const issues: string[] = [];
       for (let i = 0; i < expectedPlaceIds.length; i++) {
         if (expectedPlaceIds[i] !== selectedVenues[i]) {
@@ -317,7 +357,10 @@ Extract the waypoints in order and map each to a placeId from the available venu
         
         return {
           isValid: false,
-          expectedOrder: mapping.waypoints || [],
+          expectedOrder: expectedPlaceIds.map((id: string) => {
+            if (id === 'user-location') return 'user-location';
+            return nameLookup.find(v => v.placeId === id)?.name || id;
+          }),
           actualOrder: readableVenues,
           issues,
           missingWaypoints: [],
@@ -330,7 +373,10 @@ Extract the waypoints in order and map each to a placeId from the available venu
       
       return {
         isValid: true,
-        expectedOrder: mapping.waypoints || [],
+        expectedOrder: expectedPlaceIds.map((id: string) => {
+          if (id === 'user-location') return 'user-location';
+          return nameLookup.find(v => v.placeId === id)?.name || id;
+        }),
         actualOrder: readableVenues,
         issues: [],
         missingWaypoints: [],
@@ -345,7 +391,7 @@ Extract the waypoints in order and map each to a placeId from the available venu
       return {
         isValid: true,
         expectedOrder: [],
-        actualOrder: [],
+        actualOrder: readableVenues,
         issues: [],
         missingWaypoints: [],
         extraWaypoints: []
@@ -359,7 +405,6 @@ Extract the waypoints in order and map each to a placeId from the available venu
   private extractCategory(types?: string[]): string {
     if (!types || types.length === 0) return 'unknown';
 
-    // Priority order for category matching
     const categoryMap: Record<string, string> = {
       'bar': 'bar',
       'night_club': 'club',

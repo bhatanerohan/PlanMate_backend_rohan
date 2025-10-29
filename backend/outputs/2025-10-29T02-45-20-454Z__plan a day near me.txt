@@ -1,0 +1,114 @@
+User Prompt: plan a day near me
+
+[2025-10-29T02:45:20.455Z] LOG 📍 Using extracted city from user location: Balearic Islands
+[2025-10-29T02:45:20.456Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T02:45:20.456Z] LOG    1. "Dalt Vila" in "Balearic Islands"
+[2025-10-29T02:45:20.457Z] LOG    2. "La Plaza" in "Balearic Islands"
+[2025-10-29T02:45:20.457Z] LOG    3. "S'Escalinata" in "Balearic Islands"
+[2025-10-29T02:45:20.457Z] LOG 
+🔍 Executing batch search for 3 venues...
+[2025-10-29T02:45:20.458Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T02:45:20.459Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-29T02:45:20.460Z] LOG    1. Searching "Dalt Vila" in "Balearic Islands"
+[2025-10-29T02:45:20.464Z] LOG 🔍 [Google Places] Text search: "Dalt Vila" in Balearic Islands
+[2025-10-29T02:45:20.484Z] LOG    2. Searching "La Plaza" in "Balearic Islands"
+[2025-10-29T02:45:20.487Z] LOG 🔍 [Google Places] Text search: "La Plaza" in Balearic Islands
+[2025-10-29T02:45:20.491Z] LOG    3. Searching "S'Escalinata" in "Balearic Islands"
+[2025-10-29T02:45:20.494Z] LOG 🔍 [Google Places] Text search: "S'Escalinata" in Balearic Islands
+[2025-10-29T02:45:21.022Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T02:45:21.072Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T02:45:21.204Z] LOG    ✅ S'Escalinata: Got description (100 chars)
+[2025-10-29T02:45:21.206Z] LOG ✅ Found 1 places
+[2025-10-29T02:45:21.261Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T02:45:21.284Z] LOG    ⚠️  Dalt Vila: No editorial summary available
+[2025-10-29T02:45:21.284Z] LOG ✅ Found 1 places
+[2025-10-29T02:45:21.446Z] LOG    ⚠️  La Plaza: No editorial summary available
+[2025-10-29T02:45:21.447Z] LOG ✅ Found 1 places
+[2025-10-29T02:45:21.448Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 989ms
+[2025-10-29T02:45:21.448Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T02:45:21.449Z] LOG    Tool execution result: success=true
+[2025-10-29T02:45:21.449Z] LOG    ✅ Tool returned 3 search results
+[2025-10-29T02:45:21.450Z] LOG    ✅ Merged: Dalt Vila
+[2025-10-29T02:45:21.450Z] LOG       Places placeId: ChIJac27E7BGmRIR3ivh3HRaxyQ
+[2025-10-29T02:45:21.451Z] LOG       Gemini description: Dalt Vila, a UNESCO World Heritage site, is the historic wal...
+[2025-10-29T02:45:21.451Z] LOG    ✅ Merged: La Plaza
+[2025-10-29T02:45:21.451Z] LOG       Places placeId: ChIJCzWsV7BGmRIRrKFxAStEGNY
+[2025-10-29T02:45:21.452Z] LOG       Gemini description: Nestled in the picturesque Plaça de Vila within the heart of...
+[2025-10-29T02:45:21.452Z] LOG    ✅ Merged: S'Escalinata
+[2025-10-29T02:45:21.452Z] LOG       Places placeId: ChIJT5iIeLBGmRIRa8oZ-Mbkb0E
+[2025-10-29T02:45:21.453Z] LOG       Gemini description: S'Escalinata is a beloved, easygoing bar at the foot of Dalt...
+[2025-10-29T02:45:21.453Z] LOG ✅ Phase 1 complete: Found 3/3 exact venues
+[2025-10-29T02:45:21.454Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T02:45:21.454Z] LOG    Searching for alternatives near 3 venues...
+[2025-10-29T02:45:21.455Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T02:45:21.455Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-29T02:45:21.455Z] LOG    1. Searching "Historic Site / Tourist Attraction" in "38.9069135,1.4346072"
+[2025-10-29T02:45:21.456Z] LOG    📍 Using nearbySearch at coordinates (38.9069135, 1.4346072)
+[2025-10-29T02:45:21.457Z] LOG 🔍 [Google Places] Nearby search at (38.9069135, 1.4346072)
+[2025-10-29T02:45:21.458Z] LOG    2. Searching "Mediterranean Restaurant" in "38.9082101,1.4358067"
+[2025-10-29T02:45:21.458Z] LOG    📍 Using nearbySearch at coordinates (38.9082101, 1.4358067)
+[2025-10-29T02:45:21.458Z] LOG 🔍 [Google Places] Nearby search at (38.9082101, 1.4358067)
+[2025-10-29T02:45:21.459Z] LOG    3. Searching "Bar" in "38.9079666,1.4339233"
+[2025-10-29T02:45:21.459Z] LOG    📍 Using nearbySearch at coordinates (38.9079666, 1.4339233)
+[2025-10-29T02:45:21.460Z] LOG 🔍 [Google Places] Nearby search at (38.9079666, 1.4339233)
+[2025-10-29T02:45:21.953Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T02:45:22.123Z] LOG    ⚠️  Baluard de Sant Pere: No editorial summary available
+[2025-10-29T02:45:22.159Z] LOG    ⚠️  Vila vella de Vila d'Eivissa: No editorial summary available
+[2025-10-29T02:45:22.166Z] LOG    ⚠️  Mur de la Fama de Vila d'Eivissa: No editorial summary available
+[2025-10-29T02:45:22.183Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T02:45:22.194Z] LOG    ⚠️  Plaça de la Reina Sofia: No editorial summary available
+[2025-10-29T02:45:22.283Z] LOG    ✅ Castle of Ibiza: Got description (100 chars)
+[2025-10-29T02:45:22.300Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T02:45:22.336Z] LOG    ⚠️  Paradise Lost: No editorial summary available
+[2025-10-29T02:45:22.365Z] LOG    ⚠️  Space Bar Ibiza: No editorial summary available
+[2025-10-29T02:45:22.381Z] LOG    ⚠️  Bar Es Cafetí: No editorial summary available
+[2025-10-29T02:45:22.385Z] LOG    ⚠️  Bar Angelo Eivissa: No editorial summary available
+[2025-10-29T02:45:22.401Z] LOG    ⚠️  Zoo Bar: No editorial summary available
+[2025-10-29T02:45:22.438Z] LOG    ✅ Calma: Got description (95 chars)
+[2025-10-29T02:45:22.489Z] LOG    ⚠️  Can Costa: No editorial summary available
+[2025-10-29T02:45:22.521Z] LOG    ✅ Locals Only Eivissa: Got description (97 chars)
+[2025-10-29T02:45:22.562Z] LOG    ✅ La Brasa d'Eivissa: Got description (88 chars)
+[2025-10-29T02:45:22.584Z] LOG    ⚠️  Restaurante Plaza del Sol: No editorial summary available
+[2025-10-29T02:45:22.585Z] LOG ✅ Batch complete: 3/3 searches succeeded, 15 total venues found in 1130ms
+[2025-10-29T02:45:22.586Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T02:45:22.587Z] LOG    ✅ Venue 1 (Dalt Vila): 4 alternatives
+[2025-10-29T02:45:22.587Z] LOG       1. Baluard de Sant Pere (4.6⭐)
+[2025-10-29T02:45:22.588Z] LOG       2. Vila vella de Vila d'Eivissa (4.7⭐)
+[2025-10-29T02:45:22.588Z] LOG       3. Castle of Ibiza (4.7⭐)
+[2025-10-29T02:45:22.588Z] LOG    ✅ Venue 2 (La Plaza): 4 alternatives
+[2025-10-29T02:45:22.589Z] LOG       1. Can Costa (4.7⭐)
+[2025-10-29T02:45:22.589Z] LOG       2. La Brasa d'Eivissa (3.9⭐)
+[2025-10-29T02:45:22.589Z] LOG       3. Calma (4.4⭐)
+[2025-10-29T02:45:22.589Z] LOG    ✅ Venue 3 (S'Escalinata): 4 alternatives
+[2025-10-29T02:45:22.590Z] LOG       1. Space Bar Ibiza (4⭐)
+[2025-10-29T02:45:22.590Z] LOG       2. Paradise Lost (4.6⭐)
+[2025-10-29T02:45:22.591Z] LOG       3. Bar Es Cafetí (4.8⭐)
+[2025-10-29T02:45:22.591Z] LOG 
+📦 Phase 2 complete: 3 stops with alternatives
+[2025-10-29T02:45:22.591Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T02:45:22.592Z] LOG    Primary venues: 3 stops
+[2025-10-29T02:45:22.592Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T02:45:22.593Z] LOG    Removed 0 venues already in route
+[2025-10-29T02:45:22.593Z] LOG    Removed 0 duplicate alternatives
+[2025-10-29T02:45:22.593Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-29T02:45:22.594Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T02:45:22.594Z] LOG    Primary venues: 3
+[2025-10-29T02:45:22.595Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-29T02:45:22.595Z] LOG    Execution time: 2140ms
+[2025-10-29T02:45:22.596Z] LOG 
+📋 Final alternatives:
+[2025-10-29T02:45:22.596Z] LOG    Dalt Vila: 4 alternatives
+[2025-10-29T02:45:22.597Z] LOG    La Plaza: 4 alternatives
+[2025-10-29T02:45:22.598Z] LOG    S'Escalinata: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 3
+Alternatives: 3

@@ -1,0 +1,164 @@
+User Prompt: what are some lowkey landmarks in boston
+
+[2025-10-29T03:46:24.173Z] LOG 📍 Using fallback location (no user location): Beacon Hill
+[2025-10-29T03:46:24.175Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T03:46:24.177Z] LOG    1. "Nichols House Museum" in "Beacon Hill"
+[2025-10-29T03:46:24.177Z] LOG    2. "Boston Athenaeum" in "Beacon Hill"
+[2025-10-29T03:46:24.178Z] LOG    3. "The Boston Stone" in "North End/Downtown"
+[2025-10-29T03:46:24.179Z] LOG    4. "Gibson House Museum" in "Back Bay"
+[2025-10-29T03:46:24.180Z] LOG    5. "The Fenway Garden Society" in "Fenway"
+[2025-10-29T03:46:24.181Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-29T03:46:24.183Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:46:24.186Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T03:46:24.188Z] LOG    1. Searching "Nichols House Museum" in "Beacon Hill"
+[2025-10-29T03:46:24.192Z] LOG 🔍 [Google Places] Text search: "Nichols House Museum" in Beacon Hill
+[2025-10-29T03:46:24.216Z] LOG    2. Searching "Boston Athenaeum" in "Beacon Hill"
+[2025-10-29T03:46:24.220Z] LOG 🔍 [Google Places] Text search: "Boston Athenaeum" in Beacon Hill
+[2025-10-29T03:46:24.230Z] LOG    3. Searching "The Boston Stone" in "North End/Downtown"
+[2025-10-29T03:46:24.235Z] LOG 🔍 [Google Places] Text search: "The Boston Stone" in North End/Downtown
+[2025-10-29T03:46:24.246Z] LOG    4. Searching "Gibson House Museum" in "Back Bay"
+[2025-10-29T03:46:24.249Z] LOG 🔍 [Google Places] Text search: "Gibson House Museum" in Back Bay
+[2025-10-29T03:46:24.256Z] LOG    5. Searching "The Fenway Garden Society" in "Fenway"
+[2025-10-29T03:46:24.259Z] LOG 🔍 [Google Places] Text search: "The Fenway Garden Society" in Fenway
+[2025-10-29T03:46:24.754Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:46:24.758Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:46:24.760Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:46:24.816Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:46:24.842Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:46:24.894Z] LOG    ✅ Boston Athenaeum: Got description (85 chars)
+[2025-10-29T03:46:24.899Z] LOG ✅ Found 1 places
+[2025-10-29T03:46:24.923Z] LOG    ✅ The Fenway Garden Society: Got description (92 chars)
+[2025-10-29T03:46:24.924Z] LOG ✅ Found 1 places
+[2025-10-29T03:46:24.929Z] LOG    ⚠️  The Boston Stone: No editorial summary available
+[2025-10-29T03:46:24.930Z] LOG ✅ Found 1 places
+[2025-10-29T03:46:24.967Z] LOG    ✅ Gibson House Museum: Got description (99 chars)
+[2025-10-29T03:46:24.971Z] LOG ✅ Found 1 places
+[2025-10-29T03:46:24.998Z] LOG    ✅ Nichols House Museum: Got description (100 chars)
+[2025-10-29T03:46:25.001Z] LOG ✅ Found 1 places
+[2025-10-29T03:46:25.003Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 817ms
+[2025-10-29T03:46:25.005Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:46:25.005Z] LOG    Tool execution result: success=true
+[2025-10-29T03:46:25.006Z] LOG    ✅ Tool returned 5 search results
+[2025-10-29T03:46:25.006Z] LOG    ✅ Merged: Nichols House Museum
+[2025-10-29T03:46:25.007Z] LOG       Places placeId: ChIJvTBZiptw44kR4yIWu8C-9WI
+[2025-10-29T03:46:25.007Z] LOG       Gemini description: This historic brownstone on Beacon Hill offers a glimpse int...
+[2025-10-29T03:46:25.008Z] LOG    ✅ Merged: Boston Athenaeum
+[2025-10-29T03:46:25.008Z] LOG       Places placeId: ChIJO_EfVJtw44kRyUaGBYXShhU
+[2025-10-29T03:46:25.009Z] LOG       Gemini description: An independent library and cultural institution founded in 1...
+[2025-10-29T03:46:25.009Z] LOG    ✅ Merged: The Boston Stone
+[2025-10-29T03:46:25.010Z] LOG       Places placeId: ChIJ7fxgX49w44kRPcU59__EoU0
+[2025-10-29T03:46:25.010Z] LOG       Gemini description: A small, unassuming stone embedded in a building on Marshall...
+[2025-10-29T03:46:25.011Z] LOG    ✅ Merged: Gibson House Museum
+[2025-10-29T03:46:25.011Z] LOG       Places placeId: ChIJy49xqAp644kRuJaNEOaydPs
+[2025-10-29T03:46:25.012Z] LOG       Gemini description: Step back in time at this impeccably preserved Victorian tow...
+[2025-10-29T03:46:25.012Z] LOG    ✅ Merged: The Fenway Garden Society
+[2025-10-29T03:46:25.013Z] LOG       Places placeId: ChIJEXx2Rxx644kRAYQg4Vefphc
+[2025-10-29T03:46:25.013Z] LOG       Gemini description: This historic 7.5-acre urban garden dates back to 1942 as a ...
+[2025-10-29T03:46:25.014Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-29T03:46:25.014Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T03:46:25.015Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-29T03:46:25.015Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:46:25.016Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T03:46:25.016Z] LOG    1. Searching "museum" in "42.3584347,-71.0659533"
+[2025-10-29T03:46:25.016Z] LOG    📍 Using nearbySearch at coordinates (42.3584347, -71.0659533)
+[2025-10-29T03:46:25.017Z] LOG 🔍 [Google Places] Nearby search at (42.3584347, -71.0659533)
+[2025-10-29T03:46:25.019Z] LOG    2. Searching "library | landmark" in "42.3579151,-71.0620802"
+[2025-10-29T03:46:25.020Z] LOG    📍 Using nearbySearch at coordinates (42.3579151, -71.0620802)
+[2025-10-29T03:46:25.021Z] LOG 🔍 [Google Places] Nearby search at (42.3579151, -71.0620802)
+[2025-10-29T03:46:25.024Z] LOG    3. Searching "landmark" in "42.3617145,-71.0568536"
+[2025-10-29T03:46:25.025Z] LOG    📍 Using nearbySearch at coordinates (42.3617145, -71.0568536)
+[2025-10-29T03:46:25.026Z] LOG 🔍 [Google Places] Nearby search at (42.3617145, -71.0568536)
+[2025-10-29T03:46:25.029Z] LOG    4. Searching "museum" in "42.3547804,-71.0740932"
+[2025-10-29T03:46:25.032Z] LOG    📍 Using nearbySearch at coordinates (42.3547804, -71.0740932)
+[2025-10-29T03:46:25.033Z] LOG 🔍 [Google Places] Nearby search at (42.3547804, -71.0740932)
+[2025-10-29T03:46:25.036Z] LOG    5. Searching "garden | landmark" in "42.3449299,-71.09323169999999"
+[2025-10-29T03:46:25.037Z] LOG    📍 Using nearbySearch at coordinates (42.3449299, -71.09323169999999)
+[2025-10-29T03:46:25.039Z] LOG 🔍 [Google Places] Nearby search at (42.3449299, -71.09323169999999)
+[2025-10-29T03:46:25.534Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:46:25.579Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:46:25.635Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:46:25.658Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:46:25.678Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2025-10-29T03:46:25.739Z] LOG    ⚠️  Landmark Square Apartments: No editorial summary available
+[2025-10-29T03:46:25.742Z] LOG    ✅ Museum of Science: Got description (99 chars)
+[2025-10-29T03:46:25.749Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2025-10-29T03:46:25.757Z] LOG    ✅ Old State House: Got description (98 chars)
+[2025-10-29T03:46:25.765Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2025-10-29T03:46:25.777Z] LOG    ⚠️  Cisco Brewers Fenway: No editorial summary available
+[2025-10-29T03:46:25.794Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:46:25.807Z] LOG    ⚠️  Rosenberg Garden Café: No editorial summary available
+[2025-10-29T03:46:25.811Z] LOG    ✅ Museum of Science: Got description (99 chars)
+[2025-10-29T03:46:25.819Z] LOG    ✅ James P. Kelleher Rose Garden: Got description (98 chars)
+[2025-10-29T03:46:25.856Z] LOG    ⚠️  North End Branch of the Boston Public Library: No editorial summary available
+[2025-10-29T03:46:25.862Z] LOG    ⚠️  Mildred F Sawyer Library: No editorial summary available
+[2025-10-29T03:46:25.872Z] LOG    ⚠️  West End Branch of the Boston Public Library: No editorial summary available
+[2025-10-29T03:46:25.875Z] LOG    ⚠️  Worcester Street Community Garden: No editorial summary available
+[2025-10-29T03:46:25.876Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2025-10-29T03:46:25.883Z] LOG    ⚠️  Chinatown Branch of the Boston Public Library: No editorial summary available
+[2025-10-29T03:46:25.887Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2025-10-29T03:46:25.926Z] LOG    ✅ Boston's Old City Hall: Got description (96 chars)
+[2025-10-29T03:46:25.943Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2025-10-29T03:46:25.945Z] LOG    ✅ Chinatown Gate: Got description (92 chars)
+[2025-10-29T03:46:25.947Z] LOG    ✅ MIT Museum: Got description (97 chars)
+[2025-10-29T03:46:25.948Z] LOG    ⚠️  Boston Hop On Hop Off Tour: No editorial summary available
+[2025-10-29T03:46:25.957Z] LOG    ⚠️  Boston Tea Party Marker: No editorial summary available
+[2025-10-29T03:46:25.964Z] LOG    ⚠️  Ben Franklin House: No editorial summary available
+[2025-10-29T03:46:26.046Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2025-10-29T03:46:26.047Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1031ms
+[2025-10-29T03:46:26.048Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:46:26.049Z] LOG    ✅ Venue 1 (Nichols House Museum): 4 alternatives
+[2025-10-29T03:46:26.049Z] LOG       1. Museum of Illusions Boston (4.7⭐)
+[2025-10-29T03:46:26.050Z] LOG       2. WNDR Museum (4.6⭐)
+[2025-10-29T03:46:26.050Z] LOG       3. Museum of Science (4.7⭐)
+[2025-10-29T03:46:26.050Z] LOG    ✅ Venue 2 (Boston Athenaeum): 4 alternatives
+[2025-10-29T03:46:26.051Z] LOG       1. Boston Public Library - Central Library (4.8⭐)
+[2025-10-29T03:46:26.051Z] LOG       2. West End Branch of the Boston Public Library (4.7⭐)
+[2025-10-29T03:46:26.052Z] LOG       3. Chinatown Branch of the Boston Public Library (4.1⭐)
+[2025-10-29T03:46:26.053Z] LOG    ✅ Venue 3 (The Boston Stone): 4 alternatives
+[2025-10-29T03:46:26.053Z] LOG       1. Boston's Old City Hall (4.6⭐)
+[2025-10-29T03:46:26.054Z] LOG       2. Ben Franklin House (4.2⭐)
+[2025-10-29T03:46:26.054Z] LOG       3. Boston Tea Party Marker (4.5⭐)
+[2025-10-29T03:46:26.055Z] LOG    ✅ Venue 4 (Gibson House Museum): 4 alternatives
+[2025-10-29T03:46:26.055Z] LOG       1. Museum of Illusions Boston (4.7⭐)
+[2025-10-29T03:46:26.055Z] LOG       2. Museum of Science (4.7⭐)
+[2025-10-29T03:46:26.056Z] LOG       3. Museum of Fine Arts, Boston (4.8⭐)
+[2025-10-29T03:46:26.056Z] LOG    ✅ Venue 5 (The Fenway Garden Society): 4 alternatives
+[2025-10-29T03:46:26.056Z] LOG       1. Landmark Square Apartments (4⭐)
+[2025-10-29T03:46:26.057Z] LOG       2. Cisco Brewers Fenway (3.6⭐)
+[2025-10-29T03:46:26.057Z] LOG       3. Worcester Street Community Garden (4.5⭐)
+[2025-10-29T03:46:26.058Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-29T03:46:26.058Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T03:46:26.059Z] LOG    Primary venues: 5 stops
+[2025-10-29T03:46:26.060Z] LOG    ❌ Removed "Museum of Illusions Boston" - duplicate alternative
+[2025-10-29T03:46:26.060Z] LOG    ❌ Removed "Museum of Science" - duplicate alternative
+[2025-10-29T03:46:26.061Z] LOG    ❌ Removed "WNDR Museum" - duplicate alternative
+[2025-10-29T03:46:26.061Z] LOG    🔧 Stop "ChIJy49xqAp644kRuJaN...": 4 → 1 alternatives
+[2025-10-29T03:46:26.062Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T03:46:26.062Z] LOG    Removed 0 venues already in route
+[2025-10-29T03:46:26.062Z] LOG    Removed 3 duplicate alternatives
+[2025-10-29T03:46:26.063Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-29T03:46:26.063Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T03:46:26.064Z] LOG    Primary venues: 5
+[2025-10-29T03:46:26.064Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-29T03:46:26.064Z] LOG    Execution time: 1895ms
+[2025-10-29T03:46:26.065Z] LOG 
+📋 Final alternatives:
+[2025-10-29T03:46:26.065Z] LOG    Nichols House Museum: 4 alternatives
+[2025-10-29T03:46:26.066Z] LOG    Boston Athenaeum: 4 alternatives
+[2025-10-29T03:46:26.066Z] LOG    The Boston Stone: 4 alternatives
+[2025-10-29T03:46:26.067Z] LOG    Gibson House Museum: 1 alternatives
+[2025-10-29T03:46:26.067Z] LOG    The Fenway Garden Society: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

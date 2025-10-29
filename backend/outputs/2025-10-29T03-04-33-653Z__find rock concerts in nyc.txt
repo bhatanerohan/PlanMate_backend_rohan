@@ -1,0 +1,114 @@
+User Prompt: find rock concerts in nyc
+
+[2025-10-29T03:04:33.655Z] LOG 📍 Using fallback location (no user location): Boston, MA
+[2025-10-29T03:04:33.656Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T03:04:33.657Z] LOG    1. "Webster Hall" in "Boston, MA"
+[2025-10-29T03:04:33.657Z] LOG    2. "Irving Plaza" in "Boston, MA"
+[2025-10-29T03:04:33.658Z] LOG    3. "The Red Lion | NYC" in "Boston, MA"
+[2025-10-29T03:04:33.658Z] LOG 
+🔍 Executing batch search for 3 venues...
+[2025-10-29T03:04:33.659Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:04:33.660Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-29T03:04:33.661Z] LOG    1. Searching "Webster Hall" in "Boston, MA"
+[2025-10-29T03:04:33.661Z] LOG 🔍 [Google Places] Text search: "Webster Hall" in Boston, MA
+[2025-10-29T03:04:33.671Z] LOG    2. Searching "Irving Plaza" in "Boston, MA"
+[2025-10-29T03:04:33.675Z] LOG 🔍 [Google Places] Text search: "Irving Plaza" in Boston, MA
+[2025-10-29T03:04:33.684Z] LOG    3. Searching "The Red Lion | NYC" in "Boston, MA"
+[2025-10-29T03:04:33.700Z] LOG 🔍 [Google Places] Text search: "The Red Lion | NYC" in Boston, MA
+[2025-10-29T03:04:34.125Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:04:34.263Z] LOG    ⚠️  Irving St: No editorial summary available
+[2025-10-29T03:04:34.264Z] LOG ✅ Found 1 places
+[2025-10-29T03:04:34.285Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:04:34.332Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:04:34.455Z] LOG    ✅ The Red Lion | NYC: Got description (96 chars)
+[2025-10-29T03:04:34.456Z] LOG ✅ Found 1 places
+[2025-10-29T03:04:34.471Z] LOG    ⚠️  William E. Reed Auditorium: No editorial summary available
+[2025-10-29T03:04:34.472Z] LOG ✅ Found 1 places
+[2025-10-29T03:04:34.472Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 812ms
+[2025-10-29T03:04:34.473Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:04:34.473Z] LOG    Tool execution result: success=true
+[2025-10-29T03:04:34.473Z] LOG    ✅ Tool returned 3 search results
+[2025-10-29T03:04:34.474Z] LOG    ✅ Merged: Webster Hall
+[2025-10-29T03:04:34.474Z] LOG       Places placeId: ChIJXQ6UCsV744kRq4-sQ0agEqs
+[2025-10-29T03:04:34.474Z] LOG       Gemini description: A legendary multi-level venue with a rich history dating bac...
+[2025-10-29T03:04:34.475Z] LOG    ✅ Merged: Irving Plaza
+[2025-10-29T03:04:34.475Z] LOG       Places placeId: ChIJz7KRyJtw44kRfOiP_tJc2W0
+[2025-10-29T03:04:34.475Z] LOG       Gemini description: Nestled in the Gramercy Park area, Irving Plaza is a beloved...
+[2025-10-29T03:04:34.475Z] LOG    ✅ Merged: The Red Lion | NYC
+[2025-10-29T03:04:34.476Z] LOG       Places placeId: ChIJP-ez6JFZwokRmE9GgYPsvUA
+[2025-10-29T03:04:34.476Z] LOG       Gemini description: For a more casual yet authentic rock and blues experience, T...
+[2025-10-29T03:04:34.476Z] LOG ✅ Phase 1 complete: Found 3/3 exact venues
+[2025-10-29T03:04:34.476Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T03:04:34.477Z] LOG    Searching for alternatives near 3 venues...
+[2025-10-29T03:04:34.477Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:04:34.478Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-29T03:04:34.479Z] LOG    1. Searching "restaurant" in "42.3077219,-71.0824131"
+[2025-10-29T03:04:34.479Z] LOG    📍 Using nearbySearch at coordinates (42.3077219, -71.0824131)
+[2025-10-29T03:04:34.479Z] LOG 🔍 [Google Places] Nearby search at (42.3077219, -71.0824131)
+[2025-10-29T03:04:34.481Z] LOG    2. Searching "restaurant" in "42.3602321,-71.066373"
+[2025-10-29T03:04:34.481Z] LOG    📍 Using nearbySearch at coordinates (42.3602321, -71.066373)
+[2025-10-29T03:04:34.482Z] LOG 🔍 [Google Places] Nearby search at (42.3602321, -71.066373)
+[2025-10-29T03:04:34.485Z] LOG    3. Searching "Bar" in "40.728488,-73.99943139999999"
+[2025-10-29T03:04:34.486Z] LOG    📍 Using nearbySearch at coordinates (40.728488, -73.99943139999999)
+[2025-10-29T03:04:34.487Z] LOG 🔍 [Google Places] Nearby search at (40.728488, -73.99943139999999)
+[2025-10-29T03:04:35.022Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:04:35.109Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:04:35.145Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:04:35.220Z] LOG    ⚠️  La Esquina Sandwiches: No editorial summary available
+[2025-10-29T03:04:35.226Z] LOG    ✅ Grove Hall Pizza: Got description (82 chars)
+[2025-10-29T03:04:35.244Z] LOG    ✅ Great Wok Restaurants: Got description (96 chars)
+[2025-10-29T03:04:35.250Z] LOG    ⚠️  Young kong: No editorial summary available
+[2025-10-29T03:04:35.295Z] LOG    ⚠️  South Soho Bar: No editorial summary available
+[2025-10-29T03:04:35.305Z] LOG    ✅ The Up & Up: Got description (95 chars)
+[2025-10-29T03:04:35.317Z] LOG    ✅ Latino Restaurant: Got description (93 chars)
+[2025-10-29T03:04:35.334Z] LOG    ✅ Boston Sail Loft: Got description (92 chars)
+[2025-10-29T03:04:35.347Z] LOG    ✅ Dear Irving Gramercy: Got description (99 chars)
+[2025-10-29T03:04:35.366Z] LOG    ⚠️  El Jefe's Taqueria - Boston Common: No editorial summary available
+[2025-10-29T03:04:35.391Z] LOG    ⚠️  Estella Restaurant: No editorial summary available
+[2025-10-29T03:04:35.405Z] LOG    ✅ Tavern in the Square: Got description (90 chars)
+[2025-10-29T03:04:35.424Z] LOG    ✅ Reservoir: Got description (97 chars)
+[2025-10-29T03:04:35.444Z] LOG    ✅ Peach Farm: Got description (87 chars)
+[2025-10-29T03:04:35.463Z] LOG    ✅ Fig. 19: Got description (96 chars)
+[2025-10-29T03:04:35.465Z] LOG ✅ Batch complete: 3/3 searches succeeded, 15 total venues found in 987ms
+[2025-10-29T03:04:35.466Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:04:35.468Z] LOG    ✅ Venue 1 (William E. Reed Auditorium): 4 alternatives
+[2025-10-29T03:04:35.469Z] LOG       1. La Esquina Sandwiches (4.2⭐)
+[2025-10-29T03:04:35.469Z] LOG       2. Grove Hall Pizza (3.8⭐)
+[2025-10-29T03:04:35.470Z] LOG       3. Young kong (3.5⭐)
+[2025-10-29T03:04:35.471Z] LOG    ✅ Venue 2 (Irving St): 4 alternatives
+[2025-10-29T03:04:35.471Z] LOG       1. Boston Sail Loft (4.6⭐)
+[2025-10-29T03:04:35.472Z] LOG       2. Estella Restaurant (4.3⭐)
+[2025-10-29T03:04:35.472Z] LOG       3. Peach Farm (3.9⭐)
+[2025-10-29T03:04:35.473Z] LOG    ✅ Venue 3 (The Red Lion | NYC): 4 alternatives
+[2025-10-29T03:04:35.473Z] LOG       1. The Up & Up (4.5⭐)
+[2025-10-29T03:04:35.474Z] LOG       2. South Soho Bar (4.6⭐)
+[2025-10-29T03:04:35.474Z] LOG       3. Reservoir (4.1⭐)
+[2025-10-29T03:04:35.475Z] LOG 
+📦 Phase 2 complete: 3 stops with alternatives
+[2025-10-29T03:04:35.475Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T03:04:35.476Z] LOG    Primary venues: 3 stops
+[2025-10-29T03:04:35.476Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T03:04:35.477Z] LOG    Removed 0 venues already in route
+[2025-10-29T03:04:35.477Z] LOG    Removed 0 duplicate alternatives
+[2025-10-29T03:04:35.478Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-29T03:04:35.478Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T03:04:35.479Z] LOG    Primary venues: 3
+[2025-10-29T03:04:35.479Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-29T03:04:35.479Z] LOG    Execution time: 1826ms
+[2025-10-29T03:04:35.480Z] LOG 
+📋 Final alternatives:
+[2025-10-29T03:04:35.480Z] LOG    William E. Reed Auditorium: 4 alternatives
+[2025-10-29T03:04:35.480Z] LOG    Irving St: 4 alternatives
+[2025-10-29T03:04:35.481Z] LOG    The Red Lion | NYC: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 3
+Alternatives: 3

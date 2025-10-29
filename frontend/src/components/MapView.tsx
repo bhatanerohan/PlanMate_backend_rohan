@@ -505,10 +505,10 @@ const MapView = ({
                     
                     {isAlternative && (
                       <>
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-400 rounded-full border-2 border-white shadow-md flex items-center justify-center text-white font-bold text-xs">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-orange-400 rounded-full border-2 border-white shadow-md flex items-center justify-center text-white font-bold text-xs">
                           •
                         </div>
-                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-gray-400 rotate-45"></div>
+                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-orange-400 rotate-45"></div>
                       </>
                     )}
                     

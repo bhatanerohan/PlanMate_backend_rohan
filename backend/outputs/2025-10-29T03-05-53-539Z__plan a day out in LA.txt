@@ -1,0 +1,145 @@
+User Prompt: plan a day out in LA
+
+[2025-10-29T03:05:53.540Z] LOG 📍 Using fallback location (no user location): Boston, MA
+[2025-10-29T03:05:53.540Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T03:05:53.541Z] LOG    1. "Mel's Drive-In Hollywood" in "Boston, MA"
+[2025-10-29T03:05:53.541Z] LOG    2. "The Hollywood Museum" in "Boston, MA"
+[2025-10-29T03:05:53.541Z] LOG    3. "TCL Chinese Theatre" in "Boston, MA"
+[2025-10-29T03:05:53.542Z] LOG    4. "Hard Rock Cafe" in "Boston, MA"
+[2025-10-29T03:05:53.542Z] LOG 
+🔍 Executing batch search for 4 venues...
+[2025-10-29T03:05:53.544Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:05:53.544Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-29T03:05:53.545Z] LOG    1. Searching "Mel's Drive-In Hollywood" in "Boston, MA"
+[2025-10-29T03:05:53.545Z] LOG 🔍 [Google Places] Text search: "Mel's Drive-In Hollywood" in Boston, MA
+[2025-10-29T03:05:53.548Z] LOG    2. Searching "The Hollywood Museum" in "Boston, MA"
+[2025-10-29T03:05:53.550Z] LOG 🔍 [Google Places] Text search: "The Hollywood Museum" in Boston, MA
+[2025-10-29T03:05:53.554Z] LOG    3. Searching "TCL Chinese Theatre" in "Boston, MA"
+[2025-10-29T03:05:53.555Z] LOG 🔍 [Google Places] Text search: "TCL Chinese Theatre" in Boston, MA
+[2025-10-29T03:05:53.558Z] LOG    4. Searching "Hard Rock Cafe" in "Boston, MA"
+[2025-10-29T03:05:53.559Z] LOG 🔍 [Google Places] Text search: "Hard Rock Cafe" in Boston, MA
+[2025-10-29T03:05:54.024Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:05:54.158Z] LOG    ✅ Boch Center - Wang Theatre: Got description (94 chars)
+[2025-10-29T03:05:54.162Z] LOG ✅ Found 1 places
+[2025-10-29T03:05:54.182Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:05:54.229Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:05:54.235Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T03:05:54.327Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2025-10-29T03:05:54.328Z] LOG ✅ Found 1 places
+[2025-10-29T03:05:54.380Z] LOG    ✅ Mel's Drive-In Hollywood: Got description (99 chars)
+[2025-10-29T03:05:54.380Z] LOG ✅ Found 1 places
+[2025-10-29T03:05:54.382Z] LOG    ✅ Rock & Rye American Bar: Got description (87 chars)
+[2025-10-29T03:05:54.382Z] LOG ✅ Found 1 places
+[2025-10-29T03:05:54.382Z] LOG ✅ Batch complete: 4/4 searches succeeded, 4 total venues found in 838ms
+[2025-10-29T03:05:54.383Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:05:54.383Z] LOG    Tool execution result: success=true
+[2025-10-29T03:05:54.384Z] LOG    ✅ Tool returned 4 search results
+[2025-10-29T03:05:54.384Z] LOG    ✅ Merged: Mel's Drive-In Hollywood
+[2025-10-29T03:05:54.384Z] LOG       Places placeId: ChIJiTG9iyO_woARi7H1WMDiKZE
+[2025-10-29T03:05:54.385Z] LOG       Gemini description: Step back in time at this family-friendly 1950s-style diner,...
+[2025-10-29T03:05:54.385Z] LOG    ✅ Merged: The Hollywood Museum
+[2025-10-29T03:05:54.385Z] LOG       Places placeId: ChIJLwYOQ0lx44kRCRT7HB0zn8Q
+[2025-10-29T03:05:54.386Z] LOG       Gemini description: Explore four floors of fascinating Hollywood history, housed...
+[2025-10-29T03:05:54.386Z] LOG    ✅ Merged: TCL Chinese Theatre
+[2025-10-29T03:05:54.386Z] LOG       Places placeId: ChIJR4mL53Z644kRzcCBVgqF-ug
+[2025-10-29T03:05:54.387Z] LOG       Gemini description: An iconic and opulent 1927 movie palace that is a true Holly...
+[2025-10-29T03:05:54.387Z] LOG    ✅ Merged: Hard Rock Cafe
+[2025-10-29T03:05:54.387Z] LOG       Places placeId: ChIJQ9D5bDF744kR-SbyJ0-jSA4
+[2025-10-29T03:05:54.388Z] LOG       Gemini description: Immerse yourself in a high-energy, rock ’n’ roll-themed dini...
+[2025-10-29T03:05:54.388Z] LOG ✅ Phase 1 complete: Found 4/4 exact venues
+[2025-10-29T03:05:54.389Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T03:05:54.389Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-29T03:05:54.389Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T03:05:54.390Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-29T03:05:54.390Z] LOG    1. Searching "American Restaurant / Diner" in "34.1008973,-118.3383536"
+[2025-10-29T03:05:54.390Z] LOG    📍 Using nearbySearch at coordinates (34.1008973, -118.3383536)
+[2025-10-29T03:05:54.391Z] LOG 🔍 [Google Places] Nearby search at (34.1008973, -118.3383536)
+[2025-10-29T03:05:54.394Z] LOG    2. Searching "restaurant" in "42.3599184,-71.0534473"
+[2025-10-29T03:05:54.396Z] LOG    📍 Using nearbySearch at coordinates (42.3599184, -71.0534473)
+[2025-10-29T03:05:54.396Z] LOG 🔍 [Google Places] Nearby search at (42.3599184, -71.0534473)
+[2025-10-29T03:05:54.397Z] LOG    3. Searching "restaurant" in "42.3503707,-71.06480359999999"
+[2025-10-29T03:05:54.398Z] LOG    📍 Using nearbySearch at coordinates (42.3503707, -71.06480359999999)
+[2025-10-29T03:05:54.398Z] LOG 🔍 [Google Places] Nearby search at (42.3503707, -71.06480359999999)
+[2025-10-29T03:05:54.399Z] LOG    4. Searching "restaurant" in "42.3511771,-71.06422189999999"
+[2025-10-29T03:05:54.400Z] LOG    📍 Using nearbySearch at coordinates (42.3511771, -71.06422189999999)
+[2025-10-29T03:05:54.400Z] LOG 🔍 [Google Places] Nearby search at (42.3511771, -71.06422189999999)
+[2025-10-29T03:05:54.933Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:05:54.946Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:05:54.976Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:05:54.999Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T03:05:55.026Z] LOG    ✅ Boston Sail Loft: Got description (92 chars)
+[2025-10-29T03:05:55.046Z] LOG    ✅ Mel's Drive-In Hollywood: Got description (99 chars)
+[2025-10-29T03:05:55.066Z] LOG    ✅ Boston Sail Loft: Got description (92 chars)
+[2025-10-29T03:05:55.081Z] LOG    ⚠️  Estella Restaurant: No editorial summary available
+[2025-10-29T03:05:55.084Z] LOG    ✅ Peach Farm: Got description (87 chars)
+[2025-10-29T03:05:55.115Z] LOG    ✅ Boston Sail Loft: Got description (92 chars)
+[2025-10-29T03:05:55.140Z] LOG    ⚠️  Estella Restaurant: No editorial summary available
+[2025-10-29T03:05:55.147Z] LOG    ✅ Capo Restaurant & Supper Club: Got description (98 chars)
+[2025-10-29T03:05:55.148Z] LOG    ⚠️  El Jefe's Taqueria - Boston Common: No editorial summary available
+[2025-10-29T03:05:55.185Z] LOG    ✅ Capo Restaurant & Supper Club: Got description (98 chars)
+[2025-10-29T03:05:55.190Z] LOG    ✅ Johnny Rockets: Got description (93 chars)
+[2025-10-29T03:05:55.191Z] LOG    ⚠️  Estella Restaurant: No editorial summary available
+[2025-10-29T03:05:55.201Z] LOG    ✅ Peach Farm: Got description (87 chars)
+[2025-10-29T03:05:55.205Z] LOG    ✅ 25 Degrees: Got description (105 chars)
+[2025-10-29T03:05:55.230Z] LOG    ✅ Peach Farm: Got description (87 chars)
+[2025-10-29T03:05:55.233Z] LOG    ✅ For the Win: Got description (99 chars)
+[2025-10-29T03:05:55.248Z] LOG    ✅ Lucca Restaurant: Got description (88 chars)
+[2025-10-29T03:05:55.255Z] LOG    ⚠️  Clark Street Diner: No editorial summary available
+[2025-10-29T03:05:55.273Z] LOG    ⚠️  El Jefe's Taqueria - Boston Common: No editorial summary available
+[2025-10-29T03:05:55.381Z] LOG    ⚠️  El Jefe's Taqueria - Boston Common: No editorial summary available
+[2025-10-29T03:05:55.382Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 992ms
+[2025-10-29T03:05:55.383Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T03:05:55.384Z] LOG    ✅ Venue 1 (Mel's Drive-In Hollywood): 4 alternatives
+[2025-10-29T03:05:55.384Z] LOG       1. Johnny Rockets (4.3⭐)
+[2025-10-29T03:05:55.385Z] LOG       2. Clark Street Diner (4.5⭐)
+[2025-10-29T03:05:55.385Z] LOG       3. For the Win (4.6⭐)
+[2025-10-29T03:05:55.386Z] LOG    ✅ Venue 2 (Museum of Illusions Boston): 4 alternatives
+[2025-10-29T03:05:55.386Z] LOG       1. Boston Sail Loft (4.6⭐)
+[2025-10-29T03:05:55.386Z] LOG       2. Estella Restaurant (4.3⭐)
+[2025-10-29T03:05:55.387Z] LOG       3. El Jefe's Taqueria - Boston Common (4.6⭐)
+[2025-10-29T03:05:55.387Z] LOG    ✅ Venue 3 (Boch Center - Wang Theatre): 4 alternatives
+[2025-10-29T03:05:55.387Z] LOG       1. Boston Sail Loft (4.6⭐)
+[2025-10-29T03:05:55.388Z] LOG       2. Capo Restaurant & Supper Club (4.2⭐)
+[2025-10-29T03:05:55.388Z] LOG       3. Estella Restaurant (4.3⭐)
+[2025-10-29T03:05:55.388Z] LOG    ✅ Venue 4 (Rock & Rye American Bar): 4 alternatives
+[2025-10-29T03:05:55.389Z] LOG       1. Boston Sail Loft (4.6⭐)
+[2025-10-29T03:05:55.389Z] LOG       2. Estella Restaurant (4.3⭐)
+[2025-10-29T03:05:55.389Z] LOG       3. Capo Restaurant & Supper Club (4.2⭐)
+[2025-10-29T03:05:55.389Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-29T03:05:55.390Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T03:05:55.390Z] LOG    Primary venues: 4 stops
+[2025-10-29T03:05:55.390Z] LOG    ❌ Removed "Boston Sail Loft" - duplicate alternative
+[2025-10-29T03:05:55.391Z] LOG    ❌ Removed "Estella Restaurant" - duplicate alternative
+[2025-10-29T03:05:55.391Z] LOG    ❌ Removed "Peach Farm" - duplicate alternative
+[2025-10-29T03:05:55.391Z] LOG    🔧 Stop "ChIJR4mL53Z644kRzcCB...": 4 → 1 alternatives
+[2025-10-29T03:05:55.392Z] LOG    ❌ Removed "Boston Sail Loft" - duplicate alternative
+[2025-10-29T03:05:55.392Z] LOG    ❌ Removed "Estella Restaurant" - duplicate alternative
+[2025-10-29T03:05:55.392Z] LOG    ❌ Removed "Capo Restaurant & Supper Club" - duplicate alternative
+[2025-10-29T03:05:55.392Z] LOG    ❌ Removed "Peach Farm" - duplicate alternative
+[2025-10-29T03:05:55.393Z] LOG    🔧 Stop "ChIJQ9D5bDF744kR-Sby...": 4 → 0 alternatives
+[2025-10-29T03:05:55.393Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T03:05:55.393Z] LOG    Removed 0 venues already in route
+[2025-10-29T03:05:55.394Z] LOG    Removed 7 duplicate alternatives
+[2025-10-29T03:05:55.394Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-29T03:05:55.394Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T03:05:55.396Z] LOG    Primary venues: 4
+[2025-10-29T03:05:55.396Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-29T03:05:55.397Z] LOG    Execution time: 1855ms
+[2025-10-29T03:05:55.397Z] LOG 
+📋 Final alternatives:
+[2025-10-29T03:05:55.397Z] LOG    Mel's Drive-In Hollywood: 4 alternatives
+[2025-10-29T03:05:55.398Z] LOG    Museum of Illusions Boston: 4 alternatives
+[2025-10-29T03:05:55.398Z] LOG    Boch Center - Wang Theatre: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 3
