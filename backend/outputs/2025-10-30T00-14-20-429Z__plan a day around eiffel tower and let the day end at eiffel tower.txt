@@ -1,0 +1,162 @@
+User Prompt: plan a day around eiffel tower and let the day end at eiffel tower
+
+[2025-10-30T00:14:20.430Z] LOG 📍 Using extracted city from user location: Paris
+[2025-10-30T00:14:20.432Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T00:14:20.432Z] LOG    1. "Café Fleur" in "Avenue de Suffren"
+[2025-10-30T00:14:20.433Z] LOG    2. "Musée du quai Branly - Jacques Chirac" in "Quai Jacques Chirac"
+[2025-10-30T00:14:20.434Z] LOG    3. "BISTROT DE LA TOUR EIFFEL" in "Avenue de la Bourdonnais"
+[2025-10-30T00:14:20.435Z] LOG    4. "Champ de Mars" in "At the base of the Eiffel Tower"
+[2025-10-30T00:14:20.436Z] LOG    5. "Les Ombres" in "Quai Jacques Chirac"
+[2025-10-30T00:14:20.437Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T00:14:20.438Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:14:20.439Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T00:14:20.441Z] LOG    1. Searching "Café Fleur" in "Avenue de Suffren"
+[2025-10-30T00:14:20.442Z] LOG 🔍 [Google Places] Text search: "Café Fleur" in Avenue de Suffren
+[2025-10-30T00:14:20.449Z] LOG    2. Searching "Musée du quai Branly - Jacques Chirac" in "Quai Jacques Chirac"
+[2025-10-30T00:14:20.451Z] LOG 🔍 [Google Places] Text search: "Musée du quai Branly - Jacques Chirac" in Quai Jacques Chirac
+[2025-10-30T00:14:20.457Z] LOG    3. Searching "BISTROT DE LA TOUR EIFFEL" in "Avenue de la Bourdonnais"
+[2025-10-30T00:14:20.458Z] LOG 🔍 [Google Places] Text search: "BISTROT DE LA TOUR EIFFEL" in Avenue de la Bourdonnais
+[2025-10-30T00:14:20.462Z] LOG    4. Searching "Champ de Mars" in "At the base of the Eiffel Tower"
+[2025-10-30T00:14:20.463Z] LOG 🔍 [Google Places] Text search: "Champ de Mars" in At the base of the Eiffel Tower
+[2025-10-30T00:14:20.466Z] LOG    5. Searching "Les Ombres" in "Quai Jacques Chirac"
+[2025-10-30T00:14:20.468Z] LOG 🔍 [Google Places] Text search: "Les Ombres" in Quai Jacques Chirac
+[2025-10-30T00:14:20.963Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:14:20.997Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:14:21.037Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:14:21.046Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:14:21.098Z] LOG    ✅ Musée du quai Branly - Jacques Chirac: Got description (95 chars)
+[2025-10-30T00:14:21.100Z] LOG ✅ Found 1 places
+[2025-10-30T00:14:21.150Z] LOG    ⚠️  Champ de Mars: No editorial summary available
+[2025-10-30T00:14:21.151Z] LOG ✅ Found 1 places
+[2025-10-30T00:14:21.176Z] LOG    ⚠️  Café Fleur: No editorial summary available
+[2025-10-30T00:14:21.177Z] LOG ✅ Found 1 places
+[2025-10-30T00:14:21.193Z] LOG    ✅ Les Ombres: Got description (99 chars)
+[2025-10-30T00:14:21.194Z] LOG ✅ Found 1 places
+[2025-10-30T00:14:21.294Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:14:21.434Z] LOG    ✅ BISTROT DE LA TOUR EIFFEL: Got description (97 chars)
+[2025-10-30T00:14:21.436Z] LOG ✅ Found 1 places
+[2025-10-30T00:14:21.438Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 999ms
+[2025-10-30T00:14:21.439Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:14:21.440Z] LOG    Tool execution result: success=true
+[2025-10-30T00:14:21.441Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T00:14:21.442Z] LOG    ✅ Merged: Café Fleur
+[2025-10-30T00:14:21.442Z] LOG       Places placeId: ChIJD7OFbPJx5kcRvSE6GXkPbM4
+[2025-10-30T00:14:21.443Z] LOG       Gemini description: Start your day with a classic Parisian breakfast or brunch a...
+[2025-10-30T00:14:21.444Z] LOG    ✅ Merged: Musée du quai Branly - Jacques Chirac
+[2025-10-30T00:14:21.446Z] LOG       Places placeId: ChIJY8922uBv5kcRJESw9l2dlLc
+[2025-10-30T00:14:21.447Z] LOG       Gemini description: Immerse yourself in arts and civilizations from Africa, Asia...
+[2025-10-30T00:14:21.447Z] LOG    ✅ Merged: BISTROT DE LA TOUR EIFFEL
+[2025-10-30T00:14:21.448Z] LOG       Places placeId: ChIJoXFl9AVv5kcRFJXk4gttdDI
+[2025-10-30T00:14:21.449Z] LOG       Gemini description: Enjoy traditional French brasserie staples with the added bo...
+[2025-10-30T00:14:21.449Z] LOG    ✅ Merged: Champ de Mars
+[2025-10-30T00:14:21.450Z] LOG       Places placeId: ChIJB0gcnCBw5kcRHoIAPcTEApc
+[2025-10-30T00:14:21.451Z] LOG       Gemini description: After lunch, take a leisurely stroll through the expansive g...
+[2025-10-30T00:14:21.451Z] LOG    ✅ Merged: Les Ombres
+[2025-10-30T00:14:21.452Z] LOG       Places placeId: ChIJyUMltOBv5kcRA7jwd8jibAw
+[2025-10-30T00:14:21.452Z] LOG       Gemini description: Conclude your day with a memorable fine dining experience on...
+[2025-10-30T00:14:21.453Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T00:14:21.454Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T00:14:21.454Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T00:14:21.455Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:14:21.456Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T00:14:21.457Z] LOG    1. Searching "cafe" in "48.8546711,2.2951718"
+[2025-10-30T00:14:21.458Z] LOG    📍 Using nearbySearch at coordinates (48.8546711, 2.2951718)
+[2025-10-30T00:14:21.459Z] LOG 🔍 [Google Places] Nearby search at (48.8546711, 2.2951718)
+[2025-10-30T00:14:21.462Z] LOG    2. Searching "museum" in "48.8608889,2.297894"
+[2025-10-30T00:14:21.462Z] LOG    📍 Using nearbySearch at coordinates (48.8608889, 2.297894)
+[2025-10-30T00:14:21.463Z] LOG 🔍 [Google Places] Nearby search at (48.8608889, 2.297894)
+[2025-10-30T00:14:21.463Z] LOG    3. Searching "restaurant" in "48.8593693,2.2977334"
+[2025-10-30T00:14:21.464Z] LOG    📍 Using nearbySearch at coordinates (48.8593693, 2.2977334)
+[2025-10-30T00:14:21.464Z] LOG 🔍 [Google Places] Nearby search at (48.8593693, 2.2977334)
+[2025-10-30T00:14:21.465Z] LOG    4. Searching "park" in "48.85580470000001,2.2983766"
+[2025-10-30T00:14:21.466Z] LOG    📍 Using nearbySearch at coordinates (48.85580470000001, 2.2983766)
+[2025-10-30T00:14:21.467Z] LOG 🔍 [Google Places] Nearby search at (48.85580470000001, 2.2983766)
+[2025-10-30T00:14:21.469Z] LOG    5. Searching "fine dining restaurant" in "48.86178,2.29869"
+[2025-10-30T00:14:21.470Z] LOG    📍 Using nearbySearch at coordinates (48.86178, 2.29869)
+[2025-10-30T00:14:21.472Z] LOG 🔍 [Google Places] Nearby search at (48.86178, 2.29869)
+[2025-10-30T00:14:22.008Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:14:22.131Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:14:22.151Z] LOG    ⚠️  Champ de Mars: No editorial summary available
+[2025-10-30T00:14:22.153Z] LOG    ⚠️  Square Marigny: No editorial summary available
+[2025-10-30T00:14:22.176Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:14:22.219Z] LOG    ⚠️  Square Berlin: No editorial summary available
+[2025-10-30T00:14:22.222Z] LOG    ✅ Jardins du Trocadéro: Got description (91 chars)
+[2025-10-30T00:14:22.224Z] LOG    ✅ Jardin des Champs-Élysées: Got description (93 chars)
+[2025-10-30T00:14:22.247Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:14:22.260Z] LOG    ⚠️  Café Fleur: No editorial summary available
+[2025-10-30T00:14:22.278Z] LOG    ✅ Sir Winston: Got description (95 chars)
+[2025-10-30T00:14:22.306Z] LOG    ⚠️  Le Marceau: No editorial summary available
+[2025-10-30T00:14:22.321Z] LOG    ⚠️  Sphère: No editorial summary available
+[2025-10-30T00:14:22.323Z] LOG    ✅ Café Belloy: Got description (89 chars)
+[2025-10-30T00:14:22.337Z] LOG    ⚠️  Café Fleur: No editorial summary available
+[2025-10-30T00:14:22.346Z] LOG    ⚠️  Le Tourville: No editorial summary available
+[2025-10-30T00:14:22.372Z] LOG    ⚠️  Restaurant Gemellus: No editorial summary available
+[2025-10-30T00:14:22.374Z] LOG    ✅ L’Alsace: Got description (99 chars)
+[2025-10-30T00:14:22.375Z] LOG    ✅ Café Kléber: Got description (98 chars)
+[2025-10-30T00:14:22.377Z] LOG    ⚠️  Milagro: No editorial summary available
+[2025-10-30T00:14:22.390Z] LOG    ✅ Le Clarence: Got description (84 chars)
+[2025-10-30T00:14:22.397Z] LOG    ⚠️  Nonos & comestibles: No editorial summary available
+[2025-10-30T00:14:22.409Z] LOG    ✅ L'Oiseau Blanc: Got description (100 chars)
+[2025-10-30T00:14:22.416Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:14:22.419Z] LOG    ⚠️  Pertinence: No editorial summary available
+[2025-10-30T00:14:22.483Z] LOG    ✅ Musée du quai Branly - Jacques Chirac: Got description (95 chars)
+[2025-10-30T00:14:22.552Z] LOG    ✅ Grand Palais: Got description (95 chars)
+[2025-10-30T00:14:22.560Z] LOG    ✅ The Army Museum: Got description (92 chars)
+[2025-10-30T00:14:22.563Z] LOG    ✅ Palais de Tokyo: Got description (95 chars)
+[2025-10-30T00:14:22.587Z] LOG    ✅ Musée Rodin: Got description (98 chars)
+[2025-10-30T00:14:22.588Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1132ms
+[2025-10-30T00:14:22.589Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:14:22.590Z] LOG    ✅ Venue 1 (Café Fleur): 4 alternatives
+[2025-10-30T00:14:22.590Z] LOG       1. Café Belloy (4.2⭐)
+[2025-10-30T00:14:22.591Z] LOG       2. Le Marceau (3.9⭐)
+[2025-10-30T00:14:22.592Z] LOG       3. Le Tourville (3.7⭐)
+[2025-10-30T00:14:22.593Z] LOG    ✅ Venue 2 (Musée du quai Branly - Jacques Chirac): 4 alternatives
+[2025-10-30T00:14:22.593Z] LOG       1. Grand Palais (4.5⭐)
+[2025-10-30T00:14:22.594Z] LOG       2. Musée Rodin (4.7⭐)
+[2025-10-30T00:14:22.595Z] LOG       3. The Army Museum (4.6⭐)
+[2025-10-30T00:14:22.595Z] LOG    ✅ Venue 3 (BISTROT DE LA TOUR EIFFEL): 4 alternatives
+[2025-10-30T00:14:22.596Z] LOG       1. Sir Winston (4.4⭐)
+[2025-10-30T00:14:22.596Z] LOG       2. L’Alsace (4.5⭐)
+[2025-10-30T00:14:22.597Z] LOG       3. Café Fleur (4.3⭐)
+[2025-10-30T00:14:22.598Z] LOG    ✅ Venue 4 (Champ de Mars): 4 alternatives
+[2025-10-30T00:14:22.599Z] LOG       1. Square Marigny (4.4⭐)
+[2025-10-30T00:14:22.599Z] LOG       2. Square Berlin (4⭐)
+[2025-10-30T00:14:22.600Z] LOG       3. Jardins du Trocadéro (4.6⭐)
+[2025-10-30T00:14:22.601Z] LOG    ✅ Venue 5 (Les Ombres): 4 alternatives
+[2025-10-30T00:14:22.601Z] LOG       1. Restaurant Gemellus (4.8⭐)
+[2025-10-30T00:14:22.602Z] LOG       2. L'Oiseau Blanc (4.6⭐)
+[2025-10-30T00:14:22.602Z] LOG       3. Nonos & comestibles (4.8⭐)
+[2025-10-30T00:14:22.603Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T00:14:22.603Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T00:14:22.604Z] LOG    Primary venues: 5 stops
+[2025-10-30T00:14:22.604Z] LOG    ❌ Removed "Café Fleur" - already in primary route
+[2025-10-30T00:14:22.605Z] LOG    🔧 Stop "ChIJoXFl9AVv5kcRFJXk...": 4 → 3 alternatives
+[2025-10-30T00:14:22.605Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T00:14:22.606Z] LOG    Removed 1 venues already in route
+[2025-10-30T00:14:22.607Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T00:14:22.608Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T00:14:22.609Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T00:14:22.611Z] LOG    Primary venues: 5
+[2025-10-30T00:14:22.612Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T00:14:22.613Z] LOG    Execution time: 2181ms
+[2025-10-30T00:14:22.613Z] LOG 
+📋 Final alternatives:
+[2025-10-30T00:14:22.614Z] LOG    Café Fleur: 4 alternatives
+[2025-10-30T00:14:22.614Z] LOG    Musée du quai Branly - Jacques Chirac: 4 alternatives
+[2025-10-30T00:14:22.615Z] LOG    BISTROT DE LA TOUR EIFFEL: 3 alternatives
+[2025-10-30T00:14:22.616Z] LOG    Champ de Mars: 4 alternatives
+[2025-10-30T00:14:22.616Z] LOG    Les Ombres: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

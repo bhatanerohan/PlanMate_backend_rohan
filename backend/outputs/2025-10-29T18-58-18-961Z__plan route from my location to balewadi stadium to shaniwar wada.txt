@@ -1,0 +1,206 @@
+User Prompt: plan route from my location to balewadi stadium to shaniwar wada
+
+[2025-10-29T18:58:18.964Z] LOG 
+================================================================================
+[2025-10-29T18:58:18.965Z] LOG 🔄 ITERATION 1
+[2025-10-29T18:58:18.966Z] LOG ================================================================================
+[2025-10-29T18:58:18.967Z] LOG 
+💭 THINKING...
+[2025-10-29T18:58:22.682Z] LOG    Reasoning: I need to plan a route from the user's location to Balewadi Stadium and then to Shaniwar Wada. I'll first search for Balewadi Stadium in Pune, and then for Shaniwar Wada, also in Pune, to get the correct coordinates for the route.
+[2025-10-29T18:58:22.683Z] LOG    Action: batch_search_venues
+[2025-10-29T18:58:22.684Z] LOG    Parameters: {
+  "searches": [
+    {
+      "query": "Balewadi Stadium",
+      "location": "Pune, Maharashtra, India",
+      "limit": 3
+    },
+    {
+      "query": "Shaniwar Wada",
+      "location": "Pune, Maharashtra, India",
+      "limit": 3
+    }
+  ]
+}
+[2025-10-29T18:58:22.686Z] LOG 
+⚡ ACTING...
+[2025-10-29T18:58:22.687Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T18:58:22.688Z] LOG 🔍 [BatchVenueSearchTool] Executing 2 searches in parallel
+[2025-10-29T18:58:22.689Z] LOG    1. Searching "Balewadi Stadium" in "Pune, Maharashtra, India"
+[2025-10-29T18:58:22.689Z] LOG 🔍 [Google Places] Text search: "Balewadi Stadium" in Pune, Maharashtra, India
+[2025-10-29T18:58:22.693Z] LOG    2. Searching "Shaniwar Wada" in "Pune, Maharashtra, India"
+[2025-10-29T18:58:22.694Z] LOG 🔍 [Google Places] Text search: "Shaniwar Wada" in Pune, Maharashtra, India
+[2025-10-29T18:58:23.198Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:58:23.240Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:58:23.305Z] LOG    ✅ Shaniwar Wada: Got description (97 chars)
+[2025-10-29T18:58:23.309Z] LOG ✅ Found 1 places
+[2025-10-29T18:58:23.337Z] LOG    ⚠️  SHREE SHIV CHHATRAPATI SPORTS COMPLEX: No editorial summary available
+[2025-10-29T18:58:23.339Z] LOG ✅ Found 1 places
+[2025-10-29T18:58:23.339Z] LOG ✅ Batch complete: 2/2 searches succeeded, 2 total venues found in 651ms
+[2025-10-29T18:58:23.340Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T18:58:23.340Z] LOG    Success: true
+[2025-10-29T18:58:23.341Z] LOG    Data: {"results":[{"success":true,"query":"Balewadi Stadium","location":"Pune, Maharashtra, India","venues":[{"name":"SHREE SHIV CHHATRAPATI SPORTS COMPLEX","address":"SHREE SHIV CHHATRAPATI SPORTS COMPLEX,...
+[2025-10-29T18:58:23.342Z] LOG 
+📦 Capturing alternatives from batch search...
+[2025-10-29T18:58:23.342Z] LOG    ⚠️  Stop 1 (SHREE SHIV CHHATRAPATI SPORTS COMPLEX): No alternatives available
+[2025-10-29T18:58:23.343Z] LOG    ⚠️  Stop 2 (Shaniwar Wada): No alternatives available
+[2025-10-29T18:58:23.344Z] LOG 
+📦 Total alternatives captured: 0 stops
+
+[2025-10-29T18:58:23.345Z] LOG 
+👁️  OBSERVING...
+[2025-10-29T18:58:23.346Z] LOG    Added observation to conversation history
+[2025-10-29T18:58:23.346Z] LOG    Total messages: 4
+[2025-10-29T18:58:23.347Z] LOG    Total tokens used: 2564
+[2025-10-29T18:58:23.348Z] LOG ⏱️ Iteration 1 took 4381ms
+[2025-10-29T18:58:23.348Z] LOG 
+================================================================================
+[2025-10-29T18:58:23.349Z] LOG 🔄 ITERATION 2
+[2025-10-29T18:58:23.350Z] LOG ================================================================================
+[2025-10-29T18:58:23.351Z] LOG 
+💭 THINKING...
+[2025-10-29T18:58:26.220Z] LOG    Reasoning: I have found the venues: Balewadi Stadium (Shree Shiv Chhatrapati Sports Complex) and Shaniwar Wada. Now, I will calculate the route using their coordinates and the user's location.
+[2025-10-29T18:58:26.221Z] LOG    Action: calculate_route
+[2025-10-29T18:58:26.221Z] LOG    Parameters: {
+  "waypoints": [
+    {
+      "lat": 18.626678,
+      "lng": 73.802124
+    },
+    {
+      "lat": 18.5858,
+      "lng": 73.7492
+    },
+    {
+      "lat": 18.5204,
+      "lng": 73.8567
+    }
+  ],
+  "mode": "driving"
+}
+[2025-10-29T18:58:26.222Z] LOG 
+⚡ ACTING...
+[2025-10-29T18:58:26.222Z] LOG ⚙️  Executing tool: calculate_route
+[2025-10-29T18:58:26.223Z] LOG 🗺️  [RouteCalculatorTool] Calculating driving route with 3 waypoints
+[2025-10-29T18:58:26.223Z] LOG 🗺️  [Mapbox] Calculating driving route with 3 waypoints
+[2025-10-29T18:58:26.608Z] LOG ✅ Route calculated: 16.20 miles, 1h 9m
+[2025-10-29T18:58:26.610Z] LOG ✅ Tool 'calculate_route' completed: SUCCESS
+[2025-10-29T18:58:26.611Z] LOG    Success: true
+[2025-10-29T18:58:26.612Z] LOG    Data: {"distance":26076.635,"distanceFormatted":"16.20 miles","duration":4151.201,"durationFormatted":"1h 9m","geometry":{"coordinates":[[73.802123,18.626679],[73.802143,18.626788],[73.802303,18.627112],[73...
+[2025-10-29T18:58:26.613Z] LOG 
+👁️  OBSERVING...
+[2025-10-29T18:58:26.613Z] LOG    Added observation to conversation history
+[2025-10-29T18:58:26.614Z] LOG    Total messages: 6
+[2025-10-29T18:58:26.614Z] LOG    Total tokens used: 5402
+[2025-10-29T18:58:26.614Z] LOG ⏱️ Iteration 2 took 3263ms
+[2025-10-29T18:58:26.614Z] LOG 
+================================================================================
+[2025-10-29T18:58:26.615Z] LOG 🔄 ITERATION 3
+[2025-10-29T18:58:26.615Z] LOG ================================================================================
+[2025-10-29T18:58:26.615Z] LOG 
+💭 THINKING...
+[2025-10-29T18:58:33.187Z] LOG    Reasoning: The route from the user's location to Balewadi Stadium and then to Shaniwar Wada has been successfully calculated. The total distance is approximately 16.20 miles, and the estimated driving time is about 1 hour and 9 minutes. I will now finish the process by providing a rich description of the route and the selected venues.
+[2025-10-29T18:58:33.188Z] LOG    Action: finish
+[2025-10-29T18:58:33.189Z] LOG    Parameters: {
+  "result": "Your route starts from your location in Pimpri-Chinchwad and takes you to Balewadi Stadium, also known as Shree Shiv Chhatrapati Sports Complex, located in Mahalunge, Pune. This stadium is a prominent sports venue that hosts various events, including cricket and athletics. After visiting the stadium, the route continues to Shaniwar Wada, a historical fortification in Pune, known for its rich history and stunning architecture, built in the 1740s. The total distance of the journey is approximately 16.20 miles, with an estimated driving time of about 1 hour and 9 minutes. The route includes several turns and roads, ensuring a smooth drive through the city.",
+  "mode": "route",
+  "selected_venues": [
+    "ChIJ2SxKNk65wjsRWIQS1V6ezeg",
+    "user-location",
+    "ChIJEXtrIuLBwjsRi6ZcFwaBu6Q"
+  ]
+}
+[2025-10-29T18:58:33.189Z] LOG 
+✅ Agent decided task is complete
+[2025-10-29T18:58:33.189Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T18:58:33.190Z] LOG    Primary venues: 2 stops
+[2025-10-29T18:58:33.190Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T18:58:33.191Z] LOG    Removed 0 venues already in route
+[2025-10-29T18:58:33.191Z] LOG    Removed 0 duplicate alternatives
+[2025-10-29T18:58:33.192Z] LOG    Final: 0 stops with alternatives
+
+[2025-10-29T18:58:33.192Z] LOG 📋 Finish parameters validated: {"hasResult":true,"mode":"route","selectedVenuesCount":3,"alternativesCount":0}
+[2025-10-29T18:58:33.192Z] LOG 
+🔍 Running route order evaluation...
+[2025-10-29T18:58:33.193Z] LOG    Route type: EXPLICIT ROUTE
+[2025-10-29T18:58:33.193Z] LOG    Evaluating against: "plan route from my location to balewadi stadium to shaniwar wada"
+[2025-10-29T18:58:33.194Z] LOG 
+🔍 EVALUATING ROUTE ORDER...
+[2025-10-29T18:58:33.194Z] LOG    User prompt: "plan route from my location to balewadi stadium to shaniwar wada"
+[2025-10-29T18:58:33.194Z] LOG    Selected venues: 3
+[2025-10-29T18:58:33.194Z] LOG    Is itinerary: false
+[2025-10-29T18:58:33.195Z] LOG    Readable order: SHREE SHIV CHHATRAPATI SPORTS COMPLEX → user-location → Shaniwar Wada
+[2025-10-29T18:58:33.196Z] LOG    Mode: EXPLICIT ROUTE validation
+[2025-10-29T18:58:34.862Z] LOG    Expected placeIds: ["user-location","ChIJ2SxKNk65wjsRWIQS1V6ezeg","ChIJEXtrIuLBwjsRi6ZcFwaBu6Q"]
+[2025-10-29T18:58:34.864Z] LOG    Actual placeIds: ["ChIJ2SxKNk65wjsRWIQS1V6ezeg","user-location","ChIJEXtrIuLBwjsRi6ZcFwaBu6Q"]
+[2025-10-29T18:58:34.866Z] LOG    ❌ Route validation failed:
+[2025-10-29T18:58:34.867Z] LOG       - Position 1: expected "user-location" but got "SHREE SHIV CHHATRAPATI SPORTS COMPLEX"
+[2025-10-29T18:58:34.867Z] LOG       - Position 2: expected "SHREE SHIV CHHATRAPATI SPORTS COMPLEX" but got "user-location"
+[2025-10-29T18:58:34.869Z] LOG ❌ Route order validation failed, asking agent to correct...
+[2025-10-29T18:58:34.870Z] LOG ⏱️ Iteration 3 took 8255ms (correction needed)
+[2025-10-29T18:58:34.870Z] LOG 
+================================================================================
+[2025-10-29T18:58:34.871Z] LOG 🔄 ITERATION 4
+[2025-10-29T18:58:34.871Z] LOG ================================================================================
+[2025-10-29T18:58:34.871Z] LOG 
+💭 THINKING...
+[2025-10-29T18:58:43.532Z] LOG    Reasoning: Reordering the selected_venues array to match the expected sequence: user-location, SHREE SHIV CHHATRAPATI SPORTS COMPLEX, Shaniwar Wada.
+[2025-10-29T18:58:43.533Z] LOG    Action: finish
+[2025-10-29T18:58:43.534Z] LOG    Parameters: {
+  "result": "Your route starts from your location in Pimpri-Chinchwad and takes you to Balewadi Stadium, also known as Shree Shiv Chhatrapati Sports Complex, located in Mahalunge, Pune. This stadium is a prominent sports venue that hosts various events, including cricket and athletics. After visiting the stadium, the route continues to Shaniwar Wada, a historical fortification in Pune, known for its rich history and stunning architecture, built in the 1740s. The total distance of the journey is approximately 16.20 miles, with an estimated driving time of about 1 hour and 9 minutes. The route includes several turns and roads, ensuring a smooth drive through the city.",
+  "mode": "route",
+  "selected_venues": [
+    "user-location",
+    "ChIJ2SxKNk65wjsRWIQS1V6ezeg",
+    "ChIJEXtrIuLBwjsRi6ZcFwaBu6Q"
+  ]
+}
+[2025-10-29T18:58:43.535Z] LOG 
+✅ Agent decided task is complete
+[2025-10-29T18:58:43.535Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T18:58:43.536Z] LOG    Primary venues: 2 stops
+[2025-10-29T18:58:43.536Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T18:58:43.537Z] LOG    Removed 0 venues already in route
+[2025-10-29T18:58:43.537Z] LOG    Removed 0 duplicate alternatives
+[2025-10-29T18:58:43.538Z] LOG    Final: 0 stops with alternatives
+
+[2025-10-29T18:58:43.538Z] LOG 📋 Finish parameters validated: {"hasResult":true,"mode":"route","selectedVenuesCount":3,"alternativesCount":0}
+[2025-10-29T18:58:43.539Z] LOG 
+🔍 Running route order evaluation...
+[2025-10-29T18:58:43.539Z] LOG    Route type: EXPLICIT ROUTE
+[2025-10-29T18:58:43.539Z] LOG    Evaluating against: "plan route from my location to balewadi stadium to shaniwar wada"
+[2025-10-29T18:58:43.540Z] LOG 
+🔍 EVALUATING ROUTE ORDER...
+[2025-10-29T18:58:43.540Z] LOG    User prompt: "plan route from my location to balewadi stadium to shaniwar wada"
+[2025-10-29T18:58:43.540Z] LOG    Selected venues: 3
+[2025-10-29T18:58:43.541Z] LOG    Is itinerary: false
+[2025-10-29T18:58:43.541Z] LOG    Readable order: user-location → SHREE SHIV CHHATRAPATI SPORTS COMPLEX → Shaniwar Wada
+[2025-10-29T18:58:43.542Z] LOG    Mode: EXPLICIT ROUTE validation
+[2025-10-29T18:58:45.207Z] LOG    Expected placeIds: ["user-location","ChIJ2SxKNk65wjsRWIQS1V6ezeg","ChIJEXtrIuLBwjsRi6ZcFwaBu6Q"]
+[2025-10-29T18:58:45.208Z] LOG    Actual placeIds: ["user-location","ChIJ2SxKNk65wjsRWIQS1V6ezeg","ChIJEXtrIuLBwjsRi6ZcFwaBu6Q"]
+[2025-10-29T18:58:45.209Z] LOG    ✅ Route order is correct
+[2025-10-29T18:58:45.209Z] LOG ✅ Route order validation passed!
+[2025-10-29T18:58:45.210Z] LOG ⏱️ Iteration 4 took 10339ms (finish)
+[2025-10-29T18:58:45.210Z] LOG 
+================================================================================
+[2025-10-29T18:58:45.210Z] LOG 📊 EXECUTION SUMMARY
+[2025-10-29T18:58:45.211Z] LOG ================================================================================
+[2025-10-29T18:58:45.212Z] LOG Status: complete
+[2025-10-29T18:58:45.212Z] LOG Iterations: 4
+[2025-10-29T18:58:45.213Z] LOG Execution time: 26251ms
+[2025-10-29T18:58:45.213Z] LOG Total tokens: 28445
+[2025-10-29T18:58:45.213Z] LOG Actions executed: 2
+[2025-10-29T18:58:45.214Z] LOG Correction attempts: 1
+[2025-10-29T18:58:45.214Z] LOG Alternatives captured: 0 stops
+[2025-10-29T18:58:45.214Z] LOG ================================================================================
+
+
+--- Summary ---
+Status: complete
+Iterations: 4
+TotalTokens: 28445
+ExecutionTimeMs: 26256

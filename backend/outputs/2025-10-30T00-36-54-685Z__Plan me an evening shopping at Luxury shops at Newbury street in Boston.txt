@@ -1,0 +1,145 @@
+User Prompt: Plan me an evening shopping at Luxury shops at Newbury street in Boston
+
+[2025-10-30T00:36:54.686Z] LOG 📍 Using extracted city from user location: Massachusetts
+[2025-10-30T00:36:54.687Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T00:36:54.687Z] LOG    1. "Soodee" in "Newbury Street, Back Bay"
+[2025-10-30T00:36:54.688Z] LOG    2. "Mure and Grand - Back Bay" in "Newbury Street, Back Bay"
+[2025-10-30T00:36:54.688Z] LOG    3. "Covet" in "Newbury Street, Back Bay"
+[2025-10-30T00:36:54.688Z] LOG    4. "BUJI DESIGN Boston" in "Newbury Street, Back Bay"
+[2025-10-30T00:36:54.689Z] LOG 
+🔍 Executing batch search for 4 venues...
+[2025-10-30T00:36:54.689Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:36:54.690Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-30T00:36:54.690Z] LOG    1. Searching "Soodee" in "Newbury Street, Back Bay"
+[2025-10-30T00:36:54.691Z] LOG 🔍 [Google Places] Text search: "Soodee" in Newbury Street, Back Bay
+[2025-10-30T00:36:54.694Z] LOG    2. Searching "Mure and Grand - Back Bay" in "Newbury Street, Back Bay"
+[2025-10-30T00:36:54.695Z] LOG 🔍 [Google Places] Text search: "Mure and Grand - Back Bay" in Newbury Street, Back Bay
+[2025-10-30T00:36:54.698Z] LOG    3. Searching "Covet" in "Newbury Street, Back Bay"
+[2025-10-30T00:36:54.699Z] LOG 🔍 [Google Places] Text search: "Covet" in Newbury Street, Back Bay
+[2025-10-30T00:36:54.700Z] LOG    4. Searching "BUJI DESIGN Boston" in "Newbury Street, Back Bay"
+[2025-10-30T00:36:54.701Z] LOG 🔍 [Google Places] Text search: "BUJI DESIGN Boston" in Newbury Street, Back Bay
+[2025-10-30T00:36:55.272Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:36:55.280Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:36:55.432Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:36:55.438Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:36:55.442Z] LOG    ⚠️  BUJI DESIGN Boston: No editorial summary available
+[2025-10-30T00:36:55.443Z] LOG ✅ Found 1 places
+[2025-10-30T00:36:55.446Z] LOG    ⚠️  Mure and Grand - Back Bay: No editorial summary available
+[2025-10-30T00:36:55.447Z] LOG ✅ Found 1 places
+[2025-10-30T00:36:55.585Z] LOG    ✅ Soodee: Got description (98 chars)
+[2025-10-30T00:36:55.586Z] LOG ✅ Found 1 places
+[2025-10-30T00:36:55.596Z] LOG    ⚠️  Covet: No editorial summary available
+[2025-10-30T00:36:55.597Z] LOG ✅ Found 1 places
+[2025-10-30T00:36:55.598Z] LOG ✅ Batch complete: 4/4 searches succeeded, 4 total venues found in 908ms
+[2025-10-30T00:36:55.599Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:36:55.599Z] LOG    Tool execution result: success=true
+[2025-10-30T00:36:55.599Z] LOG    ✅ Tool returned 4 search results
+[2025-10-30T00:36:55.600Z] LOG    ✅ Merged: Soodee
+[2025-10-30T00:36:55.600Z] LOG       Places placeId: ChIJhwiKGgx644kR6Y7d0bhYtwM
+[2025-10-30T00:36:55.601Z] LOG       Gemini description: Discover a curated collection of stylish women’s clothing an...
+[2025-10-30T00:36:55.601Z] LOG    ✅ Merged: Mure and Grand - Back Bay
+[2025-10-30T00:36:55.602Z] LOG       Places placeId: ChIJlUEMDN5744kRoH09j5rhD6E
+[2025-10-30T00:36:55.602Z] LOG       Gemini description: Explore a boutique filled with cute, eclectic gifts, unique ...
+[2025-10-30T00:36:55.603Z] LOG    ✅ Merged: Covet
+[2025-10-30T00:36:55.603Z] LOG       Places placeId: ChIJGWa8ff9744kR-AgC4q3-xds
+[2025-10-30T00:36:55.603Z] LOG       Gemini description: This highly-rated store is a treasure trove for finding upsc...
+[2025-10-30T00:36:55.603Z] LOG    ✅ Merged: BUJI DESIGN Boston
+[2025-10-30T00:36:55.604Z] LOG       Places placeId: ChIJQzIV6it744kR1W-aPOVmyw0
+[2025-10-30T00:36:55.604Z] LOG       Gemini description: Unleash your creativity at this cool store where you can cus...
+[2025-10-30T00:36:55.604Z] LOG ✅ Phase 1 complete: Found 4/4 exact venues
+[2025-10-30T00:36:55.605Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T00:36:55.605Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-30T00:36:55.606Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:36:55.606Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-30T00:36:55.606Z] LOG    1. Searching "clothing store" in "42.3503581,-71.0788287"
+[2025-10-30T00:36:55.607Z] LOG    📍 Using nearbySearch at coordinates (42.3503581, -71.0788287)
+[2025-10-30T00:36:55.607Z] LOG 🔍 [Google Places] Nearby search at (42.3503581, -71.0788287)
+[2025-10-30T00:36:55.608Z] LOG    2. Searching "clothing store" in "42.3503571,-71.07892319999999"
+[2025-10-30T00:36:55.608Z] LOG    📍 Using nearbySearch at coordinates (42.3503571, -71.07892319999999)
+[2025-10-30T00:36:55.608Z] LOG 🔍 [Google Places] Nearby search at (42.3503571, -71.07892319999999)
+[2025-10-30T00:36:55.609Z] LOG    3. Searching "store" in "42.3503135,-71.07909169999999"
+[2025-10-30T00:36:55.610Z] LOG    📍 Using nearbySearch at coordinates (42.3503135, -71.07909169999999)
+[2025-10-30T00:36:55.610Z] LOG 🔍 [Google Places] Nearby search at (42.3503135, -71.07909169999999)
+[2025-10-30T00:36:55.611Z] LOG    4. Searching "clothing store" in "42.3484481,-71.0860249"
+[2025-10-30T00:36:55.611Z] LOG    📍 Using nearbySearch at coordinates (42.3484481, -71.0860249)
+[2025-10-30T00:36:55.612Z] LOG 🔍 [Google Places] Nearby search at (42.3484481, -71.0860249)
+[2025-10-30T00:36:56.288Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:36:56.296Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:36:56.315Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:36:56.438Z] LOG    ✅ H&M: Got description (74 chars)
+[2025-10-30T00:36:56.473Z] LOG    ✅ Soodee: Got description (98 chars)
+[2025-10-30T00:36:56.480Z] LOG    ✅ The Garment District: Got description (87 chars)
+[2025-10-30T00:36:56.495Z] LOG    ✅ T.J. Maxx: Got description (88 chars)
+[2025-10-30T00:36:56.502Z] LOG    ✅ CVS: Got description (99 chars)
+[2025-10-30T00:36:56.507Z] LOG    ✅ Target: Got description (100 chars)
+[2025-10-30T00:36:56.508Z] LOG    ✅ Madewell: Got description (87 chars)
+[2025-10-30T00:36:56.523Z] LOG    ⚠️  South End Food Emporium: No editorial summary available
+[2025-10-30T00:36:56.532Z] LOG    ✅ H&M: Got description (74 chars)
+[2025-10-30T00:36:56.537Z] LOG    ✅ Aritzia: Got description (80 chars)
+[2025-10-30T00:36:56.542Z] LOG    ✅ Walgreens: Got description (97 chars)
+[2025-10-30T00:36:56.543Z] LOG    ✅ T.J. Maxx: Got description (88 chars)
+[2025-10-30T00:36:56.544Z] LOG    ⚠️  Hemenway Variety: No editorial summary available
+[2025-10-30T00:36:56.577Z] LOG    ✅ Madewell: Got description (87 chars)
+[2025-10-30T00:36:56.586Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:36:56.660Z] LOG    ✅ The Garment District: Got description (87 chars)
+[2025-10-30T00:36:56.663Z] LOG    ✅ T.J. Maxx: Got description (88 chars)
+[2025-10-30T00:36:56.667Z] LOG    ✅ H&M: Got description (74 chars)
+[2025-10-30T00:36:56.689Z] LOG    ✅ Aritzia: Got description (80 chars)
+[2025-10-30T00:36:56.746Z] LOG    ✅ Aritzia: Got description (80 chars)
+[2025-10-30T00:36:56.757Z] LOG    ✅ Marshalls: Got description (75 chars)
+[2025-10-30T00:36:56.758Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 1152ms
+[2025-10-30T00:36:56.759Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:36:56.759Z] LOG    ✅ Venue 1 (Soodee): 4 alternatives
+[2025-10-30T00:36:56.760Z] LOG       1. The Garment District (4.3⭐)
+[2025-10-30T00:36:56.760Z] LOG       2. T.J. Maxx (4.3⭐)
+[2025-10-30T00:36:56.761Z] LOG       3. H&M (4.1⭐)
+[2025-10-30T00:36:56.761Z] LOG    ✅ Venue 2 (Mure and Grand - Back Bay): 4 alternatives
+[2025-10-30T00:36:56.762Z] LOG       1. The Garment District (4.3⭐)
+[2025-10-30T00:36:56.762Z] LOG       2. H&M (4.1⭐)
+[2025-10-30T00:36:56.762Z] LOG       3. Aritzia (3.5⭐)
+[2025-10-30T00:36:56.763Z] LOG    ✅ Venue 3 (Covet): 4 alternatives
+[2025-10-30T00:36:56.763Z] LOG       1. CVS (3.2⭐)
+[2025-10-30T00:36:56.763Z] LOG       2. Walgreens (3⭐)
+[2025-10-30T00:36:56.763Z] LOG       3. Hemenway Variety (4.8⭐)
+[2025-10-30T00:36:56.764Z] LOG    ✅ Venue 4 (BUJI DESIGN Boston): 4 alternatives
+[2025-10-30T00:36:56.764Z] LOG       1. H&M (4.1⭐)
+[2025-10-30T00:36:56.764Z] LOG       2. Madewell (3.9⭐)
+[2025-10-30T00:36:56.765Z] LOG       3. Aritzia (3.5⭐)
+[2025-10-30T00:36:56.765Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-30T00:36:56.765Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T00:36:56.766Z] LOG    Primary venues: 4 stops
+[2025-10-30T00:36:56.766Z] LOG    ❌ Removed "The Garment District" - duplicate alternative
+[2025-10-30T00:36:56.766Z] LOG    ❌ Removed "H&M" - duplicate alternative
+[2025-10-30T00:36:56.767Z] LOG    ❌ Removed "T.J. Maxx" - duplicate alternative
+[2025-10-30T00:36:56.767Z] LOG    🔧 Stop "ChIJlUEMDN5744kRoH09...": 4 → 1 alternatives
+[2025-10-30T00:36:56.767Z] LOG    ❌ Removed "H&M" - duplicate alternative
+[2025-10-30T00:36:56.768Z] LOG    ❌ Removed "Aritzia" - duplicate alternative
+[2025-10-30T00:36:56.768Z] LOG    ❌ Removed "T.J. Maxx" - duplicate alternative
+[2025-10-30T00:36:56.769Z] LOG    🔧 Stop "ChIJQzIV6it744kR1W-a...": 4 → 1 alternatives
+[2025-10-30T00:36:56.769Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T00:36:56.769Z] LOG    Removed 0 venues already in route
+[2025-10-30T00:36:56.770Z] LOG    Removed 6 duplicate alternatives
+[2025-10-30T00:36:56.770Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T00:36:56.770Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T00:36:56.771Z] LOG    Primary venues: 4
+[2025-10-30T00:36:56.771Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T00:36:56.771Z] LOG    Execution time: 2085ms
+[2025-10-30T00:36:56.771Z] LOG 
+📋 Final alternatives:
+[2025-10-30T00:36:56.772Z] LOG    Soodee: 4 alternatives
+[2025-10-30T00:36:56.772Z] LOG    Mure and Grand - Back Bay: 1 alternatives
+[2025-10-30T00:36:56.772Z] LOG    Covet: 4 alternatives
+[2025-10-30T00:36:56.772Z] LOG    BUJI DESIGN Boston: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 4

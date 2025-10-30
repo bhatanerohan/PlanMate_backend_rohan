@@ -1,0 +1,163 @@
+User Prompt: Museums in Washington DC
+
+[2025-10-30T01:18:10.701Z] LOG 📍 Using fallback location (no user location): Washington
+[2025-10-30T01:18:10.703Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T01:18:10.705Z] LOG    1. "United States Holocaust Memorial Museum" in "Southwest DC, near the National Mall"
+[2025-10-30T01:18:10.707Z] LOG    2. "International Spy Museum" in "L'Enfant Plaza SW"
+[2025-10-30T01:18:10.708Z] LOG    3. "National Portrait Gallery" in "Downtown DC, near Chinatown"
+[2025-10-30T01:18:10.710Z] LOG    4. "Hillwood Estate, Museum & Gardens" in "Upper Northwest DC"
+[2025-10-30T01:18:10.710Z] LOG    5. "National Building Museum" in "Judiciary Square"
+[2025-10-30T01:18:10.711Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T01:18:10.713Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T01:18:10.716Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T01:18:10.719Z] LOG    1. Searching "United States Holocaust Memorial Museum" in "Southwest DC, near the National Mall"
+[2025-10-30T01:18:10.723Z] LOG 🔍 [Google Places] Text search: "United States Holocaust Memorial Museum" in Southwest DC, near the National Mall
+[2025-10-30T01:18:10.746Z] LOG    2. Searching "International Spy Museum" in "L'Enfant Plaza SW"
+[2025-10-30T01:18:10.749Z] LOG 🔍 [Google Places] Text search: "International Spy Museum" in L'Enfant Plaza SW
+[2025-10-30T01:18:10.754Z] LOG    3. Searching "National Portrait Gallery" in "Downtown DC, near Chinatown"
+[2025-10-30T01:18:10.756Z] LOG 🔍 [Google Places] Text search: "National Portrait Gallery" in Downtown DC, near Chinatown
+[2025-10-30T01:18:10.766Z] LOG    4. Searching "Hillwood Estate, Museum & Gardens" in "Upper Northwest DC"
+[2025-10-30T01:18:10.768Z] LOG 🔍 [Google Places] Text search: "Hillwood Estate, Museum & Gardens" in Upper Northwest DC
+[2025-10-30T01:18:10.778Z] LOG    5. Searching "National Building Museum" in "Judiciary Square"
+[2025-10-30T01:18:10.781Z] LOG 🔍 [Google Places] Text search: "National Building Museum" in Judiciary Square
+[2025-10-30T01:18:11.456Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:18:11.514Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:18:11.594Z] LOG    ✅ Hillwood Estate, Museum & Gardens: Got description (98 chars)
+[2025-10-30T01:18:11.597Z] LOG ✅ Found 1 places
+[2025-10-30T01:18:11.624Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:18:11.723Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2025-10-30T01:18:11.724Z] LOG ✅ Found 1 places
+[2025-10-30T01:18:11.818Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2025-10-30T01:18:11.819Z] LOG ✅ Found 1 places
+[2025-10-30T01:18:12.030Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:18:12.175Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2025-10-30T01:18:12.178Z] LOG ✅ Found 1 places
+[2025-10-30T01:18:12.185Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:18:12.321Z] LOG    ⚠️  Gallery Pl-Chinatown: No editorial summary available
+[2025-10-30T01:18:12.327Z] LOG ✅ Found 1 places
+[2025-10-30T01:18:12.329Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1613ms
+[2025-10-30T01:18:12.331Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T01:18:12.332Z] LOG    Tool execution result: success=true
+[2025-10-30T01:18:12.333Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T01:18:12.334Z] LOG    ✅ Merged: United States Holocaust Memorial Museum
+[2025-10-30T01:18:12.334Z] LOG       Places placeId: ChIJZaAQK6C3t4kRsx10rk51z3M
+[2025-10-30T01:18:12.335Z] LOG       Gemini description: This powerful and essential museum preserves the memory of t...
+[2025-10-30T01:18:12.336Z] LOG    ✅ Merged: International Spy Museum
+[2025-10-30T01:18:12.337Z] LOG       Places placeId: ChIJ7Y9_SpC3t4kRNidcpxFnLy0
+[2025-10-30T01:18:12.337Z] LOG       Gemini description: Delve into the clandestine world of espionage at this intera...
+[2025-10-30T01:18:12.338Z] LOG    ✅ Merged: National Portrait Gallery
+[2025-10-30T01:18:12.339Z] LOG       Places placeId: ChIJ4U7SGI63t4kR9fRhVieuuNg
+[2025-10-30T01:18:12.339Z] LOG       Gemini description: Explore the faces that have shaped American history at this ...
+[2025-10-30T01:18:12.340Z] LOG    ✅ Merged: Hillwood Estate, Museum & Gardens
+[2025-10-30T01:18:12.341Z] LOG       Places placeId: ChIJC02_gzPIt4kRricOEUNB4rI
+[2025-10-30T01:18:12.342Z] LOG       Gemini description: Step into a world of opulence at this former estate, showcas...
+[2025-10-30T01:18:12.343Z] LOG    ✅ Merged: National Building Museum
+[2025-10-30T01:18:12.343Z] LOG       Places placeId: ChIJc1s06I63t4kRRV9ykdE7I0g
+[2025-10-30T01:18:12.344Z] LOG       Gemini description: This unique museum is dedicated to architecture, engineering...
+[2025-10-30T01:18:12.345Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T01:18:12.346Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T01:18:12.347Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T01:18:12.348Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T01:18:12.348Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T01:18:12.350Z] LOG    1. Searching "museum" in "38.8867076,-77.0326074"
+[2025-10-30T01:18:12.350Z] LOG    📍 Using nearbySearch at coordinates (38.8867076, -77.0326074)
+[2025-10-30T01:18:12.352Z] LOG 🔍 [Google Places] Nearby search at (38.8867076, -77.0326074)
+[2025-10-30T01:18:12.354Z] LOG    2. Searching "museum" in "38.8841419,-77.0255748"
+[2025-10-30T01:18:12.357Z] LOG    📍 Using nearbySearch at coordinates (38.8841419, -77.0255748)
+[2025-10-30T01:18:12.357Z] LOG 🔍 [Google Places] Nearby search at (38.8841419, -77.0255748)
+[2025-10-30T01:18:12.362Z] LOG    3. Searching "restaurant" in "38.8996535,-77.0218261"
+[2025-10-30T01:18:12.363Z] LOG    📍 Using nearbySearch at coordinates (38.8996535, -77.0218261)
+[2025-10-30T01:18:12.364Z] LOG 🔍 [Google Places] Nearby search at (38.8996535, -77.0218261)
+[2025-10-30T01:18:12.367Z] LOG    4. Searching "museum" in "38.9437141,-77.0526545"
+[2025-10-30T01:18:12.371Z] LOG    📍 Using nearbySearch at coordinates (38.9437141, -77.0526545)
+[2025-10-30T01:18:12.373Z] LOG 🔍 [Google Places] Nearby search at (38.9437141, -77.0526545)
+[2025-10-30T01:18:12.378Z] LOG    5. Searching "museum" in "38.8977516,-77.0176188"
+[2025-10-30T01:18:12.381Z] LOG    📍 Using nearbySearch at coordinates (38.8977516, -77.0176188)
+[2025-10-30T01:18:12.383Z] LOG 🔍 [Google Places] Nearby search at (38.8977516, -77.0176188)
+[2025-10-30T01:18:12.967Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:18:12.993Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T01:18:13.016Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T01:18:13.108Z] LOG    ✅ Hillwood Estate, Museum & Gardens: Got description (98 chars)
+[2025-10-30T01:18:13.121Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T01:18:13.138Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2025-10-30T01:18:13.168Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2025-10-30T01:18:13.173Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2025-10-30T01:18:13.187Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2025-10-30T01:18:13.219Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T01:18:13.231Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2025-10-30T01:18:13.248Z] LOG    ✅ National Children's Museum: Got description (95 chars)
+[2025-10-30T01:18:13.289Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2025-10-30T01:18:13.299Z] LOG    ✅ Stan's DC Restaurant: Got description (96 chars)
+[2025-10-30T01:18:13.320Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2025-10-30T01:18:13.323Z] LOG    ✅ Zeppelin: Got description (99 chars)
+[2025-10-30T01:18:13.326Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2025-10-30T01:18:13.328Z] LOG    ✅ National Children's Museum: Got description (95 chars)
+[2025-10-30T01:18:13.341Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2025-10-30T01:18:13.343Z] LOG    ✅ Old Ebbitt Grill: Got description (98 chars)
+[2025-10-30T01:18:13.367Z] LOG    ✅ Elephant & Castle: Got description (90 chars)
+[2025-10-30T01:18:13.378Z] LOG    ✅ Le Diplomate: Got description (104 chars)
+[2025-10-30T01:18:13.384Z] LOG    ✅ National Mall: Got description (97 chars)
+[2025-10-30T01:18:13.429Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2025-10-30T01:18:13.502Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2025-10-30T01:18:13.505Z] LOG    ✅ National Children's Museum: Got description (95 chars)
+[2025-10-30T01:18:13.507Z] LOG ✅ Batch complete: 5/5 searches succeeded, 21 total venues found in 1158ms
+[2025-10-30T01:18:13.508Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T01:18:13.510Z] LOG    ✅ Venue 1 (United States Holocaust Memorial Museum): 4 alternatives
+[2025-10-30T01:18:13.512Z] LOG       1. International Spy Museum (4.4⭐)
+[2025-10-30T01:18:13.513Z] LOG       2. Museum of Illusions Washington DC (4.1⭐)
+[2025-10-30T01:18:13.514Z] LOG       3. National Children's Museum (4.3⭐)
+[2025-10-30T01:18:13.514Z] LOG    ✅ Venue 2 (International Spy Museum): 4 alternatives
+[2025-10-30T01:18:13.515Z] LOG       1. United States Holocaust Memorial Museum (4.8⭐)
+[2025-10-30T01:18:13.515Z] LOG       2. National Mall (4.8⭐)
+[2025-10-30T01:18:13.516Z] LOG       3. National Building Museum (4.4⭐)
+[2025-10-30T01:18:13.516Z] LOG    ✅ Venue 3 (Gallery Pl-Chinatown): 4 alternatives
+[2025-10-30T01:18:13.517Z] LOG       1. Zeppelin (4.4⭐)
+[2025-10-30T01:18:13.518Z] LOG       2. Stan's DC Restaurant (4.6⭐)
+[2025-10-30T01:18:13.519Z] LOG       3. Le Diplomate (4.6⭐)
+[2025-10-30T01:18:13.521Z] LOG    ⚠️ Venue 4 (Hillwood Estate, Museum & Gardens): No alternatives found
+[2025-10-30T01:18:13.522Z] LOG    ✅ Venue 5 (National Building Museum): 4 alternatives
+[2025-10-30T01:18:13.522Z] LOG       1. International Spy Museum (4.4⭐)
+[2025-10-30T01:18:13.524Z] LOG       2. Museum of Illusions Washington DC (4.1⭐)
+[2025-10-30T01:18:13.524Z] LOG       3. National Children's Museum (4.3⭐)
+[2025-10-30T01:18:13.525Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-30T01:18:13.526Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T01:18:13.527Z] LOG    Primary venues: 5 stops
+[2025-10-30T01:18:13.528Z] LOG    ❌ Removed "International Spy Museum" - already in primary route
+[2025-10-30T01:18:13.529Z] LOG    ❌ Removed "National Building Museum" - already in primary route
+[2025-10-30T01:18:13.530Z] LOG    🔧 Stop "ChIJZaAQK6C3t4kRsx10...": 4 → 2 alternatives
+[2025-10-30T01:18:13.531Z] LOG    ❌ Removed "United States Holocaust Memorial Museum" - already in primary route
+[2025-10-30T01:18:13.533Z] LOG    ❌ Removed "National Building Museum" - already in primary route
+[2025-10-30T01:18:13.533Z] LOG    ❌ Removed "National Children's Museum" - duplicate alternative
+[2025-10-30T01:18:13.535Z] LOG    🔧 Stop "ChIJ7Y9_SpC3t4kRNidc...": 4 → 1 alternatives
+[2025-10-30T01:18:13.535Z] LOG    ❌ Removed "International Spy Museum" - already in primary route
+[2025-10-30T01:18:13.536Z] LOG    ❌ Removed "Museum of Illusions Washington DC" - duplicate alternative
+[2025-10-30T01:18:13.537Z] LOG    ❌ Removed "National Children's Museum" - duplicate alternative
+[2025-10-30T01:18:13.537Z] LOG    ❌ Removed "United States Holocaust Memorial Museum" - already in primary route
+[2025-10-30T01:18:13.538Z] LOG    🔧 Stop "ChIJc1s06I63t4kRRV9y...": 4 → 0 alternatives
+[2025-10-30T01:18:13.539Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T01:18:13.539Z] LOG    Removed 6 venues already in route
+[2025-10-30T01:18:13.540Z] LOG    Removed 3 duplicate alternatives
+[2025-10-30T01:18:13.541Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-30T01:18:13.542Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T01:18:13.544Z] LOG    Primary venues: 5
+[2025-10-30T01:18:13.546Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-30T01:18:13.548Z] LOG    Execution time: 2846ms
+[2025-10-30T01:18:13.548Z] LOG 
+📋 Final alternatives:
+[2025-10-30T01:18:13.550Z] LOG    United States Holocaust Memorial Museum: 2 alternatives
+[2025-10-30T01:18:13.551Z] LOG    International Spy Museum: 1 alternatives
+[2025-10-30T01:18:13.552Z] LOG    Gallery Pl-Chinatown: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 3

@@ -1,0 +1,116 @@
+User Prompt: Find nice parks/nature near me
+
+[2025-10-29T23:04:18.264Z] LOG 📍 Using fallback location (no user location): Back Bay, Boston
+[2025-10-29T23:04:18.266Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T23:04:18.268Z] LOG    1. "Back Bay Fens" in "Back Bay, Boston"
+[2025-10-29T23:04:18.270Z] LOG    2. "Olmsted Park" in "Jamaica Plain/Brookline, Boston"
+[2025-10-29T23:04:18.272Z] LOG    3. "Franklin Park" in "Roxbury/Dorchester, Boston"
+[2025-10-29T23:04:18.273Z] LOG 
+🔍 Executing batch search for 3 venues...
+[2025-10-29T23:04:18.292Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T23:04:18.295Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-29T23:04:18.297Z] LOG    1. Searching "Back Bay Fens" in "Back Bay, Boston"
+[2025-10-29T23:04:18.300Z] LOG 🔍 [Google Places] Text search: "Back Bay Fens" in Back Bay, Boston
+[2025-10-29T23:04:18.322Z] LOG    2. Searching "Olmsted Park" in "Jamaica Plain/Brookline, Boston"
+[2025-10-29T23:04:18.324Z] LOG 🔍 [Google Places] Text search: "Olmsted Park" in Jamaica Plain/Brookline, Boston
+[2025-10-29T23:04:18.330Z] LOG    3. Searching "Franklin Park" in "Roxbury/Dorchester, Boston"
+[2025-10-29T23:04:18.331Z] LOG 🔍 [Google Places] Text search: "Franklin Park" in Roxbury/Dorchester, Boston
+[2025-10-29T23:04:18.958Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T23:04:19.035Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T23:04:19.175Z] LOG    ⚠️  Back Bay Fens: No editorial summary available
+[2025-10-29T23:04:19.177Z] LOG ✅ Found 1 places
+[2025-10-29T23:04:19.187Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T23:04:19.245Z] LOG    ✅ Franklin Park: Got description (96 chars)
+[2025-10-29T23:04:19.247Z] LOG ✅ Found 1 places
+[2025-10-29T23:04:19.386Z] LOG    ✅ Olmsted Park: Got description (100 chars)
+[2025-10-29T23:04:19.389Z] LOG ✅ Found 1 places
+[2025-10-29T23:04:19.392Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 1098ms
+[2025-10-29T23:04:19.393Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T23:04:19.394Z] LOG    Tool execution result: success=true
+[2025-10-29T23:04:19.395Z] LOG    ✅ Tool returned 3 search results
+[2025-10-29T23:04:19.398Z] LOG    ✅ Merged: Back Bay Fens
+[2025-10-29T23:04:19.400Z] LOG       Places placeId: ChIJT1UP3R1644kRI5sh0Dw2yc4
+[2025-10-29T23:04:19.402Z] LOG       Gemini description: This significant urban greenspace features diverse gardens, ...
+[2025-10-29T23:04:19.404Z] LOG    ✅ Merged: Olmsted Park
+[2025-10-29T23:04:19.404Z] LOG       Places placeId: ChIJB4_sfJ5544kRHxi7EfeXpSM
+[2025-10-29T23:04:19.405Z] LOG       Gemini description: Part of Boston's historic Emerald Necklace, this expansive p...
+[2025-10-29T23:04:19.406Z] LOG    ✅ Merged: Franklin Park
+[2025-10-29T23:04:19.407Z] LOG       Places placeId: ChIJg2jTvd9744kR1g5elowqJeU
+[2025-10-29T23:04:19.409Z] LOG       Gemini description: One of Boston's largest natural areas, offering vast fields,...
+[2025-10-29T23:04:19.410Z] LOG ✅ Phase 1 complete: Found 3/3 exact venues
+[2025-10-29T23:04:19.412Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T23:04:19.414Z] LOG    Searching for alternatives near 3 venues...
+[2025-10-29T23:04:19.415Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T23:04:19.417Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-29T23:04:19.418Z] LOG    1. Searching "park" in "42.342607,-71.0926746"
+[2025-10-29T23:04:19.419Z] LOG    📍 Using nearbySearch at coordinates (42.342607, -71.0926746)
+[2025-10-29T23:04:19.420Z] LOG 🔍 [Google Places] Nearby search at (42.342607, -71.0926746)
+[2025-10-29T23:04:19.423Z] LOG    2. Searching "park" in "42.325945,-71.114887"
+[2025-10-29T23:04:19.426Z] LOG    📍 Using nearbySearch at coordinates (42.325945, -71.114887)
+[2025-10-29T23:04:19.429Z] LOG 🔍 [Google Places] Nearby search at (42.325945, -71.114887)
+[2025-10-29T23:04:19.432Z] LOG    3. Searching "park" in "42.302842,-71.0877077"
+[2025-10-29T23:04:19.435Z] LOG    📍 Using nearbySearch at coordinates (42.302842, -71.0877077)
+[2025-10-29T23:04:19.436Z] LOG 🔍 [Google Places] Nearby search at (42.302842, -71.0877077)
+[2025-10-29T23:04:20.012Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T23:04:20.124Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T23:04:20.181Z] LOG    ✅ Back Bay Fens: Got description (100 chars)
+[2025-10-29T23:04:20.206Z] LOG    ✅ Olmsted Park: Got description (100 chars)
+[2025-10-29T23:04:20.235Z] LOG    ⚠️  Linden Park: No editorial summary available
+[2025-10-29T23:04:20.291Z] LOG    ✅ Back Bay Fens: Got description (100 chars)
+[2025-10-29T23:04:20.307Z] LOG    ⚠️  Emerson Garden: No editorial summary available
+[2025-10-29T23:04:20.354Z] LOG    ⚠️  Griggs Park: No editorial summary available
+[2025-10-29T23:04:20.360Z] LOG    ✅ Ramler Park: Got description (85 chars)
+[2025-10-29T23:04:20.390Z] LOG    ⚠️  Park: No editorial summary available
+[2025-10-29T23:04:20.400Z] LOG    ✅ Titus Sparrow Park: Got description (99 chars)
+[2025-10-29T23:04:20.407Z] LOG    ⚠️  Hayes Park: No editorial summary available
+[2025-10-29T23:04:20.623Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T23:04:20.704Z] LOG    ✅ Franklin Park: Got description (96 chars)
+[2025-10-29T23:04:20.770Z] LOG    ⚠️  Horatio Harris Park: No editorial summary available
+[2025-10-29T23:04:20.774Z] LOG    ✅ Franklin Park Zoo: Got description (97 chars)
+[2025-10-29T23:04:20.836Z] LOG    ✅ Harambee Park: Got description (98 chars)
+[2025-10-29T23:04:20.850Z] LOG    ⚠️  Ceylon Park: No editorial summary available
+[2025-10-29T23:04:20.852Z] LOG ✅ Batch complete: 3/3 searches succeeded, 15 total venues found in 1435ms
+[2025-10-29T23:04:20.853Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T23:04:20.854Z] LOG    ✅ Venue 1 (Back Bay Fens): 4 alternatives
+[2025-10-29T23:04:20.856Z] LOG       1. Back Bay Fens (4.5⭐)
+[2025-10-29T23:04:20.857Z] LOG       2. Titus Sparrow Park (4.6⭐)
+[2025-10-29T23:04:20.858Z] LOG       3. Ramler Park (4.7⭐)
+[2025-10-29T23:04:20.859Z] LOG    ✅ Venue 2 (Olmsted Park): 4 alternatives
+[2025-10-29T23:04:20.860Z] LOG       1. Back Bay Fens (4.5⭐)
+[2025-10-29T23:04:20.862Z] LOG       2. Griggs Park (4.5⭐)
+[2025-10-29T23:04:20.863Z] LOG       3. Linden Park (4.6⭐)
+[2025-10-29T23:04:20.864Z] LOG    ✅ Venue 3 (Franklin Park): 4 alternatives
+[2025-10-29T23:04:20.866Z] LOG       1. Franklin Park Zoo (4.4⭐)
+[2025-10-29T23:04:20.866Z] LOG       2. Harambee Park (4.2⭐)
+[2025-10-29T23:04:20.868Z] LOG       3. Ceylon Park (4.1⭐)
+[2025-10-29T23:04:20.869Z] LOG 
+📦 Phase 2 complete: 3 stops with alternatives
+[2025-10-29T23:04:20.870Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T23:04:20.872Z] LOG    Primary venues: 3 stops
+[2025-10-29T23:04:20.873Z] LOG    ❌ Removed "Back Bay Fens" - duplicate alternative
+[2025-10-29T23:04:20.875Z] LOG    🔧 Stop "ChIJB4_sfJ5544kRHxi7...": 4 → 3 alternatives
+[2025-10-29T23:04:20.876Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T23:04:20.877Z] LOG    Removed 0 venues already in route
+[2025-10-29T23:04:20.879Z] LOG    Removed 1 duplicate alternatives
+[2025-10-29T23:04:20.880Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-29T23:04:20.881Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T23:04:20.882Z] LOG    Primary venues: 3
+[2025-10-29T23:04:20.883Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-29T23:04:20.886Z] LOG    Execution time: 2621ms
+[2025-10-29T23:04:20.889Z] LOG 
+📋 Final alternatives:
+[2025-10-29T23:04:20.892Z] LOG    Back Bay Fens: 4 alternatives
+[2025-10-29T23:04:20.896Z] LOG    Olmsted Park: 3 alternatives
+[2025-10-29T23:04:20.898Z] LOG    Franklin Park: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 3
+Alternatives: 3

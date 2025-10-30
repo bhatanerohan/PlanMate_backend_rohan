@@ -1,0 +1,183 @@
+User Prompt: plan a day in paris and include eiffel tower and louvre museum
+
+[2025-10-30T00:15:42.417Z] LOG 📍 Using extracted city from user location: Paris
+[2025-10-30T00:15:42.420Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T00:15:42.422Z] LOG    1. "Terres de Café" in "Eiffel Tower area"
+[2025-10-30T00:15:42.423Z] LOG    2. "Eiffel Tower" in "Champ de Mars"
+[2025-10-30T00:15:42.426Z] LOG    3. "Le Fumoir" in "Louvre area"
+[2025-10-30T00:15:42.429Z] LOG    4. "Louvre Museum" in "1st arrondissement"
+[2025-10-30T00:15:42.432Z] LOG    5. "Tuileries Garden" in "Louvre - Tuileries"
+[2025-10-30T00:15:42.433Z] LOG    6. "Le Relais du Louvre" in "Louvre area"
+[2025-10-30T00:15:42.435Z] LOG 
+🔍 Executing batch search for 6 venues...
+[2025-10-30T00:15:42.436Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:15:42.437Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2025-10-30T00:15:42.439Z] LOG    1. Searching "Terres de Café" in "Eiffel Tower area"
+[2025-10-30T00:15:42.440Z] LOG 🔍 [Google Places] Text search: "Terres de Café" in Eiffel Tower area
+[2025-10-30T00:15:42.450Z] LOG    2. Searching "Eiffel Tower" in "Champ de Mars"
+[2025-10-30T00:15:42.452Z] LOG 🔍 [Google Places] Text search: "Eiffel Tower" in Champ de Mars
+[2025-10-30T00:15:42.461Z] LOG    3. Searching "Le Fumoir" in "Louvre area"
+[2025-10-30T00:15:42.463Z] LOG 🔍 [Google Places] Text search: "Le Fumoir" in Louvre area
+[2025-10-30T00:15:42.473Z] LOG    4. Searching "Louvre Museum" in "1st arrondissement"
+[2025-10-30T00:15:42.476Z] LOG 🔍 [Google Places] Text search: "Louvre Museum" in 1st arrondissement
+[2025-10-30T00:15:42.485Z] LOG    5. Searching "Tuileries Garden" in "Louvre - Tuileries"
+[2025-10-30T00:15:42.486Z] LOG 🔍 [Google Places] Text search: "Tuileries Garden" in Louvre - Tuileries
+[2025-10-30T00:15:42.495Z] LOG    6. Searching "Le Relais du Louvre" in "Louvre area"
+[2025-10-30T00:15:42.496Z] LOG 🔍 [Google Places] Text search: "Le Relais du Louvre" in Louvre area
+[2025-10-30T00:15:42.917Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:15:42.970Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:15:43.017Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:15:43.027Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:15:43.041Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:15:43.053Z] LOG    ⚠️  Terres de Café: No editorial summary available
+[2025-10-30T00:15:43.059Z] LOG ✅ Found 1 places
+[2025-10-30T00:15:43.089Z] LOG    ✅ Tuileries Garden: Got description (91 chars)
+[2025-10-30T00:15:43.095Z] LOG ✅ Found 1 places
+[2025-10-30T00:15:43.128Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:15:43.143Z] LOG    ⚠️  Champ de Mars: No editorial summary available
+[2025-10-30T00:15:43.145Z] LOG ✅ Found 1 places
+[2025-10-30T00:15:43.151Z] LOG    ⚠️  Le Relais du Louvre: No editorial summary available
+[2025-10-30T00:15:43.154Z] LOG ✅ Found 1 places
+[2025-10-30T00:15:43.163Z] LOG    ✅ Le Fumoir: Got description (91 chars)
+[2025-10-30T00:15:43.164Z] LOG ✅ Found 1 places
+[2025-10-30T00:15:43.276Z] LOG    ✅ Louvre Museum: Got description (100 chars)
+[2025-10-30T00:15:43.282Z] LOG ✅ Found 1 places
+[2025-10-30T00:15:43.285Z] LOG ✅ Batch complete: 6/6 searches succeeded, 6 total venues found in 848ms
+[2025-10-30T00:15:43.286Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:15:43.287Z] LOG    Tool execution result: success=true
+[2025-10-30T00:15:43.289Z] LOG    ✅ Tool returned 6 search results
+[2025-10-30T00:15:43.292Z] LOG    ✅ Merged: Terres de Café
+[2025-10-30T00:15:43.295Z] LOG       Places placeId: ChIJFxVi-t9v5kcRyVC-eTkcleg
+[2025-10-30T00:15:43.296Z] LOG       Gemini description: Start your day with excellent coffee and pastries at this hi...
+[2025-10-30T00:15:43.297Z] LOG    ✅ Merged: Eiffel Tower
+[2025-10-30T00:15:43.298Z] LOG       Places placeId: ChIJB0gcnCBw5kcRHoIAPcTEApc
+[2025-10-30T00:15:43.299Z] LOG       Gemini description: Ascend one of the world's most recognizable landmarks for br...
+[2025-10-30T00:15:43.300Z] LOG    ✅ Merged: Le Fumoir
+[2025-10-30T00:15:43.301Z] LOG       Places placeId: ChIJw8kRaSFu5kcRFhLvX5DjiWY
+[2025-10-30T00:15:43.301Z] LOG       Gemini description: Enjoy a refined lunch at this French restaurant near the Lou...
+[2025-10-30T00:15:43.302Z] LOG    ✅ Merged: Louvre Museum
+[2025-10-30T00:15:43.303Z] LOG       Places placeId: ChIJD3uTd9hx5kcR1IQvGfr8dbk
+[2025-10-30T00:15:43.304Z] LOG       Gemini description: Dive into the world's largest art museum, home to thousands ...
+[2025-10-30T00:15:43.305Z] LOG    ✅ Merged: Tuileries Garden
+[2025-10-30T00:15:43.307Z] LOG       Places placeId: ChIJAQAAMCxu5kcRx--_4QnbGcI
+[2025-10-30T00:15:43.308Z] LOG       Gemini description: After your museum visit, take a leisurely stroll through the...
+[2025-10-30T00:15:43.309Z] LOG    ✅ Merged: Le Relais du Louvre
+[2025-10-30T00:15:43.310Z] LOG       Places placeId: ChIJlyYq1yNu5kcRS6_g26rTKGQ
+[2025-10-30T00:15:43.311Z] LOG       Gemini description: Conclude your day with a classic Parisian dinner at Le Relai...
+[2025-10-30T00:15:43.312Z] LOG ✅ Phase 1 complete: Found 6/6 exact venues
+[2025-10-30T00:15:43.313Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T00:15:43.315Z] LOG    Searching for alternatives near 6 venues...
+[2025-10-30T00:15:43.317Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:15:43.318Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2025-10-30T00:15:43.320Z] LOG    1. Searching "cafe" in "48.85693430000001,2.3015611"
+[2025-10-30T00:15:43.322Z] LOG    📍 Using nearbySearch at coordinates (48.85693430000001, 2.3015611)
+[2025-10-30T00:15:43.323Z] LOG 🔍 [Google Places] Nearby search at (48.85693430000001, 2.3015611)
+[2025-10-30T00:15:43.326Z] LOG    2. Searching "restaurant" in "48.85580470000001,2.2983766"
+[2025-10-30T00:15:43.328Z] LOG    📍 Using nearbySearch at coordinates (48.85580470000001, 2.2983766)
+[2025-10-30T00:15:43.329Z] LOG 🔍 [Google Places] Nearby search at (48.85580470000001, 2.2983766)
+[2025-10-30T00:15:43.332Z] LOG    3. Searching "french restaurant" in "48.8604263,2.3409253"
+[2025-10-30T00:15:43.334Z] LOG    📍 Using nearbySearch at coordinates (48.8604263, 2.3409253)
+[2025-10-30T00:15:43.335Z] LOG 🔍 [Google Places] Nearby search at (48.8604263, 2.3409253)
+[2025-10-30T00:15:43.337Z] LOG    4. Searching "museum" in "48.8606111,2.337644"
+[2025-10-30T00:15:43.339Z] LOG    📍 Using nearbySearch at coordinates (48.8606111, 2.337644)
+[2025-10-30T00:15:43.340Z] LOG 🔍 [Google Places] Nearby search at (48.8606111, 2.337644)
+[2025-10-30T00:15:43.344Z] LOG    5. Searching "garden" in "48.8634916,2.3274943"
+[2025-10-30T00:15:43.346Z] LOG    📍 Using nearbySearch at coordinates (48.8634916, 2.3274943)
+[2025-10-30T00:15:43.347Z] LOG 🔍 [Google Places] Nearby search at (48.8634916, 2.3274943)
+[2025-10-30T00:15:43.349Z] LOG    6. Searching "restaurant" in "48.8616576,2.3410268"
+[2025-10-30T00:15:43.350Z] LOG    📍 Using nearbySearch at coordinates (48.8616576, 2.3410268)
+[2025-10-30T00:15:43.351Z] LOG 🔍 [Google Places] Nearby search at (48.8616576, 2.3410268)
+[2025-10-30T00:15:43.956Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:15:44.032Z] LOG    ✅ Tuileries Garden: Got description (91 chars)
+[2025-10-30T00:15:44.048Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:15:44.082Z] LOG    ✅ Jardin des Champs-Élysées: Got description (93 chars)
+[2025-10-30T00:15:44.132Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:15:44.158Z] LOG    ✅ Jardin de Kyiv au Peuple Ukrainien: Got description (100 chars)
+[2025-10-30T00:15:44.163Z] LOG    ⚠️  Jardin du Carrousel: No editorial summary available
+[2025-10-30T00:15:44.170Z] LOG    ✅ Chouchou: Got description (92 chars)
+[2025-10-30T00:15:44.194Z] LOG    ✅ Le Marais Restaurant Paris: Got description (99 chars)
+[2025-10-30T00:15:44.199Z] LOG    ✅ Nelson Mandela Garden: Got description (99 chars)
+[2025-10-30T00:15:44.203Z] LOG    ⚠️  Le Marceau: No editorial summary available
+[2025-10-30T00:15:44.211Z] LOG    ✅ Café Belloy: Got description (89 chars)
+[2025-10-30T00:15:44.224Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:15:44.250Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:15:44.269Z] LOG    ⚠️  C’est Comme À La Maison - CCALM: No editorial summary available
+[2025-10-30T00:15:44.272Z] LOG    ⚠️  Café Fleur: No editorial summary available
+[2025-10-30T00:15:44.282Z] LOG    ⚠️  Le Tourville: No editorial summary available
+[2025-10-30T00:15:44.287Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:15:44.297Z] LOG    ✅ Restaurant Martin Paris: Got description (97 chars)
+[2025-10-30T00:15:44.316Z] LOG    ✅ Louvre Museum: Got description (100 chars)
+[2025-10-30T00:15:44.325Z] LOG    ⚠️  La Brigade - Réaumur: No editorial summary available
+[2025-10-30T00:15:44.344Z] LOG    ✅ L’Alsace: Got description (99 chars)
+[2025-10-30T00:15:44.352Z] LOG    ⚠️  Café Montparnasse: No editorial summary available
+[2025-10-30T00:15:44.355Z] LOG    ✅ Au Bourguignon du Marais: Got description (89 chars)
+[2025-10-30T00:15:44.363Z] LOG    ⚠️  Milagro: No editorial summary available
+[2025-10-30T00:15:44.367Z] LOG    ⚠️  Comme un Bouillon: No editorial summary available
+[2025-10-30T00:15:44.373Z] LOG    ✅ Le Bistrot Du Perigord: Got description (87 chars)
+[2025-10-30T00:15:44.377Z] LOG    ✅ Bouillon Chartier Grands Boulevards: Got description (98 chars)
+[2025-10-30T00:15:44.380Z] LOG    ✅ Le Bistro des Augustins: Got description (100 chars)
+[2025-10-30T00:15:44.385Z] LOG    ✅ Musée d'Orsay: Got description (99 chars)
+[2025-10-30T00:15:44.419Z] LOG    ⚠️  Joya: No editorial summary available
+[2025-10-30T00:15:44.424Z] LOG    ✅ Musée de l'Orangerie: Got description (94 chars)
+[2025-10-30T00:15:44.429Z] LOG    ✅ Musée Grévin: Got description (92 chars)
+[2025-10-30T00:15:44.433Z] LOG    ✅ Musée Rodin: Got description (98 chars)
+[2025-10-30T00:15:44.436Z] LOG    ✅ Les Marches: Got description (96 chars)
+[2025-10-30T00:15:44.495Z] LOG    ✅ Via Del Campo: Got description (84 chars)
+[2025-10-30T00:15:44.497Z] LOG ✅ Batch complete: 6/6 searches succeeded, 30 total venues found in 1179ms
+[2025-10-30T00:15:44.498Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:15:44.500Z] LOG    ✅ Venue 1 (Terres de Café): 4 alternatives
+[2025-10-30T00:15:44.501Z] LOG       1. Café Belloy (4.2⭐)
+[2025-10-30T00:15:44.502Z] LOG       2. Le Marceau (3.9⭐)
+[2025-10-30T00:15:44.503Z] LOG       3. Le Tourville (3.7⭐)
+[2025-10-30T00:15:44.504Z] LOG    ✅ Venue 2 (Champ de Mars): 4 alternatives
+[2025-10-30T00:15:44.505Z] LOG       1. L’Alsace (4.5⭐)
+[2025-10-30T00:15:44.506Z] LOG       2. Milagro (4.8⭐)
+[2025-10-30T00:15:44.507Z] LOG       3. Joya (4.7⭐)
+[2025-10-30T00:15:44.508Z] LOG    ✅ Venue 3 (Le Fumoir): 4 alternatives
+[2025-10-30T00:15:44.509Z] LOG       1. Bouillon Chartier Grands Boulevards (4.1⭐)
+[2025-10-30T00:15:44.510Z] LOG       2. Au Bourguignon du Marais (4.6⭐)
+[2025-10-30T00:15:44.510Z] LOG       3. Le Bistrot Du Perigord (4.6⭐)
+[2025-10-30T00:15:44.511Z] LOG    ✅ Venue 4 (Louvre Museum): 4 alternatives
+[2025-10-30T00:15:44.512Z] LOG       1. Musée d'Orsay (4.8⭐)
+[2025-10-30T00:15:44.513Z] LOG       2. Musée de l'Orangerie (4.6⭐)
+[2025-10-30T00:15:44.514Z] LOG       3. Musée Grévin (4.4⭐)
+[2025-10-30T00:15:44.514Z] LOG    ✅ Venue 5 (Tuileries Garden): 4 alternatives
+[2025-10-30T00:15:44.515Z] LOG       1. Jardin des Champs-Élysées (4.5⭐)
+[2025-10-30T00:15:44.516Z] LOG       2. Jardin de Kyiv au Peuple Ukrainien (4.6⭐)
+[2025-10-30T00:15:44.518Z] LOG       3. Jardin du Carrousel (4.7⭐)
+[2025-10-30T00:15:44.519Z] LOG    ✅ Venue 6 (Le Relais du Louvre): 4 alternatives
+[2025-10-30T00:15:44.520Z] LOG       1. Chouchou (4.7⭐)
+[2025-10-30T00:15:44.522Z] LOG       2. Le Marais Restaurant Paris (4.5⭐)
+[2025-10-30T00:15:44.522Z] LOG       3. La Brigade - Réaumur (4.7⭐)
+[2025-10-30T00:15:44.523Z] LOG 
+📦 Phase 2 complete: 6 stops with alternatives
+[2025-10-30T00:15:44.525Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T00:15:44.527Z] LOG    Primary venues: 6 stops
+[2025-10-30T00:15:44.528Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T00:15:44.529Z] LOG    Removed 0 venues already in route
+[2025-10-30T00:15:44.531Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T00:15:44.533Z] LOG    Final: 6 stops with alternatives
+
+[2025-10-30T00:15:44.536Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T00:15:44.538Z] LOG    Primary venues: 6
+[2025-10-30T00:15:44.539Z] LOG    Alternatives: 6 stops with alternatives
+[2025-10-30T00:15:44.540Z] LOG    Execution time: 2122ms
+[2025-10-30T00:15:44.541Z] LOG 
+📋 Final alternatives:
+[2025-10-30T00:15:44.542Z] LOG    Terres de Café: 4 alternatives
+[2025-10-30T00:15:44.544Z] LOG    Champ de Mars: 4 alternatives
+[2025-10-30T00:15:44.544Z] LOG    Le Fumoir: 4 alternatives
+[2025-10-30T00:15:44.545Z] LOG    Louvre Museum: 4 alternatives
+[2025-10-30T00:15:44.546Z] LOG    Tuileries Garden: 4 alternatives
+[2025-10-30T00:15:44.547Z] LOG    Le Relais du Louvre: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 6
+Alternatives: 6

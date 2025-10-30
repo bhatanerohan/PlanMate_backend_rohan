@@ -1,0 +1,155 @@
+User Prompt: Find authentic ramen spots, cat cafes, and anime stores in Los Angeles
+
+[2025-10-30T01:19:50.706Z] LOG 📍 Using fallback location (no user location): Los Angeles
+[2025-10-30T01:19:50.708Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T01:19:50.710Z] LOG    1. "Daikokuya Little Tokyo" in "Little Tokyo"
+[2025-10-30T01:19:50.711Z] LOG    2. "Entertainment Hobby Shop Jungle (Anime Jungle)" in "Little Tokyo"
+[2025-10-30T01:19:50.714Z] LOG    3. "BOOKOFF Little Tokyo (Ani-Lab)" in "Little Tokyo"
+[2025-10-30T01:19:50.715Z] LOG    4. "Crumbs & Whiskers | Kitten & Cat Cafe" in "Melrose Avenue"
+[2025-10-30T01:19:50.716Z] LOG    5. "Tsujita LA Artisan Noodles" in "Sawtelle Boulevard"
+[2025-10-30T01:19:50.717Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T01:19:50.718Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T01:19:50.719Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T01:19:50.719Z] LOG    1. Searching "Daikokuya Little Tokyo" in "Little Tokyo"
+[2025-10-30T01:19:50.720Z] LOG 🔍 [Google Places] Text search: "Daikokuya Little Tokyo" in Little Tokyo
+[2025-10-30T01:19:50.730Z] LOG    2. Searching "Entertainment Hobby Shop Jungle (Anime Jungle)" in "Little Tokyo"
+[2025-10-30T01:19:50.733Z] LOG 🔍 [Google Places] Text search: "Entertainment Hobby Shop Jungle (Anime Jungle)" in Little Tokyo
+[2025-10-30T01:19:50.742Z] LOG    3. Searching "BOOKOFF Little Tokyo (Ani-Lab)" in "Little Tokyo"
+[2025-10-30T01:19:50.745Z] LOG 🔍 [Google Places] Text search: "BOOKOFF Little Tokyo (Ani-Lab)" in Little Tokyo
+[2025-10-30T01:19:50.754Z] LOG    4. Searching "Crumbs & Whiskers | Kitten & Cat Cafe" in "Melrose Avenue"
+[2025-10-30T01:19:50.756Z] LOG 🔍 [Google Places] Text search: "Crumbs & Whiskers | Kitten & Cat Cafe" in Melrose Avenue
+[2025-10-30T01:19:50.764Z] LOG    5. Searching "Tsujita LA Artisan Noodles" in "Sawtelle Boulevard"
+[2025-10-30T01:19:50.767Z] LOG 🔍 [Google Places] Text search: "Tsujita LA Artisan Noodles" in Sawtelle Boulevard
+[2025-10-30T01:19:51.229Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:19:51.238Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:19:51.288Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:19:51.308Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:19:51.363Z] LOG    ✅ Tsujita LA Artisan Noodles: Got description (89 chars)
+[2025-10-30T01:19:51.364Z] LOG ✅ Found 1 places
+[2025-10-30T01:19:51.365Z] LOG    ⚠️  BOOKOFF Little Tokyo (Ani-Lab): No editorial summary available
+[2025-10-30T01:19:51.366Z] LOG ✅ Found 1 places
+[2025-10-30T01:19:51.431Z] LOG    ⚠️  Crumbs & Whiskers | Kitten & Cat Cafe: No editorial summary available
+[2025-10-30T01:19:51.432Z] LOG ✅ Found 1 places
+[2025-10-30T01:19:51.476Z] LOG    ✅ Daikokuya Little Tokyo: Got description (97 chars)
+[2025-10-30T01:19:51.479Z] LOG ✅ Found 1 places
+[2025-10-30T01:19:51.778Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:19:51.896Z] LOG    ⚠️  Anime Station: No editorial summary available
+[2025-10-30T01:19:51.898Z] LOG ✅ Found 1 places
+[2025-10-30T01:19:51.899Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1181ms
+[2025-10-30T01:19:51.899Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T01:19:51.900Z] LOG    Tool execution result: success=true
+[2025-10-30T01:19:51.901Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T01:19:51.901Z] LOG    ✅ Merged: Daikokuya Little Tokyo
+[2025-10-30T01:19:51.902Z] LOG       Places placeId: ChIJZ_1uw0fGwoARfKCD7TFSP8U
+[2025-10-30T01:19:51.903Z] LOG       Gemini description: Start your day with a taste of traditional Japanese ramen at...
+[2025-10-30T01:19:51.904Z] LOG    ✅ Merged: Entertainment Hobby Shop Jungle (Anime Jungle)
+[2025-10-30T01:19:51.904Z] LOG       Places placeId: ChIJV05YnRjHwoAReVR6PCtqSRk
+[2025-10-30T01:19:51.905Z] LOG       Gemini description: Dive into the world of anime with a visit to this offbeat sh...
+[2025-10-30T01:19:51.905Z] LOG    ✅ Merged: BOOKOFF Little Tokyo (Ani-Lab)
+[2025-10-30T01:19:51.906Z] LOG       Places placeId: ChIJgdWRGbTHwoARnwKM0hkjiPc
+[2025-10-30T01:19:51.906Z] LOG       Gemini description: Continue your anime exploration at this secondhand shop spec...
+[2025-10-30T01:19:51.907Z] LOG    ✅ Merged: Crumbs & Whiskers | Kitten & Cat Cafe
+[2025-10-30T01:19:51.907Z] LOG       Places placeId: ChIJ_6XMF8y-woARNLzY7F4iXkM
+[2025-10-30T01:19:51.907Z] LOG       Gemini description: Unwind and enjoy a coffee or dessert in the company of adora...
+[2025-10-30T01:19:51.908Z] LOG    ✅ Merged: Tsujita LA Artisan Noodles
+[2025-10-30T01:19:51.908Z] LOG       Places placeId: ChIJgd1I33S7woARH3QGuAix6fU
+[2025-10-30T01:19:51.909Z] LOG       Gemini description: Conclude your culinary journey with a visit to this buzzing ...
+[2025-10-30T01:19:51.909Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T01:19:51.910Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T01:19:51.911Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T01:19:51.912Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T01:19:51.912Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T01:19:51.913Z] LOG    1. Searching "restaurant" in "34.0500023,-118.2400575"
+[2025-10-30T01:19:51.913Z] LOG    📍 Using nearbySearch at coordinates (34.0500023, -118.2400575)
+[2025-10-30T01:19:51.915Z] LOG 🔍 [Google Places] Nearby search at (34.0500023, -118.2400575)
+[2025-10-30T01:19:51.917Z] LOG    2. Searching "restaurant" in "34.0485527,-118.241127"
+[2025-10-30T01:19:51.918Z] LOG    📍 Using nearbySearch at coordinates (34.0485527, -118.241127)
+[2025-10-30T01:19:51.919Z] LOG 🔍 [Google Places] Nearby search at (34.0485527, -118.241127)
+[2025-10-30T01:19:51.921Z] LOG    3. Searching "store" in "34.0482908,-118.2406139"
+[2025-10-30T01:19:51.921Z] LOG    📍 Using nearbySearch at coordinates (34.0482908, -118.2406139)
+[2025-10-30T01:19:51.922Z] LOG 🔍 [Google Places] Nearby search at (34.0482908, -118.2406139)
+[2025-10-30T01:19:51.924Z] LOG    4. Searching "cat cafe" in "34.08358,-118.3624014"
+[2025-10-30T01:19:51.926Z] LOG    📍 Using nearbySearch at coordinates (34.08358, -118.3624014)
+[2025-10-30T01:19:51.927Z] LOG 🔍 [Google Places] Nearby search at (34.08358, -118.3624014)
+[2025-10-30T01:19:51.929Z] LOG    5. Searching "restaurant" in "34.0395711,-118.4426526"
+[2025-10-30T01:19:51.930Z] LOG    📍 Using nearbySearch at coordinates (34.0395711, -118.4426526)
+[2025-10-30T01:19:51.930Z] LOG 🔍 [Google Places] Nearby search at (34.0395711, -118.4426526)
+[2025-10-30T01:19:52.355Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T01:19:52.439Z] LOG    ⚠️  Crumbs & Whiskers | Kitten & Cat Cafe: No editorial summary available
+[2025-10-30T01:19:52.537Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T01:19:52.549Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T01:19:52.586Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T01:19:52.617Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T01:19:52.666Z] LOG    ✅ Don Antonio's: Got description (95 chars)
+[2025-10-30T01:19:52.690Z] LOG    ✅ The Upper West: Got description (98 chars)
+[2025-10-30T01:19:52.695Z] LOG    ⚠️  The Corner Store: No editorial summary available
+[2025-10-30T01:19:52.697Z] LOG    ✅ Bottega Louie: Got description (96 chars)
+[2025-10-30T01:19:52.735Z] LOG    ✅ Tsujita LA Artisan Noodles: Got description (89 chars)
+[2025-10-30T01:19:52.740Z] LOG    ⚠️  Bunker Hill Market: No editorial summary available
+[2025-10-30T01:19:52.743Z] LOG    ✅ Moon House: Got description (98 chars)
+[2025-10-30T01:19:52.749Z] LOG    ✅ Bottega Louie: Got description (96 chars)
+[2025-10-30T01:19:52.770Z] LOG    ⚠️  Burlington: No editorial summary available
+[2025-10-30T01:19:52.781Z] LOG    ⚠️  Duke's Liquor Store: No editorial summary available
+[2025-10-30T01:19:52.789Z] LOG    ⚠️  BIG APPLE STORE: No editorial summary available
+[2025-10-30T01:19:52.802Z] LOG    ✅ Amante Restaurant: Got description (70 chars)
+[2025-10-30T01:19:52.809Z] LOG    ✅ The Little Jewel of New Orleans: Got description (99 chars)
+[2025-10-30T01:19:52.816Z] LOG    ⚠️  Joyce: No editorial summary available
+[2025-10-30T01:19:52.819Z] LOG    ✅ Water Grill: Got description (87 chars)
+[2025-10-30T01:19:52.824Z] LOG    ⚠️  Diplomat Restaurant: No editorial summary available
+[2025-10-30T01:19:52.830Z] LOG    ✅ Bar Americano: Got description (100 chars)
+[2025-10-30T01:19:52.835Z] LOG    ✅ DAMA Fashion District - Downtown LA Restaurant & Bar: Got description (99 chars)
+[2025-10-30T01:19:52.842Z] LOG    ✅ Redbird: Got description (87 chars)
+[2025-10-30T01:19:52.902Z] LOG    ✅ Redbird: Got description (87 chars)
+[2025-10-30T01:19:52.903Z] LOG ✅ Batch complete: 5/5 searches succeeded, 21 total venues found in 991ms
+[2025-10-30T01:19:52.904Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T01:19:52.904Z] LOG    ✅ Venue 1 (Daikokuya Little Tokyo): 4 alternatives
+[2025-10-30T01:19:52.905Z] LOG       1. Bottega Louie (4.5⭐)
+[2025-10-30T01:19:52.905Z] LOG       2. Water Grill (4.5⭐)
+[2025-10-30T01:19:52.906Z] LOG       3. Redbird (4.6⭐)
+[2025-10-30T01:19:52.906Z] LOG    ✅ Venue 2 (Anime Station): 4 alternatives
+[2025-10-30T01:19:52.907Z] LOG       1. Bottega Louie (4.5⭐)
+[2025-10-30T01:19:52.908Z] LOG       2. Redbird (4.6⭐)
+[2025-10-30T01:19:52.908Z] LOG       3. DAMA Fashion District - Downtown LA Restaurant & Bar (4.6⭐)
+[2025-10-30T01:19:52.909Z] LOG    ✅ Venue 3 (BOOKOFF Little Tokyo (Ani-Lab)): 4 alternatives
+[2025-10-30T01:19:52.911Z] LOG       1. The Corner Store (3.9⭐)
+[2025-10-30T01:19:52.912Z] LOG       2. Bunker Hill Market (4.4⭐)
+[2025-10-30T01:19:52.913Z] LOG       3. Duke's Liquor Store (3.9⭐)
+[2025-10-30T01:19:52.913Z] LOG    ⚠️ Venue 4 (Crumbs & Whiskers | Kitten & Cat Cafe): No alternatives found
+[2025-10-30T01:19:52.914Z] LOG    ✅ Venue 5 (Tsujita LA Artisan Noodles): 4 alternatives
+[2025-10-30T01:19:52.915Z] LOG       1. Don Antonio's (4.5⭐)
+[2025-10-30T01:19:52.915Z] LOG       2. The Upper West (4.6⭐)
+[2025-10-30T01:19:52.916Z] LOG       3. Diplomat Restaurant (4.5⭐)
+[2025-10-30T01:19:52.917Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-30T01:19:52.918Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T01:19:52.920Z] LOG    Primary venues: 5 stops
+[2025-10-30T01:19:52.921Z] LOG    ❌ Removed "Bottega Louie" - duplicate alternative
+[2025-10-30T01:19:52.922Z] LOG    ❌ Removed "Redbird" - duplicate alternative
+[2025-10-30T01:19:52.924Z] LOG    🔧 Stop "ChIJV05YnRjHwoAReVR6...": 4 → 2 alternatives
+[2025-10-30T01:19:52.925Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T01:19:52.925Z] LOG    Removed 0 venues already in route
+[2025-10-30T01:19:52.926Z] LOG    Removed 2 duplicate alternatives
+[2025-10-30T01:19:52.927Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T01:19:52.928Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T01:19:52.928Z] LOG    Primary venues: 5
+[2025-10-30T01:19:52.929Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T01:19:52.930Z] LOG    Execution time: 2224ms
+[2025-10-30T01:19:52.931Z] LOG 
+📋 Final alternatives:
+[2025-10-30T01:19:52.932Z] LOG    Daikokuya Little Tokyo: 4 alternatives
+[2025-10-30T01:19:52.933Z] LOG    Anime Station: 2 alternatives
+[2025-10-30T01:19:52.935Z] LOG    BOOKOFF Little Tokyo (Ani-Lab): 4 alternatives
+[2025-10-30T01:19:52.936Z] LOG    Tsujita LA Artisan Noodles: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

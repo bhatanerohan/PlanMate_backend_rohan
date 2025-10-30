@@ -1,0 +1,165 @@
+User Prompt: plana  day in south mumbai
+
+[2025-10-29T18:32:09.303Z] LOG 📍 Using extracted city from user location: Maharashtra
+[2025-10-29T18:32:09.304Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T18:32:09.304Z] LOG    1. "Gateway Of India Mumbai" in "Colaba"
+[2025-10-29T18:32:09.305Z] LOG    2. "Leopold Cafe" in "Colaba"
+[2025-10-29T18:32:09.305Z] LOG    3. "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya" in "Fort"
+[2025-10-29T18:32:09.305Z] LOG    4. "Marine Drive" in "Marine Drive"
+[2025-10-29T18:32:09.306Z] LOG    5. "Bademiya - Colaba" in "Colaba"
+[2025-10-29T18:32:09.306Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-29T18:32:09.307Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T18:32:09.307Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T18:32:09.308Z] LOG    1. Searching "Gateway Of India Mumbai" in "Colaba"
+[2025-10-29T18:32:09.308Z] LOG 🔍 [Google Places] Text search: "Gateway Of India Mumbai" in Colaba
+[2025-10-29T18:32:09.312Z] LOG    2. Searching "Leopold Cafe" in "Colaba"
+[2025-10-29T18:32:09.313Z] LOG 🔍 [Google Places] Text search: "Leopold Cafe" in Colaba
+[2025-10-29T18:32:09.318Z] LOG    3. Searching "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya" in "Fort"
+[2025-10-29T18:32:09.319Z] LOG 🔍 [Google Places] Text search: "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya" in Fort
+[2025-10-29T18:32:09.324Z] LOG    4. Searching "Marine Drive" in "Marine Drive"
+[2025-10-29T18:32:09.325Z] LOG 🔍 [Google Places] Text search: "Marine Drive" in Marine Drive
+[2025-10-29T18:32:09.330Z] LOG    5. Searching "Bademiya - Colaba" in "Colaba"
+[2025-10-29T18:32:09.332Z] LOG 🔍 [Google Places] Text search: "Bademiya - Colaba" in Colaba
+[2025-10-29T18:32:09.775Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:32:09.838Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:32:09.863Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:32:09.912Z] LOG    ✅ Marine Dr: Got description (100 chars)
+[2025-10-29T18:32:09.913Z] LOG ✅ Found 1 places
+[2025-10-29T18:32:09.948Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:32:09.964Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:32:10.004Z] LOG    ✅ Chhatrapati Shivaji Maharaj Vastu Sangrahalaya: Got description (99 chars)
+[2025-10-29T18:32:10.005Z] LOG ✅ Found 1 places
+[2025-10-29T18:32:10.027Z] LOG    ✅ Bademiya - Colaba: Got description (82 chars)
+[2025-10-29T18:32:10.028Z] LOG ✅ Found 1 places
+[2025-10-29T18:32:10.092Z] LOG    ✅ Leopold Cafe: Got description (100 chars)
+[2025-10-29T18:32:10.093Z] LOG ✅ Found 1 places
+[2025-10-29T18:32:10.130Z] LOG    ✅ Gateway Of India Mumbai: Got description (92 chars)
+[2025-10-29T18:32:10.133Z] LOG ✅ Found 1 places
+[2025-10-29T18:32:10.134Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 827ms
+[2025-10-29T18:32:10.134Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T18:32:10.134Z] LOG    Tool execution result: success=true
+[2025-10-29T18:32:10.135Z] LOG    ✅ Tool returned 5 search results
+[2025-10-29T18:32:10.135Z] LOG    ✅ Merged: Gateway Of India Mumbai
+[2025-10-29T18:32:10.136Z] LOG       Places placeId: ChIJrVwNOsfR5zsRPHOcIKclCsc
+[2025-10-29T18:32:10.137Z] LOG       Gemini description: Begin your day at this grand, Indo-Saracenic-style triumphal...
+[2025-10-29T18:32:10.137Z] LOG    ✅ Merged: Leopold Cafe
+[2025-10-29T18:32:10.137Z] LOG       Places placeId: ChIJqSNr-8DR5zsRosXwmBExzRw
+[2025-10-29T18:32:10.137Z] LOG       Gemini description: Established in 1871, this old-school cafe/bar is a landmark ...
+[2025-10-29T18:32:10.138Z] LOG    ✅ Merged: Chhatrapati Shivaji Maharaj Vastu Sangrahalaya
+[2025-10-29T18:32:10.138Z] LOG       Places placeId: ChIJJ7H46sPR5zsRU5I-VRAm50Q
+[2025-10-29T18:32:10.138Z] LOG       Gemini description: A grand museum with Indo-Saracenic architecture, featuring e...
+[2025-10-29T18:32:10.139Z] LOG    ✅ Merged: Marine Drive
+[2025-10-29T18:32:10.139Z] LOG       Places placeId: ChIJnUPoXuLR5zsRK60mJ0-SzVo
+[2025-10-29T18:32:10.139Z] LOG       Gemini description: Known as the 'Queen's Necklace' for its sparkling streetligh...
+[2025-10-29T18:32:10.140Z] LOG    ✅ Merged: Bademiya - Colaba
+[2025-10-29T18:32:10.140Z] LOG       Places placeId: ChIJcWY5IsHR5zsR8eiB31_ePFo
+[2025-10-29T18:32:10.140Z] LOG       Gemini description: A legendary kebab and curry restaurant that originated from ...
+[2025-10-29T18:32:10.141Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-29T18:32:10.141Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T18:32:10.142Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-29T18:32:10.143Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T18:32:10.143Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T18:32:10.144Z] LOG    1. Searching "landmark" in "18.9219841,72.8346543"
+[2025-10-29T18:32:10.144Z] LOG    📍 Using nearbySearch at coordinates (18.9219841, 72.8346543)
+[2025-10-29T18:32:10.145Z] LOG 🔍 [Google Places] Nearby search at (18.9219841, 72.8346543)
+[2025-10-29T18:32:10.147Z] LOG    2. Searching "cafe | restaurant" in "18.9227947,72.83166589999999"
+[2025-10-29T18:32:10.148Z] LOG    📍 Using nearbySearch at coordinates (18.9227947, 72.83166589999999)
+[2025-10-29T18:32:10.148Z] LOG 🔍 [Google Places] Nearby search at (18.9227947, 72.83166589999999)
+[2025-10-29T18:32:10.149Z] LOG    3. Searching "museum" in "18.9269015,72.83269159999999"
+[2025-10-29T18:32:10.150Z] LOG    📍 Using nearbySearch at coordinates (18.9269015, 72.83269159999999)
+[2025-10-29T18:32:10.150Z] LOG 🔍 [Google Places] Nearby search at (18.9269015, 72.83269159999999)
+[2025-10-29T18:32:10.150Z] LOG    4. Searching "restaurant" in "18.9432111,72.8229983"
+[2025-10-29T18:32:10.151Z] LOG    📍 Using nearbySearch at coordinates (18.9432111, 72.8229983)
+[2025-10-29T18:32:10.151Z] LOG 🔍 [Google Places] Nearby search at (18.9432111, 72.8229983)
+[2025-10-29T18:32:10.152Z] LOG    5. Searching "restaurant" in "18.9232359,72.83252259999999"
+[2025-10-29T18:32:10.153Z] LOG    📍 Using nearbySearch at coordinates (18.9232359, 72.83252259999999)
+[2025-10-29T18:32:10.153Z] LOG 🔍 [Google Places] Nearby search at (18.9232359, 72.83252259999999)
+[2025-10-29T18:32:10.677Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:32:10.812Z] LOG    ✅ Flora Fountain: Got description (87 chars)
+[2025-10-29T18:32:10.836Z] LOG    ✅ Gateway Of India Mumbai: Got description (92 chars)
+[2025-10-29T18:32:10.873Z] LOG    ⚠️  Chhatrapati Shivaji Maharaj Statue: No editorial summary available
+[2025-10-29T18:32:10.888Z] LOG    ⚠️  Gateway of India -sbz-view point: No editorial summary available
+[2025-10-29T18:32:10.898Z] LOG    ⚠️  Kala Ghoda Statue: No editorial summary available
+[2025-10-29T18:32:10.932Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:32:10.976Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:32:11.036Z] LOG    ✅ Chhatrapati Shivaji Maharaj Vastu Sangrahalaya: Got description (99 chars)
+[2025-10-29T18:32:11.057Z] LOG    ⚠️  Carter's Blue: No editorial summary available
+[2025-10-29T18:32:11.061Z] LOG    ✅ Foo Town: Got description (89 chars)
+[2025-10-29T18:32:11.088Z] LOG    ✅ George Restaurant, Fort: Got description (84 chars)
+[2025-10-29T18:32:11.090Z] LOG    ✅ Koyla - Ethnic Cuisine: Got description (94 chars)
+[2025-10-29T18:32:11.095Z] LOG    ⚠️  Ekaa: No editorial summary available
+[2025-10-29T18:32:11.105Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:32:11.116Z] LOG    ⚠️  Paradox Museum Mumbai: No editorial summary available
+[2025-10-29T18:32:11.142Z] LOG    ✅ National Gallery of Modern Art: Got description (87 chars)
+[2025-10-29T18:32:11.149Z] LOG    ✅ RBI Monetary Museum: Got description (100 chars)
+[2025-10-29T18:32:11.168Z] LOG    ✅ Jehangir Art Gallery: Got description (84 chars)
+[2025-10-29T18:32:11.169Z] LOG    ✅ George Restaurant, Fort: Got description (84 chars)
+[2025-10-29T18:32:11.172Z] LOG    ✅ Koyla - Ethnic Cuisine: Got description (94 chars)
+[2025-10-29T18:32:11.222Z] LOG    ⚠️  Bake House Cafe: No editorial summary available
+[2025-10-29T18:32:11.244Z] LOG    ⚠️  Banyan Tree Cafe: No editorial summary available
+[2025-10-29T18:32:11.248Z] LOG    ✅ Shamiana: Got description (96 chars)
+[2025-10-29T18:32:12.265Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:32:12.324Z] LOG    ✅ George Restaurant, Fort: Got description (84 chars)
+[2025-10-29T18:32:12.331Z] LOG    ⚠️  Ekaa: No editorial summary available
+[2025-10-29T18:32:12.385Z] LOG    ✅ Faham Restaurant & lounge: Got description (94 chars)
+[2025-10-29T18:32:12.405Z] LOG    ⚠️  Adarsh Annapoorna: No editorial summary available
+[2025-10-29T18:32:12.408Z] LOG    ✅ Ustaadi: Got description (99 chars)
+[2025-10-29T18:32:12.409Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 2266ms
+[2025-10-29T18:32:12.409Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T18:32:12.409Z] LOG    ✅ Venue 1 (Gateway Of India Mumbai): 4 alternatives
+[2025-10-29T18:32:12.410Z] LOG       1. Flora Fountain (4.5⭐)
+[2025-10-29T18:32:12.410Z] LOG       2. Kala Ghoda Statue (4.5⭐)
+[2025-10-29T18:32:12.410Z] LOG       3. Chhatrapati Shivaji Maharaj Statue (4.6⭐)
+[2025-10-29T18:32:12.411Z] LOG    ✅ Venue 2 (Leopold Cafe): 4 alternatives
+[2025-10-29T18:32:12.411Z] LOG       1. Bake House Cafe (4.4⭐)
+[2025-10-29T18:32:12.412Z] LOG       2. Shamiana (4.4⭐)
+[2025-10-29T18:32:12.412Z] LOG       3. George Restaurant, Fort (4.1⭐)
+[2025-10-29T18:32:12.413Z] LOG    ✅ Venue 3 (Chhatrapati Shivaji Maharaj Vastu Sangrahalaya): 4 alternatives
+[2025-10-29T18:32:12.413Z] LOG       1. Paradox Museum Mumbai (4.6⭐)
+[2025-10-29T18:32:12.413Z] LOG       2. National Gallery of Modern Art (4.4⭐)
+[2025-10-29T18:32:12.413Z] LOG       3. RBI Monetary Museum (4.6⭐)
+[2025-10-29T18:32:12.414Z] LOG    ✅ Venue 4 (Marine Dr): 4 alternatives
+[2025-10-29T18:32:12.414Z] LOG       1. Ekaa (4.4⭐)
+[2025-10-29T18:32:12.414Z] LOG       2. George Restaurant, Fort (4.1⭐)
+[2025-10-29T18:32:12.414Z] LOG       3. Adarsh Annapoorna (4.1⭐)
+[2025-10-29T18:32:12.415Z] LOG    ✅ Venue 5 (Bademiya - Colaba): 4 alternatives
+[2025-10-29T18:32:12.415Z] LOG       1. Foo Town (4.4⭐)
+[2025-10-29T18:32:12.415Z] LOG       2. George Restaurant, Fort (4.1⭐)
+[2025-10-29T18:32:12.416Z] LOG       3. Ekaa (4.4⭐)
+[2025-10-29T18:32:12.416Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-29T18:32:12.416Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T18:32:12.417Z] LOG    Primary venues: 5 stops
+[2025-10-29T18:32:12.417Z] LOG    ❌ Removed "George Restaurant, Fort" - duplicate alternative
+[2025-10-29T18:32:12.417Z] LOG    🔧 Stop "ChIJnUPoXuLR5zsRK60m...": 4 → 3 alternatives
+[2025-10-29T18:32:12.418Z] LOG    ❌ Removed "George Restaurant, Fort" - duplicate alternative
+[2025-10-29T18:32:12.419Z] LOG    ❌ Removed "Ekaa" - duplicate alternative
+[2025-10-29T18:32:12.420Z] LOG    🔧 Stop "ChIJcWY5IsHR5zsR8eiB...": 4 → 2 alternatives
+[2025-10-29T18:32:12.420Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T18:32:12.421Z] LOG    Removed 0 venues already in route
+[2025-10-29T18:32:12.421Z] LOG    Removed 3 duplicate alternatives
+[2025-10-29T18:32:12.422Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-29T18:32:12.422Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T18:32:12.422Z] LOG    Primary venues: 5
+[2025-10-29T18:32:12.423Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-29T18:32:12.423Z] LOG    Execution time: 3120ms
+[2025-10-29T18:32:12.423Z] LOG 
+📋 Final alternatives:
+[2025-10-29T18:32:12.424Z] LOG    Gateway Of India Mumbai: 4 alternatives
+[2025-10-29T18:32:12.424Z] LOG    Leopold Cafe: 4 alternatives
+[2025-10-29T18:32:12.424Z] LOG    Chhatrapati Shivaji Maharaj Vastu Sangrahalaya: 4 alternatives
+[2025-10-29T18:32:12.425Z] LOG    Marine Dr: 3 alternatives
+[2025-10-29T18:32:12.425Z] LOG    Bademiya - Colaba: 2 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

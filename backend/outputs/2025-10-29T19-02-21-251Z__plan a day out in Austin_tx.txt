@@ -1,0 +1,163 @@
+User Prompt: plan a day out in Austin,tx
+
+[2025-10-29T19:02:21.253Z] LOG 📍 Using fallback location (no user location): Austin
+[2025-10-29T19:02:21.255Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T19:02:21.256Z] LOG    1. "Zilker Metropolitan Park" in "South Austin"
+[2025-10-29T19:02:21.257Z] LOG    2. "Bullock Texas State History Museum" in "Downtown Austin"
+[2025-10-29T19:02:21.257Z] LOG    3. "Terry Black's Barbecue" in "South Austin"
+[2025-10-29T19:02:21.258Z] LOG    4. "South Congress Avenue" in "South Congress"
+[2025-10-29T19:02:21.259Z] LOG    5. "The Continental Club" in "South Congress"
+[2025-10-29T19:02:21.260Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-29T19:02:21.260Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T19:02:21.261Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T19:02:21.262Z] LOG    1. Searching "Zilker Metropolitan Park" in "South Austin"
+[2025-10-29T19:02:21.263Z] LOG 🔍 [Google Places] Text search: "Zilker Metropolitan Park" in South Austin
+[2025-10-29T19:02:21.266Z] LOG    2. Searching "Bullock Texas State History Museum" in "Downtown Austin"
+[2025-10-29T19:02:21.267Z] LOG 🔍 [Google Places] Text search: "Bullock Texas State History Museum" in Downtown Austin
+[2025-10-29T19:02:21.270Z] LOG    3. Searching "Terry Black's Barbecue" in "South Austin"
+[2025-10-29T19:02:21.270Z] LOG 🔍 [Google Places] Text search: "Terry Black's Barbecue" in South Austin
+[2025-10-29T19:02:21.274Z] LOG    4. Searching "South Congress Avenue" in "South Congress"
+[2025-10-29T19:02:21.275Z] LOG 🔍 [Google Places] Text search: "South Congress Avenue" in South Congress
+[2025-10-29T19:02:21.278Z] LOG    5. Searching "The Continental Club" in "South Congress"
+[2025-10-29T19:02:21.278Z] LOG 🔍 [Google Places] Text search: "The Continental Club" in South Congress
+[2025-10-29T19:02:21.687Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T19:02:21.749Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T19:02:21.849Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T19:02:21.866Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T19:02:21.887Z] LOG    ✅ S Congress Ave: Got description (98 chars)
+[2025-10-29T19:02:21.888Z] LOG ✅ Found 1 places
+[2025-10-29T19:02:21.932Z] LOG    ✅ The Continental Club: Got description (100 chars)
+[2025-10-29T19:02:21.933Z] LOG ✅ Found 1 places
+[2025-10-29T19:02:21.997Z] LOG    ✅ Terry Black's Barbecue: Got description (99 chars)
+[2025-10-29T19:02:21.998Z] LOG ✅ Found 1 places
+[2025-10-29T19:02:22.068Z] LOG    ✅ Bullock Texas State History Museum: Got description (90 chars)
+[2025-10-29T19:02:22.069Z] LOG ✅ Found 1 places
+[2025-10-29T19:02:22.094Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T19:02:22.270Z] LOG    ✅ Zilker Metropolitan Park: Got description (94 chars)
+[2025-10-29T19:02:22.272Z] LOG ✅ Found 1 places
+[2025-10-29T19:02:22.272Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1011ms
+[2025-10-29T19:02:22.273Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T19:02:22.274Z] LOG    Tool execution result: success=true
+[2025-10-29T19:02:22.274Z] LOG    ✅ Tool returned 5 search results
+[2025-10-29T19:02:22.275Z] LOG    ✅ Merged: Zilker Metropolitan Park
+[2025-10-29T19:02:22.276Z] LOG       Places placeId: ChIJ22j54Ia1RIYRunKXejw_UJs
+[2025-10-29T19:02:22.277Z] LOG       Gemini description: Start your day at Austin's most beloved urban park, a 351-ac...
+[2025-10-29T19:02:22.278Z] LOG    ✅ Merged: Bullock Texas State History Museum
+[2025-10-29T19:02:22.278Z] LOG       Places placeId: ChIJzxUS9Z61RIYRopUORuC6AdM
+[2025-10-29T19:02:22.279Z] LOG       Gemini description: Immerse yourself in the rich history of Texas through engagi...
+[2025-10-29T19:02:22.279Z] LOG    ✅ Merged: Terry Black's Barbecue
+[2025-10-29T19:02:22.280Z] LOG       Places placeId: ChIJZSqCDhu1RIYRx1iRoCvCOsA
+[2025-10-29T19:02:22.280Z] LOG       Gemini description: Experience authentic Central Texas barbecue at this renowned...
+[2025-10-29T19:02:22.280Z] LOG    ✅ Merged: South Congress Avenue
+[2025-10-29T19:02:22.281Z] LOG       Places placeId: ChIJdyeRpqO0RIYRnfuyalxBf3E
+[2025-10-29T19:02:22.281Z] LOG       Gemini description: Spend your afternoon exploring the eclectic and vibrant Sout...
+[2025-10-29T19:02:22.281Z] LOG    ✅ Merged: The Continental Club
+[2025-10-29T19:02:22.282Z] LOG       Places placeId: ChIJJUbJuv20RIYRpFyFb-IiSZo
+[2025-10-29T19:02:22.282Z] LOG       Gemini description: End your day at one of Austin's most legendary live music ve...
+[2025-10-29T19:02:22.282Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-29T19:02:22.282Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T19:02:22.283Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-29T19:02:22.283Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T19:02:22.283Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T19:02:22.284Z] LOG    1. Searching "park" in "30.2669764,-97.7729703"
+[2025-10-29T19:02:22.284Z] LOG    📍 Using nearbySearch at coordinates (30.2669764, -97.7729703)
+[2025-10-29T19:02:22.285Z] LOG 🔍 [Google Places] Nearby search at (30.2669764, -97.7729703)
+[2025-10-29T19:02:22.286Z] LOG    2. Searching "museum" in "30.280337,-97.73906869999999"
+[2025-10-29T19:02:22.286Z] LOG    📍 Using nearbySearch at coordinates (30.280337, -97.73906869999999)
+[2025-10-29T19:02:22.287Z] LOG 🔍 [Google Places] Nearby search at (30.280337, -97.73906869999999)
+[2025-10-29T19:02:22.289Z] LOG    3. Searching "restaurant" in "30.2597015,-97.75482339999999"
+[2025-10-29T19:02:22.290Z] LOG    📍 Using nearbySearch at coordinates (30.2597015, -97.75482339999999)
+[2025-10-29T19:02:22.291Z] LOG 🔍 [Google Places] Nearby search at (30.2597015, -97.75482339999999)
+[2025-10-29T19:02:22.293Z] LOG    4. Searching "restaurant" in "30.2484592,-97.7501142"
+[2025-10-29T19:02:22.294Z] LOG    📍 Using nearbySearch at coordinates (30.2484592, -97.7501142)
+[2025-10-29T19:02:22.294Z] LOG 🔍 [Google Places] Nearby search at (30.2484592, -97.7501142)
+[2025-10-29T19:02:22.295Z] LOG    5. Searching "bar / live music venue" in "30.2505216,-97.7491292"
+[2025-10-29T19:02:22.296Z] LOG    📍 Using nearbySearch at coordinates (30.2505216, -97.7491292)
+[2025-10-29T19:02:22.296Z] LOG 🔍 [Google Places] Nearby search at (30.2505216, -97.7491292)
+[2025-10-29T19:02:22.925Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T19:02:22.975Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T19:02:23.041Z] LOG    ✅ Terry Black's Barbecue: Got description (99 chars)
+[2025-10-29T19:02:23.053Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T19:02:23.061Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T19:02:23.097Z] LOG    ✅ Corner Restaurant: Got description (98 chars)
+[2025-10-29T19:02:23.131Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T19:02:23.166Z] LOG    ✅ Aba Austin: Got description (104 chars)
+[2025-10-29T19:02:23.171Z] LOG    ✅ Two Hands: Got description (88 chars)
+[2025-10-29T19:02:23.178Z] LOG    ✅ El Alma: Got description (95 chars)
+[2025-10-29T19:02:23.194Z] LOG    ✅ Caroline: Got description (105 chars)
+[2025-10-29T19:02:23.200Z] LOG    ✅ Magnolia Cafe: Got description (73 chars)
+[2025-10-29T19:02:23.213Z] LOG    ✅ Ladybird Lake-Lamar Beach Metro Park: Got description (100 chars)
+[2025-10-29T19:02:23.214Z] LOG    ✅ Fixe Southern House: Got description (100 chars)
+[2025-10-29T19:02:23.222Z] LOG    ✅ Bullock Texas State History Museum: Got description (90 chars)
+[2025-10-29T19:02:23.225Z] LOG    ✅ Aba Austin: Got description (104 chars)
+[2025-10-29T19:02:23.245Z] LOG    ✅ Texas Science & Natural History Museum: Got description (97 chars)
+[2025-10-29T19:02:23.249Z] LOG    ⚠️  Nido: No editorial summary available
+[2025-10-29T19:02:23.252Z] LOG    ⚠️  Texas Toy Museum and Arcade: No editorial summary available
+[2025-10-29T19:02:23.254Z] LOG    ✅ Zilker Metropolitan Park: Got description (94 chars)
+[2025-10-29T19:02:23.255Z] LOG    ✅ West Austin Neighborhood Park: Got description (89 chars)
+[2025-10-29T19:02:23.259Z] LOG    ✅ Butler Shores at Town Lake: Got description (87 chars)
+[2025-10-29T19:02:23.274Z] LOG    ✅ The Continental Club: Got description (100 chars)
+[2025-10-29T19:02:23.276Z] LOG    ✅ Museum of the Weird: Got description (97 chars)
+[2025-10-29T19:02:23.286Z] LOG    ✅ Eilers (Deep Eddy) Neighborhood Park: Got description (99 chars)
+[2025-10-29T19:02:23.296Z] LOG    ✅ Elephant Room: Got description (97 chars)
+[2025-10-29T19:02:23.300Z] LOG    ✅ Antone's Nightclub: Got description (98 chars)
+[2025-10-29T19:02:23.317Z] LOG    ✅ Blanton Museum of Art: Got description (98 chars)
+[2025-10-29T19:02:23.327Z] LOG    ✅ Saxon Pub: Got description (100 chars)
+[2025-10-29T19:02:23.357Z] LOG    ✅ Lustre Pearl Rainey: Got description (99 chars)
+[2025-10-29T19:02:23.358Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1075ms
+[2025-10-29T19:02:23.359Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T19:02:23.359Z] LOG    ✅ Venue 1 (Zilker Metropolitan Park): 4 alternatives
+[2025-10-29T19:02:23.360Z] LOG       1. Ladybird Lake-Lamar Beach Metro Park (4.7⭐)
+[2025-10-29T19:02:23.360Z] LOG       2. Butler Shores at Town Lake (4.6⭐)
+[2025-10-29T19:02:23.361Z] LOG       3. West Austin Neighborhood Park (4.6⭐)
+[2025-10-29T19:02:23.361Z] LOG    ✅ Venue 2 (Bullock Texas State History Museum): 4 alternatives
+[2025-10-29T19:02:23.362Z] LOG       1. Texas Toy Museum and Arcade (4.7⭐)
+[2025-10-29T19:02:23.362Z] LOG       2. Texas Science & Natural History Museum (4.5⭐)
+[2025-10-29T19:02:23.362Z] LOG       3. Museum of the Weird (4.2⭐)
+[2025-10-29T19:02:23.363Z] LOG    ✅ Venue 3 (Terry Black's Barbecue): 4 alternatives
+[2025-10-29T19:02:23.363Z] LOG       1. Corner Restaurant (4.9⭐)
+[2025-10-29T19:02:23.363Z] LOG       2. Caroline (4.8⭐)
+[2025-10-29T19:02:23.364Z] LOG       3. Aba Austin (4.7⭐)
+[2025-10-29T19:02:23.364Z] LOG    ✅ Venue 4 (S Congress Ave): 4 alternatives
+[2025-10-29T19:02:23.364Z] LOG       1. Terry Black's Barbecue (4.7⭐)
+[2025-10-29T19:02:23.364Z] LOG       2. Magnolia Cafe (4.5⭐)
+[2025-10-29T19:02:23.365Z] LOG       3. Aba Austin (4.7⭐)
+[2025-10-29T19:02:23.365Z] LOG    ✅ Venue 5 (The Continental Club): 4 alternatives
+[2025-10-29T19:02:23.365Z] LOG       1. Antone's Nightclub (4.5⭐)
+[2025-10-29T19:02:23.366Z] LOG       2. Elephant Room (4.6⭐)
+[2025-10-29T19:02:23.366Z] LOG       3. Saxon Pub (4.7⭐)
+[2025-10-29T19:02:23.366Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-29T19:02:23.367Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T19:02:23.367Z] LOG    Primary venues: 5 stops
+[2025-10-29T19:02:23.367Z] LOG    ❌ Removed "Terry Black's Barbecue" - already in primary route
+[2025-10-29T19:02:23.368Z] LOG    ❌ Removed "Aba Austin" - duplicate alternative
+[2025-10-29T19:02:23.368Z] LOG    🔧 Stop "ChIJdyeRpqO0RIYRnfuy...": 4 → 2 alternatives
+[2025-10-29T19:02:23.369Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T19:02:23.369Z] LOG    Removed 1 venues already in route
+[2025-10-29T19:02:23.369Z] LOG    Removed 1 duplicate alternatives
+[2025-10-29T19:02:23.370Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-29T19:02:23.370Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T19:02:23.370Z] LOG    Primary venues: 5
+[2025-10-29T19:02:23.371Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-29T19:02:23.371Z] LOG    Execution time: 2120ms
+[2025-10-29T19:02:23.372Z] LOG 
+📋 Final alternatives:
+[2025-10-29T19:02:23.372Z] LOG    Zilker Metropolitan Park: 4 alternatives
+[2025-10-29T19:02:23.373Z] LOG    Bullock Texas State History Museum: 4 alternatives
+[2025-10-29T19:02:23.373Z] LOG    Terry Black's Barbecue: 4 alternatives
+[2025-10-29T19:02:23.374Z] LOG    S Congress Ave: 2 alternatives
+[2025-10-29T19:02:23.375Z] LOG    The Continental Club: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

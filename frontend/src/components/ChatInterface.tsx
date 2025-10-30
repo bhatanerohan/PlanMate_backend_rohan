@@ -434,7 +434,7 @@ const ChatInterface = forwardRef(({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="text-sm font-medium text-blue-900">
-                REFRESH FOR NEW CHAT!!)
+                REFRESH FOR NEW CHAT!!
               </span>
               <button
                 onClick={onClearItinerary}

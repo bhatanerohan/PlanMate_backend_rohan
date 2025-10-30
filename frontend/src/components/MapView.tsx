@@ -1,6 +1,6 @@
 // frontend/src/components/MapView.tsx - COMPLETE FILE
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, memo } from 'react';
 import Map, { Marker, Source, Layer, Popup } from 'react-map-gl';
 import type { MapRef } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -549,23 +549,26 @@ const MapView = ({
           </Marker>
         )}
 
-        {popupInfo && (
-          <Popup
-            longitude={popupInfo.position.lng}
-            latitude={popupInfo.position.lat}
-            anchor="top"
-            onClose={() => setPopupInfo(null)}
-            closeButton={true}
-            closeOnClick={false}
-            offset={25}
-          >
-            <PopupContent 
-              marker={popupInfo} 
-              onQuickAction={onQuickAction}
-              hasCurrentItinerary={!!currentItinerary}
-            />
-          </Popup>
-        )}
+{popupInfo && (
+  <Popup
+    longitude={popupInfo.position.lng}
+    latitude={popupInfo.position.lat}
+    anchor="top"
+    onClose={() => setPopupInfo(null)}
+    closeButton={true}
+    closeOnClick={false}
+    offset={25}
+    maxWidth="none"
+    className="venue-popup"
+  >
+    <PopupContent 
+      marker={popupInfo} 
+      onQuickAction={onQuickAction}
+      hasCurrentItinerary={!!currentItinerary}
+    />
+  </Popup>
+)}
+
       </Map>
 
       {isLoadingRoutes && (
@@ -587,9 +590,11 @@ const MapView = ({
   );
 };
 
-const PopupContent = React.memo(({ 
+// Find the PopupContent component in MapView.tsx and replace it with this fixed version:
+
+const PopupContent = memo(({ 
   marker, 
-  onQuickAction,
+  onQuickAction, 
   hasCurrentItinerary 
 }: { 
   marker: MapMarker; 
@@ -616,7 +621,6 @@ const PopupContent = React.memo(({
         photos: venue.photos
       });
       
-      // Build command based on metadata
       if (marker.metadata?.primaryStopNumber) {
         onQuickAction(`add ${venue.name} after stop ${marker.metadata.primaryStopNumber}[VENUE:${venueJson}]`);
       } else {
@@ -630,80 +634,106 @@ const PopupContent = React.memo(({
     };
     
     return (
-      <div className="min-w-[200px] sm:min-w-[250px] max-w-[300px]">
+      <div className="w-[280px] sm:w-[320px] max-w-[90vw]">
+        {/* Image Container - Fixed aspect ratio */}
         {venue.photoUrl && (
-          <img 
-            src={venue.photoUrl} 
-            alt={venue.name}
-            className="w-full h-32 object-cover rounded-t"
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = 'none';
-            }}
-          />
+          <div className="w-full h-[140px] sm:h-[160px] bg-gray-100 overflow-hidden rounded-t-lg">
+            <img 
+              src={venue.photoUrl} 
+              alt={venue.name}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                const parent = target.parentElement;
+                if (parent) {
+                  parent.classList.add('flex', 'items-center', 'justify-center');
+                  parent.innerHTML = '<div class="text-gray-400 text-sm">No image available</div>';
+                }
+              }}
+            />
+          </div>
         )}
         
-        <div className="p-3">
-          {/* Badge for alternative venues */}
+        {/* Content Container - Controlled padding and spacing */}
+        <div className="p-3 space-y-2">
+          {/* Alternative Badge */}
           {isAlternative && (
-            <div className="mb-2">
-              <span className="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
+            <div className="space-y-1">
+              <span className="inline-block bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full font-medium">
                 Alternative Option
               </span>
               {marker.metadata?.primaryVenueName && (
-                <p className="text-xs text-gray-500 mt-1">
-                  Near: {marker.metadata.primaryVenueName}
+                <p className="text-xs text-gray-500">
+                  Near: <span className="font-medium">{marker.metadata.primaryVenueName}</span>
                 </p>
               )}
             </div>
           )}
           
-          {/* Badge for primary venues */}
+          {/* Primary Stop Badge */}
           {isPrimary && marker.metadata?.stopNumber && (
-            <div className="mb-2">
-              <span className="inline-block bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+            <div>
+              <span className="inline-block bg-red-500 text-white text-xs px-2.5 py-1 rounded-full font-bold">
                 Stop #{marker.metadata.stopNumber}
               </span>
             </div>
           )}
           
-          <h3 className="font-bold text-sm mb-2">{venue.name}</h3>
-          <p className="text-xs text-gray-600 mb-2">{venue.address}</p>
+          {/* Venue Name - Truncate long names */}
+          <h3 className="font-bold text-sm leading-tight line-clamp-2">
+            {venue.name}
+          </h3>
           
+          {/* Address - Truncate long addresses */}
+          <p className="text-xs text-gray-600 line-clamp-1">
+            {venue.address}
+          </p>
+          
+          {/* Description - Limit to 2 lines */}
           {venue.description && (
-            <p className="text-xs text-gray-700 mb-2 line-clamp-3">
+            <p className="text-xs text-gray-700 line-clamp-2 leading-relaxed">
               {venue.description}
             </p>
           )}
           
-          <div className="flex items-center gap-2 mb-3">
-            {venue.rating && (
-              <span className="text-xs text-gray-700">
-                ⭐ {venue.rating}
-              </span>
-            )}
-            {venue.priceLevel && (
-              <span className="text-xs text-gray-700">{venue.priceLevel}</span>
-            )}
-          </div>
+          {/* Rating and Price - Inline flex */}
+          {(venue.rating || venue.priceLevel) && (
+            <div className="flex items-center gap-2 text-xs">
+              {venue.rating && (
+                <span className="flex items-center gap-1 text-gray-700 font-medium">
+                  <span className="text-yellow-500">⭐</span>
+                  {venue.rating}
+                </span>
+              )}
+              {venue.priceLevel && (
+                <span className="text-gray-600">
+                  {venue.priceLevel}
+                </span>
+              )}
+            </div>
+          )}
           
-          {/* Action Buttons */}
+          {/* Action Buttons - Only show if has itinerary */}
           {hasCurrentItinerary && (
             <div className="pt-2 border-t border-gray-200">
               {isAlternative && (
                 <button
                   onClick={handleAddToRoute}
-                  className="w-full px-3 py-2 bg-green-500 text-white text-xs font-medium rounded hover:bg-green-600 transition-colors"
+                  className="w-full px-3 py-2 bg-green-500 hover:bg-green-600 text-white text-xs font-medium rounded-lg transition-colors duration-150 flex items-center justify-center gap-1"
                 >
-                  ➕ Add to Route
+                  <span>➕</span>
+                  <span>Add to Route</span>
                 </button>
               )}
               
               {isPrimary && marker.metadata?.stopNumber && (
                 <button
                   onClick={handleRemoveFromRoute}
-                  className="w-full px-3 py-2 bg-red-500 text-white text-xs font-medium rounded hover:bg-red-600 transition-colors"
+                  className="w-full px-3 py-2 bg-red-500 hover:bg-red-600 text-white text-xs font-medium rounded-lg transition-colors duration-150 flex items-center justify-center gap-1"
                 >
-                  ➖ Remove from Route
+                  <span>➖</span>
+                  <span>Remove from Route</span>
                 </button>
               )}
             </div>
@@ -712,21 +742,34 @@ const PopupContent = React.memo(({
       </div>
     );
   } else {
+    // Event popup
     const event = marker.data as Event;
     return (
-      <div className="p-2 min-w-[160px] sm:min-w-[200px]">
-        <h3 className="font-bold text-sm mb-2">{event.name}</h3>
-        <p className="text-xs text-gray-600 mb-1">{event.venue.name}</p>
-        <p className="text-xs text-gray-700 mb-1">📅 {event.date}</p>
-        {event.priceRange && (
-          <p className="text-xs text-gray-700 mb-2">💰 {event.priceRange}</p>
-        )}
+      <div className="w-[240px] sm:w-[280px] max-w-[90vw] p-3 space-y-2">
+        <h3 className="font-bold text-sm leading-tight line-clamp-2">
+          {event.name}
+        </h3>
+        <p className="text-xs text-gray-600 line-clamp-1">
+          {event.venue.name}
+        </p>
+        <div className="space-y-1">
+          <p className="text-xs text-gray-700 flex items-center gap-1">
+            <span>📅</span>
+            <span>{event.date}</span>
+          </p>
+          {event.priceRange && (
+            <p className="text-xs text-gray-700 flex items-center gap-1">
+              <span>💰</span>
+              <span>{event.priceRange}</span>
+            </p>
+          )}
+        </div>
         {event.url && (
           <a
             href={event.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-blue-500 hover:underline"
+            className="inline-block text-xs text-blue-500 hover:text-blue-600 hover:underline font-medium mt-1"
           >
             View Details →
           </a>

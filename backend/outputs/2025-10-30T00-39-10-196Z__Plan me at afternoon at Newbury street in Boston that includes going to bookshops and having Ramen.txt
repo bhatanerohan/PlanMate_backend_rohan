@@ -1,0 +1,116 @@
+User Prompt: Plan me at afternoon at Newbury street in Boston that includes going to bookshops and having Ramen
+
+[2025-10-30T00:39:10.198Z] LOG 📍 Using extracted city from user location: Massachusetts
+[2025-10-30T00:39:10.199Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T00:39:10.200Z] LOG    1. "Posman Books" in "Newbury Street, Boston"
+[2025-10-30T00:39:10.201Z] LOG    2. "Trident Booksellers & Cafe" in "Newbury Street, Boston"
+[2025-10-30T00:39:10.202Z] LOG    3. "REDWHITE BONELESS RAMEN" in "Newbury Street, Boston"
+[2025-10-30T00:39:10.203Z] LOG 
+🔍 Executing batch search for 3 venues...
+[2025-10-30T00:39:10.204Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:39:10.205Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-30T00:39:10.207Z] LOG    1. Searching "Posman Books" in "Newbury Street, Boston"
+[2025-10-30T00:39:10.209Z] LOG 🔍 [Google Places] Text search: "Posman Books" in Newbury Street, Boston
+[2025-10-30T00:39:10.218Z] LOG    2. Searching "Trident Booksellers & Cafe" in "Newbury Street, Boston"
+[2025-10-30T00:39:10.219Z] LOG 🔍 [Google Places] Text search: "Trident Booksellers & Cafe" in Newbury Street, Boston
+[2025-10-30T00:39:10.229Z] LOG    3. Searching "REDWHITE BONELESS RAMEN" in "Newbury Street, Boston"
+[2025-10-30T00:39:10.232Z] LOG 🔍 [Google Places] Text search: "REDWHITE BONELESS RAMEN" in Newbury Street, Boston
+[2025-10-30T00:39:10.663Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:39:10.864Z] LOG    ⚠️  Posman Books: No editorial summary available
+[2025-10-30T00:39:10.865Z] LOG ✅ Found 1 places
+[2025-10-30T00:39:10.948Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:39:10.963Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:39:11.108Z] LOG    ✅ Trident Booksellers & Cafe: Got description (90 chars)
+[2025-10-30T00:39:11.112Z] LOG ✅ Found 1 places
+[2025-10-30T00:39:11.171Z] LOG    ✅ REDWHITE BONELESS RAMEN: Got description (98 chars)
+[2025-10-30T00:39:11.174Z] LOG ✅ Found 1 places
+[2025-10-30T00:39:11.177Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 972ms
+[2025-10-30T00:39:11.178Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:39:11.180Z] LOG    Tool execution result: success=true
+[2025-10-30T00:39:11.181Z] LOG    ✅ Tool returned 3 search results
+[2025-10-30T00:39:11.182Z] LOG    ✅ Merged: Posman Books
+[2025-10-30T00:39:11.183Z] LOG       Places placeId: ChIJ3QYkpk9744kR0DUcWPyAhaI
+[2025-10-30T00:39:11.186Z] LOG       Gemini description: This charming bookstore offers a diverse selection of books ...
+[2025-10-30T00:39:11.188Z] LOG    ✅ Merged: Trident Booksellers & Cafe
+[2025-10-30T00:39:11.189Z] LOG       Places placeId: ChIJPWuhSAV644kRBAzOCF4Bqno
+[2025-10-30T00:39:11.190Z] LOG       Gemini description: An independent bookstore and lively cafe combined, Trident o...
+[2025-10-30T00:39:11.192Z] LOG    ✅ Merged: REDWHITE BONELESS RAMEN
+[2025-10-30T00:39:11.193Z] LOG       Places placeId: ChIJ4U-5VPN744kRqplviRvl8V0
+[2025-10-30T00:39:11.194Z] LOG       Gemini description: This unfussy Japanese eatery on Newbury Street specializes i...
+[2025-10-30T00:39:11.195Z] LOG ✅ Phase 1 complete: Found 3/3 exact venues
+[2025-10-30T00:39:11.196Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T00:39:11.197Z] LOG    Searching for alternatives near 3 venues...
+[2025-10-30T00:39:11.198Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:39:11.199Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-30T00:39:11.200Z] LOG    1. Searching "book store" in "42.35133219999999,-71.07673869999999"
+[2025-10-30T00:39:11.201Z] LOG    📍 Using nearbySearch at coordinates (42.35133219999999, -71.07673869999999)
+[2025-10-30T00:39:11.201Z] LOG 🔍 [Google Places] Nearby search at (42.35133219999999, -71.07673869999999)
+[2025-10-30T00:39:11.203Z] LOG    2. Searching "book store | cafe" in "42.3483574,-71.0866905"
+[2025-10-30T00:39:11.203Z] LOG    📍 Using nearbySearch at coordinates (42.3483574, -71.0866905)
+[2025-10-30T00:39:11.205Z] LOG 🔍 [Google Places] Nearby search at (42.3483574, -71.0866905)
+[2025-10-30T00:39:11.208Z] LOG    3. Searching "ramen restaurant" in "42.3488172,-71.0848163"
+[2025-10-30T00:39:11.209Z] LOG    📍 Using nearbySearch at coordinates (42.3488172, -71.0848163)
+[2025-10-30T00:39:11.210Z] LOG 🔍 [Google Places] Nearby search at (42.3488172, -71.0848163)
+[2025-10-30T00:39:11.823Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:39:11.954Z] LOG    ✅ REDWHITE BONELESS RAMEN: Got description (98 chars)
+[2025-10-30T00:39:11.973Z] LOG    ✅ Nagomi Izakaya: Got description (80 chars)
+[2025-10-30T00:39:12.016Z] LOG    ✅ Hojoko: Got description (97 chars)
+[2025-10-30T00:39:12.035Z] LOG    ⚠️  Berklee Noodles: No editorial summary available
+[2025-10-30T00:39:12.062Z] LOG    ✅ Hokkaido Ramen Santouka Back Bay: Got description (92 chars)
+[2025-10-30T00:39:12.319Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:39:12.390Z] LOG    ✅ Trident Booksellers & Cafe: Got description (90 chars)
+[2025-10-30T00:39:12.469Z] LOG    ⚠️  Parkside Bookshop: No editorial summary available
+[2025-10-30T00:39:12.472Z] LOG    ⚠️  MIT Coop at Kendall Square: No editorial summary available
+[2025-10-30T00:39:12.474Z] LOG    ✅ Comicopia: Got description (86 chars)
+[2025-10-30T00:39:12.509Z] LOG    ⚠️  Beacon Hill Books & Cafe: No editorial summary available
+[2025-10-30T00:39:12.583Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:39:12.671Z] LOG    ✅ Comicopia: Got description (86 chars)
+[2025-10-30T00:39:12.683Z] LOG    ⚠️  Posman Books: No editorial summary available
+[2025-10-30T00:39:12.722Z] LOG    ⚠️  I AM Books: No editorial summary available
+[2025-10-30T00:39:12.765Z] LOG    ✅ Emerson Emporium: Got description (92 chars)
+[2025-10-30T00:39:12.784Z] LOG    ✅ Brattle Book Shop: Got description (84 chars)
+[2025-10-30T00:39:12.786Z] LOG ✅ Batch complete: 3/3 searches succeeded, 15 total venues found in 1587ms
+[2025-10-30T00:39:12.788Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:39:12.789Z] LOG    ✅ Venue 1 (Posman Books): 4 alternatives
+[2025-10-30T00:39:12.790Z] LOG       1. Brattle Book Shop (4.7⭐)
+[2025-10-30T00:39:12.792Z] LOG       2. I AM Books (4.9⭐)
+[2025-10-30T00:39:12.794Z] LOG       3. Comicopia (4.7⭐)
+[2025-10-30T00:39:12.797Z] LOG    ✅ Venue 2 (Trident Booksellers & Cafe): 4 alternatives
+[2025-10-30T00:39:12.800Z] LOG       1. Beacon Hill Books & Cafe (4.5⭐)
+[2025-10-30T00:39:12.801Z] LOG       2. MIT Coop at Kendall Square (4.5⭐)
+[2025-10-30T00:39:12.803Z] LOG       3. Parkside Bookshop (4.6⭐)
+[2025-10-30T00:39:12.805Z] LOG    ✅ Venue 3 (REDWHITE BONELESS RAMEN): 4 alternatives
+[2025-10-30T00:39:12.806Z] LOG       1. Nagomi Izakaya (4.1⭐)
+[2025-10-30T00:39:12.807Z] LOG       2. Berklee Noodles (4⭐)
+[2025-10-30T00:39:12.808Z] LOG       3. Hojoko (4.2⭐)
+[2025-10-30T00:39:12.810Z] LOG 
+📦 Phase 2 complete: 3 stops with alternatives
+[2025-10-30T00:39:12.811Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T00:39:12.812Z] LOG    Primary venues: 3 stops
+[2025-10-30T00:39:12.813Z] LOG    ❌ Removed "Comicopia" - duplicate alternative
+[2025-10-30T00:39:12.815Z] LOG    🔧 Stop "ChIJPWuhSAV644kRBAzO...": 4 → 3 alternatives
+[2025-10-30T00:39:12.816Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T00:39:12.817Z] LOG    Removed 0 venues already in route
+[2025-10-30T00:39:12.818Z] LOG    Removed 1 duplicate alternatives
+[2025-10-30T00:39:12.819Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-30T00:39:12.820Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T00:39:12.821Z] LOG    Primary venues: 3
+[2025-10-30T00:39:12.822Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-30T00:39:12.823Z] LOG    Execution time: 2624ms
+[2025-10-30T00:39:12.824Z] LOG 
+📋 Final alternatives:
+[2025-10-30T00:39:12.825Z] LOG    Posman Books: 4 alternatives
+[2025-10-30T00:39:12.827Z] LOG    Trident Booksellers & Cafe: 3 alternatives
+[2025-10-30T00:39:12.828Z] LOG    REDWHITE BONELESS RAMEN: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 3
+Alternatives: 3

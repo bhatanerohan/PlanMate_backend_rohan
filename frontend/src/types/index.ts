@@ -1,5 +1,7 @@
 // frontend/src/types/index.ts
 
+import type { ReactNode } from "react";
+
 export interface Venue {
   name: string;
   address: string;
@@ -32,6 +34,9 @@ export interface YouTubeVideo {
 }
 
 export interface Event {
+  address: ReactNode;
+  description: any;
+  dateTime: string | number | Date;
   name: string;
   venue: {
     name: string;

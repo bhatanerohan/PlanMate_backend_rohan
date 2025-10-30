@@ -1,0 +1,262 @@
+User Prompt: plan a day in paris and include eiffel tower and louvre museum
+
+[2025-10-30T00:15:21.732Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-30T00:15:21.733Z] LOG 📝 User prompt: "plan a day in paris and include eiffel tower and louvre museum"
+[2025-10-30T00:15:21.733Z] LOG 📍 User location: Paris, France (48.853495, 2.348392)
+[2025-10-30T00:15:21.734Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-30T00:15:21.734Z] LOG 🗺️ Location context configured: (48.853495, 2.348392)
+[2025-10-30T00:15:42.009Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Thu, 30 Oct 2025 00:15:41 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=20183","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"```json\n{\n  \"plan\": {\n    \"type\": \"A Day of Parisian Icons: Eiffel Tower & Louvre\",\n    \"total_stops\": 6,\n    \"estimated_duration\": \"Full day (10-13 hours)\",\n    \"travel_mode\": \"walking + transit\",\n    \"theme\": \"Culture, art, iconic landmarks, and French culinary delights\",\n    \"scale\": \"city-wide\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"Terres de Café\",\n      \"description\": \"Start your day with excellent coffee and pastries at this highly-rated cafe. It's conveniently located near the Eiffel Tower, offering a perfect French breakfast experience before your morning adventure.\",\n      \"category\": \"cafe\",\n      \"reasoning\": \"A highly-rated cafe for breakfast near the first major attraction of the day, the Eiffel Tower.\",\n      \"rating\": 4.3,\n      \"reviewsSummary\": \"Visitors praise the quality of coffee and the cozy atmosphere. [6]\",\n      \"general_location\": \"Eiffel Tower area\"\n    },\n    {\n      \"name\": \"Eiffel Tower\",\n      \"description\": \"Ascend one of the world's most recognizable landmarks for breathtaking panoramic views of Paris. Explore Gustave Eiffel's reconstructed office on the third level for a glimpse into history. [5]\",\n      \"category\": \"landmark\",\n      \"reasoning\": \"One of the two primary requested landmarks for the day plan.\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Millions visit this iconic landmark for its stunning views and historical significance.\",\n      \"general_location\": \"Champ de Mars\"\n    },\n    {\n      \"name\": \"Le Fumoir\",\n      \"description\": \"Enjoy a refined lunch at this French restaurant near the Louvre Museum. Le Fumoir offers Scandinavian-inspired fine dining in a chic setting, perfect for a midday break before immersing yourself in art and history. [11]\",\n      \"category\": \"french restaurant\",\n      \"reasoning\": \"A highly-rated restaurant offering fine dining for lunch, strategically located between the Eiffel Tower and the Louvre (closer to the Louvre for the next stop).\",\n      \"rating\": 4.4,\n      \"reviewsSummary\": \"Reviewers often mention the excellent food, stylish ambiance, and its convenient location near the Louvre. [11]\",\n      \"general_location\": \"Louvre area\"\n    },\n    {\n      \"name\": \"Louvre Museum\",\n      \"description\": \"Dive into the world's largest art museum, home to thousands of works, including the Mona Lisa, the Venus de Milo, and the Winged Victory of Samothrace. Allocate several hours to explore its vast collections. [2, 4, 12]\",\n      \"category\": \"museum\",\n      \"reasoning\": \"The second primary requested landmark for the day plan.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Visitors are consistently awed by the museum's incredible collection and historical grandeur. [2, 4, 12]\",\n      \"general_location\": \"1st arrondissement\"\n    },\n    {\n      \"name\": \"Tuileries Garden\",\n      \"description\": \"After your museum visit, take a leisurely stroll through the expansive 17th-century Tuileries Garden, situated between the Louvre and Place de la Concorde. Admire its statues, fountains, and formal French landscaping. [0]\",\n      \"category\": \"garden\",\n      \"reasoning\": \"A relaxing activity conveniently located right next to the Louvre, offering a pleasant transition after a long museum visit.\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Guests love the beautiful scenery, the peaceful atmosphere, and its central location. [0]\",\n      \"general_location\": \"Louvre - Tuileries\"\n    },\n    {\n      \"name\": \"Le Relais du Louvre\",\n      \"description\": \"Conclude your day with a classic Parisian dinner at Le Relais du Louvre. This restaurant offers a delightful menu in a welcoming setting, perfect for reflecting on your day of exploring Paris's iconic sights. [0]\",\n      \"category\": \"restaurant\",\n      \"reasoning\": \"A highly-rated restaurant conveniently located near the Louvre for a pleasant dinner after the day's activities.\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Diners often praise the traditional French cuisine and the friendly service. [0]\",\n      \"general_location\": \"Louvre area\"\n    }\n  ]\n}\n```"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{"groundingChunks":[{"maps":{"uri":"https://maps.google.com/?cid=7993217133188194340","title":"ELV CAFÉ","placeId":"places/ChIJF9aljh1w5kcRJKA__KGc7W4"}},{"maps":{"uri":"https://maps.google.com/?cid=14874280682086605245","title":"Café Fleur","placeId":"places/ChIJD7OFbPJx5kcRvSE6GXkPbM4"}},{"maps":{"uri":"https://maps.google.com/?cid=7965790708121965016","title":"Café de l’Homme","placeId":"places/ChIJlSwHnvxv5kcR2JG3yHEsjG4"}},{"maps":{"uri":"https://maps.google.com/?cid=4713757263673063505","title":"Sunflower Café","placeId":"places/ChIJ-9fK4h5w5kcRUXimukGhakE"}},{"maps":{"uri":"https://maps.google.com/?cid=2905772024470165493","title":"Kozy Bosquet | All-week Brunch & Coffee","placeId":"places/ChIJv4PgMydw5kcR9dfPxEJgUyg"}},{"maps":{"uri":"https://maps.google.com/?cid=8966633415479043812","title":"Madame Brasserie - Tour Eiffel","placeId":"places/ChIJo5sOsudv5kcR5KbGiJXhb3w"}},{"maps":{"uri":"https://maps.google.com/?cid=16759332621510398153","title":"Terres de Café","placeId":"places/ChIJFxVi-t9v5kcRyVC-eTkcleg"}},{"maps":{"uri":"https://maps.google.com/?cid=9363263693149417882","title":"Bar Gustave","placeId":"places/ChIJc3GQW-Bv5kcRmrF7YLj-8IE"}},{"maps":{"uri":"https://maps.google.com/?cid=1792480816549408271","title":"Macaron Bar","placeId":"places/ChIJeeHBO_tv5kcRDy4hQc4r4Bg"}},{"maps":{"uri":"https://maps.google.com/?cid=13613939538303295226","title":"Café du Trocadéro","placeId":"places/ChIJm2s0bPtv5kcR-p42XuFt7rw"}},{"maps":{"uri":"https://maps.google.com/?cid=72241967761901198","title":"Le Café de Mars","placeId":"places/ChIJvZmnht9v5kcRjsZS2q-nAAE"}},{"maps":{"uri":"https://maps.google.com/?cid=16320435219311852944","title":"Carmine Café","placeId":"places/ChIJWbxjGCJw5kcRkH3b0lzVfeI"}},{"maps":{"uri":"https://maps.google.com/?cid=18348023377016255871","title":"Constant.","placeId":"places/ChIJK5N69Hdv5kcRf_WdpQxGof4"}},{"maps":{"uri":"https://maps.google.com/?cid=3874844574842022382","title":"Zia","placeId":"places/ChIJB2Tm_CZw5kcR7ulOa5w2xjU"}},{"maps":{"uri":"https://maps.google.com/?cid=9345867576793044609","title":"Café Caillou","placeId":"places/ChIJbSvDzPFx5kcRgRaXaAsxs4E"}},{"maps":{"uri":"https://maps.google.com/?cid=3635650697013531924","title":"BISTROT DE LA TOUR EIFFEL","placeId":"places/ChIJoXFl9AVv5kcRFJXk4gttdDI"}},{"maps":{"uri":"https://maps.google.com/?cid=1366507682409663679","title":"Le Petit Cler","placeId":"places/ChIJh32iCt9v5kcRv8zeQH_P9hI"}},{"maps":{"uri":"https://maps.google.com/?cid=16918483200738926121","title":"Bleu Olive","placeId":"places/ChIJJQ8yuthv5kcRKR51RtWGyuo"}},{"maps":{"uri":"https://maps.google.com/?cid=9114855905175785645","title":"Le New York","placeId":"places/ChIJHWNq0hZv5kcRrdDfNid5fn4"}},{"maps":{"uri":"https://maps.google.com/?cid=14580197550247283470","title":"Café Jacques","placeId":"places/ChIJKYwbuSVw5kcRDouCOWxEV8o"}},{"maps":{"uri":"https://maps.google.com/?cid=7217251133648056139","title":"Le Relais du Louvre","placeId":"places/ChIJlyYq1yNu5kcRS6_g26rTKGQ"}},{"maps":{"uri":"https://maps.google.com/?cid=16795178711890245481","title":"Le Café Marly","placeId":"places/ChIJw4rTzyVu5kcRabdrxQ12FOk"}},{"maps":{"uri":"https://maps.google.com/?cid=8224565057718569026","title":"Le Louvre Ripaille","placeId":"places/ChIJ3eELciFu5kcRQshnKViGI3I"}},{"maps":{"uri":"https://maps.google.com/?cid=3546945626225410611","title":"Loulou","placeId":"places/ChIJ_QwlZC9u5kcRM4LKKEFIOTE"}},{"maps":{"uri":"https://maps.google.com/?cid=7307301185313642390","title":"Le Tout-Paris","placeId":"places/ChIJxYJUC2lv5kcRlhdpWba_aGU"}},{"maps":{"uri":"https://maps.google.com/?cid=17462626777090053038","title":"L'Officine du Louvre","placeId":"places/ChIJ4akYtyVu5kcRrlOtZYi2V_I"}},{"maps":{"uri":"https://maps.google.com/?cid=1483325180251311741","title":"Brasserie du Louvre","placeId":"places/ChIJUZFuuSVu5kcRfY5Fd2TUlRQ"}},{"maps":{"uri":"https://maps.google.com/?cid=15757463478273136566","title":"Café de la Régence","placeId":"places/ChIJtRRWgyVu5kcRtlep_4vBrdo"}},{"maps":{"uri":"https://maps.google.com/?cid=5908816028246263307","title":"Louise Café","placeId":"places/ChIJM5iOiiNu5kcRC8bAFt9UAFI"}},{"maps":{"uri":"https://maps.google.com/?cid=8425707146867092049","title":"Resto Louvre","placeId":"places/ChIJ2ZZ7HiFu5kcRUap7PgIg7nQ"}},{"maps":{"uri":"https://maps.google.com/?cid=8981717461254737585","title":"Angelina Paris Louvre Museum","placeId":"places/ChIJgx8d1SVu5kcRsQ4Dn3F4pXw"}},{"maps":{"uri":"https://maps.google.com/?cid=7388686872902308374","title":"Le Fumoir","placeId":"places/ChIJw8kRaSFu5kcRFhLvX5DjiWY"}},{"maps":{"uri":"https://maps.google.com/?cid=16977694425834844155","title":"Kitchen by Madame Rêve","placeId":"places/ChIJz8VyBp1v5kcR--8D7SDjnOs"}},{"maps":{"uri":"https://maps.google.com/?cid=3007945520375491383","title":"French Beer Brasserie","placeId":"places/ChIJRcLNn2pv5kcRN2u1lYNevik"}},{"maps":{"uri":"https://maps.google.com/?cid=9966812484399330335","title":"CAFE SAINT HONORÉ","placeId":"places/ChIJWe6kaiRu5kcRH_SM6yU7UYo"}},{"maps":{"uri":"https://maps.google.com/?cid=16296198382870241306","title":"Le Musset","placeId":"places/ChIJW0ajgSVu5kcRGqBGmBa6J-I"}},{"maps":{"uri":"https://maps.google.com/?cid=3063927552874868049","title":"Strada","placeId":"places/ChIJ38AXHgBv5kcRUW2jPuBBhSo"}},{"maps":{"uri":"https://maps.google.com/?cid=8184893219922653826","title":"Loup restaurant","placeId":"places/ChIJI5p2_CJu5kcRgjL-oQSVlnE"}},{"maps":{"uri":"https://maps.google.com/?cid=12564545496637547893","title":"Café QJ","placeId":"places/ChIJXQF17R1v5kcRdaVQM487Xq4"}},{"maps":{"uri":"https://maps.google.com/?cid=1666985948882656143","title":"Le Nelson's - Louvre","placeId":"places/ChIJl806WCJu5kcRj9u3cONSIhc"}},{"maps":{"uri":"https://maps.google.com/?cid=9157324886743158975","title":"Promenade Jean-Paul Belmondo","placeId":"places/ChIJAQppDdJx5kcRv5Arh3daFX8"}},{"maps":{"uri":"https://maps.google.com/?cid=6746978134518620166","title":"Jardin de la Tour Eiffel","placeId":"places/ChIJn5NRiJlv5kcRBmBPx90Uol0"}},{"maps":{"uri":"https://maps.google.com/?cid=10881475996796617246","title":"Champ de Mars","placeId":"places/ChIJB0gcnCBw5kcRHoIAPcTEApc"}},{"maps":{"uri":"https://maps.google.com/?cid=1134727811425593167","title":"Bassins du Champ de Mars","placeId":"places/ChIJVyLA6h9w5kcRT2fHtO5cvw8"}},{"maps":{"uri":"https://maps.google.com/?cid=4790319774450968225","title":"Palais de Chaillot","placeId":"places/ChIJCaWkW_tv5kcRoeatZHSiekI"}},{"maps":{"uri":"https://maps.google.com/?cid=6487561148993472452","title":"Bureau de Gustave Eiffel","placeId":"places/ChIJEbu08-Fv5kcRxIdhEH5yCFo"}},{"maps":{"uri":"https://maps.google.com/?cid=10290348877814215601","title":"Vedettes de Paris","placeId":"places/ChIJ7RNnPQBv5kcRsbP0pMipzo4"}},{"maps":{"uri":"https://maps.google.com/?cid=4269316352451047396","title":"Les anneaux olympiques","placeId":"places/ChIJN4DPLQBv5kcR5G-cTZqoPzs"}},{"maps":{"uri":"https://maps.google.com/?cid=13851598636979135925","title":"Place du Trocadero","placeId":"places/ChIJz35dQONv5kcRtSVtSJLDOsA"}},{"maps":{"uri":"https://maps.google.com/?cid=16798441015819355226","title":"Jardins du Trocadéro","placeId":"places/ChIJoxY3R-Nv5kcRWsRDGBoNIOk"}},{"maps":{"uri":"https://maps.google.com/?cid=14910596773830533196","title":"Promenade d'Australie","placeId":"places/ChIJHdb_OkJx5kcRTCBBHcQU7c4"}},{"maps":{"uri":"https://maps.google.com/?cid=1827355776205250316","title":"Bateaux Parisiens","placeId":"places/ChIJA2WozONv5kcRDN_4jmUSXBk"}},{"maps":{"uri":"https://maps.google.com/?cid=10486725470253715567","title":"Point de vue Tour Eiffel & Montmartre","placeId":"places/ChIJI-HxnGR75kcRb5CDD0FViJE"}},{"maps":{"uri":"https://maps.google.com/?cid=7187595154310031179","title":"Endless Hallway Mural","placeId":"places/ChIJwzV_ocNv5kcRS-f3GbZ3v2M"}},{"maps":{"uri":"https://maps.google.com/?cid=1055402839769078003","title":"Hidden gem","placeId":"places/ChIJ6c2oZABv5kcR89hff0qLpQ4"}},{"maps":{"uri":"https://maps.google.com/?cid=17750531481038889136","title":"Salida crucero","placeId":"places/ChIJO7PfcABv5kcRsCC27VWOVvY"}},{"maps":{"uri":"https://maps.google.com/?cid=712276184042922554","title":"Passerelle Debilly","placeId":"places/ChIJbWdK0eZv5kcROmLZY2qD4gk"}},{"maps":{"uri":"https://maps.google.com/?cid=11933425046053459647","title":"Vertical Garden Wall","placeId":"places/ChIJi8k0FOFv5kcRvxbEd9oKnKU"}},{"maps":{"uri":"https://maps.google.com/?cid=11303576117979603042","title":"Eiffel Reflections by the Seine","placeId":"places/ChIJffe5DgBv5kcRYmDDI5de3pw"}},{"maps":{"uri":"https://maps.google.com/?cid=6993835842961733888","title":"Meeting Point","placeId":"places/ChIJdYYM4cZx5kcRAPkg7aQYD2E"}},{"maps":{"uri":"https://maps.google.com/?cid=13986450953264426951","title":"Tuileries Garden","placeId":"places/ChIJAQAAMCxu5kcRx--_4QnbGcI"}},{"maps":{"uri":"https://maps.google.com/?cid=15870632905802880522","title":"Musée de l'Orangerie","placeId":"places/ChIJo6qq6i5u5kcRCpYBp4rQP9w"}},{"maps":{"uri":"https://maps.google.com/?cid=12684544616365028433","title":"Louvre Pyramid","placeId":"places/ChIJQdQyeiZu5kcRUfQHfB-OCLA"}},{"maps":{"uri":"https://maps.google.com/?cid=10661475654638959967","title":"Tunnel des Tuileries","placeId":"places/ChIJ54F3Hjxv5kcRX_06-J4r9ZM"}},{"maps":{"uri":"https://maps.google.com/?cid=6693792787700896252","title":"Musée du Louvre - Galerie des Antiquités","placeId":"places/ChIJo3dw__tv5kcR_NH7PhMh5Vw"}},{"maps":{"uri":"https://maps.google.com/?cid=4710553789476060492","title":"Savoir - Emily in Paris","placeId":"places/ChIJDbXBJwBv5kcRTD0XxbY_X0E"}},{"maps":{"uri":"https://maps.google.com/?cid=15490858839814834234","title":"Jardin du Carrousel","placeId":"places/ChIJnTMDNy9u5kcROgjibAqW-tY"}},{"maps":{"uri":"https://maps.google.com/?cid=14122438709819172623","title":"Cour Carrée","placeId":"places/ChIJ-aeJaP9v5kcRD2f_xC77_MM"}},{"maps":{"uri":"https://maps.google.com/?cid=4238948407286673261","title":"Napoléon, l'Épopée Immersive • Paris","placeId":"places/ChIJ46WkcgBx5kcRba-HFR7F0zo"}},{"maps":{"uri":"https://maps.google.com/?cid=15019994644224418776","title":"Musée d'Orsay","placeId":"places/ChIJG5Qwtitu5kcR2CNEsYy9cdA"}},{"maps":{"uri":"https://maps.google.com/?cid=18294156609251326128","title":"Babylon Tours Paris","placeId":"places/ChIJ87weU0du5kcRsDjKb4Lm4f0"}},{"maps":{"uri":"https://maps.google.com/?cid=2365019149992022939","title":"Arbre des Voyelles","placeId":"places/ChIJzdZwdHlv5kcRm1NF8mI80iA"}},{"maps":{"uri":"https://maps.google.com/?cid=11960351167164276283","title":"Victoire de Samothrace","placeId":"places/ChIJ7WMQf8hv5kcRO17BkwS0-6U"}},{"maps":{"uri":"https://maps.google.com/?cid=14476483061670333289","title":"Square Michel-Caldaguès","placeId":"places/ChIJzeA5Behv5kcRacvRF6XM5sg"}},{"maps":{"uri":"https://maps.google.com/?cid=17649415598723489574","title":"Carrousel du Louvre","placeId":"places/ChIJ6SJcCP5x5kcRJt8m9_lR7_Q"}},{"maps":{"uri":"https://maps.google.com/?cid=9398041174139826147","title":"Love Winston/Eddy","placeId":"places/ChIJ1QeRTABv5kcR428ZqaeMbII"}},{"maps":{"uri":"https://maps.google.com/?cid=10433234252600848746","title":"Conciergerie","placeId":"places/ChIJR3122B9u5kcRajG2bEZLypA"}},{"maps":{"uri":"https://maps.google.com/?cid=8998956292772069516","title":"Les Caves du Louvre","placeId":"places/ChIJKTbqhSFu5kcRjADy2xG34nw"}},{"maps":{"uri":"https://maps.google.com/?cid=14829036822822065909","title":"Domaine National du Palais-Royal","placeId":"places/ChIJR3122B9u5kcR9RZ_OWxSy80"}},{"maps":{"uri":"https://maps.google.com/?cid=8569540816336213185","title":"Batobus - Station Louvre","placeId":"places/ChIJB4uz6yhu5kcRwVTuFfgf7XY"}}],"webSearchQueries":["cafe near Eiffel Tower","restaurants near Louvre Museum in Paris","things to do near Eiffel Tower, Paris","things to do near Louvre Museum, Paris"]},"index":0}],"modelVersion":"gemini-2.5-flash","responseId":"La4CaZWfIJ6k_uMPqtzfqAs","usageMetadata":{"promptTokenCount":504,"candidatesTokenCount":1074,"totalTokenCount":3665,"cachedContentTokenCount":14,"promptTokensDetails":[{"modality":"TEXT","tokenCount":504}],"cacheTokensDetails":[{"modality":"TEXT","tokenCount":14}],"toolUsePromptTokenCount":765,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":765}],"thoughtsTokenCount":1322}}
+[2025-10-30T00:15:42.012Z] LOG ✅ Gemini response received
+[2025-10-30T00:15:42.014Z] LOG 📄 Response length: 4033 characters
+[2025-10-30T00:15:42.015Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-30T00:15:42.018Z] LOG    candidate exists: true
+[2025-10-30T00:15:42.019Z] LOG    groundingMetadata exists: true
+[2025-10-30T00:15:42.020Z] LOG 📊 Grounding status: Maps=true, Search=false
+[2025-10-30T00:15:42.021Z] LOG 📍 Grounding chunks: 80 total
+[2025-10-30T00:15:42.022Z] LOG    1. [MAPS] ELV CAFÉ
+[2025-10-30T00:15:42.023Z] LOG       placeId: places/ChIJF9aljh1w5kcRJKA__KGc7W4
+[2025-10-30T00:15:42.024Z] LOG       uri: https://maps.google.com/?cid=7993217133188194340
+[2025-10-30T00:15:42.025Z] LOG    2. [MAPS] Café Fleur
+[2025-10-30T00:15:42.026Z] LOG       placeId: places/ChIJD7OFbPJx5kcRvSE6GXkPbM4
+[2025-10-30T00:15:42.027Z] LOG       uri: https://maps.google.com/?cid=14874280682086605245
+[2025-10-30T00:15:42.028Z] LOG    3. [MAPS] Café de l’Homme
+[2025-10-30T00:15:42.028Z] LOG       placeId: places/ChIJlSwHnvxv5kcR2JG3yHEsjG4
+[2025-10-30T00:15:42.029Z] LOG       uri: https://maps.google.com/?cid=7965790708121965016
+[2025-10-30T00:15:42.030Z] LOG    4. [MAPS] Sunflower Café
+[2025-10-30T00:15:42.033Z] LOG       placeId: places/ChIJ-9fK4h5w5kcRUXimukGhakE
+[2025-10-30T00:15:42.034Z] LOG       uri: https://maps.google.com/?cid=4713757263673063505
+[2025-10-30T00:15:42.035Z] LOG    5. [MAPS] Kozy Bosquet | All-week Brunch & Coffee
+[2025-10-30T00:15:42.037Z] LOG       placeId: places/ChIJv4PgMydw5kcR9dfPxEJgUyg
+[2025-10-30T00:15:42.040Z] LOG       uri: https://maps.google.com/?cid=2905772024470165493
+[2025-10-30T00:15:42.042Z] LOG    6. [MAPS] Madame Brasserie - Tour Eiffel
+[2025-10-30T00:15:42.044Z] LOG       placeId: places/ChIJo5sOsudv5kcR5KbGiJXhb3w
+[2025-10-30T00:15:42.046Z] LOG       uri: https://maps.google.com/?cid=8966633415479043812
+[2025-10-30T00:15:42.047Z] LOG    7. [MAPS] Terres de Café
+[2025-10-30T00:15:42.048Z] LOG       placeId: places/ChIJFxVi-t9v5kcRyVC-eTkcleg
+[2025-10-30T00:15:42.049Z] LOG       uri: https://maps.google.com/?cid=16759332621510398153
+[2025-10-30T00:15:42.050Z] LOG    8. [MAPS] Bar Gustave
+[2025-10-30T00:15:42.052Z] LOG       placeId: places/ChIJc3GQW-Bv5kcRmrF7YLj-8IE
+[2025-10-30T00:15:42.053Z] LOG       uri: https://maps.google.com/?cid=9363263693149417882
+[2025-10-30T00:15:42.055Z] LOG    9. [MAPS] Macaron Bar
+[2025-10-30T00:15:42.056Z] LOG       placeId: places/ChIJeeHBO_tv5kcRDy4hQc4r4Bg
+[2025-10-30T00:15:42.058Z] LOG       uri: https://maps.google.com/?cid=1792480816549408271
+[2025-10-30T00:15:42.060Z] LOG    10. [MAPS] Café du Trocadéro
+[2025-10-30T00:15:42.062Z] LOG       placeId: places/ChIJm2s0bPtv5kcR-p42XuFt7rw
+[2025-10-30T00:15:42.064Z] LOG       uri: https://maps.google.com/?cid=13613939538303295226
+[2025-10-30T00:15:42.066Z] LOG    11. [MAPS] Le Café de Mars
+[2025-10-30T00:15:42.067Z] LOG       placeId: places/ChIJvZmnht9v5kcRjsZS2q-nAAE
+[2025-10-30T00:15:42.068Z] LOG       uri: https://maps.google.com/?cid=72241967761901198
+[2025-10-30T00:15:42.069Z] LOG    12. [MAPS] Carmine Café
+[2025-10-30T00:15:42.070Z] LOG       placeId: places/ChIJWbxjGCJw5kcRkH3b0lzVfeI
+[2025-10-30T00:15:42.071Z] LOG       uri: https://maps.google.com/?cid=16320435219311852944
+[2025-10-30T00:15:42.071Z] LOG    13. [MAPS] Constant.
+[2025-10-30T00:15:42.072Z] LOG       placeId: places/ChIJK5N69Hdv5kcRf_WdpQxGof4
+[2025-10-30T00:15:42.074Z] LOG       uri: https://maps.google.com/?cid=18348023377016255871
+[2025-10-30T00:15:42.076Z] LOG    14. [MAPS] Zia
+[2025-10-30T00:15:42.077Z] LOG       placeId: places/ChIJB2Tm_CZw5kcR7ulOa5w2xjU
+[2025-10-30T00:15:42.078Z] LOG       uri: https://maps.google.com/?cid=3874844574842022382
+[2025-10-30T00:15:42.079Z] LOG    15. [MAPS] Café Caillou
+[2025-10-30T00:15:42.080Z] LOG       placeId: places/ChIJbSvDzPFx5kcRgRaXaAsxs4E
+[2025-10-30T00:15:42.083Z] LOG       uri: https://maps.google.com/?cid=9345867576793044609
+[2025-10-30T00:15:42.085Z] LOG    16. [MAPS] BISTROT DE LA TOUR EIFFEL
+[2025-10-30T00:15:42.086Z] LOG       placeId: places/ChIJoXFl9AVv5kcRFJXk4gttdDI
+[2025-10-30T00:15:42.087Z] LOG       uri: https://maps.google.com/?cid=3635650697013531924
+[2025-10-30T00:15:42.088Z] LOG    17. [MAPS] Le Petit Cler
+[2025-10-30T00:15:42.089Z] LOG       placeId: places/ChIJh32iCt9v5kcRv8zeQH_P9hI
+[2025-10-30T00:15:42.091Z] LOG       uri: https://maps.google.com/?cid=1366507682409663679
+[2025-10-30T00:15:42.094Z] LOG    18. [MAPS] Bleu Olive
+[2025-10-30T00:15:42.097Z] LOG       placeId: places/ChIJJQ8yuthv5kcRKR51RtWGyuo
+[2025-10-30T00:15:42.100Z] LOG       uri: https://maps.google.com/?cid=16918483200738926121
+[2025-10-30T00:15:42.103Z] LOG    19. [MAPS] Le New York
+[2025-10-30T00:15:42.106Z] LOG       placeId: places/ChIJHWNq0hZv5kcRrdDfNid5fn4
+[2025-10-30T00:15:42.108Z] LOG       uri: https://maps.google.com/?cid=9114855905175785645
+[2025-10-30T00:15:42.111Z] LOG    20. [MAPS] Café Jacques
+[2025-10-30T00:15:42.113Z] LOG       placeId: places/ChIJKYwbuSVw5kcRDouCOWxEV8o
+[2025-10-30T00:15:42.116Z] LOG       uri: https://maps.google.com/?cid=14580197550247283470
+[2025-10-30T00:15:42.118Z] LOG    21. [MAPS] Le Relais du Louvre
+[2025-10-30T00:15:42.119Z] LOG       placeId: places/ChIJlyYq1yNu5kcRS6_g26rTKGQ
+[2025-10-30T00:15:42.121Z] LOG       uri: https://maps.google.com/?cid=7217251133648056139
+[2025-10-30T00:15:42.122Z] LOG    22. [MAPS] Le Café Marly
+[2025-10-30T00:15:42.124Z] LOG       placeId: places/ChIJw4rTzyVu5kcRabdrxQ12FOk
+[2025-10-30T00:15:42.126Z] LOG       uri: https://maps.google.com/?cid=16795178711890245481
+[2025-10-30T00:15:42.128Z] LOG    23. [MAPS] Le Louvre Ripaille
+[2025-10-30T00:15:42.130Z] LOG       placeId: places/ChIJ3eELciFu5kcRQshnKViGI3I
+[2025-10-30T00:15:42.132Z] LOG       uri: https://maps.google.com/?cid=8224565057718569026
+[2025-10-30T00:15:42.134Z] LOG    24. [MAPS] Loulou
+[2025-10-30T00:15:42.137Z] LOG       placeId: places/ChIJ_QwlZC9u5kcRM4LKKEFIOTE
+[2025-10-30T00:15:42.138Z] LOG       uri: https://maps.google.com/?cid=3546945626225410611
+[2025-10-30T00:15:42.139Z] LOG    25. [MAPS] Le Tout-Paris
+[2025-10-30T00:15:42.141Z] LOG       placeId: places/ChIJxYJUC2lv5kcRlhdpWba_aGU
+[2025-10-30T00:15:42.143Z] LOG       uri: https://maps.google.com/?cid=7307301185313642390
+[2025-10-30T00:15:42.145Z] LOG    26. [MAPS] L'Officine du Louvre
+[2025-10-30T00:15:42.147Z] LOG       placeId: places/ChIJ4akYtyVu5kcRrlOtZYi2V_I
+[2025-10-30T00:15:42.148Z] LOG       uri: https://maps.google.com/?cid=17462626777090053038
+[2025-10-30T00:15:42.149Z] LOG    27. [MAPS] Brasserie du Louvre
+[2025-10-30T00:15:42.151Z] LOG       placeId: places/ChIJUZFuuSVu5kcRfY5Fd2TUlRQ
+[2025-10-30T00:15:42.152Z] LOG       uri: https://maps.google.com/?cid=1483325180251311741
+[2025-10-30T00:15:42.153Z] LOG    28. [MAPS] Café de la Régence
+[2025-10-30T00:15:42.154Z] LOG       placeId: places/ChIJtRRWgyVu5kcRtlep_4vBrdo
+[2025-10-30T00:15:42.155Z] LOG       uri: https://maps.google.com/?cid=15757463478273136566
+[2025-10-30T00:15:42.157Z] LOG    29. [MAPS] Louise Café
+[2025-10-30T00:15:42.161Z] LOG       placeId: places/ChIJM5iOiiNu5kcRC8bAFt9UAFI
+[2025-10-30T00:15:42.162Z] LOG       uri: https://maps.google.com/?cid=5908816028246263307
+[2025-10-30T00:15:42.163Z] LOG    30. [MAPS] Resto Louvre
+[2025-10-30T00:15:42.165Z] LOG       placeId: places/ChIJ2ZZ7HiFu5kcRUap7PgIg7nQ
+[2025-10-30T00:15:42.168Z] LOG       uri: https://maps.google.com/?cid=8425707146867092049
+[2025-10-30T00:15:42.170Z] LOG    31. [MAPS] Angelina Paris Louvre Museum
+[2025-10-30T00:15:42.171Z] LOG       placeId: places/ChIJgx8d1SVu5kcRsQ4Dn3F4pXw
+[2025-10-30T00:15:42.172Z] LOG       uri: https://maps.google.com/?cid=8981717461254737585
+[2025-10-30T00:15:42.173Z] LOG    32. [MAPS] Le Fumoir
+[2025-10-30T00:15:42.175Z] LOG       placeId: places/ChIJw8kRaSFu5kcRFhLvX5DjiWY
+[2025-10-30T00:15:42.176Z] LOG       uri: https://maps.google.com/?cid=7388686872902308374
+[2025-10-30T00:15:42.177Z] LOG    33. [MAPS] Kitchen by Madame Rêve
+[2025-10-30T00:15:42.177Z] LOG       placeId: places/ChIJz8VyBp1v5kcR--8D7SDjnOs
+[2025-10-30T00:15:42.178Z] LOG       uri: https://maps.google.com/?cid=16977694425834844155
+[2025-10-30T00:15:42.179Z] LOG    34. [MAPS] French Beer Brasserie
+[2025-10-30T00:15:42.180Z] LOG       placeId: places/ChIJRcLNn2pv5kcRN2u1lYNevik
+[2025-10-30T00:15:42.181Z] LOG       uri: https://maps.google.com/?cid=3007945520375491383
+[2025-10-30T00:15:42.183Z] LOG    35. [MAPS] CAFE SAINT HONORÉ
+[2025-10-30T00:15:42.184Z] LOG       placeId: places/ChIJWe6kaiRu5kcRH_SM6yU7UYo
+[2025-10-30T00:15:42.186Z] LOG       uri: https://maps.google.com/?cid=9966812484399330335
+[2025-10-30T00:15:42.187Z] LOG    36. [MAPS] Le Musset
+[2025-10-30T00:15:42.188Z] LOG       placeId: places/ChIJW0ajgSVu5kcRGqBGmBa6J-I
+[2025-10-30T00:15:42.189Z] LOG       uri: https://maps.google.com/?cid=16296198382870241306
+[2025-10-30T00:15:42.189Z] LOG    37. [MAPS] Strada
+[2025-10-30T00:15:42.190Z] LOG       placeId: places/ChIJ38AXHgBv5kcRUW2jPuBBhSo
+[2025-10-30T00:15:42.191Z] LOG       uri: https://maps.google.com/?cid=3063927552874868049
+[2025-10-30T00:15:42.191Z] LOG    38. [MAPS] Loup restaurant
+[2025-10-30T00:15:42.192Z] LOG       placeId: places/ChIJI5p2_CJu5kcRgjL-oQSVlnE
+[2025-10-30T00:15:42.193Z] LOG       uri: https://maps.google.com/?cid=8184893219922653826
+[2025-10-30T00:15:42.194Z] LOG    39. [MAPS] Café QJ
+[2025-10-30T00:15:42.195Z] LOG       placeId: places/ChIJXQF17R1v5kcRdaVQM487Xq4
+[2025-10-30T00:15:42.196Z] LOG       uri: https://maps.google.com/?cid=12564545496637547893
+[2025-10-30T00:15:42.197Z] LOG    40. [MAPS] Le Nelson's - Louvre
+[2025-10-30T00:15:42.198Z] LOG       placeId: places/ChIJl806WCJu5kcRj9u3cONSIhc
+[2025-10-30T00:15:42.204Z] LOG       uri: https://maps.google.com/?cid=1666985948882656143
+[2025-10-30T00:15:42.206Z] LOG    41. [MAPS] Promenade Jean-Paul Belmondo
+[2025-10-30T00:15:42.209Z] LOG       placeId: places/ChIJAQppDdJx5kcRv5Arh3daFX8
+[2025-10-30T00:15:42.214Z] LOG       uri: https://maps.google.com/?cid=9157324886743158975
+[2025-10-30T00:15:42.218Z] LOG    42. [MAPS] Jardin de la Tour Eiffel
+[2025-10-30T00:15:42.221Z] LOG       placeId: places/ChIJn5NRiJlv5kcRBmBPx90Uol0
+[2025-10-30T00:15:42.222Z] LOG       uri: https://maps.google.com/?cid=6746978134518620166
+[2025-10-30T00:15:42.223Z] LOG    43. [MAPS] Champ de Mars
+[2025-10-30T00:15:42.224Z] LOG       placeId: places/ChIJB0gcnCBw5kcRHoIAPcTEApc
+[2025-10-30T00:15:42.225Z] LOG       uri: https://maps.google.com/?cid=10881475996796617246
+[2025-10-30T00:15:42.226Z] LOG    44. [MAPS] Bassins du Champ de Mars
+[2025-10-30T00:15:42.227Z] LOG       placeId: places/ChIJVyLA6h9w5kcRT2fHtO5cvw8
+[2025-10-30T00:15:42.228Z] LOG       uri: https://maps.google.com/?cid=1134727811425593167
+[2025-10-30T00:15:42.230Z] LOG    45. [MAPS] Palais de Chaillot
+[2025-10-30T00:15:42.231Z] LOG       placeId: places/ChIJCaWkW_tv5kcRoeatZHSiekI
+[2025-10-30T00:15:42.233Z] LOG       uri: https://maps.google.com/?cid=4790319774450968225
+[2025-10-30T00:15:42.234Z] LOG    46. [MAPS] Bureau de Gustave Eiffel
+[2025-10-30T00:15:42.234Z] LOG       placeId: places/ChIJEbu08-Fv5kcRxIdhEH5yCFo
+[2025-10-30T00:15:42.236Z] LOG       uri: https://maps.google.com/?cid=6487561148993472452
+[2025-10-30T00:15:42.237Z] LOG    47. [MAPS] Vedettes de Paris
+[2025-10-30T00:15:42.238Z] LOG       placeId: places/ChIJ7RNnPQBv5kcRsbP0pMipzo4
+[2025-10-30T00:15:42.239Z] LOG       uri: https://maps.google.com/?cid=10290348877814215601
+[2025-10-30T00:15:42.240Z] LOG    48. [MAPS] Les anneaux olympiques
+[2025-10-30T00:15:42.241Z] LOG       placeId: places/ChIJN4DPLQBv5kcR5G-cTZqoPzs
+[2025-10-30T00:15:42.243Z] LOG       uri: https://maps.google.com/?cid=4269316352451047396
+[2025-10-30T00:15:42.246Z] LOG    49. [MAPS] Place du Trocadero
+[2025-10-30T00:15:42.249Z] LOG       placeId: places/ChIJz35dQONv5kcRtSVtSJLDOsA
+[2025-10-30T00:15:42.251Z] LOG       uri: https://maps.google.com/?cid=13851598636979135925
+[2025-10-30T00:15:42.254Z] LOG    50. [MAPS] Jardins du Trocadéro
+[2025-10-30T00:15:42.255Z] LOG       placeId: places/ChIJoxY3R-Nv5kcRWsRDGBoNIOk
+[2025-10-30T00:15:42.257Z] LOG       uri: https://maps.google.com/?cid=16798441015819355226
+[2025-10-30T00:15:42.262Z] LOG    51. [MAPS] Promenade d'Australie
+[2025-10-30T00:15:42.264Z] LOG       placeId: places/ChIJHdb_OkJx5kcRTCBBHcQU7c4
+[2025-10-30T00:15:42.266Z] LOG       uri: https://maps.google.com/?cid=14910596773830533196
+[2025-10-30T00:15:42.268Z] LOG    52. [MAPS] Bateaux Parisiens
+[2025-10-30T00:15:42.269Z] LOG       placeId: places/ChIJA2WozONv5kcRDN_4jmUSXBk
+[2025-10-30T00:15:42.271Z] LOG       uri: https://maps.google.com/?cid=1827355776205250316
+[2025-10-30T00:15:42.274Z] LOG    53. [MAPS] Point de vue Tour Eiffel & Montmartre
+[2025-10-30T00:15:42.275Z] LOG       placeId: places/ChIJI-HxnGR75kcRb5CDD0FViJE
+[2025-10-30T00:15:42.276Z] LOG       uri: https://maps.google.com/?cid=10486725470253715567
+[2025-10-30T00:15:42.277Z] LOG    54. [MAPS] Endless Hallway Mural
+[2025-10-30T00:15:42.279Z] LOG       placeId: places/ChIJwzV_ocNv5kcRS-f3GbZ3v2M
+[2025-10-30T00:15:42.281Z] LOG       uri: https://maps.google.com/?cid=7187595154310031179
+[2025-10-30T00:15:42.283Z] LOG    55. [MAPS] Hidden gem
+[2025-10-30T00:15:42.285Z] LOG       placeId: places/ChIJ6c2oZABv5kcR89hff0qLpQ4
+[2025-10-30T00:15:42.286Z] LOG       uri: https://maps.google.com/?cid=1055402839769078003
+[2025-10-30T00:15:42.287Z] LOG    56. [MAPS] Salida crucero
+[2025-10-30T00:15:42.288Z] LOG       placeId: places/ChIJO7PfcABv5kcRsCC27VWOVvY
+[2025-10-30T00:15:42.289Z] LOG       uri: https://maps.google.com/?cid=17750531481038889136
+[2025-10-30T00:15:42.289Z] LOG    57. [MAPS] Passerelle Debilly
+[2025-10-30T00:15:42.290Z] LOG       placeId: places/ChIJbWdK0eZv5kcROmLZY2qD4gk
+[2025-10-30T00:15:42.291Z] LOG       uri: https://maps.google.com/?cid=712276184042922554
+[2025-10-30T00:15:42.293Z] LOG    58. [MAPS] Vertical Garden Wall
+[2025-10-30T00:15:42.294Z] LOG       placeId: places/ChIJi8k0FOFv5kcRvxbEd9oKnKU
+[2025-10-30T00:15:42.295Z] LOG       uri: https://maps.google.com/?cid=11933425046053459647
+[2025-10-30T00:15:42.296Z] LOG    59. [MAPS] Eiffel Reflections by the Seine
+[2025-10-30T00:15:42.297Z] LOG       placeId: places/ChIJffe5DgBv5kcRYmDDI5de3pw
+[2025-10-30T00:15:42.299Z] LOG       uri: https://maps.google.com/?cid=11303576117979603042
+[2025-10-30T00:15:42.300Z] LOG    60. [MAPS] Meeting Point
+[2025-10-30T00:15:42.301Z] LOG       placeId: places/ChIJdYYM4cZx5kcRAPkg7aQYD2E
+[2025-10-30T00:15:42.302Z] LOG       uri: https://maps.google.com/?cid=6993835842961733888
+[2025-10-30T00:15:42.303Z] LOG    61. [MAPS] Tuileries Garden
+[2025-10-30T00:15:42.304Z] LOG       placeId: places/ChIJAQAAMCxu5kcRx--_4QnbGcI
+[2025-10-30T00:15:42.305Z] LOG       uri: https://maps.google.com/?cid=13986450953264426951
+[2025-10-30T00:15:42.306Z] LOG    62. [MAPS] Musée de l'Orangerie
+[2025-10-30T00:15:42.307Z] LOG       placeId: places/ChIJo6qq6i5u5kcRCpYBp4rQP9w
+[2025-10-30T00:15:42.308Z] LOG       uri: https://maps.google.com/?cid=15870632905802880522
+[2025-10-30T00:15:42.310Z] LOG    63. [MAPS] Louvre Pyramid
+[2025-10-30T00:15:42.311Z] LOG       placeId: places/ChIJQdQyeiZu5kcRUfQHfB-OCLA
+[2025-10-30T00:15:42.313Z] LOG       uri: https://maps.google.com/?cid=12684544616365028433
+[2025-10-30T00:15:42.314Z] LOG    64. [MAPS] Tunnel des Tuileries
+[2025-10-30T00:15:42.315Z] LOG       placeId: places/ChIJ54F3Hjxv5kcRX_06-J4r9ZM
+[2025-10-30T00:15:42.318Z] LOG       uri: https://maps.google.com/?cid=10661475654638959967
+[2025-10-30T00:15:42.323Z] LOG    65. [MAPS] Musée du Louvre - Galerie des Antiquités
+[2025-10-30T00:15:42.327Z] LOG       placeId: places/ChIJo3dw__tv5kcR_NH7PhMh5Vw
+[2025-10-30T00:15:42.329Z] LOG       uri: https://maps.google.com/?cid=6693792787700896252
+[2025-10-30T00:15:42.331Z] LOG    66. [MAPS] Savoir - Emily in Paris
+[2025-10-30T00:15:42.335Z] LOG       placeId: places/ChIJDbXBJwBv5kcRTD0XxbY_X0E
+[2025-10-30T00:15:42.337Z] LOG       uri: https://maps.google.com/?cid=4710553789476060492
+[2025-10-30T00:15:42.339Z] LOG    67. [MAPS] Jardin du Carrousel
+[2025-10-30T00:15:42.341Z] LOG       placeId: places/ChIJnTMDNy9u5kcROgjibAqW-tY
+[2025-10-30T00:15:42.342Z] LOG       uri: https://maps.google.com/?cid=15490858839814834234
+[2025-10-30T00:15:42.343Z] LOG    68. [MAPS] Cour Carrée
+[2025-10-30T00:15:42.344Z] LOG       placeId: places/ChIJ-aeJaP9v5kcRD2f_xC77_MM
+[2025-10-30T00:15:42.345Z] LOG       uri: https://maps.google.com/?cid=14122438709819172623
+[2025-10-30T00:15:42.345Z] LOG    69. [MAPS] Napoléon, l'Épopée Immersive • Paris
+[2025-10-30T00:15:42.347Z] LOG       placeId: places/ChIJ46WkcgBx5kcRba-HFR7F0zo
+[2025-10-30T00:15:42.349Z] LOG       uri: https://maps.google.com/?cid=4238948407286673261
+[2025-10-30T00:15:42.351Z] LOG    70. [MAPS] Musée d'Orsay
+[2025-10-30T00:15:42.353Z] LOG       placeId: places/ChIJG5Qwtitu5kcR2CNEsYy9cdA
+[2025-10-30T00:15:42.354Z] LOG       uri: https://maps.google.com/?cid=15019994644224418776
+[2025-10-30T00:15:42.355Z] LOG    71. [MAPS] Babylon Tours Paris
+[2025-10-30T00:15:42.356Z] LOG       placeId: places/ChIJ87weU0du5kcRsDjKb4Lm4f0
+[2025-10-30T00:15:42.357Z] LOG       uri: https://maps.google.com/?cid=18294156609251326128
+[2025-10-30T00:15:42.359Z] LOG    72. [MAPS] Arbre des Voyelles
+[2025-10-30T00:15:42.360Z] LOG       placeId: places/ChIJzdZwdHlv5kcRm1NF8mI80iA
+[2025-10-30T00:15:42.361Z] LOG       uri: https://maps.google.com/?cid=2365019149992022939
+[2025-10-30T00:15:42.365Z] LOG    73. [MAPS] Victoire de Samothrace
+[2025-10-30T00:15:42.368Z] LOG       placeId: places/ChIJ7WMQf8hv5kcRO17BkwS0-6U
+[2025-10-30T00:15:42.371Z] LOG       uri: https://maps.google.com/?cid=11960351167164276283
+[2025-10-30T00:15:42.376Z] LOG    74. [MAPS] Square Michel-Caldaguès
+[2025-10-30T00:15:42.379Z] LOG       placeId: places/ChIJzeA5Behv5kcRacvRF6XM5sg
+[2025-10-30T00:15:42.381Z] LOG       uri: https://maps.google.com/?cid=14476483061670333289
+[2025-10-30T00:15:42.383Z] LOG    75. [MAPS] Carrousel du Louvre
+[2025-10-30T00:15:42.384Z] LOG       placeId: places/ChIJ6SJcCP5x5kcRJt8m9_lR7_Q
+[2025-10-30T00:15:42.385Z] LOG       uri: https://maps.google.com/?cid=17649415598723489574
+[2025-10-30T00:15:42.387Z] LOG    76. [MAPS] Love Winston/Eddy
+[2025-10-30T00:15:42.388Z] LOG       placeId: places/ChIJ1QeRTABv5kcR428ZqaeMbII
+[2025-10-30T00:15:42.391Z] LOG       uri: https://maps.google.com/?cid=9398041174139826147
+[2025-10-30T00:15:42.392Z] LOG    77. [MAPS] Conciergerie
+[2025-10-30T00:15:42.393Z] LOG       placeId: places/ChIJR3122B9u5kcRajG2bEZLypA
+[2025-10-30T00:15:42.395Z] LOG       uri: https://maps.google.com/?cid=10433234252600848746
+[2025-10-30T00:15:42.396Z] LOG    78. [MAPS] Les Caves du Louvre
+[2025-10-30T00:15:42.397Z] LOG       placeId: places/ChIJKTbqhSFu5kcRjADy2xG34nw
+[2025-10-30T00:15:42.398Z] LOG       uri: https://maps.google.com/?cid=8998956292772069516
+[2025-10-30T00:15:42.400Z] LOG    79. [MAPS] Domaine National du Palais-Royal
+[2025-10-30T00:15:42.401Z] LOG       placeId: places/ChIJR3122B9u5kcR9RZ_OWxSy80
+[2025-10-30T00:15:42.401Z] LOG       uri: https://maps.google.com/?cid=14829036822822065909
+[2025-10-30T00:15:42.403Z] LOG    80. [MAPS] Batobus - Station Louvre
+[2025-10-30T00:15:42.405Z] LOG       placeId: places/ChIJB4uz6yhu5kcRwVTuFfgf7XY
+[2025-10-30T00:15:42.406Z] LOG       uri: https://maps.google.com/?cid=8569540816336213185
+[2025-10-30T00:15:42.407Z] LOG ✨ Parsed 6 venue recommendations
+[2025-10-30T00:15:42.408Z] LOG 📋 Plan: A Day of Parisian Icons: Eiffel Tower & Louvre, 6 stops
+
+--- Summary ---
+Completed

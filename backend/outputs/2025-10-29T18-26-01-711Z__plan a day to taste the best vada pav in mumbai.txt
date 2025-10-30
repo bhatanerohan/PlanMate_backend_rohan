@@ -1,0 +1,137 @@
+User Prompt: plan a day to taste the best vada pav in mumbai
+
+[2025-10-29T18:26:01.712Z] LOG 📍 Using fallback location (no user location): Fort, South Mumbai
+[2025-10-29T18:26:01.713Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T18:26:01.714Z] LOG    1. "Aram Vada Pav" in "Fort, South Mumbai"
+[2025-10-29T18:26:01.714Z] LOG    2. "Ashok Vada Pav" in "Dadar West, Central Mumbai"
+[2025-10-29T18:26:01.715Z] LOG    3. "Anand Stall" in "Vile Parle West, Western Suburbs"
+[2025-10-29T18:26:01.716Z] LOG    4. "Gajanan Vada Pav" in "Thane West, Thane"
+[2025-10-29T18:26:01.717Z] LOG 
+🔍 Executing batch search for 4 venues...
+[2025-10-29T18:26:01.718Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T18:26:01.719Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-29T18:26:01.719Z] LOG    1. Searching "Aram Vada Pav" in "Fort, South Mumbai"
+[2025-10-29T18:26:01.720Z] LOG 🔍 [Google Places] Text search: "Aram Vada Pav" in Fort, South Mumbai
+[2025-10-29T18:26:01.732Z] LOG    2. Searching "Ashok Vada Pav" in "Dadar West, Central Mumbai"
+[2025-10-29T18:26:01.734Z] LOG 🔍 [Google Places] Text search: "Ashok Vada Pav" in Dadar West, Central Mumbai
+[2025-10-29T18:26:01.740Z] LOG    3. Searching "Anand Stall" in "Vile Parle West, Western Suburbs"
+[2025-10-29T18:26:01.741Z] LOG 🔍 [Google Places] Text search: "Anand Stall" in Vile Parle West, Western Suburbs
+[2025-10-29T18:26:01.747Z] LOG    4. Searching "Gajanan Vada Pav" in "Thane West, Thane"
+[2025-10-29T18:26:01.749Z] LOG 🔍 [Google Places] Text search: "Gajanan Vada Pav" in Thane West, Thane
+[2025-10-29T18:26:02.267Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:26:02.302Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:26:02.350Z] LOG    ⚠️  Aram Vada Pav: No editorial summary available
+[2025-10-29T18:26:02.352Z] LOG ✅ Found 1 places
+[2025-10-29T18:26:02.359Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:26:02.401Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:26:02.476Z] LOG    ⚠️  Ashok Vada Pav: No editorial summary available
+[2025-10-29T18:26:02.477Z] LOG ✅ Found 1 places
+[2025-10-29T18:26:02.483Z] LOG    ✅ Anand Stall: Got description (90 chars)
+[2025-10-29T18:26:02.485Z] LOG ✅ Found 1 places
+[2025-10-29T18:26:02.579Z] LOG    ⚠️  Gajanan Vada Pav: No editorial summary available
+[2025-10-29T18:26:02.580Z] LOG ✅ Found 1 places
+[2025-10-29T18:26:02.581Z] LOG ✅ Batch complete: 4/4 searches succeeded, 4 total venues found in 862ms
+[2025-10-29T18:26:02.582Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T18:26:02.582Z] LOG    Tool execution result: success=true
+[2025-10-29T18:26:02.583Z] LOG    ✅ Tool returned 4 search results
+[2025-10-29T18:26:02.584Z] LOG    ✅ Merged: Aram Vada Pav
+[2025-10-29T18:26:02.584Z] LOG       Places placeId: ChIJwWOPJdnR5zsRcgxEPKsyPsI
+[2025-10-29T18:26:02.584Z] LOG       Gemini description: Start your Vada Pav adventure at this legendary spot near CS...
+[2025-10-29T18:26:02.585Z] LOG    ✅ Merged: Ashok Vada Pav
+[2025-10-29T18:26:02.585Z] LOG       Places placeId: ChIJ5ebcV8bO5zsRdGIdm6KiUSo
+[2025-10-29T18:26:02.585Z] LOG       Gemini description: Known as the 'Kirti College Vada Pav', this stall is a cult ...
+[2025-10-29T18:26:02.586Z] LOG    ✅ Merged: Anand Stall
+[2025-10-29T18:26:02.587Z] LOG       Places placeId: ChIJp7S2irjJ5zsRa_Cvqax8Lkk
+[2025-10-29T18:26:02.587Z] LOG       Gemini description: Located opposite Mithibai College, Anand Stall is renowned f...
+[2025-10-29T18:26:02.587Z] LOG    ✅ Merged: Gajanan Vada Pav
+[2025-10-29T18:26:02.588Z] LOG       Places placeId: ChIJTSsc1ya55zsRtKAe1wIg8M4
+[2025-10-29T18:26:02.588Z] LOG       Gemini description: Venture further into Thane to discover Gajanan Vada Pav, a w...
+[2025-10-29T18:26:02.589Z] LOG ✅ Phase 1 complete: Found 4/4 exact venues
+[2025-10-29T18:26:02.589Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T18:26:02.590Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-29T18:26:02.590Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T18:26:02.591Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-29T18:26:02.592Z] LOG    1. Searching "Indian Restaurant" in "18.9395191,72.8344889"
+[2025-10-29T18:26:02.593Z] LOG    📍 Using nearbySearch at coordinates (18.9395191, 72.8344889)
+[2025-10-29T18:26:02.594Z] LOG 🔍 [Google Places] Nearby search at (18.9395191, 72.8344889)
+[2025-10-29T18:26:02.596Z] LOG    2. Searching "Fast Food Restaurant" in "19.0205115,72.83144"
+[2025-10-29T18:26:02.596Z] LOG    📍 Using nearbySearch at coordinates (19.0205115, 72.83144)
+[2025-10-29T18:26:02.596Z] LOG 🔍 [Google Places] Nearby search at (19.0205115, 72.83144)
+[2025-10-29T18:26:02.598Z] LOG    3. Searching "Fast Food Restaurant" in "19.1030568,72.836737"
+[2025-10-29T18:26:02.598Z] LOG    📍 Using nearbySearch at coordinates (19.1030568, 72.836737)
+[2025-10-29T18:26:02.598Z] LOG 🔍 [Google Places] Nearby search at (19.1030568, 72.836737)
+[2025-10-29T18:26:02.599Z] LOG    4. Searching "Fast Food Restaurant" in "19.1899906,72.9695658"
+[2025-10-29T18:26:02.600Z] LOG    📍 Using nearbySearch at coordinates (19.1899906, 72.9695658)
+[2025-10-29T18:26:02.600Z] LOG 🔍 [Google Places] Nearby search at (19.1899906, 72.9695658)
+[2025-10-29T18:26:03.314Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:26:03.350Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:26:03.357Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:26:03.390Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:26:03.493Z] LOG    ⚠️  Amar Juice Centre: No editorial summary available
+[2025-10-29T18:26:03.496Z] LOG    ✅ George Restaurant, Fort: Got description (84 chars)
+[2025-10-29T18:26:03.499Z] LOG    ⚠️  Ayaz's - The Kebab Place: No editorial summary available
+[2025-10-29T18:26:03.522Z] LOG    ✅ Aditi Fast Food & Restaurant: Got description (88 chars)
+[2025-10-29T18:26:03.534Z] LOG    ✅ Pappilon Fast Food Corner Irla: Got description (90 chars)
+[2025-10-29T18:26:03.535Z] LOG    ✅ McDonald's: Got description (68 chars)
+[2025-10-29T18:26:03.536Z] LOG    ⚠️  Cannon Pavbhaji & Snacks Corner: No editorial summary available
+[2025-10-29T18:26:03.551Z] LOG    ⚠️  Pc Cafe Prabhadevi: No editorial summary available
+[2025-10-29T18:26:03.554Z] LOG    ⚠️  Jk Food Court Chinese Corneer: No editorial summary available
+[2025-10-29T18:26:03.563Z] LOG    ⚠️  GOOD FLIPPIN' BURGERS®: No editorial summary available
+[2025-10-29T18:26:03.568Z] LOG    ✅ Delhi Darbar: Got description (92 chars)
+[2025-10-29T18:26:03.584Z] LOG    ⚠️  AK CHINESE: No editorial summary available
+[2025-10-29T18:26:03.587Z] LOG    ⚠️  Tasty Bite: No editorial summary available
+[2025-10-29T18:26:03.592Z] LOG    ✅ Gulshan - E- Iran.: Got description (88 chars)
+[2025-10-29T18:26:03.594Z] LOG    ⚠️  Carter's Blue: No editorial summary available
+[2025-10-29T18:26:03.618Z] LOG    ⚠️  Snacks Fusion Café (Veg Restaurant): No editorial summary available
+[2025-10-29T18:26:03.624Z] LOG    ⚠️  The J: No editorial summary available
+[2025-10-29T18:26:03.634Z] LOG    ✅ Ustaadi: Got description (99 chars)
+[2025-10-29T18:26:03.661Z] LOG    ⚠️  Rajput Fast Food: No editorial summary available
+[2025-10-29T18:26:03.678Z] LOG    ⚠️  Dadar Fast Food: No editorial summary available
+[2025-10-29T18:26:03.679Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 1088ms
+[2025-10-29T18:26:03.679Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T18:26:03.680Z] LOG    ✅ Venue 1 (Aram Vada Pav): 4 alternatives
+[2025-10-29T18:26:03.680Z] LOG       1. George Restaurant, Fort (4.1⭐)
+[2025-10-29T18:26:03.681Z] LOG       2. Ustaadi (4.3⭐)
+[2025-10-29T18:26:03.682Z] LOG       3. Carter's Blue (4.1⭐)
+[2025-10-29T18:26:03.683Z] LOG    ✅ Venue 2 (Ashok Vada Pav): 4 alternatives
+[2025-10-29T18:26:03.683Z] LOG       1. The J (4.1⭐)
+[2025-10-29T18:26:03.684Z] LOG       2. Rajput Fast Food (3.9⭐)
+[2025-10-29T18:26:03.684Z] LOG       3. Dadar Fast Food (4.7⭐)
+[2025-10-29T18:26:03.685Z] LOG    ✅ Venue 3 (Anand Stall): 4 alternatives
+[2025-10-29T18:26:03.686Z] LOG       1. Amar Juice Centre (4.2⭐)
+[2025-10-29T18:26:03.686Z] LOG       2. Pappilon Fast Food Corner Irla (3.9⭐)
+[2025-10-29T18:26:03.686Z] LOG       3. McDonald's (4.3⭐)
+[2025-10-29T18:26:03.687Z] LOG    ✅ Venue 4 (Gajanan Vada Pav): 4 alternatives
+[2025-10-29T18:26:03.687Z] LOG       1. GOOD FLIPPIN' BURGERS® (4.7⭐)
+[2025-10-29T18:26:03.687Z] LOG       2. Cannon Pavbhaji & Snacks Corner (3.8⭐)
+[2025-10-29T18:26:03.688Z] LOG       3. Tasty Bite (4.5⭐)
+[2025-10-29T18:26:03.688Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-29T18:26:03.689Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T18:26:03.689Z] LOG    Primary venues: 4 stops
+[2025-10-29T18:26:03.689Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T18:26:03.690Z] LOG    Removed 0 venues already in route
+[2025-10-29T18:26:03.690Z] LOG    Removed 0 duplicate alternatives
+[2025-10-29T18:26:03.690Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-29T18:26:03.690Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T18:26:03.691Z] LOG    Primary venues: 4
+[2025-10-29T18:26:03.691Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-29T18:26:03.692Z] LOG    Execution time: 1980ms
+[2025-10-29T18:26:03.692Z] LOG 
+📋 Final alternatives:
+[2025-10-29T18:26:03.693Z] LOG    Aram Vada Pav: 4 alternatives
+[2025-10-29T18:26:03.693Z] LOG    Ashok Vada Pav: 4 alternatives
+[2025-10-29T18:26:03.693Z] LOG    Anand Stall: 4 alternatives
+[2025-10-29T18:26:03.693Z] LOG    Gajanan Vada Pav: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 4

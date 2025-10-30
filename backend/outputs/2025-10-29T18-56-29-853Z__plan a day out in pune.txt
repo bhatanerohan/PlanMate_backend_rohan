@@ -1,0 +1,160 @@
+User Prompt: plan a day out in pune
+
+[2025-10-29T18:56:29.853Z] LOG 📍 Using extracted city from user location: Maharashtra
+[2025-10-29T18:56:29.854Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T18:56:29.854Z] LOG    1. "Shaniwar Wada" in "Shaniwar Peth"
+[2025-10-29T18:56:29.855Z] LOG    2. "Sukanta Thali" in "Deccan Gymkhana"
+[2025-10-29T18:56:29.855Z] LOG    3. "Raja Dinkar Kelkar Museum" in "Shukrawar Peth"
+[2025-10-29T18:56:29.856Z] LOG    4. "P L Deshpande Garden" in "Dattawadi"
+[2025-10-29T18:56:29.856Z] LOG    5. "The Daily All Day Pune" in "Koregaon Park"
+[2025-10-29T18:56:29.857Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-29T18:56:29.857Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T18:56:29.858Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T18:56:29.859Z] LOG    1. Searching "Shaniwar Wada" in "Shaniwar Peth"
+[2025-10-29T18:56:29.859Z] LOG 🔍 [Google Places] Text search: "Shaniwar Wada" in Shaniwar Peth
+[2025-10-29T18:56:29.864Z] LOG    2. Searching "Sukanta Thali" in "Deccan Gymkhana"
+[2025-10-29T18:56:29.865Z] LOG 🔍 [Google Places] Text search: "Sukanta Thali" in Deccan Gymkhana
+[2025-10-29T18:56:29.867Z] LOG    3. Searching "Raja Dinkar Kelkar Museum" in "Shukrawar Peth"
+[2025-10-29T18:56:29.867Z] LOG 🔍 [Google Places] Text search: "Raja Dinkar Kelkar Museum" in Shukrawar Peth
+[2025-10-29T18:56:29.871Z] LOG    4. Searching "P L Deshpande Garden" in "Dattawadi"
+[2025-10-29T18:56:29.872Z] LOG 🔍 [Google Places] Text search: "P L Deshpande Garden" in Dattawadi
+[2025-10-29T18:56:29.874Z] LOG    5. Searching "The Daily All Day Pune" in "Koregaon Park"
+[2025-10-29T18:56:29.875Z] LOG 🔍 [Google Places] Text search: "The Daily All Day Pune" in Koregaon Park
+[2025-10-29T18:56:30.323Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:56:30.370Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:56:30.403Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:56:30.482Z] LOG    ✅ P L Deshpande Garden: Got description (98 chars)
+[2025-10-29T18:56:30.483Z] LOG ✅ Found 1 places
+[2025-10-29T18:56:30.505Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:56:30.519Z] LOG    ✅ Shaniwar Wada: Got description (97 chars)
+[2025-10-29T18:56:30.521Z] LOG ✅ Found 1 places
+[2025-10-29T18:56:30.551Z] LOG    ✅ Raja Dinkar Kelkar Museum: Got description (100 chars)
+[2025-10-29T18:56:30.552Z] LOG ✅ Found 1 places
+[2025-10-29T18:56:30.661Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:56:30.669Z] LOG    ⚠️  The Daily All Day Pune: No editorial summary available
+[2025-10-29T18:56:30.671Z] LOG ✅ Found 1 places
+[2025-10-29T18:56:30.860Z] LOG    ✅ Sukanta Thali: Got description (86 chars)
+[2025-10-29T18:56:30.862Z] LOG ✅ Found 1 places
+[2025-10-29T18:56:30.863Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1005ms
+[2025-10-29T18:56:30.864Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T18:56:30.864Z] LOG    Tool execution result: success=true
+[2025-10-29T18:56:30.865Z] LOG    ✅ Tool returned 5 search results
+[2025-10-29T18:56:30.865Z] LOG    ✅ Merged: Shaniwar Wada
+[2025-10-29T18:56:30.866Z] LOG       Places placeId: ChIJEXtrIuLBwjsRi6ZcFwaBu6Q
+[2025-10-29T18:56:30.867Z] LOG       Gemini description: Start your day by stepping back in time at Shaniwar Wada, an...
+[2025-10-29T18:56:30.867Z] LOG    ✅ Merged: Sukanta Thali
+[2025-10-29T18:56:30.868Z] LOG       Places placeId: ChIJpyztgHfAwjsRTqvLHLNIyE8
+[2025-10-29T18:56:30.868Z] LOG       Gemini description: Enjoy an authentic Maharashtrian lunch experience at Sukanta...
+[2025-10-29T18:56:30.869Z] LOG    ✅ Merged: Raja Dinkar Kelkar Museum
+[2025-10-29T18:56:30.869Z] LOG       Places placeId: ChIJ9R3gx3PAwjsR822UYgNrz0U
+[2025-10-29T18:56:30.870Z] LOG       Gemini description: Immerse yourself in a unique collection of Indian artifacts ...
+[2025-10-29T18:56:30.870Z] LOG    ✅ Merged: P L Deshpande Garden
+[2025-10-29T18:56:30.871Z] LOG       Places placeId: ChIJAQAAkPm_wjsRNNKab-PjkTI
+[2025-10-29T18:56:30.871Z] LOG       Gemini description: Unwind and enjoy the tranquility of nature at P L Deshpande ...
+[2025-10-29T18:56:30.871Z] LOG    ✅ Merged: The Daily All Day Pune
+[2025-10-29T18:56:30.872Z] LOG       Places placeId: ChIJ4X7i8wfBwjsRv8rWlKuJQvc
+[2025-10-29T18:56:30.872Z] LOG       Gemini description: Conclude your day with a vibrant evening at The Daily All Da...
+[2025-10-29T18:56:30.873Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-29T18:56:30.873Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T18:56:30.874Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-29T18:56:30.874Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T18:56:30.875Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-29T18:56:30.875Z] LOG    1. Searching "Historical Landmark" in "18.5195841,73.85542079999999"
+[2025-10-29T18:56:30.876Z] LOG    📍 Using nearbySearch at coordinates (18.5195841, 73.85542079999999)
+[2025-10-29T18:56:30.877Z] LOG 🔍 [Google Places] Nearby search at (18.5195841, 73.85542079999999)
+[2025-10-29T18:56:30.878Z] LOG    2. Searching "Indian Restaurant" in "18.5170198,73.8442048"
+[2025-10-29T18:56:30.878Z] LOG    📍 Using nearbySearch at coordinates (18.5170198, 73.8442048)
+[2025-10-29T18:56:30.879Z] LOG 🔍 [Google Places] Nearby search at (18.5170198, 73.8442048)
+[2025-10-29T18:56:30.881Z] LOG    3. Searching "Museum" in "18.5106855,73.8544307"
+[2025-10-29T18:56:30.881Z] LOG    📍 Using nearbySearch at coordinates (18.5106855, 73.8544307)
+[2025-10-29T18:56:30.881Z] LOG 🔍 [Google Places] Nearby search at (18.5106855, 73.8544307)
+[2025-10-29T18:56:30.883Z] LOG    4. Searching "Park" in "18.4923958,73.83614779999999"
+[2025-10-29T18:56:30.883Z] LOG    📍 Using nearbySearch at coordinates (18.4923958, 73.83614779999999)
+[2025-10-29T18:56:30.884Z] LOG 🔍 [Google Places] Nearby search at (18.4923958, 73.83614779999999)
+[2025-10-29T18:56:30.885Z] LOG    5. Searching "Restaurant" in "18.5338985,73.89960719999999"
+[2025-10-29T18:56:30.885Z] LOG    📍 Using nearbySearch at coordinates (18.5338985, 73.89960719999999)
+[2025-10-29T18:56:30.885Z] LOG 🔍 [Google Places] Nearby search at (18.5338985, 73.89960719999999)
+[2025-10-29T18:56:31.446Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:56:31.460Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:56:31.510Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:56:31.519Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:56:31.534Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:56:31.586Z] LOG    ✅ Raja Dinkar Kelkar Museum: Got description (100 chars)
+[2025-10-29T18:56:31.624Z] LOG    ✅ Shaniwar Wada: Got description (97 chars)
+[2025-10-29T18:56:31.643Z] LOG    ✅ Peshwe Museum: Got description (93 chars)
+[2025-10-29T18:56:31.648Z] LOG    ✅ Shree Devdeveshwar Temple (Parvati Temple): Got description (84 chars)
+[2025-10-29T18:56:31.671Z] LOG    ✅ Plunge: Got description (82 chars)
+[2025-10-29T18:56:31.677Z] LOG    ✅ Mahatma Phule Museum: Got description (99 chars)
+[2025-10-29T18:56:31.686Z] LOG    ✅ Mahatma Phule Wada: Got description (92 chars)
+[2025-10-29T18:56:31.688Z] LOG    ⚠️  Shahid Major Pradeep Tathawade Park: No editorial summary available
+[2025-10-29T18:56:31.690Z] LOG    ✅ P L Deshpande Garden: Got description (98 chars)
+[2025-10-29T18:56:31.710Z] LOG    ✅ 360 Degree Revolving Restaurant: Got description (95 chars)
+[2025-10-29T18:56:31.716Z] LOG    ✅ Vaishali Restaurant: Got description (86 chars)
+[2025-10-29T18:56:31.722Z] LOG    ⚠️  Mutuswami Cafe Pune: No editorial summary available
+[2025-10-29T18:56:31.727Z] LOG    ⚠️  Sardar Shitole Wada: No editorial summary available
+[2025-10-29T18:56:31.728Z] LOG    ⚠️  Jedhe Mansion: No editorial summary available
+[2025-10-29T18:56:31.731Z] LOG    ✅ Pimlico: Got description (99 chars)
+[2025-10-29T18:56:31.732Z] LOG    ✅ Paasha: Got description (95 chars)
+[2025-10-29T18:56:31.734Z] LOG    ⚠️  Saras Baug: No editorial summary available
+[2025-10-29T18:56:31.734Z] LOG    ✅ Bagul Udyan: Got description (98 chars)
+[2025-10-29T18:56:31.738Z] LOG    ⚠️  Lokmanya Nagar Joggers Park: No editorial summary available
+[2025-10-29T18:56:31.744Z] LOG    ⚠️  Unicorn House: No editorial summary available
+[2025-10-29T18:56:31.746Z] LOG    ⚠️  Old Structure Nagaar khaana: No editorial summary available
+[2025-10-29T18:56:31.747Z] LOG    ✅ Peshwe Energy Park: Got description (92 chars)
+[2025-10-29T18:56:31.764Z] LOG    ✅ One Restaurant & Bar: Got description (80 chars)
+[2025-10-29T18:56:31.785Z] LOG    ⚠️  Diamond Restaurant: No editorial summary available
+[2025-10-29T18:56:31.815Z] LOG    ✅ Latitude: Got description (85 chars)
+[2025-10-29T18:56:31.818Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 944ms
+[2025-10-29T18:56:31.818Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T18:56:31.819Z] LOG    ✅ Venue 1 (Shaniwar Wada): 4 alternatives
+[2025-10-29T18:56:31.820Z] LOG       1. Mahatma Phule Wada (4.6⭐)
+[2025-10-29T18:56:31.820Z] LOG       2. Jedhe Mansion (4.3⭐)
+[2025-10-29T18:56:31.821Z] LOG       3. Old Structure Nagaar khaana (4.3⭐)
+[2025-10-29T18:56:31.822Z] LOG    ✅ Venue 2 (Sukanta Thali): 4 alternatives
+[2025-10-29T18:56:31.822Z] LOG       1. 360 Degree Revolving Restaurant (3.9⭐)
+[2025-10-29T18:56:31.823Z] LOG       2. Diamond Restaurant (3.2⭐)
+[2025-10-29T18:56:31.824Z] LOG       3. Paasha (4.4⭐)
+[2025-10-29T18:56:31.825Z] LOG    ✅ Venue 3 (Raja Dinkar Kelkar Museum): 4 alternatives
+[2025-10-29T18:56:31.825Z] LOG       1. Peshwe Museum (4.3⭐)
+[2025-10-29T18:56:31.826Z] LOG       2. Mahatma Phule Museum (4.2⭐)
+[2025-10-29T18:56:31.826Z] LOG       3. Shree Devdeveshwar Temple (Parvati Temple) (4.5⭐)
+[2025-10-29T18:56:31.827Z] LOG    ✅ Venue 4 (P L Deshpande Garden): 4 alternatives
+[2025-10-29T18:56:31.827Z] LOG       1. Shahid Major Pradeep Tathawade Park (4.3⭐)
+[2025-10-29T18:56:31.828Z] LOG       2. Bagul Udyan (4.2⭐)
+[2025-10-29T18:56:31.828Z] LOG       3. Lokmanya Nagar Joggers Park (4.3⭐)
+[2025-10-29T18:56:31.829Z] LOG    ✅ Venue 5 (The Daily All Day Pune): 4 alternatives
+[2025-10-29T18:56:31.830Z] LOG       1. Plunge (4⭐)
+[2025-10-29T18:56:31.830Z] LOG       2. Unicorn House (4⭐)
+[2025-10-29T18:56:31.831Z] LOG       3. Pimlico (4.2⭐)
+[2025-10-29T18:56:31.831Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-29T18:56:31.832Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T18:56:31.832Z] LOG    Primary venues: 5 stops
+[2025-10-29T18:56:31.833Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T18:56:31.833Z] LOG    Removed 0 venues already in route
+[2025-10-29T18:56:31.834Z] LOG    Removed 0 duplicate alternatives
+[2025-10-29T18:56:31.834Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-29T18:56:31.835Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T18:56:31.835Z] LOG    Primary venues: 5
+[2025-10-29T18:56:31.836Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-29T18:56:31.837Z] LOG    Execution time: 1982ms
+[2025-10-29T18:56:31.837Z] LOG 
+📋 Final alternatives:
+[2025-10-29T18:56:31.837Z] LOG    Shaniwar Wada: 4 alternatives
+[2025-10-29T18:56:31.838Z] LOG    Sukanta Thali: 4 alternatives
+[2025-10-29T18:56:31.838Z] LOG    Raja Dinkar Kelkar Museum: 4 alternatives
+[2025-10-29T18:56:31.838Z] LOG    P L Deshpande Garden: 4 alternatives
+[2025-10-29T18:56:31.839Z] LOG    The Daily All Day Pune: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

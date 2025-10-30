@@ -1,0 +1,171 @@
+User Prompt: Find coffee shops in paris
+
+[2025-10-30T00:12:45.551Z] LOG 📍 Using fallback location (no user location): 4th arrondissement
+[2025-10-30T00:12:45.552Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T00:12:45.553Z] LOG    1. "The Caféothèque of Paris" in "4th arrondissement"
+[2025-10-30T00:12:45.553Z] LOG    2. "Le Peloton Café" in "4th arrondissement"
+[2025-10-30T00:12:45.554Z] LOG    3. "Brouillon Coffee" in "10th arrondissement"
+[2025-10-30T00:12:45.555Z] LOG    4. "Café de Flore" in "6th arrondissement"
+[2025-10-30T00:12:45.557Z] LOG    5. "Clove" in "18th arrondissement"
+[2025-10-30T00:12:45.558Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T00:12:45.560Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:12:45.562Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T00:12:45.564Z] LOG    1. Searching "The Caféothèque of Paris" in "4th arrondissement"
+[2025-10-30T00:12:45.566Z] LOG 🔍 [Google Places] Text search: "The Caféothèque of Paris" in 4th arrondissement
+[2025-10-30T00:12:45.584Z] LOG    2. Searching "Le Peloton Café" in "4th arrondissement"
+[2025-10-30T00:12:45.588Z] LOG 🔍 [Google Places] Text search: "Le Peloton Café" in 4th arrondissement
+[2025-10-30T00:12:45.596Z] LOG    3. Searching "Brouillon Coffee" in "10th arrondissement"
+[2025-10-30T00:12:45.599Z] LOG 🔍 [Google Places] Text search: "Brouillon Coffee" in 10th arrondissement
+[2025-10-30T00:12:45.606Z] LOG    4. Searching "Café de Flore" in "6th arrondissement"
+[2025-10-30T00:12:45.608Z] LOG 🔍 [Google Places] Text search: "Café de Flore" in 6th arrondissement
+[2025-10-30T00:12:45.614Z] LOG    5. Searching "Clove" in "18th arrondissement"
+[2025-10-30T00:12:45.615Z] LOG 🔍 [Google Places] Text search: "Clove" in 18th arrondissement
+[2025-10-30T00:12:46.136Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:12:46.158Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:12:46.165Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:12:46.241Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:12:46.354Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:12:46.373Z] LOG    ✅ Le Peloton Café: Got description (92 chars)
+[2025-10-30T00:12:46.375Z] LOG ✅ Found 1 places
+[2025-10-30T00:12:46.378Z] LOG    ⚠️  Brouillon Coffee: No editorial summary available
+[2025-10-30T00:12:46.381Z] LOG ✅ Found 1 places
+[2025-10-30T00:12:46.384Z] LOG    ✅ The Caféothèque of Paris: Got description (92 chars)
+[2025-10-30T00:12:46.385Z] LOG ✅ Found 1 places
+[2025-10-30T00:12:46.455Z] LOG    ✅ Café de Flore: Got description (100 chars)
+[2025-10-30T00:12:46.457Z] LOG ✅ Found 1 places
+[2025-10-30T00:12:46.552Z] LOG    ⚠️  Clove: No editorial summary available
+[2025-10-30T00:12:46.553Z] LOG ✅ Found 1 places
+[2025-10-30T00:12:46.555Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 993ms
+[2025-10-30T00:12:46.556Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:12:46.557Z] LOG    Tool execution result: success=true
+[2025-10-30T00:12:46.558Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T00:12:46.560Z] LOG    ✅ Merged: The Caféothèque of Paris
+[2025-10-30T00:12:46.561Z] LOG       Places placeId: ChIJ3eCHM_1x5kcRRfrf5-yoThc
+[2025-10-30T00:12:46.562Z] LOG       Gemini description: Known for its highly trained baristas and a wide selection o...
+[2025-10-30T00:12:46.563Z] LOG    ✅ Merged: Le Peloton Café
+[2025-10-30T00:12:46.564Z] LOG       Places placeId: ChIJy2DMU_1x5kcR9SBKGXpGEas
+[2025-10-30T00:12:46.565Z] LOG       Gemini description: A compact and charming cafe offering not only great coffee a...
+[2025-10-30T00:12:46.566Z] LOG    ✅ Merged: Brouillon Coffee
+[2025-10-30T00:12:46.567Z] LOG       Places placeId: ChIJWbd6C_Nv5kcRw5fUQKAqEzE
+[2025-10-30T00:12:46.568Z] LOG       Gemini description: This coffee shop is highly rated for its superb coffee and i...
+[2025-10-30T00:12:46.569Z] LOG    ✅ Merged: Café de Flore
+[2025-10-30T00:12:46.569Z] LOG       Places placeId: ChIJq537gddx5kcR_3PhRd2muxg
+[2025-10-30T00:12:46.570Z] LOG       Gemini description: An iconic and long-running Parisian coffeehouse, famous for ...
+[2025-10-30T00:12:46.571Z] LOG    ✅ Merged: Clove
+[2025-10-30T00:12:46.571Z] LOG       Places placeId: ChIJGR3TdqJv5kcRCtgkoouI29U
+[2025-10-30T00:12:46.572Z] LOG       Gemini description: A highly-rated local favorite, Clove offers a warm and welco...
+[2025-10-30T00:12:46.573Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T00:12:46.573Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T00:12:46.574Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T00:12:46.575Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:12:46.575Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T00:12:46.578Z] LOG    1. Searching "cafe" in "48.8544525,2.3557667"
+[2025-10-30T00:12:46.579Z] LOG    📍 Using nearbySearch at coordinates (48.8544525, 2.3557667)
+[2025-10-30T00:12:46.580Z] LOG 🔍 [Google Places] Nearby search at (48.8544525, 2.3557667)
+[2025-10-30T00:12:46.584Z] LOG    2. Searching "cafe" in "48.855522,2.3559374"
+[2025-10-30T00:12:46.586Z] LOG    📍 Using nearbySearch at coordinates (48.855522, 2.3559374)
+[2025-10-30T00:12:46.587Z] LOG 🔍 [Google Places] Nearby search at (48.855522, 2.3559374)
+[2025-10-30T00:12:46.588Z] LOG    3. Searching "coffee shop" in "48.8723353,2.3598713"
+[2025-10-30T00:12:46.589Z] LOG    📍 Using nearbySearch at coordinates (48.8723353, 2.3598713)
+[2025-10-30T00:12:46.590Z] LOG 🔍 [Google Places] Nearby search at (48.8723353, 2.3598713)
+[2025-10-30T00:12:46.593Z] LOG    4. Searching "coffee shop" in "48.8541588,2.3326046"
+[2025-10-30T00:12:46.594Z] LOG    📍 Using nearbySearch at coordinates (48.8541588, 2.3326046)
+[2025-10-30T00:12:46.595Z] LOG 🔍 [Google Places] Nearby search at (48.8541588, 2.3326046)
+[2025-10-30T00:12:46.598Z] LOG    5. Searching "coffee shop" in "48.8846433,2.3418273"
+[2025-10-30T00:12:46.598Z] LOG    📍 Using nearbySearch at coordinates (48.8846433, 2.3418273)
+[2025-10-30T00:12:46.599Z] LOG 🔍 [Google Places] Nearby search at (48.8846433, 2.3418273)
+[2025-10-30T00:12:47.330Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:12:47.347Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:12:47.495Z] LOG    ⚠️  Clove: No editorial summary available
+[2025-10-30T00:12:47.505Z] LOG    ✅ Le Buci: Got description (99 chars)
+[2025-10-30T00:12:47.527Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:12:47.538Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:12:47.555Z] LOG    ⚠️  AndCo - Coffee Shop ☕️: No editorial summary available
+[2025-10-30T00:12:47.558Z] LOG    ⚠️  BlackBird Coffee: No editorial summary available
+[2025-10-30T00:12:47.573Z] LOG    ⚠️  Café le Petit Pont: No editorial summary available
+[2025-10-30T00:12:47.588Z] LOG    ⚠️  Le Carrefour: No editorial summary available
+[2025-10-30T00:12:47.599Z] LOG    ✅ Le Buci: Got description (99 chars)
+[2025-10-30T00:12:47.605Z] LOG    ✅ The Beans on Fire: Got description (80 chars)
+[2025-10-30T00:12:47.611Z] LOG    ✅ Café Crème: Got description (94 chars)
+[2025-10-30T00:12:47.613Z] LOG    ⚠️  Café Tranquille: No editorial summary available
+[2025-10-30T00:12:47.614Z] LOG    ⚠️  BlackBird Coffee: No editorial summary available
+[2025-10-30T00:12:47.627Z] LOG    ⚠️  AndCo - Coffee Shop ☕️: No editorial summary available
+[2025-10-30T00:12:47.677Z] LOG    ⚠️  Café le Petit Pont: No editorial summary available
+[2025-10-30T00:12:47.687Z] LOG    ⚠️  Brouillon Coffee: No editorial summary available
+[2025-10-30T00:12:47.692Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:12:47.704Z] LOG    ✅ Carpe Diem Café - Paris: Got description (97 chars)
+[2025-10-30T00:12:47.730Z] LOG    ⚠️  Café Tranquille: No editorial summary available
+[2025-10-30T00:12:47.754Z] LOG    ✅ Le Buci: Got description (99 chars)
+[2025-10-30T00:12:47.762Z] LOG    ⚠️  Cuvée Noire - St-Lazare - Coffee Shop: No editorial summary available
+[2025-10-30T00:12:47.768Z] LOG    ✅ Le Petit Café: Got description (97 chars)
+[2025-10-30T00:12:47.784Z] LOG    ⚠️  BKNK | Book Nook | Paris Coffee Shop: No editorial summary available
+[2025-10-30T00:12:47.822Z] LOG    ✅ Capitole Café: Got description (66 chars)
+[2025-10-30T00:12:47.826Z] LOG    ⚠️  Clode Coffee Shop: No editorial summary available
+[2025-10-30T00:12:47.827Z] LOG    ⚠️  Grace Café: No editorial summary available
+[2025-10-30T00:12:47.840Z] LOG    ⚠️  Café d’Auteur - Specialty Coffee shop & roaster: No editorial summary available
+[2025-10-30T00:12:47.853Z] LOG    ✅ Le Café Noir: Got description (98 chars)
+[2025-10-30T00:12:47.855Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1280ms
+[2025-10-30T00:12:47.856Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:12:47.857Z] LOG    ✅ Venue 1 (The Caféothèque of Paris): 4 alternatives
+[2025-10-30T00:12:47.857Z] LOG       1. Le Buci (3.9⭐)
+[2025-10-30T00:12:47.858Z] LOG       2. Café le Petit Pont (2.8⭐)
+[2025-10-30T00:12:47.859Z] LOG       3. Café Crème (4.1⭐)
+[2025-10-30T00:12:47.859Z] LOG    ✅ Venue 2 (Le Peloton Café): 4 alternatives
+[2025-10-30T00:12:47.860Z] LOG       1. Le Buci (3.9⭐)
+[2025-10-30T00:12:47.861Z] LOG       2. Café le Petit Pont (2.8⭐)
+[2025-10-30T00:12:47.861Z] LOG       3. Carpe Diem Café - Paris (4.4⭐)
+[2025-10-30T00:12:47.862Z] LOG    ✅ Venue 3 (Brouillon Coffee): 4 alternatives
+[2025-10-30T00:12:47.863Z] LOG       1. AndCo - Coffee Shop ☕️ (4.6⭐)
+[2025-10-30T00:12:47.863Z] LOG       2. Clove (4.8⭐)
+[2025-10-30T00:12:47.864Z] LOG       3. BlackBird Coffee (4.7⭐)
+[2025-10-30T00:12:47.865Z] LOG    ✅ Venue 4 (Café de Flore): 4 alternatives
+[2025-10-30T00:12:47.866Z] LOG       1. Le Buci (N/A⭐)
+[2025-10-30T00:12:47.866Z] LOG       2. Grace Café (N/A⭐)
+[2025-10-30T00:12:47.867Z] LOG       3. Le Café Noir (N/A⭐)
+[2025-10-30T00:12:47.868Z] LOG    ✅ Venue 5 (Clove): 4 alternatives
+[2025-10-30T00:12:47.868Z] LOG       1. AndCo - Coffee Shop ☕️ (4.6⭐)
+[2025-10-30T00:12:47.869Z] LOG       2. Brouillon Coffee (4.9⭐)
+[2025-10-30T00:12:47.870Z] LOG       3. BKNK | Book Nook | Paris Coffee Shop (4.5⭐)
+[2025-10-30T00:12:47.871Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T00:12:47.873Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T00:12:47.875Z] LOG    Primary venues: 5 stops
+[2025-10-30T00:12:47.877Z] LOG    ❌ Removed "Le Buci" - duplicate alternative
+[2025-10-30T00:12:47.878Z] LOG    ❌ Removed "Café le Petit Pont" - duplicate alternative
+[2025-10-30T00:12:47.879Z] LOG    🔧 Stop "ChIJy2DMU_1x5kcR9SBK...": 4 → 2 alternatives
+[2025-10-30T00:12:47.879Z] LOG    ❌ Removed "Clove" - already in primary route
+[2025-10-30T00:12:47.880Z] LOG    🔧 Stop "ChIJWbd6C_Nv5kcRw5fU...": 4 → 3 alternatives
+[2025-10-30T00:12:47.881Z] LOG    ❌ Removed "Le Buci" - duplicate alternative
+[2025-10-30T00:12:47.882Z] LOG    🔧 Stop "ChIJq537gddx5kcR_3Ph...": 4 → 3 alternatives
+[2025-10-30T00:12:47.883Z] LOG    ❌ Removed "AndCo - Coffee Shop ☕️" - duplicate alternative
+[2025-10-30T00:12:47.883Z] LOG    ❌ Removed "Brouillon Coffee" - already in primary route
+[2025-10-30T00:12:47.884Z] LOG    ❌ Removed "Café Tranquille" - duplicate alternative
+[2025-10-30T00:12:47.885Z] LOG    🔧 Stop "ChIJGR3TdqJv5kcRCtgk...": 4 → 1 alternatives
+[2025-10-30T00:12:47.886Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T00:12:47.886Z] LOG    Removed 2 venues already in route
+[2025-10-30T00:12:47.887Z] LOG    Removed 5 duplicate alternatives
+[2025-10-30T00:12:47.888Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T00:12:47.889Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T00:12:47.889Z] LOG    Primary venues: 5
+[2025-10-30T00:12:47.890Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T00:12:47.890Z] LOG    Execution time: 2339ms
+[2025-10-30T00:12:47.891Z] LOG 
+📋 Final alternatives:
+[2025-10-30T00:12:47.893Z] LOG    The Caféothèque of Paris: 4 alternatives
+[2025-10-30T00:12:47.894Z] LOG    Le Peloton Café: 2 alternatives
+[2025-10-30T00:12:47.896Z] LOG    Brouillon Coffee: 3 alternatives
+[2025-10-30T00:12:47.896Z] LOG    Café de Flore: 3 alternatives
+[2025-10-30T00:12:47.897Z] LOG    Clove: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

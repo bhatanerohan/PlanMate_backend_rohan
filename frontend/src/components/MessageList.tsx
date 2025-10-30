@@ -1,6 +1,6 @@
 // frontend/src/components/MessageList.tsx
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Message, Venue, Event } from '../types';
 
 // Render inline **bold** markers as <strong>
@@ -60,6 +60,57 @@ interface MessageListProps {
   currentItinerary?: CurrentItinerary | null;
 }
 
+// Dynamic loading component that cycles through messages
+const DynamicLoadingIndicator = () => {
+  const [currentStage, setCurrentStage] = useState(0);
+  
+  const stages = [
+    { text: 'Thinking...', icon: '🤔', duration: 6000 },
+    { text: 'Searching for best spots...', icon: '🔍', duration: 6000 },
+    { text: 'Fetching info...', icon: '📡', duration: 6000 },
+    { text: 'Summarizing...', icon: '📝', duration: null } // null means it stays until done
+  ];
+
+  useEffect(() => {
+    if (currentStage >= stages.length - 1) {
+      // Stay on the last stage
+      return;
+    }
+
+    const currentDuration = stages[currentStage].duration;
+    if (currentDuration === null) {
+      return; // Don't advance from the last stage
+    }
+
+    const timer = setTimeout(() => {
+      setCurrentStage(prev => Math.min(prev + 1, stages.length - 1));
+    }, currentDuration);
+
+    return () => clearTimeout(timer);
+  }, [currentStage]);
+
+  const stage = stages[currentStage];
+
+  return (
+    <div className="flex items-start gap-3">
+      <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center text-white">
+        🤖
+      </div>
+      <div className="flex-1 bg-[#081622] rounded-lg p-4 border border-[#0f2a3a]">
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+          <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+          <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+          <span className="text-sm text-gray-300 ml-2 flex items-center gap-2">
+            <span className="text-lg">{stage.icon}</span>
+            {stage.text}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const MessageList = ({ messages, isLoading, onMarkerSelect, currentItinerary }: MessageListProps) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   // Local alias to avoid issues with closure capture in JSX handlers
@@ -71,76 +122,6 @@ const MessageList = ({ messages, isLoading, onMarkerSelect, currentItinerary }: 
 
   return (
     <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-transparent" style={{ WebkitOverflowScrolling: 'touch' }}>
-      {currentItinerary && currentItinerary.venues.length > 0 && (
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-lg p-4 sticky top-0 z-10 shadow-sm">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-sm font-bold text-blue-900 flex items-center gap-2">
-              📍 Current Itinerary
-              <span className="text-xs font-normal text-blue-600">
-                ({currentItinerary.venues.length} stops)
-              </span>
-            </h3>
-            <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
-              {currentItinerary.mode === 'route' ? '🗺️ Route' : '🔍 Discovery'}
-            </span>
-          </div>
-          
-          <div className="space-y-2">
-            {currentItinerary.venues.map((venue, idx) => (
-              <div 
-                key={idx}
-                className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-blue-100"
-                onClick={() => {
-                  // If we have a current itinerary, map to primary marker ids
-                  if (_currentItinerary && _currentItinerary.venues && _currentItinerary.venues.length > 0) {
-                    const itinVenue = _currentItinerary.venues[idx];
-                    if (itinVenue && itinVenue.placeId === 'user-location') {
-                      onMarkerSelect('user-location');
-                    } else {
-                      // primary markers are named `primary-{index}` where index matches itinerary position
-                      onMarkerSelect(`primary-${idx}`);
-                    }
-                  } else {
-                    onMarkerSelect(`venue-${idx}`);
-                  }
-                }}
-              >
-                <div className="flex items-start gap-2">
-                  <div className="flex-shrink-0 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold">
-                    {idx + 1}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-gray-900 truncate">
-                      {venue.name}
-                    </p>
-                    <p className="text-xs text-gray-500 truncate">
-                      {venue.address}
-                    </p>
-                    {/* Distance to next stop (if available) */}
-                    {idx < currentItinerary.venues.length - 1 && currentItinerary.venues[idx + 1]?.location && venue.location && (
-                      <p className="text-xs text-gray-400 mt-1">{
-                        `➡️ ${formatDistanceKm(calculateDistanceKm(
-                          venue.location.lat,
-                          venue.location.lng,
-                          currentItinerary.venues[idx + 1].location.lat,
-                          currentItinerary.venues[idx + 1].location.lng
-                        ))} to next stop`
-                      }</p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-3 pt-3 border-t border-blue-200">
-            <p className="text-xs text-blue-700 italic">
-              💡 Try: "add a venue", "remove stop 2", "replace X with Y"
-            </p>
-          </div>
-        </div>
-      )}
-
       {messages.map((message) => (
         <MessageBubble 
           key={message.id} 
@@ -150,21 +131,7 @@ const MessageList = ({ messages, isLoading, onMarkerSelect, currentItinerary }: 
         />
       ))}
       
-      {isLoading && (
-        <div className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center text-white">
-            🤖
-          </div>
-          <div className="flex-1 bg-[#081622] rounded-lg p-4 border border-[#0f2a3a]">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-              <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-              <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
-              <span className="text-sm text-gray-300 ml-2">Thinking...</span>
-            </div>
-          </div>
-        </div>
-      )}
+      {isLoading && <DynamicLoadingIndicator />}
       
       <div ref={messagesEndRef} />
     </div>
@@ -335,11 +302,8 @@ const VenueCard = ({ venue, nextVenue, onShowOnMap }: { venue: Venue; nextVenue?
                           </svg>
                         </div>
                       </div>
-                      <div className="absolute bottom-1 right-1 bg-black bg-opacity-80 text-white text-[10px] px-1 rounded">
-                        {formatDuration(video.duration)}
-                      </div>
                     </div>
-                    <p className="text-[10px] text-gray-400 mt-1 line-clamp-2 leading-tight">
+                    <p className="text-xs text-gray-400 mt-1 line-clamp-2">
                       {video.title}
                     </p>
                   </a>
@@ -347,78 +311,59 @@ const VenueCard = ({ venue, nextVenue, onShowOnMap }: { venue: Venue; nextVenue?
               </div>
             </div>
           )}
-          {/* Distance to next stop when provided */}
+
           {nextVenue && nextVenue.location && venue.location && (
-            <div className="mt-3 text-xs text-gray-400">{
-              `➡️ ${formatDistanceKm(calculateDistanceKm(
+            <p className="text-xs text-gray-500 mt-2">
+              ➡️ {formatDistanceKm(calculateDistanceKm(
                 venue.location.lat,
                 venue.location.lng,
                 nextVenue.location.lat,
                 nextVenue.location.lng
-              ))} to next stop`
-            }</div>
+              ))} to next stop
+            </p>
           )}
         </div>
-        
-        <button
-          onClick={onShowOnMap}
-          className="ml-2 px-3 py-1 bg-primary-500 text-white text-xs rounded hover:bg-primary-600 transition-colors flex-shrink-0"
-        >
-          Map
-        </button>
       </div>
+
+      <button
+        onClick={onShowOnMap}
+        className="mt-2 w-full px-3 py-1.5 bg-primary-600 hover:bg-primary-700 text-white rounded-md text-xs font-medium transition-colors"
+      >
+        Show on Map
+      </button>
     </div>
   </div>
 );
 
-const formatDuration = (isoDuration: string): string => {
-  const match = isoDuration.match(/PT(?:(\d+)M)?(?:(\d+)S)?/);
-  if (!match) return '0s';
-  
-  const minutes = parseInt(match[1] || '0', 10);
-  const seconds = parseInt(match[2] || '0', 10);
-  
-  if (minutes > 0) {
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-  }
-  return `${seconds}s`;
-};
-
-const EventCard = ({ event, onShowOnMap }: { event: Event; onShowOnMap: () => void }) => {
-  const hasMultipleShowtimes = (event as any).showtimeCount > 1;
-  
-  return (
-    <div className="bg-[#071620] border border-[#0f2a3a] rounded-lg p-3 hover:shadow-md transition-shadow">
-      <div className="flex justify-between items-start">
-        <div className="flex-1">
-          <h4 className="font-semibold text-sm text-gray-100">
-            {event.name}
-            {hasMultipleShowtimes && (
-              <span className="ml-2 text-xs bg-primary-600 text-white px-2 py-0.5 rounded-full">
-                {(event as any).showtimeCount} shows
-              </span>
-            )}
-          </h4>
-          <p className="text-xs text-gray-400 mt-1">{event.venue.name}</p>
-          <div className="flex items-center gap-3 mt-2">
-            <span className="text-xs text-gray-600">📅 {event.date}</span>
-            {event.time && event.time !== 'Multiple showtimes' && (
-              <span className="text-xs text-gray-600">🕐 {event.time}</span>
-            )}
-            {event.priceRange && (
-              <span className="text-xs text-gray-600">💰 {event.priceRange}</span>
-            )}
+const EventCard = ({ event, onShowOnMap }: { event: Event; onShowOnMap: () => void }) => (
+  <div className="bg-[#071620] border border-[#0f2a3a] rounded-lg p-3 hover:shadow-md transition-shadow">
+    <div className="flex justify-between items-start gap-2">
+      <div className="flex-1">
+        <h4 className="font-bold text-sm text-gray-100">{event.name}</h4>
+        <p className="text-xs text-gray-400 mt-1">{event.address}</p>
+        
+        {event.description && (
+          <p className="text-xs text-gray-300 mt-2 line-clamp-2">
+            {event.description}
+          </p>
+        )}
+        
+        {event.dateTime && (
+          <div className="flex items-center gap-2 mt-2 text-xs text-gray-400">
+            <span>📅 {new Date(event.dateTime).toLocaleDateString()}</span>
+            <span>🕒 {new Date(event.dateTime).toLocaleTimeString()}</span>
           </div>
-        </div>
-        <button
-          onClick={onShowOnMap}
-          className="ml-2 px-3 py-1 bg-primary-500 text-white text-xs rounded hover:bg-primary-600 transition-colors"
-        >
-          Map
-        </button>
+        )}
       </div>
     </div>
-  );
-};
+
+    <button
+      onClick={onShowOnMap}
+      className="mt-2 w-full px-3 py-1.5 bg-primary-600 hover:bg-primary-700 text-white rounded-md text-xs font-medium transition-colors"
+    >
+      Show on Map
+    </button>
+  </div>
+);
 
 export default MessageList;

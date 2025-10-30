@@ -1,0 +1,150 @@
+User Prompt: plan a day in london
+
+[2025-10-30T00:29:09.412Z] LOG 📍 Using fallback location (no user location): East London (Tower Hill)
+[2025-10-30T00:29:09.413Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T00:29:09.413Z] LOG    1. "Tower of London" in "East London (Tower Hill)"
+[2025-10-30T00:29:09.414Z] LOG    2. "Borough Market" in "Southwark (near London Bridge)"
+[2025-10-30T00:29:09.414Z] LOG    3. "The British Museum" in "Bloomsbury"
+[2025-10-30T00:29:09.414Z] LOG    4. "Westminster Abbey" in "Westminster"
+[2025-10-30T00:29:09.415Z] LOG    5. "Chez Antoinette Victoria" in "Victoria (near Westminster)"
+[2025-10-30T00:29:09.415Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T00:29:09.416Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:29:09.417Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T00:29:09.418Z] LOG    1. Searching "Tower of London" in "East London (Tower Hill)"
+[2025-10-30T00:29:09.419Z] LOG 🔍 [Google Places] Text search: "Tower of London" in East London (Tower Hill)
+[2025-10-30T00:29:09.430Z] LOG    2. Searching "Borough Market" in "Southwark (near London Bridge)"
+[2025-10-30T00:29:09.431Z] LOG 🔍 [Google Places] Text search: "Borough Market" in Southwark (near London Bridge)
+[2025-10-30T00:29:09.433Z] LOG    3. Searching "The British Museum" in "Bloomsbury"
+[2025-10-30T00:29:09.434Z] LOG 🔍 [Google Places] Text search: "The British Museum" in Bloomsbury
+[2025-10-30T00:29:09.438Z] LOG    4. Searching "Westminster Abbey" in "Westminster"
+[2025-10-30T00:29:09.439Z] LOG 🔍 [Google Places] Text search: "Westminster Abbey" in Westminster
+[2025-10-30T00:29:09.448Z] LOG    5. Searching "Chez Antoinette Victoria" in "Victoria (near Westminster)"
+[2025-10-30T00:29:09.452Z] LOG 🔍 [Google Places] Text search: "Chez Antoinette Victoria" in Victoria (near Westminster)
+[2025-10-30T00:29:09.992Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:29:10.013Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:29:10.024Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:29:10.062Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:29:10.184Z] LOG    ✅ Westminster Abbey: Got description (92 chars)
+[2025-10-30T00:29:10.187Z] LOG ✅ Found 1 places
+[2025-10-30T00:29:10.191Z] LOG    ✅ Borough Market: Got description (97 chars)
+[2025-10-30T00:29:10.191Z] LOG ✅ Found 1 places
+[2025-10-30T00:29:10.203Z] LOG    ✅ Tower of London: Got description (97 chars)
+[2025-10-30T00:29:10.204Z] LOG ✅ Found 1 places
+[2025-10-30T00:29:10.243Z] LOG    ✅ Chez Antoinette Victoria: Got description (94 chars)
+[2025-10-30T00:29:10.245Z] LOG ✅ Found 1 places
+[2025-10-30T00:29:10.289Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T00:29:10.461Z] LOG    ✅ The British Museum: Got description (94 chars)
+[2025-10-30T00:29:10.462Z] LOG ✅ Found 1 places
+[2025-10-30T00:29:10.463Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1046ms
+[2025-10-30T00:29:10.463Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:29:10.464Z] LOG    Tool execution result: success=true
+[2025-10-30T00:29:10.464Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T00:29:10.465Z] LOG    ✅ Merged: Tower of London
+[2025-10-30T00:29:10.466Z] LOG       Places placeId: ChIJ3TgfM0kDdkgRZ2TV4d1Jv6g
+[2025-10-30T00:29:10.466Z] LOG       Gemini description: Step back in time at this historic castle, a UNESCO World He...
+[2025-10-30T00:29:10.467Z] LOG    ✅ Merged: Borough Market
+[2025-10-30T00:29:10.467Z] LOG       Places placeId: ChIJD2bPdVcDdkgRuUSgnOXnKDE
+[2025-10-30T00:29:10.467Z] LOG       Gemini description: Indulge in a culinary adventure at London's oldest and most ...
+[2025-10-30T00:29:10.468Z] LOG    ✅ Merged: The British Museum
+[2025-10-30T00:29:10.468Z] LOG       Places placeId: ChIJB9OTMDIbdkgRp0JWbQGZsS8
+[2025-10-30T00:29:10.468Z] LOG       Gemini description: Home to a vast collection of world art and artifacts, the Br...
+[2025-10-30T00:29:10.469Z] LOG    ✅ Merged: Westminster Abbey
+[2025-10-30T00:29:10.469Z] LOG       Places placeId: ChIJLzVDusQEdkgRelObBaL_jto
+[2025-10-30T00:29:10.469Z] LOG       Gemini description: Discover this magnificent Gothic abbey, a site of royal coro...
+[2025-10-30T00:29:10.469Z] LOG    ✅ Merged: Chez Antoinette Victoria
+[2025-10-30T00:29:10.470Z] LOG       Places placeId: ChIJ-SetlWEFdkgRfEt3-moto_4
+[2025-10-30T00:29:10.470Z] LOG       Gemini description: Enjoy a delightful French dining experience at this highly-r...
+[2025-10-30T00:29:10.470Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T00:29:10.470Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T00:29:10.471Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T00:29:10.471Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T00:29:10.471Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T00:29:10.472Z] LOG    1. Searching "landmark" in "51.50811239999999,-0.0759493"
+[2025-10-30T00:29:10.472Z] LOG    📍 Using nearbySearch at coordinates (51.50811239999999, -0.0759493)
+[2025-10-30T00:29:10.472Z] LOG 🔍 [Google Places] Nearby search at (51.50811239999999, -0.0759493)
+[2025-10-30T00:29:10.473Z] LOG    2. Searching "market" in "51.5055826,-0.09048080000000001"
+[2025-10-30T00:29:10.474Z] LOG    📍 Using nearbySearch at coordinates (51.5055826, -0.09048080000000001)
+[2025-10-30T00:29:10.474Z] LOG 🔍 [Google Places] Nearby search at (51.5055826, -0.09048080000000001)
+[2025-10-30T00:29:10.475Z] LOG    3. Searching "museum" in "51.5194133,-0.1269566"
+[2025-10-30T00:29:10.476Z] LOG    📍 Using nearbySearch at coordinates (51.5194133, -0.1269566)
+[2025-10-30T00:29:10.476Z] LOG 🔍 [Google Places] Nearby search at (51.5194133, -0.1269566)
+[2025-10-30T00:29:10.477Z] LOG    4. Searching "landmark" in "51.4993695,-0.1272993"
+[2025-10-30T00:29:10.477Z] LOG    📍 Using nearbySearch at coordinates (51.4993695, -0.1272993)
+[2025-10-30T00:29:10.478Z] LOG 🔍 [Google Places] Nearby search at (51.4993695, -0.1272993)
+[2025-10-30T00:29:10.480Z] LOG    5. Searching "restaurant" in "51.4982576,-0.1354101"
+[2025-10-30T00:29:10.481Z] LOG    📍 Using nearbySearch at coordinates (51.4982576, -0.1354101)
+[2025-10-30T00:29:10.482Z] LOG 🔍 [Google Places] Nearby search at (51.4982576, -0.1354101)
+[2025-10-30T00:29:11.047Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:29:11.191Z] LOG    ✅ The British Museum: Got description (94 chars)
+[2025-10-30T00:29:11.194Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:29:11.234Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:29:11.242Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T00:29:11.253Z] LOG    ✅ The National Gallery: Got description (97 chars)
+[2025-10-30T00:29:11.285Z] LOG    ✅ Somerset House: Got description (100 chars)
+[2025-10-30T00:29:11.309Z] LOG    ⚠️  Twist Museum: No editorial summary available
+[2025-10-30T00:29:11.363Z] LOG    ✅ Giraffe: Got description (90 chars)
+[2025-10-30T00:29:11.364Z] LOG    ⚠️  The Postal Museum: No editorial summary available
+[2025-10-30T00:29:11.376Z] LOG    ✅ Mezemiso: Got description (97 chars)
+[2025-10-30T00:29:11.399Z] LOG    ✅ Buckingham Palace: Got description (98 chars)
+[2025-10-30T00:29:11.407Z] LOG    ✅ VyTA Restaurant & Laki Kane Lounge, Covent Garden: Got description (100 chars)
+[2025-10-30T00:29:11.419Z] LOG    ⚠️  St James Super Market London: No editorial summary available
+[2025-10-30T00:29:11.444Z] LOG    ⚠️  Strings - Italian & Spanish Restaurant - Guitar Live Music: No editorial summary available
+[2025-10-30T00:29:11.447Z] LOG    ⚠️  Piccadilly Lights: No editorial summary available
+[2025-10-30T00:29:11.454Z] LOG    ✅ Bon Gusto: Got description (98 chars)
+[2025-10-30T00:29:11.458Z] LOG    ⚠️  Canada Gate: No editorial summary available
+[2025-10-30T00:29:11.464Z] LOG    ⚠️  County Hall: No editorial summary available
+[2025-10-30T00:29:11.466Z] LOG    ⚠️  TOOTYFRUITY BASKET AND BOX LIMITED: No editorial summary available
+[2025-10-30T00:29:11.475Z] LOG    ⚠️  Statue: George Washington: No editorial summary available
+[2025-10-30T00:29:11.477Z] LOG    ⚠️  Tian Tian Market 天天超市 - Aldgate: No editorial summary available
+[2025-10-30T00:29:11.502Z] LOG    ⚠️  Am2Pm Convenience: No editorial summary available
+[2025-10-30T00:29:11.554Z] LOG    ⚠️  Borough Market (Gourmet Food Hall): No editorial summary available
+[2025-10-30T00:29:11.557Z] LOG ✅ Batch complete: 5/5 searches succeeded, 20 total venues found in 1086ms
+[2025-10-30T00:29:11.559Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T00:29:11.561Z] LOG    ⚠️ No alternatives found for venue 1
+[2025-10-30T00:29:11.561Z] LOG    ✅ Venue 2 (Borough Market): 4 alternatives
+[2025-10-30T00:29:11.562Z] LOG       1. St James Super Market London (4.4⭐)
+[2025-10-30T00:29:11.562Z] LOG       2. Am2Pm Convenience (3.7⭐)
+[2025-10-30T00:29:11.563Z] LOG       3. Borough Market (Gourmet Food Hall) (4.4⭐)
+[2025-10-30T00:29:11.563Z] LOG    ✅ Venue 3 (The British Museum): 4 alternatives
+[2025-10-30T00:29:11.563Z] LOG       1. The National Gallery (4.8⭐)
+[2025-10-30T00:29:11.564Z] LOG       2. Twist Museum (4.5⭐)
+[2025-10-30T00:29:11.564Z] LOG       3. Somerset House (4.4⭐)
+[2025-10-30T00:29:11.564Z] LOG    ✅ Venue 4 (Westminster Abbey): 4 alternatives
+[2025-10-30T00:29:11.565Z] LOG       1. Buckingham Palace (4.5⭐)
+[2025-10-30T00:29:11.565Z] LOG       2. Statue: George Washington (4.6⭐)
+[2025-10-30T00:29:11.565Z] LOG       3. Canada Gate (4.7⭐)
+[2025-10-30T00:29:11.566Z] LOG    ✅ Venue 5 (Chez Antoinette Victoria): 4 alternatives
+[2025-10-30T00:29:11.567Z] LOG       1. Giraffe (4.2⭐)
+[2025-10-30T00:29:11.567Z] LOG       2. VyTA Restaurant & Laki Kane Lounge, Covent Garden (4.4⭐)
+[2025-10-30T00:29:11.568Z] LOG       3. Mezemiso (4.4⭐)
+[2025-10-30T00:29:11.568Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-30T00:29:11.570Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T00:29:11.570Z] LOG    Primary venues: 5 stops
+[2025-10-30T00:29:11.571Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T00:29:11.571Z] LOG    Removed 0 venues already in route
+[2025-10-30T00:29:11.571Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T00:29:11.572Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T00:29:11.572Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T00:29:11.573Z] LOG    Primary venues: 5
+[2025-10-30T00:29:11.573Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T00:29:11.573Z] LOG    Execution time: 2162ms
+[2025-10-30T00:29:11.574Z] LOG 
+📋 Final alternatives:
+[2025-10-30T00:29:11.574Z] LOG    Borough Market: 4 alternatives
+[2025-10-30T00:29:11.575Z] LOG    The British Museum: 4 alternatives
+[2025-10-30T00:29:11.575Z] LOG    Westminster Abbey: 4 alternatives
+[2025-10-30T00:29:11.575Z] LOG    Chez Antoinette Victoria: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

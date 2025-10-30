@@ -1,0 +1,189 @@
+User Prompt: plan a day near me
+
+[2025-10-29T18:29:49.719Z] LOG 📍 Using extracted city from user location: Balearic Islands
+[2025-10-29T18:29:49.719Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-29T18:29:49.720Z] LOG    1. "NOMAD BRUNCH & COFFEE IBIZA" in "Eivissa town center"
+[2025-10-29T18:29:49.721Z] LOG    2. "Portal de ses Taules" in "Dalt Vila"
+[2025-10-29T18:29:49.721Z] LOG    3. "Castle of Ibiza" in "Dalt Vila"
+[2025-10-29T18:29:49.722Z] LOG    4. "Bonito Tapas Bar" in "Plaça de Vila, Dalt Vila"
+[2025-10-29T18:29:49.723Z] LOG    5. "Eivissa Harbour" in "Eivissa waterfront"
+[2025-10-29T18:29:49.723Z] LOG    6. "Bianca & Friends" in "Near Eivissa Harbour"
+[2025-10-29T18:29:49.723Z] LOG 
+🔍 Executing batch search for 6 venues...
+[2025-10-29T18:29:49.724Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T18:29:49.724Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2025-10-29T18:29:49.724Z] LOG    1. Searching "NOMAD BRUNCH & COFFEE IBIZA" in "Eivissa town center"
+[2025-10-29T18:29:49.725Z] LOG 🔍 [Google Places] Text search: "NOMAD BRUNCH & COFFEE IBIZA" in Eivissa town center
+[2025-10-29T18:29:49.727Z] LOG    2. Searching "Portal de ses Taules" in "Dalt Vila"
+[2025-10-29T18:29:49.727Z] LOG 🔍 [Google Places] Text search: "Portal de ses Taules" in Dalt Vila
+[2025-10-29T18:29:49.729Z] LOG    3. Searching "Castle of Ibiza" in "Dalt Vila"
+[2025-10-29T18:29:49.729Z] LOG 🔍 [Google Places] Text search: "Castle of Ibiza" in Dalt Vila
+[2025-10-29T18:29:49.730Z] LOG    4. Searching "Bonito Tapas Bar" in "Plaça de Vila, Dalt Vila"
+[2025-10-29T18:29:49.731Z] LOG 🔍 [Google Places] Text search: "Bonito Tapas Bar" in Plaça de Vila, Dalt Vila
+[2025-10-29T18:29:49.734Z] LOG    5. Searching "Eivissa Harbour" in "Eivissa waterfront"
+[2025-10-29T18:29:49.735Z] LOG 🔍 [Google Places] Text search: "Eivissa Harbour" in Eivissa waterfront
+[2025-10-29T18:29:49.744Z] LOG    6. Searching "Bianca & Friends" in "Near Eivissa Harbour"
+[2025-10-29T18:29:49.746Z] LOG 🔍 [Google Places] Text search: "Bianca & Friends" in Near Eivissa Harbour
+[2025-10-29T18:29:50.283Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:29:50.311Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:29:50.413Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:29:50.429Z] LOG    ⚠️  Bianca & Friends: No editorial summary available
+[2025-10-29T18:29:50.430Z] LOG ✅ Found 1 places
+[2025-10-29T18:29:50.431Z] LOG    ✅ Eivissa Harbour: Got description (90 chars)
+[2025-10-29T18:29:50.432Z] LOG ✅ Found 1 places
+[2025-10-29T18:29:50.535Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:29:50.541Z] LOG    ✅ Portal de ses Taules: Got description (89 chars)
+[2025-10-29T18:29:50.542Z] LOG ✅ Found 1 places
+[2025-10-29T18:29:50.588Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:29:50.597Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-29T18:29:50.689Z] LOG    ⚠️  NOMAD BRUNCH & COFFEE IBIZA: No editorial summary available
+[2025-10-29T18:29:50.690Z] LOG ✅ Found 1 places
+[2025-10-29T18:29:50.733Z] LOG    ⚠️  Bonito Tapas Bar: No editorial summary available
+[2025-10-29T18:29:50.734Z] LOG ✅ Found 1 places
+[2025-10-29T18:29:50.738Z] LOG    ✅ Castle of Ibiza: Got description (100 chars)
+[2025-10-29T18:29:50.738Z] LOG ✅ Found 1 places
+[2025-10-29T18:29:50.739Z] LOG ✅ Batch complete: 6/6 searches succeeded, 6 total venues found in 1015ms
+[2025-10-29T18:29:50.739Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T18:29:50.740Z] LOG    Tool execution result: success=true
+[2025-10-29T18:29:50.740Z] LOG    ✅ Tool returned 6 search results
+[2025-10-29T18:29:50.741Z] LOG    ✅ Merged: NOMAD BRUNCH & COFFEE IBIZA
+[2025-10-29T18:29:50.741Z] LOG       Places placeId: ChIJ4e7k9SZHmRIRcZGYVPzCwxE
+[2025-10-29T18:29:50.741Z] LOG       Gemini description: Start your day with a delightful brunch or a fresh cup of co...
+[2025-10-29T18:29:50.742Z] LOG    ✅ Merged: Portal de ses Taules
+[2025-10-29T18:29:50.742Z] LOG       Places placeId: ChIJOfuyqbFGmRIR7TB8N1d_r4E
+[2025-10-29T18:29:50.742Z] LOG       Gemini description: Step through this grand arched gate, the main entrance to Da...
+[2025-10-29T18:29:50.743Z] LOG    ✅ Merged: Castle of Ibiza
+[2025-10-29T18:29:50.743Z] LOG       Places placeId: ChIJvwbPqbFGmRIRkMtWbQIVzBw
+[2025-10-29T18:29:50.743Z] LOG       Gemini description: Ascend to the Castle of Ibiza for breathtaking panoramic vie...
+[2025-10-29T18:29:50.744Z] LOG    ✅ Merged: Bonito Tapas Bar
+[2025-10-29T18:29:50.744Z] LOG       Places placeId: ChIJcdzC-wNHmRIRYpiFEwSMxKM
+[2025-10-29T18:29:50.744Z] LOG       Gemini description: Enjoy a traditional Spanish lunch at this charming tapas bar...
+[2025-10-29T18:29:50.745Z] LOG    ✅ Merged: Eivissa Harbour
+[2025-10-29T18:29:50.745Z] LOG       Places placeId: ChIJgfBZQrdGmRIRL9y9eINrUfI
+[2025-10-29T18:29:50.746Z] LOG       Gemini description: After exploring Dalt Vila, take a leisurely stroll along Eiv...
+[2025-10-29T18:29:50.746Z] LOG    ✅ Merged: Bianca & Friends
+[2025-10-29T18:29:50.746Z] LOG       Places placeId: ChIJ5YHCumZHmRIR1rCzZj3PwvM
+[2025-10-29T18:29:50.747Z] LOG       Gemini description: Cap off your day with drinks at Bianca & Friends, a highly-r...
+[2025-10-29T18:29:50.747Z] LOG ✅ Phase 1 complete: Found 6/6 exact venues
+[2025-10-29T18:29:50.747Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-29T18:29:50.748Z] LOG    Searching for alternatives near 6 venues...
+[2025-10-29T18:29:50.748Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-29T18:29:50.749Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2025-10-29T18:29:50.750Z] LOG    1. Searching "cafe" in "38.9068493,1.4231358"
+[2025-10-29T18:29:50.751Z] LOG    📍 Using nearbySearch at coordinates (38.9068493, 1.4231358)
+[2025-10-29T18:29:50.752Z] LOG 🔍 [Google Places] Nearby search at (38.9068493, 1.4231358)
+[2025-10-29T18:29:50.754Z] LOG    2. Searching "landmark" in "38.9082799,1.4366619"
+[2025-10-29T18:29:50.754Z] LOG    📍 Using nearbySearch at coordinates (38.9082799, 1.4366619)
+[2025-10-29T18:29:50.754Z] LOG 🔍 [Google Places] Nearby search at (38.9082799, 1.4366619)
+[2025-10-29T18:29:50.755Z] LOG    3. Searching "landmark" in "38.9067529,1.4366502"
+[2025-10-29T18:29:50.756Z] LOG    📍 Using nearbySearch at coordinates (38.9067529, 1.4366502)
+[2025-10-29T18:29:50.756Z] LOG 🔍 [Google Places] Nearby search at (38.9067529, 1.4366502)
+[2025-10-29T18:29:50.758Z] LOG    4. Searching "restaurant" in "38.908266,1.4356089"
+[2025-10-29T18:29:50.759Z] LOG    📍 Using nearbySearch at coordinates (38.908266, 1.4356089)
+[2025-10-29T18:29:50.760Z] LOG 🔍 [Google Places] Nearby search at (38.908266, 1.4356089)
+[2025-10-29T18:29:50.762Z] LOG    5. Searching "marina" in "38.9106115,1.4376852"
+[2025-10-29T18:29:50.763Z] LOG    📍 Using nearbySearch at coordinates (38.9106115, 1.4376852)
+[2025-10-29T18:29:50.764Z] LOG 🔍 [Google Places] Nearby search at (38.9106115, 1.4376852)
+[2025-10-29T18:29:50.764Z] LOG    6. Searching "bar" in "38.9092173,1.4395241"
+[2025-10-29T18:29:50.765Z] LOG    📍 Using nearbySearch at coordinates (38.9092173, 1.4395241)
+[2025-10-29T18:29:50.765Z] LOG 🔍 [Google Places] Nearby search at (38.9092173, 1.4395241)
+[2025-10-29T18:29:51.302Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:29:51.344Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:29:51.373Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:29:51.436Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:29:51.447Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:29:51.468Z] LOG    ⚠️  Baluard de Sant Pere: No editorial summary available
+[2025-10-29T18:29:51.480Z] LOG    ⚠️  Jungle Cocktail Bar Eivissa: No editorial summary available
+[2025-10-29T18:29:51.508Z] LOG    ⚠️  Chic Fusion Food Ibiza: No editorial summary available
+[2025-10-29T18:29:51.509Z] LOG    ⚠️  Café Montesol & Rooftop Bar: No editorial summary available
+[2025-10-29T18:29:51.519Z] LOG    ⚠️  Little Ibiza Restaurant and Bar: No editorial summary available
+[2025-10-29T18:29:51.524Z] LOG    ⚠️  Baluard de Sant Joan: No editorial summary available
+[2025-10-29T18:29:51.530Z] LOG    ⚠️  Baluard de Sant Pere: No editorial summary available
+[2025-10-29T18:29:51.533Z] LOG    ⚠️  Dalt Vila: No editorial summary available
+[2025-10-29T18:29:51.539Z] LOG    ⚠️  Sa Capelleta: No editorial summary available
+[2025-10-29T18:29:51.545Z] LOG    ⚠️  El Santo Bar: No editorial summary available
+[2025-10-29T18:29:51.546Z] LOG    ⚠️  Desnivell d'Orió: No editorial summary available
+[2025-10-29T18:29:51.561Z] LOG    ⚠️  Baluard de Sant Joan: No editorial summary available
+[2025-10-29T18:29:51.570Z] LOG    ✅ La Oliva: Got description (100 chars)
+[2025-10-29T18:29:51.572Z] LOG    ⚠️  Dalt Vila: No editorial summary available
+[2025-10-29T18:29:51.578Z] LOG    ⚠️  Desnivell d'Orió: No editorial summary available
+[2025-10-29T18:29:51.579Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-29T18:29:51.584Z] LOG    ⚠️  Sa Capelleta: No editorial summary available
+[2025-10-29T18:29:51.632Z] LOG    ✅ Passion Marina: Got description (94 chars)
+[2025-10-29T18:29:51.637Z] LOG    ⚠️  Cappuccino Marina Eivissa: No editorial summary available
+[2025-10-29T18:29:51.638Z] LOG    ⚠️  Marina Eivissa: No editorial summary available
+[2025-10-29T18:29:51.639Z] LOG    ⚠️  NOMAD BRUNCH & COFFEE IBIZA: No editorial summary available
+[2025-10-29T18:29:51.640Z] LOG    ⚠️  Cremat Beach Ibiza: No editorial summary available
+[2025-10-29T18:29:51.641Z] LOG    ⚠️  Restaurante Trattoria del Mar: No editorial summary available
+[2025-10-29T18:29:51.642Z] LOG    ✅ Calma: Got description (95 chars)
+[2025-10-29T18:29:51.643Z] LOG    ⚠️  Café Montesol & Rooftop Bar: No editorial summary available
+[2025-10-29T18:29:51.648Z] LOG    ⚠️  City Boat: No editorial summary available
+[2025-10-29T18:29:51.665Z] LOG    ⚠️  Botafoc Ibiza: No editorial summary available
+[2025-10-29T18:29:51.667Z] LOG    ⚠️  De Vila Restaurante: No editorial summary available
+[2025-10-29T18:29:51.706Z] LOG    ⚠️  Can Kiwi: No editorial summary available
+[2025-10-29T18:29:51.716Z] LOG    ⚠️  Vila Cafè: No editorial summary available
+[2025-10-29T18:29:51.759Z] LOG    ⚠️  Coolture Café Ibiza: No editorial summary available
+[2025-10-29T18:29:51.761Z] LOG ✅ Batch complete: 6/6 searches succeeded, 30 total venues found in 1012ms
+[2025-10-29T18:29:51.762Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-29T18:29:51.763Z] LOG    ✅ Venue 1 (NOMAD BRUNCH & COFFEE IBIZA): 4 alternatives
+[2025-10-29T18:29:51.765Z] LOG       1. Coolture Café Ibiza (4.5⭐)
+[2025-10-29T18:29:51.765Z] LOG       2. Can Kiwi (4.6⭐)
+[2025-10-29T18:29:51.766Z] LOG       3. Vila Cafè (4.3⭐)
+[2025-10-29T18:29:51.766Z] LOG    ✅ Venue 2 (Portal de ses Taules): 4 alternatives
+[2025-10-29T18:29:51.767Z] LOG       1. Baluard de Sant Pere (4.6⭐)
+[2025-10-29T18:29:51.767Z] LOG       2. Dalt Vila (4.8⭐)
+[2025-10-29T18:29:51.767Z] LOG       3. Baluard de Sant Joan (4.3⭐)
+[2025-10-29T18:29:51.768Z] LOG    ✅ Venue 3 (Castle of Ibiza): 4 alternatives
+[2025-10-29T18:29:51.768Z] LOG       1. Baluard de Sant Pere (4.6⭐)
+[2025-10-29T18:29:51.768Z] LOG       2. Dalt Vila (4.8⭐)
+[2025-10-29T18:29:51.769Z] LOG       3. Baluard de Sant Joan (4.3⭐)
+[2025-10-29T18:29:51.769Z] LOG    ✅ Venue 4 (Bonito Tapas Bar): 4 alternatives
+[2025-10-29T18:29:51.770Z] LOG       1. La Oliva (4.1⭐)
+[2025-10-29T18:29:51.770Z] LOG       2. Calma (4.4⭐)
+[2025-10-29T18:29:51.770Z] LOG       3. De Vila Restaurante (4.5⭐)
+[2025-10-29T18:29:51.771Z] LOG    ✅ Venue 5 (Eivissa Harbour): 4 alternatives
+[2025-10-29T18:29:51.772Z] LOG       1. Cappuccino Marina Eivissa (4.2⭐)
+[2025-10-29T18:29:51.773Z] LOG       2. Marina Eivissa (4.5⭐)
+[2025-10-29T18:29:51.774Z] LOG       3. Passion Marina (3.9⭐)
+[2025-10-29T18:29:51.775Z] LOG    ✅ Venue 6 (Bianca & Friends): 4 alternatives
+[2025-10-29T18:29:51.775Z] LOG       1. Jungle Cocktail Bar Eivissa (5⭐)
+[2025-10-29T18:29:51.775Z] LOG       2. Chic Fusion Food Ibiza (4.7⭐)
+[2025-10-29T18:29:51.776Z] LOG       3. Café Montesol & Rooftop Bar (4⭐)
+[2025-10-29T18:29:51.776Z] LOG 
+📦 Phase 2 complete: 6 stops with alternatives
+[2025-10-29T18:29:51.777Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-29T18:29:51.777Z] LOG    Primary venues: 6 stops
+[2025-10-29T18:29:51.777Z] LOG    ❌ Removed "Baluard de Sant Pere" - duplicate alternative
+[2025-10-29T18:29:51.778Z] LOG    ❌ Removed "Dalt Vila" - duplicate alternative
+[2025-10-29T18:29:51.778Z] LOG    ❌ Removed "Baluard de Sant Joan" - duplicate alternative
+[2025-10-29T18:29:51.778Z] LOG    ❌ Removed "Sa Capelleta" - duplicate alternative
+[2025-10-29T18:29:51.778Z] LOG    🔧 Stop "ChIJvwbPqbFGmRIRkMtW...": 4 → 0 alternatives
+[2025-10-29T18:29:51.779Z] LOG    ❌ Removed "Café Montesol & Rooftop Bar" - duplicate alternative
+[2025-10-29T18:29:51.779Z] LOG    🔧 Stop "ChIJ5YHCumZHmRIR1rCz...": 4 → 3 alternatives
+[2025-10-29T18:29:51.779Z] LOG 
+✅ Cleaning complete:
+[2025-10-29T18:29:51.780Z] LOG    Removed 0 venues already in route
+[2025-10-29T18:29:51.780Z] LOG    Removed 5 duplicate alternatives
+[2025-10-29T18:29:51.781Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-29T18:29:51.782Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-29T18:29:51.782Z] LOG    Primary venues: 6
+[2025-10-29T18:29:51.783Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-29T18:29:51.783Z] LOG    Execution time: 2064ms
+[2025-10-29T18:29:51.783Z] LOG 
+📋 Final alternatives:
+[2025-10-29T18:29:51.784Z] LOG    NOMAD BRUNCH & COFFEE IBIZA: 4 alternatives
+[2025-10-29T18:29:51.784Z] LOG    Portal de ses Taules: 4 alternatives
+[2025-10-29T18:29:51.784Z] LOG    Bonito Tapas Bar: 4 alternatives
+[2025-10-29T18:29:51.785Z] LOG    Eivissa Harbour: 4 alternatives
+[2025-10-29T18:29:51.785Z] LOG    Bianca & Friends: 3 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 6
+Alternatives: 5

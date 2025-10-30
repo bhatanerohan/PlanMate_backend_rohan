@@ -1,0 +1,238 @@
+User Prompt: plan a day near me
+
+[2025-10-29T18:29:18.680Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-29T18:29:18.681Z] LOG 📝 User prompt: "plan a day near me"
+[2025-10-29T18:29:18.681Z] LOG 📍 User location: Eivissa, Balearic Islands, Spain (38.90902, 1.433561)
+[2025-10-29T18:29:18.681Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-29T18:29:18.682Z] LOG 🗺️ Location context configured: (38.90902, 1.433561)
+[2025-10-29T18:29:49.577Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Wed, 29 Oct 2025 18:29:49 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=30800","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"Here's a full-day plan to explore the charming town of Eivissa (Ibiza), focusing on its historic Dalt Vila and vibrant harbor, perfect for a district-scale adventure with a mix of walking and local charm.\n\n"},{"text":"```json\n{\n  \"plan\": {\n    \"type\": \"Eivissa Dalt Vila & Harbour Exploration\",\n    \"total_stops\": 6,\n    \"estimated_duration\": \"Full day (8-10 hours)\",\n    \"travel_mode\": \"walking + transit\",\n    \"theme\": \"Historic exploration, culinary delights, and lively evening ambiance\",\n    \"scale\": \"district\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"NOMAD BRUNCH & COFFEE IBIZA\",\n      \"description\": \"Start your day with a delightful brunch or a fresh cup of coffee at this highly-rated spot. Known for its excellent service and vibrant atmosphere, it's a perfect place to energize before exploring.\",\n      \"category\": \"cafe\",\n      \"reasoning\": \"Excellent ratings and suitable for starting the day with coffee/brunch before heading to Dalt Vila.\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Customers love the delicious brunch, great coffee, and friendly staff. Many highlight the pleasant outdoor seating and the overall relaxed vibe.\",\n      \"general_location\": \"Eivissa town center\"\n    },\n    {\n      \"name\": \"Portal de ses Taules\",\n      \"description\": \"Step through this grand arched gate, the main entrance to Dalt Vila, Ibiza's fortified old town. It's a majestic starting point for your journey into history, with ancient walls and defensive structures surrounding you.\",\n      \"category\": \"landmark\",\n      \"reasoning\": \"The iconic entry point to Dalt Vila, setting the tone for historical exploration.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Visitors appreciate the historical significance and impressive architecture. It's often described as a must-see for its commanding presence and the gateway to the old city.\",\n      \"general_location\": \"Dalt Vila\"\n    },\n    {\n      \"name\": \"Castle of Ibiza\",\n      \"description\": \"Ascend to the Castle of Ibiza for breathtaking panoramic views of the town, harbor, and the Mediterranean Sea. Wander through its medieval fortifications and narrow laneways, soaking in centuries of history. [0]\",\n      \"category\": \"landmark\",\n      \"reasoning\": \"Offers significant historical context and unparalleled views of Eivissa, a key highlight of Dalt Vila.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Reviewers consistently praise the stunning views and the historical ambiance. It's a challenging but rewarding climb, offering fantastic photo opportunities. [0]\",\n      \"general_location\": \"Dalt Vila\"\n    },\n    {\n      \"name\": \"Bonito Tapas Bar\",\n      \"description\": \"Enjoy a traditional Spanish lunch at this charming tapas bar located in the heart of Dalt Vila. It offers a selection of classic tapas in a lovely setting, perfect for a mid-day meal after your explorations.\",\n      \"category\": \"restaurant\",\n      \"reasoning\": \"A highly-rated restaurant within Dalt Vila, offering a local culinary experience for lunch.\",\n      \"rating\": 4.2,\n      \"reviewsSummary\": \"Guests enjoy the authentic tapas, pleasant outdoor seating, and the excellent location for people-watching in the plaza. [13]\",\n      \"general_location\": \"Plaça de Vila, Dalt Vila\"\n    },\n    {\n      \"name\": \"Eivissa Harbour\",\n      \"description\": \"After exploring Dalt Vila, take a leisurely stroll along Eivissa Harbour. This popular port is bustling with activity, featuring shops, bars, and restaurants, as well as picturesque water views and a vibrant atmosphere. [2]\",\n      \"category\": \"marina\",\n      \"reasoning\": \"Provides a contrasting experience to Dalt Vila with a lively waterfront atmosphere and options for an afternoon stroll.\",\n      \"rating\": 4.5,\n      \"reviewsSummary\": \"Visitors love the scenic views, the array of shops and eateries, and the lively atmosphere perfect for an evening walk. [2]\",\n      \"general_location\": \"Eivissa waterfront\"\n    },\n    {\n      \"name\": \"Bianca & Friends\",\n      \"description\": \"Cap off your day with drinks at Bianca & Friends, a highly-rated bar near the harbor. Known for its lively ambiance, outdoor seating, and sometimes live music, it's a fantastic spot to relax and enjoy the evening.\",\n      \"category\": \"bar\",\n      \"reasoning\": \"A top-rated bar near the harbour for evening drinks, offering a vibrant atmosphere and live music.\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Customers rave about the friendly service, fantastic cocktails, and the energetic atmosphere. The live music and outdoor seating are frequently mentioned as highlights. [1]\",\n      \"general_location\": \"Near Eivissa Harbour\"\n    }\n  ]\n}\n```"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{"groundingChunks":[{"maps":{"uri":"https://maps.google.com/?cid=2075056628479478672","title":"Castle of Ibiza","placeId":"places/ChIJvwbPqbFGmRIRkMtWbQIVzBw"}},{"maps":{"uri":"https://maps.google.com/?cid=1960562367843407631","title":"Vila vella de Vila d'Eivissa","placeId":"places/ChIJGWxI8iRHmRIRDxdOBxZRNRs"}},{"maps":{"uri":"https://maps.google.com/?cid=17460855442702720047","title":"Eivissa Harbour","placeId":"places/ChIJgfBZQrdGmRIRL9y9eINrUfI"}},{"maps":{"uri":"https://maps.google.com/?cid=17850741516119739266","title":"Baluard de Sant Pere","placeId":"places/ChIJ63ixeLBGmRIRgoui5dSSuvc"}},{"maps":{"uri":"https://maps.google.com/?cid=548399229971343321","title":"Puig des Molins, Ibiza","placeId":"places/ChIJq1PwZ7tGmRIR2SeKsTFOnAc"}},{"maps":{"uri":"https://maps.google.com/?cid=11930376678264467314","title":"Cova de Can Marçà","placeId":"places/ChIJjWdAtoo7mRIRcu-OCGE2kaU"}},{"maps":{"uri":"https://maps.google.com/?cid=9344827764386836717","title":"Portal de ses Taules","placeId":"places/ChIJOfuyqbFGmRIR7TB8N1d_r4E"}},{"maps":{"uri":"https://maps.google.com/?cid=16223289372928198440","title":"Plaça de la Reina Sofia","placeId":"places/ChIJNVgemrpGmRIRKEfB4bqzJOE"}},{"maps":{"uri":"https://maps.google.com/?cid=6357501517069892534","title":"Panaroma view Bossa Beach","placeId":"places/ChIJDcbsaABHmRIRtjv1P_JhOlg"}},{"maps":{"uri":"https://maps.google.com/?cid=15806668172939067878","title":"Catedral de Santa Maria","placeId":"places/ChIJdQ_YCilHmRIR5oGBuvSQXNs"}},{"maps":{"uri":"https://maps.google.com/?cid=9232807683703350582","title":"Carrer de la Mare de Déu / Calle de la Virgen","placeId":"places/ChIJiyp9DgBHmRIRNqWiuquFIYA"}},{"maps":{"uri":"https://maps.google.com/?cid=10120651328648361290","title":"Sa Pedrera de Cala D'Hort","placeId":"places/ChIJGZ0n4MFMmRIRSrWrC8PGc4w"}},{"maps":{"uri":"https://maps.google.com/?cid=10831252002711122559","title":"Calas de Ibiza-España","placeId":"places/ChIJnbVx4ytHmRIRf7JVXk9WUJY"}},{"maps":{"uri":"https://maps.google.com/?cid=11892384266070789293","title":"Aquarium Cap Blanc","placeId":"places/ChIJCTXpjgc2mRIRrQyYP3s8CqU"}},{"maps":{"uri":"https://maps.google.com/?cid=14654161718463014402","title":"Ibiza best things to do","placeId":"places/ChIJSfz9mXM3mRIRAqYdHnEKXss"}},{"maps":{"uri":"https://maps.google.com/?cid=15746352793794903705","title":"Vara de Rey","placeId":"places/ChIJVy1_vsNHmRIRmf4fLnBIhto"}},{"maps":{"uri":"https://maps.google.com/?cid=12067518255567793837","title":"Puerto Eivissa","placeId":"places/ChIJN-EBd49BmRIRre6ov-pveKc"}},{"maps":{"uri":"https://maps.google.com/?cid=13913053372546175056","title":"Parque de S'Illa","placeId":"places/ChIJcV_JeudHmRIRUFCq61MYFcE"}},{"maps":{"uri":"https://maps.google.com/?cid=13115041633816621750","title":"Museu d'Art Contemporani d'Eivissa","placeId":"places/ChIJ8wOmtKxHmRIRtjIZJuH8AbY"}},{"maps":{"uri":"https://maps.google.com/?cid=5014147060578651287","title":"Gran Piruleto Park Ibiza","placeId":"places/ChIJV9zdNitEmRIRlwxcfS_UlUU"}},{"maps":{"uri":"https://maps.google.com/?cid=1365710929469518351","title":"Cevitxef Ibiza","placeId":"places/ChIJ9a0P3ihHmRIRDzLmwNr68xI"}},{"maps":{"uri":"https://maps.google.com/?cid=1280081108110184817","title":"NOMAD BRUNCH & COFFEE IBIZA","placeId":"places/ChIJ4e7k9SZHmRIRcZGYVPzCwxE"}},{"maps":{"uri":"https://maps.google.com/?cid=4715238878097295979","title":"S'Escalinata","placeId":"places/ChIJT5iIeLBGmRIRa8oZ-Mbkb0E"}},{"maps":{"uri":"https://maps.google.com/?cid=12006572493766884963","title":"Cremat Beach Ibiza","placeId":"places/ChIJiaJoa-FHmRIRY37zzBHqn6Y"}},{"maps":{"uri":"https://maps.google.com/?cid=5092872113307627834","title":"Yess!","placeId":"places/ChIJG7A8tj5HmRIROrExMDSErUY"}},{"maps":{"uri":"https://maps.google.com/?cid=10942773054678645218","title":"Ambar Ibiza","placeId":"places/ChIJA-GnHQ1HmRIR4jnWrR2K3Jc"}},{"maps":{"uri":"https://maps.google.com/?cid=13842863315626480235","title":"Mogali' Bar & Italian winery","placeId":"places/ChIJE91fXF5HmRIRa9Izyte6G8A"}},{"maps":{"uri":"https://maps.google.com/?cid=9724986926526403726","title":"Ronda Specialty Coffee","placeId":"places/ChIJpRPoxKFHmRIRjpTsoBUY9oY"}},{"maps":{"uri":"https://maps.google.com/?cid=16609076867175011382","title":"Vila Cafè","placeId":"places/ChIJxypKm7BGmRIRNtQfe2lLf-Y"}},{"maps":{"uri":"https://maps.google.com/?cid=11852346145424596832","title":"Bar Es Cafetí","placeId":"places/ChIJ60cdlLFGmRIRYN8A2QX-e6Q"}},{"maps":{"uri":"https://maps.google.com/?cid=2027393761299744452","title":"Pantastic - Panaderia masa madre y café de especialidad","placeId":"places/ChIJdYk2iIxHmRIRxEYdYuK_Ihw"}},{"maps":{"uri":"https://maps.google.com/?cid=6006226133814287669","title":"One Cup Coffee IBZ","placeId":"places/ChIJ0cNTaktHmRIRNR2rqthmWlM"}},{"maps":{"uri":"https://maps.google.com/?cid=11545610783823456081","title":"Bagels & Co | Brunch Ibiza","placeId":"places/ChIJz93ScO1HmRIRUWe3LNY_OqA"}},{"maps":{"uri":"https://maps.google.com/?cid=2187224503656350196","title":"Nude Café Ibiza","placeId":"places/ChIJI-VykbtGmRIR9IF3ABmVWh4"}},{"maps":{"uri":"https://maps.google.com/?cid=10242147052157454232","title":"Can Kiwi","placeId":"places/ChIJyaG0BL1GmRIRmMcojXpqI44"}},{"maps":{"uri":"https://maps.google.com/?cid=10149790478919551999","title":"Café Montesol & Rooftop Bar","placeId":"places/ChIJFSmKnIlHmRIR_0ukKKpM24w"}},{"maps":{"uri":"https://maps.google.com/?cid=3866450342463361964","title":"La Oliva","placeId":"places/ChIJuYN7WLBGmRIRrFM35BlkqDU"}},{"maps":{"uri":"https://maps.google.com/?cid=2169562324203898233","title":"Jolly bar ibiza","placeId":"places/ChIJKT6CMdtHmRIReYU-ZHDVGx4"}},{"maps":{"uri":"https://maps.google.com/?cid=11800710872752822370","title":"Bonito Tapas Bar","placeId":"places/ChIJcdzC-wNHmRIRYpiFEwSMxKM"}},{"maps":{"uri":"https://maps.google.com/?cid=6564654926951250967","title":"Pan e Dus Ibiza","placeId":"places/ChIJM5lb4TlHmRIRF3zyAeBWGls"}},{"maps":{"uri":"https://maps.google.com/?cid=1365710929469518351","title":"Cevitxef Ibiza","placeId":"places/ChIJ9a0P3ihHmRIRDzLmwNr68xI"}},{"maps":{"uri":"https://maps.google.com/?cid=12006572493766884963","title":"Cremat Beach Ibiza","placeId":"places/ChIJiaJoa-FHmRIRY37zzBHqn6Y"}},{"maps":{"uri":"https://maps.google.com/?cid=3866450342463361964","title":"La Oliva","placeId":"places/ChIJuYN7WLBGmRIRrFM35BlkqDU"}},{"maps":{"uri":"https://maps.google.com/?cid=6418379415974487206","title":"vicolo 5 ibiza","placeId":"places/ChIJpzjTHUpHmRIRpqTWohKqElk"}},{"maps":{"uri":"https://maps.google.com/?cid=1968291611383439340","title":"Callas Eivissa Restaurant","placeId":"places/ChIJgyhFiKJHmRIR7B_kxsrGUBs"}},{"maps":{"uri":"https://maps.google.com/?cid=4715238878097295979","title":"S'Escalinata","placeId":"places/ChIJT5iIeLBGmRIRa8oZ-Mbkb0E"}},{"maps":{"uri":"https://maps.google.com/?cid=15866930053161522456","title":"Can Gourmet Eivissa","placeId":"places/ChIJFTsh3bBGmRIRGJWpFtGoMtw"}},{"maps":{"uri":"https://maps.google.com/?cid=5249974617823696453","title":"Little Ibiza Restaurant and Bar","placeId":"places/ChIJLz70IaNGmRIRRdYybxmo20g"}},{"maps":{"uri":"https://maps.google.com/?cid=2812704907732787788","title":"Room Service Ibiza","placeId":"places/ChIJXUZdaftHmRIRTCJpEza8CCc"}},{"maps":{"uri":"https://maps.google.com/?cid=16227907942966851130","title":"Puerto Fino Ibiza","placeId":"places/ChIJQXpEGjBHmRIROnZHhEscNeE"}},{"maps":{"uri":"https://maps.google.com/?cid=5104200966615344501","title":"La Bodega Eivissa","placeId":"places/ChIJSRyyqL1GmRIRdSVQZbzD1UY"}},{"maps":{"uri":"https://maps.google.com/?cid=5961594098073282504","title":"Namaste Ibiza Restaurante","placeId":"places/ChIJ_T0HBCdHmRIRyCe5Dj_Wu1I"}},{"maps":{"uri":"https://maps.google.com/?cid=12282744600183032293","title":"DOMØ","placeId":"places/ChIJ60L2sLNGmRIR5cnBGCMTdao"}},{"maps":{"uri":"https://maps.google.com/?cid=11800710872752822370","title":"Bonito Tapas Bar","placeId":"places/ChIJcdzC-wNHmRIRYpiFEwSMxKM"}},{"maps":{"uri":"https://maps.google.com/?cid=9616906754664977803","title":"Gala’s Bistrot Italiano","placeId":"places/ChIJycHi-rtGmRIRi1Xcpb0ddoU"}},{"maps":{"uri":"https://maps.google.com/?cid=1247056093363337470","title":"Can Font","placeId":"places/ChIJW-QMUwBHmRIR_njo4-huThE"}},{"maps":{"uri":"https://maps.google.com/?cid=4853922068718994298","title":"CAN D'EN PARRA","placeId":"places/ChIJi0IcrLFGmRIResNsgWeYXEM"}},{"maps":{"uri":"https://maps.google.com/?cid=13195913826721999398","title":"Los Salaos","placeId":"places/ChIJL3x9FtJHmRIRJipu4LVNIbc"}},{"maps":{"uri":"https://maps.google.com/?cid=15248456401687209474","title":"La Vaca Argentina Ibiza","placeId":"places/ChIJIbAM8MZHmRIRAuaYu05mndM"}},{"maps":{"uri":"https://maps.google.com/?cid=15427155475056140716","title":"La Plaza","placeId":"places/ChIJCzWsV7BGmRIRrKFxAStEGNY"}},{"maps":{"uri":"https://maps.google.com/?cid=12044489805555576789","title":"PARADISE IBIZA","placeId":"places/ChIJqeYiLXxHmRIR1S_06KmfJqc"}},{"maps":{"uri":"https://maps.google.com/?cid=17564829359321362646","title":"Bianca & Friends","placeId":"places/ChIJ5YHCumZHmRIR1rCzZj3PwvM"}},{"maps":{"uri":"https://maps.google.com/?cid=7924030179834945751","title":"Jungle Cocktail Bar Eivissa","placeId":"places/ChIJKb5_Ol5HmRIR12CJGnfP920"}},{"maps":{"uri":"https://maps.google.com/?cid=2812704907732787788","title":"Room Service Ibiza","placeId":"places/ChIJXUZdaftHmRIRTCJpEza8CCc"}},{"maps":{"uri":"https://maps.google.com/?cid=4715238878097295979","title":"S'Escalinata","placeId":"places/ChIJT5iIeLBGmRIRa8oZ-Mbkb0E"}},{"maps":{"uri":"https://maps.google.com/?cid=12940157154979123197","title":"Paradise Lost","placeId":"places/ChIJj0z8crFGmRIR_Y9CYF-slLM"}},{"maps":{"uri":"https://maps.google.com/?cid=10942773054678645218","title":"Ambar Ibiza","placeId":"places/ChIJA-GnHQ1HmRIR4jnWrR2K3Jc"}},{"maps":{"uri":"https://maps.google.com/?cid=14031380117121760862","title":"XAMAKO IBIZA","placeId":"places/ChIJBTMMb-ZHmRIRXn6FBeB5ucI"}},{"maps":{"uri":"https://maps.google.com/?cid=11978379783310743081","title":"CONTRABANDO COCKTAIL PUB","placeId":"places/ChIJdX8vB9JHmRIRKRb14PLAO6Y"}},{"maps":{"uri":"https://maps.google.com/?cid=4880936501124498699","title":"La Gilda","placeId":"places/ChIJ-dp77B1HmRIRC4XDMOORvEM"}},{"maps":{"uri":"https://maps.google.com/?cid=15354298201783716814","title":"THE DEN IBIZA","placeId":"places/ChIJ6-t7bbFGmRIRzsu8LN1sFdU"}},{"maps":{"uri":"https://maps.google.com/?cid=3565813437458542777","title":"Marina Ibiza Bar","placeId":"places/ChIJfe2H3z9HmRIRufAHy21QfDE"}}],"webSearchQueries":["things to do in Eivissa","best cafe near Dalt Vila Eivissa","best restaurant near Dalt Vila Eivissa","best bars near Eivissa Harbour"]},"index":0}],"modelVersion":"gemini-2.5-flash","responseId":"HV0CaeuiGrCS_uMPo_aNqA8","usageMetadata":{"promptTokenCount":500,"candidatesTokenCount":1187,"totalTokenCount":5429,"cachedContentTokenCount":91,"promptTokensDetails":[{"modality":"TEXT","tokenCount":500}],"cacheTokensDetails":[{"modality":"TEXT","tokenCount":91}],"toolUsePromptTokenCount":1977,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":1977}],"thoughtsTokenCount":1765}}
+[2025-10-29T18:29:49.579Z] LOG ✅ Gemini response received
+[2025-10-29T18:29:49.580Z] LOG 📄 Response length: 4611 characters
+[2025-10-29T18:29:49.580Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-29T18:29:49.581Z] LOG    candidate exists: true
+[2025-10-29T18:29:49.581Z] LOG    groundingMetadata exists: true
+[2025-10-29T18:29:49.582Z] LOG 📊 Grounding status: Maps=true, Search=false
+[2025-10-29T18:29:49.582Z] LOG 📍 Grounding chunks: 72 total
+[2025-10-29T18:29:49.582Z] LOG    1. [MAPS] Castle of Ibiza
+[2025-10-29T18:29:49.583Z] LOG       placeId: places/ChIJvwbPqbFGmRIRkMtWbQIVzBw
+[2025-10-29T18:29:49.583Z] LOG       uri: https://maps.google.com/?cid=2075056628479478672
+[2025-10-29T18:29:49.583Z] LOG    2. [MAPS] Vila vella de Vila d'Eivissa
+[2025-10-29T18:29:49.583Z] LOG       placeId: places/ChIJGWxI8iRHmRIRDxdOBxZRNRs
+[2025-10-29T18:29:49.583Z] LOG       uri: https://maps.google.com/?cid=1960562367843407631
+[2025-10-29T18:29:49.584Z] LOG    3. [MAPS] Eivissa Harbour
+[2025-10-29T18:29:49.584Z] LOG       placeId: places/ChIJgfBZQrdGmRIRL9y9eINrUfI
+[2025-10-29T18:29:49.584Z] LOG       uri: https://maps.google.com/?cid=17460855442702720047
+[2025-10-29T18:29:49.584Z] LOG    4. [MAPS] Baluard de Sant Pere
+[2025-10-29T18:29:49.585Z] LOG       placeId: places/ChIJ63ixeLBGmRIRgoui5dSSuvc
+[2025-10-29T18:29:49.585Z] LOG       uri: https://maps.google.com/?cid=17850741516119739266
+[2025-10-29T18:29:49.585Z] LOG    5. [MAPS] Puig des Molins, Ibiza
+[2025-10-29T18:29:49.586Z] LOG       placeId: places/ChIJq1PwZ7tGmRIR2SeKsTFOnAc
+[2025-10-29T18:29:49.586Z] LOG       uri: https://maps.google.com/?cid=548399229971343321
+[2025-10-29T18:29:49.587Z] LOG    6. [MAPS] Cova de Can Marçà
+[2025-10-29T18:29:49.587Z] LOG       placeId: places/ChIJjWdAtoo7mRIRcu-OCGE2kaU
+[2025-10-29T18:29:49.587Z] LOG       uri: https://maps.google.com/?cid=11930376678264467314
+[2025-10-29T18:29:49.588Z] LOG    7. [MAPS] Portal de ses Taules
+[2025-10-29T18:29:49.588Z] LOG       placeId: places/ChIJOfuyqbFGmRIR7TB8N1d_r4E
+[2025-10-29T18:29:49.588Z] LOG       uri: https://maps.google.com/?cid=9344827764386836717
+[2025-10-29T18:29:49.589Z] LOG    8. [MAPS] Plaça de la Reina Sofia
+[2025-10-29T18:29:49.590Z] LOG       placeId: places/ChIJNVgemrpGmRIRKEfB4bqzJOE
+[2025-10-29T18:29:49.591Z] LOG       uri: https://maps.google.com/?cid=16223289372928198440
+[2025-10-29T18:29:49.591Z] LOG    9. [MAPS] Panaroma view Bossa Beach
+[2025-10-29T18:29:49.592Z] LOG       placeId: places/ChIJDcbsaABHmRIRtjv1P_JhOlg
+[2025-10-29T18:29:49.592Z] LOG       uri: https://maps.google.com/?cid=6357501517069892534
+[2025-10-29T18:29:49.592Z] LOG    10. [MAPS] Catedral de Santa Maria
+[2025-10-29T18:29:49.593Z] LOG       placeId: places/ChIJdQ_YCilHmRIR5oGBuvSQXNs
+[2025-10-29T18:29:49.594Z] LOG       uri: https://maps.google.com/?cid=15806668172939067878
+[2025-10-29T18:29:49.594Z] LOG    11. [MAPS] Carrer de la Mare de Déu / Calle de la Virgen
+[2025-10-29T18:29:49.595Z] LOG       placeId: places/ChIJiyp9DgBHmRIRNqWiuquFIYA
+[2025-10-29T18:29:49.595Z] LOG       uri: https://maps.google.com/?cid=9232807683703350582
+[2025-10-29T18:29:49.595Z] LOG    12. [MAPS] Sa Pedrera de Cala D'Hort
+[2025-10-29T18:29:49.596Z] LOG       placeId: places/ChIJGZ0n4MFMmRIRSrWrC8PGc4w
+[2025-10-29T18:29:49.596Z] LOG       uri: https://maps.google.com/?cid=10120651328648361290
+[2025-10-29T18:29:49.596Z] LOG    13. [MAPS] Calas de Ibiza-España
+[2025-10-29T18:29:49.597Z] LOG       placeId: places/ChIJnbVx4ytHmRIRf7JVXk9WUJY
+[2025-10-29T18:29:49.597Z] LOG       uri: https://maps.google.com/?cid=10831252002711122559
+[2025-10-29T18:29:49.597Z] LOG    14. [MAPS] Aquarium Cap Blanc
+[2025-10-29T18:29:49.598Z] LOG       placeId: places/ChIJCTXpjgc2mRIRrQyYP3s8CqU
+[2025-10-29T18:29:49.598Z] LOG       uri: https://maps.google.com/?cid=11892384266070789293
+[2025-10-29T18:29:49.599Z] LOG    15. [MAPS] Ibiza best things to do
+[2025-10-29T18:29:49.599Z] LOG       placeId: places/ChIJSfz9mXM3mRIRAqYdHnEKXss
+[2025-10-29T18:29:49.599Z] LOG       uri: https://maps.google.com/?cid=14654161718463014402
+[2025-10-29T18:29:49.600Z] LOG    16. [MAPS] Vara de Rey
+[2025-10-29T18:29:49.600Z] LOG       placeId: places/ChIJVy1_vsNHmRIRmf4fLnBIhto
+[2025-10-29T18:29:49.600Z] LOG       uri: https://maps.google.com/?cid=15746352793794903705
+[2025-10-29T18:29:49.601Z] LOG    17. [MAPS] Puerto Eivissa
+[2025-10-29T18:29:49.601Z] LOG       placeId: places/ChIJN-EBd49BmRIRre6ov-pveKc
+[2025-10-29T18:29:49.602Z] LOG       uri: https://maps.google.com/?cid=12067518255567793837
+[2025-10-29T18:29:49.602Z] LOG    18. [MAPS] Parque de S'Illa
+[2025-10-29T18:29:49.603Z] LOG       placeId: places/ChIJcV_JeudHmRIRUFCq61MYFcE
+[2025-10-29T18:29:49.604Z] LOG       uri: https://maps.google.com/?cid=13913053372546175056
+[2025-10-29T18:29:49.605Z] LOG    19. [MAPS] Museu d'Art Contemporani d'Eivissa
+[2025-10-29T18:29:49.606Z] LOG       placeId: places/ChIJ8wOmtKxHmRIRtjIZJuH8AbY
+[2025-10-29T18:29:49.606Z] LOG       uri: https://maps.google.com/?cid=13115041633816621750
+[2025-10-29T18:29:49.607Z] LOG    20. [MAPS] Gran Piruleto Park Ibiza
+[2025-10-29T18:29:49.607Z] LOG       placeId: places/ChIJV9zdNitEmRIRlwxcfS_UlUU
+[2025-10-29T18:29:49.608Z] LOG       uri: https://maps.google.com/?cid=5014147060578651287
+[2025-10-29T18:29:49.608Z] LOG    21. [MAPS] Cevitxef Ibiza
+[2025-10-29T18:29:49.609Z] LOG       placeId: places/ChIJ9a0P3ihHmRIRDzLmwNr68xI
+[2025-10-29T18:29:49.609Z] LOG       uri: https://maps.google.com/?cid=1365710929469518351
+[2025-10-29T18:29:49.609Z] LOG    22. [MAPS] NOMAD BRUNCH & COFFEE IBIZA
+[2025-10-29T18:29:49.610Z] LOG       placeId: places/ChIJ4e7k9SZHmRIRcZGYVPzCwxE
+[2025-10-29T18:29:49.610Z] LOG       uri: https://maps.google.com/?cid=1280081108110184817
+[2025-10-29T18:29:49.611Z] LOG    23. [MAPS] S'Escalinata
+[2025-10-29T18:29:49.611Z] LOG       placeId: places/ChIJT5iIeLBGmRIRa8oZ-Mbkb0E
+[2025-10-29T18:29:49.612Z] LOG       uri: https://maps.google.com/?cid=4715238878097295979
+[2025-10-29T18:29:49.613Z] LOG    24. [MAPS] Cremat Beach Ibiza
+[2025-10-29T18:29:49.618Z] LOG       placeId: places/ChIJiaJoa-FHmRIRY37zzBHqn6Y
+[2025-10-29T18:29:49.619Z] LOG       uri: https://maps.google.com/?cid=12006572493766884963
+[2025-10-29T18:29:49.619Z] LOG    25. [MAPS] Yess!
+[2025-10-29T18:29:49.620Z] LOG       placeId: places/ChIJG7A8tj5HmRIROrExMDSErUY
+[2025-10-29T18:29:49.620Z] LOG       uri: https://maps.google.com/?cid=5092872113307627834
+[2025-10-29T18:29:49.621Z] LOG    26. [MAPS] Ambar Ibiza
+[2025-10-29T18:29:49.622Z] LOG       placeId: places/ChIJA-GnHQ1HmRIR4jnWrR2K3Jc
+[2025-10-29T18:29:49.622Z] LOG       uri: https://maps.google.com/?cid=10942773054678645218
+[2025-10-29T18:29:49.622Z] LOG    27. [MAPS] Mogali' Bar & Italian winery
+[2025-10-29T18:29:49.623Z] LOG       placeId: places/ChIJE91fXF5HmRIRa9Izyte6G8A
+[2025-10-29T18:29:49.623Z] LOG       uri: https://maps.google.com/?cid=13842863315626480235
+[2025-10-29T18:29:49.624Z] LOG    28. [MAPS] Ronda Specialty Coffee
+[2025-10-29T18:29:49.625Z] LOG       placeId: places/ChIJpRPoxKFHmRIRjpTsoBUY9oY
+[2025-10-29T18:29:49.625Z] LOG       uri: https://maps.google.com/?cid=9724986926526403726
+[2025-10-29T18:29:49.626Z] LOG    29. [MAPS] Vila Cafè
+[2025-10-29T18:29:49.626Z] LOG       placeId: places/ChIJxypKm7BGmRIRNtQfe2lLf-Y
+[2025-10-29T18:29:49.627Z] LOG       uri: https://maps.google.com/?cid=16609076867175011382
+[2025-10-29T18:29:49.627Z] LOG    30. [MAPS] Bar Es Cafetí
+[2025-10-29T18:29:49.628Z] LOG       placeId: places/ChIJ60cdlLFGmRIRYN8A2QX-e6Q
+[2025-10-29T18:29:49.628Z] LOG       uri: https://maps.google.com/?cid=11852346145424596832
+[2025-10-29T18:29:49.629Z] LOG    31. [MAPS] Pantastic - Panaderia masa madre y café de especialidad
+[2025-10-29T18:29:49.630Z] LOG       placeId: places/ChIJdYk2iIxHmRIRxEYdYuK_Ihw
+[2025-10-29T18:29:49.630Z] LOG       uri: https://maps.google.com/?cid=2027393761299744452
+[2025-10-29T18:29:49.631Z] LOG    32. [MAPS] One Cup Coffee IBZ
+[2025-10-29T18:29:49.632Z] LOG       placeId: places/ChIJ0cNTaktHmRIRNR2rqthmWlM
+[2025-10-29T18:29:49.632Z] LOG       uri: https://maps.google.com/?cid=6006226133814287669
+[2025-10-29T18:29:49.633Z] LOG    33. [MAPS] Bagels & Co | Brunch Ibiza
+[2025-10-29T18:29:49.633Z] LOG       placeId: places/ChIJz93ScO1HmRIRUWe3LNY_OqA
+[2025-10-29T18:29:49.634Z] LOG       uri: https://maps.google.com/?cid=11545610783823456081
+[2025-10-29T18:29:49.634Z] LOG    34. [MAPS] Nude Café Ibiza
+[2025-10-29T18:29:49.634Z] LOG       placeId: places/ChIJI-VykbtGmRIR9IF3ABmVWh4
+[2025-10-29T18:29:49.635Z] LOG       uri: https://maps.google.com/?cid=2187224503656350196
+[2025-10-29T18:29:49.635Z] LOG    35. [MAPS] Can Kiwi
+[2025-10-29T18:29:49.636Z] LOG       placeId: places/ChIJyaG0BL1GmRIRmMcojXpqI44
+[2025-10-29T18:29:49.637Z] LOG       uri: https://maps.google.com/?cid=10242147052157454232
+[2025-10-29T18:29:49.637Z] LOG    36. [MAPS] Café Montesol & Rooftop Bar
+[2025-10-29T18:29:49.638Z] LOG       placeId: places/ChIJFSmKnIlHmRIR_0ukKKpM24w
+[2025-10-29T18:29:49.639Z] LOG       uri: https://maps.google.com/?cid=10149790478919551999
+[2025-10-29T18:29:49.639Z] LOG    37. [MAPS] La Oliva
+[2025-10-29T18:29:49.640Z] LOG       placeId: places/ChIJuYN7WLBGmRIRrFM35BlkqDU
+[2025-10-29T18:29:49.640Z] LOG       uri: https://maps.google.com/?cid=3866450342463361964
+[2025-10-29T18:29:49.640Z] LOG    38. [MAPS] Jolly bar ibiza
+[2025-10-29T18:29:49.641Z] LOG       placeId: places/ChIJKT6CMdtHmRIReYU-ZHDVGx4
+[2025-10-29T18:29:49.641Z] LOG       uri: https://maps.google.com/?cid=2169562324203898233
+[2025-10-29T18:29:49.642Z] LOG    39. [MAPS] Bonito Tapas Bar
+[2025-10-29T18:29:49.643Z] LOG       placeId: places/ChIJcdzC-wNHmRIRYpiFEwSMxKM
+[2025-10-29T18:29:49.643Z] LOG       uri: https://maps.google.com/?cid=11800710872752822370
+[2025-10-29T18:29:49.644Z] LOG    40. [MAPS] Pan e Dus Ibiza
+[2025-10-29T18:29:49.644Z] LOG       placeId: places/ChIJM5lb4TlHmRIRF3zyAeBWGls
+[2025-10-29T18:29:49.645Z] LOG       uri: https://maps.google.com/?cid=6564654926951250967
+[2025-10-29T18:29:49.646Z] LOG    41. [MAPS] Cevitxef Ibiza
+[2025-10-29T18:29:49.648Z] LOG       placeId: places/ChIJ9a0P3ihHmRIRDzLmwNr68xI
+[2025-10-29T18:29:49.648Z] LOG       uri: https://maps.google.com/?cid=1365710929469518351
+[2025-10-29T18:29:49.649Z] LOG    42. [MAPS] Cremat Beach Ibiza
+[2025-10-29T18:29:49.650Z] LOG       placeId: places/ChIJiaJoa-FHmRIRY37zzBHqn6Y
+[2025-10-29T18:29:49.650Z] LOG       uri: https://maps.google.com/?cid=12006572493766884963
+[2025-10-29T18:29:49.651Z] LOG    43. [MAPS] La Oliva
+[2025-10-29T18:29:49.652Z] LOG       placeId: places/ChIJuYN7WLBGmRIRrFM35BlkqDU
+[2025-10-29T18:29:49.654Z] LOG       uri: https://maps.google.com/?cid=3866450342463361964
+[2025-10-29T18:29:49.655Z] LOG    44. [MAPS] vicolo 5 ibiza
+[2025-10-29T18:29:49.656Z] LOG       placeId: places/ChIJpzjTHUpHmRIRpqTWohKqElk
+[2025-10-29T18:29:49.657Z] LOG       uri: https://maps.google.com/?cid=6418379415974487206
+[2025-10-29T18:29:49.658Z] LOG    45. [MAPS] Callas Eivissa Restaurant
+[2025-10-29T18:29:49.659Z] LOG       placeId: places/ChIJgyhFiKJHmRIR7B_kxsrGUBs
+[2025-10-29T18:29:49.659Z] LOG       uri: https://maps.google.com/?cid=1968291611383439340
+[2025-10-29T18:29:49.660Z] LOG    46. [MAPS] S'Escalinata
+[2025-10-29T18:29:49.660Z] LOG       placeId: places/ChIJT5iIeLBGmRIRa8oZ-Mbkb0E
+[2025-10-29T18:29:49.661Z] LOG       uri: https://maps.google.com/?cid=4715238878097295979
+[2025-10-29T18:29:49.661Z] LOG    47. [MAPS] Can Gourmet Eivissa
+[2025-10-29T18:29:49.662Z] LOG       placeId: places/ChIJFTsh3bBGmRIRGJWpFtGoMtw
+[2025-10-29T18:29:49.662Z] LOG       uri: https://maps.google.com/?cid=15866930053161522456
+[2025-10-29T18:29:49.663Z] LOG    48. [MAPS] Little Ibiza Restaurant and Bar
+[2025-10-29T18:29:49.663Z] LOG       placeId: places/ChIJLz70IaNGmRIRRdYybxmo20g
+[2025-10-29T18:29:49.663Z] LOG       uri: https://maps.google.com/?cid=5249974617823696453
+[2025-10-29T18:29:49.664Z] LOG    49. [MAPS] Room Service Ibiza
+[2025-10-29T18:29:49.665Z] LOG       placeId: places/ChIJXUZdaftHmRIRTCJpEza8CCc
+[2025-10-29T18:29:49.665Z] LOG       uri: https://maps.google.com/?cid=2812704907732787788
+[2025-10-29T18:29:49.666Z] LOG    50. [MAPS] Puerto Fino Ibiza
+[2025-10-29T18:29:49.667Z] LOG       placeId: places/ChIJQXpEGjBHmRIROnZHhEscNeE
+[2025-10-29T18:29:49.667Z] LOG       uri: https://maps.google.com/?cid=16227907942966851130
+[2025-10-29T18:29:49.668Z] LOG    51. [MAPS] La Bodega Eivissa
+[2025-10-29T18:29:49.669Z] LOG       placeId: places/ChIJSRyyqL1GmRIRdSVQZbzD1UY
+[2025-10-29T18:29:49.669Z] LOG       uri: https://maps.google.com/?cid=5104200966615344501
+[2025-10-29T18:29:49.670Z] LOG    52. [MAPS] Namaste Ibiza Restaurante
+[2025-10-29T18:29:49.672Z] LOG       placeId: places/ChIJ_T0HBCdHmRIRyCe5Dj_Wu1I
+[2025-10-29T18:29:49.673Z] LOG       uri: https://maps.google.com/?cid=5961594098073282504
+[2025-10-29T18:29:49.675Z] LOG    53. [MAPS] DOMØ
+[2025-10-29T18:29:49.676Z] LOG       placeId: places/ChIJ60L2sLNGmRIR5cnBGCMTdao
+[2025-10-29T18:29:49.676Z] LOG       uri: https://maps.google.com/?cid=12282744600183032293
+[2025-10-29T18:29:49.676Z] LOG    54. [MAPS] Bonito Tapas Bar
+[2025-10-29T18:29:49.677Z] LOG       placeId: places/ChIJcdzC-wNHmRIRYpiFEwSMxKM
+[2025-10-29T18:29:49.678Z] LOG       uri: https://maps.google.com/?cid=11800710872752822370
+[2025-10-29T18:29:49.679Z] LOG    55. [MAPS] Gala’s Bistrot Italiano
+[2025-10-29T18:29:49.679Z] LOG       placeId: places/ChIJycHi-rtGmRIRi1Xcpb0ddoU
+[2025-10-29T18:29:49.680Z] LOG       uri: https://maps.google.com/?cid=9616906754664977803
+[2025-10-29T18:29:49.681Z] LOG    56. [MAPS] Can Font
+[2025-10-29T18:29:49.681Z] LOG       placeId: places/ChIJW-QMUwBHmRIR_njo4-huThE
+[2025-10-29T18:29:49.682Z] LOG       uri: https://maps.google.com/?cid=1247056093363337470
+[2025-10-29T18:29:49.683Z] LOG    57. [MAPS] CAN D'EN PARRA
+[2025-10-29T18:29:49.684Z] LOG       placeId: places/ChIJi0IcrLFGmRIResNsgWeYXEM
+[2025-10-29T18:29:49.684Z] LOG       uri: https://maps.google.com/?cid=4853922068718994298
+[2025-10-29T18:29:49.685Z] LOG    58. [MAPS] Los Salaos
+[2025-10-29T18:29:49.686Z] LOG       placeId: places/ChIJL3x9FtJHmRIRJipu4LVNIbc
+[2025-10-29T18:29:49.687Z] LOG       uri: https://maps.google.com/?cid=13195913826721999398
+[2025-10-29T18:29:49.687Z] LOG    59. [MAPS] La Vaca Argentina Ibiza
+[2025-10-29T18:29:49.688Z] LOG       placeId: places/ChIJIbAM8MZHmRIRAuaYu05mndM
+[2025-10-29T18:29:49.689Z] LOG       uri: https://maps.google.com/?cid=15248456401687209474
+[2025-10-29T18:29:49.690Z] LOG    60. [MAPS] La Plaza
+[2025-10-29T18:29:49.690Z] LOG       placeId: places/ChIJCzWsV7BGmRIRrKFxAStEGNY
+[2025-10-29T18:29:49.691Z] LOG       uri: https://maps.google.com/?cid=15427155475056140716
+[2025-10-29T18:29:49.692Z] LOG    61. [MAPS] PARADISE IBIZA
+[2025-10-29T18:29:49.692Z] LOG       placeId: places/ChIJqeYiLXxHmRIR1S_06KmfJqc
+[2025-10-29T18:29:49.693Z] LOG       uri: https://maps.google.com/?cid=12044489805555576789
+[2025-10-29T18:29:49.694Z] LOG    62. [MAPS] Bianca & Friends
+[2025-10-29T18:29:49.694Z] LOG       placeId: places/ChIJ5YHCumZHmRIR1rCzZj3PwvM
+[2025-10-29T18:29:49.696Z] LOG       uri: https://maps.google.com/?cid=17564829359321362646
+[2025-10-29T18:29:49.697Z] LOG    63. [MAPS] Jungle Cocktail Bar Eivissa
+[2025-10-29T18:29:49.698Z] LOG       placeId: places/ChIJKb5_Ol5HmRIR12CJGnfP920
+[2025-10-29T18:29:49.698Z] LOG       uri: https://maps.google.com/?cid=7924030179834945751
+[2025-10-29T18:29:49.699Z] LOG    64. [MAPS] Room Service Ibiza
+[2025-10-29T18:29:49.699Z] LOG       placeId: places/ChIJXUZdaftHmRIRTCJpEza8CCc
+[2025-10-29T18:29:49.700Z] LOG       uri: https://maps.google.com/?cid=2812704907732787788
+[2025-10-29T18:29:49.700Z] LOG    65. [MAPS] S'Escalinata
+[2025-10-29T18:29:49.701Z] LOG       placeId: places/ChIJT5iIeLBGmRIRa8oZ-Mbkb0E
+[2025-10-29T18:29:49.701Z] LOG       uri: https://maps.google.com/?cid=4715238878097295979
+[2025-10-29T18:29:49.701Z] LOG    66. [MAPS] Paradise Lost
+[2025-10-29T18:29:49.702Z] LOG       placeId: places/ChIJj0z8crFGmRIR_Y9CYF-slLM
+[2025-10-29T18:29:49.703Z] LOG       uri: https://maps.google.com/?cid=12940157154979123197
+[2025-10-29T18:29:49.704Z] LOG    67. [MAPS] Ambar Ibiza
+[2025-10-29T18:29:49.705Z] LOG       placeId: places/ChIJA-GnHQ1HmRIR4jnWrR2K3Jc
+[2025-10-29T18:29:49.706Z] LOG       uri: https://maps.google.com/?cid=10942773054678645218
+[2025-10-29T18:29:49.707Z] LOG    68. [MAPS] XAMAKO IBIZA
+[2025-10-29T18:29:49.708Z] LOG       placeId: places/ChIJBTMMb-ZHmRIRXn6FBeB5ucI
+[2025-10-29T18:29:49.709Z] LOG       uri: https://maps.google.com/?cid=14031380117121760862
+[2025-10-29T18:29:49.710Z] LOG    69. [MAPS] CONTRABANDO COCKTAIL PUB
+[2025-10-29T18:29:49.711Z] LOG       placeId: places/ChIJdX8vB9JHmRIRKRb14PLAO6Y
+[2025-10-29T18:29:49.711Z] LOG       uri: https://maps.google.com/?cid=11978379783310743081
+[2025-10-29T18:29:49.712Z] LOG    70. [MAPS] La Gilda
+[2025-10-29T18:29:49.712Z] LOG       placeId: places/ChIJ-dp77B1HmRIRC4XDMOORvEM
+[2025-10-29T18:29:49.712Z] LOG       uri: https://maps.google.com/?cid=4880936501124498699
+[2025-10-29T18:29:49.713Z] LOG    71. [MAPS] THE DEN IBIZA
+[2025-10-29T18:29:49.713Z] LOG       placeId: places/ChIJ6-t7bbFGmRIRzsu8LN1sFdU
+[2025-10-29T18:29:49.714Z] LOG       uri: https://maps.google.com/?cid=15354298201783716814
+[2025-10-29T18:29:49.714Z] LOG    72. [MAPS] Marina Ibiza Bar
+[2025-10-29T18:29:49.714Z] LOG       placeId: places/ChIJfe2H3z9HmRIRufAHy21QfDE
+[2025-10-29T18:29:49.715Z] LOG       uri: https://maps.google.com/?cid=3565813437458542777
+[2025-10-29T18:29:49.716Z] LOG ✨ Parsed 6 venue recommendations
+[2025-10-29T18:29:49.716Z] LOG 📋 Plan: Eivissa Dalt Vila & Harbour Exploration, 6 stops
+
+--- Summary ---
+Completed

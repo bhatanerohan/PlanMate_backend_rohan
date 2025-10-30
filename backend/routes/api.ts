@@ -5,11 +5,17 @@ import { ReActAgent } from '../services/react-agent.js';
 import { DEFAULT_SAFETY_CONFIG } from '../types/react-agent.js';
 import { classifyIntent } from '../services/intent-classifier.js';
 import { planCreatorAgent } from '../services/plan-creator-agent.js';  // ✅ Keep imported but don't use
-import { videoEnrichmentAgent } from '../services/video-enrichment-agent.js';
+import { VideoEnrichmentAgent } from '../services/video-enrichment-agent.js';
 import { modificationAgent, type CurrentItinerary } from '../services/modification-agent.js';
 import { geminiGroundingAgent } from '../services/gemini-grounding-agent.js';
+import { getMapboxClient } from '../services/api-clients/mapbox.js';
+import { outputLogger } from '../services/output-logger.js';
+
 
 const router = Router();
+
+
+
 
 router.post('/plan', async (req: Request, res: Response) => {
   try {
@@ -302,7 +308,7 @@ router.post('/plan', async (req: Request, res: Response) => {
       enrichedVenues = venues;
     } else {
       try {
-        enrichedVenues = await videoEnrichmentAgent.enrichVenues(
+        enrichedVenues = await VideoEnrichmentAgent.enrichVenues(
           venues,
           mode,
           {
@@ -312,7 +318,7 @@ router.post('/plan', async (req: Request, res: Response) => {
           }
         );
 
-        const stats = videoEnrichmentAgent.getStats(enrichedVenues);
+        const stats = VideoEnrichmentAgent.getStats(enrichedVenues);
         console.log(`📊 Video enrichment stats:`, stats);
 
       } catch (error) {
@@ -353,14 +359,162 @@ router.post('/plan', async (req: Request, res: Response) => {
     console.log(`   Venues: ${enrichedVenues.length}`);
     console.log('='.repeat(80) + '\n');
 
-    const responseData = {
+    function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
+      const R = 6371; // Earth radius in km
+      const dLat = toRad(lat2 - lat1);
+      const dLon = toRad(lon2 - lon1);
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c;
+    }
+    
+    function toRad(degrees: number): number {
+      return degrees * (Math.PI / 180);
+    }
+    
+    function formatDistance(meters: number): string {
+      const km = meters / 1000;
+      if (km < 1) {
+        return `${Math.round(meters)}m`;
+      }
+      return `${km.toFixed(1)}km`;
+    }
+    
+    function formatDuration(seconds: number): string {
+      const minutes = Math.round(seconds / 60);
+      if (minutes < 60) {
+        return `${minutes} min`;
+      }
+      const hours = Math.floor(minutes / 60);
+      const remainingMinutes = minutes % 60;
+      return `${hours}h ${remainingMinutes}m`;
+    }
+
+    
+    async function calculateAndAppendRouteInfo(
+      result: string,
+      venues: any[],
+      mode: string
+    ): Promise<{ enhancedResult: string; routes: any[] }> {
+      // Only calculate for route mode with 2+ venues
+      if (mode !== 'route' || venues.length < 2) {
+        return { enhancedResult: result, routes: [] };
+      }
+    
+      try {
+        console.log('\n🗺️  Calculating Mapbox routes...');
+        
+        // Prepare waypoints from venues
+        const waypoints = venues
+          .filter(v => v.location && v.location.lat && v.location.lng)
+          .map(v => ({
+            lat: v.location.lat,
+            lng: v.location.lng,
+            name: v.name
+          }));
+    
+        if (waypoints.length < 2) {
+          console.log('   ⚠️  Not enough valid waypoints for route calculation');
+          return { enhancedResult: result, routes: [] };
+        }
+    
+        // Call Mapbox to calculate the route
+        const mapboxClient = getMapboxClient();
+        const mapboxRoute = await mapboxClient.getRoute(
+          waypoints.map(wp => ({ lat: wp.lat, lng: wp.lng })),
+          { mode: 'walking', steps: false }
+        );
+    
+        // Parse legs from Mapbox response to get segment-by-segment data
+        // Note: Mapbox returns legs array with distance/duration for each segment
+        const routeSegments: any[] = [];
+        let totalDistance = 0;
+        let totalDuration = 0;
+    
+        // If Mapbox returns legs data, use it; otherwise calculate from waypoints
+        // For now, we'll calculate approximate segments
+        for (let i = 0; i < waypoints.length - 1; i++) {
+          const segmentDistance = calculateDistance(
+            waypoints[i].lat, waypoints[i].lng,
+            waypoints[i + 1].lat, waypoints[i + 1].lng
+          );
+          const segmentDuration = Math.round((segmentDistance / 4.8) * 3600); // ~4.8 km/h walking speed
+          
+          totalDistance += segmentDistance;
+          totalDuration += segmentDuration;
+    
+          routeSegments.push({
+            from: waypoints[i].name,
+            to: waypoints[i + 1].name,
+            distance: segmentDistance,
+            distanceFormatted: formatDistance(segmentDistance * 1000), // convert to meters
+            duration: segmentDuration,
+            durationFormatted: formatDuration(segmentDuration)
+          });
+        }
+    
+        // Build distance summary text
+        const distanceLines = routeSegments.map((seg, idx) => 
+          `${idx + 1}. ${seg.from} → ${seg.to}: ${seg.distanceFormatted} (${seg.durationFormatted})`
+        ).join('\n');
+    
+        const routeSummary = `\n\n**🚶 Route Details:**\n${distanceLines}\n\n**Total Distance:** ${formatDistance(totalDistance * 1000)}\n**Total Duration:** ${formatDuration(totalDuration)}`;
+    
+        console.log('   ✅ Route calculation complete');
+        console.log(`   Total: ${formatDistance(totalDistance * 1000)}, ${formatDuration(totalDuration)}`);
+    
+        return {
+          enhancedResult: result + routeSummary,
+          routes: routeSegments
+        };
+    
+      } catch (error) {
+        console.error('   ❌ Route calculation failed:', error);
+        // Gracefully fail - return original result without route info
+        return { enhancedResult: result, routes: [] };
+      }
+    }
+
+    const { enhancedResult, routes: calculatedRoutes } = await calculateAndAppendRouteInfo(
+      agentResponse.result || 'Your plan is ready!',
+      enrichedVenues || [],
+      mode
+    );
+
+    try {
+      await outputLogger.saveOutput({
+        prompt,
+        userLocation,
+        result: enhancedResult,
+        venues: enrichedVenues || [],
+        events: events || [],
+        mode,
+        queryType: classification.queryType,
+        alternativesMap: simplifiedAlternativesMap,
+        routes: calculatedRoutes,
+        executionTimeMs: agentResponse.executionTimeMs,
+        tokensUsed: agentResponse.tokensUsed,
+        iterations: agentResponse.iterations
+      });
+    } catch (logError) {
+      // Don't fail the request if logging fails
+      console.error('⚠️ Failed to save output log:', logError);
+    }
+    
+    // ============================================================================
+    // Return final response
+    // ============================================================================
+    return res.json({
       success: agentResponse.success,
-      result: agentResponse.result,
+      result: enhancedResult,                    // ✅ 1. Enhanced with distance info
       mode,
       queryType: classification.queryType,
       venues: enrichedVenues || [],
       events: events || [],
-      routes: [],
+      routes: calculatedRoutes,                  // ✅ 2. Calculated routes
       alternativesMap: simplifiedAlternativesMap,
       state: agentResponse.state,
       iterations: agentResponse.iterations,
@@ -369,9 +523,7 @@ router.post('/plan', async (req: Request, res: Response) => {
       stoppedReason: agentResponse.stoppedReason,
       error: agentResponse.error,
       geminiGroundingUsed: classification.useGeminiGrounding
-    };
-
-    return res.json(responseData);
+    });
 
   } catch (error) {
     console.error('❌ API Error:', error);

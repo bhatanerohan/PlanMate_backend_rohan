@@ -1,0 +1,80 @@
+User Prompt: Find coffee shops in paris
+
+[2025-10-30T00:12:36.488Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-30T00:12:36.488Z] LOG 📝 User prompt: "Find coffee shops in paris"
+[2025-10-30T00:12:36.489Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-30T00:12:45.487Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Thu, 30 Oct 2025 00:12:45 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=8864","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"```json\n{\n  \"plan\": {\n    \"type\": \"Parisian Coffee Journey\",\n    \"total_stops\": 5,\n    \"estimated_duration\": \"Full day (8-10 hours)\",\n    \"travel_mode\": \"transit/driving\",\n    \"theme\": \"A curated tour of some of Paris's most beloved and unique coffee shops, from historic literary haunts to modern specialty roasters.\",\n    \"scale\": \"city-wide\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"The Caféothèque of Paris\",\n      \"description\": \"Known for its highly trained baristas and a wide selection of international beans, this cozy coffee shop offers a true connoisseur's experience with a hip atmosphere and artistic flair. [0]\",\n      \"category\": \"cafe\",\n      \"reasoning\": \"Selected for its reputation as a serious coffee destination and its extensive bean selection, appealing to specialty coffee lovers.\",\n      \"rating\": 4.4,\n      \"reviewsSummary\": \"Customers praise the excellent coffee, knowledgeable staff, and inviting atmosphere. [0]\",\n      \"general_location\": \"4th arrondissement\"\n    },\n    {\n      \"name\": \"Le Peloton Café\",\n      \"description\": \"A compact and charming cafe offering not only great coffee and waffles but also bike rentals, making it a perfect starting point for an active day in Paris. [6]\",\n      \"category\": \"cafe\",\n      \"reasoning\": \"Offers a unique combination of coffee and bike rentals, perfect for those looking to explore the city with a caffeine boost. It's also well-rated and in the 4th arrondissement, near The Caféothèque. [6]\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Reviewers often mention the delicious waffles, quality coffee, and friendly service. [6]\",\n      \"general_location\": \"4th arrondissement\"\n    },\n    {\n      \"name\": \"Brouillon Coffee\",\n      \"description\": \"This coffee shop is highly rated for its superb coffee and inviting ambiance. It's a great spot to enjoy a quiet moment with a well-crafted brew. [3]\",\n      \"category\": \"coffee shop\",\n      \"reasoning\": \"Chosen for its exceptionally high rating and a reputation for excellent coffee, offering a modern specialty coffee experience. [3]\",\n      \"rating\": 4.9,\n      \"reviewsSummary\": \"Patrons love the quality of the coffee, friendly staff, and cozy setting. [3]\",\n      \"general_location\": \"10th arrondissement\"\n    },\n    {\n      \"name\": \"Café de Flore\",\n      \"description\": \"An iconic and long-running Parisian coffeehouse, famous for its rich literary history and celebrity patronage. It's an ideal spot to soak in classic Parisian cafe culture while enjoying French fare. [2]\",\n      \"category\": \"coffee shop\",\n      \"reasoning\": \"Included for its historical significance and classic Parisian cafe experience, offering a contrast to the modern specialty coffee shops. [2]\",\n      \"rating\": 3.9,\n      \"reviewsSummary\": \"Many highlight its legendary status, charming corner locale, and excellent people-watching opportunities. [2]\",\n      \"general_location\": \"6th arrondissement\"\n    },\n    {\n      \"name\": \"Clove\",\n      \"description\": \"A highly-rated local favorite, Clove offers a warm and welcoming atmosphere for enjoying expertly prepared coffee. [1]\",\n      \"category\": \"coffee shop\",\n      \"reasoning\": \"Selected for its outstanding rating and a strong reputation among locals, providing a glimpse into a beloved neighborhood coffee spot. [1]\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Customers consistently praise the superb coffee, friendly service, and pleasant environment. [1]\",\n      \"general_location\": \"18th arrondissement\"\n    }\n  ]\n}\n```"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{"groundingChunks":[{"maps":{"uri":"https://maps.google.com/?cid=1679465446511737413","title":"The Caféothèque of Paris","placeId":"places/ChIJ3eCHM_1x5kcRRfrf5-yoThc"}},{"maps":{"uri":"https://maps.google.com/?cid=15410060683280439306","title":"Clove","placeId":"places/ChIJGR3TdqJv5kcRCtgkoouI29U"}},{"maps":{"uri":"https://maps.google.com/?cid=1782201546845549567","title":"Café de Flore","placeId":"places/ChIJq537gddx5kcR_3PhRd2muxg"}},{"maps":{"uri":"https://maps.google.com/?cid=3536217000186779587","title":"Brouillon Coffee","placeId":"places/ChIJWbd6C_Nv5kcRw5fUQKAqEzE"}},{"maps":{"uri":"https://maps.google.com/?cid=8898245972445014884","title":"BlackBird Coffee","placeId":"places/ChIJA-oUlcpv5kcRZKuiJ5HrfHs"}},{"maps":{"uri":"https://maps.google.com/?cid=4394304716746978989","title":"Big Shot coffee","placeId":"places/ChIJ5_ZVUk9v5kcRrfaGnNu0-zw"}},{"maps":{"uri":"https://maps.google.com/?cid=12326711145314001141","title":"Le Peloton Café","placeId":"places/ChIJy2DMU_1x5kcR9SBKGXpGEas"}},{"maps":{"uri":"https://maps.google.com/?cid=4796996324016611075","title":"Café d’Auteur - Specialty Coffee shop & roaster","placeId":"places/ChIJyXgSNGtx5kcRA1_dub1akkI"}},{"maps":{"uri":"https://maps.google.com/?cid=736058715472235006","title":"Fringe","placeId":"places/ChIJ57HSHAdu5kcR_omNfYABNwo"}},{"maps":{"uri":"https://maps.google.com/?cid=6836850235635905882","title":"Terres de Café","placeId":"places/ChIJ-UiBUYlv5kcRWrWf7RBf4V4"}},{"maps":{"uri":"https://maps.google.com/?cid=3468748418442253559","title":"Two Doors Coffee-Shop","placeId":"places/ChIJCaCBLCVv5kcR99Ry8E54IzA"}},{"maps":{"uri":"https://maps.google.com/?cid=12089380690154373154","title":"Matamata Coffee","placeId":"places/ChIJO8pctCJu5kcRIkAed68bxqc"}},{"maps":{"uri":"https://maps.google.com/?cid=14358640283139580685","title":"Minicafé Île Saint-Louis - coffeeshop, matcha and cookies","placeId":"places/ChIJp6Zwu69x5kcRDSMmHkMjRMc"}},{"maps":{"uri":"https://maps.google.com/?cid=4701356397950080433","title":"Boot Café","placeId":"places/ChIJWRpFMgdu5kcRsRVTLrySPkE"}},{"maps":{"uri":"https://maps.google.com/?cid=3520973407977807130","title":"Jōhō","placeId":"places/ChIJNyOqEsdv5kcRGh0d3qgC3TA"}},{"maps":{"uri":"https://maps.google.com/?cid=489953339294608251","title":"Motors Coffee","placeId":"places/ChIJnYHfBB9u5kcRe-srWfepzAY"}},{"maps":{"uri":"https://maps.google.com/?cid=4672090483741020943","title":"Arty Caffé","placeId":"places/ChIJPSzCYbdv5kcRD9PdiYqZ1kA"}},{"maps":{"uri":"https://maps.google.com/?cid=3631988056719622990","title":"Back in Black","placeId":"places/ChIJrWUgQldt5kcRTgM8_eRpZzI"}},{"maps":{"uri":"https://maps.google.com/?cid=11010613300342594084","title":"The Coffee","placeId":"places/ChIJU5UxSpht5kcRJJocvnWOzZg"}},{"maps":{"uri":"https://maps.google.com/?cid=10252212821854942931","title":"BUDDY BUDDY – Nut Butter Coffee Bar","placeId":"places/ChIJaY-wAUBv5kcR03ZeMD4tR44"}}],"webSearchQueries":["coffee shops in Paris"]},"index":0}],"modelVersion":"gemini-2.5-flash","responseId":"fK0Cafv7PPOo_uMP3Y_emA0","usageMetadata":{"promptTokenCount":464,"candidatesTokenCount":869,"totalTokenCount":2303,"cachedContentTokenCount":40,"promptTokensDetails":[{"modality":"TEXT","tokenCount":464}],"cacheTokensDetails":[{"modality":"TEXT","tokenCount":40}],"toolUsePromptTokenCount":561,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":561}],"thoughtsTokenCount":409}}
+[2025-10-30T00:12:45.490Z] LOG ✅ Gemini response received
+[2025-10-30T00:12:45.491Z] LOG 📄 Response length: 3490 characters
+[2025-10-30T00:12:45.492Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-30T00:12:45.493Z] LOG    candidate exists: true
+[2025-10-30T00:12:45.494Z] LOG    groundingMetadata exists: true
+[2025-10-30T00:12:45.496Z] LOG 📊 Grounding status: Maps=true, Search=false
+[2025-10-30T00:12:45.497Z] LOG 📍 Grounding chunks: 20 total
+[2025-10-30T00:12:45.498Z] LOG    1. [MAPS] The Caféothèque of Paris
+[2025-10-30T00:12:45.498Z] LOG       placeId: places/ChIJ3eCHM_1x5kcRRfrf5-yoThc
+[2025-10-30T00:12:45.499Z] LOG       uri: https://maps.google.com/?cid=1679465446511737413
+[2025-10-30T00:12:45.500Z] LOG    2. [MAPS] Clove
+[2025-10-30T00:12:45.500Z] LOG       placeId: places/ChIJGR3TdqJv5kcRCtgkoouI29U
+[2025-10-30T00:12:45.501Z] LOG       uri: https://maps.google.com/?cid=15410060683280439306
+[2025-10-30T00:12:45.501Z] LOG    3. [MAPS] Café de Flore
+[2025-10-30T00:12:45.502Z] LOG       placeId: places/ChIJq537gddx5kcR_3PhRd2muxg
+[2025-10-30T00:12:45.502Z] LOG       uri: https://maps.google.com/?cid=1782201546845549567
+[2025-10-30T00:12:45.503Z] LOG    4. [MAPS] Brouillon Coffee
+[2025-10-30T00:12:45.504Z] LOG       placeId: places/ChIJWbd6C_Nv5kcRw5fUQKAqEzE
+[2025-10-30T00:12:45.504Z] LOG       uri: https://maps.google.com/?cid=3536217000186779587
+[2025-10-30T00:12:45.505Z] LOG    5. [MAPS] BlackBird Coffee
+[2025-10-30T00:12:45.506Z] LOG       placeId: places/ChIJA-oUlcpv5kcRZKuiJ5HrfHs
+[2025-10-30T00:12:45.507Z] LOG       uri: https://maps.google.com/?cid=8898245972445014884
+[2025-10-30T00:12:45.508Z] LOG    6. [MAPS] Big Shot coffee
+[2025-10-30T00:12:45.508Z] LOG       placeId: places/ChIJ5_ZVUk9v5kcRrfaGnNu0-zw
+[2025-10-30T00:12:45.509Z] LOG       uri: https://maps.google.com/?cid=4394304716746978989
+[2025-10-30T00:12:45.510Z] LOG    7. [MAPS] Le Peloton Café
+[2025-10-30T00:12:45.510Z] LOG       placeId: places/ChIJy2DMU_1x5kcR9SBKGXpGEas
+[2025-10-30T00:12:45.511Z] LOG       uri: https://maps.google.com/?cid=12326711145314001141
+[2025-10-30T00:12:45.512Z] LOG    8. [MAPS] Café d’Auteur - Specialty Coffee shop & roaster
+[2025-10-30T00:12:45.513Z] LOG       placeId: places/ChIJyXgSNGtx5kcRA1_dub1akkI
+[2025-10-30T00:12:45.514Z] LOG       uri: https://maps.google.com/?cid=4796996324016611075
+[2025-10-30T00:12:45.515Z] LOG    9. [MAPS] Fringe
+[2025-10-30T00:12:45.516Z] LOG       placeId: places/ChIJ57HSHAdu5kcR_omNfYABNwo
+[2025-10-30T00:12:45.517Z] LOG       uri: https://maps.google.com/?cid=736058715472235006
+[2025-10-30T00:12:45.518Z] LOG    10. [MAPS] Terres de Café
+[2025-10-30T00:12:45.519Z] LOG       placeId: places/ChIJ-UiBUYlv5kcRWrWf7RBf4V4
+[2025-10-30T00:12:45.520Z] LOG       uri: https://maps.google.com/?cid=6836850235635905882
+[2025-10-30T00:12:45.521Z] LOG    11. [MAPS] Two Doors Coffee-Shop
+[2025-10-30T00:12:45.522Z] LOG       placeId: places/ChIJCaCBLCVv5kcR99Ry8E54IzA
+[2025-10-30T00:12:45.523Z] LOG       uri: https://maps.google.com/?cid=3468748418442253559
+[2025-10-30T00:12:45.524Z] LOG    12. [MAPS] Matamata Coffee
+[2025-10-30T00:12:45.524Z] LOG       placeId: places/ChIJO8pctCJu5kcRIkAed68bxqc
+[2025-10-30T00:12:45.525Z] LOG       uri: https://maps.google.com/?cid=12089380690154373154
+[2025-10-30T00:12:45.526Z] LOG    13. [MAPS] Minicafé Île Saint-Louis - coffeeshop, matcha and cookies
+[2025-10-30T00:12:45.526Z] LOG       placeId: places/ChIJp6Zwu69x5kcRDSMmHkMjRMc
+[2025-10-30T00:12:45.527Z] LOG       uri: https://maps.google.com/?cid=14358640283139580685
+[2025-10-30T00:12:45.528Z] LOG    14. [MAPS] Boot Café
+[2025-10-30T00:12:45.529Z] LOG       placeId: places/ChIJWRpFMgdu5kcRsRVTLrySPkE
+[2025-10-30T00:12:45.529Z] LOG       uri: https://maps.google.com/?cid=4701356397950080433
+[2025-10-30T00:12:45.530Z] LOG    15. [MAPS] Jōhō
+[2025-10-30T00:12:45.531Z] LOG       placeId: places/ChIJNyOqEsdv5kcRGh0d3qgC3TA
+[2025-10-30T00:12:45.531Z] LOG       uri: https://maps.google.com/?cid=3520973407977807130
+[2025-10-30T00:12:45.532Z] LOG    16. [MAPS] Motors Coffee
+[2025-10-30T00:12:45.533Z] LOG       placeId: places/ChIJnYHfBB9u5kcRe-srWfepzAY
+[2025-10-30T00:12:45.533Z] LOG       uri: https://maps.google.com/?cid=489953339294608251
+[2025-10-30T00:12:45.534Z] LOG    17. [MAPS] Arty Caffé
+[2025-10-30T00:12:45.534Z] LOG       placeId: places/ChIJPSzCYbdv5kcRD9PdiYqZ1kA
+[2025-10-30T00:12:45.535Z] LOG       uri: https://maps.google.com/?cid=4672090483741020943
+[2025-10-30T00:12:45.537Z] LOG    18. [MAPS] Back in Black
+[2025-10-30T00:12:45.537Z] LOG       placeId: places/ChIJrWUgQldt5kcRTgM8_eRpZzI
+[2025-10-30T00:12:45.538Z] LOG       uri: https://maps.google.com/?cid=3631988056719622990
+[2025-10-30T00:12:45.539Z] LOG    19. [MAPS] The Coffee
+[2025-10-30T00:12:45.540Z] LOG       placeId: places/ChIJU5UxSpht5kcRJJocvnWOzZg
+[2025-10-30T00:12:45.541Z] LOG       uri: https://maps.google.com/?cid=11010613300342594084
+[2025-10-30T00:12:45.542Z] LOG    20. [MAPS] BUDDY BUDDY – Nut Butter Coffee Bar
+[2025-10-30T00:12:45.542Z] LOG       placeId: places/ChIJaY-wAUBv5kcR03ZeMD4tR44
+[2025-10-30T00:12:45.543Z] LOG       uri: https://maps.google.com/?cid=10252212821854942931
+[2025-10-30T00:12:45.545Z] LOG ✨ Parsed 5 venue recommendations
+[2025-10-30T00:12:45.545Z] LOG 📋 Plan: Parisian Coffee Journey, 5 stops
+
+--- Summary ---
+Completed
