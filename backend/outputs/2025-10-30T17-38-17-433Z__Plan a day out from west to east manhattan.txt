@@ -1,0 +1,166 @@
+User Prompt: Plan a day out from west to east manhattan
+
+[2025-10-30T17:38:17.434Z] LOG 📍 Using fallback location (no user location): West Side
+[2025-10-30T17:38:17.434Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T17:38:17.435Z] LOG    1. "The High Line" in "West Side"
+[2025-10-30T17:38:17.435Z] LOG    2. "American Museum of Natural History" in "Upper West Side"
+[2025-10-30T17:38:17.436Z] LOG    3. "Rockefeller Center" in "Midtown"
+[2025-10-30T17:38:17.437Z] LOG    4. "The Metropolitan Museum of Art" in "Upper East Side"
+[2025-10-30T17:38:17.440Z] LOG    5. "Central Park" in "East Side"
+[2025-10-30T17:38:17.441Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T17:38:17.441Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:38:17.442Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:38:17.442Z] LOG    1. Searching "The High Line" in "West Side"
+[2025-10-30T17:38:17.443Z] LOG 🔍 [Google Places] Text search: "The High Line" in West Side
+[2025-10-30T17:38:17.447Z] LOG    2. Searching "American Museum of Natural History" in "Upper West Side"
+[2025-10-30T17:38:17.449Z] LOG 🔍 [Google Places] Text search: "American Museum of Natural History" in Upper West Side
+[2025-10-30T17:38:17.454Z] LOG    3. Searching "Rockefeller Center" in "Midtown"
+[2025-10-30T17:38:17.455Z] LOG 🔍 [Google Places] Text search: "Rockefeller Center" in Midtown
+[2025-10-30T17:38:17.460Z] LOG    4. Searching "The Metropolitan Museum of Art" in "Upper East Side"
+[2025-10-30T17:38:17.461Z] LOG 🔍 [Google Places] Text search: "The Metropolitan Museum of Art" in Upper East Side
+[2025-10-30T17:38:17.463Z] LOG    5. Searching "Central Park" in "East Side"
+[2025-10-30T17:38:17.463Z] LOG 🔍 [Google Places] Text search: "Central Park" in East Side
+[2025-10-30T17:38:17.966Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:38:17.971Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:38:17.976Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:38:18.024Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:38:18.051Z] LOG    ✅ American Museum of Natural History: Got description (98 chars)
+[2025-10-30T17:38:18.055Z] LOG ✅ Found 1 places
+[2025-10-30T17:38:18.079Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:38:18.095Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2025-10-30T17:38:18.101Z] LOG ✅ Found 1 places
+[2025-10-30T17:38:18.113Z] LOG    ✅ Central Park: Got description (100 chars)
+[2025-10-30T17:38:18.117Z] LOG ✅ Found 1 places
+[2025-10-30T17:38:18.157Z] LOG    ✅ The High Line: Got description (85 chars)
+[2025-10-30T17:38:18.160Z] LOG ✅ Found 1 places
+[2025-10-30T17:38:18.210Z] LOG    ✅ The Metropolitan Museum of Art: Got description (97 chars)
+[2025-10-30T17:38:18.215Z] LOG ✅ Found 1 places
+[2025-10-30T17:38:18.217Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 775ms
+[2025-10-30T17:38:18.218Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:38:18.222Z] LOG    Tool execution result: success=true
+[2025-10-30T17:38:18.224Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T17:38:18.225Z] LOG    ✅ Merged: The High Line
+[2025-10-30T17:38:18.225Z] LOG       Places placeId: ChIJ5bQPhMdZwokRkTwKhVxhP1g
+[2025-10-30T17:38:18.227Z] LOG       Gemini description: An elevated linear park built on a former freight rail line,...
+[2025-10-30T17:38:18.227Z] LOG    ✅ Merged: American Museum of Natural History
+[2025-10-30T17:38:18.228Z] LOG       Places placeId: ChIJCXoPsPRYwokRsV1MYnKBfaI
+[2025-10-30T17:38:18.229Z] LOG       Gemini description: Explore vast exhibits spanning dinosaurs, ocean life, human ...
+[2025-10-30T17:38:18.229Z] LOG    ✅ Merged: Rockefeller Center
+[2025-10-30T17:38:18.230Z] LOG       Places placeId: ChIJ9U1mz_5YwokRosza1aAk0jM
+[2025-10-30T17:38:18.230Z] LOG       Gemini description: A historic complex featuring iconic art deco architecture, t...
+[2025-10-30T17:38:18.231Z] LOG    ✅ Merged: The Metropolitan Museum of Art
+[2025-10-30T17:38:18.232Z] LOG       Places placeId: ChIJb8Jg9pZYwokR-qHGtvSkLzs
+[2025-10-30T17:38:18.233Z] LOG       Gemini description: Home to a vast and diverse collection of art spanning 5,000 ...
+[2025-10-30T17:38:18.234Z] LOG    ✅ Merged: Central Park
+[2025-10-30T17:38:18.235Z] LOG       Places placeId: ChIJ4zGFAZpYwokRGUGph3Mf37k
+[2025-10-30T17:38:18.236Z] LOG       Gemini description: A sprawling urban oasis offering diverse landscapes, walking...
+[2025-10-30T17:38:18.237Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T17:38:18.238Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T17:38:18.238Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T17:38:18.239Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:38:18.239Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:38:18.240Z] LOG    1. Searching "park" in "40.7479925,-74.0047649"
+[2025-10-30T17:38:18.241Z] LOG    📍 Using nearbySearch at coordinates (40.7479925, -74.0047649)
+[2025-10-30T17:38:18.242Z] LOG 🔍 [Google Places] Nearby search at (40.7479925, -74.0047649)
+[2025-10-30T17:38:18.244Z] LOG    2. Searching "museum" in "40.7813241,-73.9739882"
+[2025-10-30T17:38:18.244Z] LOG    📍 Using nearbySearch at coordinates (40.7813241, -73.9739882)
+[2025-10-30T17:38:18.245Z] LOG 🔍 [Google Places] Nearby search at (40.7813241, -73.9739882)
+[2025-10-30T17:38:18.246Z] LOG    3. Searching "landmark" in "40.7587402,-73.9786736"
+[2025-10-30T17:38:18.247Z] LOG    📍 Using nearbySearch at coordinates (40.7587402, -73.9786736)
+[2025-10-30T17:38:18.247Z] LOG 🔍 [Google Places] Nearby search at (40.7587402, -73.9786736)
+[2025-10-30T17:38:18.249Z] LOG    4. Searching "museum" in "40.7794366,-73.963244"
+[2025-10-30T17:38:18.251Z] LOG    📍 Using nearbySearch at coordinates (40.7794366, -73.963244)
+[2025-10-30T17:38:18.253Z] LOG 🔍 [Google Places] Nearby search at (40.7794366, -73.963244)
+[2025-10-30T17:38:18.257Z] LOG    5. Searching "park" in "40.7825547,-73.9655834"
+[2025-10-30T17:38:18.263Z] LOG    📍 Using nearbySearch at coordinates (40.7825547, -73.9655834)
+[2025-10-30T17:38:18.265Z] LOG 🔍 [Google Places] Nearby search at (40.7825547, -73.9655834)
+[2025-10-30T17:38:18.807Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:38:18.820Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:38:18.846Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:38:18.888Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:38:18.903Z] LOG    ✅ The Metropolitan Museum of Art: Got description (97 chars)
+[2025-10-30T17:38:18.911Z] LOG    ✅ Maxwell Place Park: Got description (98 chars)
+[2025-10-30T17:38:18.923Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:38:18.945Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2025-10-30T17:38:18.970Z] LOG    ✅ The Metropolitan Museum of Art: Got description (97 chars)
+[2025-10-30T17:38:18.994Z] LOG    ✅ Museum of Arts and Design: Got description (99 chars)
+[2025-10-30T17:38:18.998Z] LOG    ✅ Central Park: Got description (100 chars)
+[2025-10-30T17:38:19.000Z] LOG    ✅ American Museum of Natural History: Got description (98 chars)
+[2025-10-30T17:38:19.004Z] LOG    ✅ The High Line: Got description (85 chars)
+[2025-10-30T17:38:19.011Z] LOG    ✅ Union Square Park: Got description (87 chars)
+[2025-10-30T17:38:19.016Z] LOG    ✅ Little Island: Got description (100 chars)
+[2025-10-30T17:38:19.030Z] LOG    ✅ North Meadow: Got description (90 chars)
+[2025-10-30T17:38:19.052Z] LOG    ✅ The Landmark Tavern: Got description (87 chars)
+[2025-10-30T17:38:19.057Z] LOG    ✅ Solomon R. Guggenheim Museum: Got description (97 chars)
+[2025-10-30T17:38:19.060Z] LOG    ⚠️  The Frick Collection: No editorial summary available
+[2025-10-30T17:38:19.063Z] LOG    ✅ Theodore Roosevelt Park: Got description (97 chars)
+[2025-10-30T17:38:19.067Z] LOG    ✅ American Museum of Natural History: Got description (98 chars)
+[2025-10-30T17:38:19.072Z] LOG    ✅ Greeley Square Park: Got description (81 chars)
+[2025-10-30T17:38:19.081Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2025-10-30T17:38:19.084Z] LOG    ✅ Deutsche Bank Center: Got description (99 chars)
+[2025-10-30T17:38:19.094Z] LOG    ✅ Asia Society and Museum: Got description (100 chars)
+[2025-10-30T17:38:19.097Z] LOG    ✅ Solomon R. Guggenheim Museum: Got description (97 chars)
+[2025-10-30T17:38:19.108Z] LOG    ⚠️  The Frick Collection: No editorial summary available
+[2025-10-30T17:38:19.115Z] LOG    ✅ Tiffany & Co. - The Landmark: Got description (89 chars)
+[2025-10-30T17:38:19.119Z] LOG    ✅ East Meadow: Got description (95 chars)
+[2025-10-30T17:38:19.127Z] LOG    ✅ The Great Lawn: Got description (98 chars)
+[2025-10-30T17:38:19.129Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 890ms
+[2025-10-30T17:38:19.130Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:38:19.132Z] LOG    ✅ Venue 1 (The High Line): 4 alternatives
+[2025-10-30T17:38:19.134Z] LOG       1. Maxwell Place Park (4.8⭐)
+[2025-10-30T17:38:19.135Z] LOG       2. Little Island (4.7⭐)
+[2025-10-30T17:38:19.136Z] LOG       3. Union Square Park (4.6⭐)
+[2025-10-30T17:38:19.137Z] LOG    ✅ Venue 2 (American Museum of Natural History): 4 alternatives
+[2025-10-30T17:38:19.137Z] LOG       1. The Metropolitan Museum of Art (4.8⭐)
+[2025-10-30T17:38:19.138Z] LOG       2. Solomon R. Guggenheim Museum (4.3⭐)
+[2025-10-30T17:38:19.139Z] LOG       3. Museum of Arts and Design (4.2⭐)
+[2025-10-30T17:38:19.140Z] LOG    ✅ Venue 3 (Rockefeller Center): 4 alternatives
+[2025-10-30T17:38:19.140Z] LOG       1. The Landmark Tavern (4.6⭐)
+[2025-10-30T17:38:19.141Z] LOG       2. Tiffany & Co. - The Landmark (4.6⭐)
+[2025-10-30T17:38:19.143Z] LOG       3. Empire State Building (4.7⭐)
+[2025-10-30T17:38:19.145Z] LOG    ✅ Venue 4 (The Metropolitan Museum of Art): 4 alternatives
+[2025-10-30T17:38:19.146Z] LOG       1. American Museum of Natural History (4.5⭐)
+[2025-10-30T17:38:19.148Z] LOG       2. Solomon R. Guggenheim Museum (4.3⭐)
+[2025-10-30T17:38:19.149Z] LOG       3. The Frick Collection (4.6⭐)
+[2025-10-30T17:38:19.149Z] LOG    ✅ Venue 5 (Central Park): 4 alternatives
+[2025-10-30T17:38:19.150Z] LOG       1. Theodore Roosevelt Park (4.6⭐)
+[2025-10-30T17:38:19.151Z] LOG       2. North Meadow (4.7⭐)
+[2025-10-30T17:38:19.152Z] LOG       3. East Meadow (4.7⭐)
+[2025-10-30T17:38:19.153Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T17:38:19.154Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T17:38:19.155Z] LOG    Primary venues: 5 stops
+[2025-10-30T17:38:19.157Z] LOG    ❌ Removed "The Metropolitan Museum of Art" - already in primary route
+[2025-10-30T17:38:19.158Z] LOG    🔧 Stop "ChIJCXoPsPRYwokRsV1M...": 4 → 3 alternatives
+[2025-10-30T17:38:19.159Z] LOG    ❌ Removed "American Museum of Natural History" - already in primary route
+[2025-10-30T17:38:19.160Z] LOG    ❌ Removed "Solomon R. Guggenheim Museum" - duplicate alternative
+[2025-10-30T17:38:19.161Z] LOG    ❌ Removed "The Frick Collection" - duplicate alternative
+[2025-10-30T17:38:19.161Z] LOG    🔧 Stop "ChIJb8Jg9pZYwokR-qHG...": 4 → 1 alternatives
+[2025-10-30T17:38:19.162Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T17:38:19.163Z] LOG    Removed 2 venues already in route
+[2025-10-30T17:38:19.164Z] LOG    Removed 2 duplicate alternatives
+[2025-10-30T17:38:19.164Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T17:38:19.165Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T17:38:19.166Z] LOG    Primary venues: 5
+[2025-10-30T17:38:19.167Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T17:38:19.168Z] LOG    Execution time: 1732ms
+[2025-10-30T17:38:19.168Z] LOG 
+📋 Final alternatives:
+[2025-10-30T17:38:19.169Z] LOG    The High Line: 4 alternatives
+[2025-10-30T17:38:19.170Z] LOG    American Museum of Natural History: 3 alternatives
+[2025-10-30T17:38:19.170Z] LOG    Rockefeller Center: 4 alternatives
+[2025-10-30T17:38:19.171Z] LOG    The Metropolitan Museum of Art: 1 alternatives
+[2025-10-30T17:38:19.172Z] LOG    Central Park: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

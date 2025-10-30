@@ -1,0 +1,26 @@
+User Prompt: plan a day out in paris ending with the eiffel tower
+
+[2025-10-30T17:34:01.169Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-30T17:34:01.170Z] LOG 📝 User prompt: "plan a day out in paris ending with the eiffel tower"
+[2025-10-30T17:34:01.170Z] LOG 📍 User location: Paris, France (48.853495, 2.348392)
+[2025-10-30T17:34:01.171Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-30T17:34:01.171Z] LOG 🗺️ Location context configured: (48.853495, 2.348392)
+[2025-10-30T17:34:05.560Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Thu, 30 Oct 2025 17:34:04 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=4242","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"The user wants to plan a day out in Paris, ending at the Eiffel Tower. I will create a plan that starts with a cultural experience, moves to a relaxing garden, and then concludes with a meal offering a view of the Eiffel Tower. The scale will be city-wide as it involves multiple locations across Paris, and the travel mode will be transit/driving to cover the distances efficiently.\n\n"},{"text":"```json\n{\n  \"plan\": {\n    \"type\": \"Parisian Day Out\",\n    \"total_stops\": 4,\n    \"estimated_duration\": \"Full day (8-10 hours)\",\n    \"travel_mode\": \"transit/driving\",\n    \"theme\": \"A blend of art, nature, and iconic Parisian views.\",\n    \"scale\": \"city-wide\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"Louvre Museum\",\n      \"description\": \"One of the world's largest and most famous museums, home to iconic masterpieces like the Mona Lisa and Venus de Milo. Its historic palace setting adds to its grandeur.\",\n      \"category\": \"museum\",\n      \"reasoning\": \"A quintessential Parisian experience to start the day with art and history.\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Visitors praise the incredible art collection and the breathtaking architecture.\",\n      \"general_location\": \"1st arrondissement\"\n    },\n    {\n      \"name\": \"Luxembourg Gardens\",\n      \"description\": \"A beautiful and expansive public park featuring sculpted gardens, fountains, and the stunning Luxembourg Palace. It's a perfect spot for a leisurely stroll or relaxation.\",\n      \"category\": \"park\",\n      \"reasoning\": \"Offers a peaceful transition from the museum to a more relaxed afternoon.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Appreciated for its beauty, tranquility, and the iconic Medici Fountain.\",\n      \"general_location\": \"6th arrondissement\"\n    },\n    {\n      \"name\": \"Musée d'Orsay\",\n      \"description\": \"Housed in a former Beaux-Arts railway station, this museum displays a vast collection of Impressionist and Post-Impressionist masterpieces.\",\n      \"category\": \"museum\",\n      \"reasoning\": \"Another significant cultural stop, offering a different artistic era than the Louvre.\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Highlights include its impressive collection of Impressionist art and unique building.\",\n      \"general_location\": \"7th arrondissement\"\n    },\n    {\n      \"name\": \"Les Ombres\",\n      \"description\": \"A sophisticated restaurant located on the rooftop of the Musée du quai Branly, offering spectacular panoramic views of Paris, including the Eiffel Tower.\",\n      \"category\": \"restaurant\",\n      \"reasoning\": \"Provides a memorable dining experience with a direct view of the Eiffel Tower to conclude the day.\",\n      \"rating\": 4.3,\n      \"reviewsSummary\": \"Praised for its stunning Eiffel Tower views and refined French cuisine.\",\n      \"general_location\": \"7th arrondissement\"\n    }\n  ]\n}\n```"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{},"index":0}],"modelVersion":"gemini-2.5-flash-lite","responseId":"jKEDafzLJoWOjMcP-rjb0As","usageMetadata":{"promptTokenCount":502,"candidatesTokenCount":770,"totalTokenCount":1863,"promptTokensDetails":[{"modality":"TEXT","tokenCount":502}],"toolUsePromptTokenCount":591,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":591}]}}
+[2025-10-30T17:34:05.563Z] LOG ✅ Gemini response received
+[2025-10-30T17:34:05.564Z] LOG 📄 Response length: 2806 characters
+[2025-10-30T17:34:05.564Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-30T17:34:05.565Z] LOG    candidate exists: true
+[2025-10-30T17:34:05.565Z] LOG    groundingMetadata exists: true
+[2025-10-30T17:34:05.566Z] LOG 📊 Grounding status: Maps=false, Search=false
+[2025-10-30T17:34:05.566Z] LOG ⚠️ No grounding chunks found - Maps grounding may not have triggered
+[2025-10-30T17:34:05.566Z] LOG    This could mean:
+[2025-10-30T17:34:05.567Z] LOG    1. Query didn't need Maps data
+[2025-10-30T17:34:05.567Z] LOG    2. Maps grounding not available for this query type
+[2025-10-30T17:34:05.567Z] LOG    3. Location context not sufficient
+[2025-10-30T17:34:05.568Z] LOG ✨ Parsed 4 venue recommendations
+[2025-10-30T17:34:05.568Z] LOG 📋 Plan: Parisian Day Out, 4 stops
+
+--- Summary ---
+Completed

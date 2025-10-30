@@ -1,0 +1,172 @@
+User Prompt: Plan a day out in Monaco
+
+[2025-10-30T17:22:10.780Z] LOG 📍 Using fallback location (no user location): Monaco
+[2025-10-30T17:22:10.781Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T17:22:10.781Z] LOG    1. "Prince's Palace of Monaco" in "Monaco-Ville"
+[2025-10-30T17:22:10.782Z] LOG    2. "Oceanographic Museum of Monaco" in "Monaco-Ville"
+[2025-10-30T17:22:10.782Z] LOG    3. "Monte Carlo Casino" in "Monte Carlo"
+[2025-10-30T17:22:10.783Z] LOG    4. "Jardin Exotique de Monaco" in "Jardin Exotique"
+[2025-10-30T17:22:10.783Z] LOG    5. "Port Hercules" in "Port Hercules"
+[2025-10-30T17:22:10.784Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T17:22:10.784Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:22:10.785Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:22:10.786Z] LOG    1. Searching "Prince's Palace of Monaco" in "Monaco-Ville"
+[2025-10-30T17:22:10.787Z] LOG 🔍 [Google Places] Text search: "Prince's Palace of Monaco" in Monaco-Ville
+[2025-10-30T17:22:10.794Z] LOG    2. Searching "Oceanographic Museum of Monaco" in "Monaco-Ville"
+[2025-10-30T17:22:10.795Z] LOG 🔍 [Google Places] Text search: "Oceanographic Museum of Monaco" in Monaco-Ville
+[2025-10-30T17:22:10.798Z] LOG    3. Searching "Monte Carlo Casino" in "Monte Carlo"
+[2025-10-30T17:22:10.798Z] LOG 🔍 [Google Places] Text search: "Monte Carlo Casino" in Monte Carlo
+[2025-10-30T17:22:10.801Z] LOG    4. Searching "Jardin Exotique de Monaco" in "Jardin Exotique"
+[2025-10-30T17:22:10.804Z] LOG 🔍 [Google Places] Text search: "Jardin Exotique de Monaco" in Jardin Exotique
+[2025-10-30T17:22:10.811Z] LOG    5. Searching "Port Hercules" in "Port Hercules"
+[2025-10-30T17:22:10.813Z] LOG 🔍 [Google Places] Text search: "Port Hercules" in Port Hercules
+[2025-10-30T17:22:11.204Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:22:11.337Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:22:11.366Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:22:11.391Z] LOG    ✅ Port Hercule: Got description (99 chars)
+[2025-10-30T17:22:11.392Z] LOG ✅ Found 1 places
+[2025-10-30T17:22:11.457Z] LOG    ✅ Prince's Palace of Monaco: Got description (98 chars)
+[2025-10-30T17:22:11.462Z] LOG ✅ Found 1 places
+[2025-10-30T17:22:11.511Z] LOG    ✅ Musée océanographique de Monaco: Got description (96 chars)
+[2025-10-30T17:22:11.513Z] LOG ✅ Found 1 places
+[2025-10-30T17:22:11.517Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:22:11.661Z] LOG    ✅ Casino de Monte-Carlo: Got description (100 chars)
+[2025-10-30T17:22:11.663Z] LOG ✅ Found 1 places
+[2025-10-30T17:22:11.724Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:22:11.892Z] LOG    ✅ Exotic Garden of Monaco: Got description (88 chars)
+[2025-10-30T17:22:11.894Z] LOG ✅ Found 1 places
+[2025-10-30T17:22:11.895Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1110ms
+[2025-10-30T17:22:11.895Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:22:11.896Z] LOG    Tool execution result: success=true
+[2025-10-30T17:22:11.897Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T17:22:11.897Z] LOG    ✅ Merged: Prince's Palace of Monaco
+[2025-10-30T17:22:11.897Z] LOG       Places placeId: ChIJK8yrdpLCzRIRIcD7wv9f-U8
+[2025-10-30T17:22:11.898Z] LOG       Gemini description: The official residence of the Prince of Monaco, offering stu...
+[2025-10-30T17:22:11.898Z] LOG    ✅ Merged: Oceanographic Museum of Monaco
+[2025-10-30T17:22:11.899Z] LOG       Places placeId: ChIJU2WkJZDCzRIRbGhKwmhB-cI
+[2025-10-30T17:22:11.899Z] LOG       Gemini description: Perched on a cliff overlooking the sea, this world-renowned ...
+[2025-10-30T17:22:11.900Z] LOG    ✅ Merged: Monte Carlo Casino
+[2025-10-30T17:22:11.900Z] LOG       Places placeId: ChIJZQJu5IfCzRIR4_SMWQznbqY
+[2025-10-30T17:22:11.900Z] LOG       Gemini description: An iconic landmark of Monaco, the Casino de Monte-Carlo is f...
+[2025-10-30T17:22:11.901Z] LOG    ✅ Merged: Jardin Exotique de Monaco
+[2025-10-30T17:22:11.901Z] LOG       Places placeId: ChIJoRCEd-3CzRIRQYW90YHmJPM
+[2025-10-30T17:22:11.901Z] LOG       Gemini description: A beautiful botanical garden featuring an impressive collect...
+[2025-10-30T17:22:11.902Z] LOG    ✅ Merged: Port Hercules
+[2025-10-30T17:22:11.902Z] LOG       Places placeId: ChIJ8Srp547CzRIRWChT29pI5D8
+[2025-10-30T17:22:11.902Z] LOG       Gemini description: A bustling marina home to numerous luxury yachts, it's a per...
+[2025-10-30T17:22:11.903Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T17:22:11.903Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T17:22:11.904Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T17:22:11.904Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:22:11.905Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:22:11.905Z] LOG    1. Searching "landmark" in "43.7311154,7.420256299999998"
+[2025-10-30T17:22:11.906Z] LOG    📍 Using nearbySearch at coordinates (43.7311154, 7.420256299999998)
+[2025-10-30T17:22:11.907Z] LOG 🔍 [Google Places] Nearby search at (43.7311154, 7.420256299999998)
+[2025-10-30T17:22:11.908Z] LOG    2. Searching "restaurant" in "43.7308132,7.425573999999999"
+[2025-10-30T17:22:11.909Z] LOG    📍 Using nearbySearch at coordinates (43.7308132, 7.425573999999999)
+[2025-10-30T17:22:11.909Z] LOG 🔍 [Google Places] Nearby search at (43.7308132, 7.425573999999999)
+[2025-10-30T17:22:11.910Z] LOG    3. Searching "restaurant" in "43.7390972,7.428068100000001"
+[2025-10-30T17:22:11.911Z] LOG    📍 Using nearbySearch at coordinates (43.7390972, 7.428068100000001)
+[2025-10-30T17:22:11.911Z] LOG 🔍 [Google Places] Nearby search at (43.7390972, 7.428068100000001)
+[2025-10-30T17:22:11.912Z] LOG    4. Searching "restaurant" in "43.73135,7.413945999999999"
+[2025-10-30T17:22:11.912Z] LOG    📍 Using nearbySearch at coordinates (43.73135, 7.413945999999999)
+[2025-10-30T17:22:11.913Z] LOG 🔍 [Google Places] Nearby search at (43.73135, 7.413945999999999)
+[2025-10-30T17:22:11.916Z] LOG    5. Searching "restaurant" in "43.7348291,7.4239932"
+[2025-10-30T17:22:11.917Z] LOG    📍 Using nearbySearch at coordinates (43.7348291, 7.4239932)
+[2025-10-30T17:22:11.917Z] LOG 🔍 [Google Places] Nearby search at (43.7348291, 7.4239932)
+[2025-10-30T17:22:12.448Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:22:12.480Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:22:12.497Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:22:12.609Z] LOG    ✅ Caffè Milano: Got description (89 chars)
+[2025-10-30T17:22:12.611Z] LOG    ✅ Place du Casino: Got description (99 chars)
+[2025-10-30T17:22:12.613Z] LOG    ⚠️  La Tavernetta: No editorial summary available
+[2025-10-30T17:22:12.636Z] LOG    ⚠️  Bella Vita: No editorial summary available
+[2025-10-30T17:22:12.639Z] LOG    ⚠️  Rampoldi Monte Carlo: No editorial summary available
+[2025-10-30T17:22:12.647Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:22:12.651Z] LOG    ✅ Caffè Milano: Got description (89 chars)
+[2025-10-30T17:22:12.653Z] LOG    ⚠️  La Tavernetta: No editorial summary available
+[2025-10-30T17:22:12.676Z] LOG    ⚠️  Bella Vita: No editorial summary available
+[2025-10-30T17:22:12.680Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:22:12.685Z] LOG    ⚠️  Restaurant A'TREGO: No editorial summary available
+[2025-10-30T17:22:12.686Z] LOG    ✅ Caffè Milano: Got description (89 chars)
+[2025-10-30T17:22:12.710Z] LOG    ⚠️  La Tavernetta: No editorial summary available
+[2025-10-30T17:22:12.719Z] LOG    ⚠️  Bella Vita: No editorial summary available
+[2025-10-30T17:22:12.725Z] LOG    ✅ Caffè Milano: Got description (89 chars)
+[2025-10-30T17:22:12.734Z] LOG    ⚠️  Restaurant A'TREGO: No editorial summary available
+[2025-10-30T17:22:12.746Z] LOG    ⚠️  Aux Saveurs des Îles: No editorial summary available
+[2025-10-30T17:22:12.767Z] LOG    ⚠️  Restaurant A'TREGO: No editorial summary available
+[2025-10-30T17:22:12.774Z] LOG    ⚠️  La Tavernetta: No editorial summary available
+[2025-10-30T17:22:12.782Z] LOG    ⚠️  Bella Vita: No editorial summary available
+[2025-10-30T17:22:12.787Z] LOG    ✅ Trophy of Augustus: Got description (91 chars)
+[2025-10-30T17:22:12.800Z] LOG    ⚠️  Aux Saveurs des Îles: No editorial summary available
+[2025-10-30T17:22:12.824Z] LOG    ⚠️  Monaco Courthouse: No editorial summary available
+[2025-10-30T17:22:12.832Z] LOG    ⚠️  Apotheosa Monaca: No editorial summary available
+[2025-10-30T17:22:12.845Z] LOG    ⚠️  Aux Saveurs des Îles: No editorial summary available
+[2025-10-30T17:22:12.850Z] LOG    ⚠️  La Grotte Bleue: No editorial summary available
+[2025-10-30T17:22:12.855Z] LOG    ⚠️  Manteau de la Conscience - Anna Chromy: No editorial summary available
+[2025-10-30T17:22:12.857Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 952ms
+[2025-10-30T17:22:12.859Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:22:12.861Z] LOG    ✅ Venue 1 (Prince's Palace of Monaco): 4 alternatives
+[2025-10-30T17:22:12.862Z] LOG       1. Manteau de la Conscience - Anna Chromy (4.7⭐)
+[2025-10-30T17:22:12.863Z] LOG       2. Monaco Courthouse (4.8⭐)
+[2025-10-30T17:22:12.864Z] LOG       3. Apotheosa Monaca (4.7⭐)
+[2025-10-30T17:22:12.865Z] LOG    ✅ Venue 2 (Musée océanographique de Monaco): 4 alternatives
+[2025-10-30T17:22:12.867Z] LOG       1. Caffè Milano (4.7⭐)
+[2025-10-30T17:22:12.868Z] LOG       2. La Tavernetta (4.3⭐)
+[2025-10-30T17:22:12.869Z] LOG       3. Restaurant A'TREGO (4.4⭐)
+[2025-10-30T17:22:12.870Z] LOG    ✅ Venue 3 (Casino de Monte-Carlo): 4 alternatives
+[2025-10-30T17:22:12.871Z] LOG       1. Caffè Milano (4.7⭐)
+[2025-10-30T17:22:12.871Z] LOG       2. La Tavernetta (4.3⭐)
+[2025-10-30T17:22:12.872Z] LOG       3. Aux Saveurs des Îles (4.7⭐)
+[2025-10-30T17:22:12.873Z] LOG    ✅ Venue 4 (Exotic Garden of Monaco): 4 alternatives
+[2025-10-30T17:22:12.873Z] LOG       1. Caffè Milano (4.7⭐)
+[2025-10-30T17:22:12.874Z] LOG       2. Place du Casino (4.1⭐)
+[2025-10-30T17:22:12.875Z] LOG       3. Bella Vita (4.2⭐)
+[2025-10-30T17:22:12.875Z] LOG    ✅ Venue 5 (Port Hercule): 4 alternatives
+[2025-10-30T17:22:12.876Z] LOG       1. Caffè Milano (4.7⭐)
+[2025-10-30T17:22:12.877Z] LOG       2. La Tavernetta (4.3⭐)
+[2025-10-30T17:22:12.877Z] LOG       3. Restaurant A'TREGO (4.4⭐)
+[2025-10-30T17:22:12.878Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T17:22:12.879Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T17:22:12.880Z] LOG    Primary venues: 5 stops
+[2025-10-30T17:22:12.882Z] LOG    ❌ Removed "Caffè Milano" - duplicate alternative
+[2025-10-30T17:22:12.883Z] LOG    ❌ Removed "La Tavernetta" - duplicate alternative
+[2025-10-30T17:22:12.883Z] LOG    ❌ Removed "Aux Saveurs des Îles" - duplicate alternative
+[2025-10-30T17:22:12.884Z] LOG    🔧 Stop "ChIJZQJu5IfCzRIR4_SM...": 4 → 1 alternatives
+[2025-10-30T17:22:12.885Z] LOG    ❌ Removed "Caffè Milano" - duplicate alternative
+[2025-10-30T17:22:12.885Z] LOG    ❌ Removed "Bella Vita" - duplicate alternative
+[2025-10-30T17:22:12.886Z] LOG    ❌ Removed "La Tavernetta" - duplicate alternative
+[2025-10-30T17:22:12.887Z] LOG    🔧 Stop "ChIJoRCEd-3CzRIRQYW9...": 4 → 1 alternatives
+[2025-10-30T17:22:12.887Z] LOG    ❌ Removed "Caffè Milano" - duplicate alternative
+[2025-10-30T17:22:12.888Z] LOG    ❌ Removed "La Tavernetta" - duplicate alternative
+[2025-10-30T17:22:12.889Z] LOG    ❌ Removed "Restaurant A'TREGO" - duplicate alternative
+[2025-10-30T17:22:12.889Z] LOG    ❌ Removed "Aux Saveurs des Îles" - duplicate alternative
+[2025-10-30T17:22:12.890Z] LOG    🔧 Stop "ChIJ8Srp547CzRIRWChT...": 4 → 0 alternatives
+[2025-10-30T17:22:12.891Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T17:22:12.891Z] LOG    Removed 0 venues already in route
+[2025-10-30T17:22:12.892Z] LOG    Removed 10 duplicate alternatives
+[2025-10-30T17:22:12.892Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T17:22:12.894Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T17:22:12.895Z] LOG    Primary venues: 5
+[2025-10-30T17:22:12.896Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T17:22:12.896Z] LOG    Execution time: 2115ms
+[2025-10-30T17:22:12.897Z] LOG 
+📋 Final alternatives:
+[2025-10-30T17:22:12.899Z] LOG    Prince's Palace of Monaco: 4 alternatives
+[2025-10-30T17:22:12.900Z] LOG    Musée océanographique de Monaco: 4 alternatives
+[2025-10-30T17:22:12.900Z] LOG    Casino de Monte-Carlo: 1 alternatives
+[2025-10-30T17:22:12.901Z] LOG    Exotic Garden of Monaco: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

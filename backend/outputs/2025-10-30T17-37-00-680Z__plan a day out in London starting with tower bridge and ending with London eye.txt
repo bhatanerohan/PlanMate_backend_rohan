@@ -1,0 +1,104 @@
+User Prompt: plan a day out in London starting with tower bridge and ending with London eye
+
+[2025-10-30T17:37:00.681Z] LOG 📍 Using extracted city from user location: Paris
+[2025-10-30T17:37:00.682Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T17:37:00.682Z] LOG    1. "Tower Bridge" in "Tower Hill"
+[2025-10-30T17:37:00.683Z] LOG    2. "South Bank" in "South Bank"
+[2025-10-30T17:37:00.683Z] LOG    3. "London Eye" in "South Bank"
+[2025-10-30T17:37:00.684Z] LOG 
+🔍 Executing batch search for 3 venues...
+[2025-10-30T17:37:00.685Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:37:00.686Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-30T17:37:00.687Z] LOG    1. Searching "Tower Bridge" in "Tower Hill"
+[2025-10-30T17:37:00.687Z] LOG 🔍 [Google Places] Text search: "Tower Bridge" in Tower Hill
+[2025-10-30T17:37:00.690Z] LOG    2. Searching "South Bank" in "South Bank"
+[2025-10-30T17:37:00.691Z] LOG 🔍 [Google Places] Text search: "South Bank" in South Bank
+[2025-10-30T17:37:00.694Z] LOG    3. Searching "London Eye" in "South Bank"
+[2025-10-30T17:37:00.697Z] LOG 🔍 [Google Places] Text search: "London Eye" in South Bank
+[2025-10-30T17:37:01.103Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:37:01.183Z] LOG    ⚠️  London Eye: No editorial summary available
+[2025-10-30T17:37:01.184Z] LOG ✅ Found 1 places
+[2025-10-30T17:37:01.289Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:37:01.405Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:37:01.438Z] LOG    ⚠️  South Shore Bank: No editorial summary available
+[2025-10-30T17:37:01.439Z] LOG ✅ Found 1 places
+[2025-10-30T17:37:01.493Z] LOG    ✅ Tower Bridge: Got description (100 chars)
+[2025-10-30T17:37:01.495Z] LOG ✅ Found 1 places
+[2025-10-30T17:37:01.497Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 811ms
+[2025-10-30T17:37:01.497Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:37:01.498Z] LOG    Tool execution result: success=true
+[2025-10-30T17:37:01.498Z] LOG    ✅ Tool returned 3 search results
+[2025-10-30T17:37:01.499Z] LOG    ✅ Merged: Tower Bridge
+[2025-10-30T17:37:01.499Z] LOG       Places placeId: ChIJSdtli0MDdkgRLW9aCBpCeJ4
+[2025-10-30T17:37:01.499Z] LOG       Gemini description: An iconic Victorian bascule bridge and a Grade I listed buil...
+[2025-10-30T17:37:01.500Z] LOG    ✅ Merged: South Bank
+[2025-10-30T17:37:01.500Z] LOG       Places placeId: ChIJ2bL2mZ5j44kRKV793SuwDZo
+[2025-10-30T17:37:01.501Z] LOG       Gemini description: A vibrant cultural hub along the River Thames, South Bank of...
+[2025-10-30T17:37:01.501Z] LOG    ✅ Merged: London Eye
+[2025-10-30T17:37:01.502Z] LOG       Places placeId: ChIJc2nSALkEdkgRkuoJJBfzkUI
+[2025-10-30T17:37:01.502Z] LOG       Gemini description: A giant cantilevered observation wheel on the South Bank of ...
+[2025-10-30T17:37:01.503Z] LOG ✅ Phase 1 complete: Found 3/3 exact venues
+[2025-10-30T17:37:01.503Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T17:37:01.504Z] LOG    Searching for alternatives near 3 venues...
+[2025-10-30T17:37:01.504Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:37:01.504Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-30T17:37:01.505Z] LOG    1. Searching "landmark" in "51.5054564,-0.07535649999999999"
+[2025-10-30T17:37:01.505Z] LOG    📍 Using nearbySearch at coordinates (51.5054564, -0.07535649999999999)
+[2025-10-30T17:37:01.505Z] LOG 🔍 [Google Places] Nearby search at (51.5054564, -0.07535649999999999)
+[2025-10-30T17:37:01.506Z] LOG    2. Searching "restaurant" in "42.2428659,-70.9505136"
+[2025-10-30T17:37:01.507Z] LOG    📍 Using nearbySearch at coordinates (42.2428659, -70.9505136)
+[2025-10-30T17:37:01.507Z] LOG 🔍 [Google Places] Nearby search at (42.2428659, -70.9505136)
+[2025-10-30T17:37:01.508Z] LOG    3. Searching "landmark" in "51.5031864,-0.1195192"
+[2025-10-30T17:37:01.508Z] LOG    📍 Using nearbySearch at coordinates (51.5031864, -0.1195192)
+[2025-10-30T17:37:01.509Z] LOG 🔍 [Google Places] Nearby search at (51.5031864, -0.1195192)
+[2025-10-30T17:37:02.097Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:37:02.246Z] LOG    ⚠️  Ocho Cafe - Weymouth: No editorial summary available
+[2025-10-30T17:37:02.258Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:37:02.282Z] LOG    ⚠️  The Mooring Bar & Grill: No editorial summary available
+[2025-10-30T17:37:02.304Z] LOG    ✅ The Lobster Stop: Got description (97 chars)
+[2025-10-30T17:37:02.312Z] LOG    ⚠️  Ganko Ittetsu Ramen: No editorial summary available
+[2025-10-30T17:37:02.314Z] LOG    ✅ Maria's Trattoria: Got description (99 chars)
+[2025-10-30T17:37:02.363Z] LOG    ✅ Buckingham Palace: Got description (98 chars)
+[2025-10-30T17:37:02.410Z] LOG    ⚠️  Piccadilly Lights: No editorial summary available
+[2025-10-30T17:37:02.424Z] LOG    ✅ Nelson's Column: Got description (96 chars)
+[2025-10-30T17:37:02.440Z] LOG    ✅ Shaftesbury Memorial Fountain: Got description (100 chars)
+[2025-10-30T17:37:02.444Z] LOG    ⚠️  Canada Gate: No editorial summary available
+[2025-10-30T17:37:02.448Z] LOG ✅ Batch complete: 3/3 searches succeeded, 10 total venues found in 944ms
+[2025-10-30T17:37:02.449Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:37:02.451Z] LOG    ⚠️ No alternatives found for venue 1
+[2025-10-30T17:37:02.452Z] LOG    ✅ Venue 2 (South Shore Bank): 4 alternatives
+[2025-10-30T17:37:02.453Z] LOG       1. Ocho Cafe - Weymouth (4.4⭐)
+[2025-10-30T17:37:02.454Z] LOG       2. Maria's Trattoria (4.4⭐)
+[2025-10-30T17:37:02.455Z] LOG       3. The Lobster Stop (4.5⭐)
+[2025-10-30T17:37:02.455Z] LOG    ✅ Venue 3 (London Eye): 4 alternatives
+[2025-10-30T17:37:02.456Z] LOG       1. Buckingham Palace (4.5⭐)
+[2025-10-30T17:37:02.457Z] LOG       2. Shaftesbury Memorial Fountain (4.5⭐)
+[2025-10-30T17:37:02.457Z] LOG       3. Piccadilly Lights (4.6⭐)
+[2025-10-30T17:37:02.458Z] LOG 
+📦 Phase 2 complete: 2 stops with alternatives
+[2025-10-30T17:37:02.458Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T17:37:02.459Z] LOG    Primary venues: 3 stops
+[2025-10-30T17:37:02.459Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T17:37:02.460Z] LOG    Removed 0 venues already in route
+[2025-10-30T17:37:02.461Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T17:37:02.461Z] LOG    Final: 2 stops with alternatives
+
+[2025-10-30T17:37:02.462Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T17:37:02.464Z] LOG    Primary venues: 3
+[2025-10-30T17:37:02.465Z] LOG    Alternatives: 2 stops with alternatives
+[2025-10-30T17:37:02.467Z] LOG    Execution time: 1782ms
+[2025-10-30T17:37:02.467Z] LOG 
+📋 Final alternatives:
+[2025-10-30T17:37:02.468Z] LOG    South Shore Bank: 4 alternatives
+[2025-10-30T17:37:02.469Z] LOG    London Eye: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 3
+Alternatives: 2

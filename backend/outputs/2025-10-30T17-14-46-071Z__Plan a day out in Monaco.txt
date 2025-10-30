@@ -1,0 +1,171 @@
+User Prompt: Plan a day out in Monaco
+
+[2025-10-30T17:14:46.074Z] LOG 📍 Using fallback location (no user location): Monaco
+[2025-10-30T17:14:46.075Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T17:14:46.076Z] LOG    1. "Prince's Palace of Monaco" in "Monaco-Ville (The Rock)"
+[2025-10-30T17:14:46.076Z] LOG    2. "Cathedral of Our Lady Immaculate" in "Monaco-Ville (The Rock)"
+[2025-10-30T17:14:46.077Z] LOG    3. "Musée océanographique de Monaco" in "Monaco-Ville (The Rock)"
+[2025-10-30T17:14:46.077Z] LOG    4. "Casino de Monte-Carlo" in "Monte Carlo"
+[2025-10-30T17:14:46.078Z] LOG    5. "Port Hercule" in "La Condamine/Monte Carlo"
+[2025-10-30T17:14:46.078Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T17:14:46.080Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:14:46.082Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:14:46.083Z] LOG    1. Searching "Prince's Palace of Monaco" in "Monaco-Ville (The Rock)"
+[2025-10-30T17:14:46.083Z] LOG 🔍 [Google Places] Text search: "Prince's Palace of Monaco" in Monaco-Ville (The Rock)
+[2025-10-30T17:14:46.094Z] LOG    2. Searching "Cathedral of Our Lady Immaculate" in "Monaco-Ville (The Rock)"
+[2025-10-30T17:14:46.097Z] LOG 🔍 [Google Places] Text search: "Cathedral of Our Lady Immaculate" in Monaco-Ville (The Rock)
+[2025-10-30T17:14:46.102Z] LOG    3. Searching "Musée océanographique de Monaco" in "Monaco-Ville (The Rock)"
+[2025-10-30T17:14:46.103Z] LOG 🔍 [Google Places] Text search: "Musée océanographique de Monaco" in Monaco-Ville (The Rock)
+[2025-10-30T17:14:46.105Z] LOG    4. Searching "Casino de Monte-Carlo" in "Monte Carlo"
+[2025-10-30T17:14:46.106Z] LOG 🔍 [Google Places] Text search: "Casino de Monte-Carlo" in Monte Carlo
+[2025-10-30T17:14:46.110Z] LOG    5. Searching "Port Hercule" in "La Condamine/Monte Carlo"
+[2025-10-30T17:14:46.111Z] LOG 🔍 [Google Places] Text search: "Port Hercule" in La Condamine/Monte Carlo
+[2025-10-30T17:14:46.720Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:14:46.732Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:14:46.823Z] LOG    ✅ Cathedral of Our Lady Immaculate: Got description (88 chars)
+[2025-10-30T17:14:46.826Z] LOG ✅ Found 1 places
+[2025-10-30T17:14:46.862Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:14:46.866Z] LOG    ✅ Prince's Palace of Monaco: Got description (98 chars)
+[2025-10-30T17:14:46.866Z] LOG ✅ Found 1 places
+[2025-10-30T17:14:46.904Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:14:46.979Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:14:46.981Z] LOG    ✅ Musée océanographique de Monaco: Got description (96 chars)
+[2025-10-30T17:14:46.982Z] LOG ✅ Found 1 places
+[2025-10-30T17:14:47.016Z] LOG    ✅ Casino de Monte-Carlo: Got description (100 chars)
+[2025-10-30T17:14:47.017Z] LOG ✅ Found 1 places
+[2025-10-30T17:14:47.139Z] LOG    ✅ Port Hercule: Got description (99 chars)
+[2025-10-30T17:14:47.140Z] LOG ✅ Found 1 places
+[2025-10-30T17:14:47.141Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1059ms
+[2025-10-30T17:14:47.142Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:14:47.142Z] LOG    Tool execution result: success=true
+[2025-10-30T17:14:47.142Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T17:14:47.143Z] LOG    ✅ Merged: Prince's Palace of Monaco
+[2025-10-30T17:14:47.143Z] LOG       Places placeId: ChIJK8yrdpLCzRIRIcD7wv9f-U8
+[2025-10-30T17:14:47.144Z] LOG       Gemini description: Start your day at the official residence of the Prince of Mo...
+[2025-10-30T17:14:47.144Z] LOG    ✅ Merged: Cathedral of Our Lady Immaculate
+[2025-10-30T17:14:47.144Z] LOG       Places placeId: ChIJXxH-HpLCzRIRIZabyjTbjNQ
+[2025-10-30T17:14:47.145Z] LOG       Gemini description: Just a short walk from the Prince's Palace, this beautiful R...
+[2025-10-30T17:14:47.145Z] LOG    ✅ Merged: Musée océanographique de Monaco
+[2025-10-30T17:14:47.146Z] LOG       Places placeId: ChIJU2WkJZDCzRIRbGhKwmhB-cI
+[2025-10-30T17:14:47.146Z] LOG       Gemini description: Perched dramatically on the cliffside, this world-renowned o...
+[2025-10-30T17:14:47.146Z] LOG    ✅ Merged: Casino de Monte-Carlo
+[2025-10-30T17:14:47.147Z] LOG       Places placeId: ChIJZQJu5IfCzRIR4_SMWQznbqY
+[2025-10-30T17:14:47.147Z] LOG       Gemini description: No visit to Monaco is complete without seeing the iconic Cas...
+[2025-10-30T17:14:47.147Z] LOG    ✅ Merged: Port Hercule
+[2025-10-30T17:14:47.148Z] LOG       Places placeId: ChIJ8Srp547CzRIRWChT29pI5D8
+[2025-10-30T17:14:47.148Z] LOG       Gemini description: Take a stroll along Port Hercule, Monaco's deep-water port t...
+[2025-10-30T17:14:47.148Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T17:14:47.148Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T17:14:47.149Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T17:14:47.149Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:14:47.149Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:14:47.150Z] LOG    1. Searching "landmark" in "43.7311154,7.420256299999998"
+[2025-10-30T17:14:47.150Z] LOG    📍 Using nearbySearch at coordinates (43.7311154, 7.420256299999998)
+[2025-10-30T17:14:47.151Z] LOG 🔍 [Google Places] Nearby search at (43.7311154, 7.420256299999998)
+[2025-10-30T17:14:47.152Z] LOG    2. Searching "landmark" in "43.7303806,7.4225216"
+[2025-10-30T17:14:47.152Z] LOG    📍 Using nearbySearch at coordinates (43.7303806, 7.4225216)
+[2025-10-30T17:14:47.153Z] LOG 🔍 [Google Places] Nearby search at (43.7303806, 7.4225216)
+[2025-10-30T17:14:47.155Z] LOG    3. Searching "museum" in "43.7308132,7.425573999999999"
+[2025-10-30T17:14:47.156Z] LOG    📍 Using nearbySearch at coordinates (43.7308132, 7.425573999999999)
+[2025-10-30T17:14:47.157Z] LOG 🔍 [Google Places] Nearby search at (43.7308132, 7.425573999999999)
+[2025-10-30T17:14:47.158Z] LOG    4. Searching "landmark" in "43.7390972,7.428068100000001"
+[2025-10-30T17:14:47.158Z] LOG    📍 Using nearbySearch at coordinates (43.7390972, 7.428068100000001)
+[2025-10-30T17:14:47.159Z] LOG 🔍 [Google Places] Nearby search at (43.7390972, 7.428068100000001)
+[2025-10-30T17:14:47.160Z] LOG    5. Searching "landmark" in "43.7348291,7.4239932"
+[2025-10-30T17:14:47.160Z] LOG    📍 Using nearbySearch at coordinates (43.7348291, 7.4239932)
+[2025-10-30T17:14:47.160Z] LOG 🔍 [Google Places] Nearby search at (43.7348291, 7.4239932)
+[2025-10-30T17:14:47.729Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:14:47.790Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:14:47.798Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:14:47.808Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:14:47.872Z] LOG    ✅ Gateway to Rock: Got description (92 chars)
+[2025-10-30T17:14:47.875Z] LOG    ✅ Musée océanographique de Monaco: Got description (96 chars)
+[2025-10-30T17:14:47.895Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:14:47.936Z] LOG    ⚠️  Place du palais: No editorial summary available
+[2025-10-30T17:14:47.949Z] LOG    ⚠️  Manteau de la Conscience - Anna Chromy: No editorial summary available
+[2025-10-30T17:14:47.966Z] LOG    ✅ Gateway to Rock: Got description (92 chars)
+[2025-10-30T17:14:47.979Z] LOG    ✅ New National Museum of Monaco - Villa Paloma: Got description (94 chars)
+[2025-10-30T17:14:47.981Z] LOG    ✅ Jardins Saint-Martin: Got description (93 chars)
+[2025-10-30T17:14:47.983Z] LOG    ⚠️  Place du palais: No editorial summary available
+[2025-10-30T17:14:47.996Z] LOG    ⚠️  Apotheosa Monaca: No editorial summary available
+[2025-10-30T17:14:47.997Z] LOG    ⚠️  Monaco Courthouse: No editorial summary available
+[2025-10-30T17:14:47.999Z] LOG    ⚠️  Manteau de la Conscience - Anna Chromy: No editorial summary available
+[2025-10-30T17:14:48.004Z] LOG    ✅ Trophy of Augustus: Got description (91 chars)
+[2025-10-30T17:14:48.005Z] LOG    ✅ Monaco Museum of Prehistoric Anthropology: Got description (96 chars)
+[2025-10-30T17:14:48.036Z] LOG    ⚠️  Apotheosa Monaca: No editorial summary available
+[2025-10-30T17:14:48.057Z] LOG    ⚠️  La Grotte Bleue: No editorial summary available
+[2025-10-30T17:14:48.066Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco: Got description (98 chars)
+[2025-10-30T17:14:48.072Z] LOG    ⚠️  Place du palais: No editorial summary available
+[2025-10-30T17:14:48.076Z] LOG    ⚠️  Monaco Courthouse: No editorial summary available
+[2025-10-30T17:14:48.085Z] LOG    ⚠️  Apotheosa Monaca: No editorial summary available
+[2025-10-30T17:14:48.095Z] LOG    ⚠️  Manteau de la Conscience - Anna Chromy: No editorial summary available
+[2025-10-30T17:14:48.102Z] LOG    ⚠️  La Grotte Bleue: No editorial summary available
+[2025-10-30T17:14:48.125Z] LOG    ⚠️  Monaco Courthouse: No editorial summary available
+[2025-10-30T17:14:48.149Z] LOG    ⚠️  Apotheosa Monaca: No editorial summary available
+[2025-10-30T17:14:48.151Z] LOG    ⚠️  Manteau de la Conscience - Anna Chromy: No editorial summary available
+[2025-10-30T17:14:48.174Z] LOG    ⚠️  Monaco Courthouse: No editorial summary available
+[2025-10-30T17:14:48.176Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1027ms
+[2025-10-30T17:14:48.176Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:14:48.177Z] LOG    ✅ Venue 1 (Prince's Palace of Monaco): 4 alternatives
+[2025-10-30T17:14:48.178Z] LOG       1. Manteau de la Conscience - Anna Chromy (4.7⭐)
+[2025-10-30T17:14:48.178Z] LOG       2. Monaco Courthouse (4.8⭐)
+[2025-10-30T17:14:48.178Z] LOG       3. Apotheosa Monaca (4.7⭐)
+[2025-10-30T17:14:48.179Z] LOG    ✅ Venue 2 (Cathedral of Our Lady Immaculate): 4 alternatives
+[2025-10-30T17:14:48.179Z] LOG       1. Gateway to Rock (4.8⭐)
+[2025-10-30T17:14:48.179Z] LOG       2. Place du palais (4.8⭐)
+[2025-10-30T17:14:48.180Z] LOG       3. Monaco Courthouse (4.8⭐)
+[2025-10-30T17:14:48.180Z] LOG    ✅ Venue 3 (Musée océanographique de Monaco): 4 alternatives
+[2025-10-30T17:14:48.181Z] LOG       1. Private Cars Collection of HSH Prince of Monaco (4.7⭐)
+[2025-10-30T17:14:48.181Z] LOG       2. Monaco Museum of Prehistoric Anthropology (4.4⭐)
+[2025-10-30T17:14:48.181Z] LOG       3. New National Museum of Monaco - Villa Paloma (4.4⭐)
+[2025-10-30T17:14:48.182Z] LOG    ✅ Venue 4 (Casino de Monte-Carlo): 4 alternatives
+[2025-10-30T17:14:48.182Z] LOG       1. Gateway to Rock (4.8⭐)
+[2025-10-30T17:14:48.183Z] LOG       2. Place du palais (4.8⭐)
+[2025-10-30T17:14:48.183Z] LOG       3. Monaco Courthouse (4.8⭐)
+[2025-10-30T17:14:48.183Z] LOG    ✅ Venue 5 (Port Hercule): 4 alternatives
+[2025-10-30T17:14:48.184Z] LOG       1. Manteau de la Conscience - Anna Chromy (4.7⭐)
+[2025-10-30T17:14:48.184Z] LOG       2. Monaco Courthouse (4.8⭐)
+[2025-10-30T17:14:48.184Z] LOG       3. Apotheosa Monaca (4.7⭐)
+[2025-10-30T17:14:48.185Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T17:14:48.186Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T17:14:48.187Z] LOG    Primary venues: 5 stops
+[2025-10-30T17:14:48.188Z] LOG    ❌ Removed "Monaco Courthouse" - duplicate alternative
+[2025-10-30T17:14:48.188Z] LOG    ❌ Removed "Manteau de la Conscience - Anna Chromy" - duplicate alternative
+[2025-10-30T17:14:48.188Z] LOG    🔧 Stop "ChIJXxH-HpLCzRIRIZab...": 4 → 2 alternatives
+[2025-10-30T17:14:48.189Z] LOG    ❌ Removed "Gateway to Rock" - duplicate alternative
+[2025-10-30T17:14:48.189Z] LOG    ❌ Removed "Place du palais" - duplicate alternative
+[2025-10-30T17:14:48.190Z] LOG    ❌ Removed "Monaco Courthouse" - duplicate alternative
+[2025-10-30T17:14:48.190Z] LOG    ❌ Removed "Manteau de la Conscience - Anna Chromy" - duplicate alternative
+[2025-10-30T17:14:48.190Z] LOG    🔧 Stop "ChIJZQJu5IfCzRIR4_SM...": 4 → 0 alternatives
+[2025-10-30T17:14:48.191Z] LOG    ❌ Removed "Manteau de la Conscience - Anna Chromy" - duplicate alternative
+[2025-10-30T17:14:48.191Z] LOG    ❌ Removed "Monaco Courthouse" - duplicate alternative
+[2025-10-30T17:14:48.191Z] LOG    ❌ Removed "Apotheosa Monaca" - duplicate alternative
+[2025-10-30T17:14:48.192Z] LOG    🔧 Stop "ChIJ8Srp547CzRIRWChT...": 4 → 1 alternatives
+[2025-10-30T17:14:48.192Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T17:14:48.192Z] LOG    Removed 0 venues already in route
+[2025-10-30T17:14:48.193Z] LOG    Removed 9 duplicate alternatives
+[2025-10-30T17:14:48.193Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T17:14:48.194Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T17:14:48.194Z] LOG    Primary venues: 5
+[2025-10-30T17:14:48.194Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T17:14:48.195Z] LOG    Execution time: 2123ms
+[2025-10-30T17:14:48.195Z] LOG 
+📋 Final alternatives:
+[2025-10-30T17:14:48.196Z] LOG    Prince's Palace of Monaco: 4 alternatives
+[2025-10-30T17:14:48.197Z] LOG    Cathedral of Our Lady Immaculate: 2 alternatives
+[2025-10-30T17:14:48.197Z] LOG    Musée océanographique de Monaco: 4 alternatives
+[2025-10-30T17:14:48.198Z] LOG    Port Hercule: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

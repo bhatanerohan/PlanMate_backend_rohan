@@ -1,0 +1,143 @@
+User Prompt: plan a day out in paris ending with the eiffel tower
+
+[2025-10-30T17:34:05.572Z] LOG 📍 Using extracted city from user location: Paris
+[2025-10-30T17:34:05.573Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T17:34:05.574Z] LOG    1. "Louvre Museum" in "1st arrondissement"
+[2025-10-30T17:34:05.574Z] LOG    2. "Luxembourg Gardens" in "6th arrondissement"
+[2025-10-30T17:34:05.575Z] LOG    3. "Musée d'Orsay" in "7th arrondissement"
+[2025-10-30T17:34:05.576Z] LOG    4. "Les Ombres" in "7th arrondissement"
+[2025-10-30T17:34:05.577Z] LOG 
+🔍 Executing batch search for 4 venues...
+[2025-10-30T17:34:05.578Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:34:05.579Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-30T17:34:05.579Z] LOG    1. Searching "Louvre Museum" in "1st arrondissement"
+[2025-10-30T17:34:05.580Z] LOG 🔍 [Google Places] Text search: "Louvre Museum" in 1st arrondissement
+[2025-10-30T17:34:05.583Z] LOG    2. Searching "Luxembourg Gardens" in "6th arrondissement"
+[2025-10-30T17:34:05.584Z] LOG 🔍 [Google Places] Text search: "Luxembourg Gardens" in 6th arrondissement
+[2025-10-30T17:34:05.590Z] LOG    3. Searching "Musée d'Orsay" in "7th arrondissement"
+[2025-10-30T17:34:05.591Z] LOG 🔍 [Google Places] Text search: "Musée d'Orsay" in 7th arrondissement
+[2025-10-30T17:34:05.594Z] LOG    4. Searching "Les Ombres" in "7th arrondissement"
+[2025-10-30T17:34:05.597Z] LOG 🔍 [Google Places] Text search: "Les Ombres" in 7th arrondissement
+[2025-10-30T17:34:06.096Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:34:06.137Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:34:06.195Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:34:06.253Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:34:06.261Z] LOG    ✅ Les Ombres: Got description (99 chars)
+[2025-10-30T17:34:06.262Z] LOG ✅ Found 1 places
+[2025-10-30T17:34:06.269Z] LOG    ✅ Jardin du Luxembourg: Got description (99 chars)
+[2025-10-30T17:34:06.272Z] LOG ✅ Found 1 places
+[2025-10-30T17:34:06.361Z] LOG    ✅ Musée d'Orsay: Got description (99 chars)
+[2025-10-30T17:34:06.367Z] LOG ✅ Found 1 places
+[2025-10-30T17:34:06.401Z] LOG    ✅ Louvre Museum: Got description (100 chars)
+[2025-10-30T17:34:06.407Z] LOG ✅ Found 1 places
+[2025-10-30T17:34:06.411Z] LOG ✅ Batch complete: 4/4 searches succeeded, 4 total venues found in 832ms
+[2025-10-30T17:34:06.414Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:34:06.416Z] LOG    Tool execution result: success=true
+[2025-10-30T17:34:06.417Z] LOG    ✅ Tool returned 4 search results
+[2025-10-30T17:34:06.419Z] LOG    ✅ Merged: Louvre Museum
+[2025-10-30T17:34:06.420Z] LOG       Places placeId: ChIJD3uTd9hx5kcR1IQvGfr8dbk
+[2025-10-30T17:34:06.421Z] LOG       Gemini description: One of the world's largest and most famous museums, home to ...
+[2025-10-30T17:34:06.422Z] LOG    ✅ Merged: Luxembourg Gardens
+[2025-10-30T17:34:06.423Z] LOG       Places placeId: ChIJe2jeNttx5kcRi_mJsGHdkQc
+[2025-10-30T17:34:06.424Z] LOG       Gemini description: A beautiful and expansive public park featuring sculpted gar...
+[2025-10-30T17:34:06.424Z] LOG    ✅ Merged: Musée d'Orsay
+[2025-10-30T17:34:06.426Z] LOG       Places placeId: ChIJG5Qwtitu5kcR2CNEsYy9cdA
+[2025-10-30T17:34:06.426Z] LOG       Gemini description: Housed in a former Beaux-Arts railway station, this museum d...
+[2025-10-30T17:34:06.427Z] LOG    ✅ Merged: Les Ombres
+[2025-10-30T17:34:06.428Z] LOG       Places placeId: ChIJyUMltOBv5kcRA7jwd8jibAw
+[2025-10-30T17:34:06.429Z] LOG       Gemini description: A sophisticated restaurant located on the rooftop of the Mus...
+[2025-10-30T17:34:06.430Z] LOG ✅ Phase 1 complete: Found 4/4 exact venues
+[2025-10-30T17:34:06.430Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T17:34:06.431Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-30T17:34:06.432Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:34:06.432Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-30T17:34:06.433Z] LOG    1. Searching "museum" in "48.8606111,2.337644"
+[2025-10-30T17:34:06.434Z] LOG    📍 Using nearbySearch at coordinates (48.8606111, 2.337644)
+[2025-10-30T17:34:06.435Z] LOG 🔍 [Google Places] Nearby search at (48.8606111, 2.337644)
+[2025-10-30T17:34:06.438Z] LOG    2. Searching "restaurant" in "48.8466144,2.3363309"
+[2025-10-30T17:34:06.440Z] LOG    📍 Using nearbySearch at coordinates (48.8466144, 2.3363309)
+[2025-10-30T17:34:06.440Z] LOG 🔍 [Google Places] Nearby search at (48.8466144, 2.3363309)
+[2025-10-30T17:34:06.444Z] LOG    3. Searching "museum" in "48.8599614,2.3265614"
+[2025-10-30T17:34:06.445Z] LOG    📍 Using nearbySearch at coordinates (48.8599614, 2.3265614)
+[2025-10-30T17:34:06.447Z] LOG 🔍 [Google Places] Nearby search at (48.8599614, 2.3265614)
+[2025-10-30T17:34:06.451Z] LOG    4. Searching "restaurant" in "48.86178,2.29869"
+[2025-10-30T17:34:06.453Z] LOG    📍 Using nearbySearch at coordinates (48.86178, 2.29869)
+[2025-10-30T17:34:06.454Z] LOG 🔍 [Google Places] Nearby search at (48.86178, 2.29869)
+[2025-10-30T17:34:07.094Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:34:07.111Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:34:07.179Z] LOG    ✅ Musée d'Orsay: Got description (99 chars)
+[2025-10-30T17:34:07.229Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:34:07.239Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:34:07.253Z] LOG    ✅ Musée d'Orsay: Got description (99 chars)
+[2025-10-30T17:34:07.301Z] LOG    ✅ Musée de l'Orangerie: Got description (94 chars)
+[2025-10-30T17:34:07.308Z] LOG    ✅ Louvre Museum: Got description (100 chars)
+[2025-10-30T17:34:07.315Z] LOG    ⚠️  Paradox Museum Paris: No editorial summary available
+[2025-10-30T17:34:07.343Z] LOG    ✅ Musée de l'Illusion Paris: Got description (98 chars)
+[2025-10-30T17:34:07.354Z] LOG    ✅ Musée Grévin: Got description (92 chars)
+[2025-10-30T17:34:07.374Z] LOG    ✅ Musée de l'Orangerie: Got description (94 chars)
+[2025-10-30T17:34:07.393Z] LOG    ⚠️  LiBeyrouth: No editorial summary available
+[2025-10-30T17:34:07.404Z] LOG    ⚠️  Paradox Museum Paris: No editorial summary available
+[2025-10-30T17:34:07.409Z] LOG    ✅ Chouchou: Got description (92 chars)
+[2025-10-30T17:34:07.419Z] LOG    ✅ Les Baux de Paris: Got description (100 chars)
+[2025-10-30T17:34:07.428Z] LOG    ⚠️  Le Beef: No editorial summary available
+[2025-10-30T17:34:07.431Z] LOG    ✅ Le comptoir de la traboule: Got description (90 chars)
+[2025-10-30T17:34:07.441Z] LOG    ⚠️  Picchetto: No editorial summary available
+[2025-10-30T17:34:07.465Z] LOG    ✅ Musée Grévin: Got description (92 chars)
+[2025-10-30T17:34:07.476Z] LOG    ✅ L’Alsace: Got description (99 chars)
+[2025-10-30T17:34:07.506Z] LOG    ✅ Oui Mon Général !: Got description (97 chars)
+[2025-10-30T17:34:07.509Z] LOG    ✅ BISTROT 20 / LE VINGT: Got description (89 chars)
+[2025-10-30T17:34:07.519Z] LOG    ✅ The Kitchen Champs-Elysees meat and burger viande grillades: Got description (97 chars)
+[2025-10-30T17:34:07.521Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 1089ms
+[2025-10-30T17:34:07.522Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:34:07.523Z] LOG    ✅ Venue 1 (Louvre Museum): 4 alternatives
+[2025-10-30T17:34:07.523Z] LOG       1. Musée d'Orsay (4.8⭐)
+[2025-10-30T17:34:07.524Z] LOG       2. Musée Grévin (4.4⭐)
+[2025-10-30T17:34:07.524Z] LOG       3. Musée de l'Illusion Paris (4⭐)
+[2025-10-30T17:34:07.525Z] LOG    ✅ Venue 2 (Jardin du Luxembourg): 4 alternatives
+[2025-10-30T17:34:07.525Z] LOG       1. Chouchou (4.7⭐)
+[2025-10-30T17:34:07.525Z] LOG       2. Les Baux de Paris (4.6⭐)
+[2025-10-30T17:34:07.526Z] LOG       3. Le Beef (4.3⭐)
+[2025-10-30T17:34:07.526Z] LOG    ✅ Venue 3 (Musée d'Orsay): 4 alternatives
+[2025-10-30T17:34:07.527Z] LOG       1. Musée de l'Orangerie (4.6⭐)
+[2025-10-30T17:34:07.527Z] LOG       2. Musée Grévin (4.4⭐)
+[2025-10-30T17:34:07.528Z] LOG       3. Paradox Museum Paris (4.3⭐)
+[2025-10-30T17:34:07.529Z] LOG    ✅ Venue 4 (Les Ombres): 4 alternatives
+[2025-10-30T17:34:07.529Z] LOG       1. Picchetto (4.4⭐)
+[2025-10-30T17:34:07.530Z] LOG       2. Le comptoir de la traboule (4.7⭐)
+[2025-10-30T17:34:07.530Z] LOG       3. L’Alsace (4.5⭐)
+[2025-10-30T17:34:07.531Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-30T17:34:07.532Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T17:34:07.532Z] LOG    Primary venues: 4 stops
+[2025-10-30T17:34:07.533Z] LOG    ❌ Removed "Musée d'Orsay" - already in primary route
+[2025-10-30T17:34:07.534Z] LOG    🔧 Stop "ChIJD3uTd9hx5kcR1IQv...": 4 → 3 alternatives
+[2025-10-30T17:34:07.534Z] LOG    ❌ Removed "Musée de l'Orangerie" - duplicate alternative
+[2025-10-30T17:34:07.535Z] LOG    ❌ Removed "Musée Grévin" - duplicate alternative
+[2025-10-30T17:34:07.536Z] LOG    ❌ Removed "Louvre Museum" - already in primary route
+[2025-10-30T17:34:07.537Z] LOG    🔧 Stop "ChIJG5Qwtitu5kcR2CNE...": 4 → 1 alternatives
+[2025-10-30T17:34:07.538Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T17:34:07.539Z] LOG    Removed 2 venues already in route
+[2025-10-30T17:34:07.539Z] LOG    Removed 2 duplicate alternatives
+[2025-10-30T17:34:07.540Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T17:34:07.541Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T17:34:07.542Z] LOG    Primary venues: 4
+[2025-10-30T17:34:07.542Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T17:34:07.543Z] LOG    Execution time: 1971ms
+[2025-10-30T17:34:07.544Z] LOG 
+📋 Final alternatives:
+[2025-10-30T17:34:07.544Z] LOG    Louvre Museum: 3 alternatives
+[2025-10-30T17:34:07.545Z] LOG    Jardin du Luxembourg: 4 alternatives
+[2025-10-30T17:34:07.546Z] LOG    Musée d'Orsay: 1 alternatives
+[2025-10-30T17:34:07.547Z] LOG    Les Ombres: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 4

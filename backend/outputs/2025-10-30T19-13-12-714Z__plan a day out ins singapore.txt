@@ -1,0 +1,156 @@
+User Prompt: plan a day out ins singapore
+
+[2025-10-30T19:13:12.717Z] LOG 📍 Using fallback location (no user location): Marina Bay
+[2025-10-30T19:13:12.719Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T19:13:12.721Z] LOG    1. "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T19:13:12.722Z] LOG    2. "Marina Bay Sands Singapore" in "Marina Bay"
+[2025-10-30T19:13:12.723Z] LOG    3. "Maxwell Food Centre" in "Chinatown"
+[2025-10-30T19:13:12.724Z] LOG    4. "Sentosa" in "Sentosa Island"
+[2025-10-30T19:13:12.725Z] LOG    5. "CQ @ Clarke Quay" in "Singapore River"
+[2025-10-30T19:13:12.726Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T19:13:12.728Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T19:13:12.731Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T19:13:12.733Z] LOG    1. Searching "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T19:13:12.734Z] LOG 🔍 [Google Places] Text search: "Gardens by the Bay" in Marina Bay
+[2025-10-30T19:13:12.756Z] LOG    2. Searching "Marina Bay Sands Singapore" in "Marina Bay"
+[2025-10-30T19:13:12.761Z] LOG 🔍 [Google Places] Text search: "Marina Bay Sands Singapore" in Marina Bay
+[2025-10-30T19:13:12.772Z] LOG    3. Searching "Maxwell Food Centre" in "Chinatown"
+[2025-10-30T19:13:12.776Z] LOG 🔍 [Google Places] Text search: "Maxwell Food Centre" in Chinatown
+[2025-10-30T19:13:12.784Z] LOG    4. Searching "Sentosa" in "Sentosa Island"
+[2025-10-30T19:13:12.787Z] LOG 🔍 [Google Places] Text search: "Sentosa" in Sentosa Island
+[2025-10-30T19:13:12.796Z] LOG    5. Searching "CQ @ Clarke Quay" in "Singapore River"
+[2025-10-30T19:13:12.800Z] LOG 🔍 [Google Places] Text search: "CQ @ Clarke Quay" in Singapore River
+[2025-10-30T19:13:13.335Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:13:13.429Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:13:13.474Z] LOG    ✅ CQ @ Clarke Quay: Got description (98 chars)
+[2025-10-30T19:13:13.479Z] LOG ✅ Found 1 places
+[2025-10-30T19:13:13.563Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:13:13.583Z] LOG    ✅ Sentosa: Got description (97 chars)
+[2025-10-30T19:13:13.585Z] LOG ✅ Found 1 places
+[2025-10-30T19:13:13.708Z] LOG    ✅ Maxwell Food Centre: Got description (96 chars)
+[2025-10-30T19:13:13.710Z] LOG ✅ Found 1 places
+[2025-10-30T19:13:14.292Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:13:14.391Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:13:14.408Z] LOG    ⚠️  Marina Bay Sands Garden Park: No editorial summary available
+[2025-10-30T19:13:14.409Z] LOG ✅ Found 1 places
+[2025-10-30T19:13:14.491Z] LOG    ✅ Gardens by the Bay: Got description (97 chars)
+[2025-10-30T19:13:14.493Z] LOG ✅ Found 1 places
+[2025-10-30T19:13:14.494Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1763ms
+[2025-10-30T19:13:14.495Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T19:13:14.495Z] LOG    Tool execution result: success=true
+[2025-10-30T19:13:14.496Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T19:13:14.497Z] LOG    ✅ Merged: Gardens by the Bay
+[2025-10-30T19:13:14.497Z] LOG       Places placeId: ChIJMxZ-kwQZ2jERdsqftXeWCWI
+[2025-10-30T19:13:14.498Z] LOG       Gemini description: Start your day amidst the breathtaking Gardens by the Bay, a...
+[2025-10-30T19:13:14.498Z] LOG    ✅ Merged: Marina Bay Sands Singapore
+[2025-10-30T19:13:14.499Z] LOG       Places placeId: ChIJ6UJjigYZ2jERIYv7ksgLyaA
+[2025-10-30T19:13:14.499Z] LOG       Gemini description: Just a short walk from Gardens by the Bay, Marina Bay Sands ...
+[2025-10-30T19:13:14.500Z] LOG    ✅ Merged: Maxwell Food Centre
+[2025-10-30T19:13:14.500Z] LOG       Places placeId: ChIJseQsTQ0Z2jERqpBTWF0Zf84
+[2025-10-30T19:13:14.500Z] LOG       Gemini description: Immerse yourself in Singapore's vibrant hawker culture at Ma...
+[2025-10-30T19:13:14.501Z] LOG    ✅ Merged: Sentosa
+[2025-10-30T19:13:14.502Z] LOG       Places placeId: ChIJRYMSeKwe2jERAR2QXVU39vg
+[2025-10-30T19:13:14.502Z] LOG       Gemini description: Spend your afternoon on Sentosa, Singapore's resort island p...
+[2025-10-30T19:13:14.503Z] LOG    ✅ Merged: CQ @ Clarke Quay
+[2025-10-30T19:13:14.503Z] LOG       Places placeId: ChIJnXwAOKAZ2jERAs-MHs1aDgI
+[2025-10-30T19:13:14.504Z] LOG       Gemini description: Conclude your day at CQ @ Clarke Quay, a lively riverside pr...
+[2025-10-30T19:13:14.505Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T19:13:14.505Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T19:13:14.506Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T19:13:14.506Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T19:13:14.507Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T19:13:14.507Z] LOG    1. Searching "park" in "1.2815683,103.8636132"
+[2025-10-30T19:13:14.508Z] LOG    📍 Using nearbySearch at coordinates (1.2815683, 103.8636132)
+[2025-10-30T19:13:14.509Z] LOG 🔍 [Google Places] Nearby search at (1.2815683, 103.8636132)
+[2025-10-30T19:13:14.512Z] LOG    2. Searching "restaurant" in "1.285332,103.859358"
+[2025-10-30T19:13:14.515Z] LOG    📍 Using nearbySearch at coordinates (1.285332, 103.859358)
+[2025-10-30T19:13:14.516Z] LOG 🔍 [Google Places] Nearby search at (1.285332, 103.859358)
+[2025-10-30T19:13:14.519Z] LOG    3. Searching "restaurant" in "1.2803361,103.844767"
+[2025-10-30T19:13:14.520Z] LOG    📍 Using nearbySearch at coordinates (1.2803361, 103.844767)
+[2025-10-30T19:13:14.521Z] LOG 🔍 [Google Places] Nearby search at (1.2803361, 103.844767)
+[2025-10-30T19:13:14.523Z] LOG    4. Searching "entertainment island" in "1.2494041,103.8303209"
+[2025-10-30T19:13:14.525Z] LOG    📍 Using nearbySearch at coordinates (1.2494041, 103.8303209)
+[2025-10-30T19:13:14.527Z] LOG 🔍 [Google Places] Nearby search at (1.2494041, 103.8303209)
+[2025-10-30T19:13:14.531Z] LOG    5. Searching "entertainment district" in "1.2906024,103.8464742"
+[2025-10-30T19:13:14.533Z] LOG    📍 Using nearbySearch at coordinates (1.2906024, 103.8464742)
+[2025-10-30T19:13:14.534Z] LOG 🔍 [Google Places] Nearby search at (1.2906024, 103.8464742)
+[2025-10-30T19:13:14.949Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:13:15.049Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:13:15.079Z] LOG    ⚠️  Beach Station Sentosa: No editorial summary available
+[2025-10-30T19:13:15.106Z] LOG    ✅ Merlion Park: Got description (92 chars)
+[2025-10-30T19:13:15.114Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:13:15.202Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:13:15.225Z] LOG    ⚠️  Raffles Place Park: No editorial summary available
+[2025-10-30T19:13:15.232Z] LOG    ⚠️  Youth Olympic Park: No editorial summary available
+[2025-10-30T19:13:15.236Z] LOG    ✅ Esplanade Park: Got description (94 chars)
+[2025-10-30T19:13:15.244Z] LOG    ⚠️  Kaarla Wood-Fire Grill and Bar: No editorial summary available
+[2025-10-30T19:13:15.252Z] LOG    ⚠️  d.o.c Italian Restaurant: No editorial summary available
+[2025-10-30T19:13:15.298Z] LOG    ⚠️  Le Jardin Cafe | Fort Canning: No editorial summary available
+[2025-10-30T19:13:15.309Z] LOG    ⚠️  Lime Restaurant: No editorial summary available
+[2025-10-30T19:13:15.328Z] LOG    ⚠️  Marina East Park: No editorial summary available
+[2025-10-30T19:13:15.353Z] LOG    ⚠️  District 1 KTV: No editorial summary available
+[2025-10-30T19:13:15.372Z] LOG    ⚠️  Dorothy's Bar: No editorial summary available
+[2025-10-30T19:13:15.378Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:13:15.389Z] LOG    ⚠️  Lucky Cafe-Restaurant: No editorial summary available
+[2025-10-30T19:13:15.394Z] LOG    ⚠️  Hathaway at Capital Tower: No editorial summary available
+[2025-10-30T19:13:15.398Z] LOG    ⚠️  PEMENCO: No editorial summary available
+[2025-10-30T19:13:15.437Z] LOG    ⚠️  Mount Emily Park: No editorial summary available
+[2025-10-30T19:13:15.448Z] LOG    ⚠️  Kaarla Wood-Fire Grill and Bar: No editorial summary available
+[2025-10-30T19:13:15.472Z] LOG    ✅ Don Dae Bak Restaurant: Got description (89 chars)
+[2025-10-30T19:13:15.502Z] LOG    ⚠️  Oriental Chinese Restaurant: No editorial summary available
+[2025-10-30T19:13:15.506Z] LOG    ⚠️  Kotuwa: No editorial summary available
+[2025-10-30T19:13:15.550Z] LOG    ⚠️  The Spot - Singapore: No editorial summary available
+[2025-10-30T19:13:15.552Z] LOG ✅ Batch complete: 5/5 searches succeeded, 21 total venues found in 1045ms
+[2025-10-30T19:13:15.553Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T19:13:15.554Z] LOG    ✅ Venue 1 (Gardens by the Bay): 4 alternatives
+[2025-10-30T19:13:15.554Z] LOG       1. Merlion Park (4.6⭐)
+[2025-10-30T19:13:15.555Z] LOG       2. Youth Olympic Park (4.5⭐)
+[2025-10-30T19:13:15.555Z] LOG       3. Raffles Place Park (4.5⭐)
+[2025-10-30T19:13:15.556Z] LOG    ✅ Venue 2 (Marina Bay Sands Garden Park): 4 alternatives
+[2025-10-30T19:13:15.556Z] LOG       1. d.o.c Italian Restaurant (4.7⭐)
+[2025-10-30T19:13:15.556Z] LOG       2. Kaarla Wood-Fire Grill and Bar (4.5⭐)
+[2025-10-30T19:13:15.557Z] LOG       3. Le Jardin Cafe | Fort Canning (4.2⭐)
+[2025-10-30T19:13:15.557Z] LOG    ✅ Venue 3 (Maxwell Food Centre): 4 alternatives
+[2025-10-30T19:13:15.558Z] LOG       1. Don Dae Bak Restaurant (4.2⭐)
+[2025-10-30T19:13:15.558Z] LOG       2. Kaarla Wood-Fire Grill and Bar (4.5⭐)
+[2025-10-30T19:13:15.559Z] LOG       3. Oriental Chinese Restaurant (4⭐)
+[2025-10-30T19:13:15.559Z] LOG    ✅ Venue 4 (Sentosa): 1 alternatives
+[2025-10-30T19:13:15.560Z] LOG       1. Beach Station Sentosa (4.4⭐)
+[2025-10-30T19:13:15.560Z] LOG    ✅ Venue 5 (CQ @ Clarke Quay): 4 alternatives
+[2025-10-30T19:13:15.560Z] LOG       1. District 1 KTV (4.1⭐)
+[2025-10-30T19:13:15.561Z] LOG       2. Dorothy's Bar (4.5⭐)
+[2025-10-30T19:13:15.561Z] LOG       3. Hathaway at Capital Tower (4.4⭐)
+[2025-10-30T19:13:15.561Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T19:13:15.562Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T19:13:15.562Z] LOG    Primary venues: 5 stops
+[2025-10-30T19:13:15.562Z] LOG    ❌ Removed "Kaarla Wood-Fire Grill and Bar" - duplicate alternative
+[2025-10-30T19:13:15.563Z] LOG    🔧 Stop "ChIJseQsTQ0Z2jERqpBT...": 4 → 3 alternatives
+[2025-10-30T19:13:15.563Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T19:13:15.564Z] LOG    Removed 0 venues already in route
+[2025-10-30T19:13:15.564Z] LOG    Removed 1 duplicate alternatives
+[2025-10-30T19:13:15.565Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T19:13:15.565Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T19:13:15.565Z] LOG    Primary venues: 5
+[2025-10-30T19:13:15.566Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T19:13:15.566Z] LOG    Execution time: 2852ms
+[2025-10-30T19:13:15.566Z] LOG 
+📋 Final alternatives:
+[2025-10-30T19:13:15.567Z] LOG    Gardens by the Bay: 4 alternatives
+[2025-10-30T19:13:15.567Z] LOG    Marina Bay Sands Garden Park: 4 alternatives
+[2025-10-30T19:13:15.568Z] LOG    Maxwell Food Centre: 3 alternatives
+[2025-10-30T19:13:15.569Z] LOG    Sentosa: 1 alternatives
+[2025-10-30T19:13:15.570Z] LOG    CQ @ Clarke Quay: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

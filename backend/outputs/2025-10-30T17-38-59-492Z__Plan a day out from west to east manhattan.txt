@@ -1,0 +1,166 @@
+User Prompt: Plan a day out from west to east manhattan
+
+[2025-10-30T17:38:59.494Z] LOG 📍 Using fallback location (no user location): Far West Side
+[2025-10-30T17:38:59.495Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T17:38:59.496Z] LOG    1. "Hudson Yards" in "Far West Side"
+[2025-10-30T17:38:59.497Z] LOG    2. "Times Square" in "Midtown West"
+[2025-10-30T17:38:59.498Z] LOG    3. "Grand Central Terminal" in "Midtown East"
+[2025-10-30T17:38:59.498Z] LOG    4. "Katz's Delicatessen" in "Lower East Side"
+[2025-10-30T17:38:59.499Z] LOG    5. "Pier 35" in "East River"
+[2025-10-30T17:38:59.499Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T17:38:59.500Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:38:59.501Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:38:59.502Z] LOG    1. Searching "Hudson Yards" in "Far West Side"
+[2025-10-30T17:38:59.503Z] LOG 🔍 [Google Places] Text search: "Hudson Yards" in Far West Side
+[2025-10-30T17:38:59.516Z] LOG    2. Searching "Times Square" in "Midtown West"
+[2025-10-30T17:38:59.519Z] LOG 🔍 [Google Places] Text search: "Times Square" in Midtown West
+[2025-10-30T17:38:59.522Z] LOG    3. Searching "Grand Central Terminal" in "Midtown East"
+[2025-10-30T17:38:59.523Z] LOG 🔍 [Google Places] Text search: "Grand Central Terminal" in Midtown East
+[2025-10-30T17:38:59.527Z] LOG    4. Searching "Katz's Delicatessen" in "Lower East Side"
+[2025-10-30T17:38:59.529Z] LOG 🔍 [Google Places] Text search: "Katz's Delicatessen" in Lower East Side
+[2025-10-30T17:38:59.534Z] LOG    5. Searching "Pier 35" in "East River"
+[2025-10-30T17:38:59.535Z] LOG 🔍 [Google Places] Text search: "Pier 35" in East River
+[2025-10-30T17:39:00.005Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:39:00.072Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:39:00.081Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:39:00.104Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:39:00.155Z] LOG    ✅ Katz's Delicatessen: Got description (88 chars)
+[2025-10-30T17:39:00.162Z] LOG ✅ Found 1 places
+[2025-10-30T17:39:00.167Z] LOG    ✅ Hudson Yards: Got description (97 chars)
+[2025-10-30T17:39:00.170Z] LOG ✅ Found 1 places
+[2025-10-30T17:39:00.175Z] LOG    ✅ Grand Central Terminal: Got description (95 chars)
+[2025-10-30T17:39:00.177Z] LOG ✅ Found 1 places
+[2025-10-30T17:39:00.205Z] LOG    ✅ Pier 35: Got description (93 chars)
+[2025-10-30T17:39:00.210Z] LOG ✅ Found 1 places
+[2025-10-30T17:39:00.426Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:39:00.518Z] LOG    ✅ Times Square: Got description (100 chars)
+[2025-10-30T17:39:00.519Z] LOG ✅ Found 1 places
+[2025-10-30T17:39:00.520Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1019ms
+[2025-10-30T17:39:00.520Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:39:00.521Z] LOG    Tool execution result: success=true
+[2025-10-30T17:39:00.521Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T17:39:00.522Z] LOG    ✅ Merged: Hudson Yards
+[2025-10-30T17:39:00.522Z] LOG       Places placeId: ChIJnbJwqbZZwokRfpUxp6ZT7ZA
+[2025-10-30T17:39:00.522Z] LOG       Gemini description: Begin your day at this modern development on Manhattan's wes...
+[2025-10-30T17:39:00.523Z] LOG    ✅ Merged: Times Square
+[2025-10-30T17:39:00.523Z] LOG       Places placeId: ChIJmQJIxlVYwokRLgeuocVOGVU
+[2025-10-30T17:39:00.524Z] LOG       Gemini description: Immerse yourself in the vibrant energy of Times Square, know...
+[2025-10-30T17:39:00.524Z] LOG    ✅ Merged: Grand Central Terminal
+[2025-10-30T17:39:00.524Z] LOG       Places placeId: ChIJhRwB-yFawokRi0AhGH87UTc
+[2025-10-30T17:39:00.525Z] LOG       Gemini description: Step into the grandeur of Grand Central Terminal, a historic...
+[2025-10-30T17:39:00.525Z] LOG    ✅ Merged: Katz's Delicatessen
+[2025-10-30T17:39:00.526Z] LOG       Places placeId: ChIJCar0f49ZwokR6ozLV-dHNTE
+[2025-10-30T17:39:00.526Z] LOG       Gemini description: Head downtown to the Lower East Side for a quintessential Ne...
+[2025-10-30T17:39:00.527Z] LOG    ✅ Merged: Pier 35
+[2025-10-30T17:39:00.527Z] LOG       Places placeId: ChIJxf7bQyxawokRO-rs19qn3fs
+[2025-10-30T17:39:00.527Z] LOG       Gemini description: Conclude your day on the East River at Pier 35, a waterside ...
+[2025-10-30T17:39:00.528Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T17:39:00.528Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T17:39:00.530Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T17:39:00.531Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:39:00.531Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:39:00.532Z] LOG    1. Searching "landmark" in "40.7533803,-74.00106459999999"
+[2025-10-30T17:39:00.532Z] LOG    📍 Using nearbySearch at coordinates (40.7533803, -74.00106459999999)
+[2025-10-30T17:39:00.533Z] LOG 🔍 [Google Places] Nearby search at (40.7533803, -74.00106459999999)
+[2025-10-30T17:39:00.535Z] LOG    2. Searching "landmark" in "40.7579747,-73.9855426"
+[2025-10-30T17:39:00.535Z] LOG    📍 Using nearbySearch at coordinates (40.7579747, -73.9855426)
+[2025-10-30T17:39:00.535Z] LOG 🔍 [Google Places] Nearby search at (40.7579747, -73.9855426)
+[2025-10-30T17:39:00.536Z] LOG    3. Searching "landmark" in "40.7533582,-73.9768041"
+[2025-10-30T17:39:00.537Z] LOG    📍 Using nearbySearch at coordinates (40.7533582, -73.9768041)
+[2025-10-30T17:39:00.537Z] LOG 🔍 [Google Places] Nearby search at (40.7533582, -73.9768041)
+[2025-10-30T17:39:00.538Z] LOG    4. Searching "restaurant" in "40.7222706,-73.9873769"
+[2025-10-30T17:39:00.538Z] LOG    📍 Using nearbySearch at coordinates (40.7222706, -73.9873769)
+[2025-10-30T17:39:00.538Z] LOG 🔍 [Google Places] Nearby search at (40.7222706, -73.9873769)
+[2025-10-30T17:39:00.540Z] LOG    5. Searching "park" in "40.7094517,-73.9884141"
+[2025-10-30T17:39:00.542Z] LOG    📍 Using nearbySearch at coordinates (40.7094517, -73.9884141)
+[2025-10-30T17:39:00.544Z] LOG 🔍 [Google Places] Nearby search at (40.7094517, -73.9884141)
+[2025-10-30T17:39:01.222Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:39:01.270Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:39:01.311Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:39:01.352Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:39:01.400Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:39:01.452Z] LOG    ✅ Brooklyn Bridge Park: Got description (87 chars)
+[2025-10-30T17:39:01.463Z] LOG    ✅ Tiffany & Co. - The Landmark: Got description (89 chars)
+[2025-10-30T17:39:01.485Z] LOG    ✅ OLIO E PIÙ: Got description (97 chars)
+[2025-10-30T17:39:01.495Z] LOG    ⚠️  Vessel: No editorial summary available
+[2025-10-30T17:39:01.506Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2025-10-30T17:39:01.556Z] LOG    ✅ Sara D. Roosevelt Park: Got description (99 chars)
+[2025-10-30T17:39:01.564Z] LOG    ✅ Deutsche Bank Center: Got description (99 chars)
+[2025-10-30T17:39:01.571Z] LOG    ✅ The Landmark Tavern: Got description (87 chars)
+[2025-10-30T17:39:01.576Z] LOG    ✅ Main Street Park: Got description (94 chars)
+[2025-10-30T17:39:01.582Z] LOG    ✅ City Hall Park: Got description (96 chars)
+[2025-10-30T17:39:01.586Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2025-10-30T17:39:01.593Z] LOG    ✅ McLaughlin Park: Got description (100 chars)
+[2025-10-30T17:39:01.598Z] LOG    ⚠️  Vessel: No editorial summary available
+[2025-10-30T17:39:01.605Z] LOG    ✅ Deutsche Bank Center: Got description (99 chars)
+[2025-10-30T17:39:01.611Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2025-10-30T17:39:01.620Z] LOG    ✅ Tiffany & Co. - The Landmark: Got description (89 chars)
+[2025-10-30T17:39:01.629Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2025-10-30T17:39:01.637Z] LOG    ✅ The Landmark Tavern: Got description (87 chars)
+[2025-10-30T17:39:01.644Z] LOG    ⚠️  Osteria Barocca: No editorial summary available
+[2025-10-30T17:39:01.651Z] LOG    ⚠️  Pranakhon: No editorial summary available
+[2025-10-30T17:39:01.659Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2025-10-30T17:39:01.667Z] LOG    ✅ Veselka: Got description (123 chars)
+[2025-10-30T17:39:01.673Z] LOG    ✅ Deutsche Bank Center: Got description (99 chars)
+[2025-10-30T17:39:01.683Z] LOG    ✅ Flatiron Building: Got description (92 chars)
+[2025-10-30T17:39:01.687Z] LOG    ✅ Clinton St. Baking Company: Got description (86 chars)
+[2025-10-30T17:39:01.691Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1160ms
+[2025-10-30T17:39:01.694Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:39:01.698Z] LOG    ✅ Venue 1 (Hudson Yards): 4 alternatives
+[2025-10-30T17:39:01.700Z] LOG       1. Vessel (4.6⭐)
+[2025-10-30T17:39:01.703Z] LOG       2. The Landmark Tavern (4.6⭐)
+[2025-10-30T17:39:01.704Z] LOG       3. Empire State Building (4.7⭐)
+[2025-10-30T17:39:01.705Z] LOG    ✅ Venue 2 (Times Square): 4 alternatives
+[2025-10-30T17:39:01.707Z] LOG       1. Rockefeller Center (4.7⭐)
+[2025-10-30T17:39:01.708Z] LOG       2. Empire State Building (4.7⭐)
+[2025-10-30T17:39:01.709Z] LOG       3. Tiffany & Co. - The Landmark (4.6⭐)
+[2025-10-30T17:39:01.710Z] LOG    ✅ Venue 3 (Grand Central Terminal): 4 alternatives
+[2025-10-30T17:39:01.711Z] LOG       1. Tiffany & Co. - The Landmark (4.6⭐)
+[2025-10-30T17:39:01.711Z] LOG       2. The Landmark Tavern (4.6⭐)
+[2025-10-30T17:39:01.712Z] LOG       3. Rockefeller Center (4.7⭐)
+[2025-10-30T17:39:01.713Z] LOG    ✅ Venue 4 (Katz's Delicatessen): 4 alternatives
+[2025-10-30T17:39:01.714Z] LOG       1. OLIO E PIÙ (4.7⭐)
+[2025-10-30T17:39:01.714Z] LOG       2. Clinton St. Baking Company (4.4⭐)
+[2025-10-30T17:39:01.715Z] LOG       3. Osteria Barocca (4.6⭐)
+[2025-10-30T17:39:01.716Z] LOG    ✅ Venue 5 (Pier 35): 4 alternatives
+[2025-10-30T17:39:01.717Z] LOG       1. Brooklyn Bridge Park (4.8⭐)
+[2025-10-30T17:39:01.719Z] LOG       2. Main Street Park (4.7⭐)
+[2025-10-30T17:39:01.720Z] LOG       3. Sara D. Roosevelt Park (4⭐)
+[2025-10-30T17:39:01.721Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T17:39:01.723Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T17:39:01.725Z] LOG    Primary venues: 5 stops
+[2025-10-30T17:39:01.726Z] LOG    ❌ Removed "Empire State Building" - duplicate alternative
+[2025-10-30T17:39:01.727Z] LOG    🔧 Stop "ChIJmQJIxlVYwokRLgeu...": 4 → 3 alternatives
+[2025-10-30T17:39:01.729Z] LOG    ❌ Removed "Tiffany & Co. - The Landmark" - duplicate alternative
+[2025-10-30T17:39:01.730Z] LOG    ❌ Removed "The Landmark Tavern" - duplicate alternative
+[2025-10-30T17:39:01.731Z] LOG    ❌ Removed "Rockefeller Center" - duplicate alternative
+[2025-10-30T17:39:01.732Z] LOG    ❌ Removed "Deutsche Bank Center" - duplicate alternative
+[2025-10-30T17:39:01.733Z] LOG    🔧 Stop "ChIJhRwB-yFawokRi0Ah...": 4 → 0 alternatives
+[2025-10-30T17:39:01.734Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T17:39:01.735Z] LOG    Removed 0 venues already in route
+[2025-10-30T17:39:01.736Z] LOG    Removed 5 duplicate alternatives
+[2025-10-30T17:39:01.737Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T17:39:01.738Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T17:39:01.739Z] LOG    Primary venues: 5
+[2025-10-30T17:39:01.740Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T17:39:01.741Z] LOG    Execution time: 2247ms
+[2025-10-30T17:39:01.742Z] LOG 
+📋 Final alternatives:
+[2025-10-30T17:39:01.744Z] LOG    Hudson Yards: 4 alternatives
+[2025-10-30T17:39:01.745Z] LOG    Times Square: 3 alternatives
+[2025-10-30T17:39:01.747Z] LOG    Katz's Delicatessen: 4 alternatives
+[2025-10-30T17:39:01.748Z] LOG    Pier 35: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

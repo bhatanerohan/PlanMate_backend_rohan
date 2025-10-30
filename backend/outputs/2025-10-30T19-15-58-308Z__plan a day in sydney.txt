@@ -1,0 +1,157 @@
+User Prompt: plan a day in sydney
+
+[2025-10-30T19:15:58.309Z] LOG 📍 Using extracted city from user location: Paris
+[2025-10-30T19:15:58.309Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T19:15:58.309Z] LOG    1. "Circular Quay" in "Sydney Harbour"
+[2025-10-30T19:15:58.310Z] LOG    2. "Sydney Opera House" in "Bennelong Point"
+[2025-10-30T19:15:58.310Z] LOG    3. "Royal Botanic Garden Sydney" in "Mrs Macquaries Road"
+[2025-10-30T19:15:58.311Z] LOG    4. "Sydney Harbour Bridge" in "Sydney Harbour"
+[2025-10-30T19:15:58.311Z] LOG    5. "The Rocks" in "Sydney Harbour"
+[2025-10-30T19:15:58.311Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T19:15:58.312Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T19:15:58.312Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T19:15:58.312Z] LOG    1. Searching "Circular Quay" in "Sydney Harbour"
+[2025-10-30T19:15:58.313Z] LOG 🔍 [Google Places] Text search: "Circular Quay" in Sydney Harbour
+[2025-10-30T19:15:58.315Z] LOG    2. Searching "Sydney Opera House" in "Bennelong Point"
+[2025-10-30T19:15:58.316Z] LOG 🔍 [Google Places] Text search: "Sydney Opera House" in Bennelong Point
+[2025-10-30T19:15:58.320Z] LOG    3. Searching "Royal Botanic Garden Sydney" in "Mrs Macquaries Road"
+[2025-10-30T19:15:58.323Z] LOG 🔍 [Google Places] Text search: "Royal Botanic Garden Sydney" in Mrs Macquaries Road
+[2025-10-30T19:15:58.329Z] LOG    4. Searching "Sydney Harbour Bridge" in "Sydney Harbour"
+[2025-10-30T19:15:58.330Z] LOG 🔍 [Google Places] Text search: "Sydney Harbour Bridge" in Sydney Harbour
+[2025-10-30T19:15:58.335Z] LOG    5. Searching "The Rocks" in "Sydney Harbour"
+[2025-10-30T19:15:58.336Z] LOG 🔍 [Google Places] Text search: "The Rocks" in Sydney Harbour
+[2025-10-30T19:15:58.845Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:15:58.871Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:15:58.884Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:15:58.947Z] LOG    ✅ Sydney Opera House: Got description (94 chars)
+[2025-10-30T19:15:58.952Z] LOG ✅ Found 1 places
+[2025-10-30T19:15:58.959Z] LOG    ✅ Royal Botanic Garden Sydney: Got description (95 chars)
+[2025-10-30T19:15:58.961Z] LOG ✅ Found 1 places
+[2025-10-30T19:15:58.995Z] LOG    ⚠️  Sydney Hbr Brg: No editorial summary available
+[2025-10-30T19:15:58.998Z] LOG ✅ Found 1 places
+[2025-10-30T19:15:59.652Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:15:59.755Z] LOG    ⚠️  Circular Quay: No editorial summary available
+[2025-10-30T19:15:59.757Z] LOG ✅ Found 1 places
+[2025-10-30T19:15:59.925Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:16:00.066Z] LOG    ⚠️  The Rocks: No editorial summary available
+[2025-10-30T19:16:00.070Z] LOG ✅ Found 1 places
+[2025-10-30T19:16:00.071Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1759ms
+[2025-10-30T19:16:00.073Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T19:16:00.073Z] LOG    Tool execution result: success=true
+[2025-10-30T19:16:00.074Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T19:16:00.076Z] LOG    ✅ Merged: Circular Quay
+[2025-10-30T19:16:00.076Z] LOG       Places placeId: ChIJra9q0mmuEmsR4Hy11eshm38
+[2025-10-30T19:16:00.077Z] LOG       Gemini description: A major transport hub and picturesque waterfront area, offer...
+[2025-10-30T19:16:00.077Z] LOG    ✅ Merged: Sydney Opera House
+[2025-10-30T19:16:00.078Z] LOG       Places placeId: ChIJ3S-JXmauEmsRUcIaWtf4MzE
+[2025-10-30T19:16:00.078Z] LOG       Gemini description: An iconic, skyline-dominating performing arts center renowne...
+[2025-10-30T19:16:00.079Z] LOG    ✅ Merged: Royal Botanic Garden Sydney
+[2025-10-30T19:16:00.079Z] LOG       Places placeId: ChIJWaTdYGuuEmsRoOfx-Wh9AQ8
+[2025-10-30T19:16:00.080Z] LOG       Gemini description: A beautiful harbourside haven adjacent to the Opera House, f...
+[2025-10-30T19:16:00.080Z] LOG    ✅ Merged: Sydney Harbour Bridge
+[2025-10-30T19:16:00.080Z] LOG       Places placeId: ChIJBa7IFYuuEmsRn7XUnfYcDC8
+[2025-10-30T19:16:00.081Z] LOG       Gemini description: An iconic steel arch bridge opened in 1932, offering a Bridg...
+[2025-10-30T19:16:00.082Z] LOG    ✅ Merged: The Rocks
+[2025-10-30T19:16:00.082Z] LOG       Places placeId: ChIJs49dtkKuEmsRYM0yFmh9AQU
+[2025-10-30T19:16:00.083Z] LOG       Gemini description: Sydney's oldest neighborhood, rich in history with cobblesto...
+[2025-10-30T19:16:00.083Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T19:16:00.084Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T19:16:00.085Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T19:16:00.085Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T19:16:00.086Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T19:16:00.086Z] LOG    1. Searching "landmark" in "-33.8611374,151.2126457"
+[2025-10-30T19:16:00.087Z] LOG    📍 Using nearbySearch at coordinates (-33.8611374, 151.2126457)
+[2025-10-30T19:16:00.087Z] LOG 🔍 [Google Places] Nearby search at (-33.8611374, 151.2126457)
+[2025-10-30T19:16:00.088Z] LOG    2. Searching "landmark" in "-33.8567844,151.2152967"
+[2025-10-30T19:16:00.088Z] LOG    📍 Using nearbySearch at coordinates (-33.8567844, 151.2152967)
+[2025-10-30T19:16:00.089Z] LOG 🔍 [Google Places] Nearby search at (-33.8567844, 151.2152967)
+[2025-10-30T19:16:00.089Z] LOG    3. Searching "park" in "-33.8641859,151.2165708"
+[2025-10-30T19:16:00.090Z] LOG    📍 Using nearbySearch at coordinates (-33.8641859, 151.2165708)
+[2025-10-30T19:16:00.090Z] LOG 🔍 [Google Places] Nearby search at (-33.8641859, 151.2165708)
+[2025-10-30T19:16:00.094Z] LOG    4. Searching "restaurant" in "-33.8524232,151.2105443"
+[2025-10-30T19:16:00.097Z] LOG    📍 Using nearbySearch at coordinates (-33.8524232, 151.2105443)
+[2025-10-30T19:16:00.097Z] LOG 🔍 [Google Places] Nearby search at (-33.8524232, 151.2105443)
+[2025-10-30T19:16:00.098Z] LOG    5. Searching "neighborhood" in "-33.859062,151.2080421"
+[2025-10-30T19:16:00.099Z] LOG    📍 Using nearbySearch at coordinates (-33.859062, 151.2080421)
+[2025-10-30T19:16:00.099Z] LOG 🔍 [Google Places] Nearby search at (-33.859062, 151.2080421)
+[2025-10-30T19:16:00.603Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:16:00.610Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:16:00.723Z] LOG    ✅ Hyde Park: Got description (100 chars)
+[2025-10-30T19:16:00.751Z] LOG    ✅ Rushcutters Bay Park: Got description (99 chars)
+[2025-10-30T19:16:00.757Z] LOG    ⚠️  Neighborhood Nourish: No editorial summary available
+[2025-10-30T19:16:00.759Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:16:00.777Z] LOG    ✅ Observatory Hill Park: Got description (96 chars)
+[2025-10-30T19:16:00.783Z] LOG    ✅ Tumbalong Park: Got description (96 chars)
+[2025-10-30T19:16:00.794Z] LOG    ⚠️  First Fleet Park: No editorial summary available
+[2025-10-30T19:16:00.799Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:16:00.836Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:16:00.863Z] LOG    ⚠️  Landmark Group: No editorial summary available
+[2025-10-30T19:16:00.887Z] LOG    ⚠️  Moore Steps: No editorial summary available
+[2025-10-30T19:16:00.895Z] LOG    ✅ Mrs Macquarie's Chair: Got description (96 chars)
+[2025-10-30T19:16:00.899Z] LOG    ✅ Archibald Memorial Fountain: Got description (86 chars)
+[2025-10-30T19:16:00.907Z] LOG    ⚠️  Macquarie Place Park: No editorial summary available
+[2025-10-30T19:16:00.918Z] LOG    ✅ Customs House: Got description (96 chars)
+[2025-10-30T19:16:00.937Z] LOG    ✅ Archibald Memorial Fountain: Got description (86 chars)
+[2025-10-30T19:16:00.946Z] LOG    ✅ Customs House: Got description (96 chars)
+[2025-10-30T19:16:00.970Z] LOG    ⚠️  Landmark Apartments: No editorial summary available
+[2025-10-30T19:16:00.994Z] LOG    ✅ City Extra 24 Hour Restaurant: Got description (93 chars)
+[2025-10-30T19:16:00.996Z] LOG    ✅ Piato Restaurant: Got description (98 chars)
+[2025-10-30T19:16:01.007Z] LOG    ✅ Mr. Wong: Got description (100 chars)
+[2025-10-30T19:16:01.021Z] LOG    ✅ Sails on Lavender Bay: Got description (93 chars)
+[2025-10-30T19:16:01.059Z] LOG    ⚠️  The Rocks Square: No editorial summary available
+[2025-10-30T19:16:01.068Z] LOG    ⚠️  Alegre Bar and Dining: No editorial summary available
+[2025-10-30T19:16:01.070Z] LOG ✅ Batch complete: 5/5 searches succeeded, 21 total venues found in 984ms
+[2025-10-30T19:16:01.070Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T19:16:01.071Z] LOG    ✅ Venue 1 (Circular Quay): 4 alternatives
+[2025-10-30T19:16:01.071Z] LOG       1. Customs House (4.5⭐)
+[2025-10-30T19:16:01.072Z] LOG       2. Archibald Memorial Fountain (4.7⭐)
+[2025-10-30T19:16:01.072Z] LOG       3. Landmark Group (4.4⭐)
+[2025-10-30T19:16:01.072Z] LOG    ✅ Venue 2 (Sydney Opera House): 4 alternatives
+[2025-10-30T19:16:01.073Z] LOG       1. Mrs Macquarie's Chair (4.6⭐)
+[2025-10-30T19:16:01.073Z] LOG       2. Macquarie Place Park (4.3⭐)
+[2025-10-30T19:16:01.073Z] LOG       3. Archibald Memorial Fountain (4.7⭐)
+[2025-10-30T19:16:01.074Z] LOG    ✅ Venue 3 (Royal Botanic Garden Sydney): 4 alternatives
+[2025-10-30T19:16:01.074Z] LOG       1. Hyde Park (4.6⭐)
+[2025-10-30T19:16:01.074Z] LOG       2. Rushcutters Bay Park (4.6⭐)
+[2025-10-30T19:16:01.075Z] LOG       3. Observatory Hill Park (4.7⭐)
+[2025-10-30T19:16:01.075Z] LOG    ✅ Venue 4 (Sydney Hbr Brg): 4 alternatives
+[2025-10-30T19:16:01.075Z] LOG       1. Piato Restaurant (4.4⭐)
+[2025-10-30T19:16:01.076Z] LOG       2. City Extra 24 Hour Restaurant (4⭐)
+[2025-10-30T19:16:01.077Z] LOG       3. Sails on Lavender Bay (4.4⭐)
+[2025-10-30T19:16:01.078Z] LOG    ✅ Venue 5 (The Rocks): 1 alternatives
+[2025-10-30T19:16:01.080Z] LOG       1. Neighborhood Nourish (N/A⭐)
+[2025-10-30T19:16:01.081Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T19:16:01.082Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T19:16:01.082Z] LOG    Primary venues: 5 stops
+[2025-10-30T19:16:01.083Z] LOG    ❌ Removed "Archibald Memorial Fountain" - duplicate alternative
+[2025-10-30T19:16:01.083Z] LOG    ❌ Removed "Customs House" - duplicate alternative
+[2025-10-30T19:16:01.083Z] LOG    🔧 Stop "ChIJ3S-JXmauEmsRUcIa...": 4 → 2 alternatives
+[2025-10-30T19:16:01.084Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T19:16:01.085Z] LOG    Removed 0 venues already in route
+[2025-10-30T19:16:01.085Z] LOG    Removed 2 duplicate alternatives
+[2025-10-30T19:16:01.085Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T19:16:01.086Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T19:16:01.086Z] LOG    Primary venues: 5
+[2025-10-30T19:16:01.087Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T19:16:01.087Z] LOG    Execution time: 2778ms
+[2025-10-30T19:16:01.087Z] LOG 
+📋 Final alternatives:
+[2025-10-30T19:16:01.088Z] LOG    Circular Quay: 4 alternatives
+[2025-10-30T19:16:01.088Z] LOG    Sydney Opera House: 2 alternatives
+[2025-10-30T19:16:01.089Z] LOG    Royal Botanic Garden Sydney: 4 alternatives
+[2025-10-30T19:16:01.089Z] LOG    Sydney Hbr Brg: 4 alternatives
+[2025-10-30T19:16:01.090Z] LOG    The Rocks: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

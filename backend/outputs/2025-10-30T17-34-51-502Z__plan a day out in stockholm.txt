@@ -1,0 +1,168 @@
+User Prompt: plan a day out in stockholm
+
+[2025-10-30T17:34:51.503Z] LOG 📍 Using extracted city from user location: Paris
+[2025-10-30T17:34:51.503Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T17:34:51.504Z] LOG    1. "Vasa Museum" in "Djurgården"
+[2025-10-30T17:34:51.504Z] LOG    2. "Skansen" in "Djurgården"
+[2025-10-30T17:34:51.505Z] LOG    3. "Gamla Stan (Old Town)" in "Gamla Stan"
+[2025-10-30T17:34:51.505Z] LOG    4. "The Royal Palace" in "Gamla Stan"
+[2025-10-30T17:34:51.506Z] LOG    5. "City Hall (Stadshuset)" in "Kungsholmen"
+[2025-10-30T17:34:51.508Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T17:34:51.510Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:34:51.510Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:34:51.511Z] LOG    1. Searching "Vasa Museum" in "Djurgården"
+[2025-10-30T17:34:51.511Z] LOG 🔍 [Google Places] Text search: "Vasa Museum" in Djurgården
+[2025-10-30T17:34:51.513Z] LOG    2. Searching "Skansen" in "Djurgården"
+[2025-10-30T17:34:51.514Z] LOG 🔍 [Google Places] Text search: "Skansen" in Djurgården
+[2025-10-30T17:34:51.516Z] LOG    3. Searching "Gamla Stan (Old Town)" in "Gamla Stan"
+[2025-10-30T17:34:51.517Z] LOG 🔍 [Google Places] Text search: "Gamla Stan (Old Town)" in Gamla Stan
+[2025-10-30T17:34:51.518Z] LOG    4. Searching "The Royal Palace" in "Gamla Stan"
+[2025-10-30T17:34:51.519Z] LOG 🔍 [Google Places] Text search: "The Royal Palace" in Gamla Stan
+[2025-10-30T17:34:51.521Z] LOG    5. Searching "City Hall (Stadshuset)" in "Kungsholmen"
+[2025-10-30T17:34:51.521Z] LOG 🔍 [Google Places] Text search: "City Hall (Stadshuset)" in Kungsholmen
+[2025-10-30T17:34:51.984Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:34:52.018Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:34:52.053Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:34:52.091Z] LOG    ✅ Skansen: Got description (95 chars)
+[2025-10-30T17:34:52.092Z] LOG ✅ Found 1 places
+[2025-10-30T17:34:52.131Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:34:52.141Z] LOG    ✅ Vasa Museum: Got description (94 chars)
+[2025-10-30T17:34:52.146Z] LOG ✅ Found 1 places
+[2025-10-30T17:34:52.149Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:34:52.207Z] LOG    ✅ The Royal Palace: Got description (100 chars)
+[2025-10-30T17:34:52.209Z] LOG ✅ Found 1 places
+[2025-10-30T17:34:52.271Z] LOG    ⚠️  Gamla stan: No editorial summary available
+[2025-10-30T17:34:52.274Z] LOG ✅ Found 1 places
+[2025-10-30T17:34:52.312Z] LOG    ✅ Stockholm City Hall: Got description (97 chars)
+[2025-10-30T17:34:52.315Z] LOG ✅ Found 1 places
+[2025-10-30T17:34:52.317Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 807ms
+[2025-10-30T17:34:52.317Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:34:52.318Z] LOG    Tool execution result: success=true
+[2025-10-30T17:34:52.319Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T17:34:52.320Z] LOG    ✅ Merged: Vasa Museum
+[2025-10-30T17:34:52.322Z] LOG       Places placeId: ChIJrymDbVSdX0YRQTLBtPGa8M8
+[2025-10-30T17:34:52.323Z] LOG       Gemini description: Explore the remarkably preserved 17th-century Vasa ship, whi...
+[2025-10-30T17:34:52.324Z] LOG    ✅ Merged: Skansen
+[2025-10-30T17:34:52.325Z] LOG       Places placeId: ChIJN5Ta_qqCX0YRMYVG1s-2NSw
+[2025-10-30T17:34:52.326Z] LOG       Gemini description: Step back in time at the world's first open-air museum, show...
+[2025-10-30T17:34:52.327Z] LOG    ✅ Merged: Gamla Stan (Old Town)
+[2025-10-30T17:34:52.328Z] LOG       Places placeId: ChIJK_mfZuJ3X0YREYsWNfT-ACY
+[2025-10-30T17:34:52.328Z] LOG       Gemini description: Wander through the charming cobblestone streets of Stockholm...
+[2025-10-30T17:34:52.329Z] LOG    ✅ Merged: The Royal Palace
+[2025-10-30T17:34:52.329Z] LOG       Places placeId: ChIJAUpMflidX0YRNj52SJZ6-b0
+[2025-10-30T17:34:52.330Z] LOG       Gemini description: Visit one of the largest palaces in the world, still serving...
+[2025-10-30T17:34:52.331Z] LOG    ✅ Merged: City Hall (Stadshuset)
+[2025-10-30T17:34:52.332Z] LOG       Places placeId: ChIJ6c2SkN93X0YRwJQTkQ3Jr64
+[2025-10-30T17:34:52.332Z] LOG       Gemini description: Admire the stunning architecture of Stockholm City Hall, fam...
+[2025-10-30T17:34:52.333Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T17:34:52.334Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T17:34:52.335Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T17:34:52.336Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:34:52.336Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:34:52.337Z] LOG    1. Searching "museum" in "59.3280233,18.0913964"
+[2025-10-30T17:34:52.338Z] LOG    📍 Using nearbySearch at coordinates (59.3280233, 18.0913964)
+[2025-10-30T17:34:52.339Z] LOG 🔍 [Google Places] Nearby search at (59.3280233, 18.0913964)
+[2025-10-30T17:34:52.343Z] LOG    2. Searching "museum" in "59.3263227,18.1058582"
+[2025-10-30T17:34:52.344Z] LOG    📍 Using nearbySearch at coordinates (59.3263227, 18.1058582)
+[2025-10-30T17:34:52.346Z] LOG 🔍 [Google Places] Nearby search at (59.3263227, 18.1058582)
+[2025-10-30T17:34:52.348Z] LOG    3. Searching "restaurant" in "59.3256954,18.0718675"
+[2025-10-30T17:34:52.350Z] LOG    📍 Using nearbySearch at coordinates (59.3256954, 18.0718675)
+[2025-10-30T17:34:52.351Z] LOG 🔍 [Google Places] Nearby search at (59.3256954, 18.0718675)
+[2025-10-30T17:34:52.353Z] LOG    4. Searching "landmark" in "59.3268215,18.0717194"
+[2025-10-30T17:34:52.355Z] LOG    📍 Using nearbySearch at coordinates (59.3268215, 18.0717194)
+[2025-10-30T17:34:52.358Z] LOG 🔍 [Google Places] Nearby search at (59.3268215, 18.0717194)
+[2025-10-30T17:34:52.362Z] LOG    5. Searching "restaurant" in "59.327789,18.0551788"
+[2025-10-30T17:34:52.364Z] LOG    📍 Using nearbySearch at coordinates (59.327789, 18.0551788)
+[2025-10-30T17:34:52.365Z] LOG 🔍 [Google Places] Nearby search at (59.327789, 18.0551788)
+[2025-10-30T17:34:52.971Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:34:53.082Z] LOG    ✅ Vasa Museum: Got description (94 chars)
+[2025-10-30T17:34:53.121Z] LOG    ✅ Fotografiska Museum Stockholm: Got description (97 chars)
+[2025-10-30T17:34:53.126Z] LOG    ⚠️  Paradox Museum Stockholm: No editorial summary available
+[2025-10-30T17:34:53.145Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:34:53.173Z] LOG    ✅ National Museum: Got description (97 chars)
+[2025-10-30T17:34:53.191Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:34:53.200Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:34:53.221Z] LOG    ✅ Museum of Technology: Got description (92 chars)
+[2025-10-30T17:34:53.233Z] LOG    ✅ Restaurant Tradition: Got description (90 chars)
+[2025-10-30T17:34:53.260Z] LOG    ⚠️  Blå dörren: No editorial summary available
+[2025-10-30T17:34:53.273Z] LOG    ✅ Restaurant Tradition: Got description (90 chars)
+[2025-10-30T17:34:53.278Z] LOG    ✅ Surfers Stockholm: Got description (98 chars)
+[2025-10-30T17:34:53.287Z] LOG    ✅ Fotografiska Museum Stockholm: Got description (97 chars)
+[2025-10-30T17:34:53.326Z] LOG    ✅ Restaurant Portofino: Got description (89 chars)
+[2025-10-30T17:34:53.340Z] LOG    ⚠️  Blå dörren: No editorial summary available
+[2025-10-30T17:34:53.343Z] LOG    ⚠️  Florentine - Italian Restaurant: No editorial summary available
+[2025-10-30T17:34:53.353Z] LOG    ✅ Museum of Technology: Got description (92 chars)
+[2025-10-30T17:34:53.358Z] LOG    ✅ Copine by Jim&Jacob: Got description (98 chars)
+[2025-10-30T17:34:53.369Z] LOG    ✅ National Museum: Got description (97 chars)
+[2025-10-30T17:34:53.376Z] LOG    ✅ Restaurant Portofino: Got description (89 chars)
+[2025-10-30T17:34:53.383Z] LOG    ✅ Surfers Stockholm: Got description (98 chars)
+[2025-10-30T17:34:53.392Z] LOG    ✅ Vasa Museum: Got description (94 chars)
+[2025-10-30T17:34:53.429Z] LOG    ✅ Museum of Spirits: Got description (100 chars)
+[2025-10-30T17:34:53.546Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:34:53.648Z] LOG    ⚠️  Linnémonumentet: No editorial summary available
+[2025-10-30T17:34:53.678Z] LOG    ⚠️  Strandvägen: No editorial summary available
+[2025-10-30T17:34:53.684Z] LOG    ✅ Stortorget: Got description (98 chars)
+[2025-10-30T17:34:53.693Z] LOG    ⚠️  Hårlemanska malmgården: No editorial summary available
+[2025-10-30T17:34:53.717Z] LOG    ⚠️  Kvarteret Krubban: No editorial summary available
+[2025-10-30T17:34:53.720Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1384ms
+[2025-10-30T17:34:53.721Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:34:53.722Z] LOG    ✅ Venue 1 (Vasa Museum): 4 alternatives
+[2025-10-30T17:34:53.723Z] LOG       1. Paradox Museum Stockholm (4.2⭐)
+[2025-10-30T17:34:53.723Z] LOG       2. Fotografiska Museum Stockholm (4.4⭐)
+[2025-10-30T17:34:53.724Z] LOG       3. Museum of Technology (4.3⭐)
+[2025-10-30T17:34:53.725Z] LOG    ✅ Venue 2 (Skansen): 4 alternatives
+[2025-10-30T17:34:53.726Z] LOG       1. Fotografiska Museum Stockholm (4.4⭐)
+[2025-10-30T17:34:53.726Z] LOG       2. National Museum (4.6⭐)
+[2025-10-30T17:34:53.727Z] LOG       3. Museum of Technology (4.3⭐)
+[2025-10-30T17:34:53.728Z] LOG    ✅ Venue 3 (Gamla stan): 4 alternatives
+[2025-10-30T17:34:53.728Z] LOG       1. Restaurant Tradition (4.6⭐)
+[2025-10-30T17:34:53.729Z] LOG       2. Florentine - Italian Restaurant (4.4⭐)
+[2025-10-30T17:34:53.729Z] LOG       3. Restaurant Portofino (4.4⭐)
+[2025-10-30T17:34:53.730Z] LOG    ✅ Venue 4 (The Royal Palace): 4 alternatives
+[2025-10-30T17:34:53.731Z] LOG       1. Stortorget (4.6⭐)
+[2025-10-30T17:34:53.732Z] LOG       2. Linnémonumentet (4.4⭐)
+[2025-10-30T17:34:53.734Z] LOG       3. Kvarteret Krubban (4.5⭐)
+[2025-10-30T17:34:53.735Z] LOG    ✅ Venue 5 (Stockholm City Hall): 4 alternatives
+[2025-10-30T17:34:53.736Z] LOG       1. Restaurant Tradition (4.6⭐)
+[2025-10-30T17:34:53.737Z] LOG       2. Restaurant Portofino (4.4⭐)
+[2025-10-30T17:34:53.738Z] LOG       3. Surfers Stockholm (4.4⭐)
+[2025-10-30T17:34:53.739Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T17:34:53.740Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T17:34:53.741Z] LOG    Primary venues: 5 stops
+[2025-10-30T17:34:53.741Z] LOG    ❌ Removed "Fotografiska Museum Stockholm" - duplicate alternative
+[2025-10-30T17:34:53.742Z] LOG    ❌ Removed "National Museum" - duplicate alternative
+[2025-10-30T17:34:53.743Z] LOG    ❌ Removed "Museum of Technology" - duplicate alternative
+[2025-10-30T17:34:53.744Z] LOG    ❌ Removed "Vasa Museum" - already in primary route
+[2025-10-30T17:34:53.745Z] LOG    🔧 Stop "ChIJN5Ta_qqCX0YRMYVG...": 4 → 0 alternatives
+[2025-10-30T17:34:53.746Z] LOG    ❌ Removed "Restaurant Tradition" - duplicate alternative
+[2025-10-30T17:34:53.746Z] LOG    ❌ Removed "Restaurant Portofino" - duplicate alternative
+[2025-10-30T17:34:53.747Z] LOG    ❌ Removed "Surfers Stockholm" - duplicate alternative
+[2025-10-30T17:34:53.748Z] LOG    🔧 Stop "ChIJ6c2SkN93X0YRwJQT...": 4 → 1 alternatives
+[2025-10-30T17:34:53.749Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T17:34:53.750Z] LOG    Removed 1 venues already in route
+[2025-10-30T17:34:53.750Z] LOG    Removed 6 duplicate alternatives
+[2025-10-30T17:34:53.753Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T17:34:53.756Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T17:34:53.759Z] LOG    Primary venues: 5
+[2025-10-30T17:34:53.760Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T17:34:53.761Z] LOG    Execution time: 2254ms
+[2025-10-30T17:34:53.762Z] LOG 
+📋 Final alternatives:
+[2025-10-30T17:34:53.763Z] LOG    Vasa Museum: 4 alternatives
+[2025-10-30T17:34:53.764Z] LOG    Gamla stan: 4 alternatives
+[2025-10-30T17:34:53.765Z] LOG    The Royal Palace: 4 alternatives
+[2025-10-30T17:34:53.766Z] LOG    Stockholm City Hall: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

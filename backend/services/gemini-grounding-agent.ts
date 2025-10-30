@@ -150,12 +150,12 @@ export class GeminiGroundingAgent {
       
       // Parse the response
       const parsed = await this.parseGeminiResponse(text, grounding_used);
-      
+
       console.log(`✨ Parsed ${parsed.venues.length} venue recommendations`);
       if (parsed.plan) {
         console.log(`📋 Plan: ${parsed.plan.type}, ${parsed.plan.total_stops} stops`);
       }
-      
+
       return {
         plan: parsed.plan,
         venues: parsed.venues,
@@ -168,12 +168,25 @@ export class GeminiGroundingAgent {
       
     } catch (error) {
       console.error('❌ Gemini Grounding Agent error:', error);
-      
+
       if (error instanceof Error) {
         console.error('   Error message:', error.message);
         console.error('   Error stack:', error.stack);
       }
-      
+
+      // If the parser signalled a JSON parse failure, return a specific error hint
+      if (error instanceof Error && error.message === 'COULD_NOT_PARSE_JSON') {
+        return {
+          plan: undefined,
+          venues: [],
+          context: 'error pls try again',
+          grounding_used: false,
+          search_used: false,
+          total_venues_found: 0,
+          raw_grounding_chunks: groundingChunks
+        };
+      }
+
       return {
         plan: undefined,
         venues: [],
@@ -261,10 +274,10 @@ Focus on logical routes and cohesive experiences.`;
     
     try {
       const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
-      
+
       if (jsonMatch) {
         const parsed = JSON.parse(jsonMatch[1]);
-        
+
         if (parsed.venues && Array.isArray(parsed.venues)) {
           const venues: GeminiVenueRecommendation[] = parsed.venues.map((v: any) => ({
             name: v.name || 'Unknown',
@@ -279,7 +292,7 @@ Focus on logical routes and cohesive experiences.`;
             priceLevel: v.priceLevel || v.price_level,
             gemini_confidence: groundingUsed ? 0.9 : 0.7
           }));
-          
+
           return {
             plan: parsed.plan,
             venues,
@@ -287,11 +300,17 @@ Focus on logical routes and cohesive experiences.`;
           };
         }
       }
-      
+
       console.warn('⚠️ Could not parse JSON, attempting natural language parsing...');
-      return this.parseNaturalLanguageResponse(text);
-      
+      // Signal to caller that JSON parsing failed so it can return a short error message
+      throw new Error('COULD_NOT_PARSE_JSON');
+
     } catch (error) {
+      // If we explicitly signalled a JSON parse failure, rethrow to be handled upstream
+      if (error instanceof Error && error.message === 'COULD_NOT_PARSE_JSON') {
+        throw error;
+      }
+
       console.error('❌ Failed to parse Gemini response:', error);
       return this.parseNaturalLanguageResponse(text);
     }

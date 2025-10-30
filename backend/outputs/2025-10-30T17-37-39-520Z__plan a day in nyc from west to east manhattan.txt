@@ -1,0 +1,144 @@
+User Prompt: plan a day in nyc from west to east manhattan
+
+[2025-10-30T17:37:39.524Z] LOG 📍 Using extracted city from user location: Paris
+[2025-10-30T17:37:39.526Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T17:37:39.528Z] LOG    1. "Little Island" in "Paris"
+[2025-10-30T17:37:39.529Z] LOG    2. "The High Line" in "Paris"
+[2025-10-30T17:37:39.531Z] LOG    3. "Times Square" in "Paris"
+[2025-10-30T17:37:39.532Z] LOG    4. "The Morgan Library & Museum" in "Paris"
+[2025-10-30T17:37:39.535Z] LOG    5. "Tenement Museum" in "Paris"
+[2025-10-30T17:37:39.537Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T17:37:39.539Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:37:39.540Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:37:39.542Z] LOG    1. Searching "Little Island" in "Paris"
+[2025-10-30T17:37:39.544Z] LOG 🔍 [Google Places] Text search: "Little Island" in Paris
+[2025-10-30T17:37:39.551Z] LOG    2. Searching "The High Line" in "Paris"
+[2025-10-30T17:37:39.554Z] LOG 🔍 [Google Places] Text search: "The High Line" in Paris
+[2025-10-30T17:37:39.563Z] LOG    3. Searching "Times Square" in "Paris"
+[2025-10-30T17:37:39.566Z] LOG 🔍 [Google Places] Text search: "Times Square" in Paris
+[2025-10-30T17:37:39.574Z] LOG    4. Searching "The Morgan Library & Museum" in "Paris"
+[2025-10-30T17:37:39.577Z] LOG 🔍 [Google Places] Text search: "The Morgan Library & Museum" in Paris
+[2025-10-30T17:37:39.587Z] LOG    5. Searching "Tenement Museum" in "Paris"
+[2025-10-30T17:37:39.589Z] LOG 🔍 [Google Places] Text search: "Tenement Museum" in Paris
+[2025-10-30T17:37:39.928Z] LOG ⚠️  No results found
+[2025-10-30T17:37:40.201Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:37:40.216Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:37:40.218Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:37:40.312Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:37:40.314Z] LOG    ✅ Île Saint-Louis: Got description (97 chars)
+[2025-10-30T17:37:40.315Z] LOG ✅ Found 1 places
+[2025-10-30T17:37:40.330Z] LOG    ⚠️  Coulée Verte, René Dumont: No editorial summary available
+[2025-10-30T17:37:40.331Z] LOG ✅ Found 1 places
+[2025-10-30T17:37:40.368Z] LOG    ⚠️  Times Square® - Paris 75 I Restaurant de hamburgers I Smash burgers I Naan Burgers I Naan'Dwich: No editorial summary available
+[2025-10-30T17:37:40.370Z] LOG ✅ Found 1 places
+[2025-10-30T17:37:40.474Z] LOG    ✅ Tenement Museum: Got description (100 chars)
+[2025-10-30T17:37:40.476Z] LOG ✅ Found 1 places
+[2025-10-30T17:37:40.477Z] LOG ✅ Batch complete: 5/5 searches succeeded, 4 total venues found in 937ms
+[2025-10-30T17:37:40.478Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:37:40.479Z] LOG    Tool execution result: success=true
+[2025-10-30T17:37:40.480Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T17:37:40.481Z] LOG    ✅ Merged: Little Island
+[2025-10-30T17:37:40.482Z] LOG       Places placeId: ChIJ5Y5Ovfxx5kcRMHVGaekEwFY
+[2025-10-30T17:37:40.483Z] LOG       Gemini description: Recommended venue...
+[2025-10-30T17:37:40.484Z] LOG    ✅ Merged: The High Line
+[2025-10-30T17:37:40.485Z] LOG       Places placeId: ChIJLziXegRy5kcRYVZY6fKGzG0
+[2025-10-30T17:37:40.486Z] LOG       Gemini description: Recommended venue...
+[2025-10-30T17:37:40.486Z] LOG    ✅ Merged: Times Square
+[2025-10-30T17:37:40.487Z] LOG       Places placeId: ChIJq_WNXPdt5kcR1xd2qaAHVEs
+[2025-10-30T17:37:40.487Z] LOG       Gemini description: Recommended venue...
+[2025-10-30T17:37:40.488Z] WARN    ⚠️ Could not find "The Morgan Library & Museum" in Places API, skipping
+[2025-10-30T17:37:40.488Z] LOG    ✅ Merged: Tenement Museum
+[2025-10-30T17:37:40.489Z] LOG       Places placeId: ChIJ20bVJYdZwokRhI7esP3mYM0
+[2025-10-30T17:37:40.490Z] LOG       Gemini description: Recommended venue...
+[2025-10-30T17:37:40.490Z] LOG ✅ Phase 1 complete: Found 4/5 exact venues
+[2025-10-30T17:37:40.491Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T17:37:40.492Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-30T17:37:40.494Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:37:40.494Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-30T17:37:40.495Z] LOG    1. Searching "restaurant" in "48.85155719999999,2.3574207"
+[2025-10-30T17:37:40.495Z] LOG    📍 Using nearbySearch at coordinates (48.85155719999999, 2.3574207)
+[2025-10-30T17:37:40.496Z] LOG 🔍 [Google Places] Nearby search at (48.85155719999999, 2.3574207)
+[2025-10-30T17:37:40.497Z] LOG    2. Searching "restaurant" in "48.8488273,2.3725705"
+[2025-10-30T17:37:40.497Z] LOG    📍 Using nearbySearch at coordinates (48.8488273, 2.3725705)
+[2025-10-30T17:37:40.498Z] LOG 🔍 [Google Places] Nearby search at (48.8488273, 2.3725705)
+[2025-10-30T17:37:40.498Z] LOG    3. Searching "restaurant" in "48.9012913,2.389146"
+[2025-10-30T17:37:40.499Z] LOG    📍 Using nearbySearch at coordinates (48.9012913, 2.389146)
+[2025-10-30T17:37:40.499Z] LOG 🔍 [Google Places] Nearby search at (48.9012913, 2.389146)
+[2025-10-30T17:37:40.500Z] LOG    4. Searching "venue" in "40.7187925,-73.99000720000001"
+[2025-10-30T17:37:40.501Z] LOG    📍 Using nearbySearch at coordinates (40.7187925, -73.99000720000001)
+[2025-10-30T17:37:40.501Z] LOG 🔍 [Google Places] Nearby search at (40.7187925, -73.99000720000001)
+[2025-10-30T17:37:41.093Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:37:41.120Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:37:41.148Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:37:41.207Z] LOG    ⚠️  Tribeca Rooftop + 360°: No editorial summary available
+[2025-10-30T17:37:41.230Z] LOG    ⚠️  Brunello Restaurant Italien Pantin: No editorial summary available
+[2025-10-30T17:37:41.235Z] LOG    ✅ Chouchou: Got description (92 chars)
+[2025-10-30T17:37:41.238Z] LOG    ⚠️  The Lofts at Prince: No editorial summary available
+[2025-10-30T17:37:41.272Z] LOG    ⚠️  Capitale: No editorial summary available
+[2025-10-30T17:37:41.287Z] LOG    ⚠️  26 Bridge | BK Event Venues: No editorial summary available
+[2025-10-30T17:37:41.299Z] LOG    ⚠️  Little Owl the Townhouse: No editorial summary available
+[2025-10-30T17:37:41.302Z] LOG    ✅ Le Marais Restaurant Paris: Got description (99 chars)
+[2025-10-30T17:37:41.317Z] LOG    ✅ Les Bancs Publics: Got description (95 chars)
+[2025-10-30T17:37:41.318Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:37:41.325Z] LOG    ⚠️  Chez JJ: No editorial summary available
+[2025-10-30T17:37:41.330Z] LOG    ✅ Les Baux de Paris: Got description (100 chars)
+[2025-10-30T17:37:41.331Z] LOG    ✅ Café Odilon: Got description (100 chars)
+[2025-10-30T17:37:41.338Z] LOG    ⚠️  Casa Rosa - Restaurant Italien halal - Paris 19: No editorial summary available
+[2025-10-30T17:37:41.356Z] LOG    ✅ Chez Elie: Got description (99 chars)
+[2025-10-30T17:37:41.382Z] LOG    ⚠️  La Brigade - Oberkampf: No editorial summary available
+[2025-10-30T17:37:41.397Z] LOG    ✅ Chouchou: Got description (92 chars)
+[2025-10-30T17:37:41.399Z] LOG    ✅ Les Baux de Paris: Got description (100 chars)
+[2025-10-30T17:37:41.441Z] LOG    ⚠️  La Maison du Boulevard: No editorial summary available
+[2025-10-30T17:37:41.443Z] LOG    ✅ Laïa Voltaire: Got description (94 chars)
+[2025-10-30T17:37:41.465Z] LOG    ⚠️  Nostre: No editorial summary available
+[2025-10-30T17:37:41.467Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 973ms
+[2025-10-30T17:37:41.468Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:37:41.469Z] LOG    ✅ Venue 1 (Île Saint-Louis): 4 alternatives
+[2025-10-30T17:37:41.470Z] LOG       1. Chouchou (4.7⭐)
+[2025-10-30T17:37:41.470Z] LOG       2. Le Marais Restaurant Paris (4.5⭐)
+[2025-10-30T17:37:41.471Z] LOG       3. La Brigade - Oberkampf (4.6⭐)
+[2025-10-30T17:37:41.472Z] LOG    ✅ Venue 2 (Coulée Verte, René Dumont): 4 alternatives
+[2025-10-30T17:37:41.472Z] LOG       1. Chouchou (4.7⭐)
+[2025-10-30T17:37:41.473Z] LOG       2. La Maison du Boulevard (4.7⭐)
+[2025-10-30T17:37:41.473Z] LOG       3. Laïa Voltaire (4.8⭐)
+[2025-10-30T17:37:41.474Z] LOG    ✅ Venue 3 (Times Square® - Paris 75 I Restaurant de hamburgers I Smash burgers I Naan Burgers I Naan'Dwich): 4 alternatives
+[2025-10-30T17:37:41.474Z] LOG       1. Brunello Restaurant Italien Pantin (4.2⭐)
+[2025-10-30T17:37:41.475Z] LOG       2. Chez JJ (4.6⭐)
+[2025-10-30T17:37:41.475Z] LOG       3. Les Bancs Publics (4.5⭐)
+[2025-10-30T17:37:41.476Z] LOG    ✅ Venue 4 (Tenement Museum): 4 alternatives
+[2025-10-30T17:37:41.476Z] LOG       1. Tribeca Rooftop + 360° (4.6⭐)
+[2025-10-30T17:37:41.477Z] LOG       2. The Lofts at Prince (4.6⭐)
+[2025-10-30T17:37:41.477Z] LOG       3. Capitale (4.6⭐)
+[2025-10-30T17:37:41.478Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-30T17:37:41.479Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T17:37:41.480Z] LOG    Primary venues: 4 stops
+[2025-10-30T17:37:41.480Z] LOG    ❌ Removed "Chouchou" - duplicate alternative
+[2025-10-30T17:37:41.481Z] LOG    🔧 Stop "ChIJLziXegRy5kcRYVZY...": 4 → 3 alternatives
+[2025-10-30T17:37:41.481Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T17:37:41.482Z] LOG    Removed 0 venues already in route
+[2025-10-30T17:37:41.482Z] LOG    Removed 1 duplicate alternatives
+[2025-10-30T17:37:41.483Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T17:37:41.483Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T17:37:41.484Z] LOG    Primary venues: 4
+[2025-10-30T17:37:41.484Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T17:37:41.485Z] LOG    Execution time: 1963ms
+[2025-10-30T17:37:41.486Z] LOG 
+📋 Final alternatives:
+[2025-10-30T17:37:41.487Z] LOG    Île Saint-Louis: 4 alternatives
+[2025-10-30T17:37:41.487Z] LOG    Coulée Verte, René Dumont: 3 alternatives
+[2025-10-30T17:37:41.488Z] LOG    Times Square® - Paris 75 I Restaurant de hamburgers I Smash burgers I Naan Burgers I Naan'Dwich: 4 alternatives
+[2025-10-30T17:37:41.488Z] LOG    Tenement Museum: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 4

@@ -1,0 +1,162 @@
+User Prompt: Plan a day out in midtown NYC where I could try out halal food trucks
+
+[2025-10-30T19:03:28.744Z] LOG 📍 Using fallback location (no user location): Boston, MA
+[2025-10-30T19:03:28.745Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T19:03:28.746Z] LOG    1. "Sharif's Famous" in "Boston, MA"
+[2025-10-30T19:03:28.746Z] LOG    2. "Adel's Famous Halal Food" in "Boston, MA"
+[2025-10-30T19:03:28.747Z] LOG    3. "Halal Street Food by Kamal" in "Boston, MA"
+[2025-10-30T19:03:28.749Z] LOG    4. "Kwik Meal NYC" in "Boston, MA"
+[2025-10-30T19:03:28.750Z] LOG    5. "Royal Grill Halal Food" in "Boston, MA"
+[2025-10-30T19:03:28.751Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T19:03:28.754Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T19:03:28.756Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T19:03:28.757Z] LOG    1. Searching "Sharif's Famous" in "Boston, MA"
+[2025-10-30T19:03:28.758Z] LOG 🔍 [Google Places] Text search: "Sharif's Famous" in Boston, MA
+[2025-10-30T19:03:28.772Z] LOG    2. Searching "Adel's Famous Halal Food" in "Boston, MA"
+[2025-10-30T19:03:28.775Z] LOG 🔍 [Google Places] Text search: "Adel's Famous Halal Food" in Boston, MA
+[2025-10-30T19:03:28.784Z] LOG    3. Searching "Halal Street Food by Kamal" in "Boston, MA"
+[2025-10-30T19:03:28.787Z] LOG 🔍 [Google Places] Text search: "Halal Street Food by Kamal" in Boston, MA
+[2025-10-30T19:03:28.795Z] LOG    4. Searching "Kwik Meal NYC" in "Boston, MA"
+[2025-10-30T19:03:28.798Z] LOG 🔍 [Google Places] Text search: "Kwik Meal NYC" in Boston, MA
+[2025-10-30T19:03:28.805Z] LOG    5. Searching "Royal Grill Halal Food" in "Boston, MA"
+[2025-10-30T19:03:28.807Z] LOG 🔍 [Google Places] Text search: "Royal Grill Halal Food" in Boston, MA
+[2025-10-30T19:03:29.280Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:03:29.407Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:03:29.413Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:03:29.466Z] LOG    ⚠️  The Halal Guys: No editorial summary available
+[2025-10-30T19:03:29.471Z] LOG ✅ Found 1 places
+[2025-10-30T19:03:29.518Z] LOG    ✅ Kwik Meal NYC: Got description (92 chars)
+[2025-10-30T19:03:29.520Z] LOG ✅ Found 1 places
+[2025-10-30T19:03:29.530Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:03:29.548Z] LOG    ⚠️  Boston Halal: No editorial summary available
+[2025-10-30T19:03:29.549Z] LOG ✅ Found 1 places
+[2025-10-30T19:03:29.553Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T19:03:29.605Z] LOG    ⚠️  Boston Halal: No editorial summary available
+[2025-10-30T19:03:29.606Z] LOG ✅ Found 1 places
+[2025-10-30T19:03:29.704Z] LOG    ⚠️  Bab Al-Yemen Boston مطعم باب اليمن بوسطن: No editorial summary available
+[2025-10-30T19:03:29.706Z] LOG ✅ Found 1 places
+[2025-10-30T19:03:29.707Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 951ms
+[2025-10-30T19:03:29.707Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T19:03:29.708Z] LOG    Tool execution result: success=true
+[2025-10-30T19:03:29.708Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T19:03:29.709Z] LOG    ✅ Merged: Sharif's Famous
+[2025-10-30T19:03:29.710Z] LOG       Places placeId: ChIJgb0s9XZ644kRcaP3BevEj8E
+[2025-10-30T19:03:29.711Z] LOG       Gemini description: Recommended venue...
+[2025-10-30T19:03:29.711Z] LOG    ✅ Merged: Adel's Famous Halal Food
+[2025-10-30T19:03:29.712Z] LOG       Places placeId: ChIJWz0jd5x744kRr6oY9eXNGTM
+[2025-10-30T19:03:29.713Z] LOG       Gemini description: Recommended venue...
+[2025-10-30T19:03:29.713Z] LOG    ✅ Merged: Halal Street Food by Kamal
+[2025-10-30T19:03:29.714Z] LOG       Places placeId: ChIJzzyDNvN544kRe0UlmhOkNbU
+[2025-10-30T19:03:29.714Z] LOG       Gemini description: Recommended venue...
+[2025-10-30T19:03:29.714Z] LOG    ✅ Merged: Kwik Meal NYC
+[2025-10-30T19:03:29.715Z] LOG       Places placeId: ChIJNUU4fVVYwokRgAzrpxwQGeY
+[2025-10-30T19:03:29.715Z] LOG       Gemini description: Recommended venue...
+[2025-10-30T19:03:29.715Z] LOG    ✅ Merged: Royal Grill Halal Food
+[2025-10-30T19:03:29.716Z] LOG       Places placeId: ChIJzzyDNvN544kRe0UlmhOkNbU
+[2025-10-30T19:03:29.716Z] LOG       Gemini description: Recommended venue...
+[2025-10-30T19:03:29.717Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T19:03:29.717Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T19:03:29.718Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T19:03:29.718Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T19:03:29.719Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T19:03:29.719Z] LOG    1. Searching "restaurant" in "42.3512897,-71.06572349999999"
+[2025-10-30T19:03:29.720Z] LOG    📍 Using nearbySearch at coordinates (42.3512897, -71.06572349999999)
+[2025-10-30T19:03:29.720Z] LOG 🔍 [Google Places] Nearby search at (42.3512897, -71.06572349999999)
+[2025-10-30T19:03:29.721Z] LOG    2. Searching "restaurant" in "42.3485574,-71.0934869"
+[2025-10-30T19:03:29.721Z] LOG    📍 Using nearbySearch at coordinates (42.3485574, -71.0934869)
+[2025-10-30T19:03:29.722Z] LOG 🔍 [Google Places] Nearby search at (42.3485574, -71.0934869)
+[2025-10-30T19:03:29.723Z] LOG    3. Searching "restaurant" in "42.3518147,-71.119162"
+[2025-10-30T19:03:29.723Z] LOG    📍 Using nearbySearch at coordinates (42.3518147, -71.119162)
+[2025-10-30T19:03:29.723Z] LOG 🔍 [Google Places] Nearby search at (42.3518147, -71.119162)
+[2025-10-30T19:03:29.724Z] LOG    4. Searching "venue" in "40.7567683,-73.9830144"
+[2025-10-30T19:03:29.725Z] LOG    📍 Using nearbySearch at coordinates (40.7567683, -73.9830144)
+[2025-10-30T19:03:29.725Z] LOG 🔍 [Google Places] Nearby search at (40.7567683, -73.9830144)
+[2025-10-30T19:03:29.726Z] LOG    5. Searching "restaurant" in "42.3518147,-71.119162"
+[2025-10-30T19:03:29.727Z] LOG    📍 Using nearbySearch at coordinates (42.3518147, -71.119162)
+[2025-10-30T19:03:29.727Z] LOG 🔍 [Google Places] Nearby search at (42.3518147, -71.119162)
+[2025-10-30T19:03:30.284Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:03:30.327Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:03:30.419Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:03:30.451Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:03:30.493Z] LOG    ✅ The Salty Pig: Got description (95 chars)
+[2025-10-30T19:03:30.499Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T19:03:30.525Z] LOG    ⚠️  The Glasshouse: No editorial summary available
+[2025-10-30T19:03:30.546Z] LOG    ✅ Lulu's Allston: Got description (95 chars)
+[2025-10-30T19:03:30.579Z] LOG    ✅ Boston Sail Loft: Got description (92 chars)
+[2025-10-30T19:03:30.588Z] LOG    ✅ Atlantic Fish Company: Got description (98 chars)
+[2025-10-30T19:03:30.600Z] LOG    ✅ Lulu's Allston: Got description (95 chars)
+[2025-10-30T19:03:30.605Z] LOG    ✅ Terminal 5: Got description (99 chars)
+[2025-10-30T19:03:30.609Z] LOG    ✅ Lolita Back Bay: Got description (97 chars)
+[2025-10-30T19:03:30.620Z] LOG    ⚠️  Gotham Hall: No editorial summary available
+[2025-10-30T19:03:30.637Z] LOG    ⚠️  Midtown Loft & Terrace Venues: No editorial summary available
+[2025-10-30T19:03:30.642Z] LOG    ✅ Joe’s on Newbury: Got description (91 chars)
+[2025-10-30T19:03:30.660Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-30T19:03:30.669Z] LOG    ⚠️  583 Park Avenue: No editorial summary available
+[2025-10-30T19:03:30.676Z] LOG    ✅ FiRE+iCE Interactive Grill & Bar: Got description (70 chars)
+[2025-10-30T19:03:30.691Z] LOG    ✅ Giacomo's Boston North End: Got description (88 chars)
+[2025-10-30T19:03:30.698Z] LOG    ✅ Atlantic Fish Company: Got description (98 chars)
+[2025-10-30T19:03:30.708Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-30T19:03:30.720Z] LOG    ✅ Audubon: Got description (97 chars)
+[2025-10-30T19:03:30.725Z] LOG    ✅ FiRE+iCE Interactive Grill & Bar: Got description (70 chars)
+[2025-10-30T19:03:30.732Z] LOG    ✅ Shōjō Boston: Got description (97 chars)
+[2025-10-30T19:03:30.738Z] LOG    ✅ The Mad Monkfish: Got description (99 chars)
+[2025-10-30T19:03:30.745Z] LOG    ✅ Seoul Jangteo: Got description (81 chars)
+[2025-10-30T19:03:30.749Z] LOG    ✅ Audubon: Got description (97 chars)
+[2025-10-30T19:03:30.767Z] LOG    ✅ Seoul Jangteo: Got description (81 chars)
+[2025-10-30T19:03:30.794Z] LOG    ✅ The Mad Monkfish: Got description (99 chars)
+[2025-10-30T19:03:30.799Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1080ms
+[2025-10-30T19:03:30.801Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T19:03:30.803Z] LOG    ✅ Venue 1 (The Halal Guys): 4 alternatives
+[2025-10-30T19:03:30.806Z] LOG       1. Boston Sail Loft (4.6⭐)
+[2025-10-30T19:03:30.809Z] LOG       2. FiRE+iCE Interactive Grill & Bar (4.3⭐)
+[2025-10-30T19:03:30.811Z] LOG       3. Shōjō Boston (4.3⭐)
+[2025-10-30T19:03:30.812Z] LOG    ✅ Venue 2 (Bab Al-Yemen Boston مطعم باب اليمن بوسطن): 4 alternatives
+[2025-10-30T19:03:30.814Z] LOG       1. The Salty Pig (4.5⭐)
+[2025-10-30T19:03:30.816Z] LOG       2. Lolita Back Bay (4.4⭐)
+[2025-10-30T19:03:30.817Z] LOG       3. FiRE+iCE Interactive Grill & Bar (4.3⭐)
+[2025-10-30T19:03:30.818Z] LOG    ✅ Venue 3 (Boston Halal): 4 alternatives
+[2025-10-30T19:03:30.819Z] LOG       1. Lulu's Allston (4.4⭐)
+[2025-10-30T19:03:30.820Z] LOG       2. Yard House (4.3⭐)
+[2025-10-30T19:03:30.821Z] LOG       3. Audubon (4.6⭐)
+[2025-10-30T19:03:30.822Z] LOG    ✅ Venue 4 (Kwik Meal NYC): 4 alternatives
+[2025-10-30T19:03:30.822Z] LOG       1. The Glasshouse (4.7⭐)
+[2025-10-30T19:03:30.823Z] LOG       2. Gotham Hall (4.6⭐)
+[2025-10-30T19:03:30.823Z] LOG       3. Terminal 5 (4.2⭐)
+[2025-10-30T19:03:30.825Z] LOG    ✅ Venue 5 (Boston Halal): 4 alternatives
+[2025-10-30T19:03:30.826Z] LOG       1. Lulu's Allston (4.4⭐)
+[2025-10-30T19:03:30.827Z] LOG       2. Yard House (4.3⭐)
+[2025-10-30T19:03:30.828Z] LOG       3. Audubon (4.6⭐)
+[2025-10-30T19:03:30.829Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-30T19:03:30.830Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T19:03:30.831Z] LOG    Primary venues: 4 stops
+[2025-10-30T19:03:30.833Z] LOG    ❌ Removed "FiRE+iCE Interactive Grill & Bar" - duplicate alternative
+[2025-10-30T19:03:30.834Z] LOG    ❌ Removed "Atlantic Fish Company" - duplicate alternative
+[2025-10-30T19:03:30.835Z] LOG    🔧 Stop "ChIJWz0jd5x744kRr6oY...": 4 → 2 alternatives
+[2025-10-30T19:03:30.836Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T19:03:30.837Z] LOG    Removed 0 venues already in route
+[2025-10-30T19:03:30.839Z] LOG    Removed 2 duplicate alternatives
+[2025-10-30T19:03:30.841Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T19:03:30.842Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T19:03:30.843Z] LOG    Primary venues: 5
+[2025-10-30T19:03:30.844Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T19:03:30.845Z] LOG    Execution time: 2101ms
+[2025-10-30T19:03:30.846Z] LOG 
+📋 Final alternatives:
+[2025-10-30T19:03:30.847Z] LOG    The Halal Guys: 4 alternatives
+[2025-10-30T19:03:30.848Z] LOG    Bab Al-Yemen Boston مطعم باب اليمن بوسطن: 2 alternatives
+[2025-10-30T19:03:30.849Z] LOG    Boston Halal: 4 alternatives
+[2025-10-30T19:03:30.851Z] LOG    Kwik Meal NYC: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

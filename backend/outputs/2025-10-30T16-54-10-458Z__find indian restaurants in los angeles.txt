@@ -1,0 +1,167 @@
+User Prompt: find indian restaurants in los angeles
+
+[2025-10-30T16:54:10.459Z] LOG 📍 Using fallback location (no user location): Melrose Avenue
+[2025-10-30T16:54:10.459Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T16:54:10.460Z] LOG    1. "Roots Indian Bistro" in "Melrose Avenue"
+[2025-10-30T16:54:10.461Z] LOG    2. "Mayura Indian Restaurant" in "Culver City"
+[2025-10-30T16:54:10.461Z] LOG    3. "India's Grill" in "Wilshire Boulevard"
+[2025-10-30T16:54:10.462Z] LOG    4. "ELECTRIC KARMA Indian Cuisine" in "West 3rd Street"
+[2025-10-30T16:54:10.463Z] LOG    5. "Flavor of India - West Hollywood" in "West Hollywood (Sunset Boulevard)"
+[2025-10-30T16:54:10.463Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T16:54:10.464Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T16:54:10.465Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T16:54:10.466Z] LOG    1. Searching "Roots Indian Bistro" in "Melrose Avenue"
+[2025-10-30T16:54:10.467Z] LOG 🔍 [Google Places] Text search: "Roots Indian Bistro" in Melrose Avenue
+[2025-10-30T16:54:10.479Z] LOG    2. Searching "Mayura Indian Restaurant" in "Culver City"
+[2025-10-30T16:54:10.483Z] LOG 🔍 [Google Places] Text search: "Mayura Indian Restaurant" in Culver City
+[2025-10-30T16:54:10.487Z] LOG    3. Searching "India's Grill" in "Wilshire Boulevard"
+[2025-10-30T16:54:10.488Z] LOG 🔍 [Google Places] Text search: "India's Grill" in Wilshire Boulevard
+[2025-10-30T16:54:10.491Z] LOG    4. Searching "ELECTRIC KARMA Indian Cuisine" in "West 3rd Street"
+[2025-10-30T16:54:10.493Z] LOG 🔍 [Google Places] Text search: "ELECTRIC KARMA Indian Cuisine" in West 3rd Street
+[2025-10-30T16:54:10.497Z] LOG    5. Searching "Flavor of India - West Hollywood" in "West Hollywood (Sunset Boulevard)"
+[2025-10-30T16:54:10.498Z] LOG 🔍 [Google Places] Text search: "Flavor of India - West Hollywood" in West Hollywood (Sunset Boulevard)
+[2025-10-30T16:54:10.990Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T16:54:10.999Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T16:54:11.039Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T16:54:11.107Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T16:54:11.158Z] LOG    ✅ India's Grill: Got description (94 chars)
+[2025-10-30T16:54:11.160Z] LOG ✅ Found 1 places
+[2025-10-30T16:54:11.162Z] LOG    ⚠️  Roots Indian Bistro: No editorial summary available
+[2025-10-30T16:54:11.163Z] LOG ✅ Found 1 places
+[2025-10-30T16:54:11.176Z] LOG    ✅ ELECTRIC KARMA Indian Cuisine: Got description (99 chars)
+[2025-10-30T16:54:11.180Z] LOG ✅ Found 1 places
+[2025-10-30T16:54:11.236Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T16:54:11.265Z] LOG    ✅ Mayura Indian Restaurant: Got description (100 chars)
+[2025-10-30T16:54:11.266Z] LOG ✅ Found 1 places
+[2025-10-30T16:54:11.376Z] LOG    ✅ Flavor of India - West Hollywood: Got description (100 chars)
+[2025-10-30T16:54:11.377Z] LOG ✅ Found 1 places
+[2025-10-30T16:54:11.378Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 913ms
+[2025-10-30T16:54:11.379Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T16:54:11.379Z] LOG    Tool execution result: success=true
+[2025-10-30T16:54:11.380Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T16:54:11.380Z] LOG    ✅ Merged: Roots Indian Bistro
+[2025-10-30T16:54:11.381Z] LOG       Places placeId: ChIJHT4b10m_woARlvwbQib_Is0
+[2025-10-30T16:54:11.382Z] LOG       Gemini description: Roots Indian Bistro is celebrated for its authentic Indian s...
+[2025-10-30T16:54:11.382Z] LOG    ✅ Merged: Mayura Indian Restaurant
+[2025-10-30T16:54:11.383Z] LOG       Places placeId: ChIJQexQK7-7woARFpzjEzD0w8o
+[2025-10-30T16:54:11.383Z] LOG       Gemini description: This unfussy, family-run Indian eatery in Culver City is a l...
+[2025-10-30T16:54:11.383Z] LOG    ✅ Merged: India's Grill
+[2025-10-30T16:54:11.384Z] LOG       Places placeId: ChIJF8ARAky5woARwuT5x9cbWpM
+[2025-10-30T16:54:11.384Z] LOG       Gemini description: India's Grill is an enduring, cozy Indian cafe located on Wi...
+[2025-10-30T16:54:11.385Z] LOG    ✅ Merged: ELECTRIC KARMA Indian Cuisine
+[2025-10-30T16:54:11.385Z] LOG       Places placeId: ChIJgzNoCDa5woARA7ipUAcy5JU
+[2025-10-30T16:54:11.385Z] LOG       Gemini description: ELECTRIC KARMA offers a unique dining experience with its fu...
+[2025-10-30T16:54:11.385Z] LOG    ✅ Merged: Flavor of India - West Hollywood
+[2025-10-30T16:54:11.386Z] LOG       Places placeId: ChIJR7ZQL8K-woARSjuRZjIONXc
+[2025-10-30T16:54:11.386Z] LOG       Gemini description: Flavor of India in West Hollywood is a casual, family-owned ...
+[2025-10-30T16:54:11.387Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T16:54:11.387Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T16:54:11.388Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T16:54:11.389Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T16:54:11.390Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T16:54:11.390Z] LOG    1. Searching "restaurant" in "34.0836332,-118.3480351"
+[2025-10-30T16:54:11.391Z] LOG    📍 Using nearbySearch at coordinates (34.0836332, -118.3480351)
+[2025-10-30T16:54:11.392Z] LOG 🔍 [Google Places] Nearby search at (34.0836332, -118.3480351)
+[2025-10-30T16:54:11.393Z] LOG    2. Searching "restaurant" in "34.019929,-118.4040319"
+[2025-10-30T16:54:11.393Z] LOG    📍 Using nearbySearch at coordinates (34.019929, -118.4040319)
+[2025-10-30T16:54:11.393Z] LOG 🔍 [Google Places] Nearby search at (34.019929, -118.4040319)
+[2025-10-30T16:54:11.394Z] LOG    3. Searching "restaurant" in "34.0637129,-118.3662412"
+[2025-10-30T16:54:11.394Z] LOG    📍 Using nearbySearch at coordinates (34.0637129, -118.3662412)
+[2025-10-30T16:54:11.395Z] LOG 🔍 [Google Places] Nearby search at (34.0637129, -118.3662412)
+[2025-10-30T16:54:11.396Z] LOG    4. Searching "restaurant" in "34.0723556,-118.3688104"
+[2025-10-30T16:54:11.396Z] LOG    📍 Using nearbySearch at coordinates (34.0723556, -118.3688104)
+[2025-10-30T16:54:11.396Z] LOG 🔍 [Google Places] Nearby search at (34.0723556, -118.3688104)
+[2025-10-30T16:54:11.398Z] LOG    5. Searching "restaurant" in "34.0978643,-118.363211"
+[2025-10-30T16:54:11.398Z] LOG    📍 Using nearbySearch at coordinates (34.0978643, -118.363211)
+[2025-10-30T16:54:11.399Z] LOG 🔍 [Google Places] Nearby search at (34.0978643, -118.363211)
+[2025-10-30T16:54:12.031Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T16:54:12.049Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T16:54:12.116Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T16:54:12.143Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T16:54:12.158Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T16:54:12.168Z] LOG    ✅ Du-Pars | Restaurant and Bakery: Got description (99 chars)
+[2025-10-30T16:54:12.196Z] LOG    ✅ Du-Pars | Restaurant and Bakery: Got description (99 chars)
+[2025-10-30T16:54:12.239Z] LOG    ⚠️  Stella Coffee Beverly Hills: No editorial summary available
+[2025-10-30T16:54:12.252Z] LOG    ✅ Eat This Café - Hollywood Brunch Spot: Breakfast, Lunch, Bottomless Mimosas: Got description (86 chars)
+[2025-10-30T16:54:12.258Z] LOG    ⚠️  MOOD.: No editorial summary available
+[2025-10-30T16:54:12.264Z] LOG    ✅ Jon & Vinny's Fairfax: Got description (95 chars)
+[2025-10-30T16:54:12.266Z] LOG    ✅ The Little Door: Got description (97 chars)
+[2025-10-30T16:54:12.276Z] LOG    ✅ Blu Jam Cafe: Got description (93 chars)
+[2025-10-30T16:54:12.284Z] LOG    ✅ Videre Rooftop Restaurant & Bar: Got description (103 chars)
+[2025-10-30T16:54:12.287Z] LOG    ✅ Citizen Public Market: Got description (98 chars)
+[2025-10-30T16:54:12.291Z] LOG    ✅ Swingers Diner: Got description (84 chars)
+[2025-10-30T16:54:12.292Z] LOG    ⚠️  MOOD.: No editorial summary available
+[2025-10-30T16:54:12.295Z] LOG    ✅ Jon & Vinny's Fairfax: Got description (95 chars)
+[2025-10-30T16:54:12.299Z] LOG    ⚠️  Mr.Charlie’s TMS: No editorial summary available
+[2025-10-30T16:54:12.323Z] LOG    ✅ Dinah's Comfort Kitchen: Got description (98 chars)
+[2025-10-30T16:54:12.329Z] LOG    ✅ Blu Jam Cafe: Got description (93 chars)
+[2025-10-30T16:54:12.334Z] LOG    ✅ Marmalade Cafe: Got description (81 chars)
+[2025-10-30T16:54:12.337Z] LOG    ✅ Lonzo's Restaurant: Got description (100 chars)
+[2025-10-30T16:54:12.338Z] LOG    ✅ Maple Block Meat Co.: Got description (95 chars)
+[2025-10-30T16:54:12.354Z] LOG    ✅ Videre Rooftop Restaurant & Bar: Got description (103 chars)
+[2025-10-30T16:54:12.363Z] LOG    ✅ The Butcher, The Baker, The Cappuccino Maker: Got description (98 chars)
+[2025-10-30T16:54:12.386Z] LOG    ✅ Riot House Restaurant + Bar: Got description (100 chars)
+[2025-10-30T16:54:12.392Z] LOG    ⚠️  Provecho CaliMex: No editorial summary available
+[2025-10-30T16:54:12.402Z] LOG    ✅ Hugo's West Hollywood: Got description (94 chars)
+[2025-10-30T16:54:12.418Z] LOG    ✅ Mels Drive-In: Got description (99 chars)
+[2025-10-30T16:54:12.420Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1030ms
+[2025-10-30T16:54:12.421Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T16:54:12.421Z] LOG    ✅ Venue 1 (Roots Indian Bistro): 4 alternatives
+[2025-10-30T16:54:12.422Z] LOG       1. Du-Pars | Restaurant and Bakery (4.3⭐)
+[2025-10-30T16:54:12.423Z] LOG       2. Eat This Café - Hollywood Brunch Spot: Breakfast, Lunch, Bottomless Mimosas (4.4⭐)
+[2025-10-30T16:54:12.423Z] LOG       3. Jon & Vinny's Fairfax (4.3⭐)
+[2025-10-30T16:54:12.424Z] LOG    ✅ Venue 2 (Mayura Indian Restaurant): 4 alternatives
+[2025-10-30T16:54:12.424Z] LOG       1. Citizen Public Market (4.6⭐)
+[2025-10-30T16:54:12.425Z] LOG       2. Dinah's Comfort Kitchen (4.1⭐)
+[2025-10-30T16:54:12.426Z] LOG       3. Provecho CaliMex (4.9⭐)
+[2025-10-30T16:54:12.426Z] LOG    ✅ Venue 3 (India's Grill): 4 alternatives
+[2025-10-30T16:54:12.426Z] LOG       1. Du-Pars | Restaurant and Bakery (4.3⭐)
+[2025-10-30T16:54:12.427Z] LOG       2. The Little Door (4.5⭐)
+[2025-10-30T16:54:12.427Z] LOG       3. Stella Coffee Beverly Hills (4.3⭐)
+[2025-10-30T16:54:12.427Z] LOG    ✅ Venue 4 (ELECTRIC KARMA Indian Cuisine): 4 alternatives
+[2025-10-30T16:54:12.428Z] LOG       1. MOOD. (4.6⭐)
+[2025-10-30T16:54:12.428Z] LOG       2. Marmalade Cafe (4⭐)
+[2025-10-30T16:54:12.429Z] LOG       3. Swingers Diner (4.4⭐)
+[2025-10-30T16:54:12.429Z] LOG    ✅ Venue 5 (Flavor of India - West Hollywood): 4 alternatives
+[2025-10-30T16:54:12.430Z] LOG       1. The Butcher, The Baker, The Cappuccino Maker (4.5⭐)
+[2025-10-30T16:54:12.430Z] LOG       2. Blu Jam Cafe (4.4⭐)
+[2025-10-30T16:54:12.431Z] LOG       3. Mels Drive-In (4.4⭐)
+[2025-10-30T16:54:12.431Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T16:54:12.432Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T16:54:12.433Z] LOG    Primary venues: 5 stops
+[2025-10-30T16:54:12.433Z] LOG    ❌ Removed "Du-Pars | Restaurant and Bakery" - duplicate alternative
+[2025-10-30T16:54:12.434Z] LOG    🔧 Stop "ChIJF8ARAky5woARwuT5...": 4 → 3 alternatives
+[2025-10-30T16:54:12.434Z] LOG    ❌ Removed "MOOD." - duplicate alternative
+[2025-10-30T16:54:12.434Z] LOG    ❌ Removed "Jon & Vinny's Fairfax" - duplicate alternative
+[2025-10-30T16:54:12.435Z] LOG    🔧 Stop "ChIJgzNoCDa5woARA7ip...": 4 → 2 alternatives
+[2025-10-30T16:54:12.435Z] LOG    ❌ Removed "Blu Jam Cafe" - duplicate alternative
+[2025-10-30T16:54:12.436Z] LOG    🔧 Stop "ChIJR7ZQL8K-woARSjuR...": 4 → 3 alternatives
+[2025-10-30T16:54:12.436Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T16:54:12.437Z] LOG    Removed 0 venues already in route
+[2025-10-30T16:54:12.438Z] LOG    Removed 4 duplicate alternatives
+[2025-10-30T16:54:12.438Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T16:54:12.439Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T16:54:12.439Z] LOG    Primary venues: 5
+[2025-10-30T16:54:12.440Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T16:54:12.440Z] LOG    Execution time: 1982ms
+[2025-10-30T16:54:12.440Z] LOG 
+📋 Final alternatives:
+[2025-10-30T16:54:12.441Z] LOG    Roots Indian Bistro: 4 alternatives
+[2025-10-30T16:54:12.441Z] LOG    Mayura Indian Restaurant: 4 alternatives
+[2025-10-30T16:54:12.442Z] LOG    India's Grill: 3 alternatives
+[2025-10-30T16:54:12.442Z] LOG    ELECTRIC KARMA Indian Cuisine: 2 alternatives
+[2025-10-30T16:54:12.442Z] LOG    Flavor of India - West Hollywood: 3 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

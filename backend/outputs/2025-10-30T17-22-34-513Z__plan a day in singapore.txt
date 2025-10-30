@@ -1,0 +1,152 @@
+User Prompt: plan a day in singapore
+
+[2025-10-30T17:22:34.515Z] LOG 📍 Using fallback location (no user location): Marina Bay
+[2025-10-30T17:22:34.517Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T17:22:34.518Z] LOG    1. "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T17:22:34.520Z] LOG    2. "Merlion Park" in "Downtown Core"
+[2025-10-30T17:22:34.521Z] LOG    3. "National Museum of Singapore" in "Downtown Core"
+[2025-10-30T17:22:34.522Z] LOG    4. "Singapore Botanic Gardens" in "Tanglin"
+[2025-10-30T17:22:34.524Z] LOG    5. "Little India" in "Little India"
+[2025-10-30T17:22:34.525Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T17:22:34.526Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:22:34.527Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:22:34.528Z] LOG    1. Searching "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T17:22:34.529Z] LOG 🔍 [Google Places] Text search: "Gardens by the Bay" in Marina Bay
+[2025-10-30T17:22:34.538Z] LOG    2. Searching "Merlion Park" in "Downtown Core"
+[2025-10-30T17:22:34.540Z] LOG 🔍 [Google Places] Text search: "Merlion Park" in Downtown Core
+[2025-10-30T17:22:34.548Z] LOG    3. Searching "National Museum of Singapore" in "Downtown Core"
+[2025-10-30T17:22:34.551Z] LOG 🔍 [Google Places] Text search: "National Museum of Singapore" in Downtown Core
+[2025-10-30T17:22:34.559Z] LOG    4. Searching "Singapore Botanic Gardens" in "Tanglin"
+[2025-10-30T17:22:34.562Z] LOG 🔍 [Google Places] Text search: "Singapore Botanic Gardens" in Tanglin
+[2025-10-30T17:22:34.574Z] LOG    5. Searching "Little India" in "Little India"
+[2025-10-30T17:22:34.577Z] LOG 🔍 [Google Places] Text search: "Little India" in Little India
+[2025-10-30T17:22:35.024Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:22:35.083Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:22:35.097Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:22:35.165Z] LOG    ✅ Little India: Got description (96 chars)
+[2025-10-30T17:22:35.170Z] LOG ✅ Found 1 places
+[2025-10-30T17:22:35.192Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:22:35.223Z] LOG    ✅ Singapore Botanic Gardens: Got description (100 chars)
+[2025-10-30T17:22:35.229Z] LOG ✅ Found 1 places
+[2025-10-30T17:22:35.245Z] LOG    ✅ Merlion Park: Got description (92 chars)
+[2025-10-30T17:22:35.247Z] LOG ✅ Found 1 places
+[2025-10-30T17:22:35.287Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T17:22:35.328Z] LOG    ✅ National Museum of Singapore: Got description (96 chars)
+[2025-10-30T17:22:35.331Z] LOG ✅ Found 1 places
+[2025-10-30T17:22:35.549Z] LOG    ✅ Gardens by the Bay: Got description (97 chars)
+[2025-10-30T17:22:35.550Z] LOG ✅ Found 1 places
+[2025-10-30T17:22:35.551Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1024ms
+[2025-10-30T17:22:35.551Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:22:35.552Z] LOG    Tool execution result: success=true
+[2025-10-30T17:22:35.552Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T17:22:35.553Z] LOG    ✅ Merged: Gardens by the Bay
+[2025-10-30T17:22:35.553Z] LOG       Places placeId: ChIJMxZ-kwQZ2jERdsqftXeWCWI
+[2025-10-30T17:22:35.554Z] LOG       Gemini description: Explore the stunning Supertree Grove, futuristic conservator...
+[2025-10-30T17:22:35.554Z] LOG    ✅ Merged: Merlion Park
+[2025-10-30T17:22:35.555Z] LOG       Places placeId: ChIJBTYg1g4Z2jERp_MBbu5erWY
+[2025-10-30T17:22:35.555Z] LOG       Gemini description: Visit the iconic Merlion statue, Singapore's most famous sym...
+[2025-10-30T17:22:35.556Z] LOG    ✅ Merged: National Museum of Singapore
+[2025-10-30T17:22:35.556Z] LOG       Places placeId: ChIJD1u-EaMZ2jERaLhNfFkR45I
+[2025-10-30T17:22:35.556Z] LOG       Gemini description: Immerse yourself in Singapore's rich history and vibrant cul...
+[2025-10-30T17:22:35.557Z] LOG    ✅ Merged: Singapore Botanic Gardens
+[2025-10-30T17:22:35.557Z] LOG       Places placeId: ChIJvWDbfRwa2jERgNnTOpAU3-o
+[2025-10-30T17:22:35.558Z] LOG       Gemini description: Wander through this UNESCO World Heritage Site, a lush oasis...
+[2025-10-30T17:22:35.558Z] LOG    ✅ Merged: Little India
+[2025-10-30T17:22:35.559Z] LOG       Places placeId: ChIJg_xeyzV344kRgWyxN_BbVns
+[2025-10-30T17:22:35.559Z] LOG       Gemini description: Experience the vibrant sights, sounds, and smells of Singapo...
+[2025-10-30T17:22:35.560Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T17:22:35.561Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T17:22:35.561Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T17:22:35.562Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T17:22:35.562Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T17:22:35.563Z] LOG    1. Searching "park" in "1.2815683,103.8636132"
+[2025-10-30T17:22:35.563Z] LOG    📍 Using nearbySearch at coordinates (1.2815683, 103.8636132)
+[2025-10-30T17:22:35.564Z] LOG 🔍 [Google Places] Nearby search at (1.2815683, 103.8636132)
+[2025-10-30T17:22:35.567Z] LOG    2. Searching "landmark" in "1.2867449,103.8543872"
+[2025-10-30T17:22:35.569Z] LOG    📍 Using nearbySearch at coordinates (1.2867449, 103.8543872)
+[2025-10-30T17:22:35.570Z] LOG 🔍 [Google Places] Nearby search at (1.2867449, 103.8543872)
+[2025-10-30T17:22:35.573Z] LOG    3. Searching "museum" in "1.296613,103.8485091"
+[2025-10-30T17:22:35.576Z] LOG    📍 Using nearbySearch at coordinates (1.296613, 103.8485091)
+[2025-10-30T17:22:35.578Z] LOG 🔍 [Google Places] Nearby search at (1.296613, 103.8485091)
+[2025-10-30T17:22:35.580Z] LOG    4. Searching "botanical garden" in "1.3138397,103.8159136"
+[2025-10-30T17:22:35.582Z] LOG    📍 Using nearbySearch at coordinates (1.3138397, 103.8159136)
+[2025-10-30T17:22:35.584Z] LOG 🔍 [Google Places] Nearby search at (1.3138397, 103.8159136)
+[2025-10-30T17:22:35.588Z] LOG    5. Searching "cultural precinct" in "42.3812074,-71.10209859999999"
+[2025-10-30T17:22:35.590Z] LOG    📍 Using nearbySearch at coordinates (42.3812074, -71.10209859999999)
+[2025-10-30T17:22:35.592Z] LOG 🔍 [Google Places] Nearby search at (42.3812074, -71.10209859999999)
+[2025-10-30T17:22:36.246Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:22:36.262Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:22:36.310Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:22:36.358Z] LOG    ✅ Singapore Botanic Gardens: Got description (100 chars)
+[2025-10-30T17:22:36.383Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T17:22:36.393Z] LOG    ✅ National Gallery Singapore: Got description (98 chars)
+[2025-10-30T17:22:36.411Z] LOG    ⚠️  Botanic Gardens MRT Station (CC19): No editorial summary available
+[2025-10-30T17:22:36.414Z] LOG    ✅ National Museum of Singapore: Got description (96 chars)
+[2025-10-30T17:22:36.421Z] LOG    ⚠️  Sembcorp Cool House: No editorial summary available
+[2025-10-30T17:22:36.436Z] LOG    ⚠️  Small Batch @ Botanic Gardens: No editorial summary available
+[2025-10-30T17:22:36.445Z] LOG    ✅ Indian Heritage Centre: Got description (88 chars)
+[2025-10-30T17:22:36.451Z] LOG    ⚠️  Fort Gate: No editorial summary available
+[2025-10-30T17:22:36.464Z] LOG    ✅ ArtScience Museum: Got description (87 chars)
+[2025-10-30T17:22:36.470Z] LOG    ⚠️  Sprouts Food Place @ Botanic Garden: No editorial summary available
+[2025-10-30T17:22:36.474Z] LOG    ✅ Asian Civilisations Museum: Got description (90 chars)
+[2025-10-30T17:22:36.480Z] LOG    ✅ Merlion Park: Got description (92 chars)
+[2025-10-30T17:22:36.500Z] LOG    ⚠️  The Landmark Restaurant: No editorial summary available
+[2025-10-30T17:22:36.509Z] LOG    ⚠️  Golden Landmark Shopping Complex: No editorial summary available
+[2025-10-30T17:22:36.528Z] LOG    ⚠️  Raffles Hotel: No editorial summary available
+[2025-10-30T17:22:36.537Z] LOG    ✅ Old Hill Street Police Station: Got description (99 chars)
+[2025-10-30T17:22:36.551Z] LOG    ⚠️  Youth Olympic Park: No editorial summary available
+[2025-10-30T17:22:36.599Z] LOG    ✅ Merlion: Got description (97 chars)
+[2025-10-30T17:22:36.611Z] LOG    ✅ Esplanade Park: Got description (94 chars)
+[2025-10-30T17:22:36.625Z] LOG    ⚠️  Raffles Place Park: No editorial summary available
+[2025-10-30T17:22:36.627Z] LOG ✅ Batch complete: 5/5 searches succeeded, 20 total venues found in 1065ms
+[2025-10-30T17:22:36.629Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T17:22:36.629Z] LOG    ✅ Venue 1 (Gardens by the Bay): 4 alternatives
+[2025-10-30T17:22:36.630Z] LOG       1. Merlion Park (4.6⭐)
+[2025-10-30T17:22:36.631Z] LOG       2. Youth Olympic Park (4.5⭐)
+[2025-10-30T17:22:36.631Z] LOG       3. Esplanade Park (4.6⭐)
+[2025-10-30T17:22:36.631Z] LOG    ✅ Venue 2 (Merlion Park): 4 alternatives
+[2025-10-30T17:22:36.632Z] LOG       1. Golden Landmark Shopping Complex (4.1⭐)
+[2025-10-30T17:22:36.632Z] LOG       2. The Landmark Restaurant (4.5⭐)
+[2025-10-30T17:22:36.633Z] LOG       3. Old Hill Street Police Station (4.6⭐)
+[2025-10-30T17:22:36.633Z] LOG    ✅ Venue 3 (National Museum of Singapore): 4 alternatives
+[2025-10-30T17:22:36.634Z] LOG       1. National Gallery Singapore (4.6⭐)
+[2025-10-30T17:22:36.634Z] LOG       2. Asian Civilisations Museum (4.6⭐)
+[2025-10-30T17:22:36.634Z] LOG       3. ArtScience Museum (4.4⭐)
+[2025-10-30T17:22:36.636Z] LOG    ✅ Venue 4 (Singapore Botanic Gardens): 4 alternatives
+[2025-10-30T17:22:36.636Z] LOG       1. Botanic Gardens MRT Station (CC19) (4.6⭐)
+[2025-10-30T17:22:36.637Z] LOG       2. Small Batch @ Botanic Gardens (4.5⭐)
+[2025-10-30T17:22:36.637Z] LOG       3. Sembcorp Cool House (4.9⭐)
+[2025-10-30T17:22:36.638Z] LOG    ⚠️ No alternatives found for venue 5
+[2025-10-30T17:22:36.638Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-30T17:22:36.639Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T17:22:36.639Z] LOG    Primary venues: 5 stops
+[2025-10-30T17:22:36.640Z] LOG    ❌ Removed "Merlion Park" - already in primary route
+[2025-10-30T17:22:36.640Z] LOG    🔧 Stop "ChIJMxZ-kwQZ2jERdsqf...": 4 → 3 alternatives
+[2025-10-30T17:22:36.640Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T17:22:36.641Z] LOG    Removed 1 venues already in route
+[2025-10-30T17:22:36.641Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T17:22:36.642Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T17:22:36.643Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T17:22:36.644Z] LOG    Primary venues: 5
+[2025-10-30T17:22:36.645Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T17:22:36.645Z] LOG    Execution time: 2130ms
+[2025-10-30T17:22:36.646Z] LOG 
+📋 Final alternatives:
+[2025-10-30T17:22:36.646Z] LOG    Gardens by the Bay: 3 alternatives
+[2025-10-30T17:22:36.647Z] LOG    Merlion Park: 4 alternatives
+[2025-10-30T17:22:36.648Z] LOG    National Museum of Singapore: 4 alternatives
+[2025-10-30T17:22:36.648Z] LOG    Singapore Botanic Gardens: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4
