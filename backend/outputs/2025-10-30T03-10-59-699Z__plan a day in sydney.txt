@@ -1,0 +1,160 @@
+User Prompt: plan a day in sydney
+
+[2025-10-30T03:10:59.701Z] LOG 📍 Using fallback location (no user location): Bennelong Point, Circular Quay
+[2025-10-30T03:10:59.702Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T03:10:59.703Z] LOG    1. "Sydney Opera House" in "Bennelong Point, Circular Quay"
+[2025-10-30T03:10:59.704Z] LOG    2. "The Rocks" in "Near Circular Quay"
+[2025-10-30T03:10:59.704Z] LOG    3. "Royal Botanic Garden Sydney" in "East of Circular Quay"
+[2025-10-30T03:10:59.705Z] LOG    4. "Darling Harbour" in "West of Sydney CBD"
+[2025-10-30T03:10:59.705Z] LOG    5. "The Glenmore Hotel" in "The Rocks"
+[2025-10-30T03:10:59.706Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T03:10:59.706Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T03:10:59.707Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T03:10:59.707Z] LOG    1. Searching "Sydney Opera House" in "Bennelong Point, Circular Quay"
+[2025-10-30T03:10:59.708Z] LOG 🔍 [Google Places] Text search: "Sydney Opera House" in Bennelong Point, Circular Quay
+[2025-10-30T03:10:59.712Z] LOG    2. Searching "The Rocks" in "Near Circular Quay"
+[2025-10-30T03:10:59.713Z] LOG 🔍 [Google Places] Text search: "The Rocks" in Near Circular Quay
+[2025-10-30T03:10:59.721Z] LOG    3. Searching "Royal Botanic Garden Sydney" in "East of Circular Quay"
+[2025-10-30T03:10:59.723Z] LOG 🔍 [Google Places] Text search: "Royal Botanic Garden Sydney" in East of Circular Quay
+[2025-10-30T03:10:59.730Z] LOG    4. Searching "Darling Harbour" in "West of Sydney CBD"
+[2025-10-30T03:10:59.731Z] LOG 🔍 [Google Places] Text search: "Darling Harbour" in West of Sydney CBD
+[2025-10-30T03:10:59.737Z] LOG    5. Searching "The Glenmore Hotel" in "The Rocks"
+[2025-10-30T03:10:59.739Z] LOG 🔍 [Google Places] Text search: "The Glenmore Hotel" in The Rocks
+[2025-10-30T03:10:59.902Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:10:59.938Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:11:00.024Z] LOG    ✅ Royal Botanic Garden Sydney: Got description (95 chars)
+[2025-10-30T03:11:00.025Z] LOG ✅ Found 1 places
+[2025-10-30T03:11:00.030Z] LOG    ✅ Sydney Opera House: Got description (94 chars)
+[2025-10-30T03:11:00.030Z] LOG ✅ Found 1 places
+[2025-10-30T03:11:00.236Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:11:00.268Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:11:00.366Z] LOG    ✅ Darling Harbour: Got description (95 chars)
+[2025-10-30T03:11:00.369Z] LOG ✅ Found 1 places
+[2025-10-30T03:11:00.473Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:11:00.490Z] LOG    ⚠️  Circular Quay: No editorial summary available
+[2025-10-30T03:11:00.491Z] LOG ✅ Found 1 places
+[2025-10-30T03:11:00.607Z] LOG    ✅ The Glenmore Hotel: Got description (100 chars)
+[2025-10-30T03:11:00.609Z] LOG ✅ Found 1 places
+[2025-10-30T03:11:00.610Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 903ms
+[2025-10-30T03:11:00.610Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T03:11:00.611Z] LOG    Tool execution result: success=true
+[2025-10-30T03:11:00.611Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T03:11:00.611Z] LOG    ✅ Merged: Sydney Opera House
+[2025-10-30T03:11:00.612Z] LOG       Places placeId: ChIJ3S-JXmauEmsRUcIaWtf4MzE
+[2025-10-30T03:11:00.612Z] LOG       Gemini description: An architectural masterpiece and a UNESCO World Heritage sit...
+[2025-10-30T03:11:00.613Z] LOG    ✅ Merged: The Rocks
+[2025-10-30T03:11:00.613Z] LOG       Places placeId: ChIJra9q0mmuEmsR4Hy11eshm38
+[2025-10-30T03:11:00.614Z] LOG       Gemini description: Sydney's oldest neighbourhood, The Rocks is a charming area ...
+[2025-10-30T03:11:00.614Z] LOG    ✅ Merged: Royal Botanic Garden Sydney
+[2025-10-30T03:11:00.614Z] LOG       Places placeId: ChIJWaTdYGuuEmsRoOfx-Wh9AQ8
+[2025-10-30T03:11:00.615Z] LOG       Gemini description: A magnificent harbourside oasis, these sprawling gardens off...
+[2025-10-30T03:11:00.615Z] LOG    ✅ Merged: Darling Harbour
+[2025-10-30T03:11:00.615Z] LOG       Places placeId: ChIJt9trB0euEmsR8NbepO14j3M
+[2025-10-30T03:11:00.616Z] LOG       Gemini description: A large recreational and pedestrian precinct that is home to...
+[2025-10-30T03:11:00.616Z] LOG    ✅ Merged: The Glenmore Hotel
+[2025-10-30T03:11:00.616Z] LOG       Places placeId: ChIJz66NJ0OuEmsRRA_Dvawy8kI
+[2025-10-30T03:11:00.616Z] LOG       Gemini description: A historic pub located in The Rocks, famous for its rooftop ...
+[2025-10-30T03:11:00.617Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T03:11:00.617Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T03:11:00.618Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T03:11:00.618Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T03:11:00.619Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T03:11:00.620Z] LOG    1. Searching "landmark" in "-33.8567844,151.2152967"
+[2025-10-30T03:11:00.620Z] LOG    📍 Using nearbySearch at coordinates (-33.8567844, 151.2152967)
+[2025-10-30T03:11:00.621Z] LOG 🔍 [Google Places] Nearby search at (-33.8567844, 151.2152967)
+[2025-10-30T03:11:00.623Z] LOG    2. Searching "restaurant" in "-33.8611374,151.2126457"
+[2025-10-30T03:11:00.623Z] LOG    📍 Using nearbySearch at coordinates (-33.8611374, 151.2126457)
+[2025-10-30T03:11:00.623Z] LOG 🔍 [Google Places] Nearby search at (-33.8611374, 151.2126457)
+[2025-10-30T03:11:00.624Z] LOG    3. Searching "park" in "-33.8641859,151.2165708"
+[2025-10-30T03:11:00.624Z] LOG    📍 Using nearbySearch at coordinates (-33.8641859, 151.2165708)
+[2025-10-30T03:11:00.625Z] LOG 🔍 [Google Places] Nearby search at (-33.8641859, 151.2165708)
+[2025-10-30T03:11:00.626Z] LOG    4. Searching "tourist attraction" in "-33.87488,151.2009"
+[2025-10-30T03:11:00.626Z] LOG    📍 Using nearbySearch at coordinates (-33.87488, 151.2009)
+[2025-10-30T03:11:00.626Z] LOG 🔍 [Google Places] Nearby search at (-33.87488, 151.2009)
+[2025-10-30T03:11:00.627Z] LOG    5. Searching "pub" in "-33.8586272,151.2074295"
+[2025-10-30T03:11:00.627Z] LOG    📍 Using nearbySearch at coordinates (-33.8586272, 151.2074295)
+[2025-10-30T03:11:00.628Z] LOG 🔍 [Google Places] Nearby search at (-33.8586272, 151.2074295)
+[2025-10-30T03:11:00.770Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:11:00.782Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:11:00.846Z] LOG    ✅ Hyde Park: Got description (100 chars)
+[2025-10-30T03:11:00.848Z] LOG    ⚠️  Landmark Group: No editorial summary available
+[2025-10-30T03:11:00.917Z] LOG    ✅ Observatory Hill Park: Got description (96 chars)
+[2025-10-30T03:11:00.921Z] LOG    ⚠️  Moore Steps: No editorial summary available
+[2025-10-30T03:11:00.925Z] LOG    ⚠️  Landmark Realty Group: No editorial summary available
+[2025-10-30T03:11:00.939Z] LOG    ✅ Rushcutters Bay Park: Got description (99 chars)
+[2025-10-30T03:11:00.959Z] LOG    ✅ Customs House: Got description (96 chars)
+[2025-10-30T03:11:00.972Z] LOG    ⚠️  First Fleet Park: No editorial summary available
+[2025-10-30T03:11:00.982Z] LOG    ✅ Tumbalong Park: Got description (96 chars)
+[2025-10-30T03:11:01.008Z] LOG    ✅ Archibald Memorial Fountain: Got description (86 chars)
+[2025-10-30T03:11:01.146Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:11:01.190Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:11:01.205Z] LOG    ⚠️  La Riviera Restaurant & Bar: No editorial summary available
+[2025-10-30T03:11:01.220Z] LOG    ⚠️  Martinez — Restaurant, Terrace and Bar: No editorial summary available
+[2025-10-30T03:11:01.232Z] LOG    ✅ City Extra 24 Hour Restaurant: Got description (93 chars)
+[2025-10-30T03:11:01.242Z] LOG    ✅ Darling Harbour: Got description (95 chars)
+[2025-10-30T03:11:01.279Z] LOG    ✅ Harbourfront Seafood Restaurant Sydney The Rocks: Got description (98 chars)
+[2025-10-30T03:11:01.281Z] LOG    ⚠️  Glider Garden: No editorial summary available
+[2025-10-30T03:11:01.308Z] LOG    ⚠️  The Sydney Fernery: No editorial summary available
+[2025-10-30T03:11:01.347Z] LOG    ✅ Sydney Tower Eye: Got description (87 chars)
+[2025-10-30T03:11:01.350Z] LOG    ⚠️  Pool of Reflection: No editorial summary available
+[2025-10-30T03:11:01.352Z] LOG    ✅ Madame Tussauds Sydney: Got description (97 chars)
+[2025-10-30T03:11:01.473Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:11:01.555Z] LOG    ✅ The Glenmore Hotel: Got description (100 chars)
+[2025-10-30T03:11:01.591Z] LOG    ✅ P.J.O'Brien's: Got description (90 chars)
+[2025-10-30T03:11:01.601Z] LOG    ✅ Fortune of War - Sydney's Oldest Pub: Got description (99 chars)
+[2025-10-30T03:11:01.609Z] LOG    ✅ Verandah Bar: Got description (97 chars)
+[2025-10-30T03:11:01.644Z] LOG    ⚠️  Henley's Bar & Kitchen: No editorial summary available
+[2025-10-30T03:11:01.645Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1026ms
+[2025-10-30T03:11:01.646Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T03:11:01.646Z] LOG    ✅ Venue 1 (Sydney Opera House): 4 alternatives
+[2025-10-30T03:11:01.647Z] LOG       1. Landmark Group (4.4⭐)
+[2025-10-30T03:11:01.647Z] LOG       2. Customs House (4.5⭐)
+[2025-10-30T03:11:01.647Z] LOG       3. Archibald Memorial Fountain (4.7⭐)
+[2025-10-30T03:11:01.648Z] LOG    ✅ Venue 2 (Circular Quay): 4 alternatives
+[2025-10-30T03:11:01.648Z] LOG       1. Glider Garden (4.7⭐)
+[2025-10-30T03:11:01.649Z] LOG       2. Harbourfront Seafood Restaurant Sydney The Rocks (4.5⭐)
+[2025-10-30T03:11:01.649Z] LOG       3. La Riviera Restaurant & Bar (4.7⭐)
+[2025-10-30T03:11:01.650Z] LOG    ✅ Venue 3 (Royal Botanic Garden Sydney): 4 alternatives
+[2025-10-30T03:11:01.650Z] LOG       1. Hyde Park (4.6⭐)
+[2025-10-30T03:11:01.650Z] LOG       2. Rushcutters Bay Park (4.6⭐)
+[2025-10-30T03:11:01.651Z] LOG       3. Observatory Hill Park (4.7⭐)
+[2025-10-30T03:11:01.651Z] LOG    ✅ Venue 4 (Darling Harbour): 4 alternatives
+[2025-10-30T03:11:01.651Z] LOG       1. Sydney Tower Eye (4.4⭐)
+[2025-10-30T03:11:01.652Z] LOG       2. The Sydney Fernery (4.8⭐)
+[2025-10-30T03:11:01.652Z] LOG       3. Madame Tussauds Sydney (4.4⭐)
+[2025-10-30T03:11:01.652Z] LOG    ✅ Venue 5 (The Glenmore Hotel): 4 alternatives
+[2025-10-30T03:11:01.652Z] LOG       1. Henley's Bar & Kitchen (4.3⭐)
+[2025-10-30T03:11:01.653Z] LOG       2. Fortune of War - Sydney's Oldest Pub (4.4⭐)
+[2025-10-30T03:11:01.653Z] LOG       3. Verandah Bar (4.1⭐)
+[2025-10-30T03:11:01.653Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T03:11:01.653Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T03:11:01.654Z] LOG    Primary venues: 5 stops
+[2025-10-30T03:11:01.654Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T03:11:01.654Z] LOG    Removed 0 venues already in route
+[2025-10-30T03:11:01.655Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T03:11:01.655Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T03:11:01.656Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T03:11:01.656Z] LOG    Primary venues: 5
+[2025-10-30T03:11:01.657Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T03:11:01.657Z] LOG    Execution time: 1958ms
+[2025-10-30T03:11:01.657Z] LOG 
+📋 Final alternatives:
+[2025-10-30T03:11:01.658Z] LOG    Sydney Opera House: 4 alternatives
+[2025-10-30T03:11:01.658Z] LOG    Circular Quay: 4 alternatives
+[2025-10-30T03:11:01.659Z] LOG    Royal Botanic Garden Sydney: 4 alternatives
+[2025-10-30T03:11:01.659Z] LOG    Darling Harbour: 4 alternatives
+[2025-10-30T03:11:01.659Z] LOG    The Glenmore Hotel: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

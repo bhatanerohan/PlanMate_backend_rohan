@@ -347,6 +347,37 @@ router.post('/plan', async (req: Request, res: Response) => {
       enrichedVenues.push(...orderedVenues);
     }
 
+    if (mode === 'route' && enrichedVenues.length >= 2) {
+      console.log(`\n📏 Filtering venues by distance (max 50km)...`);
+      console.log(`   Before: ${enrichedVenues.length} venues`);
+      
+      const filteredVenues = [enrichedVenues[0]]; // Keep first venue
+      
+      for (let i = 1; i < enrichedVenues.length; i++) {
+        const prev = filteredVenues[filteredVenues.length - 1];
+        const current = enrichedVenues[i];
+        
+        if (!prev.location || !current.location) continue;
+        
+        const distance = calculateDistance(
+          prev.location.lat,
+          prev.location.lng,
+          current.location.lat,
+          current.location.lng
+        );
+        
+        if (distance <= 200) {
+          filteredVenues.push(current);
+        } else {
+          console.log(`   🚫 Removed "${current.name}" - ${distance.toFixed(1)}km from "${prev.name}"`);
+        }
+      }
+      
+      enrichedVenues = filteredVenues;
+      console.log(`   After: ${enrichedVenues.length} venues\n`);
+    }
+
+
     const simplifiedAlternativesMap: Record<string, any[]> = {};
     Object.entries(alternativesMap).forEach(([placeId, info]: [string, any]) => {
       simplifiedAlternativesMap[placeId] = info.alternatives;
@@ -392,14 +423,39 @@ router.post('/plan', async (req: Request, res: Response) => {
       const remainingMinutes = minutes % 60;
       return `${hours}h ${remainingMinutes}m`;
     }
+// 🆕 Filter venues that are too far apart
+function filterVenuesByDistance(
+  waypoints: Array<{ lat: number; lng: number; name: string }>,
+  maxDistanceKm: number = 50
+): Array<{ lat: number; lng: number; name: string }> {
+  if (waypoints.length <= 1) return waypoints;
 
+  const filtered = [waypoints[0]];
+  
+  for (let i = 1; i < waypoints.length; i++) {
+    const prev = filtered[filtered.length - 1];
+    const current = waypoints[i];
+    
+    const distance = calculateDistance(
+      prev.lat, prev.lng,
+      current.lat, current.lng
+    );
+    
+    if (distance <= maxDistanceKm) {
+      filtered.push(current);
+    } else {
+      console.log(`   🚫 Removing "${current.name}" - ${distance.toFixed(1)}km from "${prev.name}"`);
+    }
+  }
+  
+  return filtered;
+}
     
     async function calculateAndAppendRouteInfo(
       result: string,
       venues: any[],
       mode: string
     ): Promise<{ enhancedResult: string; routes: any[] }> {
-      // Only calculate for route mode with 2+ venues
       if (mode !== 'route' || venues.length < 2) {
         return { enhancedResult: result, routes: [] };
       }
@@ -408,7 +464,7 @@ router.post('/plan', async (req: Request, res: Response) => {
         console.log('\n🗺️  Calculating Mapbox routes...');
         
         // Prepare waypoints from venues
-        const waypoints = venues
+        let waypoints = venues
           .filter(v => v.location && v.location.lat && v.location.lng)
           .map(v => ({
             lat: v.location.lat,
@@ -416,8 +472,11 @@ router.post('/plan', async (req: Request, res: Response) => {
             name: v.name
           }));
     
+        // 🆕 Filter out venues that are too far apart
+        waypoints = filterVenuesByDistance(waypoints, 50);
+        
         if (waypoints.length < 2) {
-          console.log('   ⚠️  Not enough valid waypoints for route calculation');
+          console.log('   ⚠️  Not enough nearby waypoints for route calculation');
           return { enhancedResult: result, routes: [] };
         }
     

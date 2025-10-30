@@ -1,0 +1,160 @@
+User Prompt: plan a day in singapore
+
+[2025-10-30T03:31:57.471Z] LOG 📍 Using fallback location (no user location): Marina Bay
+[2025-10-30T03:31:57.472Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T03:31:57.473Z] LOG    1. "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T03:31:57.474Z] LOG    2. "PUTIEN Marina Bay Sands" in "Marina Bay Sands"
+[2025-10-30T03:31:57.475Z] LOG    3. "Chinatown" in "Chinatown"
+[2025-10-30T03:31:57.476Z] LOG    4. "Orchard Road" in "Orchard"
+[2025-10-30T03:31:57.477Z] LOG    5. "CÉ LA VI Singapore: Restaurant, Sky Bar & Club Lounge" in "Marina Bay Sands"
+[2025-10-30T03:31:57.478Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T03:31:57.480Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T03:31:57.482Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T03:31:57.482Z] LOG    1. Searching "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T03:31:57.483Z] LOG 🔍 [Google Places] Text search: "Gardens by the Bay" in Marina Bay
+[2025-10-30T03:31:57.497Z] LOG    2. Searching "PUTIEN Marina Bay Sands" in "Marina Bay Sands"
+[2025-10-30T03:31:57.498Z] LOG 🔍 [Google Places] Text search: "PUTIEN Marina Bay Sands" in Marina Bay Sands
+[2025-10-30T03:31:57.503Z] LOG    3. Searching "Chinatown" in "Chinatown"
+[2025-10-30T03:31:57.505Z] LOG 🔍 [Google Places] Text search: "Chinatown" in Chinatown
+[2025-10-30T03:31:57.514Z] LOG    4. Searching "Orchard Road" in "Orchard"
+[2025-10-30T03:31:57.516Z] LOG 🔍 [Google Places] Text search: "Orchard Road" in Orchard
+[2025-10-30T03:31:57.520Z] LOG    5. Searching "CÉ LA VI Singapore: Restaurant, Sky Bar & Club Lounge" in "Marina Bay Sands"
+[2025-10-30T03:31:57.522Z] LOG 🔍 [Google Places] Text search: "CÉ LA VI Singapore: Restaurant, Sky Bar & Club Lounge" in Marina Bay Sands
+[2025-10-30T03:31:57.989Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:31:58.059Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:31:58.097Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:31:58.126Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:31:58.165Z] LOG    ⚠️  PUTIEN Marina Bay Sands: No editorial summary available
+[2025-10-30T03:31:58.169Z] LOG ✅ Found 1 places
+[2025-10-30T03:31:58.228Z] LOG    ⚠️  CÉ LA VI Singapore: Restaurant, Sky Bar & Club Lounge: No editorial summary available
+[2025-10-30T03:31:58.231Z] LOG ✅ Found 1 places
+[2025-10-30T03:31:58.240Z] LOG    ✅ Orchard Rd: Got description (98 chars)
+[2025-10-30T03:31:58.246Z] LOG ✅ Found 1 places
+[2025-10-30T03:31:58.252Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:31:58.259Z] LOG    ✅ Gardens by the Bay: Got description (97 chars)
+[2025-10-30T03:31:58.260Z] LOG ✅ Found 1 places
+[2025-10-30T03:31:58.393Z] LOG    ✅ Chinatown Gate: Got description (92 chars)
+[2025-10-30T03:31:58.399Z] LOG ✅ Found 1 places
+[2025-10-30T03:31:58.401Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 919ms
+[2025-10-30T03:31:58.403Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T03:31:58.404Z] LOG    Tool execution result: success=true
+[2025-10-30T03:31:58.404Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T03:31:58.405Z] LOG    ✅ Merged: Gardens by the Bay
+[2025-10-30T03:31:58.406Z] LOG       Places placeId: ChIJMxZ-kwQZ2jERdsqftXeWCWI
+[2025-10-30T03:31:58.406Z] LOG       Gemini description: Start your day amidst the futuristic natural park, featuring...
+[2025-10-30T03:31:58.407Z] LOG    ✅ Merged: PUTIEN Marina Bay Sands
+[2025-10-30T03:31:58.407Z] LOG       Places placeId: ChIJi71MRMIZ2jERY9k5MhQDmA0
+[2025-10-30T03:31:58.408Z] LOG       Gemini description: Enjoy a Michelin-starred Fujian cuisine experience known for...
+[2025-10-30T03:31:58.408Z] LOG    ✅ Merged: Chinatown
+[2025-10-30T03:31:58.408Z] LOG       Places placeId: ChIJfXXFQ3h644kRzPUzSY4Y5aA
+[2025-10-30T03:31:58.409Z] LOG       Gemini description: Immerse yourself in Singapore's vibrant Chinese heritage. Ex...
+[2025-10-30T03:31:58.409Z] LOG    ✅ Merged: Orchard Road
+[2025-10-30T03:31:58.410Z] LOG       Places placeId: ChIJu_7mSJEZ2jER-vT-Nz_3mY4
+[2025-10-30T03:31:58.410Z] LOG       Gemini description: Indulge in some retail therapy or simply enjoy a stroll alon...
+[2025-10-30T03:31:58.411Z] LOG    ✅ Merged: CÉ LA VI Singapore: Restaurant, Sky Bar & Club Lounge
+[2025-10-30T03:31:58.412Z] LOG       Places placeId: ChIJmTXpQAQZ2jERZmXslyMqczQ
+[2025-10-30T03:31:58.412Z] LOG       Gemini description: Cap off your day with breathtaking panoramic views of the ci...
+[2025-10-30T03:31:58.412Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T03:31:58.413Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T03:31:58.414Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T03:31:58.415Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T03:31:58.416Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T03:31:58.417Z] LOG    1. Searching "garden" in "1.2815683,103.8636132"
+[2025-10-30T03:31:58.418Z] LOG    📍 Using nearbySearch at coordinates (1.2815683, 103.8636132)
+[2025-10-30T03:31:58.420Z] LOG 🔍 [Google Places] Nearby search at (1.2815683, 103.8636132)
+[2025-10-30T03:31:58.425Z] LOG    2. Searching "restaurant" in "1.286121,103.8599911"
+[2025-10-30T03:31:58.427Z] LOG    📍 Using nearbySearch at coordinates (1.286121, 103.8599911)
+[2025-10-30T03:31:58.428Z] LOG 🔍 [Google Places] Nearby search at (1.286121, 103.8599911)
+[2025-10-30T03:31:58.430Z] LOG    3. Searching "restaurant" in "42.3512193,-71.05976179999999"
+[2025-10-30T03:31:58.431Z] LOG    📍 Using nearbySearch at coordinates (42.3512193, -71.05976179999999)
+[2025-10-30T03:31:58.431Z] LOG 🔍 [Google Places] Nearby search at (42.3512193, -71.05976179999999)
+[2025-10-30T03:31:58.434Z] LOG    4. Searching "restaurant" in "1.3048205,103.8321984"
+[2025-10-30T03:31:58.435Z] LOG    📍 Using nearbySearch at coordinates (1.3048205, 103.8321984)
+[2025-10-30T03:31:58.437Z] LOG 🔍 [Google Places] Nearby search at (1.3048205, 103.8321984)
+[2025-10-30T03:31:58.441Z] LOG    5. Searching "bar" in "1.2852614,103.8610346"
+[2025-10-30T03:31:58.443Z] LOG    📍 Using nearbySearch at coordinates (1.2852614, 103.8610346)
+[2025-10-30T03:31:58.444Z] LOG 🔍 [Google Places] Nearby search at (1.2852614, 103.8610346)
+[2025-10-30T03:31:59.007Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:31:59.028Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:31:59.138Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:31:59.180Z] LOG    ⚠️  Republic Bar Singapore: No editorial summary available
+[2025-10-30T03:31:59.192Z] LOG    ⚠️  Spago Bar & Lounge: No editorial summary available
+[2025-10-30T03:31:59.201Z] LOG    ⚠️  d.o.c Italian Restaurant: No editorial summary available
+[2025-10-30T03:31:59.210Z] LOG    ⚠️  Black Pepper Multicuisine Restaurant Singapore: No editorial summary available
+[2025-10-30T03:31:59.213Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:31:59.226Z] LOG    ⚠️  Kaarla Wood-Fire Grill and Bar: No editorial summary available
+[2025-10-30T03:31:59.232Z] LOG    ✅ Gardens by the Bay: Got description (97 chars)
+[2025-10-30T03:31:59.247Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:31:59.275Z] LOG    ⚠️  Le Jardin Cafe | Fort Canning: No editorial summary available
+[2025-10-30T03:31:59.290Z] LOG    ⚠️  Long Bar: No editorial summary available
+[2025-10-30T03:31:59.301Z] LOG    ⚠️  Lime Restaurant: No editorial summary available
+[2025-10-30T03:31:59.309Z] LOG    ✅ VUE: Got description (100 chars)
+[2025-10-30T03:31:59.323Z] LOG    ✅ Supertree Grove: Got description (98 chars)
+[2025-10-30T03:31:59.339Z] LOG    ⚠️  Estella Restaurant: No editorial summary available
+[2025-10-30T03:31:59.361Z] LOG    ⚠️  Dallas Cafe & Bar (MBS): No editorial summary available
+[2025-10-30T03:31:59.366Z] LOG    ✅ Bacco Ristorante & Bar: Got description (94 chars)
+[2025-10-30T03:31:59.372Z] LOG    ✅ Boston Sail Loft: Got description (92 chars)
+[2025-10-30T03:31:59.375Z] LOG    ⚠️  El Jefe's Taqueria - Boston Common: No editorial summary available
+[2025-10-30T03:31:59.376Z] LOG    ⚠️  Eden Restaurant: No editorial summary available
+[2025-10-30T03:31:59.377Z] LOG    ⚠️  Joia Restaurant & Lounge: No editorial summary available
+[2025-10-30T03:31:59.397Z] LOG    ⚠️  Uncle Fong Hotpot Restaurant (Great World) 方叔叔重庆老火锅: No editorial summary available
+[2025-10-30T03:31:59.403Z] LOG    ⚠️  Silver Garden: No editorial summary available
+[2025-10-30T03:31:59.413Z] LOG    ✅ Flower Dome: Got description (90 chars)
+[2025-10-30T03:31:59.416Z] LOG    ⚠️  Kimchi Dining | Korean Restaurant Singapore: No editorial summary available
+[2025-10-30T03:31:59.433Z] LOG    ⚠️  Le Jardin Cafe | Fort Canning: No editorial summary available
+[2025-10-30T03:31:59.447Z] LOG    ✅ Cloud Forest: Got description (99 chars)
+[2025-10-30T03:31:59.513Z] LOG    ⚠️  Kiseki Japanese Buffet Restaurant: No editorial summary available
+[2025-10-30T03:31:59.515Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1099ms
+[2025-10-30T03:31:59.516Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T03:31:59.517Z] LOG    ✅ Venue 1 (Gardens by the Bay): 4 alternatives
+[2025-10-30T03:31:59.517Z] LOG       1. Flower Dome (4.7⭐)
+[2025-10-30T03:31:59.517Z] LOG       2. Supertree Grove (4.7⭐)
+[2025-10-30T03:31:59.518Z] LOG       3. Cloud Forest (4.8⭐)
+[2025-10-30T03:31:59.518Z] LOG    ✅ Venue 2 (PUTIEN Marina Bay Sands): 4 alternatives
+[2025-10-30T03:31:59.519Z] LOG       1. d.o.c Italian Restaurant (4.7⭐)
+[2025-10-30T03:31:59.519Z] LOG       2. Kaarla Wood-Fire Grill and Bar (4.5⭐)
+[2025-10-30T03:31:59.520Z] LOG       3. Lime Restaurant (4.7⭐)
+[2025-10-30T03:31:59.521Z] LOG    ✅ Venue 3 (Chinatown Gate): 4 alternatives
+[2025-10-30T03:31:59.521Z] LOG       1. Estella Restaurant (4.3⭐)
+[2025-10-30T03:31:59.522Z] LOG       2. Boston Sail Loft (4.6⭐)
+[2025-10-30T03:31:59.523Z] LOG       3. Joia Restaurant & Lounge (4.3⭐)
+[2025-10-30T03:31:59.523Z] LOG    ✅ Venue 4 (Orchard Rd): 4 alternatives
+[2025-10-30T03:31:59.523Z] LOG       1. Kimchi Dining | Korean Restaurant Singapore (4.7⭐)
+[2025-10-30T03:31:59.524Z] LOG       2. Uncle Fong Hotpot Restaurant (Great World) 方叔叔重庆老火锅 (4.7⭐)
+[2025-10-30T03:31:59.525Z] LOG       3. Eden Restaurant (4.5⭐)
+[2025-10-30T03:31:59.525Z] LOG    ✅ Venue 5 (CÉ LA VI Singapore: Restaurant, Sky Bar & Club Lounge): 4 alternatives
+[2025-10-30T03:31:59.526Z] LOG       1. Republic Bar Singapore (4.8⭐)
+[2025-10-30T03:31:59.527Z] LOG       2. VUE (4.7⭐)
+[2025-10-30T03:31:59.528Z] LOG       3. Spago Bar & Lounge (4.3⭐)
+[2025-10-30T03:31:59.530Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T03:31:59.532Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T03:31:59.532Z] LOG    Primary venues: 5 stops
+[2025-10-30T03:31:59.533Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T03:31:59.534Z] LOG    Removed 0 venues already in route
+[2025-10-30T03:31:59.535Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T03:31:59.535Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T03:31:59.536Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T03:31:59.536Z] LOG    Primary venues: 5
+[2025-10-30T03:31:59.537Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T03:31:59.538Z] LOG    Execution time: 2067ms
+[2025-10-30T03:31:59.538Z] LOG 
+📋 Final alternatives:
+[2025-10-30T03:31:59.540Z] LOG    Gardens by the Bay: 4 alternatives
+[2025-10-30T03:31:59.540Z] LOG    PUTIEN Marina Bay Sands: 4 alternatives
+[2025-10-30T03:31:59.541Z] LOG    Chinatown Gate: 4 alternatives
+[2025-10-30T03:31:59.543Z] LOG    Orchard Rd: 4 alternatives
+[2025-10-30T03:31:59.543Z] LOG    CÉ LA VI Singapore: Restaurant, Sky Bar & Club Lounge: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

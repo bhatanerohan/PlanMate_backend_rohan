@@ -1,0 +1,166 @@
+User Prompt: plan a day in singapore
+
+[2025-10-30T03:11:33.937Z] LOG 📍 Using fallback location (no user location): Marina Bay
+[2025-10-30T03:11:33.938Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T03:11:33.939Z] LOG    1. "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T03:11:33.939Z] LOG    2. "Maxwell Food Centre" in "Chinatown"
+[2025-10-30T03:11:33.940Z] LOG    3. "SkyPark Observation Deck" in "Marina Bay"
+[2025-10-30T03:11:33.940Z] LOG    4. "Merlion Park" in "Marina Bay"
+[2025-10-30T03:11:33.941Z] LOG    5. "CQ @ Clarke Quay" in "Clarke Quay"
+[2025-10-30T03:11:33.941Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T03:11:33.942Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T03:11:33.943Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T03:11:33.943Z] LOG    1. Searching "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T03:11:33.944Z] LOG 🔍 [Google Places] Text search: "Gardens by the Bay" in Marina Bay
+[2025-10-30T03:11:33.950Z] LOG    2. Searching "Maxwell Food Centre" in "Chinatown"
+[2025-10-30T03:11:33.951Z] LOG 🔍 [Google Places] Text search: "Maxwell Food Centre" in Chinatown
+[2025-10-30T03:11:33.959Z] LOG    3. Searching "SkyPark Observation Deck" in "Marina Bay"
+[2025-10-30T03:11:33.960Z] LOG 🔍 [Google Places] Text search: "SkyPark Observation Deck" in Marina Bay
+[2025-10-30T03:11:33.965Z] LOG    4. Searching "Merlion Park" in "Marina Bay"
+[2025-10-30T03:11:33.968Z] LOG 🔍 [Google Places] Text search: "Merlion Park" in Marina Bay
+[2025-10-30T03:11:33.974Z] LOG    5. Searching "CQ @ Clarke Quay" in "Clarke Quay"
+[2025-10-30T03:11:33.976Z] LOG 🔍 [Google Places] Text search: "CQ @ Clarke Quay" in Clarke Quay
+[2025-10-30T03:11:34.399Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:11:34.482Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:11:34.490Z] LOG    ✅ Merlion Park: Got description (92 chars)
+[2025-10-30T03:11:34.492Z] LOG ✅ Found 1 places
+[2025-10-30T03:11:34.526Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:11:34.591Z] LOG    ✅ CQ @ Clarke Quay: Got description (98 chars)
+[2025-10-30T03:11:34.594Z] LOG ✅ Found 1 places
+[2025-10-30T03:11:34.606Z] LOG    ✅ Gardens by the Bay: Got description (97 chars)
+[2025-10-30T03:11:34.611Z] LOG ✅ Found 1 places
+[2025-10-30T03:11:34.621Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:11:34.728Z] LOG    ✅ SkyPark Observation Deck: Got description (97 chars)
+[2025-10-30T03:11:34.729Z] LOG ✅ Found 1 places
+[2025-10-30T03:11:34.730Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:11:34.825Z] LOG    ✅ Maxwell Food Centre: Got description (96 chars)
+[2025-10-30T03:11:34.827Z] LOG ✅ Found 1 places
+[2025-10-30T03:11:34.828Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 886ms
+[2025-10-30T03:11:34.828Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T03:11:34.829Z] LOG    Tool execution result: success=true
+[2025-10-30T03:11:34.829Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T03:11:34.831Z] LOG    ✅ Merged: Gardens by the Bay
+[2025-10-30T03:11:34.834Z] LOG       Places placeId: ChIJMxZ-kwQZ2jERdsqftXeWCWI
+[2025-10-30T03:11:34.836Z] LOG       Gemini description: Start your day at this expansive park featuring the iconic S...
+[2025-10-30T03:11:34.837Z] LOG    ✅ Merged: Maxwell Food Centre
+[2025-10-30T03:11:34.837Z] LOG       Places placeId: ChIJseQsTQ0Z2jERqpBTWF0Zf84
+[2025-10-30T03:11:34.838Z] LOG       Gemini description: Head to this bustling hawker center in Chinatown for an auth...
+[2025-10-30T03:11:34.839Z] LOG    ✅ Merged: SkyPark Observation Deck
+[2025-10-30T03:11:34.839Z] LOG       Places placeId: ChIJOeEf9S2vewIRM0B9a06CKwg
+[2025-10-30T03:11:34.840Z] LOG       Gemini description: Ascend to the 56th floor of Marina Bay Sands to the SkyPark ...
+[2025-10-30T03:11:34.840Z] LOG    ✅ Merged: Merlion Park
+[2025-10-30T03:11:34.840Z] LOG       Places placeId: ChIJBTYg1g4Z2jERp_MBbu5erWY
+[2025-10-30T03:11:34.841Z] LOG       Gemini description: Visit the Merlion Park to see Singapore's mythical national ...
+[2025-10-30T03:11:34.841Z] LOG    ✅ Merged: CQ @ Clarke Quay
+[2025-10-30T03:11:34.841Z] LOG       Places placeId: ChIJnXwAOKAZ2jERAs-MHs1aDgI
+[2025-10-30T03:11:34.842Z] LOG       Gemini description: Conclude your day at CQ @ Clarke Quay, a vibrant riverside l...
+[2025-10-30T03:11:34.842Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T03:11:34.843Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T03:11:34.843Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T03:11:34.843Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T03:11:34.844Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T03:11:34.844Z] LOG    1. Searching "landmark" in "1.2815683,103.8636132"
+[2025-10-30T03:11:34.845Z] LOG    📍 Using nearbySearch at coordinates (1.2815683, 103.8636132)
+[2025-10-30T03:11:34.845Z] LOG 🔍 [Google Places] Nearby search at (1.2815683, 103.8636132)
+[2025-10-30T03:11:34.846Z] LOG    2. Searching "restaurant" in "1.2803361,103.844767"
+[2025-10-30T03:11:34.848Z] LOG    📍 Using nearbySearch at coordinates (1.2803361, 103.844767)
+[2025-10-30T03:11:34.850Z] LOG 🔍 [Google Places] Nearby search at (1.2803361, 103.844767)
+[2025-10-30T03:11:34.853Z] LOG    3. Searching "landmark" in "1.2852044,103.8610313"
+[2025-10-30T03:11:34.854Z] LOG    📍 Using nearbySearch at coordinates (1.2852044, 103.8610313)
+[2025-10-30T03:11:34.855Z] LOG 🔍 [Google Places] Nearby search at (1.2852044, 103.8610313)
+[2025-10-30T03:11:34.856Z] LOG    4. Searching "park" in "1.2867449,103.8543872"
+[2025-10-30T03:11:34.857Z] LOG    📍 Using nearbySearch at coordinates (1.2867449, 103.8543872)
+[2025-10-30T03:11:34.858Z] LOG 🔍 [Google Places] Nearby search at (1.2867449, 103.8543872)
+[2025-10-30T03:11:34.862Z] LOG    5. Searching "restaurant" in "1.2906024,103.8464742"
+[2025-10-30T03:11:34.863Z] LOG    📍 Using nearbySearch at coordinates (1.2906024, 103.8464742)
+[2025-10-30T03:11:34.864Z] LOG 🔍 [Google Places] Nearby search at (1.2906024, 103.8464742)
+[2025-10-30T03:11:35.395Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:11:35.404Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:11:35.417Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:11:35.430Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:11:35.448Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:11:35.494Z] LOG    ✅ Merlion Park: Got description (92 chars)
+[2025-10-30T03:11:35.527Z] LOG    ✅ MERCI MARCEL CLUB STREET: Got description (98 chars)
+[2025-10-30T03:11:35.532Z] LOG    ✅ Old Hill Street Police Station: Got description (99 chars)
+[2025-10-30T03:11:35.563Z] LOG    ✅ MERCI MARCEL CLUB STREET: Got description (98 chars)
+[2025-10-30T03:11:35.569Z] LOG    ✅ Old Hill Street Police Station: Got description (99 chars)
+[2025-10-30T03:11:35.576Z] LOG    ✅ Istana Park: Got description (99 chars)
+[2025-10-30T03:11:35.585Z] LOG    ⚠️  Youth Olympic Park: No editorial summary available
+[2025-10-30T03:11:35.601Z] LOG    ⚠️  Estuary Restaurant & Bar - 9 Penang Road: No editorial summary available
+[2025-10-30T03:11:35.607Z] LOG    ⚠️  YenneY: No editorial summary available
+[2025-10-30T03:11:35.617Z] LOG    ⚠️  Kuan Zhai Alley 宽窄巷子 (Szechuan Cuisine Restaurant）: No editorial summary available
+[2025-10-30T03:11:35.621Z] LOG    ⚠️  Cappadocia Turkish & Mediterranean Restaurant: No editorial summary available
+[2025-10-30T03:11:35.629Z] LOG    ✅ Monti At 1-Pavilion Italian Restaurant: Got description (90 chars)
+[2025-10-30T03:11:35.634Z] LOG    ⚠️  Raffles Hotel: No editorial summary available
+[2025-10-30T03:11:35.638Z] LOG    ⚠️  YenneY: No editorial summary available
+[2025-10-30T03:11:35.639Z] LOG    ⚠️  Le Jardin Cafe | Fort Canning: No editorial summary available
+[2025-10-30T03:11:35.642Z] LOG    ⚠️  Fort Gate: No editorial summary available
+[2025-10-30T03:11:35.645Z] LOG    ⚠️  Co Chung Vietnamese Restaurant Boat Quay- Authentic taste of Vietnam: No editorial summary available
+[2025-10-30T03:11:35.655Z] LOG    ⚠️  The Fullerton Waterboat House: No editorial summary available
+[2025-10-30T03:11:35.661Z] LOG    ⚠️  Queen Elizabeth Walk: No editorial summary available
+[2025-10-30T03:11:35.668Z] LOG    ✅ Statue of Sir Stamford Raffles: Got description (98 chars)
+[2025-10-30T03:11:35.671Z] LOG    ✅ Anderson Bridge: Got description (96 chars)
+[2025-10-30T03:11:35.672Z] LOG    ⚠️  Raffles Hotel: No editorial summary available
+[2025-10-30T03:11:35.673Z] LOG    ⚠️  GlassDome - Landmark of Good: No editorial summary available
+[2025-10-30T03:11:35.687Z] LOG    ✅ Fort Canning Park: Got description (97 chars)
+[2025-10-30T03:11:35.706Z] LOG    ⚠️  Ann Siang Hill Park: No editorial summary available
+[2025-10-30T03:11:35.707Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 863ms
+[2025-10-30T03:11:35.707Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T03:11:35.708Z] LOG    ✅ Venue 1 (Gardens by the Bay): 4 alternatives
+[2025-10-30T03:11:35.708Z] LOG       1. Old Hill Street Police Station (4.6⭐)
+[2025-10-30T03:11:35.709Z] LOG       2. Statue of Sir Stamford Raffles (4.6⭐)
+[2025-10-30T03:11:35.709Z] LOG       3. Raffles Hotel (4.7⭐)
+[2025-10-30T03:11:35.710Z] LOG    ✅ Venue 2 (Maxwell Food Centre): 4 alternatives
+[2025-10-30T03:11:35.710Z] LOG       1. MERCI MARCEL CLUB STREET (4.7⭐)
+[2025-10-30T03:11:35.710Z] LOG       2. YenneY (4.8⭐)
+[2025-10-30T03:11:35.711Z] LOG       3. Monti At 1-Pavilion Italian Restaurant (4.4⭐)
+[2025-10-30T03:11:35.711Z] LOG    ✅ Venue 3 (SkyPark Observation Deck): 4 alternatives
+[2025-10-30T03:11:35.712Z] LOG       1. Old Hill Street Police Station (4.6⭐)
+[2025-10-30T03:11:35.712Z] LOG       2. Raffles Hotel (4.7⭐)
+[2025-10-30T03:11:35.712Z] LOG       3. The Fullerton Waterboat House (4.5⭐)
+[2025-10-30T03:11:35.713Z] LOG    ✅ Venue 4 (Merlion Park): 4 alternatives
+[2025-10-30T03:11:35.713Z] LOG       1. Fort Canning Park (4.6⭐)
+[2025-10-30T03:11:35.714Z] LOG       2. Istana Park (4.3⭐)
+[2025-10-30T03:11:35.714Z] LOG       3. Ann Siang Hill Park (4.2⭐)
+[2025-10-30T03:11:35.714Z] LOG    ✅ Venue 5 (CQ @ Clarke Quay): 4 alternatives
+[2025-10-30T03:11:35.715Z] LOG       1. MERCI MARCEL CLUB STREET (4.7⭐)
+[2025-10-30T03:11:35.715Z] LOG       2. Cappadocia Turkish & Mediterranean Restaurant (4.7⭐)
+[2025-10-30T03:11:35.716Z] LOG       3. Estuary Restaurant & Bar - 9 Penang Road (4.7⭐)
+[2025-10-30T03:11:35.716Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T03:11:35.717Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T03:11:35.717Z] LOG    Primary venues: 5 stops
+[2025-10-30T03:11:35.718Z] LOG    ❌ Removed "Old Hill Street Police Station" - duplicate alternative
+[2025-10-30T03:11:35.719Z] LOG    ❌ Removed "Raffles Hotel" - duplicate alternative
+[2025-10-30T03:11:35.720Z] LOG    🔧 Stop "ChIJOeEf9S2vewIRM0B9...": 4 → 2 alternatives
+[2025-10-30T03:11:35.720Z] LOG    ❌ Removed "MERCI MARCEL CLUB STREET" - duplicate alternative
+[2025-10-30T03:11:35.721Z] LOG    ❌ Removed "YenneY" - duplicate alternative
+[2025-10-30T03:11:35.721Z] LOG    🔧 Stop "ChIJnXwAOKAZ2jERAs-M...": 4 → 2 alternatives
+[2025-10-30T03:11:35.722Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T03:11:35.722Z] LOG    Removed 0 venues already in route
+[2025-10-30T03:11:35.722Z] LOG    Removed 4 duplicate alternatives
+[2025-10-30T03:11:35.723Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T03:11:35.723Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T03:11:35.723Z] LOG    Primary venues: 5
+[2025-10-30T03:11:35.724Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T03:11:35.724Z] LOG    Execution time: 1787ms
+[2025-10-30T03:11:35.725Z] LOG 
+📋 Final alternatives:
+[2025-10-30T03:11:35.726Z] LOG    Gardens by the Bay: 4 alternatives
+[2025-10-30T03:11:35.727Z] LOG    Maxwell Food Centre: 4 alternatives
+[2025-10-30T03:11:35.728Z] LOG    SkyPark Observation Deck: 2 alternatives
+[2025-10-30T03:11:35.728Z] LOG    Merlion Park: 4 alternatives
+[2025-10-30T03:11:35.729Z] LOG    CQ @ Clarke Quay: 2 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

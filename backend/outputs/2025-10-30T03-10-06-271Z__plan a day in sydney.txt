@@ -1,0 +1,164 @@
+User Prompt: plan a day in sydney
+
+[2025-10-30T03:10:06.272Z] LOG 📍 Using fallback location (no user location): Bennelong Point, Circular Quay
+[2025-10-30T03:10:06.272Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T03:10:06.272Z] LOG    1. "Sydney Opera House" in "Bennelong Point, Circular Quay"
+[2025-10-30T03:10:06.273Z] LOG    2. "Royal Botanic Garden Sydney" in "East of Circular Quay"
+[2025-10-30T03:10:06.273Z] LOG    3. "The Rocks" in "West of Circular Quay"
+[2025-10-30T03:10:06.274Z] LOG    4. "Art Gallery of New South Wales" in "The Domain"
+[2025-10-30T03:10:06.274Z] LOG    5. "Harbourfront Seafood Restaurant Sydney The Rocks" in "The Rocks, Circular Quay West"
+[2025-10-30T03:10:06.274Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T03:10:06.275Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T03:10:06.276Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T03:10:06.277Z] LOG    1. Searching "Sydney Opera House" in "Bennelong Point, Circular Quay"
+[2025-10-30T03:10:06.277Z] LOG 🔍 [Google Places] Text search: "Sydney Opera House" in Bennelong Point, Circular Quay
+[2025-10-30T03:10:06.284Z] LOG    2. Searching "Royal Botanic Garden Sydney" in "East of Circular Quay"
+[2025-10-30T03:10:06.285Z] LOG 🔍 [Google Places] Text search: "Royal Botanic Garden Sydney" in East of Circular Quay
+[2025-10-30T03:10:06.288Z] LOG    3. Searching "The Rocks" in "West of Circular Quay"
+[2025-10-30T03:10:06.288Z] LOG 🔍 [Google Places] Text search: "The Rocks" in West of Circular Quay
+[2025-10-30T03:10:06.291Z] LOG    4. Searching "Art Gallery of New South Wales" in "The Domain"
+[2025-10-30T03:10:06.292Z] LOG 🔍 [Google Places] Text search: "Art Gallery of New South Wales" in The Domain
+[2025-10-30T03:10:06.294Z] LOG    5. Searching "Harbourfront Seafood Restaurant Sydney The Rocks" in "The Rocks, Circular Quay West"
+[2025-10-30T03:10:06.294Z] LOG 🔍 [Google Places] Text search: "Harbourfront Seafood Restaurant Sydney The Rocks" in The Rocks, Circular Quay West
+[2025-10-30T03:10:06.761Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:10:06.869Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:10:06.873Z] LOG    ✅ Harbourfront Seafood Restaurant Sydney The Rocks: Got description (98 chars)
+[2025-10-30T03:10:06.874Z] LOG ✅ Found 1 places
+[2025-10-30T03:10:06.907Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:10:06.918Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:10:06.921Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T03:10:07.024Z] LOG    ✅ Sydney Opera House: Got description (94 chars)
+[2025-10-30T03:10:07.027Z] LOG ✅ Found 1 places
+[2025-10-30T03:10:07.030Z] LOG    ⚠️  Circular Quay W: No editorial summary available
+[2025-10-30T03:10:07.032Z] LOG ✅ Found 1 places
+[2025-10-30T03:10:07.047Z] LOG    ✅ Royal Botanic Garden Sydney: Got description (95 chars)
+[2025-10-30T03:10:07.048Z] LOG ✅ Found 1 places
+[2025-10-30T03:10:07.086Z] LOG    ✅ Art Gallery of New South Wales: Got description (95 chars)
+[2025-10-30T03:10:07.088Z] LOG ✅ Found 1 places
+[2025-10-30T03:10:07.089Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 813ms
+[2025-10-30T03:10:07.091Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T03:10:07.092Z] LOG    Tool execution result: success=true
+[2025-10-30T03:10:07.092Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T03:10:07.093Z] LOG    ✅ Merged: Sydney Opera House
+[2025-10-30T03:10:07.094Z] LOG       Places placeId: ChIJ3S-JXmauEmsRUcIaWtf4MzE
+[2025-10-30T03:10:07.094Z] LOG       Gemini description: Begin your day at this world-renowned architectural masterpi...
+[2025-10-30T03:10:07.095Z] LOG    ✅ Merged: Royal Botanic Garden Sydney
+[2025-10-30T03:10:07.096Z] LOG       Places placeId: ChIJWaTdYGuuEmsRoOfx-Wh9AQ8
+[2025-10-30T03:10:07.096Z] LOG       Gemini description: Just a short stroll from the Opera House, these magnificent ...
+[2025-10-30T03:10:07.096Z] LOG    ✅ Merged: The Rocks
+[2025-10-30T03:10:07.096Z] LOG       Places placeId: ChIJBTX1UV2uEmsRxjEfkOEZXtg
+[2025-10-30T03:10:07.097Z] LOG       Gemini description: Wander through Sydney's oldest neighbourhood, with its charm...
+[2025-10-30T03:10:07.097Z] LOG    ✅ Merged: Art Gallery of New South Wales
+[2025-10-30T03:10:07.097Z] LOG       Places placeId: ChIJPVqlfGyuEmsRHPcnCX1X1OE
+[2025-10-30T03:10:07.097Z] LOG       Gemini description: Immerse yourself in art at one of Australia's leading cultur...
+[2025-10-30T03:10:07.097Z] LOG    ✅ Merged: Harbourfront Seafood Restaurant Sydney The Rocks
+[2025-10-30T03:10:07.098Z] LOG       Places placeId: ChIJqRMc0jKvEmsRjl9q-kI53Is
+[2025-10-30T03:10:07.098Z] LOG       Gemini description: Enjoy a delightful dinner at this upscale seafood restaurant...
+[2025-10-30T03:10:07.098Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T03:10:07.099Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T03:10:07.099Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T03:10:07.099Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T03:10:07.100Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T03:10:07.100Z] LOG    1. Searching "landmark" in "-33.8567844,151.2152967"
+[2025-10-30T03:10:07.100Z] LOG    📍 Using nearbySearch at coordinates (-33.8567844, 151.2152967)
+[2025-10-30T03:10:07.101Z] LOG 🔍 [Google Places] Nearby search at (-33.8567844, 151.2152967)
+[2025-10-30T03:10:07.102Z] LOG    2. Searching "park" in "-33.8641859,151.2165708"
+[2025-10-30T03:10:07.102Z] LOG    📍 Using nearbySearch at coordinates (-33.8641859, 151.2165708)
+[2025-10-30T03:10:07.103Z] LOG 🔍 [Google Places] Nearby search at (-33.8641859, 151.2165708)
+[2025-10-30T03:10:07.103Z] LOG    3. Searching "restaurant" in "-33.8582008,151.2096755"
+[2025-10-30T03:10:07.104Z] LOG    📍 Using nearbySearch at coordinates (-33.8582008, 151.2096755)
+[2025-10-30T03:10:07.104Z] LOG 🔍 [Google Places] Nearby search at (-33.8582008, 151.2096755)
+[2025-10-30T03:10:07.105Z] LOG    4. Searching "museum" in "-33.8688037,151.2174138"
+[2025-10-30T03:10:07.105Z] LOG    📍 Using nearbySearch at coordinates (-33.8688037, 151.2174138)
+[2025-10-30T03:10:07.105Z] LOG 🔍 [Google Places] Nearby search at (-33.8688037, 151.2174138)
+[2025-10-30T03:10:07.106Z] LOG    5. Searching "restaurant" in "-33.8572735,151.209424"
+[2025-10-30T03:10:07.106Z] LOG    📍 Using nearbySearch at coordinates (-33.8572735, 151.209424)
+[2025-10-30T03:10:07.107Z] LOG 🔍 [Google Places] Nearby search at (-33.8572735, 151.209424)
+[2025-10-30T03:10:07.629Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:10:07.639Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:10:07.658Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:10:07.742Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:10:07.750Z] LOG    ✅ Hyde Park: Got description (100 chars)
+[2025-10-30T03:10:07.752Z] LOG    ✅ Harbourfront Seafood Restaurant Sydney The Rocks: Got description (98 chars)
+[2025-10-30T03:10:07.758Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T03:10:07.785Z] LOG    ✅ Australian Museum: Got description (100 chars)
+[2025-10-30T03:10:07.787Z] LOG    ✅ Museum of Contemporary Art Australia: Got description (97 chars)
+[2025-10-30T03:10:07.791Z] LOG    ✅ Art Gallery of New South Wales: Got description (95 chars)
+[2025-10-30T03:10:07.809Z] LOG    ✅ Restaurant Hubert: Got description (96 chars)
+[2025-10-30T03:10:07.818Z] LOG    ✅ Saké Restaurant & Bar, The Rocks: Got description (86 chars)
+[2025-10-30T03:10:07.819Z] LOG    ✅ Rushcutters Bay Park: Got description (99 chars)
+[2025-10-30T03:10:07.838Z] LOG    ✅ The Rocks Discovery Museum: Got description (94 chars)
+[2025-10-30T03:10:07.842Z] LOG    ✅ Tumbalong Park: Got description (96 chars)
+[2025-10-30T03:10:07.844Z] LOG    ✅ Harbourfront Seafood Restaurant Sydney The Rocks: Got description (98 chars)
+[2025-10-30T03:10:07.858Z] LOG    ✅ Observatory Hill Park: Got description (96 chars)
+[2025-10-30T03:10:07.868Z] LOG    ✅ Archibald Memorial Fountain: Got description (86 chars)
+[2025-10-30T03:10:07.869Z] LOG    ⚠️  La Riviera Restaurant & Bar: No editorial summary available
+[2025-10-30T03:10:07.879Z] LOG    ✅ Aria Restaurant Sydney: Got description (97 chars)
+[2025-10-30T03:10:07.881Z] LOG    ✅ Customs House: Got description (96 chars)
+[2025-10-30T03:10:07.911Z] LOG    ⚠️  Landmark Group: No editorial summary available
+[2025-10-30T03:10:07.912Z] LOG    ✅ Australian National Maritime Museum: Got description (98 chars)
+[2025-10-30T03:10:07.914Z] LOG    ⚠️  First Fleet Park: No editorial summary available
+[2025-10-30T03:10:07.917Z] LOG    ⚠️  Martinez — Restaurant, Terrace and Bar: No editorial summary available
+[2025-10-30T03:10:07.944Z] LOG    ✅ Piato Restaurant: Got description (98 chars)
+[2025-10-30T03:10:07.952Z] LOG    ⚠️  Landmark Realty Group: No editorial summary available
+[2025-10-30T03:10:07.954Z] LOG    ⚠️  Martinez — Restaurant, Terrace and Bar: No editorial summary available
+[2025-10-30T03:10:07.960Z] LOG    ⚠️  Moore Steps: No editorial summary available
+[2025-10-30T03:10:08.011Z] LOG    ✅ City Extra 24 Hour Restaurant: Got description (93 chars)
+[2025-10-30T03:10:08.012Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 912ms
+[2025-10-30T03:10:08.013Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T03:10:08.014Z] LOG    ✅ Venue 1 (Sydney Opera House): 4 alternatives
+[2025-10-30T03:10:08.014Z] LOG       1. Landmark Group (4.4⭐)
+[2025-10-30T03:10:08.016Z] LOG       2. Customs House (4.5⭐)
+[2025-10-30T03:10:08.016Z] LOG       3. Archibald Memorial Fountain (4.7⭐)
+[2025-10-30T03:10:08.017Z] LOG    ✅ Venue 2 (Royal Botanic Garden Sydney): 4 alternatives
+[2025-10-30T03:10:08.018Z] LOG       1. Hyde Park (4.6⭐)
+[2025-10-30T03:10:08.018Z] LOG       2. Rushcutters Bay Park (4.6⭐)
+[2025-10-30T03:10:08.019Z] LOG       3. Observatory Hill Park (4.7⭐)
+[2025-10-30T03:10:08.019Z] LOG    ✅ Venue 3 (Circular Quay W): 4 alternatives
+[2025-10-30T03:10:08.020Z] LOG       1. Harbourfront Seafood Restaurant Sydney The Rocks (4.5⭐)
+[2025-10-30T03:10:08.020Z] LOG       2. La Riviera Restaurant & Bar (4.7⭐)
+[2025-10-30T03:10:08.020Z] LOG       3. Martinez — Restaurant, Terrace and Bar (4.4⭐)
+[2025-10-30T03:10:08.020Z] LOG    ✅ Venue 4 (Art Gallery of New South Wales): 4 alternatives
+[2025-10-30T03:10:08.021Z] LOG       1. Australian Museum (4.6⭐)
+[2025-10-30T03:10:08.021Z] LOG       2. Museum of Contemporary Art Australia (4.3⭐)
+[2025-10-30T03:10:08.021Z] LOG       3. Australian National Maritime Museum (4.6⭐)
+[2025-10-30T03:10:08.021Z] LOG    ✅ Venue 5 (Harbourfront Seafood Restaurant Sydney The Rocks): 4 alternatives
+[2025-10-30T03:10:08.022Z] LOG       1. Saké Restaurant & Bar, The Rocks (4.3⭐)
+[2025-10-30T03:10:08.022Z] LOG       2. Restaurant Hubert (4.6⭐)
+[2025-10-30T03:10:08.022Z] LOG       3. Martinez — Restaurant, Terrace and Bar (4.4⭐)
+[2025-10-30T03:10:08.022Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T03:10:08.023Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T03:10:08.023Z] LOG    Primary venues: 5 stops
+[2025-10-30T03:10:08.024Z] LOG    ❌ Removed "Harbourfront Seafood Restaurant Sydney The Rocks" - already in primary route
+[2025-10-30T03:10:08.024Z] LOG    🔧 Stop "ChIJBTX1UV2uEmsRxjEf...": 4 → 3 alternatives
+[2025-10-30T03:10:08.024Z] LOG    ❌ Removed "Martinez — Restaurant, Terrace and Bar" - duplicate alternative
+[2025-10-30T03:10:08.025Z] LOG    🔧 Stop "ChIJqRMc0jKvEmsRjl9q...": 4 → 3 alternatives
+[2025-10-30T03:10:08.025Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T03:10:08.025Z] LOG    Removed 1 venues already in route
+[2025-10-30T03:10:08.026Z] LOG    Removed 1 duplicate alternatives
+[2025-10-30T03:10:08.026Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T03:10:08.027Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T03:10:08.027Z] LOG    Primary venues: 5
+[2025-10-30T03:10:08.027Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T03:10:08.027Z] LOG    Execution time: 1756ms
+[2025-10-30T03:10:08.028Z] LOG 
+📋 Final alternatives:
+[2025-10-30T03:10:08.028Z] LOG    Sydney Opera House: 4 alternatives
+[2025-10-30T03:10:08.028Z] LOG    Royal Botanic Garden Sydney: 4 alternatives
+[2025-10-30T03:10:08.029Z] LOG    Circular Quay W: 3 alternatives
+[2025-10-30T03:10:08.029Z] LOG    Art Gallery of New South Wales: 4 alternatives
+[2025-10-30T03:10:08.029Z] LOG    Harbourfront Seafood Restaurant Sydney The Rocks: 3 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5
