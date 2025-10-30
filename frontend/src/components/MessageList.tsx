@@ -114,7 +114,7 @@ const DynamicLoadingIndicator = () => {
 const MessageList = ({ messages, isLoading, onMarkerSelect, currentItinerary }: MessageListProps) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   // Local alias to avoid issues with closure capture in JSX handlers
-  const _currentItinerary = currentItinerary;
+  // const _currentItinerary = currentItinerary;
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
