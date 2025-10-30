@@ -94,7 +94,7 @@ const DynamicLoadingIndicator = () => {
   return (
     <div className="flex items-start gap-3">
       <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center text-white">
-        🤖
+        🧭
       </div>
       <div className="flex-1 bg-[#081622] rounded-lg p-4 border border-[#0f2a3a]">
         <div className="flex items-center gap-2">

@@ -402,10 +402,10 @@ const ChatInterface = forwardRef(({
   };
 
   const examplePrompts = [
-    "Find coffee shops near me",
-    "Route from MFA to Harvard via MIT",
+    "Find Parks near me",
+    "Hit every major museum in DC in one day with lunch breaks",
     "Plan a day out in midtown NYC where I could try out halal food trucks",
-    "Plan a day out in Boston",
+    "Plan a day out in Monaco",
     "Plan a route from my location to Harvard University to starbucks near MIT"
   ];
 
