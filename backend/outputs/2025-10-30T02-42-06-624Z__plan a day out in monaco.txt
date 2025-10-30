@@ -1,0 +1,142 @@
+User Prompt: plan a day out in monaco
+
+[2025-10-30T02:42:06.629Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-30T02:42:06.630Z] LOG 📝 User prompt: "plan a day out in monaco"
+[2025-10-30T02:42:06.630Z] LOG 📍 User location: Singapore (1.351616, 103.808053)
+[2025-10-30T02:42:06.631Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-30T02:42:06.632Z] LOG 🗺️ Location context configured: (1.351616, 103.808053)
+[2025-10-30T02:42:22.831Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Thu, 30 Oct 2025 02:42:22 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=15978","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"```json\n{\n  \"plan\": {\n    \"type\": \"A Day of Glamour and Culture in Monaco\",\n    \"total_stops\": 5,\n    \"estimated_duration\": \"Full day (8-10 hours)\",\n    \"travel_mode\": \"transit/driving\",\n    \"theme\": \"Explore Monaco's historic charm, breathtaking views, and iconic luxury.\",\n    \"scale\": \"city-wide\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"Musée océanographique de Monaco\",\n      \"description\": \"Founded by Prince Albert I, this world-renowned oceanographic museum offers a captivating journey into marine life with its vast aquarium featuring 6,000 specimens. It combines scientific exploration with educational exhibits. [0]\",\n      \"category\": \"museum\",\n      \"reasoning\": \"A major attraction in Monaco-Ville, offering a deep dive into marine science and history, suitable for starting the day.\",\n      \"rating\": 4.5,\n      \"reviewsSummary\": \"Visitors praise the diverse exhibits, beautiful architecture, and the impressive aquarium. Many highlight it as a must-see for all ages.\",\n      \"general_location\": \"Monaco-Ville\"\n    },\n    {\n      \"name\": \"Cathedral of Our Lady Immaculate\",\n      \"description\": \"This stunning Romanesque Catholic cathedral, also known as Saint Nicholas Cathedral, dates from the 19th century and is the burial place of Monaco's princes, including Prince Rainier III and Princess Grace. [1]\",\n      \"category\": \"landmark\",\n      \"reasoning\": \"Offers a glimpse into Monaco's history and royal heritage, conveniently located near the Oceanographic Museum.\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Reviewers appreciate its beautiful architecture, peaceful atmosphere, and historical significance, often noting the royal tombs.\",\n      \"general_location\": \"Monaco-Ville\"\n    },\n    {\n      \"name\": \"Jardins Saint-Martin\",\n      \"description\": \"These tranquil, terraced public gardens provide a serene escape with lush Mediterranean flora, various statues, and panoramic views of the sea and the Prince's Palace. [2]\",\n      \"category\": \"park\",\n      \"reasoning\": \"A perfect spot for a leisurely stroll and to enjoy scenic views after visiting the museum and cathedral, located adjacent to the cathedral.\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Guests love the stunning sea views, well-maintained gardens, and the peaceful ambiance, describing it as a beautiful place for relaxation.\",\n      \"general_location\": \"Monaco-Ville\"\n    },\n    {\n      \"name\": \"Caffè Milano\",\n      \"description\": \"Enjoy traditional Italian dishes and cocktails in a stylish setting with picturesque views of the harbor. It's an ideal spot for a relaxing lunch. [0]\",\n      \"category\": \"restaurant\",\n      \"reasoning\": \"A highly-rated restaurant offering good food and views, conveniently located between Monaco-Ville and the Monte Carlo area for a lunch break.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Customers frequently commend the delicious Italian cuisine, attentive service, and the lovely harbor views from the outdoor seating.\",\n      \"general_location\": \"Port Hercule\"\n    },\n    {\n      \"name\": \"Casino de Monte-Carlo\",\n      \"description\": \"An elegant Beaux-Arts building renowned worldwide, this iconic casino has been featured in numerous films and literature. Beyond gambling, it's an architectural marvel and a symbol of Monaco's glamour. [9]\",\n      \"category\": \"landmark\",\n      \"reasoning\": \"A quintessential Monaco experience and an iconic landmark, perfect for the afternoon or evening part of the day plan.\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Visitors are captivated by its stunning architecture, luxurious interiors, and the vibrant atmosphere. Many mention it as a must-see, even if not gambling.\",\n      \"general_location\": \"Monte Carlo\"\n    }\n  ]\n}\n```"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{"groundingChunks":[{"maps":{"uri":"https://maps.google.com/?cid=14049332430751033452","title":"Musée océanographique de Monaco","placeId":"places/ChIJU2WkJZDCzRIRbGhKwmhB-cI"}},{"maps":{"uri":"https://maps.google.com/?cid=15315857452564190753","title":"Cathedral of Our Lady Immaculate","placeId":"places/ChIJXxH-HpLCzRIRIZabyjTbjNQ"}},{"maps":{"uri":"https://maps.google.com/?cid=16844986467314511393","title":"Jardins Saint-Martin","placeId":"places/ChIJu3MsupHCzRIRIS6LhvFpxek"}},{"maps":{"uri":"https://maps.google.com/?cid=5197657674434432079","title":"Opéra de Monte-Carlo","placeId":"places/ChIJVeER3YfCzRIRT0y_1B3KIUg"}},{"maps":{"uri":"https://maps.google.com/?cid=15446685059851339802","title":"New National Museum of Monaco - Villa Paloma","placeId":"places/ChIJncRCYvLCzRIRGsjFzTimXdY"}},{"maps":{"uri":"https://maps.google.com/?cid=1286904145054358495","title":"Chapelle de la Visitation","placeId":"places/ChIJc6gk3JHCzRIR31vxaYAA3BE"}},{"maps":{"uri":"https://maps.google.com/?cid=9155061069268642344","title":"Promenade Princesse Louise-Hyppolyte","placeId":"places/ChIJs0WF0bLDzRIRKOrDcolPDX8"}},{"maps":{"uri":"https://maps.google.com/?cid=6565331381150206563","title":"Princess Grace Japanese Garden","placeId":"places/ChIJX8d2fX3CzRIRY8ouRhu-HFs"}},{"maps":{"uri":"https://maps.google.com/?cid=4127163180020933102","title":"Le Messager","placeId":"places/ChIJmc0MQgDDzRIR7iE4qwuhRjk"}},{"maps":{"uri":"https://maps.google.com/?cid=11992776897962243299","title":"Casino de Monte-Carlo","placeId":"places/ChIJZQJu5IfCzRIR4_SMWQznbqY"}},{"maps":{"uri":"https://maps.google.com/?cid=4335737706466027702","title":"Théâtre du Fort Antoine","placeId":"places/ChIJg51ceoXCzRIRtqgs6XiiKzw"}},{"maps":{"uri":"https://maps.google.com/?cid=8868453384215278614","title":"Apotheosa Monaca","placeId":"places/ChIJKR6wCZLCzRIRFjRDqV0TE3s"}},{"maps":{"uri":"https://maps.google.com/?cid=12599133389071589288","title":"Gateway to Rock","placeId":"places/ChIJS_ti943CzRIRqB9gdRAd2a4"}},{"maps":{"uri":"https://maps.google.com/?cid=18013525745297417353","title":"Roseraie Princesse Grace","placeId":"places/ChIJnfj_FYrDzRIRiWTOwDnm_Pk"}},{"maps":{"uri":"https://maps.google.com/?cid=10706139639196318646","title":"New National Museum of Monaco – Villa Sauber","placeId":"places/ChIJUxlkh4fCzRIRtnsGPkfZk5Q"}},{"maps":{"uri":"https://maps.google.com/?cid=13757599700568234410","title":"The Champions Promenade","placeId":"places/ChIJ1QwmmH3CzRIRqtljagnQ7L4"}},{"maps":{"uri":"https://maps.google.com/?cid=17354785647591631118","title":"Fairmont Hairpin","placeId":"places/ChIJY01BkXrDzRIRDim_zZiV2PA"}},{"maps":{"uri":"https://maps.google.com/?cid=8633243780141741162","title":"Fountain in Casino Garden","placeId":"places/ChIJTYnBeQDDzRIRavSyJnpxz3c"}},{"maps":{"uri":"https://maps.google.com/?cid=16112022863081761934","title":"Jardins de la Petite Afrique","placeId":"places/ChIJlZpoA4jCzRIRjuz1xm1nmd8"}},{"maps":{"uri":"https://maps.google.com/?cid=9767619291094521101","title":"Jetée","placeId":"places/ChIJYe6AF2DDzRIRDRXxgv6NjYc"}},{"maps":{"uri":"https://maps.google.com/?cid=17003971645630163726","title":"Caffè Milano","placeId":"places/ChIJ325TPVDDzRIRDquZ7B4--us"}},{"maps":{"uri":"https://maps.google.com/?cid=14494629078830784097","title":"La Môme Monte-Carlo","placeId":"places/ChIJuWhTx7HDzRIRYZ7B8llEJ8k"}},{"maps":{"uri":"https://maps.google.com/?cid=13346412811700557955","title":"La Tavernetta","placeId":"places/ChIJ71x--5HCzRIRg1gia737N7k"}},{"maps":{"uri":"https://maps.google.com/?cid=9058716589738505411","title":"The Pearls of Monte-Carlo","placeId":"places/ChIJlYf0FpHCzRIRwzRNRL4Gt30"}},{"maps":{"uri":"https://maps.google.com/?cid=17350570656598732343","title":"Le Grill","placeId":"places/ChIJHdZOIWPCzRIRNy7ivBWcyfA"}},{"maps":{"uri":"https://maps.google.com/?cid=7417235480731680803","title":"Chez Pierre - French Restaurant in Monaco with Bar","placeId":"places/ChIJfdlaLgrDzRIRI4BvHF9Q72Y"}},{"maps":{"uri":"https://maps.google.com/?cid=4149467879122871752","title":"Il Terrazzino","placeId":"places/ChIJefdbg2LCzRIRyCUDHg3flTk"}},{"maps":{"uri":"https://maps.google.com/?cid=8806547753368085528","title":"Buddha-Bar Monte-Carlo","placeId":"places/ChIJI9aA34fCzRIRGOQEyYUkN3o"}},{"maps":{"uri":"https://maps.google.com/?cid=5680302069382712370","title":"Avenue 31","placeId":"places/ChIJhyyqY3nCzRIRMgx59qJ81E4"}},{"maps":{"uri":"https://maps.google.com/?cid=6819657295104277743","title":"Le Louis XV-Alain Ducasse à l'Hôtel de Paris","placeId":"places/ChIJF-Ovdo3CzRIR73yXhC1KpF4"}},{"maps":{"uri":"https://maps.google.com/?cid=10847384473160882933","title":"Le Petit Bar Monaco","placeId":"places/ChIJZx5F-5HCzRIR9ZrX2LSmiZY"}},{"maps":{"uri":"https://maps.google.com/?cid=2970254160614618866","title":"La Note Bleue","placeId":"places/ChIJ13SiNIbCzRIR8nYPCGx2OCk"}},{"maps":{"uri":"https://maps.google.com/?cid=13855588984593252994","title":"Quai des Artistes","placeId":"places/ChIJXf4eSI7CzRIRggJ_fMXwSMA"}},{"maps":{"uri":"https://maps.google.com/?cid=15936387775954407413","title":"Beefbar","placeId":"places/ChIJI1S-p5PCzRIR9c-jZD9sKd0"}},{"maps":{"uri":"https://maps.google.com/?cid=18017071706079587041","title":"Pavyllon Monte-Carlo, un restaurant de Yannick Alléno","placeId":"places/ChIJBWPKPYjCzRIR4WqdFUJ_Cfo"}},{"maps":{"uri":"https://maps.google.com/?cid=6005669552193967518","title":"l'Express","placeId":"places/ChIJs_U25ZHCzRIRnpXmaKNsWFM"}},{"maps":{"uri":"https://maps.google.com/?cid=12667604202225125852","title":"La Montgolfière, Henri Geraci","placeId":"places/ChIJP89i5JHCzRIR3Mnf9OdezK8"}},{"maps":{"uri":"https://maps.google.com/?cid=12734224243589245711","title":"Giacomo","placeId":"places/ChIJPb4AlZHDzRIRD-tNEXsNubA"}},{"maps":{"uri":"https://maps.google.com/?cid=3966094044646556410","title":"Nobu Fairmont Monte Carlo","placeId":"places/ChIJ_axIgofCzRIR-kLzNIVlCjc"}},{"maps":{"uri":"https://maps.google.com/?cid=7097763519303683514","title":"Huit & Demi","placeId":"places/ChIJXxxmp43CzRIRuo3Ss1BSgGI"}}],"webSearchQueries":["what are the tourist attractions in monaco","restaurants in Monaco-Ville"]},"index":0}],"modelVersion":"gemini-2.5-flash","responseId":"jtACafP7Fu-WjMcP5sS1oQ4","usageMetadata":{"promptTokenCount":496,"candidatesTokenCount":919,"totalTokenCount":4566,"cachedContentTokenCount":176,"promptTokensDetails":[{"modality":"TEXT","tokenCount":496}],"cacheTokensDetails":[{"modality":"TEXT","tokenCount":176}],"toolUsePromptTokenCount":2041,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":2041}],"thoughtsTokenCount":1110}}
+[2025-10-30T02:42:22.835Z] LOG ✅ Gemini response received
+[2025-10-30T02:42:22.836Z] LOG 📄 Response length: 3715 characters
+[2025-10-30T02:42:22.836Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-30T02:42:22.836Z] LOG    candidate exists: true
+[2025-10-30T02:42:22.837Z] LOG    groundingMetadata exists: true
+[2025-10-30T02:42:22.837Z] LOG 📊 Grounding status: Maps=true, Search=false
+[2025-10-30T02:42:22.838Z] LOG 📍 Grounding chunks: 40 total
+[2025-10-30T02:42:22.838Z] LOG    1. [MAPS] Musée océanographique de Monaco
+[2025-10-30T02:42:22.839Z] LOG       placeId: places/ChIJU2WkJZDCzRIRbGhKwmhB-cI
+[2025-10-30T02:42:22.840Z] LOG       uri: https://maps.google.com/?cid=14049332430751033452
+[2025-10-30T02:42:22.840Z] LOG    2. [MAPS] Cathedral of Our Lady Immaculate
+[2025-10-30T02:42:22.840Z] LOG       placeId: places/ChIJXxH-HpLCzRIRIZabyjTbjNQ
+[2025-10-30T02:42:22.841Z] LOG       uri: https://maps.google.com/?cid=15315857452564190753
+[2025-10-30T02:42:22.842Z] LOG    3. [MAPS] Jardins Saint-Martin
+[2025-10-30T02:42:22.842Z] LOG       placeId: places/ChIJu3MsupHCzRIRIS6LhvFpxek
+[2025-10-30T02:42:22.843Z] LOG       uri: https://maps.google.com/?cid=16844986467314511393
+[2025-10-30T02:42:22.843Z] LOG    4. [MAPS] Opéra de Monte-Carlo
+[2025-10-30T02:42:22.843Z] LOG       placeId: places/ChIJVeER3YfCzRIRT0y_1B3KIUg
+[2025-10-30T02:42:22.844Z] LOG       uri: https://maps.google.com/?cid=5197657674434432079
+[2025-10-30T02:42:22.844Z] LOG    5. [MAPS] New National Museum of Monaco - Villa Paloma
+[2025-10-30T02:42:22.845Z] LOG       placeId: places/ChIJncRCYvLCzRIRGsjFzTimXdY
+[2025-10-30T02:42:22.845Z] LOG       uri: https://maps.google.com/?cid=15446685059851339802
+[2025-10-30T02:42:22.846Z] LOG    6. [MAPS] Chapelle de la Visitation
+[2025-10-30T02:42:22.847Z] LOG       placeId: places/ChIJc6gk3JHCzRIR31vxaYAA3BE
+[2025-10-30T02:42:22.847Z] LOG       uri: https://maps.google.com/?cid=1286904145054358495
+[2025-10-30T02:42:22.848Z] LOG    7. [MAPS] Promenade Princesse Louise-Hyppolyte
+[2025-10-30T02:42:22.848Z] LOG       placeId: places/ChIJs0WF0bLDzRIRKOrDcolPDX8
+[2025-10-30T02:42:22.849Z] LOG       uri: https://maps.google.com/?cid=9155061069268642344
+[2025-10-30T02:42:22.849Z] LOG    8. [MAPS] Princess Grace Japanese Garden
+[2025-10-30T02:42:22.850Z] LOG       placeId: places/ChIJX8d2fX3CzRIRY8ouRhu-HFs
+[2025-10-30T02:42:22.850Z] LOG       uri: https://maps.google.com/?cid=6565331381150206563
+[2025-10-30T02:42:22.851Z] LOG    9. [MAPS] Le Messager
+[2025-10-30T02:42:22.852Z] LOG       placeId: places/ChIJmc0MQgDDzRIR7iE4qwuhRjk
+[2025-10-30T02:42:22.852Z] LOG       uri: https://maps.google.com/?cid=4127163180020933102
+[2025-10-30T02:42:22.853Z] LOG    10. [MAPS] Casino de Monte-Carlo
+[2025-10-30T02:42:22.854Z] LOG       placeId: places/ChIJZQJu5IfCzRIR4_SMWQznbqY
+[2025-10-30T02:42:22.855Z] LOG       uri: https://maps.google.com/?cid=11992776897962243299
+[2025-10-30T02:42:22.856Z] LOG    11. [MAPS] Théâtre du Fort Antoine
+[2025-10-30T02:42:22.856Z] LOG       placeId: places/ChIJg51ceoXCzRIRtqgs6XiiKzw
+[2025-10-30T02:42:22.857Z] LOG       uri: https://maps.google.com/?cid=4335737706466027702
+[2025-10-30T02:42:22.858Z] LOG    12. [MAPS] Apotheosa Monaca
+[2025-10-30T02:42:22.858Z] LOG       placeId: places/ChIJKR6wCZLCzRIRFjRDqV0TE3s
+[2025-10-30T02:42:22.859Z] LOG       uri: https://maps.google.com/?cid=8868453384215278614
+[2025-10-30T02:42:22.860Z] LOG    13. [MAPS] Gateway to Rock
+[2025-10-30T02:42:22.860Z] LOG       placeId: places/ChIJS_ti943CzRIRqB9gdRAd2a4
+[2025-10-30T02:42:22.861Z] LOG       uri: https://maps.google.com/?cid=12599133389071589288
+[2025-10-30T02:42:22.861Z] LOG    14. [MAPS] Roseraie Princesse Grace
+[2025-10-30T02:42:22.862Z] LOG       placeId: places/ChIJnfj_FYrDzRIRiWTOwDnm_Pk
+[2025-10-30T02:42:22.862Z] LOG       uri: https://maps.google.com/?cid=18013525745297417353
+[2025-10-30T02:42:22.862Z] LOG    15. [MAPS] New National Museum of Monaco – Villa Sauber
+[2025-10-30T02:42:22.863Z] LOG       placeId: places/ChIJUxlkh4fCzRIRtnsGPkfZk5Q
+[2025-10-30T02:42:22.863Z] LOG       uri: https://maps.google.com/?cid=10706139639196318646
+[2025-10-30T02:42:22.864Z] LOG    16. [MAPS] The Champions Promenade
+[2025-10-30T02:42:22.864Z] LOG       placeId: places/ChIJ1QwmmH3CzRIRqtljagnQ7L4
+[2025-10-30T02:42:22.865Z] LOG       uri: https://maps.google.com/?cid=13757599700568234410
+[2025-10-30T02:42:22.865Z] LOG    17. [MAPS] Fairmont Hairpin
+[2025-10-30T02:42:22.865Z] LOG       placeId: places/ChIJY01BkXrDzRIRDim_zZiV2PA
+[2025-10-30T02:42:22.866Z] LOG       uri: https://maps.google.com/?cid=17354785647591631118
+[2025-10-30T02:42:22.867Z] LOG    18. [MAPS] Fountain in Casino Garden
+[2025-10-30T02:42:22.867Z] LOG       placeId: places/ChIJTYnBeQDDzRIRavSyJnpxz3c
+[2025-10-30T02:42:22.868Z] LOG       uri: https://maps.google.com/?cid=8633243780141741162
+[2025-10-30T02:42:22.868Z] LOG    19. [MAPS] Jardins de la Petite Afrique
+[2025-10-30T02:42:22.869Z] LOG       placeId: places/ChIJlZpoA4jCzRIRjuz1xm1nmd8
+[2025-10-30T02:42:22.870Z] LOG       uri: https://maps.google.com/?cid=16112022863081761934
+[2025-10-30T02:42:22.870Z] LOG    20. [MAPS] Jetée
+[2025-10-30T02:42:22.871Z] LOG       placeId: places/ChIJYe6AF2DDzRIRDRXxgv6NjYc
+[2025-10-30T02:42:22.871Z] LOG       uri: https://maps.google.com/?cid=9767619291094521101
+[2025-10-30T02:42:22.872Z] LOG    21. [MAPS] Caffè Milano
+[2025-10-30T02:42:22.872Z] LOG       placeId: places/ChIJ325TPVDDzRIRDquZ7B4--us
+[2025-10-30T02:42:22.873Z] LOG       uri: https://maps.google.com/?cid=17003971645630163726
+[2025-10-30T02:42:22.874Z] LOG    22. [MAPS] La Môme Monte-Carlo
+[2025-10-30T02:42:22.875Z] LOG       placeId: places/ChIJuWhTx7HDzRIRYZ7B8llEJ8k
+[2025-10-30T02:42:22.875Z] LOG       uri: https://maps.google.com/?cid=14494629078830784097
+[2025-10-30T02:42:22.876Z] LOG    23. [MAPS] La Tavernetta
+[2025-10-30T02:42:22.877Z] LOG       placeId: places/ChIJ71x--5HCzRIRg1gia737N7k
+[2025-10-30T02:42:22.877Z] LOG       uri: https://maps.google.com/?cid=13346412811700557955
+[2025-10-30T02:42:22.878Z] LOG    24. [MAPS] The Pearls of Monte-Carlo
+[2025-10-30T02:42:22.879Z] LOG       placeId: places/ChIJlYf0FpHCzRIRwzRNRL4Gt30
+[2025-10-30T02:42:22.880Z] LOG       uri: https://maps.google.com/?cid=9058716589738505411
+[2025-10-30T02:42:22.881Z] LOG    25. [MAPS] Le Grill
+[2025-10-30T02:42:22.882Z] LOG       placeId: places/ChIJHdZOIWPCzRIRNy7ivBWcyfA
+[2025-10-30T02:42:22.883Z] LOG       uri: https://maps.google.com/?cid=17350570656598732343
+[2025-10-30T02:42:22.884Z] LOG    26. [MAPS] Chez Pierre - French Restaurant in Monaco with Bar
+[2025-10-30T02:42:22.884Z] LOG       placeId: places/ChIJfdlaLgrDzRIRI4BvHF9Q72Y
+[2025-10-30T02:42:22.885Z] LOG       uri: https://maps.google.com/?cid=7417235480731680803
+[2025-10-30T02:42:22.886Z] LOG    27. [MAPS] Il Terrazzino
+[2025-10-30T02:42:22.887Z] LOG       placeId: places/ChIJefdbg2LCzRIRyCUDHg3flTk
+[2025-10-30T02:42:22.887Z] LOG       uri: https://maps.google.com/?cid=4149467879122871752
+[2025-10-30T02:42:22.888Z] LOG    28. [MAPS] Buddha-Bar Monte-Carlo
+[2025-10-30T02:42:22.889Z] LOG       placeId: places/ChIJI9aA34fCzRIRGOQEyYUkN3o
+[2025-10-30T02:42:22.890Z] LOG       uri: https://maps.google.com/?cid=8806547753368085528
+[2025-10-30T02:42:22.891Z] LOG    29. [MAPS] Avenue 31
+[2025-10-30T02:42:22.891Z] LOG       placeId: places/ChIJhyyqY3nCzRIRMgx59qJ81E4
+[2025-10-30T02:42:22.892Z] LOG       uri: https://maps.google.com/?cid=5680302069382712370
+[2025-10-30T02:42:22.893Z] LOG    30. [MAPS] Le Louis XV-Alain Ducasse à l'Hôtel de Paris
+[2025-10-30T02:42:22.893Z] LOG       placeId: places/ChIJF-Ovdo3CzRIR73yXhC1KpF4
+[2025-10-30T02:42:22.894Z] LOG       uri: https://maps.google.com/?cid=6819657295104277743
+[2025-10-30T02:42:22.894Z] LOG    31. [MAPS] Le Petit Bar Monaco
+[2025-10-30T02:42:22.896Z] LOG       placeId: places/ChIJZx5F-5HCzRIR9ZrX2LSmiZY
+[2025-10-30T02:42:22.897Z] LOG       uri: https://maps.google.com/?cid=10847384473160882933
+[2025-10-30T02:42:22.898Z] LOG    32. [MAPS] La Note Bleue
+[2025-10-30T02:42:22.899Z] LOG       placeId: places/ChIJ13SiNIbCzRIR8nYPCGx2OCk
+[2025-10-30T02:42:22.900Z] LOG       uri: https://maps.google.com/?cid=2970254160614618866
+[2025-10-30T02:42:22.900Z] LOG    33. [MAPS] Quai des Artistes
+[2025-10-30T02:42:22.901Z] LOG       placeId: places/ChIJXf4eSI7CzRIRggJ_fMXwSMA
+[2025-10-30T02:42:22.902Z] LOG       uri: https://maps.google.com/?cid=13855588984593252994
+[2025-10-30T02:42:22.902Z] LOG    34. [MAPS] Beefbar
+[2025-10-30T02:42:22.903Z] LOG       placeId: places/ChIJI1S-p5PCzRIR9c-jZD9sKd0
+[2025-10-30T02:42:22.904Z] LOG       uri: https://maps.google.com/?cid=15936387775954407413
+[2025-10-30T02:42:22.905Z] LOG    35. [MAPS] Pavyllon Monte-Carlo, un restaurant de Yannick Alléno
+[2025-10-30T02:42:22.905Z] LOG       placeId: places/ChIJBWPKPYjCzRIR4WqdFUJ_Cfo
+[2025-10-30T02:42:22.906Z] LOG       uri: https://maps.google.com/?cid=18017071706079587041
+[2025-10-30T02:42:22.907Z] LOG    36. [MAPS] l'Express
+[2025-10-30T02:42:22.908Z] LOG       placeId: places/ChIJs_U25ZHCzRIRnpXmaKNsWFM
+[2025-10-30T02:42:22.909Z] LOG       uri: https://maps.google.com/?cid=6005669552193967518
+[2025-10-30T02:42:22.909Z] LOG    37. [MAPS] La Montgolfière, Henri Geraci
+[2025-10-30T02:42:22.910Z] LOG       placeId: places/ChIJP89i5JHCzRIR3Mnf9OdezK8
+[2025-10-30T02:42:22.911Z] LOG       uri: https://maps.google.com/?cid=12667604202225125852
+[2025-10-30T02:42:22.911Z] LOG    38. [MAPS] Giacomo
+[2025-10-30T02:42:22.912Z] LOG       placeId: places/ChIJPb4AlZHDzRIRD-tNEXsNubA
+[2025-10-30T02:42:22.913Z] LOG       uri: https://maps.google.com/?cid=12734224243589245711
+[2025-10-30T02:42:22.914Z] LOG    39. [MAPS] Nobu Fairmont Monte Carlo
+[2025-10-30T02:42:22.915Z] LOG       placeId: places/ChIJ_axIgofCzRIR-kLzNIVlCjc
+[2025-10-30T02:42:22.916Z] LOG       uri: https://maps.google.com/?cid=3966094044646556410
+[2025-10-30T02:42:22.917Z] LOG    40. [MAPS] Huit & Demi
+[2025-10-30T02:42:22.918Z] LOG       placeId: places/ChIJXxxmp43CzRIRuo3Ss1BSgGI
+[2025-10-30T02:42:22.919Z] LOG       uri: https://maps.google.com/?cid=7097763519303683514
+[2025-10-30T02:42:22.925Z] LOG ✨ Parsed 5 venue recommendations
+[2025-10-30T02:42:22.929Z] LOG 📋 Plan: A Day of Glamour and Culture in Monaco, 5 stops
+
+--- Summary ---
+Completed

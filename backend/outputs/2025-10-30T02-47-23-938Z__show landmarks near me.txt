@@ -1,0 +1,82 @@
+User Prompt: show landmarks near me
+
+[2025-10-30T02:47:23.943Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-30T02:47:23.946Z] LOG 📝 User prompt: "show landmarks near me"
+[2025-10-30T02:47:23.946Z] LOG 📍 User location: Washington, District of Columbia, United States (38.90253, -77.039386)
+[2025-10-30T02:47:23.947Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-30T02:47:23.948Z] LOG 🗺️ Location context configured: (38.90253, -77.039386)
+[2025-10-30T02:47:42.994Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Thu, 30 Oct 2025 02:47:42 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=18900","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"```json\n{\n  \"plan\": {\n    \"type\": \"Washington D.C. Landmark Exploration\",\n    \"total_stops\": 5,\n    \"estimated_duration\": \"3-4 hours\",\n    \"travel_mode\": \"walking + transit\",\n    \"theme\": \"A journey through iconic historical parks and monumental tributes in the heart of the U.S. capital.\",\n    \"scale\": \"district\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"Lafayette Square\",\n      \"description\": \"This storied park, a National Historic Landmark, features large statues of Revolutionary War heroes and offers views of the White House. It's a relaxed space perfect for starting your exploration. [1]\",\n      \"category\": \"Park | Landmark\",\n      \"reasoning\": \"Located very close to your current location, it offers historical significance and scenic views of the White House, making it an ideal starting point for a district-scale exploration. [1]\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"People love the statues of Revolutionary War heroes and the White House views. [1]\",\n      \"general_location\": \"Near the White House\"\n    },\n    {\n      \"name\": \"Farragut Square\",\n      \"description\": \"A compact downtown park named for a Union admiral, featuring lawns, benches, a statue of Civil War Admiral Farragut, and often hosts midday food trucks. [5]\",\n      \"category\": \"Park | Landmark\",\n      \"reasoning\": \"Very close to Lafayette Square, providing another historical greenspace stop with its own unique character and a glimpse into daily city life. [5]\",\n      \"rating\": 4.5,\n      \"reviewsSummary\": \"Visitors enjoy the statue of Admiral Farragut and the lively midday atmosphere, sometimes with food trucks. [5]\",\n      \"general_location\": \"Downtown\"\n    },\n    {\n      \"name\": \"World War II Memorial\",\n      \"description\": \"An iconic outdoor memorial honoring the 16 million Americans who served during World War II, known for its grandeur and reflective atmosphere. [13]\",\n      \"category\": \"Monument | Park\",\n      \"reasoning\": \"An essential and highly-rated historical landmark, relatively central to a district-scale tour and offers a significant cultural experience within the National Mall area. [13]\",\n      \"rating\": 4.9,\n      \"reviewsSummary\": \"Highly praised for its iconic tribute and grand scale. [13]\",\n      \"general_location\": \"National Mall\"\n    },\n    {\n      \"name\": \"National Mall\",\n      \"description\": \"A sprawling open-air area that is home to numerous museums and monuments, including those honoring Lincoln, MLK, FDR, WWII, and Vietnam veterans, along with the Washington Monument. It serves as a central point for American history and civic life. [15]\",\n      \"category\": \"Park | Landmark\",\n      \"reasoning\": \"This expansive area is the heart of D.C.'s landmarks, allowing for an immersive experience of multiple key sites within one large, continuous space, acting as a connector between other monuments. [15]\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Loved for its vast open spaces and numerous monuments honoring American heroes and events. [15]\",\n      \"general_location\": \"Central Washington, D.C.\"\n    },\n    {\n      \"name\": \"Lincoln Memorial\",\n      \"description\": \"A Parthenon-inspired tribute to Abraham Lincoln, featuring a 19-foot marble statue of the 16th U.S. President, murals, and a reflecting pool, symbolizing unity and freedom. [3]\",\n      \"category\": \"Monument | Landmark\",\n      \"reasoning\": \"A highly significant and visually striking landmark, serving as a powerful endpoint for a historical tour of D.C.'s major monuments and an iconic symbol of the city. [3]\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Appreciated for its impressive architecture, the large statue of Lincoln, and its reflective atmosphere. [3]\",\n      \"general_location\": \"West End of the National Mall\"\n    }\n  ]\n}\n```"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{"groundingChunks":[{"maps":{"uri":"https://maps.google.com/?cid=16333473294033381602","title":"The Lafayette Square Historic District","placeId":"places/ChIJ6SVATLy3t4kR4mgwJ2wnrOI"}},{"maps":{"uri":"https://maps.google.com/?cid=2549021795806663480","title":"Lafayette Square","placeId":"places/ChIJSZtUTLy3t4kRONPIZ9HxXyM"}},{"maps":{"uri":"https://maps.google.com/?cid=16797001142838385666","title":"The Lee House","placeId":"places/ChIJB4MPfby3t4kRAly2iovvGuk"}},{"maps":{"uri":"https://maps.google.com/?cid=1173699842503618230","title":"Lincoln Memorial","placeId":"places/ChIJh2KQ4HG3t4kRti5cycnRSRA"}},{"maps":{"uri":"https://maps.google.com/?cid=7387400780612454047","title":"Meridian Hill Park","placeId":"places/ChIJ2ZUs0N23t4kRn0bZrd5RhWY"}},{"maps":{"uri":"https://maps.google.com/?cid=18245598678856745092","title":"Farragut Square","placeId":"places/ChIJdeFWrL63t4kRhMCXP1RjNf0"}},{"maps":{"uri":"https://maps.google.com/?cid=14636018961970783765","title":"Dupont Circle","placeId":"places/ChIJATvYxse3t4kRFWYmcrOVHcs"}},{"maps":{"uri":"https://maps.google.com/?cid=306587647516645490","title":"Thomas Jefferson Memorial","placeId":"places/ChIJu2icngu3t4kRcpjATtc3QQQ"}},{"maps":{"uri":"https://maps.google.com/?cid=13990548770513826826","title":"José de San Martín Monument","placeId":"places/ChIJG5hyhq-3t4kRCjRBT_tpKMI"}},{"maps":{"uri":"https://maps.google.com/?cid=2825039410696214759","title":"General Andrew Jackson Statue","placeId":"places/ChIJ-VNATLy3t4kR59gGV2CONCc"}},{"maps":{"uri":"https://maps.google.com/?cid=2733404948602523550","title":"Friendship Archway","placeId":"places/ChIJndXW_o23t4kRno-_jFEB7yU"}},{"maps":{"uri":"https://maps.google.com/?cid=3497092410613575086","title":"Japanese Lantern","placeId":"places/ChIJzaVZe6e3t4kRri1W4QQriDA"}},{"maps":{"uri":"https://maps.google.com/?cid=7413886728343074514","title":"Pershing Park","placeId":"places/ChIJ8biK-Ze3t4kR0jbf77Jq42Y"}},{"maps":{"uri":"https://maps.google.com/?cid=5015598284453738614","title":"World War II Memorial","placeId":"places/ChIJoU4x3aa3t4kRdnjs4BD8mkU"}},{"maps":{"uri":"https://maps.google.com/?cid=18024906217883032880","title":"Spanish Steps","placeId":"places/ChIJBTtHxM63t4kRMN2lgrRUJfo"}},{"maps":{"uri":"https://maps.google.com/?cid=4181780599637681985","title":"National Mall","placeId":"places/ChIJMT3_Wpu3t4kRQScGokyrCDo"}},{"maps":{"uri":"https://maps.google.com/?cid=1800255660991597977","title":"Daniel Webster Memorial","placeId":"places/ChIJ6eEekcC3t4kRmU1KSvzK-xg"}},{"maps":{"uri":"https://maps.google.com/?cid=13507428930651071737","title":"The Arts of Peace Sculptures","placeId":"places/ChIJh3-CTKq3t4kR-aRKCAwHdLs"}},{"maps":{"uri":"https://maps.google.com/?cid=11049082128883653696","title":"Peace Monument","placeId":"places/ChIJY3F8GYe3t4kRQBw62qc5Vpk"}},{"maps":{"uri":"https://maps.google.com/?cid=15097068629952949280","title":"First Infantry Division Monument","placeId":"places/ChIJ50aaUaO3t4kRIOwJZu6Pg9E"}}],"webSearchQueries":["landmarks near me"]},"index":0}],"modelVersion":"gemini-2.5-flash","responseId":"u9ECafP2MN-OjMcPkZ6IKA","usageMetadata":{"promptTokenCount":499,"candidatesTokenCount":942,"totalTokenCount":3827,"cachedContentTokenCount":78,"promptTokensDetails":[{"modality":"TEXT","tokenCount":499}],"cacheTokensDetails":[{"modality":"TEXT","tokenCount":78}],"toolUsePromptTokenCount":745,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":745}],"thoughtsTokenCount":1641}}
+[2025-10-30T02:47:42.996Z] LOG ✅ Gemini response received
+[2025-10-30T02:47:42.997Z] LOG 📄 Response length: 3754 characters
+[2025-10-30T02:47:42.997Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-30T02:47:42.998Z] LOG    candidate exists: true
+[2025-10-30T02:47:42.998Z] LOG    groundingMetadata exists: true
+[2025-10-30T02:47:42.999Z] LOG 📊 Grounding status: Maps=true, Search=false
+[2025-10-30T02:47:42.999Z] LOG 📍 Grounding chunks: 20 total
+[2025-10-30T02:47:43.000Z] LOG    1. [MAPS] The Lafayette Square Historic District
+[2025-10-30T02:47:43.000Z] LOG       placeId: places/ChIJ6SVATLy3t4kR4mgwJ2wnrOI
+[2025-10-30T02:47:43.001Z] LOG       uri: https://maps.google.com/?cid=16333473294033381602
+[2025-10-30T02:47:43.001Z] LOG    2. [MAPS] Lafayette Square
+[2025-10-30T02:47:43.001Z] LOG       placeId: places/ChIJSZtUTLy3t4kRONPIZ9HxXyM
+[2025-10-30T02:47:43.002Z] LOG       uri: https://maps.google.com/?cid=2549021795806663480
+[2025-10-30T02:47:43.002Z] LOG    3. [MAPS] The Lee House
+[2025-10-30T02:47:43.002Z] LOG       placeId: places/ChIJB4MPfby3t4kRAly2iovvGuk
+[2025-10-30T02:47:43.003Z] LOG       uri: https://maps.google.com/?cid=16797001142838385666
+[2025-10-30T02:47:43.003Z] LOG    4. [MAPS] Lincoln Memorial
+[2025-10-30T02:47:43.004Z] LOG       placeId: places/ChIJh2KQ4HG3t4kRti5cycnRSRA
+[2025-10-30T02:47:43.004Z] LOG       uri: https://maps.google.com/?cid=1173699842503618230
+[2025-10-30T02:47:43.004Z] LOG    5. [MAPS] Meridian Hill Park
+[2025-10-30T02:47:43.005Z] LOG       placeId: places/ChIJ2ZUs0N23t4kRn0bZrd5RhWY
+[2025-10-30T02:47:43.005Z] LOG       uri: https://maps.google.com/?cid=7387400780612454047
+[2025-10-30T02:47:43.006Z] LOG    6. [MAPS] Farragut Square
+[2025-10-30T02:47:43.011Z] LOG       placeId: places/ChIJdeFWrL63t4kRhMCXP1RjNf0
+[2025-10-30T02:47:43.013Z] LOG       uri: https://maps.google.com/?cid=18245598678856745092
+[2025-10-30T02:47:43.013Z] LOG    7. [MAPS] Dupont Circle
+[2025-10-30T02:47:43.014Z] LOG       placeId: places/ChIJATvYxse3t4kRFWYmcrOVHcs
+[2025-10-30T02:47:43.014Z] LOG       uri: https://maps.google.com/?cid=14636018961970783765
+[2025-10-30T02:47:43.014Z] LOG    8. [MAPS] Thomas Jefferson Memorial
+[2025-10-30T02:47:43.015Z] LOG       placeId: places/ChIJu2icngu3t4kRcpjATtc3QQQ
+[2025-10-30T02:47:43.015Z] LOG       uri: https://maps.google.com/?cid=306587647516645490
+[2025-10-30T02:47:43.015Z] LOG    9. [MAPS] José de San Martín Monument
+[2025-10-30T02:47:43.016Z] LOG       placeId: places/ChIJG5hyhq-3t4kRCjRBT_tpKMI
+[2025-10-30T02:47:43.016Z] LOG       uri: https://maps.google.com/?cid=13990548770513826826
+[2025-10-30T02:47:43.016Z] LOG    10. [MAPS] General Andrew Jackson Statue
+[2025-10-30T02:47:43.017Z] LOG       placeId: places/ChIJ-VNATLy3t4kR59gGV2CONCc
+[2025-10-30T02:47:43.017Z] LOG       uri: https://maps.google.com/?cid=2825039410696214759
+[2025-10-30T02:47:43.018Z] LOG    11. [MAPS] Friendship Archway
+[2025-10-30T02:47:43.018Z] LOG       placeId: places/ChIJndXW_o23t4kRno-_jFEB7yU
+[2025-10-30T02:47:43.018Z] LOG       uri: https://maps.google.com/?cid=2733404948602523550
+[2025-10-30T02:47:43.019Z] LOG    12. [MAPS] Japanese Lantern
+[2025-10-30T02:47:43.020Z] LOG       placeId: places/ChIJzaVZe6e3t4kRri1W4QQriDA
+[2025-10-30T02:47:43.021Z] LOG       uri: https://maps.google.com/?cid=3497092410613575086
+[2025-10-30T02:47:43.022Z] LOG    13. [MAPS] Pershing Park
+[2025-10-30T02:47:43.022Z] LOG       placeId: places/ChIJ8biK-Ze3t4kR0jbf77Jq42Y
+[2025-10-30T02:47:43.023Z] LOG       uri: https://maps.google.com/?cid=7413886728343074514
+[2025-10-30T02:47:43.023Z] LOG    14. [MAPS] World War II Memorial
+[2025-10-30T02:47:43.024Z] LOG       placeId: places/ChIJoU4x3aa3t4kRdnjs4BD8mkU
+[2025-10-30T02:47:43.024Z] LOG       uri: https://maps.google.com/?cid=5015598284453738614
+[2025-10-30T02:47:43.024Z] LOG    15. [MAPS] Spanish Steps
+[2025-10-30T02:47:43.025Z] LOG       placeId: places/ChIJBTtHxM63t4kRMN2lgrRUJfo
+[2025-10-30T02:47:43.025Z] LOG       uri: https://maps.google.com/?cid=18024906217883032880
+[2025-10-30T02:47:43.026Z] LOG    16. [MAPS] National Mall
+[2025-10-30T02:47:43.026Z] LOG       placeId: places/ChIJMT3_Wpu3t4kRQScGokyrCDo
+[2025-10-30T02:47:43.026Z] LOG       uri: https://maps.google.com/?cid=4181780599637681985
+[2025-10-30T02:47:43.027Z] LOG    17. [MAPS] Daniel Webster Memorial
+[2025-10-30T02:47:43.027Z] LOG       placeId: places/ChIJ6eEekcC3t4kRmU1KSvzK-xg
+[2025-10-30T02:47:43.028Z] LOG       uri: https://maps.google.com/?cid=1800255660991597977
+[2025-10-30T02:47:43.029Z] LOG    18. [MAPS] The Arts of Peace Sculptures
+[2025-10-30T02:47:43.029Z] LOG       placeId: places/ChIJh3-CTKq3t4kR-aRKCAwHdLs
+[2025-10-30T02:47:43.029Z] LOG       uri: https://maps.google.com/?cid=13507428930651071737
+[2025-10-30T02:47:43.029Z] LOG    19. [MAPS] Peace Monument
+[2025-10-30T02:47:43.030Z] LOG       placeId: places/ChIJY3F8GYe3t4kRQBw62qc5Vpk
+[2025-10-30T02:47:43.030Z] LOG       uri: https://maps.google.com/?cid=11049082128883653696
+[2025-10-30T02:47:43.031Z] LOG    20. [MAPS] First Infantry Division Monument
+[2025-10-30T02:47:43.031Z] LOG       placeId: places/ChIJ50aaUaO3t4kRIOwJZu6Pg9E
+[2025-10-30T02:47:43.032Z] LOG       uri: https://maps.google.com/?cid=15097068629952949280
+[2025-10-30T02:47:43.033Z] LOG ✨ Parsed 5 venue recommendations
+[2025-10-30T02:47:43.033Z] LOG 📋 Plan: Washington D.C. Landmark Exploration, 5 stops
+
+--- Summary ---
+Completed

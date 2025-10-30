@@ -1,0 +1,116 @@
+User Prompt: plan a night in washington DC
+
+[2025-10-30T02:56:34.200Z] LOG 📍 Using extracted city from user location: District of Columbia
+[2025-10-30T02:56:34.201Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T02:56:34.202Z] LOG    1. "Agora Dc Mediterranean Restaurant" in "Dupont Circle"
+[2025-10-30T02:56:34.203Z] LOG    2. "Press Club Cocktail Bar" in "Dupont Circle"
+[2025-10-30T02:56:34.203Z] LOG    3. "Jojo Restaurant and Bar" in "U Street Corridor"
+[2025-10-30T02:56:34.204Z] LOG 
+🔍 Executing batch search for 3 venues...
+[2025-10-30T02:56:34.205Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:56:34.206Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-30T02:56:34.206Z] LOG    1. Searching "Agora Dc Mediterranean Restaurant" in "Dupont Circle"
+[2025-10-30T02:56:34.207Z] LOG 🔍 [Google Places] Text search: "Agora Dc Mediterranean Restaurant" in Dupont Circle
+[2025-10-30T02:56:34.214Z] LOG    2. Searching "Press Club Cocktail Bar" in "Dupont Circle"
+[2025-10-30T02:56:34.216Z] LOG 🔍 [Google Places] Text search: "Press Club Cocktail Bar" in Dupont Circle
+[2025-10-30T02:56:34.221Z] LOG    3. Searching "Jojo Restaurant and Bar" in "U Street Corridor"
+[2025-10-30T02:56:34.222Z] LOG 🔍 [Google Places] Text search: "Jojo Restaurant and Bar" in U Street Corridor
+[2025-10-30T02:56:34.742Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:56:34.777Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:56:34.826Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:56:34.883Z] LOG    ⚠️  Press Club Cocktail Bar: No editorial summary available
+[2025-10-30T02:56:34.884Z] LOG ✅ Found 1 places
+[2025-10-30T02:56:34.917Z] LOG    ✅ Jojo Restaurant and Bar: Got description (85 chars)
+[2025-10-30T02:56:34.919Z] LOG ✅ Found 1 places
+[2025-10-30T02:56:34.952Z] LOG    ✅ Agora Dc Mediterranean Restaurant: Got description (97 chars)
+[2025-10-30T02:56:34.953Z] LOG ✅ Found 1 places
+[2025-10-30T02:56:34.954Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 749ms
+[2025-10-30T02:56:34.955Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:56:34.955Z] LOG    Tool execution result: success=true
+[2025-10-30T02:56:34.956Z] LOG    ✅ Tool returned 3 search results
+[2025-10-30T02:56:34.956Z] LOG    ✅ Merged: Agora Dc Mediterranean Restaurant
+[2025-10-30T02:56:34.957Z] LOG       Places placeId: ChIJy7CiSMG3t4kRdbgRfwUrXDY
+[2025-10-30T02:56:34.957Z] LOG       Gemini description: Agora offers a trendy, low-lit atmosphere perfect for an eng...
+[2025-10-30T02:56:34.957Z] LOG    ✅ Merged: Press Club Cocktail Bar
+[2025-10-30T02:56:34.958Z] LOG       Places placeId: ChIJ7UBWbwC3t4kRU51s1pXk19w
+[2025-10-30T02:56:34.958Z] LOG       Gemini description: This compact and stylish bar offers a unique cocktail experi...
+[2025-10-30T02:56:34.958Z] LOG    ✅ Merged: Jojo Restaurant and Bar
+[2025-10-30T02:56:34.959Z] LOG       Places placeId: ChIJkV3MM923t4kRRrVPC_3AlyM
+[2025-10-30T02:56:34.959Z] LOG       Gemini description: An elegant venue in the historic U Street Corridor, Jojo off...
+[2025-10-30T02:56:34.959Z] LOG ✅ Phase 1 complete: Found 3/3 exact venues
+[2025-10-30T02:56:34.960Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T02:56:34.960Z] LOG    Searching for alternatives near 3 venues...
+[2025-10-30T02:56:34.961Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:56:34.961Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-30T02:56:34.962Z] LOG    1. Searching "restaurant" in "38.9106422,-77.03821669999999"
+[2025-10-30T02:56:34.963Z] LOG    📍 Using nearbySearch at coordinates (38.9106422, -77.03821669999999)
+[2025-10-30T02:56:34.963Z] LOG 🔍 [Google Places] Nearby search at (38.9106422, -77.03821669999999)
+[2025-10-30T02:56:34.965Z] LOG    2. Searching "bar" in "38.9107296,-77.0436395"
+[2025-10-30T02:56:34.966Z] LOG    📍 Using nearbySearch at coordinates (38.9107296, -77.0436395)
+[2025-10-30T02:56:34.966Z] LOG 🔍 [Google Places] Nearby search at (38.9107296, -77.0436395)
+[2025-10-30T02:56:34.967Z] LOG    3. Searching "restaurant | bar" in "38.9168318,-77.0354083"
+[2025-10-30T02:56:34.967Z] LOG    📍 Using nearbySearch at coordinates (38.9168318, -77.0354083)
+[2025-10-30T02:56:34.968Z] LOG 🔍 [Google Places] Nearby search at (38.9168318, -77.0354083)
+[2025-10-30T02:56:35.560Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:56:35.577Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:56:35.590Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:56:35.652Z] LOG    ✅ Stan's DC Restaurant: Got description (96 chars)
+[2025-10-30T02:56:35.681Z] LOG    ✅ Union Trust: Got description (100 chars)
+[2025-10-30T02:56:35.702Z] LOG    ✅ Stan's DC Restaurant: Got description (96 chars)
+[2025-10-30T02:56:35.733Z] LOG    ✅ Lost & Found DC: Got description (95 chars)
+[2025-10-30T02:56:35.741Z] LOG    ✅ Chaplin's Restaurant: Got description (96 chars)
+[2025-10-30T02:56:35.787Z] LOG    ✅ Ambassador Restaurant: Got description (95 chars)
+[2025-10-30T02:56:35.788Z] LOG    ⚠️  Marshall's Bar & Grille: No editorial summary available
+[2025-10-30T02:56:35.789Z] LOG    ✅ Casta's Rum Bar: Got description (100 chars)
+[2025-10-30T02:56:35.807Z] LOG    ✅ Quill at The Jefferson: Got description (98 chars)
+[2025-10-30T02:56:35.826Z] LOG    ✅ Judy Restaurant: Got description (98 chars)
+[2025-10-30T02:56:35.861Z] LOG    ✅ Bar Charley: Got description (99 chars)
+[2025-10-30T02:56:35.864Z] LOG    ✅ El Tamarindo: Got description (96 chars)
+[2025-10-30T02:56:35.870Z] LOG    ⚠️  Charlene's Bar & Grille: No editorial summary available
+[2025-10-30T02:56:35.880Z] LOG    ✅ Left Door: Got description (76 chars)
+[2025-10-30T02:56:35.908Z] LOG    ⚠️  Vagabond Bar and Kitchen: No editorial summary available
+[2025-10-30T02:56:35.909Z] LOG ✅ Batch complete: 3/3 searches succeeded, 15 total venues found in 948ms
+[2025-10-30T02:56:35.910Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:56:35.910Z] LOG    ✅ Venue 1 (Agora Dc Mediterranean Restaurant): 4 alternatives
+[2025-10-30T02:56:35.911Z] LOG       1. Stan's DC Restaurant (4.6⭐)
+[2025-10-30T02:56:35.911Z] LOG       2. Ambassador Restaurant (4.8⭐)
+[2025-10-30T02:56:35.911Z] LOG       3. Chaplin's Restaurant (4.4⭐)
+[2025-10-30T02:56:35.912Z] LOG    ✅ Venue 2 (Press Club Cocktail Bar): 4 alternatives
+[2025-10-30T02:56:35.912Z] LOG       1. Union Trust (4.6⭐)
+[2025-10-30T02:56:35.913Z] LOG       2. Lost & Found DC (4.3⭐)
+[2025-10-30T02:56:35.913Z] LOG       3. Quill at The Jefferson (4.7⭐)
+[2025-10-30T02:56:35.914Z] LOG    ✅ Venue 3 (Jojo Restaurant and Bar): 4 alternatives
+[2025-10-30T02:56:35.914Z] LOG       1. Stan's DC Restaurant (4.6⭐)
+[2025-10-30T02:56:35.914Z] LOG       2. Charlene's Bar & Grille (4.4⭐)
+[2025-10-30T02:56:35.915Z] LOG       3. Vagabond Bar and Kitchen (4.6⭐)
+[2025-10-30T02:56:35.915Z] LOG 
+📦 Phase 2 complete: 3 stops with alternatives
+[2025-10-30T02:56:35.916Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T02:56:35.917Z] LOG    Primary venues: 3 stops
+[2025-10-30T02:56:35.918Z] LOG    ❌ Removed "Stan's DC Restaurant" - duplicate alternative
+[2025-10-30T02:56:35.918Z] LOG    🔧 Stop "ChIJkV3MM923t4kRRrVP...": 4 → 3 alternatives
+[2025-10-30T02:56:35.919Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T02:56:35.919Z] LOG    Removed 0 venues already in route
+[2025-10-30T02:56:35.919Z] LOG    Removed 1 duplicate alternatives
+[2025-10-30T02:56:35.919Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-30T02:56:35.920Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T02:56:35.920Z] LOG    Primary venues: 3
+[2025-10-30T02:56:35.921Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-30T02:56:35.921Z] LOG    Execution time: 1722ms
+[2025-10-30T02:56:35.921Z] LOG 
+📋 Final alternatives:
+[2025-10-30T02:56:35.921Z] LOG    Agora Dc Mediterranean Restaurant: 4 alternatives
+[2025-10-30T02:56:35.922Z] LOG    Press Club Cocktail Bar: 4 alternatives
+[2025-10-30T02:56:35.922Z] LOG    Jojo Restaurant and Bar: 3 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 3
+Alternatives: 3

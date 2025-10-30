@@ -1,0 +1,184 @@
+User Prompt: Plan a day out in Boston
+
+[2025-10-30T02:08:44.218Z] LOG 📍 Using fallback location (no user location): Boston
+[2025-10-30T02:08:44.219Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T02:08:44.220Z] LOG    1. "Boston Common" in "Downtown"
+[2025-10-30T02:08:44.220Z] LOG    2. "Public Garden" in "Downtown"
+[2025-10-30T02:08:44.221Z] LOG    3. "Faneuil Hall Marketplace" in "Waterfront/Financial District"
+[2025-10-30T02:08:44.222Z] LOG    4. "Boston Tea Party Ships & Museum" in "Fort Point Channel"
+[2025-10-30T02:08:44.224Z] LOG    5. "Isabella Stewart Gardner Museum" in "Fenway-Kenmore"
+[2025-10-30T02:08:44.225Z] LOG    6. "View Boston" in "Back Bay"
+[2025-10-30T02:08:44.225Z] LOG 
+🔍 Executing batch search for 6 venues...
+[2025-10-30T02:08:44.226Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:08:44.228Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2025-10-30T02:08:44.230Z] LOG    1. Searching "Boston Common" in "Downtown"
+[2025-10-30T02:08:44.231Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown
+[2025-10-30T02:08:44.239Z] LOG    2. Searching "Public Garden" in "Downtown"
+[2025-10-30T02:08:44.240Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Downtown
+[2025-10-30T02:08:44.242Z] LOG    3. Searching "Faneuil Hall Marketplace" in "Waterfront/Financial District"
+[2025-10-30T02:08:44.243Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Waterfront/Financial District
+[2025-10-30T02:08:44.247Z] LOG    4. Searching "Boston Tea Party Ships & Museum" in "Fort Point Channel"
+[2025-10-30T02:08:44.250Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Fort Point Channel
+[2025-10-30T02:08:44.254Z] LOG    5. Searching "Isabella Stewart Gardner Museum" in "Fenway-Kenmore"
+[2025-10-30T02:08:44.256Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway-Kenmore
+[2025-10-30T02:08:44.260Z] LOG    6. Searching "View Boston" in "Back Bay"
+[2025-10-30T02:08:44.262Z] LOG 🔍 [Google Places] Text search: "View Boston" in Back Bay
+[2025-10-30T02:08:44.894Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:08:44.935Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:08:44.983Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:08:44.987Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:08:45.001Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:08:45.010Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:08:45.017Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2025-10-30T02:08:45.018Z] LOG ✅ Found 1 places
+[2025-10-30T02:08:45.082Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2025-10-30T02:08:45.084Z] LOG ✅ Found 1 places
+[2025-10-30T02:08:45.085Z] LOG    ⚠️  View Boston: No editorial summary available
+[2025-10-30T02:08:45.086Z] LOG ✅ Found 1 places
+[2025-10-30T02:08:45.132Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2025-10-30T02:08:45.133Z] LOG ✅ Found 1 places
+[2025-10-30T02:08:45.144Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2025-10-30T02:08:45.145Z] LOG ✅ Found 1 places
+[2025-10-30T02:08:45.166Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2025-10-30T02:08:45.167Z] LOG ✅ Found 1 places
+[2025-10-30T02:08:45.168Z] LOG ✅ Batch complete: 6/6 searches succeeded, 6 total venues found in 940ms
+[2025-10-30T02:08:45.168Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:08:45.169Z] LOG    Tool execution result: success=true
+[2025-10-30T02:08:45.169Z] LOG    ✅ Tool returned 6 search results
+[2025-10-30T02:08:45.170Z] LOG    ✅ Merged: Boston Common
+[2025-10-30T02:08:45.171Z] LOG       Places placeId: ChIJKyNuvJ1w44kRBE-pe_yDhj8
+[2025-10-30T02:08:45.172Z] LOG       Gemini description: As America's oldest park, Boston Common offers a vast green ...
+[2025-10-30T02:08:45.173Z] LOG    ✅ Merged: Public Garden
+[2025-10-30T02:08:45.173Z] LOG       Places placeId: ChIJu2Argp5w44kRAecWXgt_18s
+[2025-10-30T02:08:45.174Z] LOG       Gemini description: Adjacent to Boston Common, the Public Garden is a beautiful ...
+[2025-10-30T02:08:45.174Z] LOG    ✅ Merged: Faneuil Hall Marketplace
+[2025-10-30T02:08:45.175Z] LOG       Places placeId: ChIJpyiwa4Zw44kRBQSGWKv4wgA
+[2025-10-30T02:08:45.175Z] LOG       Gemini description: A bustling historic marketplace, Faneuil Hall offers a vibra...
+[2025-10-30T02:08:45.175Z] LOG    ✅ Merged: Boston Tea Party Ships & Museum
+[2025-10-30T02:08:45.176Z] LOG       Places placeId: ChIJ4bwEPIBw44kRs7STmn977tE
+[2025-10-30T02:08:45.176Z] LOG       Gemini description: Step back in time at this interactive museum on the water, f...
+[2025-10-30T02:08:45.176Z] LOG    ✅ Merged: Isabella Stewart Gardner Museum
+[2025-10-30T02:08:45.177Z] LOG       Places placeId: ChIJSYXWkop544kRvTojD82gxdo
+[2025-10-30T02:08:45.177Z] LOG       Gemini description: Housed in a stunning 15th-century Venetian-style palace, thi...
+[2025-10-30T02:08:45.178Z] LOG    ✅ Merged: View Boston
+[2025-10-30T02:08:45.178Z] LOG       Places placeId: ChIJKUeTG1R744kRovJ5-2K27v4
+[2025-10-30T02:08:45.179Z] LOG       Gemini description: Located on the 50th-52nd floors of the Prudential Center, Vi...
+[2025-10-30T02:08:45.179Z] LOG ✅ Phase 1 complete: Found 6/6 exact venues
+[2025-10-30T02:08:45.179Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T02:08:45.181Z] LOG    Searching for alternatives near 6 venues...
+[2025-10-30T02:08:45.182Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:08:45.183Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2025-10-30T02:08:45.184Z] LOG    1. Searching "park" in "42.3550897,-71.0657256"
+[2025-10-30T02:08:45.184Z] LOG    📍 Using nearbySearch at coordinates (42.3550897, -71.0657256)
+[2025-10-30T02:08:45.185Z] LOG 🔍 [Google Places] Nearby search at (42.3550897, -71.0657256)
+[2025-10-30T02:08:45.186Z] LOG    2. Searching "park" in "42.3540639,-71.0700921"
+[2025-10-30T02:08:45.187Z] LOG    📍 Using nearbySearch at coordinates (42.3540639, -71.0700921)
+[2025-10-30T02:08:45.188Z] LOG 🔍 [Google Places] Nearby search at (42.3540639, -71.0700921)
+[2025-10-30T02:08:45.192Z] LOG    3. Searching "market" in "42.360189,-71.0551145"
+[2025-10-30T02:08:45.193Z] LOG    📍 Using nearbySearch at coordinates (42.360189, -71.0551145)
+[2025-10-30T02:08:45.193Z] LOG 🔍 [Google Places] Nearby search at (42.360189, -71.0551145)
+[2025-10-30T02:08:45.194Z] LOG    4. Searching "museum" in "42.3521821,-71.0512911"
+[2025-10-30T02:08:45.195Z] LOG    📍 Using nearbySearch at coordinates (42.3521821, -71.0512911)
+[2025-10-30T02:08:45.195Z] LOG 🔍 [Google Places] Nearby search at (42.3521821, -71.0512911)
+[2025-10-30T02:08:45.196Z] LOG    5. Searching "museum" in "42.3381442,-71.0990577"
+[2025-10-30T02:08:45.196Z] LOG    📍 Using nearbySearch at coordinates (42.3381442, -71.0990577)
+[2025-10-30T02:08:45.196Z] LOG 🔍 [Google Places] Nearby search at (42.3381442, -71.0990577)
+[2025-10-30T02:08:45.197Z] LOG    6. Searching "observation deck" in "42.3471679,-71.0825119"
+[2025-10-30T02:08:45.198Z] LOG    📍 Using nearbySearch at coordinates (42.3471679, -71.0825119)
+[2025-10-30T02:08:45.199Z] LOG 🔍 [Google Places] Nearby search at (42.3471679, -71.0825119)
+[2025-10-30T02:08:45.722Z] LOG 📝 Fetching descriptions for 3 places...
+[2025-10-30T02:08:45.731Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:08:45.743Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:08:45.765Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:08:45.792Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:08:45.801Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2025-10-30T02:08:45.820Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2025-10-30T02:08:45.874Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2025-10-30T02:08:45.891Z] LOG    ⚠️  Star Market: No editorial summary available
+[2025-10-30T02:08:45.904Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:08:45.922Z] LOG    ⚠️  Salem Market: No editorial summary available
+[2025-10-30T02:08:45.927Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2025-10-30T02:08:45.937Z] LOG    ⚠️  Bella's Market: No editorial summary available
+[2025-10-30T02:08:45.939Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2025-10-30T02:08:45.940Z] LOG    ✅ Golden Goose Market: Got description (100 chars)
+[2025-10-30T02:08:45.945Z] LOG    ⚠️  MassArt Art Museum: No editorial summary available
+[2025-10-30T02:08:45.954Z] LOG    ✅ Norman B. Leventhal Park: Got description (83 chars)
+[2025-10-30T02:08:45.960Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2025-10-30T02:08:45.961Z] LOG    ✅ Titus Sparrow Park: Got description (99 chars)
+[2025-10-30T02:08:45.962Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2025-10-30T02:08:45.963Z] LOG    ⚠️  View Boston: No editorial summary available
+[2025-10-30T02:08:45.964Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2025-10-30T02:08:45.969Z] LOG    ✅ North Point Park: Got description (92 chars)
+[2025-10-30T02:08:45.997Z] LOG    ✅ 200 Clarendon: Got description (91 chars)
+[2025-10-30T02:08:46.002Z] LOG    ✅ Norman B. Leventhal Park: Got description (83 chars)
+[2025-10-30T02:08:46.013Z] LOG    ✅ Titus Sparrow Park: Got description (99 chars)
+[2025-10-30T02:08:46.019Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2025-10-30T02:08:46.020Z] LOG    ✅ Museum of Science: Got description (99 chars)
+[2025-10-30T02:08:46.022Z] LOG    ⚠️  The Stratus - Rooftop Bar Boston: No editorial summary available
+[2025-10-30T02:08:46.031Z] LOG    ✅ North Point Park: Got description (92 chars)
+[2025-10-30T02:08:46.032Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2025-10-30T02:08:46.041Z] LOG    ✅ Prudential Center: Got description (95 chars)
+[2025-10-30T02:08:46.043Z] LOG    ⚠️  Maverick Street Market: No editorial summary available
+[2025-10-30T02:08:46.054Z] LOG    ⚠️  Prudential Center Management Office: No editorial summary available
+[2025-10-30T02:08:46.056Z] LOG ✅ Batch complete: 6/6 searches succeeded, 28 total venues found in 873ms
+[2025-10-30T02:08:46.056Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:08:46.057Z] LOG    ✅ Venue 1 (Boston Common): 4 alternatives
+[2025-10-30T02:08:46.057Z] LOG       1. North Point Park (4.7⭐)
+[2025-10-30T02:08:46.058Z] LOG       2. Norman B. Leventhal Park (4.7⭐)
+[2025-10-30T02:08:46.058Z] LOG       3. Christopher Columbus Waterfront Park (4.7⭐)
+[2025-10-30T02:08:46.059Z] LOG    ✅ Venue 2 (Public Garden): 4 alternatives
+[2025-10-30T02:08:46.059Z] LOG       1. Boston Common (4.7⭐)
+[2025-10-30T02:08:46.060Z] LOG       2. North Point Park (4.7⭐)
+[2025-10-30T02:08:46.060Z] LOG       3. Christopher Columbus Waterfront Park (4.7⭐)
+[2025-10-30T02:08:46.061Z] LOG    ✅ Venue 3 (Faneuil Hall Marketplace): 4 alternatives
+[2025-10-30T02:08:46.061Z] LOG       1. Star Market (4.2⭐)
+[2025-10-30T02:08:46.062Z] LOG       2. Bella's Market (4.2⭐)
+[2025-10-30T02:08:46.062Z] LOG       3. Golden Goose Market (4.4⭐)
+[2025-10-30T02:08:46.063Z] LOG    ✅ Venue 4 (Boston Tea Party Ships & Museum): 4 alternatives
+[2025-10-30T02:08:46.063Z] LOG       1. Museum of Illusions Boston (4.7⭐)
+[2025-10-30T02:08:46.064Z] LOG       2. Museum of Science (4.7⭐)
+[2025-10-30T02:08:46.064Z] LOG       3. WNDR Museum (4.6⭐)
+[2025-10-30T02:08:46.065Z] LOG    ✅ Venue 5 (Isabella Stewart Gardner Museum): 2 alternatives
+[2025-10-30T02:08:46.065Z] LOG       1. Museum of Fine Arts, Boston (4.8⭐)
+[2025-10-30T02:08:46.066Z] LOG       2. MassArt Art Museum (4.6⭐)
+[2025-10-30T02:08:46.066Z] LOG    ✅ Venue 6 (View Boston): 4 alternatives
+[2025-10-30T02:08:46.066Z] LOG       1. Prudential Center (4.5⭐)
+[2025-10-30T02:08:46.067Z] LOG       2. 200 Clarendon (4.6⭐)
+[2025-10-30T02:08:46.067Z] LOG       3. The Stratus - Rooftop Bar Boston (4.3⭐)
+[2025-10-30T02:08:46.068Z] LOG 
+📦 Phase 2 complete: 6 stops with alternatives
+[2025-10-30T02:08:46.069Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T02:08:46.070Z] LOG    Primary venues: 6 stops
+[2025-10-30T02:08:46.071Z] LOG    ❌ Removed "Boston Common" - already in primary route
+[2025-10-30T02:08:46.071Z] LOG    ❌ Removed "North Point Park" - duplicate alternative
+[2025-10-30T02:08:46.072Z] LOG    ❌ Removed "Christopher Columbus Waterfront Park" - duplicate alternative
+[2025-10-30T02:08:46.072Z] LOG    ❌ Removed "Norman B. Leventhal Park" - duplicate alternative
+[2025-10-30T02:08:46.072Z] LOG    🔧 Stop "ChIJu2Argp5w44kRAecW...": 4 → 0 alternatives
+[2025-10-30T02:08:46.073Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T02:08:46.073Z] LOG    Removed 1 venues already in route
+[2025-10-30T02:08:46.074Z] LOG    Removed 3 duplicate alternatives
+[2025-10-30T02:08:46.074Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T02:08:46.074Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T02:08:46.075Z] LOG    Primary venues: 6
+[2025-10-30T02:08:46.076Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T02:08:46.076Z] LOG    Execution time: 1859ms
+[2025-10-30T02:08:46.076Z] LOG 
+📋 Final alternatives:
+[2025-10-30T02:08:46.078Z] LOG    Boston Common: 4 alternatives
+[2025-10-30T02:08:46.078Z] LOG    Faneuil Hall Marketplace: 4 alternatives
+[2025-10-30T02:08:46.079Z] LOG    Boston Tea Party Ships & Museum: 4 alternatives
+[2025-10-30T02:08:46.079Z] LOG    Isabella Stewart Gardner Museum: 2 alternatives
+[2025-10-30T02:08:46.080Z] LOG    View Boston: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 6
+Alternatives: 5

@@ -1,0 +1,164 @@
+User Prompt: plan a day out in monaco
+
+[2025-10-30T02:42:22.953Z] LOG 📍 Using extracted city from user location: Singapore
+[2025-10-30T02:42:22.956Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T02:42:22.958Z] LOG    1. "Musée océanographique de Monaco" in "Monaco-Ville"
+[2025-10-30T02:42:22.959Z] LOG    2. "Cathedral of Our Lady Immaculate" in "Monaco-Ville"
+[2025-10-30T02:42:22.960Z] LOG    3. "Jardins Saint-Martin" in "Monaco-Ville"
+[2025-10-30T02:42:22.961Z] LOG    4. "Caffè Milano" in "Port Hercule"
+[2025-10-30T02:42:22.962Z] LOG    5. "Casino de Monte-Carlo" in "Monte Carlo"
+[2025-10-30T02:42:22.963Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T02:42:22.964Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:42:22.965Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T02:42:22.966Z] LOG    1. Searching "Musée océanographique de Monaco" in "Monaco-Ville"
+[2025-10-30T02:42:22.968Z] LOG 🔍 [Google Places] Text search: "Musée océanographique de Monaco" in Monaco-Ville
+[2025-10-30T02:42:22.982Z] LOG    2. Searching "Cathedral of Our Lady Immaculate" in "Monaco-Ville"
+[2025-10-30T02:42:22.984Z] LOG 🔍 [Google Places] Text search: "Cathedral of Our Lady Immaculate" in Monaco-Ville
+[2025-10-30T02:42:22.995Z] LOG    3. Searching "Jardins Saint-Martin" in "Monaco-Ville"
+[2025-10-30T02:42:22.998Z] LOG 🔍 [Google Places] Text search: "Jardins Saint-Martin" in Monaco-Ville
+[2025-10-30T02:42:23.013Z] LOG    4. Searching "Caffè Milano" in "Port Hercule"
+[2025-10-30T02:42:23.027Z] LOG 🔍 [Google Places] Text search: "Caffè Milano" in Port Hercule
+[2025-10-30T02:42:23.033Z] LOG    5. Searching "Casino de Monte-Carlo" in "Monte Carlo"
+[2025-10-30T02:42:23.036Z] LOG 🔍 [Google Places] Text search: "Casino de Monte-Carlo" in Monte Carlo
+[2025-10-30T02:42:23.522Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:42:23.547Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:42:23.627Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:42:23.689Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:42:23.717Z] LOG    ✅ Caffè Milano: Got description (89 chars)
+[2025-10-30T02:42:23.722Z] LOG ✅ Found 1 places
+[2025-10-30T02:42:23.729Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:42:23.751Z] LOG    ✅ Musée océanographique de Monaco: Got description (96 chars)
+[2025-10-30T02:42:23.752Z] LOG ✅ Found 1 places
+[2025-10-30T02:42:23.827Z] LOG    ✅ Cathedral of Our Lady Immaculate: Got description (88 chars)
+[2025-10-30T02:42:23.829Z] LOG ✅ Found 1 places
+[2025-10-30T02:42:23.840Z] LOG    ✅ Casino de Monte-Carlo: Got description (100 chars)
+[2025-10-30T02:42:23.841Z] LOG ✅ Found 1 places
+[2025-10-30T02:42:23.940Z] LOG    ✅ Jardins Saint-Martin: Got description (93 chars)
+[2025-10-30T02:42:23.943Z] LOG ✅ Found 1 places
+[2025-10-30T02:42:23.944Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 979ms
+[2025-10-30T02:42:23.944Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:42:23.945Z] LOG    Tool execution result: success=true
+[2025-10-30T02:42:23.945Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T02:42:23.946Z] LOG    ✅ Merged: Musée océanographique de Monaco
+[2025-10-30T02:42:23.947Z] LOG       Places placeId: ChIJU2WkJZDCzRIRbGhKwmhB-cI
+[2025-10-30T02:42:23.947Z] LOG       Gemini description: Founded by Prince Albert I, this world-renowned oceanographi...
+[2025-10-30T02:42:23.948Z] LOG    ✅ Merged: Cathedral of Our Lady Immaculate
+[2025-10-30T02:42:23.948Z] LOG       Places placeId: ChIJXxH-HpLCzRIRIZabyjTbjNQ
+[2025-10-30T02:42:23.949Z] LOG       Gemini description: This stunning Romanesque Catholic cathedral, also known as S...
+[2025-10-30T02:42:23.950Z] LOG    ✅ Merged: Jardins Saint-Martin
+[2025-10-30T02:42:23.950Z] LOG       Places placeId: ChIJu3MsupHCzRIRIS6LhvFpxek
+[2025-10-30T02:42:23.951Z] LOG       Gemini description: These tranquil, terraced public gardens provide a serene esc...
+[2025-10-30T02:42:23.951Z] LOG    ✅ Merged: Caffè Milano
+[2025-10-30T02:42:23.951Z] LOG       Places placeId: ChIJ325TPVDDzRIRDquZ7B4--us
+[2025-10-30T02:42:23.952Z] LOG       Gemini description: Enjoy traditional Italian dishes and cocktails in a stylish ...
+[2025-10-30T02:42:23.952Z] LOG    ✅ Merged: Casino de Monte-Carlo
+[2025-10-30T02:42:23.953Z] LOG       Places placeId: ChIJZQJu5IfCzRIR4_SMWQznbqY
+[2025-10-30T02:42:23.953Z] LOG       Gemini description: An elegant Beaux-Arts building renowned worldwide, this icon...
+[2025-10-30T02:42:23.954Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T02:42:23.954Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T02:42:23.955Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T02:42:23.955Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:42:23.957Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T02:42:23.957Z] LOG    1. Searching "museum" in "43.7308132,7.425573999999999"
+[2025-10-30T02:42:23.958Z] LOG    📍 Using nearbySearch at coordinates (43.7308132, 7.425573999999999)
+[2025-10-30T02:42:23.958Z] LOG 🔍 [Google Places] Nearby search at (43.7308132, 7.425573999999999)
+[2025-10-30T02:42:23.961Z] LOG    2. Searching "landmark" in "43.7303806,7.4225216"
+[2025-10-30T02:42:23.963Z] LOG    📍 Using nearbySearch at coordinates (43.7303806, 7.4225216)
+[2025-10-30T02:42:23.964Z] LOG 🔍 [Google Places] Nearby search at (43.7303806, 7.4225216)
+[2025-10-30T02:42:23.967Z] LOG    3. Searching "park" in "43.7297981,7.424146"
+[2025-10-30T02:42:23.968Z] LOG    📍 Using nearbySearch at coordinates (43.7297981, 7.424146)
+[2025-10-30T02:42:23.969Z] LOG 🔍 [Google Places] Nearby search at (43.7297981, 7.424146)
+[2025-10-30T02:42:23.970Z] LOG    4. Searching "restaurant" in "43.7367751,7.422002900000001"
+[2025-10-30T02:42:23.971Z] LOG    📍 Using nearbySearch at coordinates (43.7367751, 7.422002900000001)
+[2025-10-30T02:42:23.971Z] LOG 🔍 [Google Places] Nearby search at (43.7367751, 7.422002900000001)
+[2025-10-30T02:42:23.972Z] LOG    5. Searching "landmark" in "43.7390972,7.428068100000001"
+[2025-10-30T02:42:23.973Z] LOG    📍 Using nearbySearch at coordinates (43.7390972, 7.428068100000001)
+[2025-10-30T02:42:23.973Z] LOG 🔍 [Google Places] Nearby search at (43.7390972, 7.428068100000001)
+[2025-10-30T02:42:24.464Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:42:24.520Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:42:24.540Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:42:24.594Z] LOG    ✅ Musée océanographique de Monaco: Got description (96 chars)
+[2025-10-30T02:42:24.611Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:42:24.638Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:42:24.664Z] LOG    ⚠️  Park Monaco: No editorial summary available
+[2025-10-30T02:42:24.701Z] LOG    ⚠️  Monaco Courthouse: No editorial summary available
+[2025-10-30T02:42:24.728Z] LOG    ⚠️  Roseraie Princesse Grace: No editorial summary available
+[2025-10-30T02:42:24.752Z] LOG    ⚠️  Tip Top: No editorial summary available
+[2025-10-30T02:42:24.769Z] LOG    ⚠️  Jardin du Casino: No editorial summary available
+[2025-10-30T02:42:24.771Z] LOG    ✅ Parc Princesse Antoinette: Got description (98 chars)
+[2025-10-30T02:42:24.777Z] LOG    ✅ The Champions Promenade: Got description (96 chars)
+[2025-10-30T02:42:24.782Z] LOG    ⚠️  Landmark: No editorial summary available
+[2025-10-30T02:42:24.786Z] LOG    ⚠️  Manteau de la Conscience - Anna Chromy: No editorial summary available
+[2025-10-30T02:42:24.791Z] LOG    ✅ Museum of Stamps and Coins: Got description (97 chars)
+[2025-10-30T02:42:24.795Z] LOG    ⚠️  Lobby Lounge Restaurant & Bar: No editorial summary available
+[2025-10-30T02:42:24.800Z] LOG    ✅ Monaco Museum of Prehistoric Anthropology: Got description (96 chars)
+[2025-10-30T02:42:24.805Z] LOG    ⚠️  La Grotte Bleue: No editorial summary available
+[2025-10-30T02:42:24.811Z] LOG    ⚠️  Monaco Courthouse: No editorial summary available
+[2025-10-30T02:42:24.817Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco: Got description (98 chars)
+[2025-10-30T02:42:24.820Z] LOG    ✅ Gateway to Rock: Got description (92 chars)
+[2025-10-30T02:42:24.832Z] LOG    ✅ Caffè Milano: Got description (89 chars)
+[2025-10-30T02:42:24.841Z] LOG    ⚠️  Manteau de la Conscience - Anna Chromy: No editorial summary available
+[2025-10-30T02:42:24.848Z] LOG    ⚠️  La Grotte Bleue: No editorial summary available
+[2025-10-30T02:42:24.852Z] LOG    ⚠️  Apotheosa Monaca: No editorial summary available
+[2025-10-30T02:42:24.860Z] LOG    ✅ New National Museum of Monaco - Villa Paloma: Got description (94 chars)
+[2025-10-30T02:42:24.870Z] LOG    ⚠️  Chez Pierre - French Restaurant in Monaco with Bar: No editorial summary available
+[2025-10-30T02:42:24.877Z] LOG    ⚠️  Anahi Monaco: No editorial summary available
+[2025-10-30T02:42:24.882Z] LOG    ⚠️  Place du palais: No editorial summary available
+[2025-10-30T02:42:24.885Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 929ms
+[2025-10-30T02:42:24.887Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:42:24.888Z] LOG    ✅ Venue 1 (Musée océanographique de Monaco): 4 alternatives
+[2025-10-30T02:42:24.889Z] LOG       1. Private Cars Collection of HSH Prince of Monaco (4.7⭐)
+[2025-10-30T02:42:24.890Z] LOG       2. Monaco Museum of Prehistoric Anthropology (4.4⭐)
+[2025-10-30T02:42:24.891Z] LOG       3. New National Museum of Monaco - Villa Paloma (4.4⭐)
+[2025-10-30T02:42:24.892Z] LOG    ✅ Venue 2 (Cathedral of Our Lady Immaculate): 4 alternatives
+[2025-10-30T02:42:24.893Z] LOG       1. Monaco Courthouse (4.8⭐)
+[2025-10-30T02:42:24.893Z] LOG       2. Manteau de la Conscience - Anna Chromy (4.7⭐)
+[2025-10-30T02:42:24.894Z] LOG       3. La Grotte Bleue (3.9⭐)
+[2025-10-30T02:42:24.895Z] LOG    ✅ Venue 3 (Jardins Saint-Martin): 4 alternatives
+[2025-10-30T02:42:24.896Z] LOG       1. Park Monaco (4.7⭐)
+[2025-10-30T02:42:24.897Z] LOG       2. Roseraie Princesse Grace (4.6⭐)
+[2025-10-30T02:42:24.897Z] LOG       3. The Champions Promenade (4.5⭐)
+[2025-10-30T02:42:24.899Z] LOG    ✅ Venue 4 (Caffè Milano): 4 alternatives
+[2025-10-30T02:42:24.900Z] LOG       1. Tip Top (3.8⭐)
+[2025-10-30T02:42:24.900Z] LOG       2. Lobby Lounge Restaurant & Bar (4.5⭐)
+[2025-10-30T02:42:24.901Z] LOG       3. Chez Pierre - French Restaurant in Monaco with Bar (4.9⭐)
+[2025-10-30T02:42:24.902Z] LOG    ✅ Venue 5 (Casino de Monte-Carlo): 4 alternatives
+[2025-10-30T02:42:24.902Z] LOG       1. Manteau de la Conscience - Anna Chromy (4.7⭐)
+[2025-10-30T02:42:24.903Z] LOG       2. Monaco Courthouse (4.8⭐)
+[2025-10-30T02:42:24.904Z] LOG       3. Apotheosa Monaca (4.7⭐)
+[2025-10-30T02:42:24.904Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T02:42:24.906Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T02:42:24.908Z] LOG    Primary venues: 5 stops
+[2025-10-30T02:42:24.910Z] LOG    ❌ Removed "Manteau de la Conscience - Anna Chromy" - duplicate alternative
+[2025-10-30T02:42:24.910Z] LOG    ❌ Removed "Monaco Courthouse" - duplicate alternative
+[2025-10-30T02:42:24.913Z] LOG    ❌ Removed "La Grotte Bleue" - duplicate alternative
+[2025-10-30T02:42:24.915Z] LOG    🔧 Stop "ChIJZQJu5IfCzRIR4_SM...": 4 → 1 alternatives
+[2025-10-30T02:42:24.916Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T02:42:24.917Z] LOG    Removed 0 venues already in route
+[2025-10-30T02:42:24.918Z] LOG    Removed 3 duplicate alternatives
+[2025-10-30T02:42:24.920Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T02:42:24.922Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T02:42:24.923Z] LOG    Primary venues: 5
+[2025-10-30T02:42:24.924Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T02:42:24.925Z] LOG    Execution time: 1983ms
+[2025-10-30T02:42:24.925Z] LOG 
+📋 Final alternatives:
+[2025-10-30T02:42:24.926Z] LOG    Musée océanographique de Monaco: 4 alternatives
+[2025-10-30T02:42:24.927Z] LOG    Cathedral of Our Lady Immaculate: 4 alternatives
+[2025-10-30T02:42:24.928Z] LOG    Jardins Saint-Martin: 4 alternatives
+[2025-10-30T02:42:24.928Z] LOG    Caffè Milano: 4 alternatives
+[2025-10-30T02:42:24.929Z] LOG    Casino de Monte-Carlo: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

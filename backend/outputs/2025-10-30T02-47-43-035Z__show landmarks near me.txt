@@ -1,0 +1,172 @@
+User Prompt: show landmarks near me
+
+[2025-10-30T02:47:43.036Z] LOG 📍 Using extracted city from user location: District of Columbia
+[2025-10-30T02:47:43.036Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T02:47:43.036Z] LOG    1. "Lafayette Square" in "Near the White House"
+[2025-10-30T02:47:43.037Z] LOG    2. "Farragut Square" in "Downtown"
+[2025-10-30T02:47:43.037Z] LOG    3. "World War II Memorial" in "National Mall"
+[2025-10-30T02:47:43.037Z] LOG    4. "National Mall" in "Central Washington, D.C."
+[2025-10-30T02:47:43.038Z] LOG    5. "Lincoln Memorial" in "West End of the National Mall"
+[2025-10-30T02:47:43.038Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T02:47:43.039Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:47:43.040Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T02:47:43.041Z] LOG    1. Searching "Lafayette Square" in "Near the White House"
+[2025-10-30T02:47:43.041Z] LOG 🔍 [Google Places] Text search: "Lafayette Square" in Near the White House
+[2025-10-30T02:47:43.046Z] LOG    2. Searching "Farragut Square" in "Downtown"
+[2025-10-30T02:47:43.047Z] LOG 🔍 [Google Places] Text search: "Farragut Square" in Downtown
+[2025-10-30T02:47:43.052Z] LOG    3. Searching "World War II Memorial" in "National Mall"
+[2025-10-30T02:47:43.053Z] LOG 🔍 [Google Places] Text search: "World War II Memorial" in National Mall
+[2025-10-30T02:47:43.056Z] LOG    4. Searching "National Mall" in "Central Washington, D.C."
+[2025-10-30T02:47:43.057Z] LOG 🔍 [Google Places] Text search: "National Mall" in Central Washington, D.C.
+[2025-10-30T02:47:43.063Z] LOG    5. Searching "Lincoln Memorial" in "West End of the National Mall"
+[2025-10-30T02:47:43.064Z] LOG 🔍 [Google Places] Text search: "Lincoln Memorial" in West End of the National Mall
+[2025-10-30T02:47:43.585Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:47:43.627Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:47:43.678Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:47:43.684Z] LOG    ✅ Lafayette Square: Got description (98 chars)
+[2025-10-30T02:47:43.687Z] LOG ✅ Found 1 places
+[2025-10-30T02:47:43.699Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:47:43.764Z] LOG    ✅ Farragut Square: Got description (92 chars)
+[2025-10-30T02:47:43.766Z] LOG ✅ Found 1 places
+[2025-10-30T02:47:43.793Z] LOG    ✅ Lincoln Memorial: Got description (100 chars)
+[2025-10-30T02:47:43.795Z] LOG ✅ Found 1 places
+[2025-10-30T02:47:43.844Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:47:43.849Z] LOG    ✅ National Mall: Got description (97 chars)
+[2025-10-30T02:47:43.850Z] LOG ✅ Found 1 places
+[2025-10-30T02:47:43.976Z] LOG    ✅ World War II Memorial: Got description (89 chars)
+[2025-10-30T02:47:43.977Z] LOG ✅ Found 1 places
+[2025-10-30T02:47:43.978Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 939ms
+[2025-10-30T02:47:43.979Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:47:43.979Z] LOG    Tool execution result: success=true
+[2025-10-30T02:47:43.980Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T02:47:43.980Z] LOG    ✅ Merged: Lafayette Square
+[2025-10-30T02:47:43.981Z] LOG       Places placeId: ChIJSZtUTLy3t4kRONPIZ9HxXyM
+[2025-10-30T02:47:43.981Z] LOG       Gemini description: This storied park, a National Historic Landmark, features la...
+[2025-10-30T02:47:43.982Z] LOG    ✅ Merged: Farragut Square
+[2025-10-30T02:47:43.982Z] LOG       Places placeId: ChIJdeFWrL63t4kRhMCXP1RjNf0
+[2025-10-30T02:47:43.983Z] LOG       Gemini description: A compact downtown park named for a Union admiral, featuring...
+[2025-10-30T02:47:43.983Z] LOG    ✅ Merged: World War II Memorial
+[2025-10-30T02:47:43.983Z] LOG       Places placeId: ChIJoU4x3aa3t4kRdnjs4BD8mkU
+[2025-10-30T02:47:43.984Z] LOG       Gemini description: An iconic outdoor memorial honoring the 16 million Americans...
+[2025-10-30T02:47:43.984Z] LOG    ✅ Merged: National Mall
+[2025-10-30T02:47:43.984Z] LOG       Places placeId: ChIJMT3_Wpu3t4kRQScGokyrCDo
+[2025-10-30T02:47:43.985Z] LOG       Gemini description: A sprawling open-air area that is home to numerous museums a...
+[2025-10-30T02:47:43.985Z] LOG    ✅ Merged: Lincoln Memorial
+[2025-10-30T02:47:43.985Z] LOG       Places placeId: ChIJh2KQ4HG3t4kRti5cycnRSRA
+[2025-10-30T02:47:43.986Z] LOG       Gemini description: A Parthenon-inspired tribute to Abraham Lincoln, featuring a...
+[2025-10-30T02:47:43.986Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T02:47:43.986Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T02:47:43.987Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T02:47:43.987Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:47:43.988Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T02:47:43.988Z] LOG    1. Searching "Park | Landmark" in "38.8992486,-77.036255"
+[2025-10-30T02:47:43.988Z] LOG    📍 Using nearbySearch at coordinates (38.8992486, -77.036255)
+[2025-10-30T02:47:43.989Z] LOG 🔍 [Google Places] Nearby search at (38.8992486, -77.036255)
+[2025-10-30T02:47:43.990Z] LOG    2. Searching "Park | Landmark" in "38.9019364,-77.03895659999999"
+[2025-10-30T02:47:43.990Z] LOG    📍 Using nearbySearch at coordinates (38.9019364, -77.03895659999999)
+[2025-10-30T02:47:43.990Z] LOG 🔍 [Google Places] Nearby search at (38.9019364, -77.03895659999999)
+[2025-10-30T02:47:43.991Z] LOG    3. Searching "Monument | Park" in "38.88940729999999,-77.04052999999999"
+[2025-10-30T02:47:43.992Z] LOG    📍 Using nearbySearch at coordinates (38.88940729999999, -77.04052999999999)
+[2025-10-30T02:47:43.992Z] LOG 🔍 [Google Places] Nearby search at (38.88940729999999, -77.04052999999999)
+[2025-10-30T02:47:43.996Z] LOG    4. Searching "Park | Landmark" in "38.8875144,-77.0363934"
+[2025-10-30T02:47:43.998Z] LOG    📍 Using nearbySearch at coordinates (38.8875144, -77.0363934)
+[2025-10-30T02:47:44.000Z] LOG 🔍 [Google Places] Nearby search at (38.8875144, -77.0363934)
+[2025-10-30T02:47:44.001Z] LOG    5. Searching "Monument | Landmark" in "38.8892686,-77.050176"
+[2025-10-30T02:47:44.001Z] LOG    📍 Using nearbySearch at coordinates (38.8892686, -77.050176)
+[2025-10-30T02:47:44.002Z] LOG 🔍 [Google Places] Nearby search at (38.8892686, -77.050176)
+[2025-10-30T02:47:44.506Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:47:44.516Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:47:44.534Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:47:44.585Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:47:44.630Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:47:44.639Z] LOG    ⚠️  Parker Lee Park: No editorial summary available
+[2025-10-30T02:47:44.665Z] LOG    ✅ Mitchell Park: Got description (91 chars)
+[2025-10-30T02:47:44.684Z] LOG    ✅ Washington Monument: Got description (85 chars)
+[2025-10-30T02:47:44.698Z] LOG    ✅ World War II Memorial: Got description (89 chars)
+[2025-10-30T02:47:44.700Z] LOG    ✅ Lincoln Memorial: Got description (100 chars)
+[2025-10-30T02:47:44.724Z] LOG    ✅ Rawlins Park: Got description (98 chars)
+[2025-10-30T02:47:44.745Z] LOG    ✅ National Mall: Got description (97 chars)
+[2025-10-30T02:47:44.747Z] LOG    ✅ Franklin Park: Got description (98 chars)
+[2025-10-30T02:47:44.760Z] LOG    ✅ Rawlins Park: Got description (98 chars)
+[2025-10-30T02:47:44.767Z] LOG    ⚠️  The Park at CityCenter DC: No editorial summary available
+[2025-10-30T02:47:44.769Z] LOG    ✅ Benjamin Banneker Park: Got description (99 chars)
+[2025-10-30T02:47:44.793Z] LOG    ✅ Thomas Jefferson Memorial: Got description (100 chars)
+[2025-10-30T02:47:44.823Z] LOG    ⚠️  The Park at CityCenter DC: No editorial summary available
+[2025-10-30T02:47:44.826Z] LOG    ✅ Rawlins Park: Got description (98 chars)
+[2025-10-30T02:47:44.827Z] LOG    ✅ Anniversary Park: Got description (82 chars)
+[2025-10-30T02:47:44.829Z] LOG    ⚠️  Robert Latham Owen Park: No editorial summary available
+[2025-10-30T02:47:44.830Z] LOG    ⚠️  Westminster Park: No editorial summary available
+[2025-10-30T02:47:44.831Z] LOG    ✅ Lady Bird Johnson Park: Got description (100 chars)
+[2025-10-30T02:47:44.837Z] LOG    ⚠️  The Park at CityCenter DC: No editorial summary available
+[2025-10-30T02:47:44.856Z] LOG    ✅ Franklin Park: Got description (98 chars)
+[2025-10-30T02:47:44.858Z] LOG    ✅ Washington Monument Grounds: Got description (95 chars)
+[2025-10-30T02:47:44.859Z] LOG    ✅ Anniversary Park: Got description (82 chars)
+[2025-10-30T02:47:44.859Z] LOG    ✅ Lafayette Square: Got description (98 chars)
+[2025-10-30T02:47:44.864Z] LOG    ⚠️  Robert Latham Owen Park: No editorial summary available
+[2025-10-30T02:47:44.949Z] LOG    ⚠️  The Park at CityCenter DC: No editorial summary available
+[2025-10-30T02:47:44.952Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 964ms
+[2025-10-30T02:47:44.955Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:47:44.957Z] LOG    ✅ Venue 1 (Lafayette Square): 4 alternatives
+[2025-10-30T02:47:44.958Z] LOG       1. Parker Lee Park (5⭐)
+[2025-10-30T02:47:44.959Z] LOG       2. Rawlins Park (4.4⭐)
+[2025-10-30T02:47:44.959Z] LOG       3. Robert Latham Owen Park (4.5⭐)
+[2025-10-30T02:47:44.960Z] LOG    ✅ Venue 2 (Farragut Square): 4 alternatives
+[2025-10-30T02:47:44.961Z] LOG       1. Mitchell Park (4.6⭐)
+[2025-10-30T02:47:44.961Z] LOG       2. Franklin Park (4.4⭐)
+[2025-10-30T02:47:44.963Z] LOG       3. Westminster Park (4.7⭐)
+[2025-10-30T02:47:44.963Z] LOG    ✅ Venue 3 (World War II Memorial): 4 alternatives
+[2025-10-30T02:47:44.964Z] LOG       1. The Park at CityCenter DC (4.6⭐)
+[2025-10-30T02:47:44.964Z] LOG       2. Lafayette Square (4.6⭐)
+[2025-10-30T02:47:44.965Z] LOG       3. Lady Bird Johnson Park (4.6⭐)
+[2025-10-30T02:47:44.966Z] LOG    ✅ Venue 4 (National Mall): 4 alternatives
+[2025-10-30T02:47:44.966Z] LOG       1. Rawlins Park (4.4⭐)
+[2025-10-30T02:47:44.967Z] LOG       2. Benjamin Banneker Park (4.3⭐)
+[2025-10-30T02:47:44.967Z] LOG       3. Robert Latham Owen Park (4.5⭐)
+[2025-10-30T02:47:44.967Z] LOG    ✅ Venue 5 (Lincoln Memorial): 4 alternatives
+[2025-10-30T02:47:44.968Z] LOG       1. Washington Monument (4.7⭐)
+[2025-10-30T02:47:44.968Z] LOG       2. National Mall (4.8⭐)
+[2025-10-30T02:47:44.968Z] LOG       3. Thomas Jefferson Memorial (4.8⭐)
+[2025-10-30T02:47:44.969Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T02:47:44.970Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T02:47:44.970Z] LOG    Primary venues: 5 stops
+[2025-10-30T02:47:44.970Z] LOG    ❌ Removed "Rawlins Park" - duplicate alternative
+[2025-10-30T02:47:44.971Z] LOG    🔧 Stop "ChIJdeFWrL63t4kRhMCX...": 4 → 3 alternatives
+[2025-10-30T02:47:44.971Z] LOG    ❌ Removed "Lafayette Square" - already in primary route
+[2025-10-30T02:47:44.971Z] LOG    ❌ Removed "Franklin Park" - duplicate alternative
+[2025-10-30T02:47:44.972Z] LOG    🔧 Stop "ChIJoU4x3aa3t4kRdnjs...": 4 → 2 alternatives
+[2025-10-30T02:47:44.972Z] LOG    ❌ Removed "Rawlins Park" - duplicate alternative
+[2025-10-30T02:47:44.972Z] LOG    ❌ Removed "Robert Latham Owen Park" - duplicate alternative
+[2025-10-30T02:47:44.973Z] LOG    ❌ Removed "Anniversary Park" - duplicate alternative
+[2025-10-30T02:47:44.973Z] LOG    🔧 Stop "ChIJMT3_Wpu3t4kRQScG...": 4 → 1 alternatives
+[2025-10-30T02:47:44.974Z] LOG    ❌ Removed "National Mall" - already in primary route
+[2025-10-30T02:47:44.974Z] LOG    ❌ Removed "World War II Memorial" - already in primary route
+[2025-10-30T02:47:44.975Z] LOG    🔧 Stop "ChIJh2KQ4HG3t4kRti5c...": 4 → 2 alternatives
+[2025-10-30T02:47:44.975Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T02:47:44.975Z] LOG    Removed 3 venues already in route
+[2025-10-30T02:47:44.976Z] LOG    Removed 5 duplicate alternatives
+[2025-10-30T02:47:44.976Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T02:47:44.977Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T02:47:44.978Z] LOG    Primary venues: 5
+[2025-10-30T02:47:44.979Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T02:47:44.979Z] LOG    Execution time: 1942ms
+[2025-10-30T02:47:44.979Z] LOG 
+📋 Final alternatives:
+[2025-10-30T02:47:44.980Z] LOG    Lafayette Square: 4 alternatives
+[2025-10-30T02:47:44.980Z] LOG    Farragut Square: 3 alternatives
+[2025-10-30T02:47:44.981Z] LOG    World War II Memorial: 2 alternatives
+[2025-10-30T02:47:44.981Z] LOG    National Mall: 1 alternatives
+[2025-10-30T02:47:44.981Z] LOG    Lincoln Memorial: 2 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

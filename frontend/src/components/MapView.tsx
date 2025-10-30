@@ -8,6 +8,7 @@ import mapboxgl from 'mapbox-gl';
 import type { MapMarker, Venue, Event, Route, Location } from '../types';
 import React from 'react';
 
+
 interface MapViewProps {
   markers: MapMarker[];
   routes?: Route[];

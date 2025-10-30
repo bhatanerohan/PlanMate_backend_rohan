@@ -1,0 +1,116 @@
+User Prompt: plan a night in washington DC
+
+[2025-10-30T02:52:10.233Z] LOG 📍 Using fallback location (no user location): Penn Quarter
+[2025-10-30T02:52:10.234Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T02:52:10.234Z] LOG    1. "SUCCOTASH" in "Penn Quarter"
+[2025-10-30T02:52:10.234Z] LOG    2. "Lincoln Memorial" in "National Mall"
+[2025-10-30T02:52:10.235Z] LOG    3. "Clyde's of Gallery Place" in "Penn Quarter"
+[2025-10-30T02:52:10.235Z] LOG 
+🔍 Executing batch search for 3 venues...
+[2025-10-30T02:52:10.241Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:52:10.241Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-30T02:52:10.242Z] LOG    1. Searching "SUCCOTASH" in "Penn Quarter"
+[2025-10-30T02:52:10.242Z] LOG 🔍 [Google Places] Text search: "SUCCOTASH" in Penn Quarter
+[2025-10-30T02:52:10.246Z] LOG    2. Searching "Lincoln Memorial" in "National Mall"
+[2025-10-30T02:52:10.247Z] LOG 🔍 [Google Places] Text search: "Lincoln Memorial" in National Mall
+[2025-10-30T02:52:10.252Z] LOG    3. Searching "Clyde's of Gallery Place" in "Penn Quarter"
+[2025-10-30T02:52:10.254Z] LOG 🔍 [Google Places] Text search: "Clyde's of Gallery Place" in Penn Quarter
+[2025-10-30T02:52:10.683Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:52:10.724Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:52:10.805Z] LOG    ✅ Lincoln Memorial: Got description (100 chars)
+[2025-10-30T02:52:10.807Z] LOG ✅ Found 1 places
+[2025-10-30T02:52:10.825Z] LOG    ✅ Clyde's of Gallery Place: Got description (94 chars)
+[2025-10-30T02:52:10.830Z] LOG ✅ Found 1 places
+[2025-10-30T02:52:10.838Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:52:10.978Z] LOG    ✅ SUCCOTASH: Got description (81 chars)
+[2025-10-30T02:52:10.980Z] LOG ✅ Found 1 places
+[2025-10-30T02:52:10.980Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 739ms
+[2025-10-30T02:52:10.981Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:52:10.982Z] LOG    Tool execution result: success=true
+[2025-10-30T02:52:10.982Z] LOG    ✅ Tool returned 3 search results
+[2025-10-30T02:52:10.983Z] LOG    ✅ Merged: SUCCOTASH
+[2025-10-30T02:52:10.983Z] LOG       Places placeId: ChIJEfb5qZG3t4kR8jQmH09MKRE
+[2025-10-30T02:52:10.984Z] LOG       Gemini description: This classy eatery, led by Chef Edward Lee, offers an invent...
+[2025-10-30T02:52:10.984Z] LOG    ✅ Merged: Lincoln Memorial
+[2025-10-30T02:52:10.985Z] LOG       Places placeId: ChIJh2KQ4HG3t4kRti5cycnRSRA
+[2025-10-30T02:52:10.985Z] LOG       Gemini description: A majestic, Parthenon-inspired tribute to Abraham Lincoln, f...
+[2025-10-30T02:52:10.985Z] LOG    ✅ Merged: Clyde's of Gallery Place
+[2025-10-30T02:52:10.986Z] LOG       Places placeId: ChIJX2DN_423t4kRXPqouiDTazQ
+[2025-10-30T02:52:10.986Z] LOG       Gemini description: A long-running local chain known for its classic American di...
+[2025-10-30T02:52:10.986Z] LOG ✅ Phase 1 complete: Found 3/3 exact venues
+[2025-10-30T02:52:10.987Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T02:52:10.987Z] LOG    Searching for alternatives near 3 venues...
+[2025-10-30T02:52:10.987Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:52:10.988Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-30T02:52:10.988Z] LOG    1. Searching "restaurant" in "38.8974914,-77.0247625"
+[2025-10-30T02:52:10.988Z] LOG    📍 Using nearbySearch at coordinates (38.8974914, -77.0247625)
+[2025-10-30T02:52:10.989Z] LOG 🔍 [Google Places] Nearby search at (38.8974914, -77.0247625)
+[2025-10-30T02:52:10.991Z] LOG    2. Searching "landmark" in "38.8892686,-77.050176"
+[2025-10-30T02:52:10.993Z] LOG    📍 Using nearbySearch at coordinates (38.8892686, -77.050176)
+[2025-10-30T02:52:10.993Z] LOG 🔍 [Google Places] Nearby search at (38.8892686, -77.050176)
+[2025-10-30T02:52:10.994Z] LOG    3. Searching "restaurant | bar" in "38.8988244,-77.02172929999999"
+[2025-10-30T02:52:10.995Z] LOG    📍 Using nearbySearch at coordinates (38.8988244, -77.02172929999999)
+[2025-10-30T02:52:10.995Z] LOG 🔍 [Google Places] Nearby search at (38.8988244, -77.02172929999999)
+[2025-10-30T02:52:11.656Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:52:11.813Z] LOG    ✅ Zeppelin: Got description (99 chars)
+[2025-10-30T02:52:11.833Z] LOG    ✅ Chaplin's Restaurant: Got description (96 chars)
+[2025-10-30T02:52:11.857Z] LOG    ✅ Stan's DC Restaurant: Got description (96 chars)
+[2025-10-30T02:52:11.868Z] LOG    ✅ The Dubliner Restaurant: Got description (93 chars)
+[2025-10-30T02:52:11.878Z] LOG    ✅ Irish Channel Restaurant & Pub: Got description (96 chars)
+[2025-10-30T02:52:12.010Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:52:12.076Z] LOG    ✅ Stan's DC Restaurant: Got description (96 chars)
+[2025-10-30T02:52:12.105Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:52:12.109Z] LOG    ✅ The Dubliner Restaurant: Got description (93 chars)
+[2025-10-30T02:52:12.129Z] LOG    ⚠️  Ciel - Downtown: No editorial summary available
+[2025-10-30T02:52:12.145Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-30T02:52:12.166Z] LOG    ✅ Lost & Found DC: Got description (95 chars)
+[2025-10-30T02:52:12.172Z] LOG    ✅ Lincoln Memorial: Got description (100 chars)
+[2025-10-30T02:52:12.187Z] LOG    ✅ World War II Memorial: Got description (89 chars)
+[2025-10-30T02:52:12.207Z] LOG    ⚠️  The Independence Arch: No editorial summary available
+[2025-10-30T02:52:12.319Z] LOG    ⚠️  Freedman's Bank Building: No editorial summary available
+[2025-10-30T02:52:12.356Z] LOG    ⚠️  Watergate Steps: No editorial summary available
+[2025-10-30T02:52:12.358Z] LOG ✅ Batch complete: 3/3 searches succeeded, 15 total venues found in 1370ms
+[2025-10-30T02:52:12.358Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:52:12.359Z] LOG    ✅ Venue 1 (SUCCOTASH): 4 alternatives
+[2025-10-30T02:52:12.360Z] LOG       1. Zeppelin (4.4⭐)
+[2025-10-30T02:52:12.360Z] LOG       2. Stan's DC Restaurant (4.6⭐)
+[2025-10-30T02:52:12.361Z] LOG       3. The Dubliner Restaurant (4.4⭐)
+[2025-10-30T02:52:12.361Z] LOG    ✅ Venue 2 (Lincoln Memorial): 4 alternatives
+[2025-10-30T02:52:12.362Z] LOG       1. The Independence Arch (N/A⭐)
+[2025-10-30T02:52:12.362Z] LOG       2. World War II Memorial (4.9⭐)
+[2025-10-30T02:52:12.363Z] LOG       3. Watergate Steps (4.5⭐)
+[2025-10-30T02:52:12.363Z] LOG    ✅ Venue 3 (Clyde's of Gallery Place): 4 alternatives
+[2025-10-30T02:52:12.364Z] LOG       1. Ciel - Downtown (4⭐)
+[2025-10-30T02:52:12.364Z] LOG       2. The Dubliner Restaurant (4.4⭐)
+[2025-10-30T02:52:12.364Z] LOG       3. Yard House (4.3⭐)
+[2025-10-30T02:52:12.364Z] LOG 
+📦 Phase 2 complete: 3 stops with alternatives
+[2025-10-30T02:52:12.365Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T02:52:12.365Z] LOG    Primary venues: 3 stops
+[2025-10-30T02:52:12.365Z] LOG    ❌ Removed "The Dubliner Restaurant" - duplicate alternative
+[2025-10-30T02:52:12.366Z] LOG    🔧 Stop "ChIJX2DN_423t4kRXPqo...": 4 → 3 alternatives
+[2025-10-30T02:52:12.366Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T02:52:12.366Z] LOG    Removed 0 venues already in route
+[2025-10-30T02:52:12.367Z] LOG    Removed 1 duplicate alternatives
+[2025-10-30T02:52:12.367Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-30T02:52:12.368Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T02:52:12.368Z] LOG    Primary venues: 3
+[2025-10-30T02:52:12.369Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-30T02:52:12.369Z] LOG    Execution time: 2138ms
+[2025-10-30T02:52:12.369Z] LOG 
+📋 Final alternatives:
+[2025-10-30T02:52:12.370Z] LOG    SUCCOTASH: 4 alternatives
+[2025-10-30T02:52:12.372Z] LOG    Lincoln Memorial: 4 alternatives
+[2025-10-30T02:52:12.373Z] LOG    Clyde's of Gallery Place: 3 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 3
+Alternatives: 3

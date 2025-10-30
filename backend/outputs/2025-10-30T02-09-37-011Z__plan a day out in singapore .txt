@@ -1,0 +1,164 @@
+User Prompt: plan a day out in singapore 
+
+[2025-10-30T02:09:37.013Z] LOG 📍 Using fallback location (no user location): Marina Bay
+[2025-10-30T02:09:37.014Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T02:09:37.015Z] LOG    1. "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T02:09:37.016Z] LOG    2. "SkyPark Observation Deck" in "Marina Bay"
+[2025-10-30T02:09:37.016Z] LOG    3. "Lau Pa Sat" in "Downtown Core (CBD)"
+[2025-10-30T02:09:37.017Z] LOG    4. "Chinatown Complex" in "Chinatown"
+[2025-10-30T02:09:37.017Z] LOG    5. "Maxwell Food Centre" in "Chinatown"
+[2025-10-30T02:09:37.018Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T02:09:37.019Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:09:37.019Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T02:09:37.019Z] LOG    1. Searching "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T02:09:37.020Z] LOG 🔍 [Google Places] Text search: "Gardens by the Bay" in Marina Bay
+[2025-10-30T02:09:37.026Z] LOG    2. Searching "SkyPark Observation Deck" in "Marina Bay"
+[2025-10-30T02:09:37.027Z] LOG 🔍 [Google Places] Text search: "SkyPark Observation Deck" in Marina Bay
+[2025-10-30T02:09:37.030Z] LOG    3. Searching "Lau Pa Sat" in "Downtown Core (CBD)"
+[2025-10-30T02:09:37.031Z] LOG 🔍 [Google Places] Text search: "Lau Pa Sat" in Downtown Core (CBD)
+[2025-10-30T02:09:37.032Z] LOG    4. Searching "Chinatown Complex" in "Chinatown"
+[2025-10-30T02:09:37.033Z] LOG 🔍 [Google Places] Text search: "Chinatown Complex" in Chinatown
+[2025-10-30T02:09:37.034Z] LOG    5. Searching "Maxwell Food Centre" in "Chinatown"
+[2025-10-30T02:09:37.035Z] LOG 🔍 [Google Places] Text search: "Maxwell Food Centre" in Chinatown
+[2025-10-30T02:09:37.568Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:09:37.602Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:09:37.638Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:09:37.687Z] LOG    ✅ Maxwell Food Centre: Got description (96 chars)
+[2025-10-30T02:09:37.689Z] LOG ✅ Found 1 places
+[2025-10-30T02:09:37.690Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:09:37.719Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:09:37.729Z] LOG    ✅ Chinatown Complex: Got description (98 chars)
+[2025-10-30T02:09:37.731Z] LOG ✅ Found 1 places
+[2025-10-30T02:09:37.760Z] LOG    ✅ Lau Pa Sat: Got description (97 chars)
+[2025-10-30T02:09:37.762Z] LOG ✅ Found 1 places
+[2025-10-30T02:09:37.816Z] LOG    ✅ Gardens by the Bay: Got description (97 chars)
+[2025-10-30T02:09:37.817Z] LOG ✅ Found 1 places
+[2025-10-30T02:09:37.847Z] LOG    ✅ SkyPark Observation Deck: Got description (97 chars)
+[2025-10-30T02:09:37.848Z] LOG ✅ Found 1 places
+[2025-10-30T02:09:37.849Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 830ms
+[2025-10-30T02:09:37.849Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:09:37.851Z] LOG    Tool execution result: success=true
+[2025-10-30T02:09:37.851Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T02:09:37.851Z] LOG    ✅ Merged: Gardens by the Bay
+[2025-10-30T02:09:37.852Z] LOG       Places placeId: ChIJMxZ-kwQZ2jERdsqftXeWCWI
+[2025-10-30T02:09:37.852Z] LOG       Gemini description: Start your day at this iconic futuristic park, home to the s...
+[2025-10-30T02:09:37.853Z] LOG    ✅ Merged: SkyPark Observation Deck
+[2025-10-30T02:09:37.853Z] LOG       Places placeId: ChIJOeEf9S2vewIRM0B9a06CKwg
+[2025-10-30T02:09:37.854Z] LOG       Gemini description: Ascend to the 56th floor of the Marina Bay Sands Hotel for u...
+[2025-10-30T02:09:37.854Z] LOG    ✅ Merged: Lau Pa Sat
+[2025-10-30T02:09:37.855Z] LOG       Places placeId: ChIJ5Y6l4Q0Z2jERYL0KDIjT6v0
+[2025-10-30T02:09:37.855Z] LOG       Gemini description: Experience a historic, beautifully restored Victorian-era ha...
+[2025-10-30T02:09:37.856Z] LOG    ✅ Merged: Chinatown Complex
+[2025-10-30T02:09:37.857Z] LOG       Places placeId: ChIJAenlH3MZ2jERqjoWXlxEH6w
+[2025-10-30T02:09:37.858Z] LOG       Gemini description: Immerse yourself in the vibrant culture of Singapore's China...
+[2025-10-30T02:09:37.859Z] LOG    ✅ Merged: Maxwell Food Centre
+[2025-10-30T02:09:37.860Z] LOG       Places placeId: ChIJseQsTQ0Z2jERqpBTWF0Zf84
+[2025-10-30T02:09:37.861Z] LOG       Gemini description: Conclude your day with dinner at this renowned Chinatown haw...
+[2025-10-30T02:09:37.861Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T02:09:37.862Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T02:09:37.862Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T02:09:37.863Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:09:37.863Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T02:09:37.864Z] LOG    1. Searching "park" in "1.2815683,103.8636132"
+[2025-10-30T02:09:37.865Z] LOG    📍 Using nearbySearch at coordinates (1.2815683, 103.8636132)
+[2025-10-30T02:09:37.865Z] LOG 🔍 [Google Places] Nearby search at (1.2815683, 103.8636132)
+[2025-10-30T02:09:37.869Z] LOG    2. Searching "landmark" in "1.2852044,103.8610313"
+[2025-10-30T02:09:37.871Z] LOG    📍 Using nearbySearch at coordinates (1.2852044, 103.8610313)
+[2025-10-30T02:09:37.872Z] LOG 🔍 [Google Places] Nearby search at (1.2852044, 103.8610313)
+[2025-10-30T02:09:37.873Z] LOG    3. Searching "restaurant" in "1.2805121,103.8503809"
+[2025-10-30T02:09:37.874Z] LOG    📍 Using nearbySearch at coordinates (1.2805121, 103.8503809)
+[2025-10-30T02:09:37.875Z] LOG 🔍 [Google Places] Nearby search at (1.2805121, 103.8503809)
+[2025-10-30T02:09:37.877Z] LOG    4. Searching "market" in "1.2819187,103.8433447"
+[2025-10-30T02:09:37.877Z] LOG    📍 Using nearbySearch at coordinates (1.2819187, 103.8433447)
+[2025-10-30T02:09:37.878Z] LOG 🔍 [Google Places] Nearby search at (1.2819187, 103.8433447)
+[2025-10-30T02:09:37.880Z] LOG    5. Searching "restaurant" in "1.2803361,103.844767"
+[2025-10-30T02:09:37.881Z] LOG    📍 Using nearbySearch at coordinates (1.2803361, 103.844767)
+[2025-10-30T02:09:37.881Z] LOG 🔍 [Google Places] Nearby search at (1.2803361, 103.844767)
+[2025-10-30T02:09:38.359Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:09:38.369Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:09:38.448Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:09:38.471Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:09:38.519Z] LOG    ✅ MERCI MARCEL CLUB STREET: Got description (98 chars)
+[2025-10-30T02:09:38.541Z] LOG    ⚠️  Little Farms Market, Guoco Tower: No editorial summary available
+[2025-10-30T02:09:38.560Z] LOG    ⚠️  Le Jardin Cafe | Fort Canning: No editorial summary available
+[2025-10-30T02:09:38.561Z] LOG    ⚠️  City Fruits 2 , #01-43 Fruit Stall: No editorial summary available
+[2025-10-30T02:09:38.574Z] LOG    ⚠️  Sawasdee Thai Restaurant: No editorial summary available
+[2025-10-30T02:09:38.581Z] LOG    ⚠️  Ichiban Fruit: No editorial summary available
+[2025-10-30T02:09:38.585Z] LOG    ⚠️  Little Farms Market, One Raffles Place: No editorial summary available
+[2025-10-30T02:09:38.587Z] LOG    ⚠️  Nalan Restaurant City Hall: No editorial summary available
+[2025-10-30T02:09:38.607Z] LOG    ✅ Merlion Park: Got description (92 chars)
+[2025-10-30T02:09:38.613Z] LOG    ✅ Old Hill Street Police Station: Got description (99 chars)
+[2025-10-30T02:09:38.629Z] LOG    ⚠️  Youth Olympic Park: No editorial summary available
+[2025-10-30T02:09:38.651Z] LOG    ⚠️  SF Farm Mart - Fullerton Waterboat House: No editorial summary available
+[2025-10-30T02:09:38.662Z] LOG    ⚠️  Raffles Place Park: No editorial summary available
+[2025-10-30T02:09:38.665Z] LOG    ⚠️  Element Restaurant Amara Singapore: No editorial summary available
+[2025-10-30T02:09:38.668Z] LOG    ⚠️  The Fullerton Waterboat House: No editorial summary available
+[2025-10-30T02:09:38.673Z] LOG    ⚠️  Raffles Hotel: No editorial summary available
+[2025-10-30T02:09:38.675Z] LOG    ⚠️  Fort Gate: No editorial summary available
+[2025-10-30T02:09:38.688Z] LOG    ⚠️  The Clifford Pier: No editorial summary available
+[2025-10-30T02:09:38.720Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:09:38.732Z] LOG    ✅ Esplanade Park: Got description (94 chars)
+[2025-10-30T02:09:38.752Z] LOG    ✅ Merlion: Got description (97 chars)
+[2025-10-30T02:09:38.795Z] LOG    ⚠️  Nalan Restaurant City Hall: No editorial summary available
+[2025-10-30T02:09:38.797Z] LOG    ⚠️  Sawasdee Thai Restaurant: No editorial summary available
+[2025-10-30T02:09:38.801Z] LOG    ✅ MERCI MARCEL CLUB STREET: Got description (98 chars)
+[2025-10-30T02:09:38.820Z] LOG    ⚠️  Atrium Restaurant: No editorial summary available
+[2025-10-30T02:09:38.849Z] LOG    ⚠️  Zay Yar Restaurant: No editorial summary available
+[2025-10-30T02:09:38.850Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 987ms
+[2025-10-30T02:09:38.851Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:09:38.851Z] LOG    ✅ Venue 1 (Gardens by the Bay): 4 alternatives
+[2025-10-30T02:09:38.852Z] LOG       1. Merlion Park (4.6⭐)
+[2025-10-30T02:09:38.852Z] LOG       2. Youth Olympic Park (4.5⭐)
+[2025-10-30T02:09:38.853Z] LOG       3. Esplanade Park (4.6⭐)
+[2025-10-30T02:09:38.853Z] LOG    ✅ Venue 2 (SkyPark Observation Deck): 4 alternatives
+[2025-10-30T02:09:38.853Z] LOG       1. Old Hill Street Police Station (4.6⭐)
+[2025-10-30T02:09:38.854Z] LOG       2. Raffles Hotel (4.7⭐)
+[2025-10-30T02:09:38.854Z] LOG       3. Fort Gate (4.4⭐)
+[2025-10-30T02:09:38.854Z] LOG    ✅ Venue 3 (Lau Pa Sat): 4 alternatives
+[2025-10-30T02:09:38.855Z] LOG       1. MERCI MARCEL CLUB STREET (4.7⭐)
+[2025-10-30T02:09:38.855Z] LOG       2. Le Jardin Cafe | Fort Canning (4.2⭐)
+[2025-10-30T02:09:38.855Z] LOG       3. Sawasdee Thai Restaurant (4.7⭐)
+[2025-10-30T02:09:38.856Z] LOG    ✅ Venue 4 (Chinatown Complex): 4 alternatives
+[2025-10-30T02:09:38.856Z] LOG       1. Little Farms Market, Guoco Tower (4.8⭐)
+[2025-10-30T02:09:38.856Z] LOG       2. Little Farms Market, One Raffles Place (4.6⭐)
+[2025-10-30T02:09:38.857Z] LOG       3. City Fruits 2 , #01-43 Fruit Stall (5⭐)
+[2025-10-30T02:09:38.857Z] LOG    ✅ Venue 5 (Maxwell Food Centre): 4 alternatives
+[2025-10-30T02:09:38.857Z] LOG       1. MERCI MARCEL CLUB STREET (4.7⭐)
+[2025-10-30T02:09:38.858Z] LOG       2. Sawasdee Thai Restaurant (4.7⭐)
+[2025-10-30T02:09:38.858Z] LOG       3. Nalan Restaurant City Hall (4.4⭐)
+[2025-10-30T02:09:38.858Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T02:09:38.859Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T02:09:38.859Z] LOG    Primary venues: 5 stops
+[2025-10-30T02:09:38.860Z] LOG    ❌ Removed "MERCI MARCEL CLUB STREET" - duplicate alternative
+[2025-10-30T02:09:38.860Z] LOG    ❌ Removed "Sawasdee Thai Restaurant" - duplicate alternative
+[2025-10-30T02:09:38.860Z] LOG    ❌ Removed "Nalan Restaurant City Hall" - duplicate alternative
+[2025-10-30T02:09:38.861Z] LOG    🔧 Stop "ChIJseQsTQ0Z2jERqpBT...": 4 → 1 alternatives
+[2025-10-30T02:09:38.861Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T02:09:38.862Z] LOG    Removed 0 venues already in route
+[2025-10-30T02:09:38.863Z] LOG    Removed 3 duplicate alternatives
+[2025-10-30T02:09:38.863Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T02:09:38.864Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T02:09:38.864Z] LOG    Primary venues: 5
+[2025-10-30T02:09:38.865Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T02:09:38.865Z] LOG    Execution time: 1853ms
+[2025-10-30T02:09:38.866Z] LOG 
+📋 Final alternatives:
+[2025-10-30T02:09:38.866Z] LOG    Gardens by the Bay: 4 alternatives
+[2025-10-30T02:09:38.866Z] LOG    SkyPark Observation Deck: 4 alternatives
+[2025-10-30T02:09:38.867Z] LOG    Lau Pa Sat: 4 alternatives
+[2025-10-30T02:09:38.867Z] LOG    Chinatown Complex: 4 alternatives
+[2025-10-30T02:09:38.868Z] LOG    Maxwell Food Centre: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

@@ -185,13 +185,18 @@ const MessageBubble = ({ message, onMarkerSelect, currentItinerary }: MessageBub
                   venue={venue} 
                   nextVenue={venues[idx + 1]}
                   onShowOnMap={() => {
-                    if (currentItinerary && currentItinerary.venues && currentItinerary.venues.length > 0) {
+                    const venuesList = currentItinerary?.venues || [];
+                    const hasItinerary = venuesList.length > 0;
+                    const isRouteMode = currentItinerary?.mode === 'route';
+
+                    // Only map to primary-<n> markers when we have a route-mode itinerary
+                    if (hasItinerary && isRouteMode) {
                       if (venue.placeId === 'user-location') {
                         onMarkerSelect('user-location');
                         return;
                       }
 
-                      const idxInItin = currentItinerary.venues.findIndex((v: Venue) => v.placeId === venue.placeId);
+                      const idxInItin = venuesList.findIndex((v: Venue) => v.placeId === venue.placeId);
                       if (idxInItin !== -1) {
                         onMarkerSelect(`primary-${idxInItin}`);
                         return;
@@ -199,6 +204,7 @@ const MessageBubble = ({ message, onMarkerSelect, currentItinerary }: MessageBub
                       // Fallback to venue-<idx> if not found in itinerary
                       onMarkerSelect(`venue-${idx}`);
                     } else {
+                      // In discovery mode or when there's no route-style itinerary, use venue-<idx>
                       onMarkerSelect(`venue-${idx}`);
                     }
                   }}

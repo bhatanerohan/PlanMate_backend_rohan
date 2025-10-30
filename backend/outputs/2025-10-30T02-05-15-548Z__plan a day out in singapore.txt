@@ -1,0 +1,155 @@
+User Prompt: plan a day out in singapore
+
+[2025-10-30T02:05:15.549Z] LOG 📍 Using fallback location (no user location): Marina Bay
+[2025-10-30T02:05:15.550Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T02:05:15.551Z] LOG    1. "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T02:05:15.551Z] LOG    2. "Marina Bay Sands Singapore" in "Marina Bay"
+[2025-10-30T02:05:15.552Z] LOG    3. "Chinatown" in "Central Area"
+[2025-10-30T02:05:15.553Z] LOG    4. "CQ @ Clarke Quay" in "Singapore River"
+[2025-10-30T02:05:15.554Z] LOG    5. "Jewel Changi Airport" in "Changi Airport"
+[2025-10-30T02:05:15.554Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T02:05:15.556Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:05:15.556Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T02:05:15.557Z] LOG    1. Searching "Gardens by the Bay" in "Marina Bay"
+[2025-10-30T02:05:15.558Z] LOG 🔍 [Google Places] Text search: "Gardens by the Bay" in Marina Bay
+[2025-10-30T02:05:15.566Z] LOG    2. Searching "Marina Bay Sands Singapore" in "Marina Bay"
+[2025-10-30T02:05:15.567Z] LOG 🔍 [Google Places] Text search: "Marina Bay Sands Singapore" in Marina Bay
+[2025-10-30T02:05:15.569Z] LOG    3. Searching "Chinatown" in "Central Area"
+[2025-10-30T02:05:15.570Z] LOG 🔍 [Google Places] Text search: "Chinatown" in Central Area
+[2025-10-30T02:05:15.571Z] LOG    4. Searching "CQ @ Clarke Quay" in "Singapore River"
+[2025-10-30T02:05:15.571Z] LOG 🔍 [Google Places] Text search: "CQ @ Clarke Quay" in Singapore River
+[2025-10-30T02:05:15.574Z] LOG    5. Searching "Jewel Changi Airport" in "Changi Airport"
+[2025-10-30T02:05:15.575Z] LOG 🔍 [Google Places] Text search: "Jewel Changi Airport" in Changi Airport
+[2025-10-30T02:05:16.221Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:05:16.248Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:05:16.322Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:05:16.343Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:05:16.347Z] LOG    ✅ Gardens by the Bay: Got description (97 chars)
+[2025-10-30T02:05:16.349Z] LOG ✅ Found 1 places
+[2025-10-30T02:05:16.374Z] LOG    ✅ CQ @ Clarke Quay: Got description (98 chars)
+[2025-10-30T02:05:16.375Z] LOG ✅ Found 1 places
+[2025-10-30T02:05:16.460Z] LOG    ✅ Jewel Changi Airport: Got description (100 chars)
+[2025-10-30T02:05:16.461Z] LOG ✅ Found 1 places
+[2025-10-30T02:05:16.464Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T02:05:16.527Z] LOG    ⚠️  Chinatown Main Street Program: No editorial summary available
+[2025-10-30T02:05:16.528Z] LOG ✅ Found 1 places
+[2025-10-30T02:05:16.535Z] LOG    ✅ Marina Bay Sands Singapore: Got description (88 chars)
+[2025-10-30T02:05:16.536Z] LOG ✅ Found 1 places
+[2025-10-30T02:05:16.536Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 980ms
+[2025-10-30T02:05:16.537Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:05:16.537Z] LOG    Tool execution result: success=true
+[2025-10-30T02:05:16.538Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T02:05:16.538Z] LOG    ✅ Merged: Gardens by the Bay
+[2025-10-30T02:05:16.539Z] LOG       Places placeId: ChIJMxZ-kwQZ2jERdsqftXeWCWI
+[2025-10-30T02:05:16.539Z] LOG       Gemini description: Explore a futuristic park featuring the stunning Cloud Fores...
+[2025-10-30T02:05:16.539Z] LOG    ✅ Merged: Marina Bay Sands Singapore
+[2025-10-30T02:05:16.539Z] LOG       Places placeId: ChIJA5LATO4Z2jER111V-v6abAI
+[2025-10-30T02:05:16.540Z] LOG       Gemini description: An architectural icon housing a luxury hotel, a vast shoppin...
+[2025-10-30T02:05:16.540Z] LOG    ✅ Merged: Chinatown
+[2025-10-30T02:05:16.540Z] LOG       Places placeId: ChIJG-NU7nd644kRxJRvOFxKjgw
+[2025-10-30T02:05:16.541Z] LOG       Gemini description: Immerse yourself in Singapore's rich heritage in this vibran...
+[2025-10-30T02:05:16.541Z] LOG    ✅ Merged: CQ @ Clarke Quay
+[2025-10-30T02:05:16.542Z] LOG       Places placeId: ChIJnXwAOKAZ2jERAs-MHs1aDgI
+[2025-10-30T02:05:16.542Z] LOG       Gemini description: A lively riverside commercial district known for its vibrant...
+[2025-10-30T02:05:16.542Z] LOG    ✅ Merged: Jewel Changi Airport
+[2025-10-30T02:05:16.543Z] LOG       Places placeId: ChIJw3l-FL4X2jERw2pScvHQCbg
+[2025-10-30T02:05:16.543Z] LOG       Gemini description: More than just an airport terminal, Jewel is a lush 10-floor...
+[2025-10-30T02:05:16.543Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T02:05:16.544Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T02:05:16.544Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T02:05:16.545Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T02:05:16.545Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T02:05:16.545Z] LOG    1. Searching "park" in "1.2815683,103.8636132"
+[2025-10-30T02:05:16.546Z] LOG    📍 Using nearbySearch at coordinates (1.2815683, 103.8636132)
+[2025-10-30T02:05:16.546Z] LOG 🔍 [Google Places] Nearby search at (1.2815683, 103.8636132)
+[2025-10-30T02:05:16.548Z] LOG    2. Searching "landmark" in "1.2837575,103.8591065"
+[2025-10-30T02:05:16.550Z] LOG    📍 Using nearbySearch at coordinates (1.2837575, 103.8591065)
+[2025-10-30T02:05:16.551Z] LOG 🔍 [Google Places] Nearby search at (1.2837575, 103.8591065)
+[2025-10-30T02:05:16.553Z] LOG    3. Searching "restaurant" in "42.3520321,-71.0628131"
+[2025-10-30T02:05:16.554Z] LOG    📍 Using nearbySearch at coordinates (42.3520321, -71.0628131)
+[2025-10-30T02:05:16.554Z] LOG 🔍 [Google Places] Nearby search at (42.3520321, -71.0628131)
+[2025-10-30T02:05:16.555Z] LOG    4. Searching "entertainment district" in "1.2906024,103.8464742"
+[2025-10-30T02:05:16.555Z] LOG    📍 Using nearbySearch at coordinates (1.2906024, 103.8464742)
+[2025-10-30T02:05:16.556Z] LOG 🔍 [Google Places] Nearby search at (1.2906024, 103.8464742)
+[2025-10-30T02:05:16.558Z] LOG    5. Searching "shopping mall" in "1.3602094,103.9897598"
+[2025-10-30T02:05:16.559Z] LOG    📍 Using nearbySearch at coordinates (1.3602094, 103.9897598)
+[2025-10-30T02:05:16.560Z] LOG 🔍 [Google Places] Nearby search at (1.3602094, 103.9897598)
+[2025-10-30T02:05:17.092Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:05:17.135Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:05:17.166Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:05:17.229Z] LOG    ⚠️  Hathaway at Capital Tower: No editorial summary available
+[2025-10-30T02:05:17.230Z] LOG    ⚠️  Fort Canning Command Centre: No editorial summary available
+[2025-10-30T02:05:17.258Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T02:05:17.270Z] LOG    ✅ Merlion Park: Got description (92 chars)
+[2025-10-30T02:05:17.293Z] LOG    ✅ Old Hill Street Police Station: Got description (99 chars)
+[2025-10-30T02:05:17.298Z] LOG    ⚠️  Fort Canning Flagstaff: No editorial summary available
+[2025-10-30T02:05:17.302Z] LOG    ⚠️  Dorothy's Bar: No editorial summary available
+[2025-10-30T02:05:17.307Z] LOG    ⚠️  Landmark Print Pte Ltd: No editorial summary available
+[2025-10-30T02:05:17.312Z] LOG    ⚠️  Former Opium Den: No editorial summary available
+[2025-10-30T02:05:17.317Z] LOG    ⚠️  District 1 KTV: No editorial summary available
+[2025-10-30T02:05:17.318Z] LOG    ⚠️  Mount Emily Park: No editorial summary available
+[2025-10-30T02:05:17.325Z] LOG    ⚠️  Youth Olympic Park: No editorial summary available
+[2025-10-30T02:05:17.337Z] LOG    ✅ Esplanade Park: Got description (94 chars)
+[2025-10-30T02:05:17.354Z] LOG    ⚠️  Raffles Place Park: No editorial summary available
+[2025-10-30T02:05:17.368Z] LOG    ⚠️  LeVeL33: No editorial summary available
+[2025-10-30T02:05:17.384Z] LOG    ⚠️  Estella Restaurant: No editorial summary available
+[2025-10-30T02:05:17.399Z] LOG 📝 Fetching descriptions for 2 places...
+[2025-10-30T02:05:17.406Z] LOG    ✅ Boston Sail Loft: Got description (92 chars)
+[2025-10-30T02:05:17.407Z] LOG    ✅ The Lawn @ Marina Bay: Got description (99 chars)
+[2025-10-30T02:05:17.421Z] LOG    ⚠️  Joia Restaurant & Lounge: No editorial summary available
+[2025-10-30T02:05:17.472Z] LOG    ✅ Jewel Changi Airport: Got description (100 chars)
+[2025-10-30T02:05:17.477Z] LOG    ✅ Bacco Ristorante & Bar: Got description (94 chars)
+[2025-10-30T02:05:17.518Z] LOG    ⚠️  El Jefe's Taqueria - Boston Common: No editorial summary available
+[2025-10-30T02:05:17.541Z] LOG    ✅ Singapore Changi Airport: Got description (85 chars)
+[2025-10-30T02:05:17.545Z] LOG ✅ Batch complete: 5/5 searches succeeded, 22 total venues found in 1000ms
+[2025-10-30T02:05:17.546Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T02:05:17.547Z] LOG    ✅ Venue 1 (Gardens by the Bay): 4 alternatives
+[2025-10-30T02:05:17.548Z] LOG       1. Merlion Park (4.6⭐)
+[2025-10-30T02:05:17.549Z] LOG       2. Youth Olympic Park (4.5⭐)
+[2025-10-30T02:05:17.549Z] LOG       3. Raffles Place Park (4.5⭐)
+[2025-10-30T02:05:17.550Z] LOG    ✅ Venue 2 (Marina Bay Sands Singapore): 4 alternatives
+[2025-10-30T02:05:17.550Z] LOG       1. Fort Canning Command Centre (N/A⭐)
+[2025-10-30T02:05:17.550Z] LOG       2. Former Opium Den (5⭐)
+[2025-10-30T02:05:17.551Z] LOG       3. Landmark Print Pte Ltd (4.9⭐)
+[2025-10-30T02:05:17.551Z] LOG    ✅ Venue 3 (Chinatown Main Street Program): 4 alternatives
+[2025-10-30T02:05:17.551Z] LOG       1. Estella Restaurant (4.3⭐)
+[2025-10-30T02:05:17.551Z] LOG       2. Boston Sail Loft (4.6⭐)
+[2025-10-30T02:05:17.552Z] LOG       3. Joia Restaurant & Lounge (4.3⭐)
+[2025-10-30T02:05:17.552Z] LOG    ✅ Venue 4 (CQ @ Clarke Quay): 4 alternatives
+[2025-10-30T02:05:17.552Z] LOG       1. Hathaway at Capital Tower (4.4⭐)
+[2025-10-30T02:05:17.552Z] LOG       2. District 1 KTV (4.1⭐)
+[2025-10-30T02:05:17.553Z] LOG       3. Dorothy's Bar (4.5⭐)
+[2025-10-30T02:05:17.553Z] LOG    ✅ Venue 5 (Jewel Changi Airport): 1 alternatives
+[2025-10-30T02:05:17.553Z] LOG       1. Singapore Changi Airport (4.7⭐)
+[2025-10-30T02:05:17.553Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T02:05:17.554Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T02:05:17.554Z] LOG    Primary venues: 5 stops
+[2025-10-30T02:05:17.555Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T02:05:17.555Z] LOG    Removed 0 venues already in route
+[2025-10-30T02:05:17.555Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T02:05:17.556Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T02:05:17.556Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T02:05:17.556Z] LOG    Primary venues: 5
+[2025-10-30T02:05:17.558Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T02:05:17.558Z] LOG    Execution time: 2008ms
+[2025-10-30T02:05:17.558Z] LOG 
+📋 Final alternatives:
+[2025-10-30T02:05:17.559Z] LOG    Gardens by the Bay: 4 alternatives
+[2025-10-30T02:05:17.559Z] LOG    Marina Bay Sands Singapore: 4 alternatives
+[2025-10-30T02:05:17.560Z] LOG    Chinatown Main Street Program: 4 alternatives
+[2025-10-30T02:05:17.560Z] LOG    CQ @ Clarke Quay: 4 alternatives
+[2025-10-30T02:05:17.561Z] LOG    Jewel Changi Airport: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5
