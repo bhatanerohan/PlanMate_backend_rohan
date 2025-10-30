@@ -1,0 +1,82 @@
+User Prompt: find restaurant in washington DC
+
+[2025-10-30T20:57:28.204Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-30T20:57:28.205Z] LOG 📝 User prompt: "find restaurant in washington DC"
+[2025-10-30T20:57:28.206Z] LOG 📍 User location: Boston, Massachusetts, United States (42.35888, -71.056804)
+[2025-10-30T20:57:28.206Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-30T20:57:28.208Z] LOG 🗺️ Location context configured: (42.35888, -71.056804)
+[2025-10-30T20:57:40.212Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Thu, 30 Oct 2025 20:57:39 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=11854","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"```json\n{\n  \"plan\": {\n    \"type\": \"Washington D.C. Culinary Journey\",\n    \"total_stops\": 5,\n    \"estimated_duration\": \"Full day (8-10 hours)\",\n    \"travel_mode\": \"transit/driving\",\n    \"theme\": \"A diverse culinary exploration of Washington D.C., featuring iconic American, farm-to-table, French, Southern comfort, and Italian dining experiences.\",\n    \"scale\": \"city-wide\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"Old Ebbitt Grill\",\n      \"description\": \"An iconic and historic American tavern, Old Ebbitt Grill is known for its classic American meals, including famous oyster specials, served in a Victorian-style setting. It's a Washington D.C. institution, popular with locals and visitors alike. [0]\",\n      \"category\": \"American Restaurant\",\n      \"reasoning\": \"A must-visit for its historical significance and classic American cuisine, providing a quintessential D.C. dining experience. [0]\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Visitors love the vibrant atmosphere, delicious food, and excellent service. [0]\",\n      \"general_location\": \"Downtown\"\n    },\n    {\n      \"name\": \"Founding Farmers DC\",\n      \"description\": \"This cooperative-grower-owned spot serves farm-to-table American fare in a rustic setting. It's renowned for using locally grown ingredients, often from their own farm, to create fresh and flavorful dishes. [1]\",\n      \"category\": \"American Restaurant\",\n      \"reasoning\": \"Offers a unique farm-to-table concept with a focus on fresh, local ingredients, providing a modern American dining experience. [1]\",\n      \"rating\": 4.4,\n      \"reviewsSummary\": \"Guests appreciate the fresh ingredients, diverse menu, and commitment to sustainable practices. [1]\",\n      \"general_location\": \"Near Washington Circle\"\n    },\n    {\n      \"name\": \"La Grande Boucherie DC\",\n      \"description\": \"Experience a taste of France in D.C. at this classic brasserie, offering familiar French fare like steaks, escargot, and profiteroles amidst stunning Art Nouveau-inspired decor. [2]\",\n      \"category\": \"Restaurant\",\n      \"reasoning\": \"Provides an elegant French dining experience, offering a different culinary flavor for a diverse food tour. [2]\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Diners rave about the authentic French cuisine, sophisticated ambiance, and attentive service. [2]\",\n      \"general_location\": \"Downtown\"\n    },\n    {\n      \"name\": \"Kitchen + Kocktails By Kevin Kelley - DC\",\n      \"description\": \"A lively restaurant and bar specializing in Southern comfort food, brunch, and creative cocktails. It features live music, adding to its vibrant and upscale atmosphere. [3]\",\n      \"category\": \"Restaurant\",\n      \"reasoning\": \"Offers hearty Southern comfort food and a lively atmosphere with live music, perfect for a dynamic dining experience. [3]\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Patrons enjoy the delicious Southern dishes, potent cocktails, and energetic environment. [3]\",\n      \"general_location\": \"Downtown\"\n    },\n    {\n      \"name\": \"Filomena Ristorante\",\n      \"description\": \"Known for its made-in-house pasta and hearty Italian classics, Filomena Ristorante offers an upscale dining experience with opulent, over-the-top decor. It's a beloved spot for traditional Italian cuisine. [7]\",\n      \"category\": \"Italian Restaurant\",\n      \"reasoning\": \"A highly-rated destination for authentic and indulgent Italian food, offering a rich culinary experience. [7]\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Reviewers frequently praise the fresh pasta, generous portions, and festive holiday decorations. [7]\",\n      \"general_location\": \"Georgetown\"\n    }\n  ]\n}\n```"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{"groundingChunks":[{"maps":{"uri":"https://maps.google.com/?cid=5007258029174684277","title":"Old Ebbitt Grill","placeId":"places/ChIJgRwXf723t4kRdfqt36VafUU"}},{"maps":{"uri":"https://maps.google.com/?cid=16277699927814263029","title":"Founding Farmers DC","placeId":"places/ChIJk58zcbq3t4kR9VDFZdcB5uE"}},{"maps":{"uri":"https://maps.google.com/?cid=2777437723517360614","title":"La Grande Boucherie DC","placeId":"places/ChIJTzlOd6C3t4kR5pkF4ORwiyY"}},{"maps":{"uri":"https://maps.google.com/?cid=17742481772744165034","title":"Kitchen + Kocktails By Kevin Kelley - DC","placeId":"places/ChIJmzvklCS3t4kRqkZCKiv1OfY"}},{"maps":{"uri":"https://maps.google.com/?cid=1236603475398636786","title":"SUCCOTASH","placeId":"places/ChIJEfb5qZG3t4kR8jQmH09MKRE"}},{"maps":{"uri":"https://maps.google.com/?cid=15323473404236892516","title":"Le Diplomate","placeId":"places/ChIJgYIki-m3t4kRZImvuN_pp9Q"}},{"maps":{"uri":"https://maps.google.com/?cid=15530433296305103934","title":"The Hamilton","placeId":"places/ChIJ0zjVx5e3t4kRPiQqmswuh9c"}},{"maps":{"uri":"https://maps.google.com/?cid=6934727149518688246","title":"Filomena Ristorante","placeId":"places/ChIJPTqF_Uu2t4kR9o9RyZkZPWA"}},{"maps":{"uri":"https://maps.google.com/?cid=14810914515503999118","title":"Stan's DC Restaurant","placeId":"places/ChIJNygYeZW3t4kRjuhKv0fwis0"}},{"maps":{"uri":"https://maps.google.com/?cid=15292735469199279016","title":"The Capital Burger","placeId":"places/ChIJPyDqYI23t4kRqMOjheK1OtQ"}},{"maps":{"uri":"https://maps.google.com/?cid=2234256080708586153","title":"The Capital Grille","placeId":"places/ChIJJT16aoW3t4kRqUrkWxGsAR8"}},{"maps":{"uri":"https://maps.google.com/?cid=3518818176400928632","title":"OLIO E PIÙ","placeId":"places/ChIJMSwrjea3t4kReK-Q6Xxa1TA"}},{"maps":{"uri":"https://maps.google.com/?cid=2240815451146033071","title":"Joe's Seafood, Prime Steak & Stone Crab","placeId":"places/ChIJfYZV8r23t4kRrxfEzMf5GB8"}},{"maps":{"uri":"https://maps.google.com/?cid=12842635963677623564","title":"Zaytinya","placeId":"places/ChIJ3_mSkpG3t4kRDEWpol01OrI"}},{"maps":{"uri":"https://maps.google.com/?cid=2914114449777691643","title":"VUE Rooftop","placeId":"places/ChIJj2LjX723t4kR-wvVBacDcSg"}},{"maps":{"uri":"https://maps.google.com/?cid=5000542116892088979","title":"Unconventional Diner","placeId":"places/ChIJz3M3Se23t4kRk5q7sY9-ZUU"}},{"maps":{"uri":"https://maps.google.com/?cid=9188552525446838348","title":"The Pembroke","placeId":"places/ChIJl-57Rsa3t4kRTPhGv9ZLhH8"}},{"maps":{"uri":"https://maps.google.com/?cid=16314160777994860127","title":"Fiola Mare","placeId":"places/ChIJZUQ8NEy2t4kRX3b-nMqKZ-I"}},{"maps":{"uri":"https://maps.google.com/?cid=569071623284930319","title":"Ocean Prime","placeId":"places/ChIJ5YEiT5a3t4kRDzenVaC_5Qc"}},{"maps":{"uri":"https://maps.google.com/?cid=13929892765237465283","title":"Grazie Nonna","placeId":"places/ChIJHzGItKK3t4kRw1BDj6rrUME"}}],"webSearchQueries":["restaurants in Washington DC"]},"index":0}],"modelVersion":"gemini-2.5-flash","responseId":"Q9EDafzjFs2p_uMPnqWnwAk","usageMetadata":{"promptTokenCount":498,"candidatesTokenCount":910,"totalTokenCount":2831,"cachedContentTokenCount":35,"promptTokensDetails":[{"modality":"TEXT","tokenCount":498}],"cacheTokensDetails":[{"modality":"TEXT","tokenCount":35}],"toolUsePromptTokenCount":636,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":636}],"thoughtsTokenCount":787}}
+[2025-10-30T20:57:40.216Z] LOG ✅ Gemini response received
+[2025-10-30T20:57:40.217Z] LOG 📄 Response length: 3633 characters
+[2025-10-30T20:57:40.219Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-30T20:57:40.219Z] LOG    candidate exists: true
+[2025-10-30T20:57:40.219Z] LOG    groundingMetadata exists: true
+[2025-10-30T20:57:40.220Z] LOG 📊 Grounding status: Maps=true, Search=false
+[2025-10-30T20:57:40.221Z] LOG 📍 Grounding chunks: 20 total
+[2025-10-30T20:57:40.221Z] LOG    1. [MAPS] Old Ebbitt Grill
+[2025-10-30T20:57:40.222Z] LOG       placeId: places/ChIJgRwXf723t4kRdfqt36VafUU
+[2025-10-30T20:57:40.222Z] LOG       uri: https://maps.google.com/?cid=5007258029174684277
+[2025-10-30T20:57:40.223Z] LOG    2. [MAPS] Founding Farmers DC
+[2025-10-30T20:57:40.224Z] LOG       placeId: places/ChIJk58zcbq3t4kR9VDFZdcB5uE
+[2025-10-30T20:57:40.224Z] LOG       uri: https://maps.google.com/?cid=16277699927814263029
+[2025-10-30T20:57:40.225Z] LOG    3. [MAPS] La Grande Boucherie DC
+[2025-10-30T20:57:40.226Z] LOG       placeId: places/ChIJTzlOd6C3t4kR5pkF4ORwiyY
+[2025-10-30T20:57:40.226Z] LOG       uri: https://maps.google.com/?cid=2777437723517360614
+[2025-10-30T20:57:40.227Z] LOG    4. [MAPS] Kitchen + Kocktails By Kevin Kelley - DC
+[2025-10-30T20:57:40.227Z] LOG       placeId: places/ChIJmzvklCS3t4kRqkZCKiv1OfY
+[2025-10-30T20:57:40.228Z] LOG       uri: https://maps.google.com/?cid=17742481772744165034
+[2025-10-30T20:57:40.228Z] LOG    5. [MAPS] SUCCOTASH
+[2025-10-30T20:57:40.229Z] LOG       placeId: places/ChIJEfb5qZG3t4kR8jQmH09MKRE
+[2025-10-30T20:57:40.229Z] LOG       uri: https://maps.google.com/?cid=1236603475398636786
+[2025-10-30T20:57:40.230Z] LOG    6. [MAPS] Le Diplomate
+[2025-10-30T20:57:40.230Z] LOG       placeId: places/ChIJgYIki-m3t4kRZImvuN_pp9Q
+[2025-10-30T20:57:40.231Z] LOG       uri: https://maps.google.com/?cid=15323473404236892516
+[2025-10-30T20:57:40.232Z] LOG    7. [MAPS] The Hamilton
+[2025-10-30T20:57:40.233Z] LOG       placeId: places/ChIJ0zjVx5e3t4kRPiQqmswuh9c
+[2025-10-30T20:57:40.234Z] LOG       uri: https://maps.google.com/?cid=15530433296305103934
+[2025-10-30T20:57:40.235Z] LOG    8. [MAPS] Filomena Ristorante
+[2025-10-30T20:57:40.235Z] LOG       placeId: places/ChIJPTqF_Uu2t4kR9o9RyZkZPWA
+[2025-10-30T20:57:40.236Z] LOG       uri: https://maps.google.com/?cid=6934727149518688246
+[2025-10-30T20:57:40.237Z] LOG    9. [MAPS] Stan's DC Restaurant
+[2025-10-30T20:57:40.237Z] LOG       placeId: places/ChIJNygYeZW3t4kRjuhKv0fwis0
+[2025-10-30T20:57:40.238Z] LOG       uri: https://maps.google.com/?cid=14810914515503999118
+[2025-10-30T20:57:40.239Z] LOG    10. [MAPS] The Capital Burger
+[2025-10-30T20:57:40.240Z] LOG       placeId: places/ChIJPyDqYI23t4kRqMOjheK1OtQ
+[2025-10-30T20:57:40.240Z] LOG       uri: https://maps.google.com/?cid=15292735469199279016
+[2025-10-30T20:57:40.241Z] LOG    11. [MAPS] The Capital Grille
+[2025-10-30T20:57:40.241Z] LOG       placeId: places/ChIJJT16aoW3t4kRqUrkWxGsAR8
+[2025-10-30T20:57:40.242Z] LOG       uri: https://maps.google.com/?cid=2234256080708586153
+[2025-10-30T20:57:40.242Z] LOG    12. [MAPS] OLIO E PIÙ
+[2025-10-30T20:57:40.243Z] LOG       placeId: places/ChIJMSwrjea3t4kReK-Q6Xxa1TA
+[2025-10-30T20:57:40.243Z] LOG       uri: https://maps.google.com/?cid=3518818176400928632
+[2025-10-30T20:57:40.244Z] LOG    13. [MAPS] Joe's Seafood, Prime Steak & Stone Crab
+[2025-10-30T20:57:40.245Z] LOG       placeId: places/ChIJfYZV8r23t4kRrxfEzMf5GB8
+[2025-10-30T20:57:40.246Z] LOG       uri: https://maps.google.com/?cid=2240815451146033071
+[2025-10-30T20:57:40.247Z] LOG    14. [MAPS] Zaytinya
+[2025-10-30T20:57:40.248Z] LOG       placeId: places/ChIJ3_mSkpG3t4kRDEWpol01OrI
+[2025-10-30T20:57:40.249Z] LOG       uri: https://maps.google.com/?cid=12842635963677623564
+[2025-10-30T20:57:40.250Z] LOG    15. [MAPS] VUE Rooftop
+[2025-10-30T20:57:40.250Z] LOG       placeId: places/ChIJj2LjX723t4kR-wvVBacDcSg
+[2025-10-30T20:57:40.251Z] LOG       uri: https://maps.google.com/?cid=2914114449777691643
+[2025-10-30T20:57:40.252Z] LOG    16. [MAPS] Unconventional Diner
+[2025-10-30T20:57:40.253Z] LOG       placeId: places/ChIJz3M3Se23t4kRk5q7sY9-ZUU
+[2025-10-30T20:57:40.253Z] LOG       uri: https://maps.google.com/?cid=5000542116892088979
+[2025-10-30T20:57:40.254Z] LOG    17. [MAPS] The Pembroke
+[2025-10-30T20:57:40.254Z] LOG       placeId: places/ChIJl-57Rsa3t4kRTPhGv9ZLhH8
+[2025-10-30T20:57:40.255Z] LOG       uri: https://maps.google.com/?cid=9188552525446838348
+[2025-10-30T20:57:40.256Z] LOG    18. [MAPS] Fiola Mare
+[2025-10-30T20:57:40.257Z] LOG       placeId: places/ChIJZUQ8NEy2t4kRX3b-nMqKZ-I
+[2025-10-30T20:57:40.258Z] LOG       uri: https://maps.google.com/?cid=16314160777994860127
+[2025-10-30T20:57:40.259Z] LOG    19. [MAPS] Ocean Prime
+[2025-10-30T20:57:40.259Z] LOG       placeId: places/ChIJ5YEiT5a3t4kRDzenVaC_5Qc
+[2025-10-30T20:57:40.260Z] LOG       uri: https://maps.google.com/?cid=569071623284930319
+[2025-10-30T20:57:40.261Z] LOG    20. [MAPS] Grazie Nonna
+[2025-10-30T20:57:40.261Z] LOG       placeId: places/ChIJHzGItKK3t4kRw1BDj6rrUME
+[2025-10-30T20:57:40.262Z] LOG       uri: https://maps.google.com/?cid=13929892765237465283
+[2025-10-30T20:57:40.264Z] LOG ✨ Parsed 5 venue recommendations
+[2025-10-30T20:57:40.266Z] LOG 📋 Plan: Washington D.C. Culinary Journey, 5 stops
+
+--- Summary ---
+Completed

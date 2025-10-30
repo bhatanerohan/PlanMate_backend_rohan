@@ -1,0 +1,140 @@
+User Prompt: plan a day out in paris with lucnh at indian restaurant and dinner at chinese restaurant
+
+[2025-10-30T21:02:04.843Z] LOG 📍 Using fallback location (no user location): 1st arrondissement
+[2025-10-30T21:02:04.846Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T21:02:04.848Z] LOG    1. "Louvre Museum" in "1st arrondissement"
+[2025-10-30T21:02:04.849Z] LOG    2. "Bollynan Streetfood indienne - Grands Boulevards" in "Grands Boulevards (9th arrondissement)"
+[2025-10-30T21:02:04.850Z] LOG    3. "Arc de Triomphe" in "Place Charles de Gaulle (8th arrondissement)"
+[2025-10-30T21:02:04.851Z] LOG    4. "Bleu Bao" in "Rue Saint-Lazare (9th arrondissement)"
+[2025-10-30T21:02:04.852Z] LOG 
+🔍 Executing batch search for 4 venues...
+[2025-10-30T21:02:04.853Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T21:02:04.854Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-30T21:02:04.855Z] LOG    1. Searching "Louvre Museum" in "1st arrondissement"
+[2025-10-30T21:02:04.855Z] LOG 🔍 [Google Places] Text search: "Louvre Museum" in 1st arrondissement
+[2025-10-30T21:02:04.859Z] LOG    2. Searching "Bollynan Streetfood indienne - Grands Boulevards" in "Grands Boulevards (9th arrondissement)"
+[2025-10-30T21:02:04.859Z] LOG 🔍 [Google Places] Text search: "Bollynan Streetfood indienne - Grands Boulevards" in Grands Boulevards (9th arrondissement)
+[2025-10-30T21:02:04.862Z] LOG    3. Searching "Arc de Triomphe" in "Place Charles de Gaulle (8th arrondissement)"
+[2025-10-30T21:02:04.864Z] LOG 🔍 [Google Places] Text search: "Arc de Triomphe" in Place Charles de Gaulle (8th arrondissement)
+[2025-10-30T21:02:04.869Z] LOG    4. Searching "Bleu Bao" in "Rue Saint-Lazare (9th arrondissement)"
+[2025-10-30T21:02:04.870Z] LOG 🔍 [Google Places] Text search: "Bleu Bao" in Rue Saint-Lazare (9th arrondissement)
+[2025-10-30T21:02:05.399Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T21:02:05.410Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T21:02:05.457Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T21:02:05.467Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T21:02:05.548Z] LOG    ✅ Louvre Museum: Got description (100 chars)
+[2025-10-30T21:02:05.550Z] LOG ✅ Found 1 places
+[2025-10-30T21:02:05.556Z] LOG    ✅ Arc de Triomphe: Got description (90 chars)
+[2025-10-30T21:02:05.557Z] LOG ✅ Found 1 places
+[2025-10-30T21:02:05.562Z] LOG    ✅ Bollynan Streetfood indienne - Grands Boulevards: Got description (96 chars)
+[2025-10-30T21:02:05.563Z] LOG ✅ Found 1 places
+[2025-10-30T21:02:05.599Z] LOG    ✅ Bleu Bao: Got description (89 chars)
+[2025-10-30T21:02:05.605Z] LOG ✅ Found 1 places
+[2025-10-30T21:02:05.607Z] LOG ✅ Batch complete: 4/4 searches succeeded, 4 total venues found in 753ms
+[2025-10-30T21:02:05.608Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T21:02:05.609Z] LOG    Tool execution result: success=true
+[2025-10-30T21:02:05.610Z] LOG    ✅ Tool returned 4 search results
+[2025-10-30T21:02:05.610Z] LOG    ✅ Merged: Louvre Museum
+[2025-10-30T21:02:05.611Z] LOG       Places placeId: ChIJD3uTd9hx5kcR1IQvGfr8dbk
+[2025-10-30T21:02:05.611Z] LOG       Gemini description: Start your day by immersing yourself in art and history at t...
+[2025-10-30T21:02:05.612Z] LOG    ✅ Merged: Bollynan Streetfood indienne - Grands Boulevards
+[2025-10-30T21:02:05.612Z] LOG       Places placeId: ChIJi74FCxZu5kcR4XvzbmwiWeM
+[2025-10-30T21:02:05.613Z] LOG       Gemini description: Enjoy a delicious and authentic Indian lunch at this highly-...
+[2025-10-30T21:02:05.614Z] LOG    ✅ Merged: Arc de Triomphe
+[2025-10-30T21:02:05.614Z] LOG       Places placeId: ChIJjx37cOxv5kcRPWQuEW5ntdk
+[2025-10-30T21:02:05.615Z] LOG       Gemini description: After lunch, head to the magnificent Arc de Triomphe to admi...
+[2025-10-30T21:02:05.616Z] LOG    ✅ Merged: Bleu Bao
+[2025-10-30T21:02:05.617Z] LOG       Places placeId: ChIJw6rkxQRv5kcRDnWJAoztlyo
+[2025-10-30T21:02:05.617Z] LOG       Gemini description: Conclude your day with a modern Chinese dinner at Bleu Bao. ...
+[2025-10-30T21:02:05.618Z] LOG ✅ Phase 1 complete: Found 4/4 exact venues
+[2025-10-30T21:02:05.619Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T21:02:05.619Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-30T21:02:05.620Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T21:02:05.621Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-30T21:02:05.622Z] LOG    1. Searching "museum" in "48.8606111,2.337644"
+[2025-10-30T21:02:05.622Z] LOG    📍 Using nearbySearch at coordinates (48.8606111, 2.337644)
+[2025-10-30T21:02:05.623Z] LOG 🔍 [Google Places] Nearby search at (48.8606111, 2.337644)
+[2025-10-30T21:02:05.624Z] LOG    2. Searching "restaurant" in "48.8710839,2.3469283"
+[2025-10-30T21:02:05.625Z] LOG    📍 Using nearbySearch at coordinates (48.8710839, 2.3469283)
+[2025-10-30T21:02:05.625Z] LOG 🔍 [Google Places] Nearby search at (48.8710839, 2.3469283)
+[2025-10-30T21:02:05.627Z] LOG    3. Searching "monument" in "48.8737917,2.2950275"
+[2025-10-30T21:02:05.630Z] LOG    📍 Using nearbySearch at coordinates (48.8737917, 2.2950275)
+[2025-10-30T21:02:05.631Z] LOG 🔍 [Google Places] Nearby search at (48.8737917, 2.2950275)
+[2025-10-30T21:02:05.632Z] LOG    4. Searching "restaurant" in "48.8769358,2.3383903"
+[2025-10-30T21:02:05.633Z] LOG    📍 Using nearbySearch at coordinates (48.8769358, 2.3383903)
+[2025-10-30T21:02:05.633Z] LOG 🔍 [Google Places] Nearby search at (48.8769358, 2.3383903)
+[2025-10-30T21:02:06.288Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T21:02:06.323Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T21:02:06.375Z] LOG    ⚠️  Statue du Général Charles de Gaulle: No editorial summary available
+[2025-10-30T21:02:06.414Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T21:02:06.420Z] LOG    ✅ Arc de Triomphe: Got description (90 chars)
+[2025-10-30T21:02:06.435Z] LOG    ✅ Le Marais Restaurant Paris: Got description (99 chars)
+[2025-10-30T21:02:06.441Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T21:02:06.486Z] LOG    ✅ Flame of Liberty: Got description (95 chars)
+[2025-10-30T21:02:06.501Z] LOG    ✅ Alma's bridge - Diana: Got description (96 chars)
+[2025-10-30T21:02:06.503Z] LOG    ✅ Le Florentin: Got description (95 chars)
+[2025-10-30T21:02:06.509Z] LOG    ✅ Le Marais Restaurant Paris: Got description (99 chars)
+[2025-10-30T21:02:06.511Z] LOG    ✅ Palais de Chaillot: Got description (95 chars)
+[2025-10-30T21:02:06.526Z] LOG    ⚠️  La Belle Quille: No editorial summary available
+[2025-10-30T21:02:06.529Z] LOG    ✅ La Fontaine Gaillon: Got description (91 chars)
+[2025-10-30T21:02:06.558Z] LOG    ✅ Musée d'Orsay: Got description (99 chars)
+[2025-10-30T21:02:06.560Z] LOG    ✅ Chouchou: Got description (92 chars)
+[2025-10-30T21:02:06.569Z] LOG    ⚠️  Paillettes Paris Restaurant festif méditerranéen: No editorial summary available
+[2025-10-30T21:02:06.571Z] LOG    ✅ Le Florentin: Got description (95 chars)
+[2025-10-30T21:02:06.580Z] LOG    ✅ Musée de l'Orangerie: Got description (94 chars)
+[2025-10-30T21:02:06.581Z] LOG    ✅ Louvre Museum: Got description (100 chars)
+[2025-10-30T21:02:06.595Z] LOG    ⚠️  La Belle Quille: No editorial summary available
+[2025-10-30T21:02:06.598Z] LOG    ⚠️  Paradox Museum Paris: No editorial summary available
+[2025-10-30T21:02:06.618Z] LOG    ⚠️  Le Beef: No editorial summary available
+[2025-10-30T21:02:06.633Z] LOG    ✅ Musée Grévin: Got description (92 chars)
+[2025-10-30T21:02:06.635Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 1014ms
+[2025-10-30T21:02:06.636Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T21:02:06.637Z] LOG    ✅ Venue 1 (Louvre Museum): 4 alternatives
+[2025-10-30T21:02:06.638Z] LOG       1. Musée d'Orsay (4.8⭐)
+[2025-10-30T21:02:06.639Z] LOG       2. Musée de l'Orangerie (4.6⭐)
+[2025-10-30T21:02:06.639Z] LOG       3. Paradox Museum Paris (4.3⭐)
+[2025-10-30T21:02:06.640Z] LOG    ✅ Venue 2 (Bollynan Streetfood indienne - Grands Boulevards): 4 alternatives
+[2025-10-30T21:02:06.640Z] LOG       1. Chouchou (4.7⭐)
+[2025-10-30T21:02:06.641Z] LOG       2. Le Marais Restaurant Paris (4.5⭐)
+[2025-10-30T21:02:06.641Z] LOG       3. Le Beef (4.3⭐)
+[2025-10-30T21:02:06.642Z] LOG    ✅ Venue 3 (Arc de Triomphe): 4 alternatives
+[2025-10-30T21:02:06.642Z] LOG       1. Statue du Général Charles de Gaulle (4.5⭐)
+[2025-10-30T21:02:06.643Z] LOG       2. Palais de Chaillot (4.6⭐)
+[2025-10-30T21:02:06.643Z] LOG       3. Alma's bridge - Diana (4.5⭐)
+[2025-10-30T21:02:06.644Z] LOG    ✅ Venue 4 (Bleu Bao): 4 alternatives
+[2025-10-30T21:02:06.645Z] LOG       1. Le Marais Restaurant Paris (4.5⭐)
+[2025-10-30T21:02:06.645Z] LOG       2. Le Florentin (4.5⭐)
+[2025-10-30T21:02:06.645Z] LOG       3. La Belle Quille (4.7⭐)
+[2025-10-30T21:02:06.646Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-30T21:02:06.646Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T21:02:06.647Z] LOG    Primary venues: 4 stops
+[2025-10-30T21:02:06.648Z] LOG    ❌ Removed "Le Marais Restaurant Paris" - duplicate alternative
+[2025-10-30T21:02:06.650Z] LOG    ❌ Removed "Le Florentin" - duplicate alternative
+[2025-10-30T21:02:06.650Z] LOG    🔧 Stop "ChIJw6rkxQRv5kcRDnWJ...": 4 → 2 alternatives
+[2025-10-30T21:02:06.651Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T21:02:06.651Z] LOG    Removed 0 venues already in route
+[2025-10-30T21:02:06.651Z] LOG    Removed 2 duplicate alternatives
+[2025-10-30T21:02:06.652Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T21:02:06.652Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T21:02:06.653Z] LOG    Primary venues: 4
+[2025-10-30T21:02:06.653Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T21:02:06.653Z] LOG    Execution time: 1815ms
+[2025-10-30T21:02:06.654Z] LOG 
+📋 Final alternatives:
+[2025-10-30T21:02:06.654Z] LOG    Louvre Museum: 4 alternatives
+[2025-10-30T21:02:06.655Z] LOG    Bollynan Streetfood indienne - Grands Boulevards: 4 alternatives
+[2025-10-30T21:02:06.655Z] LOG    Arc de Triomphe: 4 alternatives
+[2025-10-30T21:02:06.656Z] LOG    Bleu Bao: 2 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 4

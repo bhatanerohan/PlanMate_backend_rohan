@@ -1,0 +1,170 @@
+User Prompt: find restaurant in washington DC
+
+[2025-10-30T20:57:40.278Z] LOG 📍 Using extracted city from user location: Massachusetts
+[2025-10-30T20:57:40.281Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T20:57:40.284Z] LOG    1. "Old Ebbitt Grill" in "Downtown"
+[2025-10-30T20:57:40.286Z] LOG    2. "Founding Farmers DC" in "Near Washington Circle"
+[2025-10-30T20:57:40.287Z] LOG    3. "La Grande Boucherie DC" in "Downtown"
+[2025-10-30T20:57:40.289Z] LOG    4. "Kitchen + Kocktails By Kevin Kelley - DC" in "Downtown"
+[2025-10-30T20:57:40.291Z] LOG    5. "Filomena Ristorante" in "Georgetown"
+[2025-10-30T20:57:40.293Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T20:57:40.294Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T20:57:40.297Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T20:57:40.299Z] LOG    1. Searching "Old Ebbitt Grill" in "Downtown"
+[2025-10-30T20:57:40.300Z] LOG 🔍 [Google Places] Text search: "Old Ebbitt Grill" in Downtown
+[2025-10-30T20:57:40.313Z] LOG    2. Searching "Founding Farmers DC" in "Near Washington Circle"
+[2025-10-30T20:57:40.316Z] LOG 🔍 [Google Places] Text search: "Founding Farmers DC" in Near Washington Circle
+[2025-10-30T20:57:40.324Z] LOG    3. Searching "La Grande Boucherie DC" in "Downtown"
+[2025-10-30T20:57:40.325Z] LOG 🔍 [Google Places] Text search: "La Grande Boucherie DC" in Downtown
+[2025-10-30T20:57:40.336Z] LOG    4. Searching "Kitchen + Kocktails By Kevin Kelley - DC" in "Downtown"
+[2025-10-30T20:57:40.338Z] LOG 🔍 [Google Places] Text search: "Kitchen + Kocktails By Kevin Kelley - DC" in Downtown
+[2025-10-30T20:57:40.347Z] LOG    5. Searching "Filomena Ristorante" in "Georgetown"
+[2025-10-30T20:57:40.349Z] LOG 🔍 [Google Places] Text search: "Filomena Ristorante" in Georgetown
+[2025-10-30T20:57:40.841Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T20:57:40.867Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T20:57:40.902Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T20:57:40.991Z] LOG    ⚠️  La Grande Boucherie DC: No editorial summary available
+[2025-10-30T20:57:40.993Z] LOG ✅ Found 1 places
+[2025-10-30T20:57:40.996Z] LOG    ✅ Old Ebbitt Grill: Got description (98 chars)
+[2025-10-30T20:57:40.997Z] LOG ✅ Found 1 places
+[2025-10-30T20:57:41.022Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T20:57:41.055Z] LOG    ✅ Filomena Ristorante: Got description (98 chars)
+[2025-10-30T20:57:41.058Z] LOG ✅ Found 1 places
+[2025-10-30T20:57:41.121Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T20:57:41.211Z] LOG    ✅ Founding Farmers DC: Got description (88 chars)
+[2025-10-30T20:57:41.213Z] LOG ✅ Found 1 places
+[2025-10-30T20:57:41.329Z] LOG    ⚠️  Kitchen + Kocktails By Kevin Kelley - DC: No editorial summary available
+[2025-10-30T20:57:41.331Z] LOG ✅ Found 1 places
+[2025-10-30T20:57:41.331Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1034ms
+[2025-10-30T20:57:41.332Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T20:57:41.332Z] LOG    Tool execution result: success=true
+[2025-10-30T20:57:41.333Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T20:57:41.333Z] LOG    ✅ Merged: Old Ebbitt Grill
+[2025-10-30T20:57:41.334Z] LOG       Places placeId: ChIJgRwXf723t4kRdfqt36VafUU
+[2025-10-30T20:57:41.334Z] LOG       Gemini description: An iconic and historic American tavern, Old Ebbitt Grill is ...
+[2025-10-30T20:57:41.335Z] LOG    ✅ Merged: Founding Farmers DC
+[2025-10-30T20:57:41.336Z] LOG       Places placeId: ChIJk58zcbq3t4kR9VDFZdcB5uE
+[2025-10-30T20:57:41.337Z] LOG       Gemini description: This cooperative-grower-owned spot serves farm-to-table Amer...
+[2025-10-30T20:57:41.337Z] LOG    ✅ Merged: La Grande Boucherie DC
+[2025-10-30T20:57:41.337Z] LOG       Places placeId: ChIJTzlOd6C3t4kR5pkF4ORwiyY
+[2025-10-30T20:57:41.338Z] LOG       Gemini description: Experience a taste of France in D.C. at this classic brasser...
+[2025-10-30T20:57:41.339Z] LOG    ✅ Merged: Kitchen + Kocktails By Kevin Kelley - DC
+[2025-10-30T20:57:41.339Z] LOG       Places placeId: ChIJmzvklCS3t4kRqkZCKiv1OfY
+[2025-10-30T20:57:41.340Z] LOG       Gemini description: A lively restaurant and bar specializing in Southern comfort...
+[2025-10-30T20:57:41.341Z] LOG    ✅ Merged: Filomena Ristorante
+[2025-10-30T20:57:41.342Z] LOG       Places placeId: ChIJPTqF_Uu2t4kR9o9RyZkZPWA
+[2025-10-30T20:57:41.344Z] LOG       Gemini description: Known for its made-in-house pasta and hearty Italian classic...
+[2025-10-30T20:57:41.345Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T20:57:41.345Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T20:57:41.346Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T20:57:41.347Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T20:57:41.348Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T20:57:41.349Z] LOG    1. Searching "American Restaurant" in "38.8979475,-77.0332478"
+[2025-10-30T20:57:41.349Z] LOG    📍 Using nearbySearch at coordinates (38.8979475, -77.0332478)
+[2025-10-30T20:57:41.350Z] LOG 🔍 [Google Places] Nearby search at (38.8979475, -77.0332478)
+[2025-10-30T20:57:41.351Z] LOG    2. Searching "American Restaurant" in "38.9002808,-77.04431579999999"
+[2025-10-30T20:57:41.352Z] LOG    📍 Using nearbySearch at coordinates (38.9002808, -77.04431579999999)
+[2025-10-30T20:57:41.353Z] LOG 🔍 [Google Places] Nearby search at (38.9002808, -77.04431579999999)
+[2025-10-30T20:57:41.359Z] LOG    3. Searching "Restaurant" in "38.8981096,-77.0315979"
+[2025-10-30T20:57:41.361Z] LOG    📍 Using nearbySearch at coordinates (38.8981096, -77.0315979)
+[2025-10-30T20:57:41.363Z] LOG 🔍 [Google Places] Nearby search at (38.8981096, -77.0315979)
+[2025-10-30T20:57:41.365Z] LOG    4. Searching "Restaurant" in "38.9012185,-77.0303941"
+[2025-10-30T20:57:41.367Z] LOG    📍 Using nearbySearch at coordinates (38.9012185, -77.0303941)
+[2025-10-30T20:57:41.369Z] LOG 🔍 [Google Places] Nearby search at (38.9012185, -77.0303941)
+[2025-10-30T20:57:41.373Z] LOG    5. Searching "Italian Restaurant" in "38.9044279,-77.0626066"
+[2025-10-30T20:57:41.375Z] LOG    📍 Using nearbySearch at coordinates (38.9044279, -77.0626066)
+[2025-10-30T20:57:41.376Z] LOG 🔍 [Google Places] Nearby search at (38.9044279, -77.0626066)
+[2025-10-30T20:57:42.016Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T20:57:42.038Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T20:57:42.056Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T20:57:42.083Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T20:57:42.122Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T20:57:42.144Z] LOG    ✅ Filomena Ristorante: Got description (98 chars)
+[2025-10-30T20:57:42.148Z] LOG    ✅ Le Diplomate: Got description (104 chars)
+[2025-10-30T20:57:42.151Z] LOG    ✅ Founding Farmers DC: Got description (88 chars)
+[2025-10-30T20:57:42.217Z] LOG    ✅ Le Diplomate: Got description (104 chars)
+[2025-10-30T20:57:42.240Z] LOG    ⚠️  Chef Geoff's West End: No editorial summary available
+[2025-10-30T20:57:42.247Z] LOG    ✅ Mele Bistro: Got description (90 chars)
+[2025-10-30T20:57:42.252Z] LOG    ✅ Il Radicchio: Got description (91 chars)
+[2025-10-30T20:57:42.254Z] LOG    ✅ Old Ebbitt Grill: Got description (98 chars)
+[2025-10-30T20:57:42.261Z] LOG    ✅ Founding Farmers DC: Got description (88 chars)
+[2025-10-30T20:57:42.270Z] LOG    ⚠️  Pines of Florence: No editorial summary available
+[2025-10-30T20:57:42.274Z] LOG    ✅ Zaytinya: Got description (98 chars)
+[2025-10-30T20:57:42.283Z] LOG    ✅ matchbox: Got description (99 chars)
+[2025-10-30T20:57:42.287Z] LOG    ⚠️  Chef Geoff's West End: No editorial summary available
+[2025-10-30T20:57:42.292Z] LOG    ✅ Taberna del Alabardero: Got description (95 chars)
+[2025-10-30T20:57:42.296Z] LOG    ✅ Lincoln: Got description (97 chars)
+[2025-10-30T20:57:42.298Z] LOG    ✅ Firefly: Got description (95 chars)
+[2025-10-30T20:57:42.302Z] LOG    ✅ il Canale: Got description (99 chars)
+[2025-10-30T20:57:42.308Z] LOG    ✅ Ris: Got description (92 chars)
+[2025-10-30T20:57:42.313Z] LOG    ✅ Carmine's - Washington DC: Got description (87 chars)
+[2025-10-30T20:57:42.317Z] LOG    ✅ Zaytinya: Got description (98 chars)
+[2025-10-30T20:57:42.334Z] LOG    ✅ The Pembroke: Got description (91 chars)
+[2025-10-30T20:57:42.340Z] LOG    ✅ matchbox: Got description (99 chars)
+[2025-10-30T20:57:42.360Z] LOG    ✅ Carmine's - Washington DC: Got description (87 chars)
+[2025-10-30T20:57:42.374Z] LOG    ✅ Taberna del Alabardero: Got description (95 chars)
+[2025-10-30T20:57:42.379Z] LOG    ✅ matchbox: Got description (99 chars)
+[2025-10-30T20:57:42.383Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1035ms
+[2025-10-30T20:57:42.384Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T20:57:42.385Z] LOG    ✅ Venue 1 (Old Ebbitt Grill): 4 alternatives
+[2025-10-30T20:57:42.386Z] LOG       1. Founding Farmers DC (4.4⭐)
+[2025-10-30T20:57:42.386Z] LOG       2. matchbox (4.4⭐)
+[2025-10-30T20:57:42.387Z] LOG       3. Chef Geoff's West End (4.7⭐)
+[2025-10-30T20:57:42.388Z] LOG    ✅ Venue 2 (Founding Farmers DC): 4 alternatives
+[2025-10-30T20:57:42.388Z] LOG       1. Chef Geoff's West End (4.7⭐)
+[2025-10-30T20:57:42.389Z] LOG       2. Lincoln (4.2⭐)
+[2025-10-30T20:57:42.390Z] LOG       3. The Pembroke (4.6⭐)
+[2025-10-30T20:57:42.392Z] LOG    ✅ Venue 3 (La Grande Boucherie DC): 4 alternatives
+[2025-10-30T20:57:42.403Z] LOG       1. Le Diplomate (4.6⭐)
+[2025-10-30T20:57:42.406Z] LOG       2. Taberna del Alabardero (4.4⭐)
+[2025-10-30T20:57:42.408Z] LOG       3. Zaytinya (4.5⭐)
+[2025-10-30T20:57:42.409Z] LOG    ✅ Venue 4 (Kitchen + Kocktails By Kevin Kelley - DC): 4 alternatives
+[2025-10-30T20:57:42.411Z] LOG       1. Le Diplomate (4.6⭐)
+[2025-10-30T20:57:42.412Z] LOG       2. Taberna del Alabardero (4.4⭐)
+[2025-10-30T20:57:42.413Z] LOG       3. Zaytinya (4.5⭐)
+[2025-10-30T20:57:42.414Z] LOG    ✅ Venue 5 (Filomena Ristorante): 4 alternatives
+[2025-10-30T20:57:42.415Z] LOG       1. Il Radicchio (4.4⭐)
+[2025-10-30T20:57:42.416Z] LOG       2. il Canale (4.4⭐)
+[2025-10-30T20:57:42.417Z] LOG       3. Mele Bistro (4.5⭐)
+[2025-10-30T20:57:42.417Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T20:57:42.418Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T20:57:42.419Z] LOG    Primary venues: 5 stops
+[2025-10-30T20:57:42.420Z] LOG    ❌ Removed "Founding Farmers DC" - already in primary route
+[2025-10-30T20:57:42.421Z] LOG    🔧 Stop "ChIJgRwXf723t4kRdfqt...": 4 → 3 alternatives
+[2025-10-30T20:57:42.422Z] LOG    ❌ Removed "Chef Geoff's West End" - duplicate alternative
+[2025-10-30T20:57:42.423Z] LOG    🔧 Stop "ChIJk58zcbq3t4kR9VDF...": 4 → 3 alternatives
+[2025-10-30T20:57:42.425Z] LOG    ❌ Removed "matchbox" - duplicate alternative
+[2025-10-30T20:57:42.426Z] LOG    🔧 Stop "ChIJTzlOd6C3t4kR5pkF...": 4 → 3 alternatives
+[2025-10-30T20:57:42.426Z] LOG    ❌ Removed "Le Diplomate" - duplicate alternative
+[2025-10-30T20:57:42.427Z] LOG    ❌ Removed "Taberna del Alabardero" - duplicate alternative
+[2025-10-30T20:57:42.427Z] LOG    ❌ Removed "Zaytinya" - duplicate alternative
+[2025-10-30T20:57:42.428Z] LOG    ❌ Removed "matchbox" - duplicate alternative
+[2025-10-30T20:57:42.429Z] LOG    🔧 Stop "ChIJmzvklCS3t4kRqkZC...": 4 → 0 alternatives
+[2025-10-30T20:57:42.429Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T20:57:42.430Z] LOG    Removed 1 venues already in route
+[2025-10-30T20:57:42.431Z] LOG    Removed 6 duplicate alternatives
+[2025-10-30T20:57:42.432Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T20:57:42.432Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T20:57:42.433Z] LOG    Primary venues: 5
+[2025-10-30T20:57:42.434Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T20:57:42.435Z] LOG    Execution time: 2158ms
+[2025-10-30T20:57:42.436Z] LOG 
+📋 Final alternatives:
+[2025-10-30T20:57:42.439Z] LOG    Old Ebbitt Grill: 3 alternatives
+[2025-10-30T20:57:42.440Z] LOG    Founding Farmers DC: 3 alternatives
+[2025-10-30T20:57:42.441Z] LOG    La Grande Boucherie DC: 3 alternatives
+[2025-10-30T20:57:42.442Z] LOG    Filomena Ristorante: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

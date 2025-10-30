@@ -1,0 +1,121 @@
+User Prompt: find parks/nature near me
+
+[2025-10-30T20:40:00.776Z] LOG 📍 Using extracted city from user location: Current location
+[2025-10-30T20:40:00.777Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T20:40:00.777Z] LOG    1. "Olmsted Park" in "Jamaica Plain"
+[2025-10-30T20:40:00.778Z] LOG    2. "Pinebank Promontory" in "Jamaica Plain"
+[2025-10-30T20:40:00.778Z] LOG    3. "Jamaica Pond Park" in "Jamaica Plain"
+[2025-10-30T20:40:00.778Z] LOG 
+🔍 Executing batch search for 3 venues...
+[2025-10-30T20:40:00.779Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T20:40:00.780Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-30T20:40:00.780Z] LOG    1. Searching "Olmsted Park" in "Jamaica Plain"
+[2025-10-30T20:40:00.781Z] LOG 🔍 [Google Places] Text search: "Olmsted Park" in Jamaica Plain
+[2025-10-30T20:40:00.786Z] LOG    2. Searching "Pinebank Promontory" in "Jamaica Plain"
+[2025-10-30T20:40:00.786Z] LOG 🔍 [Google Places] Text search: "Pinebank Promontory" in Jamaica Plain
+[2025-10-30T20:40:00.789Z] LOG    3. Searching "Jamaica Pond Park" in "Jamaica Plain"
+[2025-10-30T20:40:00.789Z] LOG 🔍 [Google Places] Text search: "Jamaica Pond Park" in Jamaica Plain
+[2025-10-30T20:40:01.423Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T20:40:01.546Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T20:40:01.554Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T20:40:01.595Z] LOG    ⚠️  Pinebank Promontory: No editorial summary available
+[2025-10-30T20:40:01.602Z] LOG ✅ Found 1 places
+[2025-10-30T20:40:01.633Z] LOG    ✅ Olmsted Park: Got description (100 chars)
+[2025-10-30T20:40:01.641Z] LOG ✅ Found 1 places
+[2025-10-30T20:40:01.698Z] LOG    ⚠️  Jamaica Pond Park: No editorial summary available
+[2025-10-30T20:40:01.703Z] LOG ✅ Found 1 places
+[2025-10-30T20:40:01.705Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 925ms
+[2025-10-30T20:40:01.705Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T20:40:01.706Z] LOG    Tool execution result: success=true
+[2025-10-30T20:40:01.706Z] LOG    ✅ Tool returned 3 search results
+[2025-10-30T20:40:01.707Z] LOG    ✅ Merged: Olmsted Park
+[2025-10-30T20:40:01.707Z] LOG       Places placeId: ChIJB4_sfJ5544kRHxi7EfeXpSM
+[2025-10-30T20:40:01.708Z] LOG       Gemini description: This historic urban park, part of Boston's Emerald Necklace,...
+[2025-10-30T20:40:01.709Z] LOG    ✅ Merged: Pinebank Promontory
+[2025-10-30T20:40:01.709Z] LOG       Places placeId: ChIJB107g3R544kRRSMrEoHFBbs
+[2025-10-30T20:40:01.710Z] LOG       Gemini description: Offering relaxed and serene vistas of the iconic Jamaica Pon...
+[2025-10-30T20:40:01.710Z] LOG    ✅ Merged: Jamaica Pond Park
+[2025-10-30T20:40:01.711Z] LOG       Places placeId: ChIJkV4xslt544kRtevNNhRpSvU
+[2025-10-30T20:40:01.712Z] LOG       Gemini description: A centerpiece of the Emerald Necklace, Jamaica Pond Park is ...
+[2025-10-30T20:40:01.713Z] LOG ✅ Phase 1 complete: Found 3/3 exact venues
+[2025-10-30T20:40:01.714Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T20:40:01.714Z] LOG    Searching for alternatives near 3 venues...
+[2025-10-30T20:40:01.715Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T20:40:01.716Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-10-30T20:40:01.717Z] LOG    1. Searching "park" in "42.325945,-71.114887"
+[2025-10-30T20:40:01.717Z] LOG    📍 Using nearbySearch at coordinates (42.325945, -71.114887)
+[2025-10-30T20:40:01.718Z] LOG 🔍 [Google Places] Nearby search at (42.325945, -71.114887)
+[2025-10-30T20:40:01.719Z] LOG    2. Searching "park" in "42.3200589,-71.1187894"
+[2025-10-30T20:40:01.720Z] LOG    📍 Using nearbySearch at coordinates (42.3200589, -71.1187894)
+[2025-10-30T20:40:01.721Z] LOG 🔍 [Google Places] Nearby search at (42.3200589, -71.1187894)
+[2025-10-30T20:40:01.724Z] LOG    3. Searching "park" in "42.3158763,-71.1174874"
+[2025-10-30T20:40:01.727Z] LOG    📍 Using nearbySearch at coordinates (42.3158763, -71.1174874)
+[2025-10-30T20:40:01.727Z] LOG 🔍 [Google Places] Nearby search at (42.3158763, -71.1174874)
+[2025-10-30T20:40:02.296Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T20:40:02.311Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T20:40:02.345Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T20:40:02.436Z] LOG    ✅ Back Bay Fens: Got description (100 chars)
+[2025-10-30T20:40:02.477Z] LOG    ✅ Olmsted Park: Got description (100 chars)
+[2025-10-30T20:40:02.482Z] LOG    ⚠️  Jamaica Pond Park: No editorial summary available
+[2025-10-30T20:40:02.489Z] LOG    ✅ Brookline Reservoir Park: Got description (95 chars)
+[2025-10-30T20:40:02.496Z] LOG    ✅ Southwest Corridor Park: Got description (93 chars)
+[2025-10-30T20:40:02.510Z] LOG    ✅ Olmsted Park: Got description (100 chars)
+[2025-10-30T20:40:02.537Z] LOG    ✅ Brookline Reservoir Park: Got description (95 chars)
+[2025-10-30T20:40:02.551Z] LOG    ⚠️  Linden Park: No editorial summary available
+[2025-10-30T20:40:02.556Z] LOG    ⚠️  Clark Playground: No editorial summary available
+[2025-10-30T20:40:02.565Z] LOG    ✅ Kevin W. Fitzgerald Park: Got description (92 chars)
+[2025-10-30T20:40:02.567Z] LOG    ⚠️  Jamaica Pond Park: No editorial summary available
+[2025-10-30T20:40:02.570Z] LOG    ✅ Olmsted Park: Got description (100 chars)
+[2025-10-30T20:40:02.575Z] LOG    ⚠️  Griggs Park: No editorial summary available
+[2025-10-30T20:40:02.586Z] LOG    ✅ Brookline Reservoir Park: Got description (95 chars)
+[2025-10-30T20:40:02.597Z] LOG    ⚠️  Emerson Garden: No editorial summary available
+[2025-10-30T20:40:02.599Z] LOG ✅ Batch complete: 3/3 searches succeeded, 15 total venues found in 883ms
+[2025-10-30T20:40:02.601Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T20:40:02.602Z] LOG    ✅ Venue 1 (Olmsted Park): 4 alternatives
+[2025-10-30T20:40:02.603Z] LOG       1. Back Bay Fens (4.5⭐)
+[2025-10-30T20:40:02.603Z] LOG       2. Linden Park (4.6⭐)
+[2025-10-30T20:40:02.604Z] LOG       3. Griggs Park (4.5⭐)
+[2025-10-30T20:40:02.605Z] LOG    ✅ Venue 2 (Pinebank Promontory): 4 alternatives
+[2025-10-30T20:40:02.605Z] LOG       1. Brookline Reservoir Park (4.7⭐)
+[2025-10-30T20:40:02.606Z] LOG       2. Olmsted Park (4.7⭐)
+[2025-10-30T20:40:02.606Z] LOG       3. Emerson Garden (4.8⭐)
+[2025-10-30T20:40:02.607Z] LOG    ✅ Venue 3 (Jamaica Pond Park): 4 alternatives
+[2025-10-30T20:40:02.608Z] LOG       1. Brookline Reservoir Park (4.7⭐)
+[2025-10-30T20:40:02.609Z] LOG       2. Olmsted Park (4.7⭐)
+[2025-10-30T20:40:02.611Z] LOG       3. Southwest Corridor Park (4.5⭐)
+[2025-10-30T20:40:02.612Z] LOG 
+📦 Phase 2 complete: 3 stops with alternatives
+[2025-10-30T20:40:02.614Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T20:40:02.615Z] LOG    Primary venues: 3 stops
+[2025-10-30T20:40:02.616Z] LOG    ❌ Removed "Brookline Reservoir Park" - duplicate alternative
+[2025-10-30T20:40:02.617Z] LOG    ❌ Removed "Olmsted Park" - already in primary route
+[2025-10-30T20:40:02.617Z] LOG    ❌ Removed "Jamaica Pond Park" - already in primary route
+[2025-10-30T20:40:02.618Z] LOG    🔧 Stop "ChIJB107g3R544kRRSMr...": 4 → 1 alternatives
+[2025-10-30T20:40:02.619Z] LOG    ❌ Removed "Brookline Reservoir Park" - duplicate alternative
+[2025-10-30T20:40:02.619Z] LOG    ❌ Removed "Olmsted Park" - already in primary route
+[2025-10-30T20:40:02.620Z] LOG    🔧 Stop "ChIJkV4xslt544kRtevN...": 4 → 2 alternatives
+[2025-10-30T20:40:02.620Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T20:40:02.621Z] LOG    Removed 3 venues already in route
+[2025-10-30T20:40:02.621Z] LOG    Removed 2 duplicate alternatives
+[2025-10-30T20:40:02.622Z] LOG    Final: 3 stops with alternatives
+
+[2025-10-30T20:40:02.623Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T20:40:02.624Z] LOG    Primary venues: 3
+[2025-10-30T20:40:02.625Z] LOG    Alternatives: 3 stops with alternatives
+[2025-10-30T20:40:02.626Z] LOG    Execution time: 1849ms
+[2025-10-30T20:40:02.628Z] LOG 
+📋 Final alternatives:
+[2025-10-30T20:40:02.629Z] LOG    Olmsted Park: 4 alternatives
+[2025-10-30T20:40:02.630Z] LOG    Pinebank Promontory: 1 alternatives
+[2025-10-30T20:40:02.631Z] LOG    Jamaica Pond Park: 2 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 3
+Alternatives: 3
