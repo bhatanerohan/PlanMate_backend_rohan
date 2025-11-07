@@ -363,12 +363,6 @@ planmate-ai-agent/
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 🙏 Acknowledgments
 
 - OpenAI for GPT-4o
