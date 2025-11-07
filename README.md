@@ -1,4 +1,4 @@
-# 🗺️ PlanMate - AI-Powered Itinerary Planning Agent
+# 🗺️ PlanMate - AI-Powered Itinerary Planning on Maps Agent
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18-61DAFB.svg)](https://reactjs.org/)
