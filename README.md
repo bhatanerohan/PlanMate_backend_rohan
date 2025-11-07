@@ -378,13 +378,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📬 Contact
-
-- **Issues**: [GitHub Issues](https://github.com/bhtanerohan/planmate-ai-agent/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/bhatanerohan/planmate-ai-agent/discussions)
-
----
-
 <div align="center">
 
 **Built with ❤️ using AI Agents**
