@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-** LIVE LINK ** - https://plan-mate-backend-rohan.vercel.app/
+**LIVE LINK** - https://plan-mate-backend-rohan.vercel.app/
 
 > An intelligent AI agent system that creates personalized itineraries and discovers venues using multi-agent architecture, Google Gemini grounding, and ReAct pattern.
 
