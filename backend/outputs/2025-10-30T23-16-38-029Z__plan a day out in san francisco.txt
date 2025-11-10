@@ -1,0 +1,153 @@
+User Prompt: plan a day out in san francisco
+
+[2025-10-30T23:16:38.033Z] LOG 📍 Using fallback location (no user location): The Embarcadero
+[2025-10-30T23:16:38.035Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T23:16:38.037Z] LOG    1. "PIER 39" in "The Embarcadero"
+[2025-10-30T23:16:38.039Z] LOG    2. "Alcatraz Island" in "San Francisco Bay"
+[2025-10-30T23:16:38.041Z] LOG    3. "Golden Gate Bridge" in "Golden Gate Strait"
+[2025-10-30T23:16:38.043Z] LOG    4. "Golden Gate Park" in "San Francisco"
+[2025-10-30T23:16:38.045Z] LOG    5. "Coit Tower" in "Telegraph Hill"
+[2025-10-30T23:16:38.047Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T23:16:38.048Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:16:38.051Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T23:16:38.054Z] LOG    1. Searching "PIER 39" in "The Embarcadero"
+[2025-10-30T23:16:38.055Z] LOG 🔍 [Google Places] Text search: "PIER 39" in The Embarcadero
+[2025-10-30T23:16:38.061Z] LOG    2. Searching "Alcatraz Island" in "San Francisco Bay"
+[2025-10-30T23:16:38.062Z] LOG 🔍 [Google Places] Text search: "Alcatraz Island" in San Francisco Bay
+[2025-10-30T23:16:38.068Z] LOG    3. Searching "Golden Gate Bridge" in "Golden Gate Strait"
+[2025-10-30T23:16:38.069Z] LOG 🔍 [Google Places] Text search: "Golden Gate Bridge" in Golden Gate Strait
+[2025-10-30T23:16:38.075Z] LOG    4. Searching "Golden Gate Park" in "San Francisco"
+[2025-10-30T23:16:38.077Z] LOG 🔍 [Google Places] Text search: "Golden Gate Park" in San Francisco
+[2025-10-30T23:16:38.083Z] LOG    5. Searching "Coit Tower" in "Telegraph Hill"
+[2025-10-30T23:16:38.085Z] LOG 🔍 [Google Places] Text search: "Coit Tower" in Telegraph Hill
+[2025-10-30T23:16:38.541Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:16:38.571Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:16:38.612Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:16:38.619Z] LOG    ✅ Coit Tower: Got description (98 chars)
+[2025-10-30T23:16:38.622Z] LOG ✅ Found 1 places
+[2025-10-30T23:16:38.657Z] LOG    ✅ Golden Gate Bridge: Got description (75 chars)
+[2025-10-30T23:16:38.660Z] LOG ✅ Found 1 places
+[2025-10-30T23:16:38.687Z] LOG    ✅ PIER 39: Got description (98 chars)
+[2025-10-30T23:16:38.691Z] LOG ✅ Found 1 places
+[2025-10-30T23:16:38.764Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:16:38.826Z] LOG    ✅ Golden Gate Park: Got description (98 chars)
+[2025-10-30T23:16:38.829Z] LOG ✅ Found 1 places
+[2025-10-30T23:16:38.876Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:16:38.955Z] LOG    ✅ Alcatraz Island: Got description (96 chars)
+[2025-10-30T23:16:38.959Z] LOG ✅ Found 1 places
+[2025-10-30T23:16:38.961Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 910ms
+[2025-10-30T23:16:38.963Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:16:38.964Z] LOG    Tool execution result: success=true
+[2025-10-30T23:16:38.964Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T23:16:38.966Z] LOG    ✅ Merged: PIER 39
+[2025-10-30T23:16:38.967Z] LOG       Places placeId: ChIJHSGzi_yAhYARnrPmDWAx9ro
+[2025-10-30T23:16:38.968Z] LOG       Gemini description: A bustling bayside pier with lively shops, diverse eateries,...
+[2025-10-30T23:16:38.970Z] LOG    ✅ Merged: Alcatraz Island
+[2025-10-30T23:16:38.972Z] LOG       Places placeId: ChIJmRyMs_mAhYARpViaf6JEWNE
+[2025-10-30T23:16:38.973Z] LOG       Gemini description: Visit the infamous former federal prison, now a museum with ...
+[2025-10-30T23:16:38.975Z] LOG    ✅ Merged: Golden Gate Bridge
+[2025-10-30T23:16:38.976Z] LOG       Places placeId: ChIJw____96GhYARCVVwg5cT7c0
+[2025-10-30T23:16:38.978Z] LOG       Gemini description: An iconic suspension bridge known for its art deco design, t...
+[2025-10-30T23:16:38.979Z] LOG    ✅ Merged: Golden Gate Park
+[2025-10-30T23:16:38.981Z] LOG       Places placeId: ChIJY_dFYHKHhYARMKc772iLvnE
+[2025-10-30T23:16:38.983Z] LOG       Gemini description: A vast urban oasis boasting diverse gardens, museums, and re...
+[2025-10-30T23:16:38.984Z] LOG    ✅ Merged: Coit Tower
+[2025-10-30T23:16:38.986Z] LOG       Places placeId: ChIJAQAAQIyAhYARRN3yIQG4hd4
+[2025-10-30T23:16:38.987Z] LOG       Gemini description: This historic tower offers 360-degree views of the city and ...
+[2025-10-30T23:16:38.989Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T23:16:38.990Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T23:16:38.991Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T23:16:38.992Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:16:38.993Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T23:16:38.995Z] LOG    1. Searching "tourist attraction" in "37.80867300000001,-122.409821"
+[2025-10-30T23:16:38.996Z] LOG    📍 Using nearbySearch at coordinates (37.80867300000001, -122.409821)
+[2025-10-30T23:16:38.997Z] LOG 🔍 [Google Places] Nearby search at (37.80867300000001, -122.409821)
+[2025-10-30T23:16:38.999Z] LOG    2. Searching "historical place" in "37.8269775,-122.4229555"
+[2025-10-30T23:16:39.001Z] LOG    📍 Using nearbySearch at coordinates (37.8269775, -122.4229555)
+[2025-10-30T23:16:39.001Z] LOG 🔍 [Google Places] Nearby search at (37.8269775, -122.4229555)
+[2025-10-30T23:16:39.003Z] LOG    3. Searching "landmark" in "37.8199109,-122.4785598"
+[2025-10-30T23:16:39.004Z] LOG    📍 Using nearbySearch at coordinates (37.8199109, -122.4785598)
+[2025-10-30T23:16:39.005Z] LOG 🔍 [Google Places] Nearby search at (37.8199109, -122.4785598)
+[2025-10-30T23:16:39.007Z] LOG    4. Searching "park" in "37.7689203,-122.482977"
+[2025-10-30T23:16:39.008Z] LOG    📍 Using nearbySearch at coordinates (37.7689203, -122.482977)
+[2025-10-30T23:16:39.010Z] LOG 🔍 [Google Places] Nearby search at (37.7689203, -122.482977)
+[2025-10-30T23:16:39.012Z] LOG    5. Searching "historical landmark" in "37.8023949,-122.4058222"
+[2025-10-30T23:16:39.013Z] LOG    📍 Using nearbySearch at coordinates (37.8023949, -122.4058222)
+[2025-10-30T23:16:39.014Z] LOG 🔍 [Google Places] Nearby search at (37.8023949, -122.4058222)
+[2025-10-30T23:16:39.567Z] LOG 📝 Fetching descriptions for 2 places...
+[2025-10-30T23:16:39.596Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:16:39.624Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:16:39.652Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:16:39.693Z] LOG    ✅ Alcatraz Island: Got description (96 chars)
+[2025-10-30T23:16:39.700Z] LOG    ✅ Golden Gate Park: Got description (98 chars)
+[2025-10-30T23:16:39.730Z] LOG    ✅ PIER 39: Got description (98 chars)
+[2025-10-30T23:16:39.796Z] LOG    ✅ San Francisco Botanical Garden: Got description (99 chars)
+[2025-10-30T23:16:39.810Z] LOG    ✅ Coit Tower: Got description (98 chars)
+[2025-10-30T23:16:39.826Z] LOG    ⚠️  Cabrillo Playground Park: No editorial summary available
+[2025-10-30T23:16:39.838Z] LOG    ✅ Union Square: Got description (100 chars)
+[2025-10-30T23:16:39.847Z] LOG 📝 Fetching descriptions for 3 places...
+[2025-10-30T23:16:39.859Z] LOG    ⚠️  Alcatraz Lighthouse: No editorial summary available
+[2025-10-30T23:16:39.871Z] LOG    ✅ Ferry Building: Got description (97 chars)
+[2025-10-30T23:16:39.877Z] LOG    ⚠️  Umbrella Alley San Francisco: No editorial summary available
+[2025-10-30T23:16:39.880Z] LOG    ✅ Fulton Playground Park: Got description (94 chars)
+[2025-10-30T23:16:39.888Z] LOG    ✅ Sea Lions: Got description (91 chars)
+[2025-10-30T23:16:39.893Z] LOG    ⚠️  Columbus Tower: No editorial summary available
+[2025-10-30T23:16:39.896Z] LOG    ✅ Grandview Park: Got description (96 chars)
+[2025-10-30T23:16:39.899Z] LOG    ⚠️  Musical Stairs: No editorial summary available
+[2025-10-30T23:16:39.905Z] LOG    ⚠️  City Clock: No editorial summary available
+[2025-10-30T23:16:39.941Z] LOG    ⚠️  Short Range Battery: No editorial summary available
+[2025-10-30T23:16:39.952Z] LOG    ✅ Ripley's Believe It or Not!: Got description (96 chars)
+[2025-10-30T23:16:39.981Z] LOG    ⚠️  Battery Ridge: No editorial summary available
+[2025-10-30T23:16:39.990Z] LOG    ✅ Fort Point National Historic Site: Got description (96 chars)
+[2025-10-30T23:16:39.992Z] LOG ✅ Batch complete: 5/5 searches succeeded, 20 total venues found in 998ms
+[2025-10-30T23:16:39.993Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:16:39.994Z] LOG    ✅ Venue 1 (PIER 39): 4 alternatives
+[2025-10-30T23:16:39.996Z] LOG       1. Musical Stairs (4.5⭐)
+[2025-10-30T23:16:39.998Z] LOG       2. Ripley's Believe It or Not! (4.2⭐)
+[2025-10-30T23:16:39.999Z] LOG       3. Umbrella Alley San Francisco (4.4⭐)
+[2025-10-30T23:16:40.001Z] LOG    ✅ Venue 2 (Alcatraz Island): 1 alternatives
+[2025-10-30T23:16:40.003Z] LOG       1. Alcatraz Lighthouse (4.6⭐)
+[2025-10-30T23:16:40.005Z] LOG    ✅ Venue 3 (Golden Gate Bridge): 3 alternatives
+[2025-10-30T23:16:40.008Z] LOG       1. Fort Point National Historic Site (4.8⭐)
+[2025-10-30T23:16:40.009Z] LOG       2. Short Range Battery (4.9⭐)
+[2025-10-30T23:16:40.012Z] LOG       3. Battery Ridge (4.7⭐)
+[2025-10-30T23:16:40.015Z] LOG    ✅ Venue 4 (Golden Gate Park): 4 alternatives
+[2025-10-30T23:16:40.018Z] LOG       1. Grandview Park (4.8⭐)
+[2025-10-30T23:16:40.023Z] LOG       2. Cabrillo Playground Park (4.6⭐)
+[2025-10-30T23:16:40.028Z] LOG       3. San Francisco Botanical Garden (4.8⭐)
+[2025-10-30T23:16:40.031Z] LOG    ✅ Venue 5 (Coit Tower): 4 alternatives
+[2025-10-30T23:16:40.035Z] LOG       1. Union Square (4.4⭐)
+[2025-10-30T23:16:40.039Z] LOG       2. Ferry Building (4.6⭐)
+[2025-10-30T23:16:40.041Z] LOG       3. Columbus Tower (4.8⭐)
+[2025-10-30T23:16:40.043Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T23:16:40.046Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T23:16:40.049Z] LOG    Primary venues: 5 stops
+[2025-10-30T23:16:40.050Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T23:16:40.053Z] LOG    Removed 0 venues already in route
+[2025-10-30T23:16:40.054Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T23:16:40.056Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T23:16:40.057Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T23:16:40.058Z] LOG    Primary venues: 5
+[2025-10-30T23:16:40.061Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T23:16:40.063Z] LOG    Execution time: 2029ms
+[2025-10-30T23:16:40.065Z] LOG 
+📋 Final alternatives:
+[2025-10-30T23:16:40.067Z] LOG    PIER 39: 4 alternatives
+[2025-10-30T23:16:40.069Z] LOG    Alcatraz Island: 1 alternatives
+[2025-10-30T23:16:40.073Z] LOG    Golden Gate Bridge: 3 alternatives
+[2025-10-30T23:16:40.075Z] LOG    Golden Gate Park: 4 alternatives
+[2025-10-30T23:16:40.077Z] LOG    Coit Tower: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

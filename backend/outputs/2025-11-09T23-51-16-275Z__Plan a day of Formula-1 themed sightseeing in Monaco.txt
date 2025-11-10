@@ -1,0 +1,162 @@
+User Prompt: Plan a day of Formula-1 themed sightseeing in Monaco
+
+[2025-11-09T23:51:16.276Z] LOG 📍 Using fallback location (no user location): Monaco
+[2025-11-09T23:51:16.278Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-11-09T23:51:16.279Z] LOG    1. "Monaco Circuit" in "Port Hercule"
+[2025-11-09T23:51:16.279Z] LOG    2. "F1 Car Sculpture" in "Avenue Princesse Grâce"
+[2025-11-09T23:51:16.280Z] LOG    3. "Fairmont Hairpin" in "Monte-Carlo"
+[2025-11-09T23:51:16.281Z] LOG    4. "Private Cars Collection of HSH Prince of Monaco" in "Fontvieille"
+[2025-11-09T23:51:16.282Z] LOG    5. "Casino de Monte-Carlo" in "Monte-Carlo"
+[2025-11-09T23:51:16.282Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-11-09T23:51:16.283Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-11-09T23:51:16.285Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-11-09T23:51:16.285Z] LOG    1. Searching "Monaco Circuit" in "Port Hercule"
+[2025-11-09T23:51:16.286Z] LOG 🔍 [Google Places] Text search: "Monaco Circuit" in Port Hercule
+[2025-11-09T23:51:16.291Z] LOG    2. Searching "F1 Car Sculpture" in "Avenue Princesse Grâce"
+[2025-11-09T23:51:16.294Z] LOG 🔍 [Google Places] Text search: "F1 Car Sculpture" in Avenue Princesse Grâce
+[2025-11-09T23:51:16.300Z] LOG    3. Searching "Fairmont Hairpin" in "Monte-Carlo"
+[2025-11-09T23:51:16.302Z] LOG 🔍 [Google Places] Text search: "Fairmont Hairpin" in Monte-Carlo
+[2025-11-09T23:51:16.309Z] LOG    4. Searching "Private Cars Collection of HSH Prince of Monaco" in "Fontvieille"
+[2025-11-09T23:51:16.311Z] LOG 🔍 [Google Places] Text search: "Private Cars Collection of HSH Prince of Monaco" in Fontvieille
+[2025-11-09T23:51:16.320Z] LOG    5. Searching "Casino de Monte-Carlo" in "Monte-Carlo"
+[2025-11-09T23:51:16.322Z] LOG 🔍 [Google Places] Text search: "Casino de Monte-Carlo" in Monte-Carlo
+[2025-11-09T23:51:16.742Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-11-09T23:51:16.788Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-11-09T23:51:16.823Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-11-09T23:51:16.853Z] LOG    ⚠️  F1 Car Sculpture: No editorial summary available
+[2025-11-09T23:51:16.858Z] LOG ✅ Found 1 places
+[2025-11-09T23:51:16.887Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-11-09T23:51:16.907Z] LOG    ⚠️  Fairmont Hairpin: No editorial summary available
+[2025-11-09T23:51:16.915Z] LOG ✅ Found 1 places
+[2025-11-09T23:51:16.975Z] LOG    ⚠️  Monaco Circuit: No editorial summary available
+[2025-11-09T23:51:16.982Z] LOG ✅ Found 1 places
+[2025-11-09T23:51:17.034Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-11-09T23:51:17.072Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco: Got description (98 chars)
+[2025-11-09T23:51:17.074Z] LOG ✅ Found 1 places
+[2025-11-09T23:51:17.182Z] LOG    ✅ Casino de Monte-Carlo: Got description (100 chars)
+[2025-11-09T23:51:17.185Z] LOG ✅ Found 1 places
+[2025-11-09T23:51:17.187Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 903ms
+[2025-11-09T23:51:17.188Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-11-09T23:51:17.188Z] LOG    Tool execution result: success=true
+[2025-11-09T23:51:17.189Z] LOG    ✅ Tool returned 5 search results
+[2025-11-09T23:51:17.189Z] LOG    ✅ Merged: Monaco Circuit
+[2025-11-09T23:51:17.190Z] LOG       Places placeId: ChIJf7zZWwDDzRIRnsiqeeeFPMI
+[2025-11-09T23:51:17.191Z] LOG       Gemini description: Begin your F1 journey at the heart of the Monaco Grand Prix,...
+[2025-11-09T23:51:17.191Z] LOG    ✅ Merged: F1 Car Sculpture
+[2025-11-09T23:51:17.192Z] LOG       Places placeId: ChIJh9ovoYPDzRIRRmsO20Z3jNY
+[2025-11-09T23:51:17.192Z] LOG       Gemini description: Located near the circuit, this striking sculpture is a perfe...
+[2025-11-09T23:51:17.193Z] LOG    ✅ Merged: Fairmont Hairpin
+[2025-11-09T23:51:17.194Z] LOG       Places placeId: ChIJY01BkXrDzRIRDim_zZiV2PA
+[2025-11-09T23:51:17.194Z] LOG       Gemini description: Experience one of Formula 1's most legendary corners, the Fa...
+[2025-11-09T23:51:17.195Z] LOG    ✅ Merged: Private Cars Collection of HSH Prince of Monaco
+[2025-11-09T23:51:17.196Z] LOG       Places placeId: ChIJf-upvozCzRIRdHnR9OhEmts
+[2025-11-09T23:51:17.196Z] LOG       Gemini description: Explore a magnificent collection of automobiles assembled by...
+[2025-11-09T23:51:17.197Z] LOG    ✅ Merged: Casino de Monte-Carlo
+[2025-11-09T23:51:17.197Z] LOG       Places placeId: ChIJZQJu5IfCzRIR4_SMWQznbqY
+[2025-11-09T23:51:17.198Z] LOG       Gemini description: Conclude your day at the opulent Casino de Monte-Carlo, an a...
+[2025-11-09T23:51:17.198Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-11-09T23:51:17.199Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-11-09T23:51:17.200Z] LOG    Searching for alternatives near 5 venues...
+[2025-11-09T23:51:17.201Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-11-09T23:51:17.201Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-11-09T23:51:17.202Z] LOG    1. Searching "landmark" in "43.7341516,7.421746400000001"
+[2025-11-09T23:51:17.203Z] LOG    📍 Using nearbySearch at coordinates (43.7341516, 7.421746400000001)
+[2025-11-09T23:51:17.204Z] LOG 🔍 [Google Places] Nearby search at (43.7341516, 7.421746400000001)
+[2025-11-09T23:51:17.207Z] LOG    2. Searching "sculpture" in "43.7410622,7.4300234"
+[2025-11-09T23:51:17.210Z] LOG    📍 Using nearbySearch at coordinates (43.7410622, 7.4300234)
+[2025-11-09T23:51:17.213Z] LOG 🔍 [Google Places] Nearby search at (43.7410622, 7.4300234)
+[2025-11-09T23:51:17.215Z] LOG    3. Searching "tourist attraction" in "43.740298,7.429630499999999"
+[2025-11-09T23:51:17.216Z] LOG    📍 Using nearbySearch at coordinates (43.740298, 7.429630499999999)
+[2025-11-09T23:51:17.217Z] LOG 🔍 [Google Places] Nearby search at (43.740298, 7.429630499999999)
+[2025-11-09T23:51:17.219Z] LOG    4. Searching "museum" in "43.73526349999999,7.421720000000001"
+[2025-11-09T23:51:17.221Z] LOG    📍 Using nearbySearch at coordinates (43.73526349999999, 7.421720000000001)
+[2025-11-09T23:51:17.223Z] LOG 🔍 [Google Places] Nearby search at (43.73526349999999, 7.421720000000001)
+[2025-11-09T23:51:17.227Z] LOG    5. Searching "casino" in "43.7390972,7.428068100000001"
+[2025-11-09T23:51:17.229Z] LOG    📍 Using nearbySearch at coordinates (43.7390972, 7.428068100000001)
+[2025-11-09T23:51:17.230Z] LOG 🔍 [Google Places] Nearby search at (43.7390972, 7.428068100000001)
+[2025-11-09T23:51:17.646Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-11-09T23:51:17.721Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-11-09T23:51:17.733Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-11-09T23:51:17.753Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-11-09T23:51:17.770Z] LOG    ⚠️  Fairmont Hairpin: No editorial summary available
+[2025-11-09T23:51:17.786Z] LOG    ⚠️  F1 Car Sculpture: No editorial summary available
+[2025-11-09T23:51:17.814Z] LOG    ⚠️  Ayrton Senna Commemorative Plaque: No editorial summary available
+[2025-11-09T23:51:17.822Z] LOG    ✅ Casino de Monte-Carlo: Got description (100 chars)
+[2025-11-09T23:51:17.835Z] LOG    ⚠️  Juan Manuel Fangio Statue: No editorial summary available
+[2025-11-09T23:51:17.861Z] LOG    ⚠️  Le Messager: No editorial summary available
+[2025-11-09T23:51:17.865Z] LOG    ⚠️  Hommage des Colonies Étrangères au prince Albert Ier: No editorial summary available
+[2025-11-09T23:51:17.868Z] LOG    ⚠️  Fairmont Hairpin: No editorial summary available
+[2025-11-09T23:51:17.878Z] LOG    ⚠️  Frame: No editorial summary available
+[2025-11-09T23:51:17.904Z] LOG    ✅ Place du Casino: Got description (97 chars)
+[2025-11-09T23:51:17.906Z] LOG    ✅ Musée océanographique de Monaco: Got description (96 chars)
+[2025-11-09T23:51:17.911Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-11-09T23:51:17.928Z] LOG    ⚠️  France Tour Premium: No editorial summary available
+[2025-11-09T23:51:17.937Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco: Got description (98 chars)
+[2025-11-09T23:51:17.939Z] LOG    ✅ Place du Casino: Got description (99 chars)
+[2025-11-09T23:51:17.943Z] LOG    ✅ Monaco Museum of Prehistoric Anthropology: Got description (96 chars)
+[2025-11-09T23:51:17.974Z] LOG    ⚠️  Jardin du Casino: No editorial summary available
+[2025-11-09T23:51:17.983Z] LOG    ⚠️  Travelator: No editorial summary available
+[2025-11-09T23:51:18.009Z] LOG    ✅ New National Museum of Monaco – Villa Sauber: Got description (90 chars)
+[2025-11-09T23:51:18.015Z] LOG    ✅ New National Museum of Monaco - Villa Paloma: Got description (94 chars)
+[2025-11-09T23:51:18.017Z] LOG    ✅ Casino Café de Paris: Got description (86 chars)
+[2025-11-09T23:51:18.048Z] LOG    ⚠️  Apotheosa Monaca: No editorial summary available
+[2025-11-09T23:51:18.050Z] LOG    ✅ Trophy of Augustus: Got description (91 chars)
+[2025-11-09T23:51:18.052Z] LOG    ⚠️  Manteau de la Conscience - Anna Chromy: No editorial summary available
+[2025-11-09T23:51:18.057Z] LOG    ⚠️  Monaco Courthouse: No editorial summary available
+[2025-11-09T23:51:18.070Z] LOG    ⚠️  La Grotte Bleue: No editorial summary available
+[2025-11-09T23:51:18.073Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 872ms
+[2025-11-09T23:51:18.074Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-11-09T23:51:18.076Z] LOG    ✅ Venue 1 (Monaco Circuit): 4 alternatives
+[2025-11-09T23:51:18.079Z] LOG       1. Manteau de la Conscience - Anna Chromy (4.7⭐)
+[2025-11-09T23:51:18.080Z] LOG       2. Monaco Courthouse (4.8⭐)
+[2025-11-09T23:51:18.081Z] LOG       3. Apotheosa Monaca (4.7⭐)
+[2025-11-09T23:51:18.082Z] LOG    ✅ Venue 2 (F1 Car Sculpture): 4 alternatives
+[2025-11-09T23:51:18.083Z] LOG       1. Juan Manuel Fangio Statue (4.8⭐)
+[2025-11-09T23:51:18.084Z] LOG       2. Hommage des Colonies Étrangères au prince Albert Ier (4.6⭐)
+[2025-11-09T23:51:18.084Z] LOG       3. Ayrton Senna Commemorative Plaque (4.9⭐)
+[2025-11-09T23:51:18.085Z] LOG    ✅ Venue 3 (Fairmont Hairpin): 4 alternatives
+[2025-11-09T23:51:18.086Z] LOG       1. Le Messager (4.8⭐)
+[2025-11-09T23:51:18.087Z] LOG       2. Travelator (4.2⭐)
+[2025-11-09T23:51:18.088Z] LOG       3. Frame (4.7⭐)
+[2025-11-09T23:51:18.089Z] LOG    ✅ Venue 4 (Private Cars Collection of HSH Prince of Monaco): 4 alternatives
+[2025-11-09T23:51:18.091Z] LOG       1. Musée océanographique de Monaco (4.5⭐)
+[2025-11-09T23:51:18.092Z] LOG       2. New National Museum of Monaco - Villa Paloma (4.4⭐)
+[2025-11-09T23:51:18.094Z] LOG       3. Monaco Museum of Prehistoric Anthropology (4.4⭐)
+[2025-11-09T23:51:18.095Z] LOG    ✅ Venue 5 (Casino de Monte-Carlo): 4 alternatives
+[2025-11-09T23:51:18.096Z] LOG       1. Place du Casino (4.7⭐)
+[2025-11-09T23:51:18.097Z] LOG       2. Casino Café de Paris (4.3⭐)
+[2025-11-09T23:51:18.098Z] LOG       3. Place du Casino (4.1⭐)
+[2025-11-09T23:51:18.099Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-11-09T23:51:18.101Z] LOG 
+🧹 Cleaning alternatives...
+[2025-11-09T23:51:18.106Z] LOG    Primary venues: 5 stops
+[2025-11-09T23:51:18.110Z] LOG    ❌ Removed "Fairmont Hairpin" - already in primary route
+[2025-11-09T23:51:18.113Z] LOG    🔧 Stop "ChIJh9ovoYPDzRIRRmsO...": 4 → 3 alternatives
+[2025-11-09T23:51:18.117Z] LOG 
+✅ Cleaning complete:
+[2025-11-09T23:51:18.120Z] LOG    Removed 1 venues already in route
+[2025-11-09T23:51:18.125Z] LOG    Removed 0 duplicate alternatives
+[2025-11-09T23:51:18.128Z] LOG    Final: 5 stops with alternatives
+
+[2025-11-09T23:51:18.131Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-11-09T23:51:18.133Z] LOG    Primary venues: 5
+[2025-11-09T23:51:18.135Z] LOG    Alternatives: 5 stops with alternatives
+[2025-11-09T23:51:18.137Z] LOG    Execution time: 1856ms
+[2025-11-09T23:51:18.138Z] LOG 
+📋 Final alternatives:
+[2025-11-09T23:51:18.139Z] LOG    Monaco Circuit: 4 alternatives
+[2025-11-09T23:51:18.140Z] LOG    F1 Car Sculpture: 3 alternatives
+[2025-11-09T23:51:18.141Z] LOG    Fairmont Hairpin: 4 alternatives
+[2025-11-09T23:51:18.143Z] LOG    Private Cars Collection of HSH Prince of Monaco: 4 alternatives
+[2025-11-09T23:51:18.146Z] LOG    Casino de Monte-Carlo: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

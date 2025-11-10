@@ -1,0 +1,30 @@
+User Prompt: bar crawl in chinatown nyc
+
+[2025-10-30T23:18:23.203Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-30T23:18:23.204Z] LOG 📝 User prompt: "bar crawl in chinatown nyc"
+[2025-10-30T23:18:23.205Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-30T23:18:23.885Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Thu, 30 Oct 2025 23:18:23 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=511","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"<ctrl42>"},{"text":"call\nprint(google_maps(query='bar crawl in Chinatown NYC'))\n"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{},"index":0}],"modelVersion":"gemini-2.5-flash-lite","responseId":"P_IDafTpBaz1jMcPwszvyAs","usageMetadata":{"promptTokenCount":465,"candidatesTokenCount":17,"totalTokenCount":482,"promptTokensDetails":[{"modality":"TEXT","tokenCount":465}]}}
+[2025-10-30T23:18:23.894Z] LOG ✅ Gemini response received
+[2025-10-30T23:18:23.897Z] LOG 📄 Response length: 68 characters
+[2025-10-30T23:18:23.899Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-30T23:18:23.900Z] LOG    candidate exists: true
+[2025-10-30T23:18:23.901Z] LOG    groundingMetadata exists: true
+[2025-10-30T23:18:23.903Z] LOG 📊 Grounding status: Maps=false, Search=false
+[2025-10-30T23:18:23.904Z] LOG ⚠️ No grounding chunks found - Maps grounding may not have triggered
+[2025-10-30T23:18:23.906Z] LOG    This could mean:
+[2025-10-30T23:18:23.908Z] LOG    1. Query didn't need Maps data
+[2025-10-30T23:18:23.909Z] LOG    2. Maps grounding not available for this query type
+[2025-10-30T23:18:23.910Z] LOG    3. Location context not sufficient
+[2025-10-30T23:18:23.912Z] WARN ⚠️ Could not parse JSON, attempting natural language parsing...
+[2025-10-30T23:18:23.915Z] ERROR ❌ Gemini Grounding Agent error: {}
+[2025-10-30T23:18:23.918Z] ERROR    Error message: COULD_NOT_PARSE_JSON
+[2025-10-30T23:18:23.920Z] ERROR    Error stack: Error: COULD_NOT_PARSE_JSON
+    at GeminiGroundingAgent.parseGeminiResponse (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\services\gemini-grounding-agent.ts:306:13)
+    at GeminiGroundingAgent.getRecommendations (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\services\gemini-grounding-agent.ts:152:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at <anonymous> (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\routes\api.ts:188:28)
+
+--- Summary ---
+Completed

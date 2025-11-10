@@ -1,0 +1,30 @@
+User Prompt: plan a day out in san francisco
+
+[2025-10-30T23:15:46.675Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-30T23:15:46.677Z] LOG 📝 User prompt: "plan a day out in san francisco"
+[2025-10-30T23:15:46.678Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-30T23:15:49.263Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Thu, 30 Oct 2025 23:15:48 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=2456","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"A day out in San Francisco can be a delightful mix of iconic sights, vibrant neighborhoods, and culinary adventures. This plan focuses on a city-wide exploration, utilizing public transportation or driving to cover various attractions.\n\n**Plan:**\n\n*   **Type:** San Francisco City Exploration\n*   **Total Stops:** 5\n*   **Estimated Duration:** Full day (8-10 hours)\n*   **Travel Mode:** Transit/driving\n*   **Theme:** Iconic landmarks, cultural hotspots, and scenic views.\n*   **Scale:** City-wide\n\n**Venues:**\n\n1.  **Alcatraz City Cruises**\n    *   **Description:** Take a ferry to Alcatraz Island and explore the infamous former federal prison. The audio tour provides a captivating look into the lives of its notorious inmates and guards.\n    *   **Category:** Landmark\n    *   **Reasoning:** A quintessential San Francisco experience offering historical insights and unique views of the city skyline.\n    *   **Rating:** 4.5\n    *   **Reviews Summary:** Visitors praise the historical significance, engaging audio tour, and stunning bay views.\n    *   **General Location:** San Francisco Bay\n\n2.  **Golden Gate Bridge**\n    *   **Description:** Visit this world-renowned suspension bridge, an engineering marvel. You can walk or bike across parts of it, or simply admire it from various viewpoints.\n    *   **Category:** Landmark\n    *   **Reasoning:** An iconic symbol of San Francisco, offering breathtaking photo opportunities and a sense of awe.\n    *   **Rating:** 4.7\n    *   **Reviews Summary:** Highly recommended for its majestic presence, accessibility, and photo opportunities.\n    *   **General Location:** Golden Gate Strait\n\n3.  **Fisherman's Wharf**\n    *   **Description:** A bustling waterfront district known for its seafood restaurants, street performers, and views of the bay. Don't miss the sea lions at Pier 39.\n    *   **Category:** District\n    *   **Reasoning:** Offers a lively atmosphere with a variety of attractions, food options, and classic San Francisco charm.\n    *   **Rating:** 4.2\n    *   **Reviews Summary:** Praised for its vibrant energy, fresh seafood, and the entertaining sea lions.\n    *   **General Location:** Northern Waterfront\n\n4.  **Chinatown**\n    *   **Description:** Explore the oldest Chinatown in North America, a vibrant neighborhood filled with unique shops, traditional eateries, and ornate architecture.\n    *   **Category:** Neighborhood\n    *   **Reasoning:** Provides a rich cultural experience with distinct sights, sounds, and flavors that are different from the rest of the city.\n    *   **Rating:** 4.4\n    *   **Reviews Summary:** Visitors enjoy the authentic atmosphere, delicious food, and colorful street life.\n    *   **General Location:** Downtown San Francisco\n\n5.  **Palace of Fine Arts**\n    *   **Description:** A beautiful Greco-Roman rotunda and lagoon, this landmark is a picturesque spot for a leisurely stroll and photography. It's a serene escape offering stunning architecture.\n    *   **Category:** Landmark\n    *   **Reasoning:** Offers a tranquil and visually stunning experience, perfect for a relaxing end to a day of exploration.\n    *   **Rating:** 4.6\n    *   **Reviews Summary:** Appreciated for its beauty, romantic ambiance, and excellent photo opportunities.\n    *   **General Location:** Marina District\n"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{},"index":0}],"modelVersion":"gemini-2.5-flash-lite","responseId":"pPEDaZieHbamjMcPiKWdkQw","usageMetadata":{"promptTokenCount":466,"candidatesTokenCount":752,"totalTokenCount":1218,"promptTokensDetails":[{"modality":"TEXT","tokenCount":466}]}}
+[2025-10-30T23:15:49.271Z] LOG ✅ Gemini response received
+[2025-10-30T23:15:49.273Z] LOG 📄 Response length: 3303 characters
+[2025-10-30T23:15:49.275Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-30T23:15:49.276Z] LOG    candidate exists: true
+[2025-10-30T23:15:49.277Z] LOG    groundingMetadata exists: true
+[2025-10-30T23:15:49.280Z] LOG 📊 Grounding status: Maps=false, Search=false
+[2025-10-30T23:15:49.281Z] LOG ⚠️ No grounding chunks found - Maps grounding may not have triggered
+[2025-10-30T23:15:49.284Z] LOG    This could mean:
+[2025-10-30T23:15:49.285Z] LOG    1. Query didn't need Maps data
+[2025-10-30T23:15:49.287Z] LOG    2. Maps grounding not available for this query type
+[2025-10-30T23:15:49.289Z] LOG    3. Location context not sufficient
+[2025-10-30T23:15:49.303Z] WARN ⚠️ Could not parse JSON, attempting natural language parsing...
+[2025-10-30T23:15:49.314Z] ERROR ❌ Gemini Grounding Agent error: {}
+[2025-10-30T23:15:49.354Z] ERROR    Error message: COULD_NOT_PARSE_JSON
+[2025-10-30T23:15:49.360Z] ERROR    Error stack: Error: COULD_NOT_PARSE_JSON
+    at GeminiGroundingAgent.parseGeminiResponse (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\services\gemini-grounding-agent.ts:306:13)
+    at GeminiGroundingAgent.getRecommendations (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\services\gemini-grounding-agent.ts:152:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at <anonymous> (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\routes\api.ts:188:28)
+
+--- Summary ---
+Completed

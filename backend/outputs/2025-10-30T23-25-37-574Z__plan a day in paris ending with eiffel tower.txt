@@ -1,0 +1,160 @@
+User Prompt: plan a day in paris ending with eiffel tower
+
+[2025-10-30T23:25:37.576Z] LOG 📍 Using fallback location (no user location): 1st Arrondissement
+[2025-10-30T23:25:37.576Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T23:25:37.578Z] LOG    1. "Louvre Museum" in "1st Arrondissement"
+[2025-10-30T23:25:37.579Z] LOG    2. "Le Tout-Paris" in "1st Arrondissement (near Louvre)"
+[2025-10-30T23:25:37.580Z] LOG    3. "Notre-Dame Cathedral of Paris" in "Île de la Cité"
+[2025-10-30T23:25:37.582Z] LOG    4. "Champ de Mars" in "7th Arrondissement"
+[2025-10-30T23:25:37.583Z] LOG    5. "Eiffel Tower" in "7th Arrondissement"
+[2025-10-30T23:25:37.584Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T23:25:37.586Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:25:37.588Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T23:25:37.590Z] LOG    1. Searching "Louvre Museum" in "1st Arrondissement"
+[2025-10-30T23:25:37.595Z] LOG 🔍 [Google Places] Text search: "Louvre Museum" in 1st Arrondissement
+[2025-10-30T23:25:37.617Z] LOG    2. Searching "Le Tout-Paris" in "1st Arrondissement (near Louvre)"
+[2025-10-30T23:25:37.620Z] LOG 🔍 [Google Places] Text search: "Le Tout-Paris" in 1st Arrondissement (near Louvre)
+[2025-10-30T23:25:37.630Z] LOG    3. Searching "Notre-Dame Cathedral of Paris" in "Île de la Cité"
+[2025-10-30T23:25:37.633Z] LOG 🔍 [Google Places] Text search: "Notre-Dame Cathedral of Paris" in Île de la Cité
+[2025-10-30T23:25:37.640Z] LOG    4. Searching "Champ de Mars" in "7th Arrondissement"
+[2025-10-30T23:25:37.644Z] LOG 🔍 [Google Places] Text search: "Champ de Mars" in 7th Arrondissement
+[2025-10-30T23:25:37.648Z] LOG    5. Searching "Eiffel Tower" in "7th Arrondissement"
+[2025-10-30T23:25:37.649Z] LOG 🔍 [Google Places] Text search: "Eiffel Tower" in 7th Arrondissement
+[2025-10-30T23:25:38.221Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:25:38.236Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:25:38.304Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:25:38.318Z] LOG    ✅ Notre-Dame Cathedral of Paris: Got description (94 chars)
+[2025-10-30T23:25:38.322Z] LOG ✅ Found 1 places
+[2025-10-30T23:25:38.328Z] LOG    ✅ Eiffel Tower: Got description (96 chars)
+[2025-10-30T23:25:38.330Z] LOG ✅ Found 1 places
+[2025-10-30T23:25:38.350Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:25:38.424Z] LOG    ✅ Louvre Museum: Got description (100 chars)
+[2025-10-30T23:25:38.427Z] LOG ✅ Found 1 places
+[2025-10-30T23:25:38.464Z] LOG    ✅ Le Tout-Paris: Got description (96 chars)
+[2025-10-30T23:25:38.468Z] LOG ✅ Found 1 places
+[2025-10-30T23:25:38.476Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:25:38.535Z] LOG    ⚠️  Champ de Mars: No editorial summary available
+[2025-10-30T23:25:38.538Z] LOG ✅ Found 1 places
+[2025-10-30T23:25:38.541Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 953ms
+[2025-10-30T23:25:38.543Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:25:38.544Z] LOG    Tool execution result: success=true
+[2025-10-30T23:25:38.545Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T23:25:38.547Z] LOG    ✅ Merged: Louvre Museum
+[2025-10-30T23:25:38.548Z] LOG       Places placeId: ChIJD3uTd9hx5kcR1IQvGfr8dbk
+[2025-10-30T23:25:38.549Z] LOG       Gemini description: Start your day immersed in art and history at one of the wor...
+[2025-10-30T23:25:38.550Z] LOG    ✅ Merged: Le Tout-Paris
+[2025-10-30T23:25:38.551Z] LOG       Places placeId: ChIJxYJUC2lv5kcRlhdpWba_aGU
+[2025-10-30T23:25:38.554Z] LOG       Gemini description: Enjoy a gourmet lunch with panoramic views of the Seine from...
+[2025-10-30T23:25:38.555Z] LOG    ✅ Merged: Notre-Dame Cathedral of Paris
+[2025-10-30T23:25:38.556Z] LOG       Places placeId: ChIJATr1n-Fx5kcRjQb6q6cdQDY
+[2025-10-30T23:25:38.557Z] LOG       Gemini description: After lunch, take a stroll to the iconic 12th-century Gothic...
+[2025-10-30T23:25:38.560Z] LOG    ✅ Merged: Champ de Mars
+[2025-10-30T23:25:38.561Z] LOG       Places placeId: ChIJB0gcnCBw5kcRHoIAPcTEApc
+[2025-10-30T23:25:38.564Z] LOG       Gemini description: Relax and enjoy the vast public greenspace leading up to the...
+[2025-10-30T23:25:38.566Z] LOG    ✅ Merged: Eiffel Tower
+[2025-10-30T23:25:38.568Z] LOG       Places placeId: ChIJLU7jZClu5kcR4PcOOO6p3I0
+[2025-10-30T23:25:38.569Z] LOG       Gemini description: Conclude your day at Gustave Eiffel's iconic wrought-iron to...
+[2025-10-30T23:25:38.571Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T23:25:38.572Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T23:25:38.574Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T23:25:38.576Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:25:38.578Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T23:25:38.579Z] LOG    1. Searching "museum" in "48.8606111,2.337644"
+[2025-10-30T23:25:38.580Z] LOG    📍 Using nearbySearch at coordinates (48.8606111, 2.337644)
+[2025-10-30T23:25:38.581Z] LOG 🔍 [Google Places] Nearby search at (48.8606111, 2.337644)
+[2025-10-30T23:25:38.584Z] LOG    2. Searching "restaurant" in "48.8587493,2.3422529"
+[2025-10-30T23:25:38.586Z] LOG    📍 Using nearbySearch at coordinates (48.8587493, 2.3422529)
+[2025-10-30T23:25:38.587Z] LOG 🔍 [Google Places] Nearby search at (48.8587493, 2.3422529)
+[2025-10-30T23:25:38.591Z] LOG    3. Searching "landmark" in "48.85296820000001,2.3499021"
+[2025-10-30T23:25:38.593Z] LOG    📍 Using nearbySearch at coordinates (48.85296820000001, 2.3499021)
+[2025-10-30T23:25:38.595Z] LOG 🔍 [Google Places] Nearby search at (48.85296820000001, 2.3499021)
+[2025-10-30T23:25:38.598Z] LOG    4. Searching "park" in "48.85580470000001,2.2983766"
+[2025-10-30T23:25:38.602Z] LOG    📍 Using nearbySearch at coordinates (48.85580470000001, 2.2983766)
+[2025-10-30T23:25:38.603Z] LOG 🔍 [Google Places] Nearby search at (48.85580470000001, 2.2983766)
+[2025-10-30T23:25:38.610Z] LOG    5. Searching "landmark" in "48.85837009999999,2.2944813"
+[2025-10-30T23:25:38.612Z] LOG    📍 Using nearbySearch at coordinates (48.85837009999999, 2.2944813)
+[2025-10-30T23:25:38.614Z] LOG 🔍 [Google Places] Nearby search at (48.85837009999999, 2.2944813)
+[2025-10-30T23:25:39.256Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:25:39.286Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:25:39.336Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:25:39.367Z] LOG    ⚠️  Square Marigny: No editorial summary available
+[2025-10-30T23:25:39.398Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:25:39.435Z] LOG    ✅ Musée d'Orsay: Got description (99 chars)
+[2025-10-30T23:25:39.446Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:25:39.461Z] LOG    ✅ Chouchou: Got description (92 chars)
+[2025-10-30T23:25:39.470Z] LOG    ⚠️  Champ de Mars: No editorial summary available
+[2025-10-30T23:25:39.503Z] LOG    ⚠️  Square Berlin: No editorial summary available
+[2025-10-30T23:25:39.510Z] LOG    ✅ Louvre Museum: Got description (100 chars)
+[2025-10-30T23:25:39.522Z] LOG    ✅ Petit Palais: Got description (99 chars)
+[2025-10-30T23:25:39.526Z] LOG    ✅ Jardins du Trocadéro: Got description (91 chars)
+[2025-10-30T23:25:39.533Z] LOG    ✅ Eiffel Tower: Got description (96 chars)
+[2025-10-30T23:25:39.535Z] LOG    ✅ Musée de l'Orangerie: Got description (94 chars)
+[2025-10-30T23:25:39.539Z] LOG    ✅ Musée Rodin: Got description (98 chars)
+[2025-10-30T23:25:39.543Z] LOG    ✅ Jardin des Champs-Élysées: Got description (93 chars)
+[2025-10-30T23:25:39.548Z] LOG    ⚠️  Le Bouquet des Archives: No editorial summary available
+[2025-10-30T23:25:39.557Z] LOG    ⚠️  Luís de Camões Monument: No editorial summary available
+[2025-10-30T23:25:39.564Z] LOG    ✅ La Fontaine Gaillon: Got description (91 chars)
+[2025-10-30T23:25:39.569Z] LOG    ⚠️  Paillettes Paris Restaurant festif méditerranéen: No editorial summary available
+[2025-10-30T23:25:39.576Z] LOG    ✅ Les Parigots: Got description (95 chars)
+[2025-10-30T23:25:39.583Z] LOG    ✅ Hôtel des Invalides: Got description (97 chars)
+[2025-10-30T23:25:39.598Z] LOG    ✅ Statue of Liberty Paris: Got description (99 chars)
+[2025-10-30T23:25:39.612Z] LOG    ⚠️  Grand Bassin Rond: No editorial summary available
+[2025-10-30T23:25:39.616Z] LOG    ✅ Palais de Chaillot: Got description (95 chars)
+[2025-10-30T23:25:39.632Z] LOG    ✅ Place de la Bastille: Got description (98 chars)
+[2025-10-30T23:25:39.678Z] LOG    ⚠️  Les Halles de Paris: No editorial summary available
+[2025-10-30T23:25:39.703Z] LOG    ⚠️  Faune dansant: No editorial summary available
+[2025-10-30T23:25:39.727Z] LOG    ✅ Colonne Vendôme: Got description (98 chars)
+[2025-10-30T23:25:39.731Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1153ms
+[2025-10-30T23:25:39.732Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:25:39.735Z] LOG    ✅ Venue 1 (Louvre Museum): 4 alternatives
+[2025-10-30T23:25:39.737Z] LOG       1. Musée d'Orsay (4.8⭐)
+[2025-10-30T23:25:39.737Z] LOG       2. Musée de l'Orangerie (4.6⭐)
+[2025-10-30T23:25:39.738Z] LOG       3. Petit Palais (4.7⭐)
+[2025-10-30T23:25:39.740Z] LOG    ✅ Venue 2 (Le Tout-Paris): 4 alternatives
+[2025-10-30T23:25:39.740Z] LOG       1. Chouchou (4.7⭐)
+[2025-10-30T23:25:39.741Z] LOG       2. La Fontaine Gaillon (4.5⭐)
+[2025-10-30T23:25:39.742Z] LOG       3. Les Parigots (4.5⭐)
+[2025-10-30T23:25:39.744Z] LOG    ✅ Venue 3 (Notre-Dame Cathedral of Paris): 4 alternatives
+[2025-10-30T23:25:39.745Z] LOG       1. Place de la Bastille (4.3⭐)
+[2025-10-30T23:25:39.746Z] LOG       2. Grand Bassin Rond (4.7⭐)
+[2025-10-30T23:25:39.747Z] LOG       3. Colonne Vendôme (4.7⭐)
+[2025-10-30T23:25:39.748Z] LOG    ✅ Venue 4 (Champ de Mars): 4 alternatives
+[2025-10-30T23:25:39.749Z] LOG       1. Square Marigny (4.4⭐)
+[2025-10-30T23:25:39.751Z] LOG       2. Square Berlin (4⭐)
+[2025-10-30T23:25:39.751Z] LOG       3. Jardins du Trocadéro (4.6⭐)
+[2025-10-30T23:25:39.752Z] LOG    ✅ Venue 5 (Eiffel Tower): 4 alternatives
+[2025-10-30T23:25:39.754Z] LOG       1. Hôtel des Invalides (4.7⭐)
+[2025-10-30T23:25:39.755Z] LOG       2. Luís de Camões Monument (4⭐)
+[2025-10-30T23:25:39.757Z] LOG       3. Statue of Liberty Paris (4.5⭐)
+[2025-10-30T23:25:39.758Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T23:25:39.763Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T23:25:39.765Z] LOG    Primary venues: 5 stops
+[2025-10-30T23:25:39.767Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T23:25:39.769Z] LOG    Removed 0 venues already in route
+[2025-10-30T23:25:39.770Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T23:25:39.772Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T23:25:39.773Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T23:25:39.774Z] LOG    Primary venues: 5
+[2025-10-30T23:25:39.775Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T23:25:39.776Z] LOG    Execution time: 2200ms
+[2025-10-30T23:25:39.778Z] LOG 
+📋 Final alternatives:
+[2025-10-30T23:25:39.781Z] LOG    Louvre Museum: 4 alternatives
+[2025-10-30T23:25:39.782Z] LOG    Le Tout-Paris: 4 alternatives
+[2025-10-30T23:25:39.783Z] LOG    Notre-Dame Cathedral of Paris: 4 alternatives
+[2025-10-30T23:25:39.785Z] LOG    Champ de Mars: 4 alternatives
+[2025-10-30T23:25:39.787Z] LOG    Eiffel Tower: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

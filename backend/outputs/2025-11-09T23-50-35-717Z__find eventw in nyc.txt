@@ -1,0 +1,94 @@
+User Prompt: find eventw in nyc
+
+[2025-11-09T23:50:35.720Z] LOG 📍 Using fallback location (no user location): Financial District, Manhattan
+[2025-11-09T23:50:35.725Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-11-09T23:50:35.727Z] LOG    1. "Pier 17 / The Rooftop at Pier 17" in "Financial District, Manhattan"
+[2025-11-09T23:50:35.730Z] LOG    2. "Gotham Hall" in "Midtown, Manhattan"
+[2025-11-09T23:50:35.733Z] LOG    3. "Tribeca Rooftop + 360°" in "Tribeca, Manhattan"
+[2025-11-09T23:50:35.734Z] LOG 
+🔍 Executing batch search for 3 venues...
+[2025-11-09T23:50:35.736Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-11-09T23:50:35.738Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-11-09T23:50:35.740Z] LOG    1. Searching "Pier 17 / The Rooftop at Pier 17" in "Financial District, Manhattan"
+[2025-11-09T23:50:35.741Z] LOG 🔍 [Google Places] Text search: "Pier 17 / The Rooftop at Pier 17" in Financial District, Manhattan
+[2025-11-09T23:50:35.758Z] LOG    2. Searching "Gotham Hall" in "Midtown, Manhattan"
+[2025-11-09T23:50:35.762Z] LOG 🔍 [Google Places] Text search: "Gotham Hall" in Midtown, Manhattan
+[2025-11-09T23:50:35.773Z] LOG    3. Searching "Tribeca Rooftop + 360°" in "Tribeca, Manhattan"
+[2025-11-09T23:50:35.776Z] LOG 🔍 [Google Places] Text search: "Tribeca Rooftop + 360°" in Tribeca, Manhattan
+[2025-11-09T23:50:36.243Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-11-09T23:50:36.259Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-11-09T23:50:36.385Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-11-09T23:50:36.447Z] LOG    ⚠️  Tribeca Rooftop + 360°: No editorial summary available
+[2025-11-09T23:50:36.453Z] LOG ✅ Found 1 places
+[2025-11-09T23:50:36.459Z] LOG    ⚠️  Gotham Hall: No editorial summary available
+[2025-11-09T23:50:36.462Z] LOG ✅ Found 1 places
+[2025-11-09T23:50:36.604Z] LOG    ⚠️  The Rooftop at Pier 17: No editorial summary available
+[2025-11-09T23:50:36.607Z] LOG ✅ Found 1 places
+[2025-11-09T23:50:36.608Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 870ms
+[2025-11-09T23:50:36.610Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-11-09T23:50:36.611Z] LOG    Tool execution result: success=true
+[2025-11-09T23:50:36.612Z] LOG    ✅ Tool returned 3 search results
+[2025-11-09T23:50:36.612Z] LOG    ✅ Merged: Pier 17 / The Rooftop at Pier 17
+[2025-11-09T23:50:36.613Z] LOG       Places placeId: ChIJ6QjrLbhbwokRpPEAYkOJhb8
+[2025-11-09T23:50:36.614Z] LOG       Gemini description: A dynamic pier venue offering live shows, concerts, bars, an...
+[2025-11-09T23:50:36.615Z] LOG    ✅ Merged: Gotham Hall
+[2025-11-09T23:50:36.615Z] LOG       Places placeId: ChIJb-mp6atZwokRkT0n5SYVkcA
+[2025-11-09T23:50:36.616Z] LOG       Gemini description: A grand and historic event space, formerly a bank, known for...
+[2025-11-09T23:50:36.616Z] LOG    ✅ Merged: Tribeca Rooftop + 360°
+[2025-11-09T23:50:36.617Z] LOG       Places placeId: ChIJL5kujvRZwokRTIFYbOpnXXs
+[2025-11-09T23:50:36.617Z] LOG       Gemini description: An elegant two-venue space featuring a rooftop terrace that ...
+[2025-11-09T23:50:36.617Z] LOG ✅ Phase 1 complete: Found 3/3 exact venues
+[2025-11-09T23:50:36.618Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-11-09T23:50:36.618Z] LOG    Searching for alternatives near 3 venues...
+[2025-11-09T23:50:36.620Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-11-09T23:50:36.621Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2025-11-09T23:50:36.622Z] LOG    1. Searching "restaurant" in "40.7054623,-74.0016428"
+[2025-11-09T23:50:36.623Z] LOG    📍 Using nearbySearch at coordinates (40.7054623, -74.0016428)
+[2025-11-09T23:50:36.624Z] LOG 🔍 [Google Places] Nearby search at (40.7054623, -74.0016428)
+[2025-11-09T23:50:36.627Z] LOG    2. Searching "Event Venue | Wedding Venue" in "40.7516243,-73.987325"
+[2025-11-09T23:50:36.628Z] LOG    📍 Using nearbySearch at coordinates (40.7516243, -73.987325)
+[2025-11-09T23:50:36.629Z] LOG 🔍 [Google Places] Nearby search at (40.7516243, -73.987325)
+[2025-11-09T23:50:36.631Z] LOG    3. Searching "Event Venue" in "40.7234833,-74.0086333"
+[2025-11-09T23:50:36.632Z] LOG    📍 Using nearbySearch at coordinates (40.7234833, -74.0086333)
+[2025-11-09T23:50:36.633Z] LOG 🔍 [Google Places] Nearby search at (40.7234833, -74.0086333)
+[2025-11-09T23:50:37.974Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-11-09T23:50:38.132Z] LOG    ⚠️  The Lofts at Prince: No editorial summary available
+[2025-11-09T23:50:38.170Z] LOG    ⚠️  Little Owl the Townhouse: No editorial summary available
+[2025-11-09T23:50:38.193Z] LOG    ⚠️  The Westside Loft - Event Space NYC: No editorial summary available
+[2025-11-09T23:50:38.231Z] LOG    ⚠️  The Farm Soho NYC - Event Venues and Day Offices: No editorial summary available
+[2025-11-09T23:50:38.272Z] LOG    ⚠️  Antique Loft at Riverview: No editorial summary available
+[2025-11-09T23:50:38.276Z] LOG ✅ Batch complete: 3/3 searches succeeded, 5 total venues found in 1656ms
+[2025-11-09T23:50:38.278Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-11-09T23:50:38.278Z] LOG    ⚠️ No alternatives found for venue 1
+[2025-11-09T23:50:38.280Z] LOG    ⚠️ No alternatives found for venue 2
+[2025-11-09T23:50:38.281Z] LOG    ✅ Venue 3 (Tribeca Rooftop + 360°): 4 alternatives
+[2025-11-09T23:50:38.282Z] LOG       1. Little Owl the Townhouse (4.9⭐)
+[2025-11-09T23:50:38.283Z] LOG       2. The Westside Loft - Event Space NYC (4.5⭐)
+[2025-11-09T23:50:38.284Z] LOG       3. The Lofts at Prince (4.6⭐)
+[2025-11-09T23:50:38.284Z] LOG 
+📦 Phase 2 complete: 1 stops with alternatives
+[2025-11-09T23:50:38.285Z] LOG 
+🧹 Cleaning alternatives...
+[2025-11-09T23:50:38.286Z] LOG    Primary venues: 3 stops
+[2025-11-09T23:50:38.286Z] LOG 
+✅ Cleaning complete:
+[2025-11-09T23:50:38.287Z] LOG    Removed 0 venues already in route
+[2025-11-09T23:50:38.288Z] LOG    Removed 0 duplicate alternatives
+[2025-11-09T23:50:38.288Z] LOG    Final: 1 stops with alternatives
+
+[2025-11-09T23:50:38.290Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-11-09T23:50:38.291Z] LOG    Primary venues: 3
+[2025-11-09T23:50:38.292Z] LOG    Alternatives: 1 stops with alternatives
+[2025-11-09T23:50:38.293Z] LOG    Execution time: 2575ms
+[2025-11-09T23:50:38.293Z] LOG 
+📋 Final alternatives:
+[2025-11-09T23:50:38.293Z] LOG    Tribeca Rooftop + 360°: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 3
+Alternatives: 1

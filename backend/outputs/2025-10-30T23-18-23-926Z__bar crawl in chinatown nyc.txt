@@ -1,0 +1,47 @@
+User Prompt: bar crawl in chinatown nyc
+
+[2025-10-30T23:18:23.931Z] LOG 
+================================================================================
+[2025-10-30T23:18:23.932Z] LOG 🔄 ITERATION 1
+[2025-10-30T23:18:23.933Z] LOG ================================================================================
+[2025-10-30T23:18:23.934Z] LOG 
+💭 THINKING...
+[2025-10-30T23:18:25.716Z] LOG    Reasoning: The user is looking for a bar crawl in Chinatown, NYC. I will search for bars in Chinatown to provide a list of venues for the crawl.
+[2025-10-30T23:18:25.719Z] LOG    Action: search_venues
+[2025-10-30T23:18:25.721Z] LOG    Parameters: {
+  "query": "bars",
+  "location": "Chinatown, New York",
+  "limit": 10
+}
+[2025-10-30T23:18:25.722Z] LOG 
+⚡ ACTING...
+[2025-10-30T23:18:25.723Z] LOG ⚙️  Executing tool: search_venues
+[2025-10-30T23:18:25.736Z] LOG 🔍 [VenueSearchTool] Broad search: "bars" in "Chinatown, New York"
+[2025-10-30T23:18:25.739Z] LOG 🔍 [Google Places] Text search: "bars" in Chinatown, New York
+[2025-10-30T23:18:26.780Z] LOG 📝 Fetching descriptions for 10 places...
+[2025-10-30T23:18:26.944Z] LOG    ✅ Basement: Got description (96 chars)
+[2025-10-30T23:18:26.979Z] LOG    ⚠️  Jade & Clover: No editorial summary available
+[2025-10-30T23:18:26.991Z] LOG    ✅ Clandestino: Got description (92 chars)
+[2025-10-30T23:18:26.994Z] LOG    ✅ Whiskey Tavern: Got description (84 chars)
+[2025-10-30T23:18:27.007Z] LOG    ⚠️  The River: No editorial summary available
+[2025-10-30T23:18:27.020Z] LOG    ✅ Mr. Fong's: Got description (90 chars)
+[2025-10-30T23:18:27.030Z] LOG    ✅ Reception Bar: Got description (92 chars)
+[2025-10-30T23:18:27.034Z] LOG    ⚠️  Swan Room: No editorial summary available
+[2025-10-30T23:18:27.041Z] LOG    ✅ The Crown: Got description (95 chars)
+[2025-10-30T23:18:27.072Z] LOG    ✅ Apotheke Chinatown: Got description (100 chars)
+[2025-10-30T23:18:27.075Z] LOG ✅ Found 10 places
+[2025-10-30T23:18:27.082Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2025-10-30T23:18:27.085Z] LOG    Success: true
+[2025-10-30T23:18:27.091Z] LOG    Data: {"venues":[{"name":"Basement","address":"45 Mott St, New York, NY 10013, United States","location":{"lat":40.715298,"lng":-73.9989571,"coordinates":"40.715298,-73.9989571"},"rating":4.3,"priceLevel":"...
+[2025-10-30T23:18:27.094Z] LOG 
+👁️  OBSERVING...
+[2025-10-30T23:18:27.097Z] LOG    Added observation to conversation history
+[2025-10-30T23:18:27.099Z] LOG    Total messages: 4
+[2025-10-30T23:18:27.100Z] LOG    Total tokens used: 1993
+[2025-10-30T23:18:27.101Z] LOG ⏱️ Iteration 1 took 3167ms
+[2025-10-30T23:18:27.103Z] LOG 
+================================================================================
+[2025-10-30T23:18:27.104Z] LOG 🔄 ITERATION 2
+[2025-10-30T23:18:27.105Z] LOG ================================================================================
+[2025-10-30T23:18:27.106Z] LOG 
+💭 THINKING...

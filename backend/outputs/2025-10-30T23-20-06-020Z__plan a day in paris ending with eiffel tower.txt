@@ -1,0 +1,30 @@
+User Prompt: plan a day in paris ending with eiffel tower
+
+[2025-10-30T23:20:06.029Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2025-10-30T23:20:06.032Z] LOG 📝 User prompt: "plan a day in paris ending with eiffel tower"
+[2025-10-30T23:20:06.033Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2025-10-30T23:20:09.016Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Thu, 30 Oct 2025 23:20:08 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=2684","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"The user wants to plan a day in Paris that culminates at the Eiffel Tower. This implies a city-wide exploration, likely involving some transit between locations.\n\nHere's a possible itinerary:\n\n**Plan:**\n\n*   **Type:** Parisian Exploration ending at the Eiffel Tower\n*   **Total Stops:** 5\n*   **Estimated Duration:** Full day (8-10 hours)\n*   **Travel Mode:** Transit/driving (with some walking)\n*   **Theme:** A blend of art, culture, history, and iconic Parisian scenery.\n*   **Scale:** City-wide\n\n**Venues:**\n\n1.  **Name:** Louvre Museum\n    *   **Description:** Home to thousands of works of art, including the Mona Lisa and Venus de Milo. It's one of the world's largest and most famous museums, housed in a historic palace.\n    *   **Category:** Museum\n    *   **Reasoning:** A quintessential Parisian experience and a great way to start a culturally rich day.\n    *   **Rating:** 4.6\n    *   **Reviews Summary:** \"Incredible collection,\" \"must-see,\" \"plan your visit.\"\n    *   **General Location:** 1st arrondissement\n2.  **Name:** Notre Dame Cathedral\n    *   **Description:** A medieval Catholic cathedral on the Île de la Cité, renowned for its French Gothic architecture. While still undergoing restoration, its exterior is a significant landmark.\n    *   **Category:** Landmark\n    *   **Reasoning:** An iconic historical and architectural site in the heart of Paris.\n    *   **Rating:** 4.3\n    *   **Reviews Summary:** \"Stunning architecture,\" \"historical significance,\" \"beautiful even from outside.\"\n    *   **General Location:** Île de la Cité\n3.  **Name:** Musée d'Orsay\n    *   **Description:** Housed in a former railway station, this museum features a vast collection of Impressionist and Post-Impressionist masterpieces by artists like Monet, Manet, Degas, Renoir, Van Gogh, and Gauguin.\n    *   **Category:** Museum\n    *   **Reasoning:** Offers a different artistic perspective than the Louvre and is conveniently located across the Seine.\n    *   **Rating:** 4.6\n    *   **Reviews Summary:** \"Beautiful building,\" \"amazing Impressionist art,\" \"manageable size.\"\n    *   **General Location:** 7th arrondissement\n4.  **Name:** Arc de Triomphe\n    *   **Description:** Standing at the western end of the Champs-Élysées, this monument honors those who fought and died for France. Visitors can climb to the top for panoramic views of the city.\n    *   **Category:** Landmark\n    *   **Reasoning:** Provides a grand perspective of Parisian avenues and leads nicely towards the Eiffel Tower area.\n    *   **Rating:** 4.6\n    *   **Reviews Summary:** \"Incredible views,\" \"historical importance,\" \"impressive monument.\"\n    *   **General Location:** 8th arrondissement\n5.  **Name:** Eiffel Tower\n    *   **Description:** The iconic wrought-iron lattice tower on the Champ de Mars. It's a global symbol of France and a must-visit for its historical significance and breathtaking views from its various levels.\n    *   **Category:** Landmark\n    *   **Reasoning:** The user specifically requested to end the day here, making it the perfect finale.\n    *   **Rating:** 4.7\n    *   **Reviews Summary:** \"Breathtaking views,\" \"iconic landmark,\" \"unforgettable experience.\"\n    *   **General Location:** 7th arrondissement"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{},"index":0}],"modelVersion":"gemini-2.5-flash-lite","responseId":"qPIDaciHBofUjMcPgJGhsAg","usageMetadata":{"promptTokenCount":469,"candidatesTokenCount":794,"totalTokenCount":1263,"promptTokensDetails":[{"modality":"TEXT","tokenCount":469}]}}
+[2025-10-30T23:20:09.027Z] LOG ✅ Gemini response received
+[2025-10-30T23:20:09.032Z] LOG 📄 Response length: 3232 characters
+[2025-10-30T23:20:09.036Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2025-10-30T23:20:09.039Z] LOG    candidate exists: true
+[2025-10-30T23:20:09.042Z] LOG    groundingMetadata exists: true
+[2025-10-30T23:20:09.048Z] LOG 📊 Grounding status: Maps=false, Search=false
+[2025-10-30T23:20:09.050Z] LOG ⚠️ No grounding chunks found - Maps grounding may not have triggered
+[2025-10-30T23:20:09.051Z] LOG    This could mean:
+[2025-10-30T23:20:09.053Z] LOG    1. Query didn't need Maps data
+[2025-10-30T23:20:09.055Z] LOG    2. Maps grounding not available for this query type
+[2025-10-30T23:20:09.058Z] LOG    3. Location context not sufficient
+[2025-10-30T23:20:09.061Z] WARN ⚠️ Could not parse JSON, attempting natural language parsing...
+[2025-10-30T23:20:09.065Z] ERROR ❌ Gemini Grounding Agent error: {}
+[2025-10-30T23:20:09.101Z] ERROR    Error message: COULD_NOT_PARSE_JSON
+[2025-10-30T23:20:09.105Z] ERROR    Error stack: Error: COULD_NOT_PARSE_JSON
+    at GeminiGroundingAgent.parseGeminiResponse (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\services\gemini-grounding-agent.ts:306:13)
+    at GeminiGroundingAgent.getRecommendations (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\services\gemini-grounding-agent.ts:152:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at <anonymous> (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\routes\api.ts:188:28)
+
+--- Summary ---
+Completed

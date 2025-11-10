@@ -1,0 +1,160 @@
+User Prompt: bar crawl in san francisco
+
+[2025-10-30T23:17:52.526Z] LOG 📍 Using fallback location (no user location): Divisadero
+[2025-10-30T23:17:52.529Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T23:17:52.530Z] LOG    1. "Emporium Arcade Bar" in "Divisadero"
+[2025-10-30T23:17:52.533Z] LOG    2. "Wreck Room" in "California Street"
+[2025-10-30T23:17:52.536Z] LOG    3. "Mayes Oyster House" in "Polk Street"
+[2025-10-30T23:17:52.538Z] LOG    4. "Pacific Cocktail Haven" in "Sutter Street"
+[2025-10-30T23:17:52.541Z] LOG    5. "San Francisco Ghosts: Ghost Tours & Haunted Pub Crawls" in "Nob Hill/Union Square"
+[2025-10-30T23:17:52.543Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T23:17:52.548Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:17:52.551Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T23:17:52.555Z] LOG    1. Searching "Emporium Arcade Bar" in "Divisadero"
+[2025-10-30T23:17:52.556Z] LOG 🔍 [Google Places] Text search: "Emporium Arcade Bar" in Divisadero
+[2025-10-30T23:17:52.564Z] LOG    2. Searching "Wreck Room" in "California Street"
+[2025-10-30T23:17:52.566Z] LOG 🔍 [Google Places] Text search: "Wreck Room" in California Street
+[2025-10-30T23:17:52.571Z] LOG    3. Searching "Mayes Oyster House" in "Polk Street"
+[2025-10-30T23:17:52.574Z] LOG 🔍 [Google Places] Text search: "Mayes Oyster House" in Polk Street
+[2025-10-30T23:17:52.580Z] LOG    4. Searching "Pacific Cocktail Haven" in "Sutter Street"
+[2025-10-30T23:17:52.584Z] LOG 🔍 [Google Places] Text search: "Pacific Cocktail Haven" in Sutter Street
+[2025-10-30T23:17:52.590Z] LOG    5. Searching "San Francisco Ghosts: Ghost Tours & Haunted Pub Crawls" in "Nob Hill/Union Square"
+[2025-10-30T23:17:52.592Z] LOG 🔍 [Google Places] Text search: "San Francisco Ghosts: Ghost Tours & Haunted Pub Crawls" in Nob Hill/Union Square
+[2025-10-30T23:17:53.100Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:17:53.142Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:17:53.152Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:17:53.196Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:17:53.234Z] LOG    ✅ Mayes Oyster House: Got description (86 chars)
+[2025-10-30T23:17:53.240Z] LOG ✅ Found 1 places
+[2025-10-30T23:17:53.255Z] LOG    ✅ Emporium Arcade Bar: Got description (100 chars)
+[2025-10-30T23:17:53.259Z] LOG ✅ Found 1 places
+[2025-10-30T23:17:53.275Z] LOG    ✅ Pacific Cocktail Haven: Got description (100 chars)
+[2025-10-30T23:17:53.278Z] LOG ✅ Found 1 places
+[2025-10-30T23:17:53.282Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:17:53.342Z] LOG    ⚠️  San Francisco Ghosts: Ghost Tours & Haunted Pub Crawls: No editorial summary available
+[2025-10-30T23:17:53.345Z] LOG ✅ Found 1 places
+[2025-10-30T23:17:53.416Z] LOG    ⚠️  Rage Ground: No editorial summary available
+[2025-10-30T23:17:53.421Z] LOG ✅ Found 1 places
+[2025-10-30T23:17:53.422Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 871ms
+[2025-10-30T23:17:53.424Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:17:53.425Z] LOG    Tool execution result: success=true
+[2025-10-30T23:17:53.426Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T23:17:53.427Z] LOG    ✅ Merged: Emporium Arcade Bar
+[2025-10-30T23:17:53.428Z] LOG       Places placeId: ChIJaSBxxa-AhYARBotIvZ6iIbE
+[2025-10-30T23:17:53.430Z] LOG       Gemini description: This bar offers a fun atmosphere with pinball, pool, and old...
+[2025-10-30T23:17:53.431Z] LOG    ✅ Merged: Wreck Room
+[2025-10-30T23:17:53.434Z] LOG       Places placeId: ChIJW9Xg6s_HwoARFG7-3P-1ZKE
+[2025-10-30T23:17:53.436Z] LOG       Gemini description: A sizable saloon featuring numerous TVs, a pool table, and c...
+[2025-10-30T23:17:53.438Z] LOG    ✅ Merged: Mayes Oyster House
+[2025-10-30T23:17:53.442Z] LOG       Places placeId: ChIJu3CtWZSAhYARCR1Wb3yjm-4
+[2025-10-30T23:17:53.445Z] LOG       Gemini description: An old-school seafood restaurant that transforms into a danc...
+[2025-10-30T23:17:53.448Z] LOG    ✅ Merged: Pacific Cocktail Haven
+[2025-10-30T23:17:53.450Z] LOG       Places placeId: ChIJi2fwgI6AhYARglQgXX2A3WU
+[2025-10-30T23:17:53.454Z] LOG       Gemini description: This stylish bar is known for its elevated cocktails, punch ...
+[2025-10-30T23:17:53.456Z] LOG    ✅ Merged: San Francisco Ghosts: Ghost Tours & Haunted Pub Crawls
+[2025-10-30T23:17:53.458Z] LOG       Places placeId: ChIJSRRHQaGBhYAR6O01ERzc4Pc
+[2025-10-30T23:17:53.459Z] LOG       Gemini description: This unique tour company offers walking tours focused on San...
+[2025-10-30T23:17:53.460Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T23:17:53.461Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T23:17:53.465Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T23:17:53.467Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:17:53.468Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T23:17:53.470Z] LOG    1. Searching "bar" in "37.7753234,-122.4377406"
+[2025-10-30T23:17:53.471Z] LOG    📍 Using nearbySearch at coordinates (37.7753234, -122.4377406)
+[2025-10-30T23:17:53.473Z] LOG 🔍 [Google Places] Nearby search at (37.7753234, -122.4377406)
+[2025-10-30T23:17:53.477Z] LOG    2. Searching "restaurant" in "34.0385916,-118.2576674"
+[2025-10-30T23:17:53.478Z] LOG    📍 Using nearbySearch at coordinates (34.0385916, -118.2576674)
+[2025-10-30T23:17:53.481Z] LOG 🔍 [Google Places] Nearby search at (34.0385916, -118.2576674)
+[2025-10-30T23:17:53.485Z] LOG    3. Searching "bar" in "37.7882659,-122.4204361"
+[2025-10-30T23:17:53.487Z] LOG    📍 Using nearbySearch at coordinates (37.7882659, -122.4204361)
+[2025-10-30T23:17:53.489Z] LOG 🔍 [Google Places] Nearby search at (37.7882659, -122.4204361)
+[2025-10-30T23:17:53.492Z] LOG    4. Searching "bar" in "37.7894294,-122.4095652"
+[2025-10-30T23:17:53.495Z] LOG    📍 Using nearbySearch at coordinates (37.7894294, -122.4095652)
+[2025-10-30T23:17:53.497Z] LOG 🔍 [Google Places] Nearby search at (37.7894294, -122.4095652)
+[2025-10-30T23:17:53.500Z] LOG    5. Searching "tour" in "37.7879357,-122.4075204"
+[2025-10-30T23:17:53.503Z] LOG    📍 Using nearbySearch at coordinates (37.7879357, -122.4075204)
+[2025-10-30T23:17:53.506Z] LOG 🔍 [Google Places] Nearby search at (37.7879357, -122.4075204)
+[2025-10-30T23:17:54.140Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:17:54.173Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:17:54.214Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:17:54.262Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:17:54.289Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:17:54.343Z] LOG    ✅ Delirium: Got description (100 chars)
+[2025-10-30T23:17:54.350Z] LOG    ✅ Bottega Louie: Got description (96 chars)
+[2025-10-30T23:17:54.356Z] LOG    ✅ Cityscape: Got description (99 chars)
+[2025-10-30T23:17:54.413Z] LOG    ✅ Mauna Loa Club: Got description (91 chars)
+[2025-10-30T23:17:54.448Z] LOG    ⚠️  Dylan's Tours: No editorial summary available
+[2025-10-30T23:17:54.482Z] LOG    ✅ Harry's Bar SF: Got description (96 chars)
+[2025-10-30T23:17:54.508Z] LOG    ✅ Nightingale Bar: Got description (91 chars)
+[2025-10-30T23:17:54.556Z] LOG    ✅ The Sycamore: Got description (97 chars)
+[2025-10-30T23:17:54.562Z] LOG    ⚠️  Free SF Tour: No editorial summary available
+[2025-10-30T23:17:54.567Z] LOG    ✅ Fixins Soul Kitchen: Got description (103 chars)
+[2025-10-30T23:17:54.571Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-30T23:17:54.573Z] LOG    ⚠️  Duchess: No editorial summary available
+[2025-10-30T23:17:54.575Z] LOG    ⚠️  Painted Ladies Tour Company: No editorial summary available
+[2025-10-30T23:17:54.577Z] LOG    ✅ Iron Horse Cocktails: Got description (100 chars)
+[2025-10-30T23:17:54.579Z] LOG    ✅ Last Drop Tavern: Got description (96 chars)
+[2025-10-30T23:17:54.590Z] LOG    ✅ The Boardroom: Got description (98 chars)
+[2025-10-30T23:17:54.598Z] LOG    ⚠️  Must See - Alcatraz tours / Muir Woods and Sausalito tours: No editorial summary available
+[2025-10-30T23:17:54.606Z] LOG    ✅ Orbit Room: Got description (89 chars)
+[2025-10-30T23:17:54.610Z] LOG    ⚠️  Lost Cat Bar & Bites: No editorial summary available
+[2025-10-30T23:17:54.617Z] LOG    ⚠️  The Haunt SF Ghost Tours: No editorial summary available
+[2025-10-30T23:17:54.621Z] LOG    ✅ Elixir: Got description (100 chars)
+[2025-10-30T23:17:54.647Z] LOG    ✅ Water Grill: Got description (87 chars)
+[2025-10-30T23:17:54.668Z] LOG    ✅ Last Drop Tavern: Got description (96 chars)
+[2025-10-30T23:17:54.679Z] LOG    ✅ Louie's Bar: Got description (82 chars)
+[2025-10-30T23:17:54.683Z] LOG    ⚠️  Lost Cat Bar & Bites: No editorial summary available
+[2025-10-30T23:17:54.687Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1219ms
+[2025-10-30T23:17:54.690Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:17:54.693Z] LOG    ✅ Venue 1 (Emporium Arcade Bar): 4 alternatives
+[2025-10-30T23:17:54.694Z] LOG       1. Delirium (4.2⭐)
+[2025-10-30T23:17:54.697Z] LOG       2. The Sycamore (4.4⭐)
+[2025-10-30T23:17:54.698Z] LOG       3. Harry's Bar SF (4.2⭐)
+[2025-10-30T23:17:54.702Z] LOG    ✅ Venue 2 (Rage Ground): 4 alternatives
+[2025-10-30T23:17:54.704Z] LOG       1. Bottega Louie (4.5⭐)
+[2025-10-30T23:17:54.706Z] LOG       2. Yard House (4.4⭐)
+[2025-10-30T23:17:54.709Z] LOG       3. Fixins Soul Kitchen (4.5⭐)
+[2025-10-30T23:17:54.710Z] LOG    ✅ Venue 3 (Mayes Oyster House): 4 alternatives
+[2025-10-30T23:17:54.712Z] LOG       1. Mauna Loa Club (4.3⭐)
+[2025-10-30T23:17:54.714Z] LOG       2. Nightingale Bar (4.5⭐)
+[2025-10-30T23:17:54.716Z] LOG       3. Iron Horse Cocktails (4.5⭐)
+[2025-10-30T23:17:54.717Z] LOG    ✅ Venue 4 (Pacific Cocktail Haven): 4 alternatives
+[2025-10-30T23:17:54.719Z] LOG       1. Cityscape (4.5⭐)
+[2025-10-30T23:17:54.720Z] LOG       2. Lost Cat Bar & Bites (4.6⭐)
+[2025-10-30T23:17:54.721Z] LOG       3. Louie's Bar (4.4⭐)
+[2025-10-30T23:17:54.724Z] LOG    ✅ Venue 5 (San Francisco Ghosts: Ghost Tours & Haunted Pub Crawls): 4 alternatives
+[2025-10-30T23:17:54.725Z] LOG       1. Dylan's Tours (4.9⭐)
+[2025-10-30T23:17:54.729Z] LOG       2. Free SF Tour (5⭐)
+[2025-10-30T23:17:54.731Z] LOG       3. Must See - Alcatraz tours / Muir Woods and Sausalito tours (4.7⭐)
+[2025-10-30T23:17:54.733Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T23:17:54.737Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T23:17:54.743Z] LOG    Primary venues: 5 stops
+[2025-10-30T23:17:54.771Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T23:17:54.773Z] LOG    Removed 0 venues already in route
+[2025-10-30T23:17:54.776Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T23:17:54.780Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T23:17:54.784Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T23:17:54.786Z] LOG    Primary venues: 5
+[2025-10-30T23:17:54.787Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T23:17:54.788Z] LOG    Execution time: 2261ms
+[2025-10-30T23:17:54.791Z] LOG 
+📋 Final alternatives:
+[2025-10-30T23:17:54.793Z] LOG    Emporium Arcade Bar: 4 alternatives
+[2025-10-30T23:17:54.795Z] LOG    Rage Ground: 4 alternatives
+[2025-10-30T23:17:54.799Z] LOG    Mayes Oyster House: 4 alternatives
+[2025-10-30T23:17:54.801Z] LOG    Pacific Cocktail Haven: 4 alternatives
+[2025-10-30T23:17:54.804Z] LOG    San Francisco Ghosts: Ghost Tours & Haunted Pub Crawls: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

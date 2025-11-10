@@ -1,0 +1,145 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2025-10-30T23:13:40.133Z] LOG 📍 Using fallback location (no user location): National Mall
+[2025-10-30T23:13:40.141Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T23:13:40.152Z] LOG    1. "Smithsonian National Museum of Natural History" in "National Mall"
+[2025-10-30T23:13:40.154Z] LOG    2. "Smithsonian National Museum of American History" in "National Mall"
+[2025-10-30T23:13:40.156Z] LOG    3. "Pavilion Café" in "National Gallery of Art Sculpture Garden"
+[2025-10-30T23:13:40.158Z] LOG    4. "National Gallery of Art - East Building" in "National Mall"
+[2025-10-30T23:13:40.160Z] LOG 
+🔍 Executing batch search for 4 venues...
+[2025-10-30T23:13:40.163Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:13:40.167Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-30T23:13:40.170Z] LOG    1. Searching "Smithsonian National Museum of Natural History" in "National Mall"
+[2025-10-30T23:13:40.174Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of Natural History" in National Mall
+[2025-10-30T23:13:40.208Z] LOG    2. Searching "Smithsonian National Museum of American History" in "National Mall"
+[2025-10-30T23:13:40.212Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of American History" in National Mall
+[2025-10-30T23:13:40.222Z] LOG    3. Searching "Pavilion Café" in "National Gallery of Art Sculpture Garden"
+[2025-10-30T23:13:40.224Z] LOG 🔍 [Google Places] Text search: "Pavilion Café" in National Gallery of Art Sculpture Garden
+[2025-10-30T23:13:40.230Z] LOG    4. Searching "National Gallery of Art - East Building" in "National Mall"
+[2025-10-30T23:13:40.232Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art - East Building" in National Mall
+[2025-10-30T23:13:40.784Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:13:40.803Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:13:40.821Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:13:40.915Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:13:40.941Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2025-10-30T23:13:40.945Z] LOG ✅ Found 1 places
+[2025-10-30T23:13:40.975Z] LOG    ✅ Pavilion Café: Got description (99 chars)
+[2025-10-30T23:13:40.979Z] LOG ✅ Found 1 places
+[2025-10-30T23:13:40.981Z] LOG    ✅ Smithsonian National Museum of American History: Got description (99 chars)
+[2025-10-30T23:13:40.983Z] LOG ✅ Found 1 places
+[2025-10-30T23:13:41.051Z] LOG    ⚠️  National Gallery of Art - East Building: No editorial summary available
+[2025-10-30T23:13:41.055Z] LOG ✅ Found 1 places
+[2025-10-30T23:13:41.057Z] LOG ✅ Batch complete: 4/4 searches succeeded, 4 total venues found in 889ms
+[2025-10-30T23:13:41.058Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:13:41.059Z] LOG    Tool execution result: success=true
+[2025-10-30T23:13:41.060Z] LOG    ✅ Tool returned 4 search results
+[2025-10-30T23:13:41.062Z] LOG    ✅ Merged: Smithsonian National Museum of Natural History
+[2025-10-30T23:13:41.064Z] LOG       Places placeId: ChIJx7K17Ji3t4kRr3VvqMTw7cc
+[2025-10-30T23:13:41.065Z] LOG       Gemini description: Explore the wonders of the natural world, from ancient dinos...
+[2025-10-30T23:13:41.066Z] LOG    ✅ Merged: Smithsonian National Museum of American History
+[2025-10-30T23:13:41.068Z] LOG       Places placeId: ChIJx7K17Ji3t4kR6h3neQYXsjI
+[2025-10-30T23:13:41.070Z] LOG       Gemini description: Delve into the rich tapestry of American history, featuring ...
+[2025-10-30T23:13:41.072Z] LOG    ✅ Merged: Pavilion Café
+[2025-10-30T23:13:41.074Z] LOG       Places placeId: ChIJQ5qm1Zq3t4kRf69K5FqrL84
+[2025-10-30T23:13:41.076Z] LOG       Gemini description: Enjoy a refreshing lunch break in the National Gallery of Ar...
+[2025-10-30T23:13:41.078Z] LOG    ✅ Merged: National Gallery of Art - East Building
+[2025-10-30T23:13:41.080Z] LOG       Places placeId: ChIJHQxq1YW3t4kRyfyPEhlnR-g
+[2025-10-30T23:13:41.083Z] LOG       Gemini description: Discover a stunning collection of modern and contemporary ar...
+[2025-10-30T23:13:41.086Z] LOG ✅ Phase 1 complete: Found 4/4 exact venues
+[2025-10-30T23:13:41.089Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T23:13:41.094Z] LOG    Searching for alternatives near 4 venues...
+[2025-10-30T23:13:41.097Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:13:41.101Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2025-10-30T23:13:41.104Z] LOG    1. Searching "museum" in "38.8912662,-77.0260654"
+[2025-10-30T23:13:41.106Z] LOG    📍 Using nearbySearch at coordinates (38.8912662, -77.0260654)
+[2025-10-30T23:13:41.109Z] LOG 🔍 [Google Places] Nearby search at (38.8912662, -77.0260654)
+[2025-10-30T23:13:41.116Z] LOG    2. Searching "museum" in "38.89127930000001,-77.03005089999999"
+[2025-10-30T23:13:41.119Z] LOG    📍 Using nearbySearch at coordinates (38.89127930000001, -77.03005089999999)
+[2025-10-30T23:13:41.121Z] LOG 🔍 [Google Places] Nearby search at (38.89127930000001, -77.03005089999999)
+[2025-10-30T23:13:41.131Z] LOG    3. Searching "cafe" in "38.8912713,-77.0235268"
+[2025-10-30T23:13:41.134Z] LOG    📍 Using nearbySearch at coordinates (38.8912713, -77.0235268)
+[2025-10-30T23:13:41.137Z] LOG 🔍 [Google Places] Nearby search at (38.8912713, -77.0235268)
+[2025-10-30T23:13:41.143Z] LOG    4. Searching "museum" in "38.8911957,-77.01718989999999"
+[2025-10-30T23:13:41.146Z] LOG    📍 Using nearbySearch at coordinates (38.8911957, -77.01718989999999)
+[2025-10-30T23:13:41.148Z] LOG 🔍 [Google Places] Nearby search at (38.8911957, -77.01718989999999)
+[2025-10-30T23:13:41.849Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:13:41.884Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:13:41.929Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:13:41.965Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:13:42.028Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2025-10-30T23:13:42.090Z] LOG    ✅ El Rinconcito Café: Got description (98 chars)
+[2025-10-30T23:13:42.100Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2025-10-30T23:13:42.180Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2025-10-30T23:13:42.198Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2025-10-30T23:13:42.209Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2025-10-30T23:13:42.217Z] LOG    ✅ National Children's Museum: Got description (95 chars)
+[2025-10-30T23:13:42.223Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2025-10-30T23:13:42.228Z] LOG    ⚠️  Colada Shop: No editorial summary available
+[2025-10-30T23:13:42.237Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2025-10-30T23:13:42.244Z] LOG    ⚠️  Any Day Now: No editorial summary available
+[2025-10-30T23:13:42.255Z] LOG    ✅ Crimson Whiskey Bar: Got description (81 chars)
+[2025-10-30T23:13:42.263Z] LOG    ✅ Café Riggs: Got description (92 chars)
+[2025-10-30T23:13:42.271Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2025-10-30T23:13:42.278Z] LOG    ✅ National Children's Museum: Got description (95 chars)
+[2025-10-30T23:13:42.285Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2025-10-30T23:13:42.294Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2025-10-30T23:13:42.312Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2025-10-30T23:13:42.324Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2025-10-30T23:13:42.334Z] LOG    ✅ National Children's Museum: Got description (95 chars)
+[2025-10-30T23:13:42.337Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 1236ms
+[2025-10-30T23:13:42.340Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:13:42.342Z] LOG    ✅ Venue 1 (Smithsonian National Museum of Natural History): 4 alternatives
+[2025-10-30T23:13:42.344Z] LOG       1. International Spy Museum (4.4⭐)
+[2025-10-30T23:13:42.346Z] LOG       2. Museum of Illusions Washington DC (4.1⭐)
+[2025-10-30T23:13:42.349Z] LOG       3. United States Holocaust Memorial Museum (4.8⭐)
+[2025-10-30T23:13:42.350Z] LOG    ✅ Venue 2 (Smithsonian National Museum of American History): 4 alternatives
+[2025-10-30T23:13:42.352Z] LOG       1. International Spy Museum (4.4⭐)
+[2025-10-30T23:13:42.354Z] LOG       2. Museum of Illusions Washington DC (4.1⭐)
+[2025-10-30T23:13:42.355Z] LOG       3. United States Holocaust Memorial Museum (4.8⭐)
+[2025-10-30T23:13:42.356Z] LOG    ✅ Venue 3 (Pavilion Café): 4 alternatives
+[2025-10-30T23:13:42.360Z] LOG       1. El Rinconcito Café (4.5⭐)
+[2025-10-30T23:13:42.362Z] LOG       2. Any Day Now (4.2⭐)
+[2025-10-30T23:13:42.365Z] LOG       3. Café Riggs (4.5⭐)
+[2025-10-30T23:13:42.368Z] LOG    ✅ Venue 4 (National Gallery of Art - East Building): 4 alternatives
+[2025-10-30T23:13:42.373Z] LOG       1. International Spy Museum (4.4⭐)
+[2025-10-30T23:13:42.376Z] LOG       2. Museum of Illusions Washington DC (4.1⭐)
+[2025-10-30T23:13:42.378Z] LOG       3. United States Holocaust Memorial Museum (4.8⭐)
+[2025-10-30T23:13:42.381Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2025-10-30T23:13:42.385Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T23:13:42.387Z] LOG    Primary venues: 4 stops
+[2025-10-30T23:13:42.390Z] LOG    ❌ Removed "International Spy Museum" - duplicate alternative
+[2025-10-30T23:13:42.392Z] LOG    ❌ Removed "Museum of Illusions Washington DC" - duplicate alternative
+[2025-10-30T23:13:42.394Z] LOG    ❌ Removed "United States Holocaust Memorial Museum" - duplicate alternative
+[2025-10-30T23:13:42.396Z] LOG    ❌ Removed "National Building Museum" - duplicate alternative
+[2025-10-30T23:13:42.398Z] LOG    🔧 Stop "ChIJx7K17Ji3t4kR6h3n...": 4 → 0 alternatives
+[2025-10-30T23:13:42.399Z] LOG    ❌ Removed "International Spy Museum" - duplicate alternative
+[2025-10-30T23:13:42.401Z] LOG    ❌ Removed "Museum of Illusions Washington DC" - duplicate alternative
+[2025-10-30T23:13:42.404Z] LOG    ❌ Removed "United States Holocaust Memorial Museum" - duplicate alternative
+[2025-10-30T23:13:42.406Z] LOG    ❌ Removed "National Building Museum" - duplicate alternative
+[2025-10-30T23:13:42.408Z] LOG    🔧 Stop "ChIJHQxq1YW3t4kRyfyP...": 4 → 0 alternatives
+[2025-10-30T23:13:42.409Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T23:13:42.411Z] LOG    Removed 0 venues already in route
+[2025-10-30T23:13:42.416Z] LOG    Removed 8 duplicate alternatives
+[2025-10-30T23:13:42.418Z] LOG    Final: 2 stops with alternatives
+
+[2025-10-30T23:13:42.420Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T23:13:42.423Z] LOG    Primary venues: 4
+[2025-10-30T23:13:42.426Z] LOG    Alternatives: 2 stops with alternatives
+[2025-10-30T23:13:42.428Z] LOG    Execution time: 2292ms
+[2025-10-30T23:13:42.430Z] LOG 
+📋 Final alternatives:
+[2025-10-30T23:13:42.433Z] LOG    Smithsonian National Museum of Natural History: 4 alternatives
+[2025-10-30T23:13:42.437Z] LOG    Pavilion Café: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 2

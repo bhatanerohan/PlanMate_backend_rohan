@@ -1,0 +1,160 @@
+User Prompt: a trip to most iconic spots in mumbai
+
+[2025-10-30T23:15:21.325Z] LOG 📍 Using fallback location (no user location): Colaba
+[2025-10-30T23:15:21.329Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T23:15:21.331Z] LOG    1. "Gateway Of India Mumbai" in "Colaba"
+[2025-10-30T23:15:21.333Z] LOG    2. "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya" in "Fort"
+[2025-10-30T23:15:21.335Z] LOG    3. "Marine Drive" in "Nariman Point"
+[2025-10-30T23:15:21.337Z] LOG    4. "Hanging Gardens" in "Malabar Hill"
+[2025-10-30T23:15:21.341Z] LOG    5. "Bandra Fort" in "Bandra"
+[2025-10-30T23:15:21.342Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T23:15:21.344Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:15:21.346Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T23:15:21.347Z] LOG    1. Searching "Gateway Of India Mumbai" in "Colaba"
+[2025-10-30T23:15:21.350Z] LOG 🔍 [Google Places] Text search: "Gateway Of India Mumbai" in Colaba
+[2025-10-30T23:15:21.358Z] LOG    2. Searching "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya" in "Fort"
+[2025-10-30T23:15:21.360Z] LOG 🔍 [Google Places] Text search: "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya" in Fort
+[2025-10-30T23:15:21.366Z] LOG    3. Searching "Marine Drive" in "Nariman Point"
+[2025-10-30T23:15:21.368Z] LOG 🔍 [Google Places] Text search: "Marine Drive" in Nariman Point
+[2025-10-30T23:15:21.372Z] LOG    4. Searching "Hanging Gardens" in "Malabar Hill"
+[2025-10-30T23:15:21.374Z] LOG 🔍 [Google Places] Text search: "Hanging Gardens" in Malabar Hill
+[2025-10-30T23:15:21.379Z] LOG    5. Searching "Bandra Fort" in "Bandra"
+[2025-10-30T23:15:21.380Z] LOG 🔍 [Google Places] Text search: "Bandra Fort" in Bandra
+[2025-10-30T23:15:21.839Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:15:21.873Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:15:21.925Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:15:21.946Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:15:21.994Z] LOG    ✅ Bandra Fort: Got description (98 chars)
+[2025-10-30T23:15:22.000Z] LOG ✅ Found 1 places
+[2025-10-30T23:15:22.003Z] LOG    ✅ Gateway Of India Mumbai: Got description (92 chars)
+[2025-10-30T23:15:22.006Z] LOG ✅ Found 1 places
+[2025-10-30T23:15:22.082Z] LOG    ✅ Marine Dr: Got description (100 chars)
+[2025-10-30T23:15:22.086Z] LOG ✅ Found 1 places
+[2025-10-30T23:15:22.092Z] LOG    ✅ Hanging Garden: Got description (99 chars)
+[2025-10-30T23:15:22.094Z] LOG ✅ Found 1 places
+[2025-10-30T23:15:22.122Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:15:22.275Z] LOG    ✅ Chhatrapati Shivaji Maharaj Vastu Sangrahalaya: Got description (99 chars)
+[2025-10-30T23:15:22.283Z] LOG ✅ Found 1 places
+[2025-10-30T23:15:22.287Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 942ms
+[2025-10-30T23:15:22.289Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:15:22.291Z] LOG    Tool execution result: success=true
+[2025-10-30T23:15:22.292Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T23:15:22.293Z] LOG    ✅ Merged: Gateway Of India Mumbai
+[2025-10-30T23:15:22.296Z] LOG       Places placeId: ChIJrVwNOsfR5zsRPHOcIKclCsc
+[2025-10-30T23:15:22.299Z] LOG       Gemini description: A grand, Indo-Saracenic-style, 26m-tall triumphal stone arch...
+[2025-10-30T23:15:22.300Z] LOG    ✅ Merged: Chhatrapati Shivaji Maharaj Vastu Sangrahalaya
+[2025-10-30T23:15:22.302Z] LOG       Places placeId: ChIJJ7H46sPR5zsRU5I-VRAm50Q
+[2025-10-30T23:15:22.305Z] LOG       Gemini description: A grand museum housed in Indo-Saracenic architecture, it fea...
+[2025-10-30T23:15:22.307Z] LOG    ✅ Merged: Marine Drive
+[2025-10-30T23:15:22.310Z] LOG       Places placeId: ChIJnUPoXuLR5zsRK60mJ0-SzVo
+[2025-10-30T23:15:22.311Z] LOG       Gemini description: A picturesque 3.6-kilometer-long promenade along the coast, ...
+[2025-10-30T23:15:22.314Z] LOG    ✅ Merged: Hanging Gardens
+[2025-10-30T23:15:22.316Z] LOG       Places placeId: ChIJUyCG7wnO5zsR2YXwxQCI4UQ
+[2025-10-30T23:15:22.318Z] LOG       Gemini description: A beautiful terraced garden located on the Malabar Hill, off...
+[2025-10-30T23:15:22.319Z] LOG    ✅ Merged: Bandra Fort
+[2025-10-30T23:15:22.320Z] LOG       Places placeId: ChIJL-M37E_J5zsRvCVUI05gHL0
+[2025-10-30T23:15:22.322Z] LOG       Gemini description: Also known as Castella de Aguada, this historic Portuguese f...
+[2025-10-30T23:15:22.324Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T23:15:22.325Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T23:15:22.327Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T23:15:22.329Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:15:22.331Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T23:15:22.333Z] LOG    1. Searching "landmark" in "18.9219841,72.8346543"
+[2025-10-30T23:15:22.334Z] LOG    📍 Using nearbySearch at coordinates (18.9219841, 72.8346543)
+[2025-10-30T23:15:22.335Z] LOG 🔍 [Google Places] Nearby search at (18.9219841, 72.8346543)
+[2025-10-30T23:15:22.337Z] LOG    2. Searching "museum" in "18.9269015,72.83269159999999"
+[2025-10-30T23:15:22.338Z] LOG    📍 Using nearbySearch at coordinates (18.9269015, 72.83269159999999)
+[2025-10-30T23:15:22.340Z] LOG 🔍 [Google Places] Nearby search at (18.9269015, 72.83269159999999)
+[2025-10-30T23:15:22.342Z] LOG    3. Searching "restaurant" in "18.9432111,72.8229983"
+[2025-10-30T23:15:22.344Z] LOG    📍 Using nearbySearch at coordinates (18.9432111, 72.8229983)
+[2025-10-30T23:15:22.347Z] LOG 🔍 [Google Places] Nearby search at (18.9432111, 72.8229983)
+[2025-10-30T23:15:22.351Z] LOG    4. Searching "restaurant" in "18.9568954,72.8043778"
+[2025-10-30T23:15:22.353Z] LOG    📍 Using nearbySearch at coordinates (18.9568954, 72.8043778)
+[2025-10-30T23:15:22.354Z] LOG 🔍 [Google Places] Nearby search at (18.9568954, 72.8043778)
+[2025-10-30T23:15:22.358Z] LOG    5. Searching "landmark" in "19.0418892,72.81835939999999"
+[2025-10-30T23:15:22.361Z] LOG    📍 Using nearbySearch at coordinates (19.0418892, 72.81835939999999)
+[2025-10-30T23:15:22.365Z] LOG 🔍 [Google Places] Nearby search at (19.0418892, 72.81835939999999)
+[2025-10-30T23:15:22.904Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:15:22.937Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:15:22.973Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:15:23.002Z] LOG    ✅ Chhatrapati Shivaji Maharaj Vastu Sangrahalaya: Got description (99 chars)
+[2025-10-30T23:15:23.042Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:15:23.067Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:15:23.109Z] LOG    ⚠️  Mount Mary Steps: No editorial summary available
+[2025-10-30T23:15:23.138Z] LOG    ⚠️  Nksha: No editorial summary available
+[2025-10-30T23:15:23.161Z] LOG    ✅ Gateway Of India Mumbai: Got description (92 chars)
+[2025-10-30T23:15:23.176Z] LOG    ⚠️  Gulmurg: No editorial summary available
+[2025-10-30T23:15:23.186Z] LOG    ⚠️  Bhai Memorial Footpath, Bandra: No editorial summary available
+[2025-10-30T23:15:23.195Z] LOG    ✅ Café New York: Got description (91 chars)
+[2025-10-30T23:15:23.210Z] LOG    ⚠️  Coomaraswamy Hall (Prince of Wales Museum): No editorial summary available
+[2025-10-30T23:15:23.222Z] LOG    ⚠️  Mount Mary's Chowk: No editorial summary available
+[2025-10-30T23:15:23.227Z] LOG    ⚠️  Paradox Museum Mumbai: No editorial summary available
+[2025-10-30T23:15:23.231Z] LOG    ✅ Jehangir Art Gallery: Got description (84 chars)
+[2025-10-30T23:15:23.241Z] LOG    ⚠️  Historic Stone Cross - St Andrew Church: No editorial summary available
+[2025-10-30T23:15:23.251Z] LOG    ✅ PANCHARATNA RESTAURANT AND BAR: Got description (95 chars)
+[2025-10-30T23:15:23.261Z] LOG    ⚠️  FAMOUS Restaurant: No editorial summary available
+[2025-10-30T23:15:23.267Z] LOG    ✅ Sardar: Got description (96 chars)
+[2025-10-30T23:15:23.271Z] LOG    ⚠️  Ekaa: No editorial summary available
+[2025-10-30T23:15:23.276Z] LOG    ⚠️  Canto Café And Bar: No editorial summary available
+[2025-10-30T23:15:23.280Z] LOG    ✅ Crystal Restaurant Chowpatty: Got description (91 chars)
+[2025-10-30T23:15:23.285Z] LOG    ⚠️  Chhatrapati Shivaji Maharaj Statue: No editorial summary available
+[2025-10-30T23:15:23.303Z] LOG    ⚠️  Powai: No editorial summary available
+[2025-10-30T23:15:23.309Z] LOG    ⚠️  Kala Ghoda Statue: No editorial summary available
+[2025-10-30T23:15:23.315Z] LOG    ✅ RBI Monetary Museum: Got description (100 chars)
+[2025-10-30T23:15:23.323Z] LOG    ✅ Flora Fountain: Got description (87 chars)
+[2025-10-30T23:15:23.328Z] LOG    ⚠️  Canto Café And Bar: No editorial summary available
+[2025-10-30T23:15:23.331Z] LOG    ⚠️  Sassoon Dock Clock Tower: No editorial summary available
+[2025-10-30T23:15:23.333Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1002ms
+[2025-10-30T23:15:23.335Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:15:23.337Z] LOG    ✅ Venue 1 (Gateway Of India Mumbai): 4 alternatives
+[2025-10-30T23:15:23.338Z] LOG       1. Flora Fountain (4.5⭐)
+[2025-10-30T23:15:23.340Z] LOG       2. Kala Ghoda Statue (4.5⭐)
+[2025-10-30T23:15:23.340Z] LOG       3. Chhatrapati Shivaji Maharaj Statue (4.6⭐)
+[2025-10-30T23:15:23.342Z] LOG    ✅ Venue 2 (Chhatrapati Shivaji Maharaj Vastu Sangrahalaya): 4 alternatives
+[2025-10-30T23:15:23.343Z] LOG       1. Paradox Museum Mumbai (4.6⭐)
+[2025-10-30T23:15:23.345Z] LOG       2. RBI Monetary Museum (4.6⭐)
+[2025-10-30T23:15:23.346Z] LOG       3. Jehangir Art Gallery (4.5⭐)
+[2025-10-30T23:15:23.347Z] LOG    ✅ Venue 3 (Marine Dr): 4 alternatives
+[2025-10-30T23:15:23.349Z] LOG       1. Nksha (4.5⭐)
+[2025-10-30T23:15:23.351Z] LOG       2. FAMOUS Restaurant (4⭐)
+[2025-10-30T23:15:23.352Z] LOG       3. PANCHARATNA RESTAURANT AND BAR (4.4⭐)
+[2025-10-30T23:15:23.354Z] LOG    ✅ Venue 4 (Hanging Garden): 4 alternatives
+[2025-10-30T23:15:23.355Z] LOG       1. Gulmurg (3.9⭐)
+[2025-10-30T23:15:23.357Z] LOG       2. Café New York (4.2⭐)
+[2025-10-30T23:15:23.358Z] LOG       3. Canto Café And Bar (4.3⭐)
+[2025-10-30T23:15:23.360Z] LOG    ✅ Venue 5 (Bandra Fort): 4 alternatives
+[2025-10-30T23:15:23.363Z] LOG       1. Mount Mary Steps (4.8⭐)
+[2025-10-30T23:15:23.365Z] LOG       2. Bhai Memorial Footpath, Bandra (5⭐)
+[2025-10-30T23:15:23.366Z] LOG       3. Mount Mary's Chowk (5⭐)
+[2025-10-30T23:15:23.369Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T23:15:23.372Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T23:15:23.374Z] LOG    Primary venues: 5 stops
+[2025-10-30T23:15:23.376Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T23:15:23.377Z] LOG    Removed 0 venues already in route
+[2025-10-30T23:15:23.378Z] LOG    Removed 0 duplicate alternatives
+[2025-10-30T23:15:23.380Z] LOG    Final: 5 stops with alternatives
+
+[2025-10-30T23:15:23.381Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T23:15:23.384Z] LOG    Primary venues: 5
+[2025-10-30T23:15:23.385Z] LOG    Alternatives: 5 stops with alternatives
+[2025-10-30T23:15:23.386Z] LOG    Execution time: 2061ms
+[2025-10-30T23:15:23.388Z] LOG 
+📋 Final alternatives:
+[2025-10-30T23:15:23.389Z] LOG    Gateway Of India Mumbai: 4 alternatives
+[2025-10-30T23:15:23.390Z] LOG    Chhatrapati Shivaji Maharaj Vastu Sangrahalaya: 4 alternatives
+[2025-10-30T23:15:23.392Z] LOG    Marine Dr: 4 alternatives
+[2025-10-30T23:15:23.393Z] LOG    Hanging Garden: 4 alternatives
+[2025-10-30T23:15:23.394Z] LOG    Bandra Fort: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 5

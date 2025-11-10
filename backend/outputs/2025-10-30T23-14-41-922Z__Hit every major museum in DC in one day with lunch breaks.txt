@@ -1,0 +1,170 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2025-10-30T23:14:41.925Z] LOG 📍 Using fallback location (no user location): National Mall
+[2025-10-30T23:14:41.926Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2025-10-30T23:14:41.928Z] LOG    1. "National Air and Space Museum" in "National Mall"
+[2025-10-30T23:14:41.929Z] LOG    2. "National Museum of Natural History" in "National Mall"
+[2025-10-30T23:14:41.931Z] LOG    3. "Old Ebbitt Grill" in "Downtown"
+[2025-10-30T23:14:41.932Z] LOG    4. "National Museum of American History" in "National Mall"
+[2025-10-30T23:14:41.933Z] LOG    5. "National Gallery of Art" in "National Mall"
+[2025-10-30T23:14:41.935Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2025-10-30T23:14:41.938Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:14:41.940Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T23:14:41.943Z] LOG    1. Searching "National Air and Space Museum" in "National Mall"
+[2025-10-30T23:14:41.945Z] LOG 🔍 [Google Places] Text search: "National Air and Space Museum" in National Mall
+[2025-10-30T23:14:41.966Z] LOG    2. Searching "National Museum of Natural History" in "National Mall"
+[2025-10-30T23:14:41.969Z] LOG 🔍 [Google Places] Text search: "National Museum of Natural History" in National Mall
+[2025-10-30T23:14:41.976Z] LOG    3. Searching "Old Ebbitt Grill" in "Downtown"
+[2025-10-30T23:14:41.978Z] LOG 🔍 [Google Places] Text search: "Old Ebbitt Grill" in Downtown
+[2025-10-30T23:14:41.984Z] LOG    4. Searching "National Museum of American History" in "National Mall"
+[2025-10-30T23:14:41.986Z] LOG 🔍 [Google Places] Text search: "National Museum of American History" in National Mall
+[2025-10-30T23:14:41.993Z] LOG    5. Searching "National Gallery of Art" in "National Mall"
+[2025-10-30T23:14:41.995Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in National Mall
+[2025-10-30T23:14:42.527Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:14:42.538Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:14:42.558Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:14:42.589Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:14:42.650Z] LOG    ✅ Smithsonian National Museum of American History: Got description (99 chars)
+[2025-10-30T23:14:42.658Z] LOG ✅ Found 1 places
+[2025-10-30T23:14:42.668Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2025-10-30T23:14:42.672Z] LOG ✅ Found 1 places
+[2025-10-30T23:14:42.676Z] LOG    ✅ Old Ebbitt Grill: Got description (98 chars)
+[2025-10-30T23:14:42.681Z] LOG ✅ Found 1 places
+[2025-10-30T23:14:42.688Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2025-10-30T23:14:42.694Z] LOG ✅ Found 1 places
+[2025-10-30T23:14:42.926Z] LOG 📝 Fetching descriptions for 1 places...
+[2025-10-30T23:14:43.074Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2025-10-30T23:14:43.083Z] LOG ✅ Found 1 places
+[2025-10-30T23:14:43.088Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 1148ms
+[2025-10-30T23:14:43.093Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:14:43.097Z] LOG    Tool execution result: success=true
+[2025-10-30T23:14:43.099Z] LOG    ✅ Tool returned 5 search results
+[2025-10-30T23:14:43.101Z] LOG    ✅ Merged: National Air and Space Museum
+[2025-10-30T23:14:43.103Z] LOG       Places placeId: ChIJISQme4O3t4kRG-iM3TfJ5_g
+[2025-10-30T23:14:43.105Z] LOG       Gemini description: Explore the history of aviation and spaceflight, with iconic...
+[2025-10-30T23:14:43.107Z] LOG    ✅ Merged: National Museum of Natural History
+[2025-10-30T23:14:43.110Z] LOG       Places placeId: ChIJx7K17Ji3t4kRr3VvqMTw7cc
+[2025-10-30T23:14:43.112Z] LOG       Gemini description: Discover the wonders of the natural world, from dinosaur ske...
+[2025-10-30T23:14:43.118Z] LOG    ✅ Merged: Old Ebbitt Grill
+[2025-10-30T23:14:43.137Z] LOG       Places placeId: ChIJgRwXf723t4kRdfqt36VafUU
+[2025-10-30T23:14:43.150Z] LOG       Gemini description: A historic DC institution since 1856, known for its classic ...
+[2025-10-30T23:14:43.156Z] LOG    ✅ Merged: National Museum of American History
+[2025-10-30T23:14:43.160Z] LOG       Places placeId: ChIJx7K17Ji3t4kR6h3neQYXsjI
+[2025-10-30T23:14:43.166Z] LOG       Gemini description: Trace the story of the United States through its diverse col...
+[2025-10-30T23:14:43.172Z] LOG    ✅ Merged: National Gallery of Art
+[2025-10-30T23:14:43.178Z] LOG       Places placeId: ChIJSYxSO5u3t4kRm4eyKw_Y7Kg
+[2025-10-30T23:14:43.182Z] LOG       Gemini description: Experience a world-class collection spanning centuries of ar...
+[2025-10-30T23:14:43.184Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2025-10-30T23:14:43.185Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2025-10-30T23:14:43.187Z] LOG    Searching for alternatives near 5 venues...
+[2025-10-30T23:14:43.197Z] LOG ⚙️  Executing tool: batch_search_venues
+[2025-10-30T23:14:43.202Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2025-10-30T23:14:43.206Z] LOG    1. Searching "restaurant" in "38.8882063,-77.0198164"
+[2025-10-30T23:14:43.215Z] LOG    📍 Using nearbySearch at coordinates (38.8882063, -77.0198164)
+[2025-10-30T23:14:43.219Z] LOG 🔍 [Google Places] Nearby search at (38.8882063, -77.0198164)
+[2025-10-30T23:14:43.226Z] LOG    2. Searching "restaurant" in "38.8912662,-77.0260654"
+[2025-10-30T23:14:43.234Z] LOG    📍 Using nearbySearch at coordinates (38.8912662, -77.0260654)
+[2025-10-30T23:14:43.237Z] LOG 🔍 [Google Places] Nearby search at (38.8912662, -77.0260654)
+[2025-10-30T23:14:43.245Z] LOG    3. Searching "restaurant" in "38.8979475,-77.0332478"
+[2025-10-30T23:14:43.248Z] LOG    📍 Using nearbySearch at coordinates (38.8979475, -77.0332478)
+[2025-10-30T23:14:43.252Z] LOG 🔍 [Google Places] Nearby search at (38.8979475, -77.0332478)
+[2025-10-30T23:14:43.259Z] LOG    4. Searching "restaurant" in "38.89127930000001,-77.03005089999999"
+[2025-10-30T23:14:43.264Z] LOG    📍 Using nearbySearch at coordinates (38.89127930000001, -77.03005089999999)
+[2025-10-30T23:14:43.271Z] LOG 🔍 [Google Places] Nearby search at (38.89127930000001, -77.03005089999999)
+[2025-10-30T23:14:43.286Z] LOG    5. Searching "museum" in "38.891298,-77.019965"
+[2025-10-30T23:14:43.288Z] LOG    📍 Using nearbySearch at coordinates (38.891298, -77.019965)
+[2025-10-30T23:14:43.291Z] LOG 🔍 [Google Places] Nearby search at (38.891298, -77.019965)
+[2025-10-30T23:14:43.869Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:14:43.900Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:14:43.928Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:14:43.967Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:14:44.007Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2025-10-30T23:14:44.033Z] LOG    ✅ Zaytinya: Got description (98 chars)
+[2025-10-30T23:14:44.057Z] LOG    ✅ Zeppelin: Got description (99 chars)
+[2025-10-30T23:14:44.092Z] LOG 📝 Fetching descriptions for 5 places...
+[2025-10-30T23:14:44.107Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2025-10-30T23:14:44.112Z] LOG    ✅ Taberna del Alabardero: Got description (95 chars)
+[2025-10-30T23:14:44.125Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2025-10-30T23:14:44.137Z] LOG    ✅ National Children's Museum: Got description (95 chars)
+[2025-10-30T23:14:44.156Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2025-10-30T23:14:44.167Z] LOG    ✅ Zaytinya: Got description (98 chars)
+[2025-10-30T23:14:44.170Z] LOG    ✅ Taberna del Alabardero: Got description (95 chars)
+[2025-10-30T23:14:44.186Z] LOG    ✅ Stan's DC Restaurant: Got description (96 chars)
+[2025-10-30T23:14:44.189Z] LOG    ✅ Zaytinya: Got description (98 chars)
+[2025-10-30T23:14:44.214Z] LOG    ✅ Carmine's - Washington DC: Got description (87 chars)
+[2025-10-30T23:14:44.222Z] LOG    ✅ Le Diplomate: Got description (104 chars)
+[2025-10-30T23:14:44.225Z] LOG    ✅ San Lorenzo: Got description (100 chars)
+[2025-10-30T23:14:44.228Z] LOG    ✅ Taberna del Alabardero: Got description (95 chars)
+[2025-10-30T23:14:44.232Z] LOG    ✅ matchbox: Got description (99 chars)
+[2025-10-30T23:14:44.246Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-30T23:14:44.257Z] LOG    ✅ The Dubliner Restaurant: Got description (93 chars)
+[2025-10-30T23:14:44.265Z] LOG    ✅ matchbox: Got description (99 chars)
+[2025-10-30T23:14:44.275Z] LOG    ✅ Carmine's - Washington DC: Got description (87 chars)
+[2025-10-30T23:14:44.309Z] LOG    ✅ The Dubliner Restaurant: Got description (93 chars)
+[2025-10-30T23:14:44.316Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-30T23:14:44.319Z] LOG    ✅ matchbox: Got description (99 chars)
+[2025-10-30T23:14:44.363Z] LOG    ✅ Yard House: Got description (99 chars)
+[2025-10-30T23:14:44.366Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 1164ms
+[2025-10-30T23:14:44.368Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2025-10-30T23:14:44.371Z] LOG    ✅ Venue 1 (Smithsonian's National Air and Space Museum): 4 alternatives
+[2025-10-30T23:14:44.373Z] LOG       1. Zaytinya (4.5⭐)
+[2025-10-30T23:14:44.374Z] LOG       2. Yard House (4.3⭐)
+[2025-10-30T23:14:44.375Z] LOG       3. matchbox (4.4⭐)
+[2025-10-30T23:14:44.377Z] LOG    ✅ Venue 2 (Smithsonian National Museum of Natural History): 4 alternatives
+[2025-10-30T23:14:44.379Z] LOG       1. Taberna del Alabardero (4.4⭐)
+[2025-10-30T23:14:44.381Z] LOG       2. Zaytinya (4.5⭐)
+[2025-10-30T23:14:44.386Z] LOG       3. Yard House (4.3⭐)
+[2025-10-30T23:14:44.389Z] LOG    ✅ Venue 3 (Old Ebbitt Grill): 4 alternatives
+[2025-10-30T23:14:44.393Z] LOG       1. Zeppelin (4.4⭐)
+[2025-10-30T23:14:44.395Z] LOG       2. Stan's DC Restaurant (4.6⭐)
+[2025-10-30T23:14:44.398Z] LOG       3. San Lorenzo (4.5⭐)
+[2025-10-30T23:14:44.411Z] LOG    ✅ Venue 4 (Smithsonian National Museum of American History): 4 alternatives
+[2025-10-30T23:14:44.415Z] LOG       1. Taberna del Alabardero (4.4⭐)
+[2025-10-30T23:14:44.418Z] LOG       2. Zaytinya (4.5⭐)
+[2025-10-30T23:14:44.421Z] LOG       3. Yard House (4.3⭐)
+[2025-10-30T23:14:44.426Z] LOG    ✅ Venue 5 (National Gallery of Art): 4 alternatives
+[2025-10-30T23:14:44.429Z] LOG       1. International Spy Museum (4.4⭐)
+[2025-10-30T23:14:44.431Z] LOG       2. Museum of Illusions Washington DC (4.1⭐)
+[2025-10-30T23:14:44.435Z] LOG       3. National Children's Museum (4.3⭐)
+[2025-10-30T23:14:44.438Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2025-10-30T23:14:44.443Z] LOG 
+🧹 Cleaning alternatives...
+[2025-10-30T23:14:44.445Z] LOG    Primary venues: 5 stops
+[2025-10-30T23:14:44.447Z] LOG    ❌ Removed "Zaytinya" - duplicate alternative
+[2025-10-30T23:14:44.450Z] LOG    ❌ Removed "Yard House" - duplicate alternative
+[2025-10-30T23:14:44.453Z] LOG    ❌ Removed "matchbox" - duplicate alternative
+[2025-10-30T23:14:44.454Z] LOG    🔧 Stop "ChIJx7K17Ji3t4kRr3Vv...": 4 → 1 alternatives
+[2025-10-30T23:14:44.456Z] LOG    ❌ Removed "Taberna del Alabardero" - duplicate alternative
+[2025-10-30T23:14:44.457Z] LOG    🔧 Stop "ChIJgRwXf723t4kRdfqt...": 4 → 3 alternatives
+[2025-10-30T23:14:44.458Z] LOG    ❌ Removed "Taberna del Alabardero" - duplicate alternative
+[2025-10-30T23:14:44.462Z] LOG    ❌ Removed "Zaytinya" - duplicate alternative
+[2025-10-30T23:14:44.464Z] LOG    ❌ Removed "Yard House" - duplicate alternative
+[2025-10-30T23:14:44.467Z] LOG    ❌ Removed "matchbox" - duplicate alternative
+[2025-10-30T23:14:44.469Z] LOG    🔧 Stop "ChIJx7K17Ji3t4kR6h3n...": 4 → 0 alternatives
+[2025-10-30T23:14:44.471Z] LOG 
+✅ Cleaning complete:
+[2025-10-30T23:14:44.473Z] LOG    Removed 0 venues already in route
+[2025-10-30T23:14:44.475Z] LOG    Removed 8 duplicate alternatives
+[2025-10-30T23:14:44.476Z] LOG    Final: 4 stops with alternatives
+
+[2025-10-30T23:14:44.479Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2025-10-30T23:14:44.481Z] LOG    Primary venues: 5
+[2025-10-30T23:14:44.484Z] LOG    Alternatives: 4 stops with alternatives
+[2025-10-30T23:14:44.485Z] LOG    Execution time: 2557ms
+[2025-10-30T23:14:44.487Z] LOG 
+📋 Final alternatives:
+[2025-10-30T23:14:44.489Z] LOG    Smithsonian's National Air and Space Museum: 4 alternatives
+[2025-10-30T23:14:44.499Z] LOG    Smithsonian National Museum of Natural History: 1 alternatives
+[2025-10-30T23:14:44.509Z] LOG    Old Ebbitt Grill: 3 alternatives
+[2025-10-30T23:14:44.518Z] LOG    National Gallery of Art: 4 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4
