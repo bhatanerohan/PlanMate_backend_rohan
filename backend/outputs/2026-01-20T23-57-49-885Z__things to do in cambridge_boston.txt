@@ -1,0 +1,154 @@
+User Prompt: things to do in cambridge,boston
+
+[2026-01-20T23:57:49.886Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-20T23:57:49.886Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-20T23:57:49.886Z] LOG    🎯 Must-have: 7
+[2026-01-20T23:57:49.887Z] LOG    ✨ Nice-to-have: 13
+[2026-01-20T23:57:49.887Z] LOG 📍 Location hint: Harvard
+[2026-01-20T23:57:49.888Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-20T23:57:49.889Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-20T23:57:49.889Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:57:49.890Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T23:57:49.890Z] LOG    1. Searching "Harvard Square" in "Harvard"
+[2026-01-20T23:57:49.891Z] LOG 🔍 [Google Places] Text search: "Harvard Square" in Harvard
+[2026-01-20T23:57:49.893Z] LOG    2. Searching "The Harvard Museum of Natural History" in "Harvard University"
+[2026-01-20T23:57:49.893Z] LOG 🔍 [Google Places] Text search: "The Harvard Museum of Natural History" in Harvard University
+[2026-01-20T23:57:49.898Z] LOG    3. Searching "MIT Museum" in "Kendall Square"
+[2026-01-20T23:57:49.900Z] LOG 🔍 [Google Places] Text search: "MIT Museum" in Kendall Square
+[2026-01-20T23:57:49.904Z] LOG    4. Searching "Central Square" in "Central Square"
+[2026-01-20T23:57:49.905Z] LOG 🔍 [Google Places] Text search: "Central Square" in Central Square
+[2026-01-20T23:57:49.909Z] LOG    5. Searching "Harvard Yard" in "Harvard University"
+[2026-01-20T23:57:49.911Z] LOG 🔍 [Google Places] Text search: "Harvard Yard" in Harvard University
+[2026-01-20T23:57:49.915Z] LOG    6. Searching "Great Dome" in "MIT"
+[2026-01-20T23:57:49.916Z] LOG 🔍 [Google Places] Text search: "Great Dome" in MIT
+[2026-01-20T23:57:49.922Z] LOG    7. Searching "North Point Park" in "East Cambridge"
+[2026-01-20T23:57:49.923Z] LOG 🔍 [Google Places] Text search: "North Point Park" in East Cambridge
+[2026-01-20T23:57:49.928Z] LOG    8. Searching "Harvard Art Museums" in "Harvard University"
+[2026-01-20T23:57:49.930Z] LOG 🔍 [Google Places] Text search: "Harvard Art Museums" in Harvard University
+[2026-01-20T23:57:49.935Z] LOG    9. Searching "Peabody Museum of Archaeology and Ethnology" in "Harvard University"
+[2026-01-20T23:57:49.937Z] LOG 🔍 [Google Places] Text search: "Peabody Museum of Archaeology and Ethnology" in Harvard University
+[2026-01-20T23:57:49.943Z] LOG    10. Searching "Urban Park (UP) Roof Garden" in "Kendall Square"
+[2026-01-20T23:57:49.944Z] LOG 🔍 [Google Places] Text search: "Urban Park (UP) Roof Garden" in Kendall Square
+[2026-01-20T23:57:50.481Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:50.494Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:50.520Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:50.527Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:50.543Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:50.548Z] LOG    ✅ Harvard Yard: Got description (97 chars)
+[2026-01-20T23:57:50.551Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:50.567Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:50.573Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:50.595Z] LOG    ✅ The Harvard Museum of Natural History: Got description (94 chars)
+[2026-01-20T23:57:50.595Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:50.599Z] LOG    ✅ Peabody Museum of Archaeology and Ethnology: Got description (100 chars)
+[2026-01-20T23:57:50.600Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:50.619Z] LOG    ✅ Harvard Square: Got description (88 chars)
+[2026-01-20T23:57:50.621Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:50.640Z] LOG    ✅ North Point Park: Got description (92 chars)
+[2026-01-20T23:57:50.643Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:50.644Z] LOG    ✅ Harvard Art Museums: Got description (99 chars)
+[2026-01-20T23:57:50.645Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:50.646Z] LOG    ✅ Urban Park (UP) Roof Garden: Got description (83 chars)
+[2026-01-20T23:57:50.646Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:50.741Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:50.764Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:50.804Z] LOG    ✅ MIT Museum: Got description (97 chars)
+[2026-01-20T23:57:50.805Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:50.820Z] LOG    ⚠️  Central Square: No editorial summary available
+[2026-01-20T23:57:50.821Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:50.857Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:50.932Z] LOG    ✅ Great Dome: Got description (90 chars)
+[2026-01-20T23:57:50.933Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:50.934Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1044ms
+[2026-01-20T23:57:50.935Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:57:50.935Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-20T23:57:51.144Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-20T23:57:51.145Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:57:51.146Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T23:57:51.146Z] LOG    1. Searching "Cambridge Common" in "Harvard"
+[2026-01-20T23:57:51.147Z] LOG 🔍 [Google Places] Text search: "Cambridge Common" in Harvard
+[2026-01-20T23:57:51.148Z] LOG    2. Searching "Fresh Pond Reservation" in "West Cambridge"
+[2026-01-20T23:57:51.148Z] LOG 🔍 [Google Places] Text search: "Fresh Pond Reservation" in West Cambridge
+[2026-01-20T23:57:51.149Z] LOG    3. Searching "MIT List Visual Arts Center" in "MIT"
+[2026-01-20T23:57:51.149Z] LOG 🔍 [Google Places] Text search: "MIT List Visual Arts Center" in MIT
+[2026-01-20T23:57:51.150Z] LOG    4. Searching "Broad Discovery Center" in "Kendall Square"
+[2026-01-20T23:57:51.150Z] LOG 🔍 [Google Places] Text search: "Broad Discovery Center" in Kendall Square
+[2026-01-20T23:57:51.151Z] LOG    5. Searching "Red Fox Escapes" in "Central Square"
+[2026-01-20T23:57:51.151Z] LOG 🔍 [Google Places] Text search: "Red Fox Escapes" in Central Square
+[2026-01-20T23:57:51.152Z] LOG    6. Searching "Harvard Bridge" in "Charles River"
+[2026-01-20T23:57:51.152Z] LOG 🔍 [Google Places] Text search: "Harvard Bridge" in Charles River
+[2026-01-20T23:57:51.153Z] LOG    7. Searching "Judson B. Coit Observatory" in "Boston University"
+[2026-01-20T23:57:51.153Z] LOG 🔍 [Google Places] Text search: "Judson B. Coit Observatory" in Boston University
+[2026-01-20T23:57:51.154Z] LOG    8. Searching "Christopher Columbus Waterfront Park" in "Downtown Boston"
+[2026-01-20T23:57:51.154Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in Downtown Boston
+[2026-01-20T23:57:51.155Z] LOG    9. Searching "Arnold Arboretum of Harvard University" in "Jamaica Plain, Boston"
+[2026-01-20T23:57:51.155Z] LOG 🔍 [Google Places] Text search: "Arnold Arboretum of Harvard University" in Jamaica Plain, Boston
+[2026-01-20T23:57:51.156Z] LOG    10. Searching "Kendall/MIT Open Space" in "Kendall Square"
+[2026-01-20T23:57:51.157Z] LOG 🔍 [Google Places] Text search: "Kendall/MIT Open Space" in Kendall Square
+[2026-01-20T23:57:51.616Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:51.638Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:51.650Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:51.653Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:51.673Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:51.678Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:51.684Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:51.716Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:51.726Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-01-20T23:57:51.727Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:51.747Z] LOG    ⚠️  Red Fox Escapes: No editorial summary available
+[2026-01-20T23:57:51.749Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:51.777Z] LOG    ⚠️  Broad Discovery Center: No editorial summary available
+[2026-01-20T23:57:51.778Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:51.792Z] LOG    ✅ Arnold Arboretum of Harvard University: Got description (100 chars)
+[2026-01-20T23:57:51.793Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:51.800Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:51.810Z] LOG    ⚠️  Kendall/MIT Open Space: No editorial summary available
+[2026-01-20T23:57:51.812Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:51.814Z] LOG    ⚠️  Judson B. Coit Observatory: No editorial summary available
+[2026-01-20T23:57:51.817Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:51.821Z] LOG    ✅ Fresh Pond Reservation: Got description (97 chars)
+[2026-01-20T23:57:51.822Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:51.832Z] LOG    ✅ Harvard Bridge: Got description (97 chars)
+[2026-01-20T23:57:51.836Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:51.912Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:57:51.936Z] LOG    ✅ Cambridge Common Restaurant: Got description (83 chars)
+[2026-01-20T23:57:51.937Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:52.049Z] LOG    ✅ MIT List Visual Arts Center: Got description (88 chars)
+[2026-01-20T23:57:52.051Z] LOG ✅ Found 1 places
+[2026-01-20T23:57:52.052Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 906ms
+[2026-01-20T23:57:52.053Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:57:52.054Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-20T23:57:52.055Z] LOG    ✅ Harvard Square → Harvard Square (must_have)
+[2026-01-20T23:57:52.056Z] LOG    ✅ The Harvard Museum of Natural History → The Harvard Museum of Natural History (must_have)
+[2026-01-20T23:57:52.058Z] LOG    ✅ MIT Museum → MIT Museum (must_have)
+[2026-01-20T23:57:52.059Z] LOG    ✅ Central Square → Central Square (must_have)
+[2026-01-20T23:57:52.060Z] LOG    ✅ Harvard Yard → Harvard Yard (must_have)
+[2026-01-20T23:57:52.061Z] LOG    ✅ Great Dome → Great Dome (must_have)
+[2026-01-20T23:57:52.062Z] LOG    ✅ North Point Park → North Point Park (must_have)
+[2026-01-20T23:57:52.063Z] LOG    ✅ Harvard Art Museums → Harvard Art Museums (nice_to_have)
+[2026-01-20T23:57:52.064Z] LOG    ✅ Peabody Museum of Archaeology and Ethnology → Peabody Museum of Archaeology and Ethnology (nice_to_have)
+[2026-01-20T23:57:52.065Z] LOG    ✅ Urban Park (UP) Roof Garden → Urban Park (UP) Roof Garden (nice_to_have)
+[2026-01-20T23:57:52.066Z] LOG    ✅ Cambridge Common → Cambridge Common Restaurant (nice_to_have)
+[2026-01-20T23:57:52.067Z] LOG    ✅ Fresh Pond Reservation → Fresh Pond Reservation (nice_to_have)
+[2026-01-20T23:57:52.068Z] LOG    ✅ MIT List Visual Arts Center → MIT List Visual Arts Center (nice_to_have)
+[2026-01-20T23:57:52.070Z] LOG    ✅ Broad Discovery Center → Broad Discovery Center (nice_to_have)
+[2026-01-20T23:57:52.071Z] LOG    ✅ Red Fox Escapes → Red Fox Escapes (nice_to_have)
+[2026-01-20T23:57:52.072Z] LOG    ✅ Harvard Bridge → Harvard Bridge (nice_to_have)
+[2026-01-20T23:57:52.072Z] LOG    ✅ Judson B. Coit Observatory → Judson B. Coit Observatory (nice_to_have)
+[2026-01-20T23:57:52.073Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (nice_to_have)
+[2026-01-20T23:57:52.074Z] LOG    ✅ Arnold Arboretum of Harvard University → Arnold Arboretum of Harvard University (nice_to_have)
+[2026-01-20T23:57:52.074Z] LOG    ✅ Kendall/MIT Open Space → Kendall/MIT Open Space (nice_to_have)
+[2026-01-20T23:57:52.075Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-20T23:57:52.075Z] LOG    Total enriched: 20
+[2026-01-20T23:57:52.076Z] LOG    🎯 Must-have: 7
+[2026-01-20T23:57:52.077Z] LOG    ✨ Nice-to-have: 13
+[2026-01-20T23:57:52.077Z] LOG    ❌ Failed: 0
+[2026-01-20T23:57:52.078Z] LOG    ⏱️ Time: 2194ms
+
+--- Summary ---
+Enrichment completed

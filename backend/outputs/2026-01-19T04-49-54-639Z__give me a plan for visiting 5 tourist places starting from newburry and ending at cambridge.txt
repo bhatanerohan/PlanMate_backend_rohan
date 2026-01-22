@@ -1,0 +1,154 @@
+User Prompt: give me a plan for visiting 5 tourist places starting from newburry and ending at cambridge
+
+[2026-01-19T04:49:54.639Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-19T04:49:54.640Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-19T04:49:54.640Z] LOG    🎯 Must-have: 8
+[2026-01-19T04:49:54.640Z] LOG    ✨ Nice-to-have: 12
+[2026-01-19T04:49:54.641Z] LOG 📍 Location hint: Newbury
+[2026-01-19T04:49:54.641Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-19T04:49:54.642Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-19T04:49:54.642Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-19T04:49:54.643Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-19T04:49:54.643Z] LOG    1. Searching "Donnington Castle" in "Newbury"
+[2026-01-19T04:49:54.643Z] LOG 🔍 [Google Places] Text search: "Donnington Castle" in Newbury
+[2026-01-19T04:49:54.646Z] LOG    2. Searching "West Berkshire Museum" in "Newbury"
+[2026-01-19T04:49:54.647Z] LOG 🔍 [Google Places] Text search: "West Berkshire Museum" in Newbury
+[2026-01-19T04:49:54.649Z] LOG    3. Searching "Victoria Park" in "Newbury"
+[2026-01-19T04:49:54.651Z] LOG 🔍 [Google Places] Text search: "Victoria Park" in Newbury
+[2026-01-19T04:49:54.654Z] LOG    4. Searching "Ashmolean Museum" in "Oxford"
+[2026-01-19T04:49:54.656Z] LOG 🔍 [Google Places] Text search: "Ashmolean Museum" in Oxford
+[2026-01-19T04:49:54.660Z] LOG    5. Searching "Bodleian Library" in "Oxford"
+[2026-01-19T04:49:54.662Z] LOG 🔍 [Google Places] Text search: "Bodleian Library" in Oxford
+[2026-01-19T04:49:54.668Z] LOG    6. Searching "Oxford Castle & Prison" in "Oxford"
+[2026-01-19T04:49:54.669Z] LOG 🔍 [Google Places] Text search: "Oxford Castle & Prison" in Oxford
+[2026-01-19T04:49:54.677Z] LOG    7. Searching "Christ Church Meadow" in "Oxford"
+[2026-01-19T04:49:54.680Z] LOG 🔍 [Google Places] Text search: "Christ Church Meadow" in Oxford
+[2026-01-19T04:49:54.686Z] LOG    8. Searching "The Covered Market" in "Oxford"
+[2026-01-19T04:49:54.687Z] LOG 🔍 [Google Places] Text search: "The Covered Market" in Oxford
+[2026-01-19T04:49:54.694Z] LOG    9. Searching "University Church of St Mary the Virgin" in "Oxford"
+[2026-01-19T04:49:54.696Z] LOG 🔍 [Google Places] Text search: "University Church of St Mary the Virgin" in Oxford
+[2026-01-19T04:49:54.704Z] LOG    10. Searching "Bletchley Park" in "Bletchley Park"
+[2026-01-19T04:49:54.707Z] LOG 🔍 [Google Places] Text search: "Bletchley Park" in Bletchley Park
+[2026-01-19T04:49:55.197Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:55.243Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:55.245Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:55.262Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:55.269Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:55.313Z] LOG    ✅ Christ Church Meadow: Got description (99 chars)
+[2026-01-19T04:49:55.316Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:55.348Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:55.356Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:55.371Z] LOG    ✅ Ashmolean Museum: Got description (90 chars)
+[2026-01-19T04:49:55.376Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:55.379Z] LOG    ✅ Donnington Castle: Got description (98 chars)
+[2026-01-19T04:49:55.381Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:55.384Z] LOG    ✅ West Berkshire Museum: Got description (100 chars)
+[2026-01-19T04:49:55.387Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:55.394Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:55.403Z] LOG    ✅ Victoria Park: Got description (84 chars)
+[2026-01-19T04:49:55.407Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:55.413Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:55.474Z] LOG    ✅ Bodleian Library: Got description (90 chars)
+[2026-01-19T04:49:55.475Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:55.492Z] LOG    ✅ Bletchley Park: Got description (94 chars)
+[2026-01-19T04:49:55.493Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:55.496Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:55.514Z] LOG    ✅ Oxford Castle & Prison: Got description (99 chars)
+[2026-01-19T04:49:55.515Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:55.574Z] LOG    ✅ University Church of St Mary the Virgin: Got description (97 chars)
+[2026-01-19T04:49:55.575Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:55.619Z] LOG    ✅ The Covered Market: Got description (93 chars)
+[2026-01-19T04:49:55.619Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:55.620Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 977ms
+[2026-01-19T04:49:55.620Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-19T04:49:55.621Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-19T04:49:55.823Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-19T04:49:55.825Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-19T04:49:55.826Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-19T04:49:55.826Z] LOG    1. Searching "The National Museum of Computing" in "Bletchley Park"
+[2026-01-19T04:49:55.827Z] LOG 🔍 [Google Places] Text search: "The National Museum of Computing" in Bletchley Park
+[2026-01-19T04:49:55.827Z] LOG    2. Searching "St Albans Cathedral" in "St Albans"
+[2026-01-19T04:49:55.828Z] LOG 🔍 [Google Places] Text search: "St Albans Cathedral" in St Albans
+[2026-01-19T04:49:55.829Z] LOG    3. Searching "Verulamium Museum" in "St Albans"
+[2026-01-19T04:49:55.829Z] LOG 🔍 [Google Places] Text search: "Verulamium Museum" in St Albans
+[2026-01-19T04:49:55.831Z] LOG    4. Searching "Roman Theatre of Verulamium" in "St Albans"
+[2026-01-19T04:49:55.832Z] LOG 🔍 [Google Places] Text search: "Roman Theatre of Verulamium" in St Albans
+[2026-01-19T04:49:55.833Z] LOG    5. Searching "The Clock Tower" in "St Albans"
+[2026-01-19T04:49:55.833Z] LOG 🔍 [Google Places] Text search: "The Clock Tower" in St Albans
+[2026-01-19T04:49:55.835Z] LOG    6. Searching "Willen Lake" in "Milton Keynes"
+[2026-01-19T04:49:55.835Z] LOG 🔍 [Google Places] Text search: "Willen Lake" in Milton Keynes
+[2026-01-19T04:49:55.836Z] LOG    7. Searching "Milton Keynes Peace Pagoda" in "Milton Keynes"
+[2026-01-19T04:49:55.836Z] LOG 🔍 [Google Places] Text search: "Milton Keynes Peace Pagoda" in Milton Keynes
+[2026-01-19T04:49:55.838Z] LOG    8. Searching "King's College Chapel" in "Newbury"
+[2026-01-19T04:49:55.838Z] LOG 🔍 [Google Places] Text search: "King's College Chapel" in Newbury
+[2026-01-19T04:49:55.839Z] LOG    9. Searching "Punting on the River Cam" in "Newbury"
+[2026-01-19T04:49:55.840Z] LOG 🔍 [Google Places] Text search: "Punting on the River Cam" in Newbury
+[2026-01-19T04:49:55.841Z] LOG    10. Searching "Fitzwilliam Museum" in "Newbury"
+[2026-01-19T04:49:55.841Z] LOG 🔍 [Google Places] Text search: "Fitzwilliam Museum" in Newbury
+[2026-01-19T04:49:56.184Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:56.262Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:56.268Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:56.292Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:56.306Z] LOG    ✅ The Fitzwilliam Museum: Got description (93 chars)
+[2026-01-19T04:49:56.307Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:56.330Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:56.340Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:56.371Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:56.408Z] LOG    ✅ King's Chapel: Got description (88 chars)
+[2026-01-19T04:49:56.410Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:56.412Z] LOG    ⚠️  Willen Lake: No editorial summary available
+[2026-01-19T04:49:56.413Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:56.427Z] LOG    ✅ Roman Theatre of Verulamium: Got description (95 chars)
+[2026-01-19T04:49:56.428Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:56.430Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:56.452Z] LOG    ✅ St Albans Cathedral: Got description (99 chars)
+[2026-01-19T04:49:56.453Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:56.473Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:56.492Z] LOG    ✅ The National Museum of Computing: Got description (98 chars)
+[2026-01-19T04:49:56.496Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:56.511Z] LOG    ⚠️  Boston Duck Tours New England Aquarium Departure Location: No editorial summary available
+[2026-01-19T04:49:56.513Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:56.534Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:49:56.563Z] LOG    ⚠️  Milton Keynes Peace Pagoda: No editorial summary available
+[2026-01-19T04:49:56.564Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:56.641Z] LOG    ✅ The Clock Tower: Got description (97 chars)
+[2026-01-19T04:49:56.642Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:56.686Z] LOG    ✅ Verulamium Museum: Got description (99 chars)
+[2026-01-19T04:49:56.689Z] LOG ✅ Found 1 places
+[2026-01-19T04:49:56.690Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 864ms
+[2026-01-19T04:49:56.691Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-19T04:49:56.691Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-19T04:49:56.692Z] LOG    ✅ Donnington Castle → Donnington Castle (must_have)
+[2026-01-19T04:49:56.692Z] LOG    ✅ West Berkshire Museum → West Berkshire Museum (nice_to_have)
+[2026-01-19T04:49:56.693Z] LOG    ✅ Victoria Park → Victoria Park (nice_to_have)
+[2026-01-19T04:49:56.693Z] LOG    ✅ Ashmolean Museum → Ashmolean Museum (must_have)
+[2026-01-19T04:49:56.693Z] LOG    ✅ Bodleian Library → Bodleian Library (must_have)
+[2026-01-19T04:49:56.694Z] LOG    ✅ Oxford Castle & Prison → Oxford Castle & Prison (nice_to_have)
+[2026-01-19T04:49:56.694Z] LOG    ✅ Christ Church Meadow → Christ Church Meadow (nice_to_have)
+[2026-01-19T04:49:56.694Z] LOG    ✅ The Covered Market → The Covered Market (nice_to_have)
+[2026-01-19T04:49:56.695Z] LOG    ✅ University Church of St Mary the Virgin → University Church of St Mary the Virgin (nice_to_have)
+[2026-01-19T04:49:56.695Z] LOG    ✅ Bletchley Park → Bletchley Park (must_have)
+[2026-01-19T04:49:56.696Z] LOG    ✅ The National Museum of Computing → The National Museum of Computing (nice_to_have)
+[2026-01-19T04:49:56.696Z] LOG    ✅ St Albans Cathedral → St Albans Cathedral (must_have)
+[2026-01-19T04:49:56.697Z] LOG    ✅ Verulamium Museum → Verulamium Museum (must_have)
+[2026-01-19T04:49:56.697Z] LOG    ✅ Roman Theatre of Verulamium → Roman Theatre of Verulamium (nice_to_have)
+[2026-01-19T04:49:56.698Z] LOG    ✅ The Clock Tower → The Clock Tower (nice_to_have)
+[2026-01-19T04:49:56.698Z] LOG    ✅ Willen Lake → Willen Lake (nice_to_have)
+[2026-01-19T04:49:56.698Z] LOG    ✅ Milton Keynes Peace Pagoda → Milton Keynes Peace Pagoda (nice_to_have)
+[2026-01-19T04:49:56.699Z] LOG    ✅ King's College Chapel → King's Chapel (must_have)
+[2026-01-19T04:49:56.699Z] LOG    ✅ Punting on the River Cam → Boston Duck Tours New England Aquarium Departure Location (must_have)
+[2026-01-19T04:49:56.700Z] LOG    ✅ Fitzwilliam Museum → The Fitzwilliam Museum (nice_to_have)
+[2026-01-19T04:49:56.700Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-19T04:49:56.700Z] LOG    Total enriched: 20
+[2026-01-19T04:49:56.701Z] LOG    🎯 Must-have: 8
+[2026-01-19T04:49:56.701Z] LOG    ✨ Nice-to-have: 12
+[2026-01-19T04:49:56.702Z] LOG    ❌ Failed: 0
+[2026-01-19T04:49:56.703Z] LOG    ⏱️ Time: 2065ms
+
+--- Summary ---
+Enrichment completed

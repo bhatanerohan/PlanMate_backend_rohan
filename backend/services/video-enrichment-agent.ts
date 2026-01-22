@@ -1,13 +1,13 @@
 // backend/services/video-enrichment-agent.ts
 // Video enrichment agent — attaches YouTube videos (including Shorts) to venues.
-import { getYouTubeClient } from './api-clients/youtube';
+import { getYouTubeClient } from './api-clients/youtube.js';
 
 export async function enrichVenues(venues: any[], mode: 'discovery' | 'route', _options: any = {}): Promise<any[]> {
 	console.log('🔍 Video enrichment: attaching YouTube videos to venues');
 	try {
 		const client = getYouTubeClient();
 		const maxVideosPerVenue = _options.maxVideosPerVenue || 3;
-
+		
 		const enrichedPromises = venues.map(async (venue: any) => {
 			try {
 				const venueName = venue.name || venue.venueName || '';

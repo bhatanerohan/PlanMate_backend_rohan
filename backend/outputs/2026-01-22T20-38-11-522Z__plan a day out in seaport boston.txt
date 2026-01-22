@@ -1,0 +1,154 @@
+User Prompt: plan a day out in seaport boston
+
+[2026-01-22T20:38:11.523Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-22T20:38:11.524Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-22T20:38:11.524Z] LOG    🎯 Must-have: 7
+[2026-01-22T20:38:11.524Z] LOG    ✨ Nice-to-have: 13
+[2026-01-22T20:38:11.525Z] LOG 📍 Location hint: seaport boston
+[2026-01-22T20:38:11.525Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-22T20:38:11.526Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-22T20:38:11.526Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-22T20:38:11.527Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-22T20:38:11.528Z] LOG    1. Searching "Boston Waterfront" in "Seaport"
+[2026-01-22T20:38:11.528Z] LOG 🔍 [Google Places] Text search: "Boston Waterfront" in Seaport
+[2026-01-22T20:38:11.534Z] LOG    2. Searching "Fan Pier Park" in "Seaport"
+[2026-01-22T20:38:11.536Z] LOG 🔍 [Google Places] Text search: "Fan Pier Park" in Seaport
+[2026-01-22T20:38:11.540Z] LOG    3. Searching "Institute of Contemporary Art" in "Seaport"
+[2026-01-22T20:38:11.540Z] LOG 🔍 [Google Places] Text search: "Institute of Contemporary Art" in Seaport
+[2026-01-22T20:38:11.544Z] LOG    4. Searching "Boston Tea Party Ships & Museum" in "Fort Point / Seaport"
+[2026-01-22T20:38:11.547Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Fort Point / Seaport
+[2026-01-22T20:38:11.555Z] LOG    5. Searching "The Lawn on D" in "South Seaport"
+[2026-01-22T20:38:11.557Z] LOG 🔍 [Google Places] Text search: "The Lawn on D" in South Seaport
+[2026-01-22T20:38:11.568Z] LOG    6. Searching "Museum of Ice Cream" in "Seaport"
+[2026-01-22T20:38:11.573Z] LOG 🔍 [Google Places] Text search: "Museum of Ice Cream" in Seaport
+[2026-01-22T20:38:11.580Z] LOG    7. Searching "Boston Harbor City Cruises" in "Seaport"
+[2026-01-22T20:38:11.583Z] LOG 🔍 [Google Places] Text search: "Boston Harbor City Cruises" in Seaport
+[2026-01-22T20:38:11.590Z] LOG    8. Searching "F1 Arcade Boston" in "Seaport"
+[2026-01-22T20:38:11.594Z] LOG 🔍 [Google Places] Text search: "F1 Arcade Boston" in Seaport
+[2026-01-22T20:38:11.603Z] LOG    9. Searching "Puttshack - Boston" in "Seaport"
+[2026-01-22T20:38:11.605Z] LOG 🔍 [Google Places] Text search: "Puttshack - Boston" in Seaport
+[2026-01-22T20:38:11.613Z] LOG    10. Searching "Seaport Common" in "Seaport"
+[2026-01-22T20:38:11.615Z] LOG 🔍 [Google Places] Text search: "Seaport Common" in Seaport
+[2026-01-22T20:38:12.084Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:12.171Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:12.180Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:12.192Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:12.215Z] LOG    ⚠️  Puttshack - Boston: No editorial summary available
+[2026-01-22T20:38:12.217Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:12.230Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:12.279Z] LOG    ⚠️  Seaport Common: No editorial summary available
+[2026-01-22T20:38:12.280Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:12.300Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:12.313Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2026-01-22T20:38:12.314Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:12.342Z] LOG    ✅ Fan Pier Park: Got description (97 chars)
+[2026-01-22T20:38:12.342Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:12.343Z] LOG    ⚠️  F1 Arcade Boston: No editorial summary available
+[2026-01-22T20:38:12.344Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:12.352Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:12.408Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:12.437Z] LOG    ✅ the Lawn on D: Got description (96 chars)
+[2026-01-22T20:38:12.439Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:12.446Z] LOG    ✅ Seaport Blvd: Got description (99 chars)
+[2026-01-22T20:38:12.447Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:12.507Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:12.531Z] LOG    ⚠️  Museum of Ice Cream: No editorial summary available
+[2026-01-22T20:38:12.533Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:12.598Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:12.659Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-01-22T20:38:12.660Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:12.683Z] LOG    ⚠️  Boston Harbor City Cruises: No editorial summary available
+[2026-01-22T20:38:12.685Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:12.686Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1159ms
+[2026-01-22T20:38:12.686Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-22T20:38:12.687Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-22T20:38:12.890Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-22T20:38:12.890Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-22T20:38:12.891Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-22T20:38:12.891Z] LOG    1. Searching "Martin's Park" in "Fort Point / Seaport"
+[2026-01-22T20:38:12.892Z] LOG 🔍 [Google Places] Text search: "Martin's Park" in Fort Point / Seaport
+[2026-01-22T20:38:12.893Z] LOG    2. Searching "Rooftop at The Envoy" in "Seaport"
+[2026-01-22T20:38:12.893Z] LOG 🔍 [Google Places] Text search: "Rooftop at The Envoy" in Seaport
+[2026-01-22T20:38:12.894Z] LOG    3. Searching "Kings Dining & Entertainment" in "Seaport"
+[2026-01-22T20:38:12.895Z] LOG 🔍 [Google Places] Text search: "Kings Dining & Entertainment" in Seaport
+[2026-01-22T20:38:12.896Z] LOG    4. Searching "Flight Club Boston" in "Seaport"
+[2026-01-22T20:38:12.896Z] LOG 🔍 [Google Places] Text search: "Flight Club Boston" in Seaport
+[2026-01-22T20:38:12.897Z] LOG    5. Searching "Row 34 - Seaport | Boston" in "Fort Point / Seaport"
+[2026-01-22T20:38:12.897Z] LOG 🔍 [Google Places] Text search: "Row 34 - Seaport | Boston" in Fort Point / Seaport
+[2026-01-22T20:38:12.898Z] LOG    6. Searching "Legal Sea Foods - Harborside" in "Seaport"
+[2026-01-22T20:38:12.899Z] LOG 🔍 [Google Places] Text search: "Legal Sea Foods - Harborside" in Seaport
+[2026-01-22T20:38:12.900Z] LOG    7. Searching "Tatte Bakery & Cafe | Pier 4" in "Seaport"
+[2026-01-22T20:38:12.901Z] LOG 🔍 [Google Places] Text search: "Tatte Bakery & Cafe | Pier 4" in Seaport
+[2026-01-22T20:38:12.902Z] LOG    8. Searching "Caffè Nero" in "Fort Point / Seaport"
+[2026-01-22T20:38:12.902Z] LOG 🔍 [Google Places] Text search: "Caffè Nero" in Fort Point / Seaport
+[2026-01-22T20:38:12.904Z] LOG    9. Searching "Boqueria Seaport" in "Seaport"
+[2026-01-22T20:38:12.905Z] LOG 🔍 [Google Places] Text search: "Boqueria Seaport" in Seaport
+[2026-01-22T20:38:12.907Z] LOG    10. Searching "Woods Hill Pier 4 - Seaport" in "Seaport"
+[2026-01-22T20:38:12.907Z] LOG 🔍 [Google Places] Text search: "Woods Hill Pier 4 - Seaport" in Seaport
+[2026-01-22T20:38:13.284Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:13.308Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:13.344Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:13.397Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:13.402Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:13.413Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:13.424Z] LOG    ✅ Woods Hill Pier 4 - Seaport: Got description (100 chars)
+[2026-01-22T20:38:13.425Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:13.451Z] LOG    ✅ Caffè Nero: Got description (85 chars)
+[2026-01-22T20:38:13.452Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:13.468Z] LOG    ✅ Kings Dining & Entertainment: Got description (91 chars)
+[2026-01-22T20:38:13.469Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:13.521Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:13.545Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:13.565Z] LOG    ⚠️  Martin's Park: No editorial summary available
+[2026-01-22T20:38:13.568Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:13.571Z] LOG    ⚠️  Flight Club Boston: No editorial summary available
+[2026-01-22T20:38:13.572Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:13.586Z] LOG    ⚠️  Tatte Bakery & Cafe | Pier 4: No editorial summary available
+[2026-01-22T20:38:13.587Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:13.597Z] LOG    ⚠️  Boqueria Seaport: No editorial summary available
+[2026-01-22T20:38:13.598Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:13.635Z] LOG    ✅ Row 34 - Seaport | Boston: Got description (97 chars)
+[2026-01-22T20:38:13.636Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:13.661Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:13.819Z] LOG    ✅ Legal Sea Foods - Harborside: Got description (89 chars)
+[2026-01-22T20:38:13.820Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:13.867Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:38:13.994Z] LOG    ✅ Rooftop at The Envoy: Got description (91 chars)
+[2026-01-22T20:38:13.996Z] LOG ✅ Found 1 places
+[2026-01-22T20:38:13.997Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1106ms
+[2026-01-22T20:38:13.998Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-22T20:38:13.999Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-22T20:38:14.000Z] LOG    ✅ Boston Waterfront → Seaport Blvd (must_have)
+[2026-01-22T20:38:14.001Z] LOG    ✅ Fan Pier Park → Fan Pier Park (must_have)
+[2026-01-22T20:38:14.002Z] LOG    ✅ Institute of Contemporary Art → Institute of Contemporary Art (must_have)
+[2026-01-22T20:38:14.002Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (must_have)
+[2026-01-22T20:38:14.003Z] LOG    ✅ The Lawn on D → the Lawn on D (must_have)
+[2026-01-22T20:38:14.004Z] LOG    ✅ Museum of Ice Cream → Museum of Ice Cream (must_have)
+[2026-01-22T20:38:14.005Z] LOG    ✅ Boston Harbor City Cruises → Boston Harbor City Cruises (must_have)
+[2026-01-22T20:38:14.006Z] LOG    ✅ F1 Arcade Boston → F1 Arcade Boston (nice_to_have)
+[2026-01-22T20:38:14.006Z] LOG    ✅ Puttshack - Boston → Puttshack - Boston (nice_to_have)
+[2026-01-22T20:38:14.007Z] LOG    ✅ Seaport Common → Seaport Common (nice_to_have)
+[2026-01-22T20:38:14.008Z] LOG    ✅ Martin's Park → Martin's Park (nice_to_have)
+[2026-01-22T20:38:14.008Z] LOG    ✅ Rooftop at The Envoy → Rooftop at The Envoy (nice_to_have)
+[2026-01-22T20:38:14.009Z] LOG    ✅ Kings Dining & Entertainment → Kings Dining & Entertainment (nice_to_have)
+[2026-01-22T20:38:14.010Z] LOG    ✅ Flight Club Boston → Flight Club Boston (nice_to_have)
+[2026-01-22T20:38:14.011Z] LOG    ✅ Row 34 - Seaport | Boston → Row 34 - Seaport | Boston (nice_to_have)
+[2026-01-22T20:38:14.011Z] LOG    ✅ Legal Sea Foods - Harborside → Legal Sea Foods - Harborside (nice_to_have)
+[2026-01-22T20:38:14.013Z] LOG    ✅ Tatte Bakery & Cafe | Pier 4 → Tatte Bakery & Cafe | Pier 4 (nice_to_have)
+[2026-01-22T20:38:14.015Z] LOG    ✅ Caffè Nero → Caffè Nero (nice_to_have)
+[2026-01-22T20:38:14.015Z] LOG    ✅ Boqueria Seaport → Boqueria Seaport (nice_to_have)
+[2026-01-22T20:38:14.018Z] LOG    ✅ Woods Hill Pier 4 - Seaport → Woods Hill Pier 4 - Seaport (nice_to_have)
+[2026-01-22T20:38:14.019Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-22T20:38:14.020Z] LOG    Total enriched: 20
+[2026-01-22T20:38:14.021Z] LOG    🎯 Must-have: 7
+[2026-01-22T20:38:14.021Z] LOG    ✨ Nice-to-have: 13
+[2026-01-22T20:38:14.022Z] LOG    ❌ Failed: 0
+[2026-01-22T20:38:14.023Z] LOG    ⏱️ Time: 2500ms
+
+--- Summary ---
+Enrichment completed

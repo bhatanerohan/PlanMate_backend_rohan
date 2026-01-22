@@ -1,0 +1,154 @@
+User Prompt: coffee and bookstores in seattle
+
+[2026-01-20T23:24:51.043Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-20T23:24:51.043Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-20T23:24:51.043Z] LOG    🎯 Must-have: 8
+[2026-01-20T23:24:51.044Z] LOG    ✨ Nice-to-have: 12
+[2026-01-20T23:24:51.044Z] LOG 📍 Location hint: seattle
+[2026-01-20T23:24:51.044Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-20T23:24:51.045Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-20T23:24:51.045Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:24:51.046Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T23:24:51.046Z] LOG    1. Searching "Ada's Technical Books and Cafe" in "Capitol Hill"
+[2026-01-20T23:24:51.046Z] LOG 🔍 [Google Places] Text search: "Ada's Technical Books and Cafe" in Capitol Hill
+[2026-01-20T23:24:51.049Z] LOG    2. Searching "Elliott Bay Book Company" in "Capitol Hill"
+[2026-01-20T23:24:51.049Z] LOG 🔍 [Google Places] Text search: "Elliott Bay Book Company" in Capitol Hill
+[2026-01-20T23:24:51.051Z] LOG    3. Searching "Third Place Books Ravenna" in "Ravenna"
+[2026-01-20T23:24:51.052Z] LOG 🔍 [Google Places] Text search: "Third Place Books Ravenna" in Ravenna
+[2026-01-20T23:24:51.054Z] LOG    4. Searching "Storyville Coffee Pike Place" in "Pike Place Market"
+[2026-01-20T23:24:51.056Z] LOG 🔍 [Google Places] Text search: "Storyville Coffee Pike Place" in Pike Place Market
+[2026-01-20T23:24:51.062Z] LOG    5. Searching "Twice Sold Tales" in "Capitol Hill"
+[2026-01-20T23:24:51.063Z] LOG 🔍 [Google Places] Text search: "Twice Sold Tales" in Capitol Hill
+[2026-01-20T23:24:51.068Z] LOG    6. Searching "Lighthouse Roasters Fine Coffees" in "Fremont"
+[2026-01-20T23:24:51.071Z] LOG 🔍 [Google Places] Text search: "Lighthouse Roasters Fine Coffees" in Fremont
+[2026-01-20T23:24:51.076Z] LOG    7. Searching "Ophelia's Books" in "Fremont"
+[2026-01-20T23:24:51.078Z] LOG 🔍 [Google Places] Text search: "Ophelia's Books" in Fremont
+[2026-01-20T23:24:51.088Z] LOG    8. Searching "Kinokuniya Bookstore -Seattle" in "International District"
+[2026-01-20T23:24:51.091Z] LOG 🔍 [Google Places] Text search: "Kinokuniya Bookstore -Seattle" in International District
+[2026-01-20T23:24:51.096Z] LOG    9. Searching "Space Needle" in "Lower Queen Anne"
+[2026-01-20T23:24:51.099Z] LOG 🔍 [Google Places] Text search: "Space Needle" in Lower Queen Anne
+[2026-01-20T23:24:51.106Z] LOG    10. Searching "Pike Place Market" in "Downtown Seattle"
+[2026-01-20T23:24:51.108Z] LOG 🔍 [Google Places] Text search: "Pike Place Market" in Downtown Seattle
+[2026-01-20T23:24:51.589Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:51.678Z] LOG    ✅ Twice Sold Tales: Got description (91 chars)
+[2026-01-20T23:24:51.679Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:51.683Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:51.693Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:51.699Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:51.802Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:51.806Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:51.807Z] LOG    ✅ Elliott Bay Book Company: Got description (90 chars)
+[2026-01-20T23:24:51.808Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:51.822Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:51.838Z] LOG    ✅ Storyville Coffee Pike Place: Got description (94 chars)
+[2026-01-20T23:24:51.840Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:51.849Z] LOG    ✅ Pike Place Market: Got description (93 chars)
+[2026-01-20T23:24:51.850Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:51.874Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:51.952Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:51.964Z] LOG    ✅ Space Needle: Got description (98 chars)
+[2026-01-20T23:24:51.965Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:51.971Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:51.982Z] LOG    ✅ Kinokuniya Bookstore -Seattle: Got description (95 chars)
+[2026-01-20T23:24:51.983Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:51.985Z] LOG    ✅ Third Place Books: Got description (98 chars)
+[2026-01-20T23:24:51.986Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:52.012Z] LOG    ✅ Lighthouse Roasters Fine Coffees: Got description (88 chars)
+[2026-01-20T23:24:52.014Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:52.080Z] LOG    ✅ Ophelia's Books: Got description (99 chars)
+[2026-01-20T23:24:52.080Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:52.116Z] LOG    ✅ Ada's Technical Books and Cafe: Got description (98 chars)
+[2026-01-20T23:24:52.118Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:52.120Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1074ms
+[2026-01-20T23:24:52.121Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:24:52.122Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-20T23:24:52.324Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-20T23:24:52.324Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:24:52.325Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T23:24:52.326Z] LOG    1. Searching "Chihuly Garden and Glass" in "Lower Queen Anne"
+[2026-01-20T23:24:52.326Z] LOG 🔍 [Google Places] Text search: "Chihuly Garden and Glass" in Lower Queen Anne
+[2026-01-20T23:24:52.327Z] LOG    2. Searching "Museum of Pop Culture (MoPOP)" in "Lower Queen Anne"
+[2026-01-20T23:24:52.328Z] LOG 🔍 [Google Places] Text search: "Museum of Pop Culture (MoPOP)" in Lower Queen Anne
+[2026-01-20T23:24:52.329Z] LOG    3. Searching "The Seattle Public Library - Central Library" in "Downtown Seattle"
+[2026-01-20T23:24:52.329Z] LOG 🔍 [Google Places] Text search: "The Seattle Public Library - Central Library" in Downtown Seattle
+[2026-01-20T23:24:52.330Z] LOG    4. Searching "Kerry Park" in "Queen Anne"
+[2026-01-20T23:24:52.330Z] LOG 🔍 [Google Places] Text search: "Kerry Park" in Queen Anne
+[2026-01-20T23:24:52.330Z] LOG    5. Searching "Ballard Locks (Hiram M. Chittenden Locks)" in "Ballard"
+[2026-01-20T23:24:52.331Z] LOG 🔍 [Google Places] Text search: "Ballard Locks (Hiram M. Chittenden Locks)" in Ballard
+[2026-01-20T23:24:52.331Z] LOG    6. Searching "Discovery Park" in "Magnolia"
+[2026-01-20T23:24:52.331Z] LOG 🔍 [Google Places] Text search: "Discovery Park" in Magnolia
+[2026-01-20T23:24:52.332Z] LOG    7. Searching "Volunteer Park" in "Capitol Hill"
+[2026-01-20T23:24:52.333Z] LOG 🔍 [Google Places] Text search: "Volunteer Park" in Capitol Hill
+[2026-01-20T23:24:52.333Z] LOG    8. Searching "Gas Works Park" in "Wallingford/Fremont"
+[2026-01-20T23:24:52.333Z] LOG 🔍 [Google Places] Text search: "Gas Works Park" in Wallingford/Fremont
+[2026-01-20T23:24:52.334Z] LOG    9. Searching "Seattle Art Museum (SAM)" in "Downtown Seattle"
+[2026-01-20T23:24:52.334Z] LOG 🔍 [Google Places] Text search: "Seattle Art Museum (SAM)" in Downtown Seattle
+[2026-01-20T23:24:52.335Z] LOG    10. Searching "Fremont Troll" in "Fremont"
+[2026-01-20T23:24:52.335Z] LOG 🔍 [Google Places] Text search: "Fremont Troll" in Fremont
+[2026-01-20T23:24:52.784Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:52.811Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:52.854Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:52.855Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:52.878Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:52.896Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:52.927Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:52.939Z] LOG    ✅ Discovery Park: Got description (97 chars)
+[2026-01-20T23:24:52.939Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:52.955Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:52.962Z] LOG    ✅ Museum of Pop Culture: Got description (100 chars)
+[2026-01-20T23:24:52.963Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:52.975Z] LOG    ✅ Seattle Public Library - Central Library: Got description (92 chars)
+[2026-01-20T23:24:52.975Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:52.982Z] LOG    ✅ Kerry Park: Got description (93 chars)
+[2026-01-20T23:24:52.983Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:53.001Z] LOG    ✅ Volunteer Park: Got description (99 chars)
+[2026-01-20T23:24:53.004Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:53.050Z] LOG    ✅ Gas Works Park: Got description (95 chars)
+[2026-01-20T23:24:53.051Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:53.063Z] LOG    ✅ Seattle Art Museum: Got description (100 chars)
+[2026-01-20T23:24:53.064Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:53.126Z] LOG    ✅ Ballard (Hiram M. Chittenden) Locks: Got description (100 chars)
+[2026-01-20T23:24:53.127Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:53.199Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:53.329Z] LOG    ✅ Fremont Troll: Got description (100 chars)
+[2026-01-20T23:24:53.330Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:53.622Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:24:53.764Z] LOG    ✅ Chihuly Garden and Glass: Got description (84 chars)
+[2026-01-20T23:24:53.765Z] LOG ✅ Found 1 places
+[2026-01-20T23:24:53.765Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1440ms
+[2026-01-20T23:24:53.766Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:24:53.766Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-20T23:24:53.767Z] LOG    ✅ Ada's Technical Books and Cafe → Ada's Technical Books and Cafe (must_have)
+[2026-01-20T23:24:53.767Z] LOG    ✅ Elliott Bay Book Company → Elliott Bay Book Company (must_have)
+[2026-01-20T23:24:53.768Z] LOG    ✅ Third Place Books Ravenna → Third Place Books (must_have)
+[2026-01-20T23:24:53.768Z] LOG    ✅ Storyville Coffee Pike Place → Storyville Coffee Pike Place (must_have)
+[2026-01-20T23:24:53.768Z] LOG    ✅ Twice Sold Tales → Twice Sold Tales (must_have)
+[2026-01-20T23:24:53.769Z] LOG    ✅ Lighthouse Roasters Fine Coffees → Lighthouse Roasters Fine Coffees (must_have)
+[2026-01-20T23:24:53.769Z] LOG    ✅ Ophelia's Books → Ophelia's Books (must_have)
+[2026-01-20T23:24:53.770Z] LOG    ✅ Kinokuniya Bookstore -Seattle → Kinokuniya Bookstore -Seattle (must_have)
+[2026-01-20T23:24:53.770Z] LOG    ✅ Space Needle → Space Needle (nice_to_have)
+[2026-01-20T23:24:53.771Z] LOG    ✅ Pike Place Market → Pike Place Market (nice_to_have)
+[2026-01-20T23:24:53.771Z] LOG    ✅ Chihuly Garden and Glass → Chihuly Garden and Glass (nice_to_have)
+[2026-01-20T23:24:53.771Z] LOG    ✅ Museum of Pop Culture (MoPOP) → Museum of Pop Culture (nice_to_have)
+[2026-01-20T23:24:53.772Z] LOG    ✅ The Seattle Public Library - Central Library → Seattle Public Library - Central Library (nice_to_have)
+[2026-01-20T23:24:53.772Z] LOG    ✅ Kerry Park → Kerry Park (nice_to_have)
+[2026-01-20T23:24:53.772Z] LOG    ✅ Ballard Locks (Hiram M. Chittenden Locks) → Ballard (Hiram M. Chittenden) Locks (nice_to_have)
+[2026-01-20T23:24:53.772Z] LOG    ✅ Discovery Park → Discovery Park (nice_to_have)
+[2026-01-20T23:24:53.772Z] LOG    ✅ Volunteer Park → Volunteer Park (nice_to_have)
+[2026-01-20T23:24:53.773Z] LOG    ✅ Gas Works Park → Gas Works Park (nice_to_have)
+[2026-01-20T23:24:53.773Z] LOG    ✅ Seattle Art Museum (SAM) → Seattle Art Museum (nice_to_have)
+[2026-01-20T23:24:53.773Z] LOG    ✅ Fremont Troll → Fremont Troll (nice_to_have)
+[2026-01-20T23:24:53.773Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-20T23:24:53.774Z] LOG    Total enriched: 20
+[2026-01-20T23:24:53.774Z] LOG    🎯 Must-have: 8
+[2026-01-20T23:24:53.774Z] LOG    ✨ Nice-to-have: 12
+[2026-01-20T23:24:53.774Z] LOG    ❌ Failed: 0
+[2026-01-20T23:24:53.774Z] LOG    ⏱️ Time: 2732ms
+
+--- Summary ---
+Enrichment completed

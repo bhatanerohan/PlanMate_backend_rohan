@@ -1,0 +1,154 @@
+User Prompt: find indian restaurant along the route of boston and newyork
+
+[2026-01-21T02:04:37.173Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T02:04:37.174Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-21T02:04:37.174Z] LOG    🎯 Must-have: 8
+[2026-01-21T02:04:37.174Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T02:04:37.175Z] LOG 📍 Location hint: Providence, RI
+[2026-01-21T02:04:37.175Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-21T02:04:37.175Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T02:04:37.176Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T02:04:37.176Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T02:04:37.177Z] LOG    1. Searching "India Restaurant" in "Providence, RI"
+[2026-01-21T02:04:37.177Z] LOG 🔍 [Google Places] Text search: "India Restaurant" in Providence, RI
+[2026-01-21T02:04:37.179Z] LOG    2. Searching "Rasoi" in "Pawtucket, RI"
+[2026-01-21T02:04:37.180Z] LOG 🔍 [Google Places] Text search: "Rasoi" in Pawtucket, RI
+[2026-01-21T02:04:37.182Z] LOG    3. Searching "Dhaba Wala Indian Kitchen" in "Hartford, CT"
+[2026-01-21T02:04:37.183Z] LOG 🔍 [Google Places] Text search: "Dhaba Wala Indian Kitchen" in Hartford, CT
+[2026-01-21T02:04:37.188Z] LOG    4. Searching "House of Naan Indian Kitchen and Bar" in "New Haven, CT"
+[2026-01-21T02:04:37.188Z] LOG 🔍 [Google Places] Text search: "House of Naan Indian Kitchen and Bar" in New Haven, CT
+[2026-01-21T02:04:37.190Z] LOG    5. Searching "Sherkaan Indian Street Food" in "New Haven, CT"
+[2026-01-21T02:04:37.191Z] LOG 🔍 [Google Places] Text search: "Sherkaan Indian Street Food" in New Haven, CT
+[2026-01-21T02:04:37.194Z] LOG    6. Searching "Taj Stamford" in "Stamford, CT"
+[2026-01-21T02:04:37.194Z] LOG 🔍 [Google Places] Text search: "Taj Stamford" in Stamford, CT
+[2026-01-21T02:04:37.198Z] LOG    7. Searching "Coromandel Cuisine of India" in "Darien, CT"
+[2026-01-21T02:04:37.200Z] LOG 🔍 [Google Places] Text search: "Coromandel Cuisine of India" in Darien, CT
+[2026-01-21T02:04:37.203Z] LOG    8. Searching "Pariwaar Delights - The King of Biryani's" in "Jersey City, NJ"
+[2026-01-21T02:04:37.205Z] LOG 🔍 [Google Places] Text search: "Pariwaar Delights - The King of Biryani's" in Jersey City, NJ
+[2026-01-21T02:04:37.211Z] LOG    9. Searching "Waterplace Park" in "Providence, RI"
+[2026-01-21T02:04:37.214Z] LOG 🔍 [Google Places] Text search: "Waterplace Park" in Providence, RI
+[2026-01-21T02:04:37.217Z] LOG    10. Searching "Roger Williams Park Zoo" in "Providence, RI"
+[2026-01-21T02:04:37.218Z] LOG 🔍 [Google Places] Text search: "Roger Williams Park Zoo" in Providence, RI
+[2026-01-21T02:04:37.672Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:37.691Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:37.733Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:37.737Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:37.741Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:37.774Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:37.783Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:37.826Z] LOG    ✅ Coromandel Cuisine of India: Got description (85 chars)
+[2026-01-21T02:04:37.826Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:37.833Z] LOG    ✅ India Restaurant: Got description (81 chars)
+[2026-01-21T02:04:37.833Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:37.847Z] LOG    ⚠️  Taj Stamford: No editorial summary available
+[2026-01-21T02:04:37.848Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:37.853Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:37.856Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:37.862Z] LOG    ✅ Waterplace Park: Got description (99 chars)
+[2026-01-21T02:04:37.863Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:37.865Z] LOG    ✅ Sherkaan Indian Street Food: Got description (92 chars)
+[2026-01-21T02:04:37.866Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:37.870Z] LOG    ✅ Dhaba Wala Indian Kitchen: Got description (98 chars)
+[2026-01-21T02:04:37.872Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:37.895Z] LOG    ⚠️  Pariwaar Delights - The King of Biryani's: No editorial summary available
+[2026-01-21T02:04:37.898Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:37.935Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:37.985Z] LOG    ✅ Roger Williams Park Zoo: Got description (100 chars)
+[2026-01-21T02:04:37.985Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:38.012Z] LOG    ✅ Rasoi: Got description (100 chars)
+[2026-01-21T02:04:38.014Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:38.050Z] LOG    ✅ House of Naan Indian Kitchen and Bar: Got description (94 chars)
+[2026-01-21T02:04:38.052Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:38.053Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 877ms
+[2026-01-21T02:04:38.053Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T02:04:38.054Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T02:04:38.264Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-21T02:04:38.264Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T02:04:38.265Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T02:04:38.265Z] LOG    1. Searching "Rocky Point State Park" in "Warwick, RI"
+[2026-01-21T02:04:38.266Z] LOG 🔍 [Google Places] Text search: "Rocky Point State Park" in Warwick, RI
+[2026-01-21T02:04:38.267Z] LOG    2. Searching "The Mark Twain House & Museum" in "Hartford, CT"
+[2026-01-21T02:04:38.267Z] LOG 🔍 [Google Places] Text search: "The Mark Twain House & Museum" in Hartford, CT
+[2026-01-21T02:04:38.268Z] LOG    3. Searching "Connecticut Science Center" in "Hartford, CT"
+[2026-01-21T02:04:38.268Z] LOG 🔍 [Google Places] Text search: "Connecticut Science Center" in Hartford, CT
+[2026-01-21T02:04:38.269Z] LOG    4. Searching "East Rock Park" in "New Haven, CT"
+[2026-01-21T02:04:38.269Z] LOG 🔍 [Google Places] Text search: "East Rock Park" in New Haven, CT
+[2026-01-21T02:04:38.270Z] LOG    5. Searching "Lighthouse Point Park" in "New Haven, CT"
+[2026-01-21T02:04:38.270Z] LOG 🔍 [Google Places] Text search: "Lighthouse Point Park" in New Haven, CT
+[2026-01-21T02:04:38.270Z] LOG    6. Searching "Silver Sands State Park" in "Milford, CT"
+[2026-01-21T02:04:38.271Z] LOG 🔍 [Google Places] Text search: "Silver Sands State Park" in Milford, CT
+[2026-01-21T02:04:38.271Z] LOG    7. Searching "Mill River Park" in "Stamford, CT"
+[2026-01-21T02:04:38.272Z] LOG 🔍 [Google Places] Text search: "Mill River Park" in Stamford, CT
+[2026-01-21T02:04:38.272Z] LOG    8. Searching "Cove Island Park" in "Stamford, CT"
+[2026-01-21T02:04:38.272Z] LOG 🔍 [Google Places] Text search: "Cove Island Park" in Stamford, CT
+[2026-01-21T02:04:38.273Z] LOG    9. Searching "I-95 Darien NB Service Plaza" in "Darien, CT"
+[2026-01-21T02:04:38.273Z] LOG 🔍 [Google Places] Text search: "I-95 Darien NB Service Plaza" in Darien, CT
+[2026-01-21T02:04:38.274Z] LOG    10. Searching "Connecticut Welcome Center" in "North Stonington, CT"
+[2026-01-21T02:04:38.274Z] LOG 🔍 [Google Places] Text search: "Connecticut Welcome Center" in North Stonington, CT
+[2026-01-21T02:04:38.636Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:38.730Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:38.735Z] LOG    ✅ Mill River Park: Got description (95 chars)
+[2026-01-21T02:04:38.735Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:38.755Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:38.764Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:38.767Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:38.775Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:38.826Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:38.875Z] LOG    ✅ Connecticut Science Center: Got description (98 chars)
+[2026-01-21T02:04:38.876Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:38.880Z] LOG    ✅ Lighthouse Point Park: Got description (96 chars)
+[2026-01-21T02:04:38.880Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:38.881Z] LOG    ⚠️  Rocky Point State Park: No editorial summary available
+[2026-01-21T02:04:38.882Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:38.910Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:38.913Z] LOG    ✅ Cove Island: Got description (99 chars)
+[2026-01-21T02:04:38.913Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:38.914Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:38.928Z] LOG    ⚠️  I-95 Darien NB Service Plaza: No editorial summary available
+[2026-01-21T02:04:38.928Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:38.944Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:04:38.953Z] LOG    ✅ Silver Sands State Park: Got description (91 chars)
+[2026-01-21T02:04:38.954Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:39.029Z] LOG    ⚠️  Connecticut Welcome Center: No editorial summary available
+[2026-01-21T02:04:39.030Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:39.052Z] LOG    ✅ The Mark Twain House & Museum: Got description (93 chars)
+[2026-01-21T02:04:39.053Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:39.054Z] LOG    ✅ East Rock Park: Got description (96 chars)
+[2026-01-21T02:04:39.055Z] LOG ✅ Found 1 places
+[2026-01-21T02:04:39.056Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 791ms
+[2026-01-21T02:04:39.056Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T02:04:39.056Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-21T02:04:39.057Z] LOG    ✅ India Restaurant → India Restaurant (must_have)
+[2026-01-21T02:04:39.057Z] LOG    ✅ Rasoi → Rasoi (must_have)
+[2026-01-21T02:04:39.058Z] LOG    ✅ Dhaba Wala Indian Kitchen → Dhaba Wala Indian Kitchen (must_have)
+[2026-01-21T02:04:39.058Z] LOG    ✅ House of Naan Indian Kitchen and Bar → House of Naan Indian Kitchen and Bar (must_have)
+[2026-01-21T02:04:39.058Z] LOG    ✅ Sherkaan Indian Street Food → Sherkaan Indian Street Food (must_have)
+[2026-01-21T02:04:39.059Z] LOG    ✅ Taj Stamford → Taj Stamford (must_have)
+[2026-01-21T02:04:39.059Z] LOG    ✅ Coromandel Cuisine of India → Coromandel Cuisine of India (must_have)
+[2026-01-21T02:04:39.060Z] LOG    ✅ Pariwaar Delights - The King of Biryani's → Pariwaar Delights - The King of Biryani's (must_have)
+[2026-01-21T02:04:39.060Z] LOG    ✅ Waterplace Park → Waterplace Park (nice_to_have)
+[2026-01-21T02:04:39.060Z] LOG    ✅ Roger Williams Park Zoo → Roger Williams Park Zoo (nice_to_have)
+[2026-01-21T02:04:39.061Z] LOG    ✅ Rocky Point State Park → Rocky Point State Park (nice_to_have)
+[2026-01-21T02:04:39.061Z] LOG    ✅ The Mark Twain House & Museum → The Mark Twain House & Museum (nice_to_have)
+[2026-01-21T02:04:39.061Z] LOG    ✅ Connecticut Science Center → Connecticut Science Center (nice_to_have)
+[2026-01-21T02:04:39.062Z] LOG    ✅ East Rock Park → East Rock Park (nice_to_have)
+[2026-01-21T02:04:39.062Z] LOG    ✅ Lighthouse Point Park → Lighthouse Point Park (nice_to_have)
+[2026-01-21T02:04:39.062Z] LOG    ✅ Silver Sands State Park → Silver Sands State Park (nice_to_have)
+[2026-01-21T02:04:39.063Z] LOG    ✅ Mill River Park → Mill River Park (nice_to_have)
+[2026-01-21T02:04:39.063Z] LOG    ✅ Cove Island Park → Cove Island (nice_to_have)
+[2026-01-21T02:04:39.064Z] LOG    ✅ I-95 Darien NB Service Plaza → I-95 Darien NB Service Plaza (nice_to_have)
+[2026-01-21T02:04:39.064Z] LOG    ✅ Connecticut Welcome Center → Connecticut Welcome Center (nice_to_have)
+[2026-01-21T02:04:39.065Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T02:04:39.065Z] LOG    Total enriched: 20
+[2026-01-21T02:04:39.066Z] LOG    🎯 Must-have: 8
+[2026-01-21T02:04:39.066Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T02:04:39.066Z] LOG    ❌ Failed: 0
+[2026-01-21T02:04:39.067Z] LOG    ⏱️ Time: 1894ms
+
+--- Summary ---
+Enrichment completed

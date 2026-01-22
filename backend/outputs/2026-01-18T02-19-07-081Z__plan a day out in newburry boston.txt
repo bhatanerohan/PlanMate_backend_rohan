@@ -1,0 +1,154 @@
+User Prompt: plan a day out in newburry boston
+
+[2026-01-18T02:19:07.082Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-18T02:19:07.082Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-18T02:19:07.083Z] LOG    🎯 Must-have: 7
+[2026-01-18T02:19:07.083Z] LOG    ✨ Nice-to-have: 13
+[2026-01-18T02:19:07.084Z] LOG 📍 Location hint: newburry boston
+[2026-01-18T02:19:07.084Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-18T02:19:07.085Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-18T02:19:07.086Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-18T02:19:07.086Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-18T02:19:07.087Z] LOG    1. Searching "Riccardi" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:07.088Z] LOG 🔍 [Google Places] Text search: "Riccardi" in Back Bay East, Newbury Street
+[2026-01-18T02:19:07.096Z] LOG    2. Searching "Mure and Grand - Back Bay" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:07.098Z] LOG 🔍 [Google Places] Text search: "Mure and Grand - Back Bay" in Back Bay East, Newbury Street
+[2026-01-18T02:19:07.104Z] LOG    3. Searching "Joe’s on Newbury" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:07.108Z] LOG 🔍 [Google Places] Text search: "Joe’s on Newbury" in Back Bay East, Newbury Street
+[2026-01-18T02:19:07.116Z] LOG    4. Searching "Stephanie's On Newbury" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:07.118Z] LOG 🔍 [Google Places] Text search: "Stephanie's On Newbury" in Back Bay East, Newbury Street
+[2026-01-18T02:19:07.128Z] LOG    5. Searching "Thinking Cup" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:07.130Z] LOG 🔍 [Google Places] Text search: "Thinking Cup" in Back Bay East, Newbury Street
+[2026-01-18T02:19:07.138Z] LOG    6. Searching "Trident Booksellers & Cafe" in "Back Bay West, Newbury Street"
+[2026-01-18T02:19:07.140Z] LOG 🔍 [Google Places] Text search: "Trident Booksellers & Cafe" in Back Bay West, Newbury Street
+[2026-01-18T02:19:07.147Z] LOG    7. Searching "Commonwealth Avenue Mall" in "Back Bay West, Commonwealth Avenue"
+[2026-01-18T02:19:07.150Z] LOG 🔍 [Google Places] Text search: "Commonwealth Avenue Mall" in Back Bay West, Commonwealth Avenue
+[2026-01-18T02:19:07.157Z] LOG    8. Searching "No Rest For Bridget" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:07.159Z] LOG 🔍 [Google Places] Text search: "No Rest For Bridget" in Back Bay East, Newbury Street
+[2026-01-18T02:19:07.165Z] LOG    9. Searching "Urban Outfitters" in "Back Bay West, Newbury Street"
+[2026-01-18T02:19:07.168Z] LOG 🔍 [Google Places] Text search: "Urban Outfitters" in Back Bay West, Newbury Street
+[2026-01-18T02:19:07.175Z] LOG    10. Searching "The Fairy Shop" in "Back Bay West, Newbury Street"
+[2026-01-18T02:19:07.178Z] LOG 🔍 [Google Places] Text search: "The Fairy Shop" in Back Bay West, Newbury Street
+[2026-01-18T02:19:07.717Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:07.769Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:07.778Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:07.786Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:07.823Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:07.829Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:07.837Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:07.839Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:07.856Z] LOG    ✅ No Rest For Bridget: Got description (95 chars)
+[2026-01-18T02:19:07.857Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:07.899Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:07.904Z] LOG    ✅ The Fairy Shop: Got description (90 chars)
+[2026-01-18T02:19:07.905Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:07.925Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:07.945Z] LOG    ✅ Joe’s on Newbury: Got description (91 chars)
+[2026-01-18T02:19:07.947Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:07.949Z] LOG    ✅ Thinking Cup: Got description (94 chars)
+[2026-01-18T02:19:07.950Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:07.984Z] LOG    ✅ Trident Booksellers & Cafe: Got description (90 chars)
+[2026-01-18T02:19:07.988Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.033Z] LOG    ✅ Commonwealth Avenue Mall: Got description (97 chars)
+[2026-01-18T02:19:08.036Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.038Z] LOG    ✅ Riccardi: Got description (95 chars)
+[2026-01-18T02:19:08.038Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.039Z] LOG    ✅ Urban Outfitters: Got description (93 chars)
+[2026-01-18T02:19:08.039Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.095Z] LOG    ⚠️  Mure and Grand - Back Bay: No editorial summary available
+[2026-01-18T02:19:08.096Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.122Z] LOG    ✅ Stephanie's On Newbury: Got description (86 chars)
+[2026-01-18T02:19:08.125Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.128Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1041ms
+[2026-01-18T02:19:08.128Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-18T02:19:08.129Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-18T02:19:08.346Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-18T02:19:08.348Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-18T02:19:08.348Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-18T02:19:08.349Z] LOG    1. Searching "Posman Books" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:08.349Z] LOG 🔍 [Google Places] Text search: "Posman Books" in Back Bay East, Newbury Street
+[2026-01-18T02:19:08.351Z] LOG    2. Searching "Newbury Comics" in "Back Bay West, Newbury Street"
+[2026-01-18T02:19:08.351Z] LOG 🔍 [Google Places] Text search: "Newbury Comics" in Back Bay West, Newbury Street
+[2026-01-18T02:19:08.353Z] LOG    3. Searching "Contessa Boston" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:08.354Z] LOG 🔍 [Google Places] Text search: "Contessa Boston" in Back Bay East, Newbury Street
+[2026-01-18T02:19:08.355Z] LOG    4. Searching "Piattini" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:08.355Z] LOG 🔍 [Google Places] Text search: "Piattini" in Back Bay East, Newbury Street
+[2026-01-18T02:19:08.356Z] LOG    5. Searching "La Voile" in "Back Bay West, Newbury Street"
+[2026-01-18T02:19:08.357Z] LOG 🔍 [Google Places] Text search: "La Voile" in Back Bay West, Newbury Street
+[2026-01-18T02:19:08.357Z] LOG    6. Searching "The Capital Burger" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:08.358Z] LOG 🔍 [Google Places] Text search: "The Capital Burger" in Back Bay East, Newbury Street
+[2026-01-18T02:19:08.359Z] LOG    7. Searching "LITTLE WHALE OYSTER BAR" in "Back Bay West, Newbury Street"
+[2026-01-18T02:19:08.359Z] LOG 🔍 [Google Places] Text search: "LITTLE WHALE OYSTER BAR" in Back Bay West, Newbury Street
+[2026-01-18T02:19:08.360Z] LOG    8. Searching "Galerie d'Orsay" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:08.360Z] LOG 🔍 [Google Places] Text search: "Galerie d'Orsay" in Back Bay East, Newbury Street
+[2026-01-18T02:19:08.363Z] LOG    9. Searching "Pucker Gallery" in "Back Bay East, Newbury Street"
+[2026-01-18T02:19:08.365Z] LOG 🔍 [Google Places] Text search: "Pucker Gallery" in Back Bay East, Newbury Street
+[2026-01-18T02:19:08.367Z] LOG    10. Searching "Public Garden" in "Beacon Hill / Back Bay East"
+[2026-01-18T02:19:08.368Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Beacon Hill / Back Bay East
+[2026-01-18T02:19:08.772Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:08.779Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:08.801Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:08.816Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:08.822Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:08.825Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:08.847Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:08.856Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:08.870Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:08.904Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T02:19:08.913Z] LOG    ⚠️  Posman Books: No editorial summary available
+[2026-01-18T02:19:08.914Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.928Z] LOG    ✅ Pucker Gallery: Got description (97 chars)
+[2026-01-18T02:19:08.930Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.945Z] LOG    ✅ Piattini: Got description (81 chars)
+[2026-01-18T02:19:08.946Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.958Z] LOG    ⚠️  LITTLE WHALE OYSTER BAR: No editorial summary available
+[2026-01-18T02:19:08.960Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.962Z] LOG    ✅ Newbury Comics: Got description (100 chars)
+[2026-01-18T02:19:08.966Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.972Z] LOG    ✅ Contessa Boston: Got description (100 chars)
+[2026-01-18T02:19:08.973Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:08.975Z] LOG    ⚠️  The Capital Burger: No editorial summary available
+[2026-01-18T02:19:08.978Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:09.012Z] LOG    ✅ La Voile: Got description (85 chars)
+[2026-01-18T02:19:09.014Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:09.016Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-18T02:19:09.017Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:09.052Z] LOG    ✅ Galerie d'Orsay: Got description (78 chars)
+[2026-01-18T02:19:09.054Z] LOG ✅ Found 1 places
+[2026-01-18T02:19:09.055Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 707ms
+[2026-01-18T02:19:09.056Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-18T02:19:09.057Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-18T02:19:09.058Z] LOG    ✅ Riccardi → Riccardi (must_have)
+[2026-01-18T02:19:09.059Z] LOG    ✅ Mure and Grand - Back Bay → Mure and Grand - Back Bay (must_have)
+[2026-01-18T02:19:09.059Z] LOG    ✅ Joe’s on Newbury → Joe’s on Newbury (must_have)
+[2026-01-18T02:19:09.059Z] LOG    ✅ Stephanie's On Newbury → Stephanie's On Newbury (must_have)
+[2026-01-18T02:19:09.060Z] LOG    ✅ Thinking Cup → Thinking Cup (must_have)
+[2026-01-18T02:19:09.060Z] LOG    ✅ Trident Booksellers & Cafe → Trident Booksellers & Cafe (must_have)
+[2026-01-18T02:19:09.061Z] LOG    ✅ Commonwealth Avenue Mall → Commonwealth Avenue Mall (must_have)
+[2026-01-18T02:19:09.061Z] LOG    ✅ No Rest For Bridget → No Rest For Bridget (nice_to_have)
+[2026-01-18T02:19:09.062Z] LOG    ✅ Urban Outfitters → Urban Outfitters (nice_to_have)
+[2026-01-18T02:19:09.062Z] LOG    ✅ The Fairy Shop → The Fairy Shop (nice_to_have)
+[2026-01-18T02:19:09.062Z] LOG    ✅ Posman Books → Posman Books (nice_to_have)
+[2026-01-18T02:19:09.063Z] LOG    ✅ Newbury Comics → Newbury Comics (nice_to_have)
+[2026-01-18T02:19:09.063Z] LOG    ✅ Contessa Boston → Contessa Boston (nice_to_have)
+[2026-01-18T02:19:09.063Z] LOG    ✅ Piattini → Piattini (nice_to_have)
+[2026-01-18T02:19:09.064Z] LOG    ✅ La Voile → La Voile (nice_to_have)
+[2026-01-18T02:19:09.064Z] LOG    ✅ The Capital Burger → The Capital Burger (nice_to_have)
+[2026-01-18T02:19:09.064Z] LOG    ✅ LITTLE WHALE OYSTER BAR → LITTLE WHALE OYSTER BAR (nice_to_have)
+[2026-01-18T02:19:09.065Z] LOG    ✅ Galerie d'Orsay → Galerie d'Orsay (nice_to_have)
+[2026-01-18T02:19:09.065Z] LOG    ✅ Pucker Gallery → Pucker Gallery (nice_to_have)
+[2026-01-18T02:19:09.065Z] LOG    ✅ Public Garden → Public Garden (nice_to_have)
+[2026-01-18T02:19:09.066Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-18T02:19:09.066Z] LOG    Total enriched: 20
+[2026-01-18T02:19:09.066Z] LOG    🎯 Must-have: 7
+[2026-01-18T02:19:09.067Z] LOG    ✨ Nice-to-have: 13
+[2026-01-18T02:19:09.067Z] LOG    ❌ Failed: 0
+[2026-01-18T02:19:09.068Z] LOG    ⏱️ Time: 1987ms
+
+--- Summary ---
+Enrichment completed

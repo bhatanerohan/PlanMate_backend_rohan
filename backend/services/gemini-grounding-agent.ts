@@ -1,10 +1,14 @@
-
+// backend/services/gemini-grounding-agent.ts
 
 import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
 import { startCapture } from './logger.js';
 
 dotenv.config();
+
+// ============================================================================
+// INTERFACES - Updated for 15-20 candidates with categorization
+// ============================================================================
 
 export interface GeminiVenueRecommendation {
   name: string;
@@ -13,6 +17,10 @@ export interface GeminiVenueRecommendation {
   reasoning?: string;
   general_location?: string;
   
+  // Priority: must_have = core intent, nice_to_have = complementary
+  priority: 'must_have' | 'nice_to_have';
+  
+  // Optional enrichment data from grounding
   placeId?: string;
   rating?: number;
   userRatingCount?: number;
@@ -29,14 +37,28 @@ export interface GeminiGroundingResult {
     estimated_duration?: string;
     theme?: string;
     reasoning?: string;
+    travel_mode?: string;
+    scale?: string;
   };
   venues: GeminiVenueRecommendation[];
   context: string;
   grounding_used: boolean;
   search_used: boolean;
   total_venues_found: number;
-  raw_grounding_chunks?: any[];  // 🆕 For debugging
+  
+  // NEW: Track user's requested count (if specified)
+  user_requested_count?: number;
+  
+  // NEW: Separate counts for debugging
+  must_have_count: number;
+  nice_to_have_count: number;
+  
+  raw_grounding_chunks?: any[];
 }
+
+// ============================================================================
+// GEMINI GROUNDING AGENT CLASS
+// ============================================================================
 
 export class GeminiGroundingAgent {
   private ai: GoogleGenAI;
@@ -47,15 +69,12 @@ export class GeminiGroundingAgent {
       throw new Error('GEMINI_API_KEY not found in environment variables');
     }
     
-    this.ai = new GoogleGenAI({
-      apiKey: apiKey
-    });
+    this.ai = new GoogleGenAI({ apiKey });
   }
 
-  
-
   /**
-   * Main method: Get venue recommendations with Maps grounding
+   * Main method: Get 15-20 venue CANDIDATES with Maps grounding
+   * Returns categorized venues for downstream selection
    */
   async getRecommendations(
     userPrompt: string,
@@ -65,25 +84,27 @@ export class GeminiGroundingAgent {
     let response: any = undefined;
     let groundingChunks: any[] = [];
 
-    console.log('\n🌟 Gemini Grounding Agent starting...');
+    console.log('\n🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...');
     console.log(`📝 User prompt: "${userPrompt}"`);
     if (userLocation) {
       console.log(`📍 User location: ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})`);
     }
     
     try {
-      const geminiPrompt = this.buildGroundingPrompt(userPrompt, userLocation);
+      // Extract user's requested count if specified
+      const userRequestedCount = this.extractRequestedCount(userPrompt);
+      if (userRequestedCount) {
+        console.log(`🔢 User requested ${userRequestedCount} stops`);
+      }
+
+      const geminiPrompt = this.buildGroundingPrompt(userPrompt, userLocation, userRequestedCount);
       
-      console.log('🔮 Calling Gemini with proper Maps grounding configuration...');
+      console.log('🔮 Calling Gemini for 15-20 CANDIDATES...');
       
-      // ✅ CORRECT CONFIG: Matches Python SDK structure
       const config: any = {
-        tools: [
-          { googleMaps: {} }  // Enable Maps grounding tool
-        ]
+        tools: [{ googleMaps: {} }]
       };
 
-      // Add location context if available
       if (userLocation) {
         config.toolConfig = {
           retrievalConfig: {
@@ -93,18 +114,16 @@ export class GeminiGroundingAgent {
             }
           }
         };
-        console.log(`🗺️ Location context configured: (${userLocation.lat}, ${userLocation.lng})`);
+        console.log(`🗺️ Location context: (${userLocation.lat}, ${userLocation.lng})`);
       }
 
-      // Call Gemini with Maps grounding
       response = await this.ai.models.generateContent({
-        model: 'gemini-2.5-flash',  // ✅ Use 2.5, not 2.0-exp
+        model: 'gemini-2.5-flash',
         contents: geminiPrompt,
-        config: config
+        config
       });
-      console.log(response);
+
       const text = response?.text || '';
-      
       console.log('✅ Gemini response received');
       console.log(`📄 Response length: ${text.length} characters`);
       
@@ -112,48 +131,28 @@ export class GeminiGroundingAgent {
       const candidate = response.candidates?.[0];
       const groundingMetadata = candidate?.groundingMetadata;
       
-      console.log('\n🔍 Grounding Metadata Analysis:');
-      console.log('   candidate exists:', !!candidate);
-      console.log('   groundingMetadata exists:', !!groundingMetadata);
-      
-      const grounding_used = !!groundingMetadata?.groundingChunks && groundingMetadata.groundingChunks.length > 0;
+      const grounding_used = !!groundingMetadata?.groundingChunks?.length;
       const search_used = !!groundingMetadata?.searchEntryPoint;
       
-      console.log(`📊 Grounding status: Maps=${grounding_used}, Search=${search_used}`);
+      console.log(`📊 Grounding: Maps=${grounding_used}, Search=${search_used}`);
       
-      // Log grounding chunks details
       if (groundingMetadata?.groundingChunks) {
         groundingChunks = groundingMetadata.groundingChunks;
-        console.log(`📍 Grounding chunks: ${groundingChunks.length} total`);
-        
-        // Log first 5 sources
-        groundingChunks.forEach((chunk: any, idx: number) => {
-          if (chunk.maps) {
-            console.log(`   ${idx + 1}. [MAPS] ${chunk.maps.title}`);
-            if (chunk.maps.placeId) {
-              console.log(`      placeId: ${chunk.maps.placeId}`);
-            }
-            if (chunk.maps.uri) {
-              console.log(`      uri: ${chunk.maps.uri}`);
-            }
-          } else if (chunk.web) {
-            console.log(`   ${idx + 1}. [WEB] ${chunk.web.title}`);
-          }
-        });
-      } else {
-        console.log('⚠️ No grounding chunks found - Maps grounding may not have triggered');
-        console.log('   This could mean:');
-        console.log('   1. Query didn\'t need Maps data');
-        console.log('   2. Maps grounding not available for this query type');
-        console.log('   3. Location context not sufficient');
+        console.log(`📍 Grounding chunks: ${groundingChunks.length} sources`);
       }
       
-      // Parse the response
+      // Parse the response with new categorized format
       const parsed = await this.parseGeminiResponse(text, grounding_used);
 
-      console.log(`✨ Parsed ${parsed.venues.length} venue recommendations`);
+      const mustHaveCount = parsed.venues.filter(v => v.priority === 'must_have').length;
+      const niceToHaveCount = parsed.venues.filter(v => v.priority === 'nice_to_have').length;
+
+      console.log(`\n✨ Parsed ${parsed.venues.length} CANDIDATES:`);
+      console.log(`   🎯 Must-have: ${mustHaveCount}`);
+      console.log(`   ✨ Nice-to-have: ${niceToHaveCount}`);
+      
       if (parsed.plan) {
-        console.log(`📋 Plan: ${parsed.plan.type}, ${parsed.plan.total_stops} stops`);
+        console.log(`📋 Plan: ${parsed.plan.type}, ${parsed.plan.total_stops} target stops`);
       }
 
       return {
@@ -163,18 +162,15 @@ export class GeminiGroundingAgent {
         grounding_used,
         search_used,
         total_venues_found: parsed.venues.length,
+        user_requested_count: userRequestedCount,
+        must_have_count: mustHaveCount,
+        nice_to_have_count: niceToHaveCount,
         raw_grounding_chunks: groundingChunks
       };
       
     } catch (error) {
       console.error('❌ Gemini Grounding Agent error:', error);
 
-      if (error instanceof Error) {
-        console.error('   Error message:', error.message);
-        console.error('   Error stack:', error.stack);
-      }
-
-      // If the parser signalled a JSON parse failure, return a specific error hint
       if (error instanceof Error && error.message === 'COULD_NOT_PARSE_JSON') {
         return {
           plan: undefined,
@@ -183,6 +179,8 @@ export class GeminiGroundingAgent {
           grounding_used: false,
           search_used: false,
           total_venues_found: 0,
+          must_have_count: 0,
+          nice_to_have_count: 0,
           raw_grounding_chunks: groundingChunks
         };
       }
@@ -193,7 +191,9 @@ export class GeminiGroundingAgent {
         context: 'Failed to get recommendations from Gemini',
         grounding_used: false,
         search_used: false,
-        total_venues_found: 0
+        total_venues_found: 0,
+        must_have_count: 0,
+        nice_to_have_count: 0
       };
     } finally {
       try {
@@ -206,11 +206,37 @@ export class GeminiGroundingAgent {
     }
   }
 
-  
+  /**
+   * Extract user's requested venue count from prompt
+   * e.g., "5 bars", "give me 3 restaurants", "I want to visit 7 places"
+   */
+  private extractRequestedCount(prompt: string): number | undefined {
+    const patterns = [
+      /(\d+)\s*(?:stops?|places?|venues?|locations?|spots?)/i,
+      /(?:give me|find|show|suggest|recommend)\s*(\d+)/i,
+      /(?:visit|try|check out)\s*(\d+)/i,
+      /(\d+)\s*(?:bars?|restaurants?|cafes?|museums?|shops?)/i
+    ];
 
+    for (const pattern of patterns) {
+      const match = prompt.match(pattern);
+      if (match && match[1]) {
+        const count = parseInt(match[1], 10);
+        if (count >= 2 && count <= 10) {
+          return count;
+        }
+      }
+    }
+    return undefined;
+  }
+
+  /**
+   * Build prompt that requests 15-20 CANDIDATES with MUST-HAVE/NICE-TO-HAVE categories
+   */
   private buildGroundingPrompt(
     userPrompt: string,
-    userLocation?: { lat: number; lng: number; name: string }
+    userLocation?: { lat: number; lng: number; name: string },
+    userRequestedCount?: number
   ): string {
     
     let prompt = '';
@@ -221,30 +247,65 @@ export class GeminiGroundingAgent {
     
     prompt += `User request: "${userPrompt}"\n\n`;
     
-    // ✅ SIMPLIFIED: Let Gemini use Maps grounding naturally without forcing JSON format
+    const targetStops = userRequestedCount || '5-7';
+    
     prompt += `
-🎯 DISTANCE SCALE (choose based on request):
+🎯 YOUR TASK: Return 15-20 CANDIDATE venues (not final picks!)
 
-**OVERRIDE:** If user says "walkable", "walking distance", "on foot" → ALWAYS use Neighborhood scale
+The user wants approximately ${targetStops} stops in their final itinerary.
+However, YOU must provide 15-20 OPTIONS so our system can select the most 
+geographically efficient subset while preserving user intent.
 
-**Neighborhood** (0.5-1 mile, 10-20 min walk)
-- Triggers: "bar crawl in [area]", "day around [place]", "walking tour", "coffee shop hop"
-- Example: "bar crawl in SoHo" → 4-5 bars within 0.5 miles, walking
+═══════════════════════════════════════════════════════════════════════════════
+📋 CATEGORIZATION RULES (CRITICAL!)
+═══════════════════════════════════════════════════════════════════════════════
 
-**District** (1-2 miles, mix of walking + transit)  
-- Triggers: "explore downtown", "afternoon in [area]", "visit the waterfront"
-- Example: "explore downtown Boston" → 4-5 venues across 1-2 miles, walking + transit
+**MUST_HAVE** = Core to user's intent. Cannot be skipped.
+  Examples for "halal food trucks in midtown":
+  - Halal Guys → must_have (directly matches "halal food trucks")
+  - Kwik Meal → must_have (halal food truck)
+  - Adel's Famous → must_have (halal food truck)
+  
+**NICE_TO_HAVE** = Complementary attractions. Can be swapped for closer alternatives.
+  Examples for "halal food trucks in midtown":
+  - Times Square → nice_to_have (nearby attraction, not core intent)
+  - Bryant Park → nice_to_have (nice to visit, but not what they asked for)
+  - NY Public Library → nice_to_have (cultural stop, not required)
 
-**City-wide** (3-10 miles, transit/driving)
-- Triggers: "explore [city]", "trip in [city]", "best of [city]", "visit [city]"
-- Example: "explore NYC" → 5-6 landmarks across boroughs, transit/driving
+═══════════════════════════════════════════════════════════════════════════════
+🎯 QUANTITY GUIDELINES
+═══════════════════════════════════════════════════════════════════════════════
 
-📋 RETURN JSON:
+Return:
+- 5-8 MUST_HAVE venues (core intent options)
+- 10-12 NICE_TO_HAVE venues (complementary options)
+- Total: 15-20 candidates
+
+Why? Our optimization system will:
+1. Pick 2-3 must_haves that are geographically close to each other
+2. Fill remaining slots with nice_to_haves near those must_haves
+3. Result: Walkable route that preserves user intent
+
+═══════════════════════════════════════════════════════════════════════════════
+🗺️ GEOGRAPHIC SPREAD
+═══════════════════════════════════════════════════════════════════════════════
+
+Spread candidates across the requested area so our optimizer has options:
+- Some in north part of area
+- Some in south part
+- Some in center
+- Include hidden gems AND popular spots
+
+═══════════════════════════════════════════════════════════════════════════════
+📦 REQUIRED JSON FORMAT
+═══════════════════════════════════════════════════════════════════════════════
+
+\`\`\`json
 {
   "plan": {
-    "type": "Experience name",
-    "total_stops": 5,
-    "estimated_duration": "3-4 hours | Full day (8-10 hours)",
+    "type": "Experience type (e.g., 'Halal Food Tour', 'Bar Crawl')",
+    "total_stops": ${typeof targetStops === 'number' ? targetStops : 5},
+    "estimated_duration": "3-4 hours",
     "travel_mode": "walking | walking + transit | transit/driving",
     "theme": "Brief vibe description",
     "scale": "neighborhood | district | city-wide"
@@ -253,36 +314,69 @@ export class GeminiGroundingAgent {
     {
       "name": "Exact Google Maps name",
       "description": "What makes it special (2-3 sentences)",
-      "category": "bar | restaurant | cafe | museum | park | landmark",
-      "reasoning": "Why it fits this request",
+      "category": "food_truck | restaurant | bar | cafe | museum | park | landmark",
+      "priority": "must_have",
+      "reasoning": "Why this is core to user's request",
       "rating": 4.5,
-      "reviewsSummary": "What people love",
-      "general_location": "Area/neighborhood"
+      "reviewsSummary": "What people love about it",
+      "general_location": "Neighborhood/area name"
+    },
+    {
+      "name": "Another venue",
+      "description": "Description",
+      "category": "park",
+      "priority": "nice_to_have",
+      "reasoning": "Complementary stop near the food trucks",
+      "rating": 4.3,
+      "reviewsSummary": "Reviews summary",
+      "general_location": "Area name"
     }
-  ]
+  ],
+  "context": "Brief explanation of the overall plan"
 }
+\`\`\`
 
-Focus on logical routes and cohesive experiences.`;
+═══════════════════════════════════════════════════════════════════════════════
+⚠️ IMPORTANT REMINDERS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Return 15-20 candidates, NOT the final 5-7 picks
+2. MUST categorize each venue as "must_have" or "nice_to_have"
+3. Must_have = directly matches user's stated intent
+4. Nice_to_have = would enhance the experience but isn't required
+5. Use exact venue names that Google Maps will recognize
+6. Spread venues geographically within the requested area
+`;
 
     return prompt;
   }
 
+  /**
+   * Parse Gemini response - handles new categorized format
+   */
   private async parseGeminiResponse(
     text: string,
     groundingUsed: boolean
   ): Promise<{ plan?: any; venues: GeminiVenueRecommendation[]; context: string }> {
     
     try {
+      // Try to extract JSON from markdown code block
       const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
+      
+      // Also try raw JSON (no code block)
+      const rawJsonMatch = text.match(/\{[\s\S]*"venues"[\s\S]*\}/);
 
-      if (jsonMatch) {
-        const parsed = JSON.parse(jsonMatch[1]);
+      const jsonStr = jsonMatch?.[1] || rawJsonMatch?.[0];
+
+      if (jsonStr) {
+        const parsed = JSON.parse(jsonStr);
 
         if (parsed.venues && Array.isArray(parsed.venues)) {
           const venues: GeminiVenueRecommendation[] = parsed.venues.map((v: any) => ({
             name: v.name || 'Unknown',
             description: v.description || '',
             category: v.category || 'venue',
+            priority: this.normalizePriority(v.priority),
             reasoning: v.reasoning,
             general_location: v.general_location || v.location || v.neighborhood,
             placeId: v.placeId || v.place_id,
@@ -293,20 +387,31 @@ Focus on logical routes and cohesive experiences.`;
             gemini_confidence: groundingUsed ? 0.9 : 0.7
           }));
 
+          // Validate we have both categories
+          const mustHaves = venues.filter(v => v.priority === 'must_have');
+          const niceToHaves = venues.filter(v => v.priority === 'nice_to_have');
+          
+          console.log(`   📊 Parsed: ${mustHaves.length} must_have, ${niceToHaves.length} nice_to_have`);
+
+          // If Gemini didn't categorize properly, auto-categorize based on position
+          if (mustHaves.length === 0 && venues.length > 0) {
+            console.log('   ⚠️ No must_haves found, auto-categorizing first 5 as must_have');
+            venues.slice(0, 5).forEach(v => v.priority = 'must_have');
+            venues.slice(5).forEach(v => v.priority = 'nice_to_have');
+          }
+
           return {
             plan: parsed.plan,
             venues,
-            context: parsed.context || 'Venue recommendations based on your request'
+            context: parsed.context || 'Venue candidates based on your request'
           };
         }
       }
 
-      console.warn('⚠️ Could not parse JSON, attempting natural language parsing...');
-      // Signal to caller that JSON parsing failed so it can return a short error message
+      console.warn('⚠️ Could not parse JSON, attempting fallback...');
       throw new Error('COULD_NOT_PARSE_JSON');
 
     } catch (error) {
-      // If we explicitly signalled a JSON parse failure, rethrow to be handled upstream
       if (error instanceof Error && error.message === 'COULD_NOT_PARSE_JSON') {
         throw error;
       }
@@ -316,7 +421,28 @@ Focus on logical routes and cohesive experiences.`;
     }
   }
 
-  private parseNaturalLanguageResponse(text: string): { plan?: any; venues: GeminiVenueRecommendation[]; context: string } {
+  /**
+   * Normalize priority value from Gemini response
+   */
+  private normalizePriority(priority: any): 'must_have' | 'nice_to_have' {
+    if (!priority) return 'nice_to_have';
+    
+    const normalized = String(priority).toLowerCase().replace(/[\s-]/g, '_');
+    
+    if (normalized.includes('must') || normalized === 'required' || normalized === 'core') {
+      return 'must_have';
+    }
+    return 'nice_to_have';
+  }
+
+  /**
+   * Fallback parser for non-JSON responses
+   */
+  private parseNaturalLanguageResponse(text: string): { 
+    plan?: any; 
+    venues: GeminiVenueRecommendation[]; 
+    context: string 
+  } {
     const venues: GeminiVenueRecommendation[] = [];
     
     const venuePatterns = [
@@ -328,17 +454,18 @@ Focus on logical routes and cohesive experiences.`;
     for (const pattern of venuePatterns) {
       const matches = text.matchAll(pattern);
       for (const match of matches) {
-        if (match[1] && match[1].length > 3) {
+        if (match[1] && match[1].length > 3 && match[1].length < 100) {
           venues.push({
             name: match[1].trim(),
             description: 'Recommended venue',
             category: 'venue',
+            priority: venues.length < 5 ? 'must_have' : 'nice_to_have',
             gemini_confidence: 0.5
           });
         }
       }
       
-      if (venues.length > 0) break;
+      if (venues.length >= 5) break;
     }
     
     return {

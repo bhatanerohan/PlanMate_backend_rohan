@@ -1,0 +1,154 @@
+User Prompt: plan a day around me
+
+[2026-01-21T01:40:52.497Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T01:40:52.497Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-21T01:40:52.498Z] LOG    🎯 Must-have: 7
+[2026-01-21T01:40:52.498Z] LOG    ✨ Nice-to-have: 13
+[2026-01-21T01:40:52.499Z] LOG 📍 Location hint: me
+[2026-01-21T01:40:52.499Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-21T01:40:52.500Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T01:40:52.500Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T01:40:52.501Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T01:40:52.501Z] LOG    1. Searching "Boston Common" in "Downtown"
+[2026-01-21T01:40:52.502Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown
+[2026-01-21T01:40:52.505Z] LOG    2. Searching "Public Garden" in "Beacon Hill / Back Bay East"
+[2026-01-21T01:40:52.506Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Beacon Hill / Back Bay East
+[2026-01-21T01:40:52.508Z] LOG    3. Searching "Faneuil Hall Marketplace" in "Downtown"
+[2026-01-21T01:40:52.508Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Downtown
+[2026-01-21T01:40:52.509Z] LOG    4. Searching "Boston Tea Party Ships & Museum" in "Fort Point"
+[2026-01-21T01:40:52.510Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Fort Point
+[2026-01-21T01:40:52.512Z] LOG    5. Searching "Old State House" in "Downtown"
+[2026-01-21T01:40:52.512Z] LOG 🔍 [Google Places] Text search: "Old State House" in Downtown
+[2026-01-21T01:40:52.514Z] LOG    6. Searching "The Paul Revere House" in "North End"
+[2026-01-21T01:40:52.514Z] LOG 🔍 [Google Places] Text search: "The Paul Revere House" in North End
+[2026-01-21T01:40:52.516Z] LOG    7. Searching "Museum of Fine Arts, Boston" in "Fenway–Kenmore"
+[2026-01-21T01:40:52.517Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Fenway–Kenmore
+[2026-01-21T01:40:52.518Z] LOG    8. Searching "New England Aquarium" in "Waterfront"
+[2026-01-21T01:40:52.519Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Waterfront
+[2026-01-21T01:40:52.520Z] LOG    9. Searching "Massachusetts State House" in "Beacon Hill"
+[2026-01-21T01:40:52.521Z] LOG 🔍 [Google Places] Text search: "Massachusetts State House" in Beacon Hill
+[2026-01-21T01:40:52.524Z] LOG    10. Searching "Boston Common Frog Pond" in "Boston Common"
+[2026-01-21T01:40:52.524Z] LOG 🔍 [Google Places] Text search: "Boston Common Frog Pond" in Boston Common
+[2026-01-21T01:40:53.008Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:53.027Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:53.078Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:53.082Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-01-21T01:40:53.083Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:53.088Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-21T01:40:53.089Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:53.092Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:53.106Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:53.108Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:53.125Z] LOG    ✅ Old State House: Got description (98 chars)
+[2026-01-21T01:40:53.126Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:53.142Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:53.162Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-21T01:40:53.163Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:53.164Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-01-21T01:40:53.165Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:53.206Z] LOG    ✅ Massachusetts State House: Got description (96 chars)
+[2026-01-21T01:40:53.208Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:53.253Z] LOG    ✅ Boston Common Frog Pond: Got description (89 chars)
+[2026-01-21T01:40:53.254Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:53.278Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:53.371Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:53.379Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-01-21T01:40:53.380Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:53.422Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-01-21T01:40:53.423Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:53.673Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:53.752Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-21T01:40:53.752Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:53.753Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1252ms
+[2026-01-21T01:40:53.753Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T01:40:53.754Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T01:40:53.959Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-21T01:40:53.960Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T01:40:53.961Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T01:40:53.961Z] LOG    1. Searching "Charles River Esplanade" in "Back Bay"
+[2026-01-21T01:40:53.962Z] LOG 🔍 [Google Places] Text search: "Charles River Esplanade" in Back Bay
+[2026-01-21T01:40:53.962Z] LOG    2. Searching "Thinking Cup" in "Downtown"
+[2026-01-21T01:40:53.963Z] LOG 🔍 [Google Places] Text search: "Thinking Cup" in Downtown
+[2026-01-21T01:40:53.963Z] LOG    3. Searching "Tatte Bakery & Cafe | Emerson" in "Downtown"
+[2026-01-21T01:40:53.964Z] LOG 🔍 [Google Places] Text search: "Tatte Bakery & Cafe | Emerson" in Downtown
+[2026-01-21T01:40:53.964Z] LOG    4. Searching "Cheers" in "Beacon Hill"
+[2026-01-21T01:40:53.965Z] LOG 🔍 [Google Places] Text search: "Cheers" in Beacon Hill
+[2026-01-21T01:40:53.966Z] LOG    5. Searching "Artisan Bistro" in "Downtown"
+[2026-01-21T01:40:53.966Z] LOG 🔍 [Google Places] Text search: "Artisan Bistro" in Downtown
+[2026-01-21T01:40:53.967Z] LOG    6. Searching "Yvonne's" in "Downtown"
+[2026-01-21T01:40:53.967Z] LOG 🔍 [Google Places] Text search: "Yvonne's" in Downtown
+[2026-01-21T01:40:53.968Z] LOG    7. Searching "Newbury Street" in "Back Bay"
+[2026-01-21T01:40:53.968Z] LOG 🔍 [Google Places] Text search: "Newbury Street" in Back Bay
+[2026-01-21T01:40:53.969Z] LOG    8. Searching "Christopher Columbus Waterfront Park" in "Waterfront"
+[2026-01-21T01:40:53.969Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in Waterfront
+[2026-01-21T01:40:53.970Z] LOG    9. Searching "Isabella Stewart Gardner Museum" in "Fenway–Kenmore"
+[2026-01-21T01:40:53.970Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway–Kenmore
+[2026-01-21T01:40:53.971Z] LOG    10. Searching "WNDR Museum" in "Downtown Crossing"
+[2026-01-21T01:40:53.971Z] LOG 🔍 [Google Places] Text search: "WNDR Museum" in Downtown Crossing
+[2026-01-21T01:40:54.354Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:54.377Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:54.441Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:54.443Z] LOG    ✅ Cheers: Got description (83 chars)
+[2026-01-21T01:40:54.444Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:54.445Z] LOG    ✅ Charles River Esplanade: Got description (99 chars)
+[2026-01-21T01:40:54.445Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:54.468Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:54.525Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:54.530Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:54.540Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:54.548Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2026-01-21T01:40:54.549Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:54.565Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-21T01:40:54.565Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:54.618Z] LOG    ✅ Yvonne's: Got description (94 chars)
+[2026-01-21T01:40:54.620Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:54.638Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-01-21T01:40:54.639Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:54.665Z] LOG    ✅ Newbury St: Got description (100 chars)
+[2026-01-21T01:40:54.666Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:54.679Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:54.720Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:54.733Z] LOG    ✅ Tatte Bakery & Cafe | Emerson: Got description (97 chars)
+[2026-01-21T01:40:54.734Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:54.802Z] LOG    ✅ Thinking Cup: Got description (94 chars)
+[2026-01-21T01:40:54.803Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:55.218Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:40:55.312Z] LOG    ✅ Artisan Bistro: Got description (99 chars)
+[2026-01-21T01:40:55.314Z] LOG ✅ Found 1 places
+[2026-01-21T01:40:55.316Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1355ms
+[2026-01-21T01:40:55.317Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T01:40:55.318Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-21T01:40:55.318Z] LOG    ✅ Boston Common → Boston Common (must_have)
+[2026-01-21T01:40:55.319Z] LOG    ✅ Public Garden → Public Garden (must_have)
+[2026-01-21T01:40:55.319Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (must_have)
+[2026-01-21T01:40:55.320Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (must_have)
+[2026-01-21T01:40:55.320Z] LOG    ✅ Old State House → Old State House (must_have)
+[2026-01-21T01:40:55.320Z] LOG    ✅ The Paul Revere House → The Paul Revere House (must_have)
+[2026-01-21T01:40:55.321Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (must_have)
+[2026-01-21T01:40:55.321Z] LOG    ✅ New England Aquarium → New England Aquarium (nice_to_have)
+[2026-01-21T01:40:55.322Z] LOG    ✅ Massachusetts State House → Massachusetts State House (nice_to_have)
+[2026-01-21T01:40:55.322Z] LOG    ✅ Boston Common Frog Pond → Boston Common Frog Pond (nice_to_have)
+[2026-01-21T01:40:55.322Z] LOG    ✅ Charles River Esplanade → Charles River Esplanade (nice_to_have)
+[2026-01-21T01:40:55.323Z] LOG    ✅ Thinking Cup → Thinking Cup (nice_to_have)
+[2026-01-21T01:40:55.323Z] LOG    ✅ Tatte Bakery & Cafe | Emerson → Tatte Bakery & Cafe | Emerson (nice_to_have)
+[2026-01-21T01:40:55.324Z] LOG    ✅ Cheers → Cheers (nice_to_have)
+[2026-01-21T01:40:55.324Z] LOG    ✅ Artisan Bistro → Artisan Bistro (nice_to_have)
+[2026-01-21T01:40:55.324Z] LOG    ✅ Yvonne's → Yvonne's (nice_to_have)
+[2026-01-21T01:40:55.325Z] LOG    ✅ Newbury Street → Newbury St (nice_to_have)
+[2026-01-21T01:40:55.325Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (nice_to_have)
+[2026-01-21T01:40:55.326Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-01-21T01:40:55.326Z] LOG    ✅ WNDR Museum → WNDR Museum (nice_to_have)
+[2026-01-21T01:40:55.327Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T01:40:55.327Z] LOG    Total enriched: 20
+[2026-01-21T01:40:55.328Z] LOG    🎯 Must-have: 7
+[2026-01-21T01:40:55.328Z] LOG    ✨ Nice-to-have: 13
+[2026-01-21T01:40:55.328Z] LOG    ❌ Failed: 0
+[2026-01-21T01:40:55.329Z] LOG    ⏱️ Time: 2833ms
+
+--- Summary ---
+Enrichment completed

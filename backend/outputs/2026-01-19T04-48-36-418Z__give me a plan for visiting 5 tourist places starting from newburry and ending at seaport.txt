@@ -1,0 +1,148 @@
+User Prompt: give me a plan for visiting 5 tourist places starting from newburry and ending at seaport
+
+[2026-01-19T04:48:36.419Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-19T04:48:36.420Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-19T04:48:36.421Z] LOG    🎯 Must-have: 7
+[2026-01-19T04:48:36.421Z] LOG    ✨ Nice-to-have: 12
+[2026-01-19T04:48:36.422Z] LOG 📍 Location hint: Back Bay
+[2026-01-19T04:48:36.422Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-19T04:48:36.423Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-19T04:48:36.423Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-19T04:48:36.424Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-19T04:48:36.424Z] LOG    1. Searching "Newbury Street" in "Back Bay"
+[2026-01-19T04:48:36.424Z] LOG 🔍 [Google Places] Text search: "Newbury Street" in Back Bay
+[2026-01-19T04:48:36.428Z] LOG    2. Searching "Boston Common" in "Downtown"
+[2026-01-19T04:48:36.429Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown
+[2026-01-19T04:48:36.431Z] LOG    3. Searching "Boston Public Garden" in "Downtown"
+[2026-01-19T04:48:36.434Z] LOG 🔍 [Google Places] Text search: "Boston Public Garden" in Downtown
+[2026-01-19T04:48:36.439Z] LOG    4. Searching "Faneuil Hall Marketplace" in "Downtown/Waterfront"
+[2026-01-19T04:48:36.440Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Downtown/Waterfront
+[2026-01-19T04:48:36.443Z] LOG    5. Searching "Paul Revere House" in "North End"
+[2026-01-19T04:48:36.443Z] LOG 🔍 [Google Places] Text search: "Paul Revere House" in North End
+[2026-01-19T04:48:36.451Z] LOG    6. Searching "New England Aquarium" in "Waterfront/Central Wharf"
+[2026-01-19T04:48:36.453Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Waterfront/Central Wharf
+[2026-01-19T04:48:36.456Z] LOG    7. Searching "Boston Tea Party Ships & Museum" in "Seaport District"
+[2026-01-19T04:48:36.457Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Seaport District
+[2026-01-19T04:48:36.464Z] LOG    8. Searching "Boston Public Library - Copley Square" in "Back Bay/Copley Square"
+[2026-01-19T04:48:36.465Z] LOG 🔍 [Google Places] Text search: "Boston Public Library - Copley Square" in Back Bay/Copley Square
+[2026-01-19T04:48:36.468Z] LOG    9. Searching "Copley Square" in "Back Bay"
+[2026-01-19T04:48:36.470Z] LOG 🔍 [Google Places] Text search: "Copley Square" in Back Bay
+[2026-01-19T04:48:36.476Z] LOG    10. Searching "Trinity Church" in "Back Bay/Copley Square"
+[2026-01-19T04:48:36.478Z] LOG 🔍 [Google Places] Text search: "Trinity Church" in Back Bay/Copley Square
+[2026-01-19T04:48:36.598Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:36.601Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:36.604Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:36.608Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:36.668Z] LOG    ✅ Newbury St: Got description (100 chars)
+[2026-01-19T04:48:36.670Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:36.674Z] LOG    ✅ Copley Square: Got description (95 chars)
+[2026-01-19T04:48:36.675Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:36.690Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-01-19T04:48:36.692Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:36.698Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-01-19T04:48:36.700Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:36.994Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.013Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.051Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-19T04:48:37.051Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.065Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.073Z] LOG    ✅ Trinity Church: Got description (95 chars)
+[2026-01-19T04:48:37.074Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.077Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.114Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.123Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-19T04:48:37.125Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.131Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2026-01-19T04:48:37.133Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.149Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.180Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-01-19T04:48:37.184Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.213Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-19T04:48:37.213Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.214Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 791ms
+[2026-01-19T04:48:37.215Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-19T04:48:37.215Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-19T04:48:37.418Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-19T04:48:37.420Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-19T04:48:37.420Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-19T04:48:37.421Z] LOG    1. Searching "Mapparium" in "Back Bay/Christian Science Center"
+[2026-01-19T04:48:37.421Z] LOG 🔍 [Google Places] Text search: "Mapparium" in Back Bay/Christian Science Center
+[2026-01-19T04:48:37.423Z] LOG    2. Searching "Beacon Hill" in "Beacon Hill"
+[2026-01-19T04:48:37.424Z] LOG 🔍 [Google Places] Text search: "Beacon Hill" in Beacon Hill
+[2026-01-19T04:48:37.427Z] LOG    3. Searching "Massachusetts State House" in "Beacon Hill"
+[2026-01-19T04:48:37.427Z] LOG 🔍 [Google Places] Text search: "Massachusetts State House" in Beacon Hill
+[2026-01-19T04:48:37.428Z] LOG    4. Searching "Granary Burying Ground" in "Downtown"
+[2026-01-19T04:48:37.429Z] LOG 🔍 [Google Places] Text search: "Granary Burying Ground" in Downtown
+[2026-01-19T04:48:37.430Z] LOG    5. Searching "Old North Church & Historic Site" in "North End"
+[2026-01-19T04:48:37.430Z] LOG 🔍 [Google Places] Text search: "Old North Church & Historic Site" in North End
+[2026-01-19T04:48:37.431Z] LOG    6. Searching "Mike's Pastry" in "North End"
+[2026-01-19T04:48:37.432Z] LOG 🔍 [Google Places] Text search: "Mike's Pastry" in North End
+[2026-01-19T04:48:37.433Z] LOG    7. Searching "Rose Fitzgerald Kennedy Greenway" in "Downtown/Waterfront"
+[2026-01-19T04:48:37.433Z] LOG 🔍 [Google Places] Text search: "Rose Fitzgerald Kennedy Greenway" in Downtown/Waterfront
+[2026-01-19T04:48:37.434Z] LOG    8. Searching "Boston Children's Museum" in "Seaport District"
+[2026-01-19T04:48:37.435Z] LOG 🔍 [Google Places] Text search: "Boston Children's Museum" in Seaport District
+[2026-01-19T04:48:37.436Z] LOG    9. Searching "Institute of Contemporary Art (ICA)" in "Seaport District"
+[2026-01-19T04:48:37.437Z] LOG 🔍 [Google Places] Text search: "Institute of Contemporary Art (ICA)" in Seaport District
+[2026-01-19T04:48:37.499Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.502Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.579Z] LOG    ✅ Boston Children's Museum: Got description (92 chars)
+[2026-01-19T04:48:37.581Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.596Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2026-01-19T04:48:37.598Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.771Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.831Z] LOG    ✅ Rose Fitzgerald Kennedy Greenway: Got description (97 chars)
+[2026-01-19T04:48:37.832Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.833Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.839Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.878Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.939Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:37.947Z] LOG    ✅ Christian Science Plaza: Got description (95 chars)
+[2026-01-19T04:48:37.949Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.981Z] LOG    ⚠️  Beacon Hill: No editorial summary available
+[2026-01-19T04:48:37.982Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:37.983Z] LOG    ✅ Mike's Pastry: Got description (93 chars)
+[2026-01-19T04:48:37.983Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:38.010Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:38.033Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-19T04:48:38.061Z] LOG    ⚠️  Basement Crypt of the Old North Church: No editorial summary available
+[2026-01-19T04:48:38.061Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:38.141Z] LOG    ✅ Granary Burying Ground: Got description (99 chars)
+[2026-01-19T04:48:38.142Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:38.177Z] LOG    ✅ Massachusetts State House: Got description (96 chars)
+[2026-01-19T04:48:38.181Z] LOG ✅ Found 1 places
+[2026-01-19T04:48:38.182Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 762ms
+[2026-01-19T04:48:38.183Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-19T04:48:38.183Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-19T04:48:38.184Z] LOG    ✅ Newbury Street → Newbury St (must_have)
+[2026-01-19T04:48:38.185Z] LOG    ✅ Boston Common → Boston Common (must_have)
+[2026-01-19T04:48:38.186Z] LOG    ✅ Boston Public Garden → Public Garden (must_have)
+[2026-01-19T04:48:38.187Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (must_have)
+[2026-01-19T04:48:38.187Z] LOG    ✅ Paul Revere House → The Paul Revere House (must_have)
+[2026-01-19T04:48:38.188Z] LOG    ✅ New England Aquarium → New England Aquarium (must_have)
+[2026-01-19T04:48:38.189Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (must_have)
+[2026-01-19T04:48:38.189Z] LOG    ✅ Boston Public Library - Copley Square → Boston Public Library - Central Library (nice_to_have)
+[2026-01-19T04:48:38.190Z] LOG    ✅ Copley Square → Copley Square (nice_to_have)
+[2026-01-19T04:48:38.190Z] LOG    ✅ Trinity Church → Trinity Church (nice_to_have)
+[2026-01-19T04:48:38.191Z] LOG    ✅ Mapparium → Christian Science Plaza (nice_to_have)
+[2026-01-19T04:48:38.192Z] LOG    ✅ Beacon Hill → Beacon Hill (nice_to_have)
+[2026-01-19T04:48:38.192Z] LOG    ✅ Massachusetts State House → Massachusetts State House (nice_to_have)
+[2026-01-19T04:48:38.193Z] LOG    ✅ Granary Burying Ground → Granary Burying Ground (nice_to_have)
+[2026-01-19T04:48:38.193Z] LOG    ✅ Old North Church & Historic Site → Basement Crypt of the Old North Church (nice_to_have)
+[2026-01-19T04:48:38.194Z] LOG    ✅ Mike's Pastry → Mike's Pastry (nice_to_have)
+[2026-01-19T04:48:38.194Z] LOG    ✅ Rose Fitzgerald Kennedy Greenway → Rose Fitzgerald Kennedy Greenway (nice_to_have)
+[2026-01-19T04:48:38.195Z] LOG    ✅ Boston Children's Museum → Boston Children's Museum (nice_to_have)
+[2026-01-19T04:48:38.195Z] LOG    ✅ Institute of Contemporary Art (ICA) → Institute of Contemporary Art (nice_to_have)
+[2026-01-19T04:48:38.196Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-19T04:48:38.196Z] LOG    Total enriched: 19
+[2026-01-19T04:48:38.197Z] LOG    🎯 Must-have: 7
+[2026-01-19T04:48:38.197Z] LOG    ✨ Nice-to-have: 12
+[2026-01-19T04:48:38.197Z] LOG    ❌ Failed: 0
+[2026-01-19T04:48:38.198Z] LOG    ⏱️ Time: 1780ms
+
+--- Summary ---
+Enrichment completed

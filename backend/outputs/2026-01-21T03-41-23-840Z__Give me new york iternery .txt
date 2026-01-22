@@ -1,0 +1,152 @@
+User Prompt: Give me new york iternery 
+
+[2026-01-21T03:41:23.841Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T03:41:23.842Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-21T03:41:23.843Z] LOG    🎯 Must-have: 7
+[2026-01-21T03:41:23.844Z] LOG    ✨ Nice-to-have: 13
+[2026-01-21T03:41:23.846Z] LOG 📍 Location hint: Midtown West
+[2026-01-21T03:41:23.847Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-21T03:41:23.847Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T03:41:23.849Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T03:41:23.850Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T03:41:23.852Z] LOG    1. Searching "Times Square" in "Midtown West"
+[2026-01-21T03:41:23.853Z] LOG 🔍 [Google Places] Text search: "Times Square" in Midtown West
+[2026-01-21T03:41:23.858Z] LOG    2. Searching "Statue of Liberty National Monument" in "New York Harbor"
+[2026-01-21T03:41:23.860Z] LOG 🔍 [Google Places] Text search: "Statue of Liberty National Monument" in New York Harbor
+[2026-01-21T03:41:23.869Z] LOG    3. Searching "Empire State Building" in "Midtown Manhattan"
+[2026-01-21T03:41:23.871Z] LOG 🔍 [Google Places] Text search: "Empire State Building" in Midtown Manhattan
+[2026-01-21T03:41:23.876Z] LOG    4. Searching "Central Park" in "Manhattan"
+[2026-01-21T03:41:23.878Z] LOG 🔍 [Google Places] Text search: "Central Park" in Manhattan
+[2026-01-21T03:41:23.882Z] LOG    5. Searching "Brooklyn Bridge" in "Lower Manhattan / Brooklyn"
+[2026-01-21T03:41:23.882Z] LOG 🔍 [Google Places] Text search: "Brooklyn Bridge" in Lower Manhattan / Brooklyn
+[2026-01-21T03:41:23.888Z] LOG    6. Searching "One World Observatory" in "Lower Manhattan"
+[2026-01-21T03:41:23.890Z] LOG 🔍 [Google Places] Text search: "One World Observatory" in Lower Manhattan
+[2026-01-21T03:41:23.894Z] LOG    7. Searching "Rockefeller Center" in "Midtown West"
+[2026-01-21T03:41:23.896Z] LOG 🔍 [Google Places] Text search: "Rockefeller Center" in Midtown West
+[2026-01-21T03:41:23.900Z] LOG    8. Searching "Grand Central Terminal" in "Midtown East"
+[2026-01-21T03:41:23.901Z] LOG 🔍 [Google Places] Text search: "Grand Central Terminal" in Midtown East
+[2026-01-21T03:41:23.906Z] LOG    9. Searching "The Metropolitan Museum of Art" in "Upper East Side"
+[2026-01-21T03:41:23.908Z] LOG 🔍 [Google Places] Text search: "The Metropolitan Museum of Art" in Upper East Side
+[2026-01-21T03:41:23.913Z] LOG    10. Searching "The Museum of Modern Art (MoMA)" in "Midtown West"
+[2026-01-21T03:41:23.915Z] LOG 🔍 [Google Places] Text search: "The Museum of Modern Art (MoMA)" in Midtown West
+[2026-01-21T03:41:24.441Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.446Z] LOG ⚠️  No results found
+[2026-01-21T03:41:24.452Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.455Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.501Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.508Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.574Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.592Z] LOG    ✅ Grand Central Terminal: Got description (95 chars)
+[2026-01-21T03:41:24.595Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.605Z] LOG    ✅ Brooklyn Bridge: Got description (95 chars)
+[2026-01-21T03:41:24.608Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.610Z] LOG    ✅ The Museum of Modern Art: Got description (96 chars)
+[2026-01-21T03:41:24.611Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.630Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.649Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.653Z] LOG    ✅ Central Park: Got description (100 chars)
+[2026-01-21T03:41:24.654Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.656Z] LOG    ✅ One World Observatory: Got description (93 chars)
+[2026-01-21T03:41:24.657Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.709Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2026-01-21T03:41:24.711Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.790Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2026-01-21T03:41:24.793Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.798Z] LOG    ✅ The Metropolitan Museum of Art: Got description (97 chars)
+[2026-01-21T03:41:24.800Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:25.499Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:25.644Z] LOG    ✅ Statue of Liberty: Got description (100 chars)
+[2026-01-21T03:41:25.645Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:25.646Z] LOG ✅ Batch complete: 10/10 searches succeeded, 9 total venues found in 1796ms
+[2026-01-21T03:41:25.648Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T03:41:25.649Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T03:41:25.853Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-21T03:41:25.854Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T03:41:25.856Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T03:41:25.857Z] LOG    1. Searching "The High Line" in "Chelsea"
+[2026-01-21T03:41:25.858Z] LOG 🔍 [Google Places] Text search: "The High Line" in Chelsea
+[2026-01-21T03:41:25.859Z] LOG    2. Searching "Washington Square Park" in "Greenwich Village"
+[2026-01-21T03:41:25.859Z] LOG 🔍 [Google Places] Text search: "Washington Square Park" in Greenwich Village
+[2026-01-21T03:41:25.861Z] LOG    3. Searching "DUMBO" in "Brooklyn"
+[2026-01-21T03:41:25.862Z] LOG 🔍 [Google Places] Text search: "DUMBO" in Brooklyn
+[2026-01-21T03:41:25.864Z] LOG    4. Searching "9/11 Memorial & Museum" in "Lower Manhattan"
+[2026-01-21T03:41:25.865Z] LOG 🔍 [Google Places] Text search: "9/11 Memorial & Museum" in Lower Manhattan
+[2026-01-21T03:41:25.867Z] LOG    5. Searching "Financial District (Wall Street & Charging Bull)" in "Lower Manhattan"
+[2026-01-21T03:41:25.868Z] LOG 🔍 [Google Places] Text search: "Financial District (Wall Street & Charging Bull)" in Lower Manhattan
+[2026-01-21T03:41:25.870Z] LOG    6. Searching "Broadway Theater District" in "Midtown West"
+[2026-01-21T03:41:25.872Z] LOG 🔍 [Google Places] Text search: "Broadway Theater District" in Midtown West
+[2026-01-21T03:41:25.873Z] LOG    7. Searching "Chelsea Market" in "Chelsea"
+[2026-01-21T03:41:25.876Z] LOG 🔍 [Google Places] Text search: "Chelsea Market" in Chelsea
+[2026-01-21T03:41:25.878Z] LOG    8. Searching "Chinatown" in "Lower Manhattan"
+[2026-01-21T03:41:25.880Z] LOG 🔍 [Google Places] Text search: "Chinatown" in Lower Manhattan
+[2026-01-21T03:41:25.882Z] LOG    9. Searching "Little Italy" in "Lower Manhattan"
+[2026-01-21T03:41:25.884Z] LOG 🔍 [Google Places] Text search: "Little Italy" in Lower Manhattan
+[2026-01-21T03:41:25.886Z] LOG    10. Searching "American Museum of Natural History" in "Upper West Side"
+[2026-01-21T03:41:25.887Z] LOG 🔍 [Google Places] Text search: "American Museum of Natural History" in Upper West Side
+[2026-01-21T03:41:26.366Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.393Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.398Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.417Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.422Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.463Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.497Z] LOG    ⚠️  Theater District: No editorial summary available
+[2026-01-21T03:41:26.499Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.503Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.542Z] LOG    ✅ Washington Square Park: Got description (100 chars)
+[2026-01-21T03:41:26.543Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.548Z] LOG    ✅ American Museum of Natural History: Got description (98 chars)
+[2026-01-21T03:41:26.550Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.552Z] LOG    ⚠️  Chinatown: No editorial summary available
+[2026-01-21T03:41:26.553Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.555Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.586Z] LOG    ✅ Charging Bull: Got description (100 chars)
+[2026-01-21T03:41:26.587Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.608Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.611Z] LOG    ⚠️  Dumbo: No editorial summary available
+[2026-01-21T03:41:26.612Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.654Z] LOG    ✅ The High Line: Got description (85 chars)
+[2026-01-21T03:41:26.656Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.671Z] LOG    ✅ Chelsea Market: Got description (98 chars)
+[2026-01-21T03:41:26.673Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.769Z] LOG    ⚠️  Little Italy: No editorial summary available
+[2026-01-21T03:41:26.771Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.813Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.992Z] LOG    ✅ 9/11 Memorial & Museum: Got description (100 chars)
+[2026-01-21T03:41:26.994Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.995Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1140ms
+[2026-01-21T03:41:26.997Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T03:41:26.999Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-21T03:41:27.000Z] LOG    ⚠️ Times Square - not found in Google Places
+[2026-01-21T03:41:27.002Z] LOG    ✅ Statue of Liberty National Monument → Statue of Liberty (must_have)
+[2026-01-21T03:41:27.003Z] LOG    ✅ Empire State Building → Empire State Building (must_have)
+[2026-01-21T03:41:27.005Z] LOG    ✅ Central Park → Central Park (must_have)
+[2026-01-21T03:41:27.006Z] LOG    ✅ Brooklyn Bridge → Brooklyn Bridge (must_have)
+[2026-01-21T03:41:27.008Z] LOG    ✅ One World Observatory → One World Observatory (must_have)
+[2026-01-21T03:41:27.009Z] LOG    ✅ Rockefeller Center → Rockefeller Center (must_have)
+[2026-01-21T03:41:27.011Z] LOG    ✅ Grand Central Terminal → Grand Central Terminal (nice_to_have)
+[2026-01-21T03:41:27.012Z] LOG    ✅ The Metropolitan Museum of Art → The Metropolitan Museum of Art (nice_to_have)
+[2026-01-21T03:41:27.014Z] LOG    ✅ The Museum of Modern Art (MoMA) → The Museum of Modern Art (nice_to_have)
+[2026-01-21T03:41:27.015Z] LOG    ✅ The High Line → The High Line (nice_to_have)
+[2026-01-21T03:41:27.017Z] LOG    ✅ Washington Square Park → Washington Square Park (nice_to_have)
+[2026-01-21T03:41:27.018Z] LOG    ✅ DUMBO → Dumbo (nice_to_have)
+[2026-01-21T03:41:27.019Z] LOG    ✅ 9/11 Memorial & Museum → 9/11 Memorial & Museum (nice_to_have)
+[2026-01-21T03:41:27.021Z] LOG    ✅ Financial District (Wall Street & Charging Bull) → Charging Bull (nice_to_have)
+[2026-01-21T03:41:27.022Z] LOG    ✅ Broadway Theater District → Theater District (nice_to_have)
+[2026-01-21T03:41:27.023Z] LOG    ✅ Chelsea Market → Chelsea Market (nice_to_have)
+[2026-01-21T03:41:27.025Z] LOG    ✅ Chinatown → Chinatown (nice_to_have)
+[2026-01-21T03:41:27.026Z] LOG    ✅ Little Italy → Little Italy (nice_to_have)
+[2026-01-21T03:41:27.027Z] LOG    ✅ American Museum of Natural History → American Museum of Natural History (nice_to_have)
+[2026-01-21T03:41:27.029Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T03:41:27.030Z] LOG    Total enriched: 19
+[2026-01-21T03:41:27.031Z] LOG    🎯 Must-have: 6
+[2026-01-21T03:41:27.032Z] LOG    ✨ Nice-to-have: 13
+[2026-01-21T03:41:27.034Z] LOG    ❌ Failed: 1
+[2026-01-21T03:41:27.035Z] LOG    ⏱️ Time: 3195ms
+
+--- Summary ---
+Enrichment completed

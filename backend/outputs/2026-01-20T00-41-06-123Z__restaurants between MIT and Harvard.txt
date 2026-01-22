@@ -1,0 +1,148 @@
+User Prompt: restaurants between MIT and Harvard
+
+[2026-01-20T00:41:06.124Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-20T00:41:06.126Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-20T00:41:06.126Z] LOG    🎯 Must-have: 8
+[2026-01-20T00:41:06.127Z] LOG    ✨ Nice-to-have: 11
+[2026-01-20T00:41:06.128Z] LOG 📍 Location hint: Central Square
+[2026-01-20T00:41:06.130Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-20T00:41:06.130Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-20T00:41:06.132Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T00:41:06.133Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T00:41:06.134Z] LOG    1. Searching "Little Donkey" in "Central Square"
+[2026-01-20T00:41:06.135Z] LOG 🔍 [Google Places] Text search: "Little Donkey" in Central Square
+[2026-01-20T00:41:06.148Z] LOG    2. Searching "Alden & Harlow" in "Harvard Square"
+[2026-01-20T00:41:06.151Z] LOG 🔍 [Google Places] Text search: "Alden & Harlow" in Harvard Square
+[2026-01-20T00:41:06.157Z] LOG    3. Searching "Area Four" in "Kendall Square"
+[2026-01-20T00:41:06.159Z] LOG 🔍 [Google Places] Text search: "Area Four" in Kendall Square
+[2026-01-20T00:41:06.162Z] LOG    4. Searching "Pammy's" in "Central Square"
+[2026-01-20T00:41:06.165Z] LOG 🔍 [Google Places] Text search: "Pammy's" in Central Square
+[2026-01-20T00:41:06.171Z] LOG    5. Searching "Shōjō Cambridge" in "Central Square"
+[2026-01-20T00:41:06.174Z] LOG 🔍 [Google Places] Text search: "Shōjō Cambridge" in Central Square
+[2026-01-20T00:41:06.182Z] LOG    6. Searching "The Hourly Oyster House" in "Harvard Square"
+[2026-01-20T00:41:06.184Z] LOG 🔍 [Google Places] Text search: "The Hourly Oyster House" in Harvard Square
+[2026-01-20T00:41:06.193Z] LOG    7. Searching "Veggie Galaxy" in "Central Square"
+[2026-01-20T00:41:06.196Z] LOG 🔍 [Google Places] Text search: "Veggie Galaxy" in Central Square
+[2026-01-20T00:41:06.201Z] LOG    8. Searching "Sulmona" in "Kendall Square"
+[2026-01-20T00:41:06.203Z] LOG 🔍 [Google Places] Text search: "Sulmona" in Kendall Square
+[2026-01-20T00:41:06.211Z] LOG    9. Searching "Wusong Tiki Bar" in "Harvard Square"
+[2026-01-20T00:41:06.214Z] LOG 🔍 [Google Places] Text search: "Wusong Tiki Bar" in Harvard Square
+[2026-01-20T00:41:06.222Z] LOG    10. Searching "State Park" in "Kendall Square"
+[2026-01-20T00:41:06.224Z] LOG 🔍 [Google Places] Text search: "State Park" in Kendall Square
+[2026-01-20T00:41:06.752Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:06.772Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:06.785Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:06.790Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:06.832Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:06.846Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:06.880Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:06.911Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:06.922Z] LOG    ⚠️  Wusong Tiki Bar: No editorial summary available
+[2026-01-20T00:41:06.923Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:06.929Z] LOG    ✅ Little Donkey: Got description (97 chars)
+[2026-01-20T00:41:06.930Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:06.935Z] LOG    ✅ Veggie Galaxy: Got description (97 chars)
+[2026-01-20T00:41:06.938Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:06.942Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:06.961Z] LOG    ⚠️  Shōjō Cambridge: No editorial summary available
+[2026-01-20T00:41:06.964Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:07.018Z] LOG    ✅ Alden & Harlow: Got description (98 chars)
+[2026-01-20T00:41:07.019Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:07.020Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:07.035Z] LOG    ✅ The Hourly Oyster House: Got description (100 chars)
+[2026-01-20T00:41:07.038Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:07.041Z] LOG    ✅ Sulmona: Got description (86 chars)
+[2026-01-20T00:41:07.042Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:07.086Z] LOG    ✅ State Park: Got description (100 chars)
+[2026-01-20T00:41:07.090Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:07.101Z] LOG    ✅ Area Four: Got description (99 chars)
+[2026-01-20T00:41:07.103Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:07.198Z] LOG    ✅ Pammy's: Got description (93 chars)
+[2026-01-20T00:41:07.199Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:07.200Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1067ms
+[2026-01-20T00:41:07.201Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T00:41:07.201Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-20T00:41:07.410Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-20T00:41:07.411Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T00:41:07.412Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-20T00:41:07.413Z] LOG    1. Searching "Russell House Tavern" in "Harvard Square"
+[2026-01-20T00:41:07.413Z] LOG 🔍 [Google Places] Text search: "Russell House Tavern" in Harvard Square
+[2026-01-20T00:41:07.414Z] LOG    2. Searching "Charlie's Kitchen" in "Harvard Square"
+[2026-01-20T00:41:07.415Z] LOG 🔍 [Google Places] Text search: "Charlie's Kitchen" in Harvard Square
+[2026-01-20T00:41:07.416Z] LOG    3. Searching "Grendel's Den Restaurant & Bar" in "Harvard Square"
+[2026-01-20T00:41:07.417Z] LOG 🔍 [Google Places] Text search: "Grendel's Den Restaurant & Bar" in Harvard Square
+[2026-01-20T00:41:07.418Z] LOG    4. Searching "Miracle of Science Bar + Grill" in "Near MIT"
+[2026-01-20T00:41:07.419Z] LOG 🔍 [Google Places] Text search: "Miracle of Science Bar + Grill" in Near MIT
+[2026-01-20T00:41:07.421Z] LOG    5. Searching "Cafe Luna" in "Kendall Square"
+[2026-01-20T00:41:07.421Z] LOG 🔍 [Google Places] Text search: "Cafe Luna" in Kendall Square
+[2026-01-20T00:41:07.423Z] LOG    6. Searching "Row 34 - Cambridge" in "Kendall Square"
+[2026-01-20T00:41:07.423Z] LOG 🔍 [Google Places] Text search: "Row 34 - Cambridge" in Kendall Square
+[2026-01-20T00:41:07.425Z] LOG    7. Searching "The Smoke Shop BBQ - Harvard Square" in "Harvard Square"
+[2026-01-20T00:41:07.425Z] LOG 🔍 [Google Places] Text search: "The Smoke Shop BBQ - Harvard Square" in Harvard Square
+[2026-01-20T00:41:07.428Z] LOG    8. Searching "Clover" in "Harvard Square"
+[2026-01-20T00:41:07.429Z] LOG 🔍 [Google Places] Text search: "Clover" in Harvard Square
+[2026-01-20T00:41:07.430Z] LOG    9. Searching "Batifol" in "Kendall Square"
+[2026-01-20T00:41:07.430Z] LOG 🔍 [Google Places] Text search: "Batifol" in Kendall Square
+[2026-01-20T00:41:07.853Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:07.880Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:07.913Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:07.921Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:07.924Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:07.936Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:07.990Z] LOG    ✅ Grendel's Den Restaurant & Bar: Got description (91 chars)
+[2026-01-20T00:41:07.991Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:07.998Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:08.026Z] LOG    ⚠️  Row 34 - Cambridge: No editorial summary available
+[2026-01-20T00:41:08.027Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:08.044Z] LOG    ✅ Cafe Luna: Got description (84 chars)
+[2026-01-20T00:41:08.045Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:08.067Z] LOG    ✅ Charlie's Kitchen: Got description (91 chars)
+[2026-01-20T00:41:08.070Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:08.078Z] LOG    ✅ Clover: Got description (98 chars)
+[2026-01-20T00:41:08.079Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:08.090Z] LOG    ⚠️  Batifol: No editorial summary available
+[2026-01-20T00:41:08.094Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:08.185Z] LOG    ✅ Russell House Tavern: Got description (97 chars)
+[2026-01-20T00:41:08.186Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:08.215Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:08.253Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:41:08.322Z] LOG    ⚠️  The Smoke Shop BBQ - Harvard Square: No editorial summary available
+[2026-01-20T00:41:08.323Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:08.400Z] LOG    ⚠️  Miracle Bar at Kimpton Marlowe: No editorial summary available
+[2026-01-20T00:41:08.401Z] LOG ✅ Found 1 places
+[2026-01-20T00:41:08.403Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 991ms
+[2026-01-20T00:41:08.404Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T00:41:08.406Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-20T00:41:08.406Z] LOG    ✅ Little Donkey → Little Donkey (must_have)
+[2026-01-20T00:41:08.407Z] LOG    ✅ Alden & Harlow → Alden & Harlow (must_have)
+[2026-01-20T00:41:08.407Z] LOG    ✅ Area Four → Area Four (must_have)
+[2026-01-20T00:41:08.407Z] LOG    ✅ Pammy's → Pammy's (must_have)
+[2026-01-20T00:41:08.408Z] LOG    ✅ Shōjō Cambridge → Shōjō Cambridge (must_have)
+[2026-01-20T00:41:08.408Z] LOG    ✅ The Hourly Oyster House → The Hourly Oyster House (must_have)
+[2026-01-20T00:41:08.408Z] LOG    ✅ Veggie Galaxy → Veggie Galaxy (must_have)
+[2026-01-20T00:41:08.409Z] LOG    ✅ Sulmona → Sulmona (must_have)
+[2026-01-20T00:41:08.409Z] LOG    ✅ Wusong Tiki Bar → Wusong Tiki Bar (nice_to_have)
+[2026-01-20T00:41:08.410Z] LOG    ✅ State Park → State Park (nice_to_have)
+[2026-01-20T00:41:08.411Z] LOG    ✅ Russell House Tavern → Russell House Tavern (nice_to_have)
+[2026-01-20T00:41:08.412Z] LOG    ✅ Charlie's Kitchen → Charlie's Kitchen (nice_to_have)
+[2026-01-20T00:41:08.412Z] LOG    ✅ Grendel's Den Restaurant & Bar → Grendel's Den Restaurant & Bar (nice_to_have)
+[2026-01-20T00:41:08.413Z] LOG    ✅ Miracle of Science Bar + Grill → Miracle Bar at Kimpton Marlowe (nice_to_have)
+[2026-01-20T00:41:08.414Z] LOG    ✅ Cafe Luna → Cafe Luna (nice_to_have)
+[2026-01-20T00:41:08.415Z] LOG    ✅ Row 34 - Cambridge → Row 34 - Cambridge (nice_to_have)
+[2026-01-20T00:41:08.415Z] LOG    ✅ The Smoke Shop BBQ - Harvard Square → The Smoke Shop BBQ - Harvard Square (nice_to_have)
+[2026-01-20T00:41:08.415Z] LOG    ✅ Clover → Clover (nice_to_have)
+[2026-01-20T00:41:08.416Z] LOG    ✅ Batifol → Batifol (nice_to_have)
+[2026-01-20T00:41:08.417Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-20T00:41:08.417Z] LOG    Total enriched: 19
+[2026-01-20T00:41:08.418Z] LOG    🎯 Must-have: 8
+[2026-01-20T00:41:08.419Z] LOG    ✨ Nice-to-have: 11
+[2026-01-20T00:41:08.419Z] LOG    ❌ Failed: 0
+[2026-01-20T00:41:08.420Z] LOG    ⏱️ Time: 2297ms
+
+--- Summary ---
+Enrichment completed

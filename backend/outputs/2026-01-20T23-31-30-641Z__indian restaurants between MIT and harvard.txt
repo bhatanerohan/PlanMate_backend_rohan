@@ -1,0 +1,142 @@
+User Prompt: indian restaurants between MIT and harvard
+
+[2026-01-20T23:31:30.641Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-20T23:31:30.641Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-01-20T23:31:30.642Z] LOG    🎯 Must-have: 7
+[2026-01-20T23:31:30.642Z] LOG    ✨ Nice-to-have: 11
+[2026-01-20T23:31:30.643Z] LOG 📍 Location hint: Kendall Square
+[2026-01-20T23:31:30.643Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-01-20T23:31:30.643Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-20T23:31:30.644Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:31:30.644Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T23:31:30.644Z] LOG    1. Searching "Depth N Green" in "Kendall Square"
+[2026-01-20T23:31:30.645Z] LOG 🔍 [Google Places] Text search: "Depth N Green" in Kendall Square
+[2026-01-20T23:31:30.647Z] LOG    2. Searching "Passage to India" in "East Cambridge"
+[2026-01-20T23:31:30.649Z] LOG 🔍 [Google Places] Text search: "Passage to India" in East Cambridge
+[2026-01-20T23:31:30.656Z] LOG    3. Searching "Desi Dhaba" in "Central Square"
+[2026-01-20T23:31:30.657Z] LOG 🔍 [Google Places] Text search: "Desi Dhaba" in Central Square
+[2026-01-20T23:31:30.663Z] LOG    4. Searching "India Pavilion" in "Central Square"
+[2026-01-20T23:31:30.666Z] LOG 🔍 [Google Places] Text search: "India Pavilion" in Central Square
+[2026-01-20T23:31:30.670Z] LOG    5. Searching "Punjabi Dhaba" in "Inman Square"
+[2026-01-20T23:31:30.673Z] LOG 🔍 [Google Places] Text search: "Punjabi Dhaba" in Inman Square
+[2026-01-20T23:31:30.677Z] LOG    6. Searching "Singh's Dhaba |Authentic Punjabi & Indian Restaurant | Cambridge, MA | Order Online | Take out & delivery at doorsteps" in "Harvard Square"
+[2026-01-20T23:31:30.680Z] LOG 🔍 [Google Places] Text search: "Singh's Dhaba |Authentic Punjabi & Indian Restaurant | Cambridge, MA | Order Online | Take out & delivery at doorsteps" in Harvard Square
+[2026-01-20T23:31:30.688Z] LOG    7. Searching "The Maharaja" in "Harvard Square"
+[2026-01-20T23:31:30.690Z] LOG 🔍 [Google Places] Text search: "The Maharaja" in Harvard Square
+[2026-01-20T23:31:30.695Z] LOG    8. Searching "MIT Museum" in "Kendall Square"
+[2026-01-20T23:31:30.696Z] LOG 🔍 [Google Places] Text search: "MIT Museum" in Kendall Square
+[2026-01-20T23:31:30.703Z] LOG    9. Searching "Great Dome" in "MIT Campus"
+[2026-01-20T23:31:30.705Z] LOG 🔍 [Google Places] Text search: "Great Dome" in MIT Campus
+[2026-01-20T23:31:30.710Z] LOG    10. Searching "Urban Park (UP) Roof Garden" in "Kendall Square"
+[2026-01-20T23:31:30.713Z] LOG 🔍 [Google Places] Text search: "Urban Park (UP) Roof Garden" in Kendall Square
+[2026-01-20T23:31:31.199Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:31.213Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:31.250Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:31.292Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:31.334Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:31.341Z] LOG    ⚠️  Desi Dhaba: No editorial summary available
+[2026-01-20T23:31:31.343Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:31.349Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:31.355Z] LOG    ✅ India Pavilion: Got description (91 chars)
+[2026-01-20T23:31:31.356Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:31.394Z] LOG    ✅ Punjabi Dhaba: Got description (95 chars)
+[2026-01-20T23:31:31.395Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:31.399Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:31.404Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:31.413Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:31.455Z] LOG    ⚠️  Singh's Dhaba |Authentic Punjabi & Indian Restaurant | Cambridge, MA | Order Online | Take out & delivery at doorsteps: No editorial summary available
+[2026-01-20T23:31:31.455Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:31.490Z] LOG    ✅ Great Dome: Got description (90 chars)
+[2026-01-20T23:31:31.492Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:31.512Z] LOG    ✅ The Maharaja: Got description (100 chars)
+[2026-01-20T23:31:31.513Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:31.538Z] LOG    ✅ Passage to India: Got description (97 chars)
+[2026-01-20T23:31:31.539Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:31.540Z] LOG    ✅ Urban Park (UP) Roof Garden: Got description (83 chars)
+[2026-01-20T23:31:31.540Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:31.554Z] LOG    ⚠️  Depth N Green: No editorial summary available
+[2026-01-20T23:31:31.554Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:31.941Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:32.065Z] LOG    ✅ MIT Museum: Got description (97 chars)
+[2026-01-20T23:31:32.065Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:32.066Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1422ms
+[2026-01-20T23:31:32.066Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:31:32.067Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-20T23:31:32.270Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-01-20T23:31:32.271Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:31:32.271Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-01-20T23:31:32.272Z] LOG    1. Searching "Kendall/MIT Open Space" in "Kendall Square"
+[2026-01-20T23:31:32.273Z] LOG 🔍 [Google Places] Text search: "Kendall/MIT Open Space" in Kendall Square
+[2026-01-20T23:31:32.274Z] LOG    2. Searching "Graffiti Alley" in "Central Square"
+[2026-01-20T23:31:32.274Z] LOG 🔍 [Google Places] Text search: "Graffiti Alley" in Central Square
+[2026-01-20T23:31:32.275Z] LOG    3. Searching "Fort Washington Park" in "Cambridgeport"
+[2026-01-20T23:31:32.275Z] LOG 🔍 [Google Places] Text search: "Fort Washington Park" in Cambridgeport
+[2026-01-20T23:31:32.276Z] LOG    4. Searching "Harvard Square" in "Harvard Square"
+[2026-01-20T23:31:32.276Z] LOG 🔍 [Google Places] Text search: "Harvard Square" in Harvard Square
+[2026-01-20T23:31:32.277Z] LOG    5. Searching "Harvard Art Museums" in "Harvard University"
+[2026-01-20T23:31:32.277Z] LOG 🔍 [Google Places] Text search: "Harvard Art Museums" in Harvard University
+[2026-01-20T23:31:32.277Z] LOG    6. Searching "Cambridge Common" in "Near Harvard Square"
+[2026-01-20T23:31:32.277Z] LOG 🔍 [Google Places] Text search: "Cambridge Common" in Near Harvard Square
+[2026-01-20T23:31:32.278Z] LOG    7. Searching "John F Kennedy Memorial Park" in "Near Harvard Square"
+[2026-01-20T23:31:32.278Z] LOG 🔍 [Google Places] Text search: "John F Kennedy Memorial Park" in Near Harvard Square
+[2026-01-20T23:31:32.279Z] LOG    8. Searching "Peabody Museum of Archaeology and Ethnology" in "Harvard University"
+[2026-01-20T23:31:32.279Z] LOG 🔍 [Google Places] Text search: "Peabody Museum of Archaeology and Ethnology" in Harvard University
+[2026-01-20T23:31:32.701Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:32.720Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:32.758Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:32.773Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:32.785Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:32.817Z] LOG    ⚠️  Richard B. “Rico” Modica Wy: No editorial summary available
+[2026-01-20T23:31:32.818Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:32.826Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:32.857Z] LOG    ✅ Cambridge Common Restaurant: Got description (83 chars)
+[2026-01-20T23:31:32.859Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:32.885Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:32.896Z] LOG    ✅ Harvard Square: Got description (88 chars)
+[2026-01-20T23:31:32.897Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:32.906Z] LOG    ⚠️  Kendall/MIT Open Space: No editorial summary available
+[2026-01-20T23:31:32.907Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:32.913Z] LOG    ✅ Harvard Art Museums: Got description (99 chars)
+[2026-01-20T23:31:32.914Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:32.960Z] LOG    ✅ Peabody Museum of Archaeology and Ethnology: Got description (100 chars)
+[2026-01-20T23:31:32.961Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:32.962Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:31:33.000Z] LOG    ⚠️  Fort Washington Park: No editorial summary available
+[2026-01-20T23:31:33.002Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:33.097Z] LOG    ✅ John F Kennedy Memorial Park: Got description (97 chars)
+[2026-01-20T23:31:33.097Z] LOG ✅ Found 1 places
+[2026-01-20T23:31:33.098Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 827ms
+[2026-01-20T23:31:33.099Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:31:33.099Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-01-20T23:31:33.100Z] LOG    ✅ Depth N Green → Depth N Green (must_have)
+[2026-01-20T23:31:33.100Z] LOG    ✅ Passage to India → Passage to India (must_have)
+[2026-01-20T23:31:33.101Z] LOG    ✅ Desi Dhaba → Desi Dhaba (must_have)
+[2026-01-20T23:31:33.101Z] LOG    ✅ India Pavilion → India Pavilion (must_have)
+[2026-01-20T23:31:33.101Z] LOG    ✅ Punjabi Dhaba → Punjabi Dhaba (must_have)
+[2026-01-20T23:31:33.101Z] LOG    ✅ Singh's Dhaba |Authentic Punjabi & Indian Restaurant | Cambridge, MA | Order Online | Take out & delivery at doorsteps → Singh's Dhaba |Authentic Punjabi & Indian Restaurant | Cambridge, MA | Order Online | Take out & delivery at doorsteps (must_have)
+[2026-01-20T23:31:33.102Z] LOG    ✅ The Maharaja → The Maharaja (must_have)
+[2026-01-20T23:31:33.102Z] LOG    ✅ MIT Museum → MIT Museum (nice_to_have)
+[2026-01-20T23:31:33.102Z] LOG    ✅ Great Dome → Great Dome (nice_to_have)
+[2026-01-20T23:31:33.102Z] LOG    ✅ Urban Park (UP) Roof Garden → Urban Park (UP) Roof Garden (nice_to_have)
+[2026-01-20T23:31:33.103Z] LOG    ✅ Kendall/MIT Open Space → Kendall/MIT Open Space (nice_to_have)
+[2026-01-20T23:31:33.103Z] LOG    ✅ Graffiti Alley → Richard B. “Rico” Modica Wy (nice_to_have)
+[2026-01-20T23:31:33.103Z] LOG    ✅ Fort Washington Park → Fort Washington Park (nice_to_have)
+[2026-01-20T23:31:33.103Z] LOG    ✅ Harvard Square → Harvard Square (nice_to_have)
+[2026-01-20T23:31:33.104Z] LOG    ✅ Harvard Art Museums → Harvard Art Museums (nice_to_have)
+[2026-01-20T23:31:33.105Z] LOG    ✅ Cambridge Common → Cambridge Common Restaurant (nice_to_have)
+[2026-01-20T23:31:33.105Z] LOG    ✅ John F Kennedy Memorial Park → John F Kennedy Memorial Park (nice_to_have)
+[2026-01-20T23:31:33.106Z] LOG    ✅ Peabody Museum of Archaeology and Ethnology → Peabody Museum of Archaeology and Ethnology (nice_to_have)
+[2026-01-20T23:31:33.106Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-20T23:31:33.106Z] LOG    Total enriched: 18
+[2026-01-20T23:31:33.107Z] LOG    🎯 Must-have: 7
+[2026-01-20T23:31:33.107Z] LOG    ✨ Nice-to-have: 11
+[2026-01-20T23:31:33.107Z] LOG    ❌ Failed: 0
+[2026-01-20T23:31:33.107Z] LOG    ⏱️ Time: 2467ms
+
+--- Summary ---
+Enrichment completed

@@ -1,0 +1,201 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-01-10T04:35:44.088Z] LOG 📍 Using fallback location (no user location): National Mall
+[2026-01-10T04:35:44.090Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2026-01-10T04:35:44.090Z] LOG    1. "Smithsonian National Museum of Natural History" in "National Mall"
+[2026-01-10T04:35:44.091Z] LOG    2. "National Gallery of Art" in "National Mall"
+[2026-01-10T04:35:44.092Z] LOG    3. "Pavilion Cafe" in "National Mall"
+[2026-01-10T04:35:44.093Z] LOG    4. "Smithsonian National Air and Space Museum" in "National Mall"
+[2026-01-10T04:35:44.094Z] LOG    5. "Mitsitam Cafe" in "National Mall"
+[2026-01-10T04:35:44.095Z] LOG    6. "National Museum of American History" in "National Mall"
+[2026-01-10T04:35:44.096Z] LOG 
+🔍 Executing batch search for 6 venues...
+[2026-01-10T04:35:44.097Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-10T04:35:44.098Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2026-01-10T04:35:44.100Z] LOG    1. Searching "Smithsonian National Museum of Natural History" in "National Mall"
+[2026-01-10T04:35:44.104Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of Natural History" in National Mall
+[2026-01-10T04:35:44.132Z] LOG    2. Searching "National Gallery of Art" in "National Mall"
+[2026-01-10T04:35:44.137Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in National Mall
+[2026-01-10T04:35:44.146Z] LOG    3. Searching "Pavilion Cafe" in "National Mall"
+[2026-01-10T04:35:44.147Z] LOG 🔍 [Google Places] Text search: "Pavilion Cafe" in National Mall
+[2026-01-10T04:35:44.155Z] LOG    4. Searching "Smithsonian National Air and Space Museum" in "National Mall"
+[2026-01-10T04:35:44.158Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Air and Space Museum" in National Mall
+[2026-01-10T04:35:44.164Z] LOG    5. Searching "Mitsitam Cafe" in "National Mall"
+[2026-01-10T04:35:44.166Z] LOG 🔍 [Google Places] Text search: "Mitsitam Cafe" in National Mall
+[2026-01-10T04:35:44.174Z] LOG    6. Searching "National Museum of American History" in "National Mall"
+[2026-01-10T04:35:44.177Z] LOG 🔍 [Google Places] Text search: "National Museum of American History" in National Mall
+[2026-01-10T04:35:44.620Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:35:44.642Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:35:44.695Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-01-10T04:35:44.704Z] LOG ✅ Found 1 places
+[2026-01-10T04:35:44.709Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:35:44.718Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:35:44.722Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:35:44.725Z] LOG    ✅ Mitsitam Native Foods Cafe: Got description (98 chars)
+[2026-01-10T04:35:44.726Z] LOG ✅ Found 1 places
+[2026-01-10T04:35:44.800Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-10T04:35:44.809Z] LOG ✅ Found 1 places
+[2026-01-10T04:35:44.818Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-10T04:35:44.824Z] LOG ✅ Found 1 places
+[2026-01-10T04:35:44.829Z] LOG    ✅ Pavilion Café: Got description (99 chars)
+[2026-01-10T04:35:44.831Z] LOG ✅ Found 1 places
+[2026-01-10T04:35:44.842Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:35:44.931Z] LOG    ✅ Smithsonian National Museum of American History: Got description (99 chars)
+[2026-01-10T04:35:44.937Z] LOG ✅ Found 1 places
+[2026-01-10T04:35:44.943Z] LOG ✅ Batch complete: 6/6 searches succeeded, 6 total venues found in 844ms
+[2026-01-10T04:35:44.945Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-10T04:35:44.947Z] LOG    Tool execution result: success=true
+[2026-01-10T04:35:44.948Z] LOG    ✅ Tool returned 6 search results
+[2026-01-10T04:35:44.951Z] LOG    ✅ Merged: Smithsonian National Museum of Natural History
+[2026-01-10T04:35:44.954Z] LOG       Places placeId: ChIJx7K17Ji3t4kRr3VvqMTw7cc
+[2026-01-10T04:35:44.957Z] LOG       Gemini description: Home to over 145 million specimens and artifacts, this museu...
+[2026-01-10T04:35:44.967Z] LOG    ✅ Merged: National Gallery of Art
+[2026-01-10T04:35:44.970Z] LOG       Places placeId: ChIJSYxSO5u3t4kRm4eyKw_Y7Kg
+[2026-01-10T04:35:44.974Z] LOG       Gemini description: Comprising two buildings, the East and West Buildings, conne...
+[2026-01-10T04:35:44.977Z] LOG    ✅ Merged: Pavilion Cafe
+[2026-01-10T04:35:44.980Z] LOG       Places placeId: ChIJQ5qm1Zq3t4kRf69K5FqrL84
+[2026-01-10T04:35:44.981Z] LOG       Gemini description: Located in the beautiful Sculpture Garden of the National Ga...
+[2026-01-10T04:35:44.982Z] LOG    ✅ Merged: Smithsonian National Air and Space Museum
+[2026-01-10T04:35:44.983Z] LOG       Places placeId: ChIJISQme4O3t4kRG-iM3TfJ5_g
+[2026-01-10T04:35:44.986Z] LOG       Gemini description: Explore the history of flight and space exploration at this ...
+[2026-01-10T04:35:44.989Z] LOG    ✅ Merged: Mitsitam Cafe
+[2026-01-10T04:35:44.993Z] LOG       Places placeId: ChIJgRz9T5y3t4kReMDJ3qieXzY
+[2026-01-10T04:35:44.995Z] LOG       Gemini description: Located within the National Museum of the American Indian, M...
+[2026-01-10T04:35:44.997Z] LOG    ✅ Merged: National Museum of American History
+[2026-01-10T04:35:44.999Z] LOG       Places placeId: ChIJx7K17Ji3t4kR6h3neQYXsjI
+[2026-01-10T04:35:45.000Z] LOG       Gemini description: Dedicated to the cultural, social, scientific, and political...
+[2026-01-10T04:35:45.002Z] LOG ✅ Phase 1 complete: Found 6/6 exact venues
+[2026-01-10T04:35:45.003Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2026-01-10T04:35:45.004Z] LOG    Searching for alternatives near 6 venues...
+[2026-01-10T04:35:45.005Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-10T04:35:45.005Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2026-01-10T04:35:45.006Z] LOG    1. Searching "museum" in "38.8912662,-77.0260654"
+[2026-01-10T04:35:45.007Z] LOG    📍 Using nearbySearch at coordinates (38.8912662, -77.0260654)
+[2026-01-10T04:35:45.008Z] LOG 🔍 [Google Places] Nearby search at (38.8912662, -77.0260654)
+[2026-01-10T04:35:45.012Z] LOG    2. Searching "museum" in "38.891298,-77.019965"
+[2026-01-10T04:35:45.014Z] LOG    📍 Using nearbySearch at coordinates (38.891298, -77.019965)
+[2026-01-10T04:35:45.015Z] LOG 🔍 [Google Places] Nearby search at (38.891298, -77.019965)
+[2026-01-10T04:35:45.021Z] LOG    3. Searching "restaurant" in "38.8912713,-77.0235268"
+[2026-01-10T04:35:45.023Z] LOG    📍 Using nearbySearch at coordinates (38.8912713, -77.0235268)
+[2026-01-10T04:35:45.025Z] LOG 🔍 [Google Places] Nearby search at (38.8912713, -77.0235268)
+[2026-01-10T04:35:45.030Z] LOG    4. Searching "restaurant" in "38.8882063,-77.0198164"
+[2026-01-10T04:35:45.036Z] LOG    📍 Using nearbySearch at coordinates (38.8882063, -77.0198164)
+[2026-01-10T04:35:45.038Z] LOG 🔍 [Google Places] Nearby search at (38.8882063, -77.0198164)
+[2026-01-10T04:35:45.041Z] LOG    5. Searching "restaurant" in "38.8882917,-77.01708610000001"
+[2026-01-10T04:35:45.045Z] LOG    📍 Using nearbySearch at coordinates (38.8882917, -77.01708610000001)
+[2026-01-10T04:35:45.049Z] LOG 🔍 [Google Places] Nearby search at (38.8882917, -77.01708610000001)
+[2026-01-10T04:35:45.055Z] LOG    6. Searching "restaurant" in "38.89127930000001,-77.03005089999999"
+[2026-01-10T04:35:45.058Z] LOG    📍 Using nearbySearch at coordinates (38.89127930000001, -77.03005089999999)
+[2026-01-10T04:35:45.059Z] LOG 🔍 [Google Places] Nearby search at (38.89127930000001, -77.03005089999999)
+[2026-01-10T04:35:45.611Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:35:45.622Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:35:45.652Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:35:45.695Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:35:45.723Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:35:45.762Z] LOG    ✅ Yard House: Got description (99 chars)
+[2026-01-10T04:35:45.787Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-10T04:35:45.796Z] LOG    ✅ Yard House: Got description (99 chars)
+[2026-01-10T04:35:45.804Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:35:45.830Z] LOG    ✅ The Dubliner Restaurant: Got description (93 chars)
+[2026-01-10T04:35:45.842Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-10T04:35:45.849Z] LOG    ✅ Stan's DC Restaurant: Got description (96 chars)
+[2026-01-10T04:35:45.865Z] LOG    ✅ Yard House: Got description (99 chars)
+[2026-01-10T04:35:45.872Z] LOG    ⚠️  Moxies Restaurant: No editorial summary available
+[2026-01-10T04:35:45.882Z] LOG    ✅ The Dubliner Restaurant: Got description (93 chars)
+[2026-01-10T04:35:45.887Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-10T04:35:45.892Z] LOG    ✅ Proper 21 - F Street: Got description (91 chars)
+[2026-01-10T04:35:45.900Z] LOG    ✅ Irish Channel Restaurant & Pub: Got description (96 chars)
+[2026-01-10T04:35:45.906Z] LOG    ✅ Stan's DC Restaurant: Got description (96 chars)
+[2026-01-10T04:35:45.909Z] LOG    ✅ Cuba Libre Restaurant & Rum Bar: Got description (86 chars)
+[2026-01-10T04:35:45.914Z] LOG    ✅ National Children's Museum: Got description (95 chars)
+[2026-01-10T04:35:45.917Z] LOG    ✅ Yard House: Got description (99 chars)
+[2026-01-10T04:35:45.920Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-01-10T04:35:45.922Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2026-01-10T04:35:45.929Z] LOG    ✅ Stan's DC Restaurant: Got description (96 chars)
+[2026-01-10T04:35:45.932Z] LOG    ✅ Cuba Libre Restaurant & Rum Bar: Got description (86 chars)
+[2026-01-10T04:35:45.934Z] LOG    ✅ The Dubliner Restaurant: Got description (93 chars)
+[2026-01-10T04:35:45.937Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-10T04:35:45.958Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-10T04:35:45.962Z] LOG    ✅ Mr. Henry's Restaurant: Got description (97 chars)
+[2026-01-10T04:35:45.969Z] LOG    ✅ Cuba Libre Restaurant & Rum Bar: Got description (86 chars)
+[2026-01-10T04:35:45.975Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-10T04:35:46.001Z] LOG    ✅ Proper 21 - F Street: Got description (91 chars)
+[2026-01-10T04:35:46.006Z] LOG    ✅ Cuba Libre Restaurant & Rum Bar: Got description (86 chars)
+[2026-01-10T04:35:46.012Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-10T04:35:46.116Z] LOG    ✅ Proper 21 - F Street: Got description (91 chars)
+[2026-01-10T04:35:46.120Z] LOG ✅ Batch complete: 6/6 searches succeeded, 30 total venues found in 1115ms
+[2026-01-10T04:35:46.121Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-10T04:35:46.123Z] LOG    ✅ Venue 1 (Smithsonian National Museum of Natural History): 4 alternatives
+[2026-01-10T04:35:46.125Z] LOG       1. International Spy Museum (4.4⭐)
+[2026-01-10T04:35:46.127Z] LOG       2. Museum of Illusions Washington DC (4.1⭐)
+[2026-01-10T04:35:46.128Z] LOG       3. National Children's Museum (4.3⭐)
+[2026-01-10T04:35:46.129Z] LOG    ✅ Venue 2 (National Gallery of Art): 4 alternatives
+[2026-01-10T04:35:46.129Z] LOG       1. International Spy Museum (4.4⭐)
+[2026-01-10T04:35:46.130Z] LOG       2. Smithsonian National Museum of Natural History (4.8⭐)
+[2026-01-10T04:35:46.130Z] LOG       3. Museum of Illusions Washington DC (4.1⭐)
+[2026-01-10T04:35:46.131Z] LOG    ✅ Venue 3 (Pavilion Café): 4 alternatives
+[2026-01-10T04:35:46.131Z] LOG       1. The Dubliner Restaurant (4.4⭐)
+[2026-01-10T04:35:46.132Z] LOG       2. Yard House (4.3⭐)
+[2026-01-10T04:35:46.133Z] LOG       3. Cuba Libre Restaurant & Rum Bar (4.2⭐)
+[2026-01-10T04:35:46.134Z] LOG    ✅ Venue 4 (Smithsonian's National Air and Space Museum): 4 alternatives
+[2026-01-10T04:35:46.135Z] LOG       1. Yard House (4.3⭐)
+[2026-01-10T04:35:46.136Z] LOG       2. Stan's DC Restaurant (4.6⭐)
+[2026-01-10T04:35:46.137Z] LOG       3. The Dubliner Restaurant (4.4⭐)
+[2026-01-10T04:35:46.138Z] LOG    ✅ Venue 5 (Mitsitam Native Foods Cafe): 4 alternatives
+[2026-01-10T04:35:46.140Z] LOG       1. The Dubliner Restaurant (4.4⭐)
+[2026-01-10T04:35:46.141Z] LOG       2. Yard House (4.3⭐)
+[2026-01-10T04:35:46.142Z] LOG       3. Cuba Libre Restaurant & Rum Bar (4.2⭐)
+[2026-01-10T04:35:46.143Z] LOG    ✅ Venue 6 (Smithsonian National Museum of American History): 4 alternatives
+[2026-01-10T04:35:46.143Z] LOG       1. Yard House (4.3⭐)
+[2026-01-10T04:35:46.144Z] LOG       2. Cuba Libre Restaurant & Rum Bar (4.2⭐)
+[2026-01-10T04:35:46.146Z] LOG       3. Stan's DC Restaurant (4.6⭐)
+[2026-01-10T04:35:46.147Z] LOG 
+📦 Phase 2 complete: 6 stops with alternatives
+[2026-01-10T04:35:46.149Z] LOG 
+🧹 Cleaning alternatives...
+[2026-01-10T04:35:46.149Z] LOG    Primary venues: 6 stops
+[2026-01-10T04:35:46.151Z] LOG    ❌ Removed "National Gallery of Art" - already in primary route
+[2026-01-10T04:35:46.152Z] LOG    🔧 Stop "ChIJx7K17Ji3t4kRr3Vv...": 4 → 3 alternatives
+[2026-01-10T04:35:46.153Z] LOG    ❌ Removed "International Spy Museum" - duplicate alternative
+[2026-01-10T04:35:46.153Z] LOG    ❌ Removed "Smithsonian National Museum of Natural History" - already in primary route
+[2026-01-10T04:35:46.154Z] LOG    ❌ Removed "Museum of Illusions Washington DC" - duplicate alternative
+[2026-01-10T04:35:46.155Z] LOG    ❌ Removed "Smithsonian's National Air and Space Museum" - already in primary route
+[2026-01-10T04:35:46.155Z] LOG    🔧 Stop "ChIJSYxSO5u3t4kRm4ey...": 4 → 0 alternatives
+[2026-01-10T04:35:46.156Z] LOG    ❌ Removed "Yard House" - duplicate alternative
+[2026-01-10T04:35:46.157Z] LOG    ❌ Removed "Stan's DC Restaurant" - duplicate alternative
+[2026-01-10T04:35:46.158Z] LOG    ❌ Removed "The Dubliner Restaurant" - duplicate alternative
+[2026-01-10T04:35:46.162Z] LOG    ❌ Removed "Cuba Libre Restaurant & Rum Bar" - duplicate alternative
+[2026-01-10T04:35:46.164Z] LOG    🔧 Stop "ChIJISQme4O3t4kRG-iM...": 4 → 0 alternatives
+[2026-01-10T04:35:46.166Z] LOG    ❌ Removed "The Dubliner Restaurant" - duplicate alternative
+[2026-01-10T04:35:46.166Z] LOG    ❌ Removed "Yard House" - duplicate alternative
+[2026-01-10T04:35:46.168Z] LOG    ❌ Removed "Cuba Libre Restaurant & Rum Bar" - duplicate alternative
+[2026-01-10T04:35:46.168Z] LOG    🔧 Stop "ChIJgRz9T5y3t4kReMDJ...": 4 → 1 alternatives
+[2026-01-10T04:35:46.169Z] LOG    ❌ Removed "Yard House" - duplicate alternative
+[2026-01-10T04:35:46.171Z] LOG    ❌ Removed "Cuba Libre Restaurant & Rum Bar" - duplicate alternative
+[2026-01-10T04:35:46.173Z] LOG    ❌ Removed "Stan's DC Restaurant" - duplicate alternative
+[2026-01-10T04:35:46.175Z] LOG    🔧 Stop "ChIJx7K17Ji3t4kR6h3n...": 4 → 1 alternatives
+[2026-01-10T04:35:46.176Z] LOG 
+✅ Cleaning complete:
+[2026-01-10T04:35:46.177Z] LOG    Removed 3 venues already in route
+[2026-01-10T04:35:46.178Z] LOG    Removed 12 duplicate alternatives
+[2026-01-10T04:35:46.179Z] LOG    Final: 4 stops with alternatives
+
+[2026-01-10T04:35:46.180Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2026-01-10T04:35:46.181Z] LOG    Primary venues: 6
+[2026-01-10T04:35:46.182Z] LOG    Alternatives: 4 stops with alternatives
+[2026-01-10T04:35:46.183Z] LOG    Execution time: 2100ms
+[2026-01-10T04:35:46.183Z] LOG 
+📋 Final alternatives:
+[2026-01-10T04:35:46.185Z] LOG    Smithsonian National Museum of Natural History: 3 alternatives
+[2026-01-10T04:35:46.186Z] LOG    Pavilion Café: 4 alternatives
+[2026-01-10T04:35:46.187Z] LOG    Mitsitam Native Foods Cafe: 1 alternatives
+[2026-01-10T04:35:46.188Z] LOG    Smithsonian National Museum of American History: 1 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 6
+Alternatives: 4

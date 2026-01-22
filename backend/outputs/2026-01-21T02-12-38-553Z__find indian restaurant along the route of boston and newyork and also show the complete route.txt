@@ -1,0 +1,146 @@
+User Prompt: find indian restaurant along the route of boston and newyork and also show the complete route
+
+[2026-01-21T02:12:38.554Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T02:12:38.554Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-21T02:12:38.555Z] LOG    🎯 Must-have: 7
+[2026-01-21T02:12:38.555Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T02:12:38.556Z] LOG 📍 Location hint: Brookline, MA (Boston Area)
+[2026-01-21T02:12:38.557Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-21T02:12:38.557Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T02:12:38.558Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T02:12:38.559Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T02:12:38.559Z] LOG    1. Searching "Mirchi Nation-Indian Kitchen" in "Brookline, MA (Boston Area)"
+[2026-01-21T02:12:38.560Z] LOG 🔍 [Google Places] Text search: "Mirchi Nation-Indian Kitchen" in Brookline, MA (Boston Area)
+[2026-01-21T02:12:38.563Z] LOG    2. Searching "India Restaurant" in "Providence, RI"
+[2026-01-21T02:12:38.564Z] LOG 🔍 [Google Places] Text search: "India Restaurant" in Providence, RI
+[2026-01-21T02:12:38.567Z] LOG    3. Searching "Siṃha Indian Kitchen & Bar" in "Downtown Providence, RI"
+[2026-01-21T02:12:38.567Z] LOG 🔍 [Google Places] Text search: "Siṃha Indian Kitchen & Bar" in Downtown Providence, RI
+[2026-01-21T02:12:38.572Z] LOG    4. Searching "House of Naan Indian Kitchen and Bar" in "New Haven, CT"
+[2026-01-21T02:12:38.575Z] LOG 🔍 [Google Places] Text search: "House of Naan Indian Kitchen and Bar" in New Haven, CT
+[2026-01-21T02:12:38.581Z] LOG    5. Searching "Taj Stamford" in "Downtown Stamford, CT"
+[2026-01-21T02:12:38.584Z] LOG 🔍 [Google Places] Text search: "Taj Stamford" in Downtown Stamford, CT
+[2026-01-21T02:12:38.587Z] LOG    6. Searching "Cloves Indian Cuisine" in "Midtown Manhattan, New York, NY"
+[2026-01-21T02:12:38.587Z] LOG 🔍 [Google Places] Text search: "Cloves Indian Cuisine" in Midtown Manhattan, New York, NY
+[2026-01-21T02:12:38.593Z] LOG    7. Searching "Red Onion Indian Lunch Brunch Dinner" in "East Village, New York, NY"
+[2026-01-21T02:12:38.594Z] LOG 🔍 [Google Places] Text search: "Red Onion Indian Lunch Brunch Dinner" in East Village, New York, NY
+[2026-01-21T02:12:38.597Z] LOG    8. Searching "Boston Common" in "Downtown Boston, MA"
+[2026-01-21T02:12:38.600Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown Boston, MA
+[2026-01-21T02:12:38.604Z] LOG    9. Searching "Newbury Street" in "Back Bay, Boston, MA"
+[2026-01-21T02:12:38.605Z] LOG 🔍 [Google Places] Text search: "Newbury Street" in Back Bay, Boston, MA
+[2026-01-21T02:12:38.613Z] LOG    10. Searching "Faneuil Hall Marketplace" in "Downtown Boston, MA"
+[2026-01-21T02:12:38.614Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Downtown Boston, MA
+[2026-01-21T02:12:39.179Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:39.190Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:39.223Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:39.233Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:39.263Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:39.293Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:39.300Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:39.310Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:39.318Z] LOG    ⚠️  Taj Stamford: No editorial summary available
+[2026-01-21T02:12:39.320Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:39.330Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:39.356Z] LOG    ⚠️  Mirchi Nation-Indian Kitchen: No editorial summary available
+[2026-01-21T02:12:39.359Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:39.364Z] LOG    ⚠️  Siṃha Indian Kitchen & Bar: No editorial summary available
+[2026-01-21T02:12:39.365Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:39.386Z] LOG    ✅ India Restaurant: Got description (81 chars)
+[2026-01-21T02:12:39.389Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:39.404Z] LOG    ✅ Newbury St: Got description (100 chars)
+[2026-01-21T02:12:39.408Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:39.412Z] LOG    ⚠️  Cloves Indian Cuisine: No editorial summary available
+[2026-01-21T02:12:39.415Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:39.424Z] LOG    ⚠️  Red Onion Indian Lunch Brunch Dinner: No editorial summary available
+[2026-01-21T02:12:39.427Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:39.439Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-21T02:12:39.442Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:39.457Z] LOG    ✅ House of Naan Indian Kitchen and Bar: Got description (94 chars)
+[2026-01-21T02:12:39.460Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:39.590Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:39.728Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-21T02:12:39.731Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:39.733Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1174ms
+[2026-01-21T02:12:39.735Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T02:12:39.736Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T02:12:39.950Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-21T02:12:39.951Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T02:12:39.952Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-21T02:12:39.952Z] LOG    1. Searching "Waterplace Park" in "Downtown Providence, RI"
+[2026-01-21T02:12:39.953Z] LOG 🔍 [Google Places] Text search: "Waterplace Park" in Downtown Providence, RI
+[2026-01-21T02:12:39.955Z] LOG    2. Searching "Brown University" in "College Hill, Providence, RI"
+[2026-01-21T02:12:39.955Z] LOG 🔍 [Google Places] Text search: "Brown University" in College Hill, Providence, RI
+[2026-01-21T02:12:39.957Z] LOG    3. Searching "Yale University Art Gallery" in "New Haven, CT"
+[2026-01-21T02:12:39.958Z] LOG 🔍 [Google Places] Text search: "Yale University Art Gallery" in New Haven, CT
+[2026-01-21T02:12:39.959Z] LOG    4. Searching "East Rock Park" in "New Haven, CT"
+[2026-01-21T02:12:39.959Z] LOG 🔍 [Google Places] Text search: "East Rock Park" in New Haven, CT
+[2026-01-21T02:12:39.961Z] LOG    5. Searching "Mill River Park" in "Downtown Stamford, CT"
+[2026-01-21T02:12:39.962Z] LOG 🔍 [Google Places] Text search: "Mill River Park" in Downtown Stamford, CT
+[2026-01-21T02:12:39.964Z] LOG    6. Searching "The Maritime Aquarium at Norwalk" in "Norwalk, CT"
+[2026-01-21T02:12:39.965Z] LOG 🔍 [Google Places] Text search: "The Maritime Aquarium at Norwalk" in Norwalk, CT
+[2026-01-21T02:12:39.967Z] LOG    7. Searching "Times Square" in "Midtown Manhattan, New York, NY"
+[2026-01-21T02:12:39.967Z] LOG 🔍 [Google Places] Text search: "Times Square" in Midtown Manhattan, New York, NY
+[2026-01-21T02:12:39.970Z] LOG    8. Searching "Central Park" in "Manhattan, New York, NY"
+[2026-01-21T02:12:39.971Z] LOG 🔍 [Google Places] Text search: "Central Park" in Manhattan, New York, NY
+[2026-01-21T02:12:39.976Z] LOG    9. Searching "Grand Central Terminal" in "Midtown Manhattan, New York, NY"
+[2026-01-21T02:12:39.979Z] LOG 🔍 [Google Places] Text search: "Grand Central Terminal" in Midtown Manhattan, New York, NY
+[2026-01-21T02:12:40.475Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:40.489Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:40.500Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:40.545Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:40.547Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:40.605Z] LOG    ✅ Waterplace Park: Got description (99 chars)
+[2026-01-21T02:12:40.606Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:40.633Z] LOG    ✅ East Rock Park: Got description (96 chars)
+[2026-01-21T02:12:40.634Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:40.659Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:40.665Z] LOG    ✅ Mill River Park: Got description (95 chars)
+[2026-01-21T02:12:40.666Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:40.670Z] LOG    ✅ Brown University: Got description (93 chars)
+[2026-01-21T02:12:40.672Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:40.676Z] LOG    ✅ Yale University Art Gallery: Got description (96 chars)
+[2026-01-21T02:12:40.677Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:40.767Z] LOG    ✅ Grand Central Terminal: Got description (95 chars)
+[2026-01-21T02:12:40.768Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:40.793Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:40.892Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:12:40.917Z] LOG    ✅ The Maritime Aquarium at Norwalk: Got description (93 chars)
+[2026-01-21T02:12:40.919Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:40.976Z] LOG    ✅ Times Square: Got description (100 chars)
+[2026-01-21T02:12:40.976Z] LOG ✅ Found 1 places
+[2026-01-21T02:12:44.070Z] ERROR    ❌ Search 8 failed: {}
+[2026-01-21T02:12:44.073Z] LOG ✅ Batch complete: 8/9 searches succeeded, 8 total venues found in 4121ms
+[2026-01-21T02:12:44.073Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T02:12:44.074Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-21T02:12:44.074Z] LOG    ✅ Mirchi Nation-Indian Kitchen → Mirchi Nation-Indian Kitchen (must_have)
+[2026-01-21T02:12:44.075Z] LOG    ✅ India Restaurant → India Restaurant (must_have)
+[2026-01-21T02:12:44.075Z] LOG    ✅ Siṃha Indian Kitchen & Bar → Siṃha Indian Kitchen & Bar (must_have)
+[2026-01-21T02:12:44.076Z] LOG    ✅ House of Naan Indian Kitchen and Bar → House of Naan Indian Kitchen and Bar (must_have)
+[2026-01-21T02:12:44.076Z] LOG    ✅ Taj Stamford → Taj Stamford (must_have)
+[2026-01-21T02:12:44.077Z] LOG    ✅ Cloves Indian Cuisine → Cloves Indian Cuisine (must_have)
+[2026-01-21T02:12:44.077Z] LOG    ✅ Red Onion Indian Lunch Brunch Dinner → Red Onion Indian Lunch Brunch Dinner (must_have)
+[2026-01-21T02:12:44.077Z] LOG    ✅ Boston Common → Boston Common (nice_to_have)
+[2026-01-21T02:12:44.077Z] LOG    ✅ Newbury Street → Newbury St (nice_to_have)
+[2026-01-21T02:12:44.078Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (nice_to_have)
+[2026-01-21T02:12:44.078Z] LOG    ✅ Waterplace Park → Waterplace Park (nice_to_have)
+[2026-01-21T02:12:44.079Z] LOG    ✅ Brown University → Brown University (nice_to_have)
+[2026-01-21T02:12:44.079Z] LOG    ✅ Yale University Art Gallery → Yale University Art Gallery (nice_to_have)
+[2026-01-21T02:12:44.079Z] LOG    ✅ East Rock Park → East Rock Park (nice_to_have)
+[2026-01-21T02:12:44.080Z] LOG    ✅ Mill River Park → Mill River Park (nice_to_have)
+[2026-01-21T02:12:44.080Z] LOG    ✅ The Maritime Aquarium at Norwalk → The Maritime Aquarium at Norwalk (nice_to_have)
+[2026-01-21T02:12:44.080Z] LOG    ✅ Times Square → Times Square (nice_to_have)
+[2026-01-21T02:12:44.081Z] LOG    ⚠️ Central Park - not found in Google Places
+[2026-01-21T02:12:44.081Z] LOG    ✅ Grand Central Terminal → Grand Central Terminal (nice_to_have)
+[2026-01-21T02:12:44.081Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T02:12:44.082Z] LOG    Total enriched: 18
+[2026-01-21T02:12:44.082Z] LOG    🎯 Must-have: 7
+[2026-01-21T02:12:44.082Z] LOG    ✨ Nice-to-have: 11
+[2026-01-21T02:12:44.083Z] LOG    ❌ Failed: 1
+[2026-01-21T02:12:44.083Z] LOG    ⏱️ Time: 5531ms
+
+--- Summary ---
+Enrichment completed

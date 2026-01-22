@@ -1,0 +1,154 @@
+User Prompt: date night in boston
+
+[2026-01-20T23:58:52.889Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-20T23:58:52.890Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-20T23:58:52.891Z] LOG    🎯 Must-have: 7
+[2026-01-20T23:58:52.892Z] LOG    ✨ Nice-to-have: 13
+[2026-01-20T23:58:52.893Z] LOG 📍 Location hint: boston
+[2026-01-20T23:58:52.893Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-20T23:58:52.895Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-20T23:58:52.895Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:58:52.897Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T23:58:52.897Z] LOG    1. Searching "Contessa Boston" in "Back Bay"
+[2026-01-20T23:58:52.898Z] LOG 🔍 [Google Places] Text search: "Contessa Boston" in Back Bay
+[2026-01-20T23:58:52.904Z] LOG    2. Searching "Yvonne's" in "Downtown Crossing"
+[2026-01-20T23:58:52.905Z] LOG 🔍 [Google Places] Text search: "Yvonne's" in Downtown Crossing
+[2026-01-20T23:58:52.910Z] LOG    3. Searching "Mamma Maria" in "North End"
+[2026-01-20T23:58:52.911Z] LOG 🔍 [Google Places] Text search: "Mamma Maria" in North End
+[2026-01-20T23:58:52.919Z] LOG    4. Searching "Deuxave" in "Back Bay"
+[2026-01-20T23:58:52.921Z] LOG 🔍 [Google Places] Text search: "Deuxave" in Back Bay
+[2026-01-20T23:58:52.931Z] LOG    5. Searching "MIDA" in "South End"
+[2026-01-20T23:58:52.933Z] LOG 🔍 [Google Places] Text search: "MIDA" in South End
+[2026-01-20T23:58:52.942Z] LOG    6. Searching "Apex Rooftop Bar and Lounge" in "Waterfront/Downtown"
+[2026-01-20T23:58:52.944Z] LOG 🔍 [Google Places] Text search: "Apex Rooftop Bar and Lounge" in Waterfront/Downtown
+[2026-01-20T23:58:52.952Z] LOG    7. Searching "OFFSUIT" in "Leather District/Downtown"
+[2026-01-20T23:58:52.955Z] LOG 🔍 [Google Places] Text search: "OFFSUIT" in Leather District/Downtown
+[2026-01-20T23:58:52.962Z] LOG    8. Searching "Carmelina's" in "North End"
+[2026-01-20T23:58:52.964Z] LOG 🔍 [Google Places] Text search: "Carmelina's" in North End
+[2026-01-20T23:58:52.970Z] LOG    9. Searching "Mooo.... Beacon Hill" in "Beacon Hill"
+[2026-01-20T23:58:52.974Z] LOG 🔍 [Google Places] Text search: "Mooo.... Beacon Hill" in Beacon Hill
+[2026-01-20T23:58:52.982Z] LOG    10. Searching "Alden & Harlow" in "Cambridge (Harvard Square)"
+[2026-01-20T23:58:52.984Z] LOG 🔍 [Google Places] Text search: "Alden & Harlow" in Cambridge (Harvard Square)
+[2026-01-20T23:58:53.461Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:53.476Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:53.497Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:53.521Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:53.528Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:53.567Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:53.577Z] LOG    ✅ Mamma Maria: Got description (87 chars)
+[2026-01-20T23:58:53.579Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:53.584Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:53.591Z] LOG    ✅ OFFSUIT: Got description (94 chars)
+[2026-01-20T23:58:53.593Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:53.598Z] LOG    ⚠️  Apex Rooftop Bar and Lounge: No editorial summary available
+[2026-01-20T23:58:53.600Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:53.603Z] LOG    ✅ MIDA: Got description (67 chars)
+[2026-01-20T23:58:53.605Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:53.611Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:53.633Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:53.667Z] LOG    ✅ Mooo.... Beacon Hill: Got description (94 chars)
+[2026-01-20T23:58:53.671Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:53.674Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:53.708Z] LOG    ✅ Alden & Harlow: Got description (98 chars)
+[2026-01-20T23:58:53.710Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:53.731Z] LOG    ✅ Deuxave: Got description (98 chars)
+[2026-01-20T23:58:53.732Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:53.749Z] LOG    ✅ Yvonne's: Got description (94 chars)
+[2026-01-20T23:58:53.751Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:53.788Z] LOG    ✅ Contessa Boston: Got description (100 chars)
+[2026-01-20T23:58:53.790Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:53.819Z] LOG    ✅ Carmelina's: Got description (99 chars)
+[2026-01-20T23:58:53.819Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:53.820Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 923ms
+[2026-01-20T23:58:53.821Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:58:53.821Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-20T23:58:54.024Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-20T23:58:54.026Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:58:54.027Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T23:58:54.027Z] LOG    1. Searching "F1 Arcade Boston" in "Seaport"
+[2026-01-20T23:58:54.028Z] LOG 🔍 [Google Places] Text search: "F1 Arcade Boston" in Seaport
+[2026-01-20T23:58:54.028Z] LOG    2. Searching "VERSUS" in "Downtown"
+[2026-01-20T23:58:54.029Z] LOG 🔍 [Google Places] Text search: "VERSUS" in Downtown
+[2026-01-20T23:58:54.030Z] LOG    3. Searching "Trapology Boston" in "Theater District/Downtown"
+[2026-01-20T23:58:54.031Z] LOG 🔍 [Google Places] Text search: "Trapology Boston" in Theater District/Downtown
+[2026-01-20T23:58:54.033Z] LOG    4. Searching "Improv Asylum" in "North End"
+[2026-01-20T23:58:54.034Z] LOG 🔍 [Google Places] Text search: "Improv Asylum" in North End
+[2026-01-20T23:58:54.035Z] LOG    5. Searching "Flight Club Boston" in "Seaport"
+[2026-01-20T23:58:54.036Z] LOG 🔍 [Google Places] Text search: "Flight Club Boston" in Seaport
+[2026-01-20T23:58:54.036Z] LOG    6. Searching "Mike's Pastry" in "North End"
+[2026-01-20T23:58:54.037Z] LOG 🔍 [Google Places] Text search: "Mike's Pastry" in North End
+[2026-01-20T23:58:54.037Z] LOG    7. Searching "L.A. Burdick Handmade Chocolates" in "Back Bay"
+[2026-01-20T23:58:54.038Z] LOG 🔍 [Google Places] Text search: "L.A. Burdick Handmade Chocolates" in Back Bay
+[2026-01-20T23:58:54.039Z] LOG    8. Searching "View Boston" in "Back Bay/Prudential"
+[2026-01-20T23:58:54.040Z] LOG 🔍 [Google Places] Text search: "View Boston" in Back Bay/Prudential
+[2026-01-20T23:58:54.040Z] LOG    9. Searching "Public Garden" in "Beacon Hill/Back Bay"
+[2026-01-20T23:58:54.041Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Beacon Hill/Back Bay
+[2026-01-20T23:58:54.041Z] LOG    10. Searching "Christopher Columbus Waterfront Park" in "Waterfront"
+[2026-01-20T23:58:54.042Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in Waterfront
+[2026-01-20T23:58:54.485Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:54.513Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:54.517Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:54.533Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:54.542Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:54.547Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:54.596Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-20T23:58:54.597Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:54.605Z] LOG    ✅ Mike's Pastry: Got description (93 chars)
+[2026-01-20T23:58:54.606Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:54.618Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-01-20T23:58:54.619Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:54.640Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:54.642Z] LOG    ✅ Trapology Boston: Got description (95 chars)
+[2026-01-20T23:58:54.643Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:54.644Z] LOG    ⚠️  VERSUS: No editorial summary available
+[2026-01-20T23:58:54.645Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:54.645Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:54.676Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:54.689Z] LOG    ✅ L.A. Burdick Handmade Chocolates: Got description (93 chars)
+[2026-01-20T23:58:54.690Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:54.776Z] LOG    ⚠️  Flight Club Boston: No editorial summary available
+[2026-01-20T23:58:54.777Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:54.782Z] LOG    ✅ Improv Asylum: Got description (91 chars)
+[2026-01-20T23:58:54.782Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:54.799Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-01-20T23:58:54.800Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:54.810Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:58:54.952Z] LOG    ⚠️  F1 Arcade Boston: No editorial summary available
+[2026-01-20T23:58:54.953Z] LOG ✅ Found 1 places
+[2026-01-20T23:58:54.954Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 927ms
+[2026-01-20T23:58:54.955Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:58:54.955Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-20T23:58:54.956Z] LOG    ✅ Contessa Boston → Contessa Boston (must_have)
+[2026-01-20T23:58:54.957Z] LOG    ✅ Yvonne's → Yvonne's (must_have)
+[2026-01-20T23:58:54.957Z] LOG    ✅ Mamma Maria → Mamma Maria (must_have)
+[2026-01-20T23:58:54.957Z] LOG    ✅ Deuxave → Deuxave (must_have)
+[2026-01-20T23:58:54.958Z] LOG    ✅ MIDA → MIDA (must_have)
+[2026-01-20T23:58:54.959Z] LOG    ✅ Apex Rooftop Bar and Lounge → Apex Rooftop Bar and Lounge (must_have)
+[2026-01-20T23:58:54.959Z] LOG    ✅ OFFSUIT → OFFSUIT (must_have)
+[2026-01-20T23:58:54.959Z] LOG    ✅ Carmelina's → Carmelina's (nice_to_have)
+[2026-01-20T23:58:54.960Z] LOG    ✅ Mooo.... Beacon Hill → Mooo.... Beacon Hill (nice_to_have)
+[2026-01-20T23:58:54.960Z] LOG    ✅ Alden & Harlow → Alden & Harlow (nice_to_have)
+[2026-01-20T23:58:54.961Z] LOG    ✅ F1 Arcade Boston → F1 Arcade Boston (nice_to_have)
+[2026-01-20T23:58:54.961Z] LOG    ✅ VERSUS → VERSUS (nice_to_have)
+[2026-01-20T23:58:54.962Z] LOG    ✅ Trapology Boston → Trapology Boston (nice_to_have)
+[2026-01-20T23:58:54.962Z] LOG    ✅ Improv Asylum → Improv Asylum (nice_to_have)
+[2026-01-20T23:58:54.963Z] LOG    ✅ Flight Club Boston → Flight Club Boston (nice_to_have)
+[2026-01-20T23:58:54.963Z] LOG    ✅ Mike's Pastry → Mike's Pastry (nice_to_have)
+[2026-01-20T23:58:54.964Z] LOG    ✅ L.A. Burdick Handmade Chocolates → L.A. Burdick Handmade Chocolates (nice_to_have)
+[2026-01-20T23:58:54.964Z] LOG    ✅ View Boston → View Boston (nice_to_have)
+[2026-01-20T23:58:54.965Z] LOG    ✅ Public Garden → Public Garden (nice_to_have)
+[2026-01-20T23:58:54.965Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (nice_to_have)
+[2026-01-20T23:58:54.966Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-20T23:58:54.966Z] LOG    Total enriched: 20
+[2026-01-20T23:58:54.967Z] LOG    🎯 Must-have: 7
+[2026-01-20T23:58:54.967Z] LOG    ✨ Nice-to-have: 13
+[2026-01-20T23:58:54.967Z] LOG    ❌ Failed: 0
+[2026-01-20T23:58:54.968Z] LOG    ⏱️ Time: 2080ms
+
+--- Summary ---
+Enrichment completed

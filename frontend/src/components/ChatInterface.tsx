@@ -119,9 +119,8 @@ const ChatInterface = forwardRef(({
       let markers: MapMarker[] = [];
 
       if (isModification) {
-        console.log('🔄 Modification: Creating markers from returned venues (includes user-location)');
+        console.log('🔄 Modification: Creating markers from returned venues');
         
-        // 🆕 Build primary venue map for lookup
         const primaryVenuesByPlaceId = new Map<string, { venue: Venue; stopNumber: number }>();
         data.venues.forEach((venue: Venue, idx: number) => {
           if (venue.placeId !== 'user-location') {
@@ -146,15 +145,15 @@ const ChatInterface = forwardRef(({
         
         console.log(`   Created ${markers.length} primary markers after modification`);
 
-        // Add markers for ALTERNATIVE venues with metadata
+        // Add markers for ALTERNATIVE venues
         if (data.alternativesMap && Object.keys(data.alternativesMap).length > 0) {
-          console.log('📍 Adding alternative venue markers for modification...');
+          console.log('🔍 Adding alternative venue markers for modification...');
           
           let altCount = 0;
           Object.entries(data.alternativesMap).forEach(([primaryPlaceId, alternatives]) => {
             const primaryInfo = primaryVenuesByPlaceId.get(primaryPlaceId);
             
-            alternatives.forEach((altVenue: Venue) => {
+            (alternatives as Venue[]).forEach((altVenue: Venue) => {
               markers.push({
                 id: `alternative-${altCount}`,
                 position: {
@@ -179,56 +178,100 @@ const ChatInterface = forwardRef(({
           console.log(`   Created ${altCount} alternative markers`);
         }
       }
-      else if (isRouteQuery && data.state?.finishParameters?.selected_venue_ids) {
-        const backendSelectedVenues = data.state.finishParameters.selected_venue_ids;
-        console.log('🗺️ Route mode: Creating ordered markers from backend selected_venue_ids');
+      // 🆕 FIX: Check isRouteQuery FIRST before falling to discovery mode
+      else if (isRouteQuery) {
+        console.log('🗺️ Route mode: Creating primary markers for route');
         
+        // Build venue lookup map
         const venuesByPlaceId = new Map<string, Venue>();
         data.venues.forEach((venue: Venue) => {
           venuesByPlaceId.set(venue.placeId, venue);
         });
 
-        // Create markers for PRIMARY venues with metadata
-        let primaryStopNumber = 1;
-        backendSelectedVenues.forEach((placeId) => {
-          if (placeId === 'user-location') {
-            return;
-          }
-          
-          const venue = venuesByPlaceId.get(placeId);
-          if (venue) {
-            markers.push({
-              id: `primary-${markers.length}`,
-              position: {
-                lat: venue.location.lat,
-                lng: venue.location.lng,
-              },
-              title: venue.name,
-              type: 'venue' as const,
-              data: venue,
-              metadata: {
-                isPrimary: true,
-                stopNumber: primaryStopNumber++
-              }
-            });
-          }
+        // Check if backend provided selected_venue_ids for ordering
+        const backendSelectedVenues = data.state?.finishParameters?.selected_venue_ids;
+        console.log('🔍 Debug routing:', {
+          hasState: !!data.state,
+          hasFinishParams: !!data.state?.finishParameters,
+          backendSelectedVenues,  
+          venuesFromData: data.venues?.map((v: Venue) => v.name)
         });
+        if (backendSelectedVenues && backendSelectedVenues.length > 0) {
+          // Use backend ordering
+          console.log('   Using backend selected_venue_ids for ordering');
+          let primaryStopNumber = 1;
+          backendSelectedVenues.forEach((placeId: string) => {
+            if (placeId === 'user-location') {
+              const userVenue = venuesByPlaceId.get(placeId);
+              if (userVenue?.location?.lat && userVenue?.location?.lng) {
+                markers.push({
+                  id: 'user-location',
+                  position: {
+                    lat: userVenue.location.lat,
+                    lng: userVenue.location.lng,
+                  },
+                  title: userVenue.name,
+                  type: 'venue' as const,
+                  data: userVenue,
+                  metadata: { isPrimary: true }
+                });
+              }
+              return;
+            }
+
+            const venue = venuesByPlaceId.get(placeId);
+            if (venue) {
+              markers.push({
+                id: `primary-${markers.length}`,
+                position: {
+                  lat: venue.location.lat,
+                  lng: venue.location.lng,
+                },
+                title: venue.name,
+                type: 'venue' as const,
+                data: venue,
+                metadata: {
+                  isPrimary: true,
+                  stopNumber: primaryStopNumber++
+                }
+              });
+            }
+          });
+        } else {
+          // 🆕 Use venues array directly (Gemini Grounding mode)
+          console.log('   Using venues array directly for route markers');
+          console.log('📦 Venues received in order:', data.venues.map((v: Venue) => v.name));  // ADD THIS
+
+          markers = data.venues.map((venue: Venue, idx: number) => ({
+            id: venue.placeId === 'user-location' ? 'user-location' : `primary-${idx}`,
+            position: {
+              lat: venue.location.lat,
+              lng: venue.location.lng,
+            },
+            title: venue.name,
+            type: 'venue' as const,
+            data: venue,
+            metadata: {
+              isPrimary: true,
+              stopNumber: venue.placeId === 'user-location' ? undefined : idx + 1
+            }
+          }));
+        }
 
         console.log(`   Created ${markers.length} primary markers`);
 
-        // Add markers for ALTERNATIVE venues with metadata
+        // Add markers for ALTERNATIVE venues
         if (data.alternativesMap && Object.keys(data.alternativesMap).length > 0) {
-          console.log('📍 Adding alternative venue markers...');
+          console.log('🔍 Adding alternative venue markers...');
           
           let altCount = 0;
           Object.entries(data.alternativesMap).forEach(([primaryPlaceId, alternatives]) => {
-            // Find primary venue info
             const primaryVenue = venuesByPlaceId.get(primaryPlaceId);
             const primaryMarker = markers.find(m => 
               m.metadata?.isPrimary && (m.data as Venue).placeId === primaryPlaceId
             );
             
-            alternatives.forEach((altVenue: Venue) => {
+            (alternatives as Venue[]).forEach((altVenue: Venue) => {
               markers.push({
                 id: `alternative-${altCount}`,
                 position: {
@@ -252,21 +295,29 @@ const ChatInterface = forwardRef(({
           
           console.log(`   Created ${altCount} alternative markers`);
         }
-        
-      } else {
+      } 
+      else {
+        // Discovery mode (non-route queries)
         console.log('🔍 Discovery mode: Creating markers from all results');
-        
+
+        const primaryVenuesByPlaceId = new Map<string, Venue>();
+        data.venues.forEach((venue: Venue) => {
+          if (venue.placeId) primaryVenuesByPlaceId.set(venue.placeId, venue);
+        });
+
+        const primaryMarkers = data.venues.map((venue: Venue, idx: number) => ({
+          id: `venue-${idx}`,
+          position: {
+            lat: venue.location.lat,
+            lng: venue.location.lng,
+          },
+          title: venue.name,
+          type: 'venue' as const,
+          data: venue,
+        }));
+
         markers = [
-          ...data.venues.map((venue: Venue, idx: number) => ({
-            id: `venue-${idx}`,
-            position: {
-              lat: venue.location.lat,
-              lng: venue.location.lng,
-            },
-            title: venue.name,
-            type: 'venue' as const,
-            data: venue,
-          })),
+          ...primaryMarkers,
           ...data.events.map((event: Event, idx: number) => ({
             id: `event-${idx}`,
             position: {
@@ -278,22 +329,46 @@ const ChatInterface = forwardRef(({
             data: event,
           })),
         ];
+
+        if (data.alternativesMap && Object.keys(data.alternativesMap).length > 0) {
+          console.log('Discovery mode: Adding alternative venue markers...');
+          let altCount = 0;
+          Object.entries(data.alternativesMap).forEach(([primaryPlaceId, alternatives]) => {
+            const primaryVenue = primaryVenuesByPlaceId.get(primaryPlaceId);
+            (alternatives as Venue[]).forEach((altVenue: Venue) => {
+              markers.push({
+                id: `alternative-${altCount}`,
+                position: {
+                  lat: altVenue.location.lat,
+                  lng: altVenue.location.lng,
+                },
+                title: altVenue.name,
+                type: 'venue' as const,
+                data: altVenue,
+                metadata: {
+                  isPrimary: false,
+                  isAlternative: true,
+                  primaryPlaceId: primaryPlaceId,
+                  primaryVenueName: primaryVenue?.name
+                }
+              });
+              altCount++;
+            });
+          });
+          console.log(`   Created ${altCount} alternative markers`);
+        }
       }
 
-      if (!isModification) {
+      // Handle user location marker for route queries
+      if (!isModification && isRouteQuery) {
         const originalPrompt = variables.prompt.toLowerCase();
         const mentionsUserLocation = /(my location|here|me|current location|where i am)/i.test(originalPrompt);
         
-        let userLocationAlreadyIncluded = false;
-        
-        if (userLocation && Number.isFinite(userLocation.lat) && Number.isFinite(userLocation.lng)) {
-          const result = isUserLocationInVenues(userLocation, data.venues);
-          userLocationAlreadyIncluded = result.isIncluded;
-        }
+        const userLocationMarkerExists = markers.some(m => m.id === 'user-location');
 
-        if (isRouteQuery && mentionsUserLocation && userLocation && 
+        if (mentionsUserLocation && userLocation && 
             Number.isFinite(userLocation.lat) && Number.isFinite(userLocation.lng) &&
-            !userLocationAlreadyIncluded) {
+            !userLocationMarkerExists) {
           
           const userMarker: MapMarker = {
             id: 'user-location',
@@ -322,8 +397,9 @@ const ChatInterface = forwardRef(({
   
       const routes: Route[] = [];
   
-      console.log(`✅ Total markers created: ${markers.length}`);
+      console.log(`✅ Total markers created: ${markers.length}, primary: ${markers.filter(m => m.id.startsWith('primary-')).length}`);
       onNewPlan(agentMessage, markers, routes, isRouteQuery, isModification);
+      // onNewPlan(agentMessage, markers, routes, isRouteQuery, isModification);
     },
     onError: (error: any) => {
       let errorMessage = 'Something went wrong. Please try again.';

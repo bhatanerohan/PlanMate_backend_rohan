@@ -1,0 +1,148 @@
+User Prompt: a day out in portland,maine with lunch spots give 7 tourist spots
+
+[2026-01-21T00:06:13.873Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T00:06:13.873Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-21T00:06:13.873Z] LOG    🎯 Must-have: 10
+[2026-01-21T00:06:13.874Z] LOG    ✨ Nice-to-have: 9
+[2026-01-21T00:06:13.875Z] LOG 📍 Location hint: Cape Elizabeth
+[2026-01-21T00:06:13.876Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-21T00:06:13.876Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T00:06:13.877Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T00:06:13.877Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T00:06:13.878Z] LOG    1. Searching "Portland Head Light" in "Cape Elizabeth"
+[2026-01-21T00:06:13.878Z] LOG 🔍 [Google Places] Text search: "Portland Head Light" in Cape Elizabeth
+[2026-01-21T00:06:13.884Z] LOG    2. Searching "Fort Williams Park" in "Cape Elizabeth"
+[2026-01-21T00:06:13.886Z] LOG 🔍 [Google Places] Text search: "Fort Williams Park" in Cape Elizabeth
+[2026-01-21T00:06:13.891Z] LOG    3. Searching "Portland Museum of Art" in "Downtown Portland"
+[2026-01-21T00:06:13.892Z] LOG 🔍 [Google Places] Text search: "Portland Museum of Art" in Downtown Portland
+[2026-01-21T00:06:13.900Z] LOG    4. Searching "Maine Historical Society and the Wadsworth-Longfellow House" in "Downtown Portland"
+[2026-01-21T00:06:13.902Z] LOG 🔍 [Google Places] Text search: "Maine Historical Society and the Wadsworth-Longfellow House" in Downtown Portland
+[2026-01-21T00:06:13.906Z] LOG    5. Searching "Eastern Promenade" in "East End Portland"
+[2026-01-21T00:06:13.908Z] LOG 🔍 [Google Places] Text search: "Eastern Promenade" in East End Portland
+[2026-01-21T00:06:13.915Z] LOG    6. Searching "Old Port" in "Old Port"
+[2026-01-21T00:06:13.917Z] LOG 🔍 [Google Places] Text search: "Old Port" in Old Port
+[2026-01-21T00:06:13.924Z] LOG    7. Searching "Bug Light Park" in "South Portland"
+[2026-01-21T00:06:13.927Z] LOG 🔍 [Google Places] Text search: "Bug Light Park" in South Portland
+[2026-01-21T00:06:13.934Z] LOG    8. Searching "Duckfat" in "Old Port / East Bayside"
+[2026-01-21T00:06:13.937Z] LOG 🔍 [Google Places] Text search: "Duckfat" in Old Port / East Bayside
+[2026-01-21T00:06:13.945Z] LOG    9. Searching "DiMillo's On the Water" in "Waterfront"
+[2026-01-21T00:06:13.947Z] LOG 🔍 [Google Places] Text search: "DiMillo's On the Water" in Waterfront
+[2026-01-21T00:06:13.954Z] LOG    10. Searching "Luke's Lobster Portland Pier" in "Waterfront"
+[2026-01-21T00:06:13.957Z] LOG 🔍 [Google Places] Text search: "Luke's Lobster Portland Pier" in Waterfront
+[2026-01-21T00:06:14.506Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:14.516Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:14.544Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:14.561Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:14.576Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:14.586Z] LOG    ✅ Eastern Promenade: Got description (99 chars)
+[2026-01-21T00:06:14.588Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:14.600Z] LOG    ✅ Fort Williams Park: Got description (98 chars)
+[2026-01-21T00:06:14.602Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:14.621Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:14.644Z] LOG    ✅ Duckfat: Got description (94 chars)
+[2026-01-21T00:06:14.648Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:14.652Z] LOG    ✅ Bug Light Park: Got description (96 chars)
+[2026-01-21T00:06:14.655Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:14.662Z] LOG    ⚠️  Old Port: No editorial summary available
+[2026-01-21T00:06:14.663Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:14.759Z] LOG    ✅ Luke's Lobster Portland Pier: Got description (96 chars)
+[2026-01-21T00:06:14.762Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:14.815Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:14.835Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:14.890Z] LOG    ✅ Maine Historical Society and the Wadsworth-Longfellow House: Got description (89 chars)
+[2026-01-21T00:06:14.891Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:14.917Z] LOG    ✅ Portland Head Light: Got description (100 chars)
+[2026-01-21T00:06:14.920Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:14.921Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:15.008Z] LOG    ✅ DiMillo's On the Water: Got description (97 chars)
+[2026-01-21T00:06:15.009Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:15.531Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:15.629Z] LOG    ✅ Portland Art Museum: Got description (100 chars)
+[2026-01-21T00:06:15.630Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:15.631Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1754ms
+[2026-01-21T00:06:15.631Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T00:06:15.631Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T00:06:15.837Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-21T00:06:15.839Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T00:06:15.840Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-21T00:06:15.841Z] LOG    1. Searching "Children's Museum & Theatre of Maine" in "Thompson's Point"
+[2026-01-21T00:06:15.841Z] LOG 🔍 [Google Places] Text search: "Children's Museum & Theatre of Maine" in Thompson's Point
+[2026-01-21T00:06:15.842Z] LOG    2. Searching "International Cryptozoology Museum" in "Thompson's Point"
+[2026-01-21T00:06:15.843Z] LOG 🔍 [Google Places] Text search: "International Cryptozoology Museum" in Thompson's Point
+[2026-01-21T00:06:15.843Z] LOG    3. Searching "Casco Bay Lines" in "Waterfront"
+[2026-01-21T00:06:15.844Z] LOG 🔍 [Google Places] Text search: "Casco Bay Lines" in Waterfront
+[2026-01-21T00:06:15.846Z] LOG    4. Searching "Spring Point Ledge Lighthouse" in "South Portland"
+[2026-01-21T00:06:15.846Z] LOG 🔍 [Google Places] Text search: "Spring Point Ledge Lighthouse" in South Portland
+[2026-01-21T00:06:15.847Z] LOG    5. Searching "Monument Square" in "Downtown Portland"
+[2026-01-21T00:06:15.848Z] LOG 🔍 [Google Places] Text search: "Monument Square" in Downtown Portland
+[2026-01-21T00:06:15.848Z] LOG    6. Searching "The Honey Paw" in "Old Port"
+[2026-01-21T00:06:15.849Z] LOG 🔍 [Google Places] Text search: "The Honey Paw" in Old Port
+[2026-01-21T00:06:15.849Z] LOG    7. Searching "Cheese Louise Portland" in "Old Port"
+[2026-01-21T00:06:15.850Z] LOG 🔍 [Google Places] Text search: "Cheese Louise Portland" in Old Port
+[2026-01-21T00:06:15.850Z] LOG    8. Searching "Western Promenade" in "West End Portland"
+[2026-01-21T00:06:15.853Z] LOG 🔍 [Google Places] Text search: "Western Promenade" in West End Portland
+[2026-01-21T00:06:15.854Z] LOG    9. Searching "Deering Oaks Park" in "Parkside Portland"
+[2026-01-21T00:06:15.855Z] LOG 🔍 [Google Places] Text search: "Deering Oaks Park" in Parkside Portland
+[2026-01-21T00:06:16.370Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:16.374Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:16.422Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:16.425Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:16.451Z] LOG    ✅ Spring Point Ledge Lighthouse: Got description (93 chars)
+[2026-01-21T00:06:16.453Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:16.457Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:16.478Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:16.479Z] LOG    ✅ Casco Bay Lines: Got description (95 chars)
+[2026-01-21T00:06:16.480Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:16.512Z] LOG    ✅ Western Promenade: Got description (96 chars)
+[2026-01-21T00:06:16.513Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:16.526Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:16.548Z] LOG    ⚠️  Deering Oaks Park: No editorial summary available
+[2026-01-21T00:06:16.549Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:16.592Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:16.598Z] LOG    ✅ Children's Museum & Theatre of Maine: Got description (98 chars)
+[2026-01-21T00:06:16.599Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:16.616Z] LOG    ✅ The Honey Paw: Got description (96 chars)
+[2026-01-21T00:06:16.617Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:16.618Z] LOG    ✅ International Cryptozoology Museum: Got description (100 chars)
+[2026-01-21T00:06:16.618Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:16.651Z] LOG    ⚠️  Monument Square: No editorial summary available
+[2026-01-21T00:06:16.653Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:16.854Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:06:16.926Z] LOG    ✅ Cheese Louise Portland: Got description (97 chars)
+[2026-01-21T00:06:16.929Z] LOG ✅ Found 1 places
+[2026-01-21T00:06:16.929Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 1089ms
+[2026-01-21T00:06:16.930Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T00:06:16.930Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-21T00:06:16.931Z] LOG    ✅ Portland Head Light → Portland Head Light (must_have)
+[2026-01-21T00:06:16.931Z] LOG    ✅ Fort Williams Park → Fort Williams Park (must_have)
+[2026-01-21T00:06:16.932Z] LOG    ✅ Portland Museum of Art → Portland Art Museum (must_have)
+[2026-01-21T00:06:16.932Z] LOG    ✅ Maine Historical Society and the Wadsworth-Longfellow House → Maine Historical Society and the Wadsworth-Longfellow House (must_have)
+[2026-01-21T00:06:16.932Z] LOG    ✅ Eastern Promenade → Eastern Promenade (must_have)
+[2026-01-21T00:06:16.933Z] LOG    ✅ Old Port → Old Port (must_have)
+[2026-01-21T00:06:16.933Z] LOG    ✅ Bug Light Park → Bug Light Park (must_have)
+[2026-01-21T00:06:16.934Z] LOG    ✅ Duckfat → Duckfat (must_have)
+[2026-01-21T00:06:16.934Z] LOG    ✅ DiMillo's On the Water → DiMillo's On the Water (must_have)
+[2026-01-21T00:06:16.935Z] LOG    ✅ Luke's Lobster Portland Pier → Luke's Lobster Portland Pier (must_have)
+[2026-01-21T00:06:16.935Z] LOG    ✅ Children's Museum & Theatre of Maine → Children's Museum & Theatre of Maine (nice_to_have)
+[2026-01-21T00:06:16.936Z] LOG    ✅ International Cryptozoology Museum → International Cryptozoology Museum (nice_to_have)
+[2026-01-21T00:06:16.936Z] LOG    ✅ Casco Bay Lines → Casco Bay Lines (nice_to_have)
+[2026-01-21T00:06:16.936Z] LOG    ✅ Spring Point Ledge Lighthouse → Spring Point Ledge Lighthouse (nice_to_have)
+[2026-01-21T00:06:16.937Z] LOG    ✅ Monument Square → Monument Square (nice_to_have)
+[2026-01-21T00:06:16.937Z] LOG    ✅ The Honey Paw → The Honey Paw (nice_to_have)
+[2026-01-21T00:06:16.937Z] LOG    ✅ Cheese Louise Portland → Cheese Louise Portland (nice_to_have)
+[2026-01-21T00:06:16.937Z] LOG    ✅ Western Promenade → Western Promenade (nice_to_have)
+[2026-01-21T00:06:16.938Z] LOG    ✅ Deering Oaks Park → Deering Oaks Park (nice_to_have)
+[2026-01-21T00:06:16.938Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T00:06:16.938Z] LOG    Total enriched: 19
+[2026-01-21T00:06:16.939Z] LOG    🎯 Must-have: 10
+[2026-01-21T00:06:16.939Z] LOG    ✨ Nice-to-have: 9
+[2026-01-21T00:06:16.940Z] LOG    ❌ Failed: 0
+[2026-01-21T00:06:16.941Z] LOG    ⏱️ Time: 3069ms
+
+--- Summary ---
+Enrichment completed

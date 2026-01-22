@@ -1,0 +1,152 @@
+User Prompt: give me a day out for tourist spots near marine drive in mumbai
+
+[2026-01-18T01:28:01.367Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-18T01:28:01.367Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-18T01:28:01.368Z] LOG    🎯 Must-have: 8
+[2026-01-18T01:28:01.368Z] LOG    ✨ Nice-to-have: 12
+[2026-01-18T01:28:01.369Z] LOG 📍 Location hint: mumbai
+[2026-01-18T01:28:01.369Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-18T01:28:01.370Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-18T01:28:01.370Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-18T01:28:01.370Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-18T01:28:01.371Z] LOG    1. Searching "Marine Drive" in "Nariman Point to Girgaon Chowpatty"
+[2026-01-18T01:28:01.371Z] LOG 🔍 [Google Places] Text search: "Marine Drive" in Nariman Point to Girgaon Chowpatty
+[2026-01-18T01:28:01.373Z] LOG    2. Searching "Gateway Of India Mumbai" in "Colaba"
+[2026-01-18T01:28:01.374Z] LOG 🔍 [Google Places] Text search: "Gateway Of India Mumbai" in Colaba
+[2026-01-18T01:28:01.377Z] LOG    3. Searching "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya" in "Fort / Kala Ghoda"
+[2026-01-18T01:28:01.379Z] LOG 🔍 [Google Places] Text search: "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya" in Fort / Kala Ghoda
+[2026-01-18T01:28:01.385Z] LOG    4. Searching "Hanging Gardens" in "Malabar Hill"
+[2026-01-18T01:28:01.388Z] LOG 🔍 [Google Places] Text search: "Hanging Gardens" in Malabar Hill
+[2026-01-18T01:28:01.393Z] LOG    5. Searching "Nariman Point, Mumbai" in "Nariman Point"
+[2026-01-18T01:28:01.394Z] LOG 🔍 [Google Places] Text search: "Nariman Point, Mumbai" in Nariman Point
+[2026-01-18T01:28:01.400Z] LOG    6. Searching "Girgaon Chowpatty Beach" in "Girgaon Chowpatty"
+[2026-01-18T01:28:01.402Z] LOG 🔍 [Google Places] Text search: "Girgaon Chowpatty Beach" in Girgaon Chowpatty
+[2026-01-18T01:28:01.406Z] LOG    7. Searching "Flora Fountain" in "Fort / Kala Ghoda"
+[2026-01-18T01:28:01.408Z] LOG 🔍 [Google Places] Text search: "Flora Fountain" in Fort / Kala Ghoda
+[2026-01-18T01:28:01.416Z] LOG    8. Searching "Rajabai Clock Tower" in "Fort / Churchgate"
+[2026-01-18T01:28:01.418Z] LOG 🔍 [Google Places] Text search: "Rajabai Clock Tower" in Fort / Churchgate
+[2026-01-18T01:28:01.425Z] LOG    9. Searching "Mani Bhavan Gandhi Sangrahalaya" in "Gamdevi"
+[2026-01-18T01:28:01.427Z] LOG 🔍 [Google Places] Text search: "Mani Bhavan Gandhi Sangrahalaya" in Gamdevi
+[2026-01-18T01:28:01.433Z] LOG    10. Searching "Oval Maidan" in "Churchgate / Fort"
+[2026-01-18T01:28:01.437Z] LOG 🔍 [Google Places] Text search: "Oval Maidan" in Churchgate / Fort
+[2026-01-18T01:28:01.916Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:01.969Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:01.981Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:01.990Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:02.002Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:02.010Z] LOG    ✅ Gateway Of India Mumbai: Got description (92 chars)
+[2026-01-18T01:28:02.014Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:02.031Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:02.039Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:02.068Z] LOG    ✅ Hanging Garden: Got description (99 chars)
+[2026-01-18T01:28:02.071Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:02.084Z] LOG    ✅ Rajabai Clock Tower: Got description (97 chars)
+[2026-01-18T01:28:02.087Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:02.091Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:02.098Z] LOG    ✅ Chhatrapati Shivaji Maharaj Vastu Sangrahalaya: Got description (99 chars)
+[2026-01-18T01:28:02.101Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:02.125Z] LOG    ⚠️  Nariman Point: No editorial summary available
+[2026-01-18T01:28:02.130Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:02.141Z] LOG    ✅ Oval Maidan: Got description (99 chars)
+[2026-01-18T01:28:02.144Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:02.188Z] LOG ⚠️  No results found
+[2026-01-18T01:28:02.195Z] LOG    ✅ Girgaon Chowpatty: Got description (91 chars)
+[2026-01-18T01:28:02.199Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:02.228Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:02.257Z] LOG    ✅ Mani Bhavan Gandhi Sangrahalaya: Got description (99 chars)
+[2026-01-18T01:28:02.261Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:02.379Z] LOG    ✅ Flora Fountain: Got description (87 chars)
+[2026-01-18T01:28:02.385Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:02.388Z] LOG ✅ Batch complete: 10/10 searches succeeded, 9 total venues found in 1018ms
+[2026-01-18T01:28:02.390Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-18T01:28:02.392Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-18T01:28:02.594Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-18T01:28:02.600Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-18T01:28:02.602Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-18T01:28:02.604Z] LOG    1. Searching "Jehangir Art Gallery" in "Kala Ghoda"
+[2026-01-18T01:28:02.605Z] LOG 🔍 [Google Places] Text search: "Jehangir Art Gallery" in Kala Ghoda
+[2026-01-18T01:28:02.607Z] LOG    2. Searching "Kala Ghoda Statue" in "Fort / Kala Ghoda"
+[2026-01-18T01:28:02.608Z] LOG 🔍 [Google Places] Text search: "Kala Ghoda Statue" in Fort / Kala Ghoda
+[2026-01-18T01:28:02.612Z] LOG    3. Searching "Wankhede Stadium" in "Churchgate"
+[2026-01-18T01:28:02.613Z] LOG 🔍 [Google Places] Text search: "Wankhede Stadium" in Churchgate
+[2026-01-18T01:28:02.618Z] LOG    4. Searching "Elephanta Caves" in "Elephanta Island"
+[2026-01-18T01:28:02.620Z] LOG 🔍 [Google Places] Text search: "Elephanta Caves" in Elephanta Island
+[2026-01-18T01:28:02.622Z] LOG    5. Searching "HIGH COURT OF BOMBAY" in "Fort / Churchgate"
+[2026-01-18T01:28:02.624Z] LOG 🔍 [Google Places] Text search: "HIGH COURT OF BOMBAY" in Fort / Churchgate
+[2026-01-18T01:28:02.626Z] LOG    6. Searching "Dr. Bhau Daji Lad Museum" in "Byculla"
+[2026-01-18T01:28:02.626Z] LOG 🔍 [Google Places] Text search: "Dr. Bhau Daji Lad Museum" in Byculla
+[2026-01-18T01:28:02.627Z] LOG    7. Searching "Sassoon Dock" in "Colaba"
+[2026-01-18T01:28:02.627Z] LOG 🔍 [Google Places] Text search: "Sassoon Dock" in Colaba
+[2026-01-18T01:28:02.630Z] LOG    8. Searching "Chhatrapati Shivaji Maharaj Terminus" in "Fort"
+[2026-01-18T01:28:02.632Z] LOG 🔍 [Google Places] Text search: "Chhatrapati Shivaji Maharaj Terminus" in Fort
+[2026-01-18T01:28:02.634Z] LOG    9. Searching "Prong's Lighthouse" in "Colaba"
+[2026-01-18T01:28:02.634Z] LOG 🔍 [Google Places] Text search: "Prong's Lighthouse" in Colaba
+[2026-01-18T01:28:02.636Z] LOG    10. Searching "Worli Fort" in "Worli"
+[2026-01-18T01:28:02.639Z] LOG 🔍 [Google Places] Text search: "Worli Fort" in Worli
+[2026-01-18T01:28:03.038Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:03.082Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:03.127Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:03.148Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:03.159Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:03.161Z] LOG    ✅ Sassoon Dock: Got description (94 chars)
+[2026-01-18T01:28:03.162Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:03.209Z] LOG    ✅ Elephanta Caves: Got description (91 chars)
+[2026-01-18T01:28:03.211Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:03.229Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:03.234Z] LOG    ⚠️  Prongs Lighthouse: No editorial summary available
+[2026-01-18T01:28:03.235Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:03.250Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:03.262Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:03.283Z] LOG    ✅ Worli Fort: Got description (89 chars)
+[2026-01-18T01:28:03.284Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:03.305Z] LOG    ✅ Jehangir Art Gallery: Got description (84 chars)
+[2026-01-18T01:28:03.307Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:03.332Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:03.353Z] LOG    ✅ Dr. Bhau Daji Lad Museum: Got description (99 chars)
+[2026-01-18T01:28:03.354Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:03.356Z] LOG    ⚠️  Wankhede Stadium: No editorial summary available
+[2026-01-18T01:28:03.356Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:03.415Z] LOG    ✅ Chhatrapati Shivaji Maharaj Terminus: Got description (92 chars)
+[2026-01-18T01:28:03.417Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:03.466Z] LOG    ✅ HIGH COURT OF BOMBAY: Got description (100 chars)
+[2026-01-18T01:28:03.468Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:03.587Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:28:03.737Z] LOG    ⚠️  Kala Ghoda Statue: No editorial summary available
+[2026-01-18T01:28:03.739Z] LOG ✅ Found 1 places
+[2026-01-18T01:28:03.740Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1138ms
+[2026-01-18T01:28:03.741Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-18T01:28:03.741Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-18T01:28:03.742Z] LOG    ⚠️ Marine Drive - not found in Google Places
+[2026-01-18T01:28:03.742Z] LOG    ✅ Gateway Of India Mumbai → Gateway Of India Mumbai (must_have)
+[2026-01-18T01:28:03.743Z] LOG    ✅ Chhatrapati Shivaji Maharaj Vastu Sangrahalaya → Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (must_have)
+[2026-01-18T01:28:03.743Z] LOG    ✅ Hanging Gardens → Hanging Garden (must_have)
+[2026-01-18T01:28:03.743Z] LOG    ✅ Nariman Point, Mumbai → Nariman Point (must_have)
+[2026-01-18T01:28:03.744Z] LOG    ✅ Girgaon Chowpatty Beach → Girgaon Chowpatty (must_have)
+[2026-01-18T01:28:03.744Z] LOG    ✅ Flora Fountain → Flora Fountain (must_have)
+[2026-01-18T01:28:03.745Z] LOG    ✅ Rajabai Clock Tower → Rajabai Clock Tower (must_have)
+[2026-01-18T01:28:03.745Z] LOG    ✅ Mani Bhavan Gandhi Sangrahalaya → Mani Bhavan Gandhi Sangrahalaya (nice_to_have)
+[2026-01-18T01:28:03.746Z] LOG    ✅ Oval Maidan → Oval Maidan (nice_to_have)
+[2026-01-18T01:28:03.746Z] LOG    ✅ Jehangir Art Gallery → Jehangir Art Gallery (nice_to_have)
+[2026-01-18T01:28:03.747Z] LOG    ✅ Kala Ghoda Statue → Kala Ghoda Statue (nice_to_have)
+[2026-01-18T01:28:03.747Z] LOG    ✅ Wankhede Stadium → Wankhede Stadium (nice_to_have)
+[2026-01-18T01:28:03.748Z] LOG    ✅ Elephanta Caves → Elephanta Caves (nice_to_have)
+[2026-01-18T01:28:03.751Z] LOG    ✅ HIGH COURT OF BOMBAY → HIGH COURT OF BOMBAY (nice_to_have)
+[2026-01-18T01:28:03.753Z] LOG    ✅ Dr. Bhau Daji Lad Museum → Dr. Bhau Daji Lad Museum (nice_to_have)
+[2026-01-18T01:28:03.753Z] LOG    ✅ Sassoon Dock → Sassoon Dock (nice_to_have)
+[2026-01-18T01:28:03.754Z] LOG    ✅ Chhatrapati Shivaji Maharaj Terminus → Chhatrapati Shivaji Maharaj Terminus (nice_to_have)
+[2026-01-18T01:28:03.754Z] LOG    ✅ Prong's Lighthouse → Prongs Lighthouse (nice_to_have)
+[2026-01-18T01:28:03.755Z] LOG    ✅ Worli Fort → Worli Fort (nice_to_have)
+[2026-01-18T01:28:03.755Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-18T01:28:03.756Z] LOG    Total enriched: 19
+[2026-01-18T01:28:03.756Z] LOG    🎯 Must-have: 7
+[2026-01-18T01:28:03.757Z] LOG    ✨ Nice-to-have: 12
+[2026-01-18T01:28:03.757Z] LOG    ❌ Failed: 1
+[2026-01-18T01:28:03.757Z] LOG    ⏱️ Time: 2391ms
+
+--- Summary ---
+Enrichment completed

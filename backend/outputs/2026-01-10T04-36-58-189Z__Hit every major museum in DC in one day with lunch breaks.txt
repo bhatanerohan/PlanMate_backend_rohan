@@ -1,0 +1,146 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-01-10T04:36:58.197Z] LOG 
+🌟 Gemini Grounding Agent starting...
+[2026-01-10T04:36:58.198Z] LOG 📝 User prompt: "Hit every major museum in DC in one day with lunch breaks"
+[2026-01-10T04:36:58.199Z] LOG 🔮 Calling Gemini with proper Maps grounding configuration...
+[2026-01-10T04:37:11.813Z] LOG {"sdkHttpResponse":{"headers":{"alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Sat, 10 Jan 2026 04:37:11 GMT","server":"scaffolding on HTTPServer2","server-timing":"gfet4t7; dur=13440","transfer-encoding":"chunked","vary":"Origin, X-Origin, Referer","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-xss-protection":"0"}},"candidates":[{"content":{"parts":[{"text":"{\n  \"plan\": {\n    \"type\": \"DC Museum Marathon with Lunch\",\n    \"total_stops\": 5,\n    \"estimated_duration\": \"Full day (8-10 hours)\",\n    \"travel_mode\": \"walking\",\n    \"theme\": \"Immersive journey through American history, natural wonders, art, and aviation on the National Mall\",\n    \"scale\": \"district\"\n  },\n  \"venues\": [\n    {\n      \"name\": \"Smithsonian National Museum of American History\",\n      \"description\": \"Explore the vast history of the United States through iconic artifacts like the Star-Spangled Banner and Julia Child's kitchen. It offers a comprehensive look at American culture and innovation.\",\n      \"category\": \"museum\",\n      \"reasoning\": \"A major Smithsonian museum offering a broad overview of American history, setting a good start for a diverse museum day.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Visitors love the engaging exhibits, historical artifacts, and the sheer breadth of American history covered.\",\n      \"general_location\": \"National Mall\"\n    },\n    {\n      \"name\": \"Smithsonian National Museum of Natural History\",\n      \"description\": \"Delve into the natural world with impressive exhibits ranging from dinosaur skeletons and ancient mammals to dazzling gems and minerals, including the Hope Diamond.\",\n      \"category\": \"museum\",\n      \"reasoning\": \"A highly-rated and popular museum with diverse appeal, conveniently located a short walk from the Museum of American History.\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Reviewers frequently praise the dinosaur exhibits, the Hall of Gems, and its appeal to all ages.\",\n      \"general_location\": \"National Mall\"\n    },\n    {\n      \"name\": \"Old Ebbitt Grill\",\n      \"description\": \"An iconic, historic tavern offering classic American cuisine, famous for its oyster specials and lively Victorian-style ambiance. It's a D.C. institution.\",\n      \"category\": \"restaurant\",\n      \"reasoning\": \"A well-regarded restaurant within a reasonable walking distance from the central National Mall museums, providing a substantial lunch break.\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Diners enjoy the classic American fare, raw bar, and the bustling atmosphere, often highlighting it as a quintessential D.C. experience.\",\n      \"general_location\": \"Downtown/Near National Mall\"\n    },\n    {\n      \"name\": \"National Gallery of Art\",\n      \"description\": \"Home to an extensive collection of European and American art, spanning from the Middle Ages to the present, housed in two distinct buildings connected by an underground concourse.\",\n      \"category\": \"museum\",\n      \"reasoning\": \"A premier art museum, offering a different cultural experience than the history and science museums, and it's located on the National Mall.\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Guests consistently praise the diverse collection, beautiful architecture, and the peaceful sculpture garden.\",\n      \"general_location\": \"National Mall\"\n    },\n    {\n      \"name\": \"Smithsonian's National Air and Space Museum\",\n      \"description\": \"Discover the wonders of flight and space exploration, featuring iconic aircraft and spacecraft, immersive exhibits, and a captivating look at human ingenuity.\",\n      \"category\": \"museum\",\n      \"reasoning\": \"One of the most visited museums in the world, it provides a unique and inspiring experience, concluding the day's diverse museum visits on the National Mall.\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Visitors are often amazed by the real aircraft and spacecraft on display, the engaging exhibits, and its family-friendly atmosphere.\",\n      \"general_location\": \"National Mall\"\n    }\n  ]\n}"}],"role":"model"},"finishReason":"STOP","groundingMetadata":{"groundingChunks":[{"maps":{"uri":"https://maps.google.com/?cid=12172341452544837531","title":"National Gallery of Art","placeId":"places/ChIJSYxSO5u3t4kRm4eyKw_Y7Kg"}},{"maps":{"uri":"https://maps.google.com/?cid=3255934381132097334","title":"International Spy Museum","placeId":"places/ChIJ7Y9_SpC3t4kRNidcpxFnLy0"}},{"maps":{"uri":"https://maps.google.com/?cid=3653007564333325802","title":"Smithsonian National Museum of American History","placeId":"places/ChIJx7K17Ji3t4kR6h3neQYXsjI"}},{"maps":{"uri":"https://maps.google.com/?cid=14406435510458217903","title":"Smithsonian National Museum of Natural History","placeId":"places/ChIJx7K17Ji3t4kRr3VvqMTw7cc"}},{"maps":{"uri":"https://maps.google.com/?cid=17935525282803673115","title":"Smithsonian's National Air and Space Museum","placeId":"places/ChIJISQme4O3t4kRG-iM3TfJ5_g"}},{"maps":{"uri":"https://maps.google.com/?cid=15703617889564503623","title":"Museum of Illusions Washington DC","placeId":"places/ChIJ9WjtKrW3t4kRRy7260R17tk"}},{"maps":{"uri":"https://maps.google.com/?cid=10953207117944925958","title":"National Museum of African American History and Culture","placeId":"places/ChIJF4Mpspi3t4kRBi9jWNebAZg"}},{"maps":{"uri":"https://maps.google.com/?cid=12736206029958293538","title":"Smithsonian National Postal Museum","placeId":"places/ChIJoX3lMSe4t4kRIijaqecXwLA"}},{"maps":{"uri":"https://maps.google.com/?cid=8345017615335562675","title":"United States Holocaust Memorial Museum","placeId":"places/ChIJZaAQK6C3t4kRsx10rk51z3M"}},{"maps":{"uri":"https://maps.google.com/?cid=3642716463521557505","title":"National Children's Museum","placeId":"places/ChIJDcAfqHawt4kRAWyr2VKHjTI"}},{"maps":{"uri":"https://maps.google.com/?cid=5198064166190079813","title":"National Building Museum","placeId":"places/ChIJc1s06I63t4kRRV9ykdE7I0g"}},{"maps":{"uri":"https://maps.google.com/?cid=8759725915833573729","title":"Renwick Gallery of the Smithsonian American Art Museum","placeId":"places/ChIJj2jfgLy3t4kRYSELN0_MkHk"}},{"maps":{"uri":"https://maps.google.com/?cid=1000244690688481304","title":"National Museum of the American Indian","placeId":"places/ChIJF-dY_IO3t4kRGBj1JD-V4Q0"}},{"maps":{"uri":"https://maps.google.com/?cid=3051024015965330844","title":"National Portrait Gallery","placeId":"places/ChIJldJnhJG3t4kRnJ3McC1qVyo"}},{"maps":{"uri":"https://maps.google.com/?cid=14289264818105172252","title":"Smithsonian American Art Museum","placeId":"places/ChIJldJnhJG3t4kRHEGl8KSqTcY"}},{"maps":{"uri":"https://maps.google.com/?cid=9507267733103441505","title":"National Museum of Asian Art","placeId":"places/ChIJjSN0Kpy3t4kRYfYpsKGZ8IM"}},{"maps":{"uri":"https://maps.google.com/?cid=6827285700353024247","title":"The Phillips Collection","placeId":"places/ChIJERCNwci3t4kR92ClBSxkv14"}},{"maps":{"uri":"https://maps.google.com/?cid=11414562510268537828","title":"Smithsonian National Zoological Park","placeId":"places/ChIJ3_DHHda3t4kR5BsMSyCsaJ4"}},{"maps":{"uri":"https://maps.google.com/?cid=3987066514536284238","title":"Museum of the Bible","placeId":"places/ChIJEZs38oG3t4kRTkDK3t7nVDc"}},{"maps":{"uri":"https://maps.google.com/?cid=12780778031221099176","title":"Steven F. Udvar-Hazy Center","placeId":"places/ChIJcyBkMutGtokRqMoMaOdxXrE"}},{"maps":{"uri":"https://maps.google.com/?cid=5007258029174684277","title":"Old Ebbitt Grill","placeId":"places/ChIJgRwXf723t4kRdfqt36VafUU"}},{"maps":{"uri":"https://maps.google.com/?cid=10761260883587269113","title":"Elephant & Castle","placeId":"places/ChIJm58UV5e3t4kR-YGGDcKtV5U"}},{"maps":{"uri":"https://maps.google.com/?cid=8745988836889349903","title":"Cuba Libre Restaurant & Rum Bar","placeId":"places/ChIJWbms0pK3t4kRD09SSIL-X3k"}},{"maps":{"uri":"https://maps.google.com/?cid=6197403260449266481","title":"MI VIDA","placeId":"places/ChIJWWfNzna3t4kRMRvtHG6ZAVY"}},{"maps":{"uri":"https://maps.google.com/?cid=15819698947355123589","title":"The Smith","placeId":"places/ChIJI2TrrZG3t4kRhR-5UmDcits"}},{"maps":{"uri":"https://maps.google.com/?cid=2029814468628198251","title":"Urban Roast","placeId":"places/ChIJ7_urgUS3t4kRazOIOoFZKxw"}},{"maps":{"uri":"https://maps.google.com/?cid=16209057991950496878","title":"Carmine's - Washington DC","placeId":"places/ChIJfzxy4Y-3t4kRbnTqSV0k8uA"}},{"maps":{"uri":"https://maps.google.com/?cid=9974250403010898994","title":"Proper 21 - F Street","placeId":"places/ChIJqz0eqpe3t4kRMuxCTOWna4o"}},{"maps":{"uri":"https://maps.google.com/?cid=18415056029899051407","title":"Kinfolk Southern Inspired Kitchen","placeId":"places/ChIJq2lXvhm3t4kRj1EMXeRrj_8"}},{"maps":{"uri":"https://maps.google.com/?cid=2777437723517360614","title":"La Grande Boucherie DC","placeId":"places/ChIJTzlOd6C3t4kR5pkF4ORwiyY"}},{"maps":{"uri":"https://maps.google.com/?cid=15530433296305103934","title":"The Hamilton","placeId":"places/ChIJ0zjVx5e3t4kRPiQqmswuh9c"}},{"maps":{"uri":"https://maps.google.com/?cid=2545393021479529830","title":"The Dubliner Restaurant","placeId":"places/ChIJkROMRie4t4kRZq0Li3cNUyM"}},{"maps":{"uri":"https://maps.google.com/?cid=10507122391918513025","title":"The Bazaar by José Andrés","placeId":"places/ChIJs0tsVZK3t4kRgQvbdSXM0JE"}},{"maps":{"uri":"https://maps.google.com/?cid=15323473404236892516","title":"Le Diplomate","placeId":"places/ChIJgYIki-m3t4kRZImvuN_pp9Q"}},{"maps":{"uri":"https://maps.google.com/?cid=6934727149518688246","title":"Filomena Ristorante","placeId":"places/ChIJPTqF_Uu2t4kR9o9RyZkZPWA"}},{"maps":{"uri":"https://maps.google.com/?cid=3518818176400928632","title":"OLIO E PIÙ","placeId":"places/ChIJMSwrjea3t4kReK-Q6Xxa1TA"}},{"maps":{"uri":"https://maps.google.com/?cid=5597927954677540483","title":"Café Riggs","placeId":"places/ChIJERjvIb23t4kRg6bI0NDVr00"}},{"maps":{"uri":"https://maps.google.com/?cid=14620952427981054753","title":"Ted's Bulletin - 14th Street","placeId":"places/ChIJkceyP-i3t4kRISOyo8QO6Mo"}},{"maps":{"uri":"https://maps.google.com/?cid=3777344850004343388","title":"Clyde's of Gallery Place","placeId":"places/ChIJX2DN_423t4kRXPqouiDTazQ"}},{"maps":{"uri":"https://maps.google.com/?cid=6823552040726384655","title":"The Roost","placeId":"places/ChIJP8jjaJu5t4kRD1DjpW0gsl4"}}],"groundingSupports":[{"segment":{"startIndex":542,"endIndex":608,"text":"It offers a comprehensive look at American culture and innovation."},"groundingChunkIndices":[0]},{"segment":{"startIndex":608,"endIndex":937,"text":"\",\n      \"category\": \"museum\",\n      \"reasoning\": \"A major Smithsonian museum offering a broad overview of American history, setting a good start for a diverse museum day.\",\n      \"rating\": 4.7,\n      \"reviewsSummary\": \"Visitors love the engaging exhibits, historical artifacts, and the sheer breadth of American history covered."},"groundingChunkIndices":[0]},{"segment":{"startIndex":2214,"endIndex":2528,"text":"\",\n      \"general_location\": \"Downtown/Near National Mall\"\n    },\n    {\n      \"name\": \"National Gallery of Art\",\n      \"description\": \"Home to an extensive collection of European and American art, spanning from the Middle Ages to the present, housed in two distinct buildings connected by an underground concourse."},"groundingChunkIndices":[1]},{"segment":{"startIndex":2528,"endIndex":2718,"text":"\",\n      \"category\": \"museum\",\n      \"reasoning\": \"A premier art museum, offering a different cultural experience than the history and science museums, and it's located on the National Mall."},"groundingChunkIndices":[1]},{"segment":{"startIndex":2718,"endIndex":2876,"text":"\",\n      \"rating\": 4.8,\n      \"reviewsSummary\": \"Guests consistently praise the diverse collection, beautiful architecture, and the peaceful sculpture garden."},"groundingChunkIndices":[1]},{"segment":{"startIndex":2876,"endIndex":3175,"text":"\",\n      \"general_location\": \"National Mall\"\n    },\n    {\n      \"name\": \"Smithsonian's National Air and Space Museum\",\n      \"description\": \"Discover the wonders of flight and space exploration, featuring iconic aircraft and spacecraft, immersive exhibits, and a captivating look at human ingenuity."},"groundingChunkIndices":[2]},{"segment":{"startIndex":3175,"endIndex":3383,"text":"\",\n      \"category\": \"museum\",\n      \"reasoning\": \"One of the most visited museums in the world, it provides a unique and inspiring experience, concluding the day's diverse museum visits on the National Mall."},"groundingChunkIndices":[2]},{"segment":{"startIndex":3383,"endIndex":3564,"text":"\",\n      \"rating\": 4.6,\n      \"reviewsSummary\": \"Visitors are often amazed by the real aircraft and spacecraft on display, the engaging exhibits, and its family-friendly atmosphere."},"groundingChunkIndices":[2]}],"webSearchQueries":["major museums in Washington DC","restaurants near National Mall Washington DC"]},"index":0}],"modelVersion":"gemini-2.5-flash","responseId":"d9dhaZrTL9C__uMP0t3N-Qo","usageMetadata":{"promptTokenCount":471,"candidatesTokenCount":862,"totalTokenCount":3754,"cachedContentTokenCount":17,"promptTokensDetails":[{"modality":"TEXT","tokenCount":471}],"cacheTokensDetails":[{"modality":"TEXT","tokenCount":17}],"toolUsePromptTokenCount":747,"toolUsePromptTokensDetails":[{"modality":"TEXT","tokenCount":747}],"thoughtsTokenCount":1674}}
+[2026-01-10T04:37:11.818Z] LOG ✅ Gemini response received
+[2026-01-10T04:37:11.820Z] LOG 📄 Response length: 3620 characters
+[2026-01-10T04:37:11.821Z] LOG 
+🔍 Grounding Metadata Analysis:
+[2026-01-10T04:37:11.822Z] LOG    candidate exists: true
+[2026-01-10T04:37:11.823Z] LOG    groundingMetadata exists: true
+[2026-01-10T04:37:11.824Z] LOG 📊 Grounding status: Maps=true, Search=false
+[2026-01-10T04:37:11.825Z] LOG 📍 Grounding chunks: 40 total
+[2026-01-10T04:37:11.825Z] LOG    1. [MAPS] National Gallery of Art
+[2026-01-10T04:37:11.826Z] LOG       placeId: places/ChIJSYxSO5u3t4kRm4eyKw_Y7Kg
+[2026-01-10T04:37:11.826Z] LOG       uri: https://maps.google.com/?cid=12172341452544837531
+[2026-01-10T04:37:11.827Z] LOG    2. [MAPS] International Spy Museum
+[2026-01-10T04:37:11.827Z] LOG       placeId: places/ChIJ7Y9_SpC3t4kRNidcpxFnLy0
+[2026-01-10T04:37:11.828Z] LOG       uri: https://maps.google.com/?cid=3255934381132097334
+[2026-01-10T04:37:11.829Z] LOG    3. [MAPS] Smithsonian National Museum of American History
+[2026-01-10T04:37:11.829Z] LOG       placeId: places/ChIJx7K17Ji3t4kR6h3neQYXsjI
+[2026-01-10T04:37:11.830Z] LOG       uri: https://maps.google.com/?cid=3653007564333325802
+[2026-01-10T04:37:11.831Z] LOG    4. [MAPS] Smithsonian National Museum of Natural History
+[2026-01-10T04:37:11.831Z] LOG       placeId: places/ChIJx7K17Ji3t4kRr3VvqMTw7cc
+[2026-01-10T04:37:11.832Z] LOG       uri: https://maps.google.com/?cid=14406435510458217903
+[2026-01-10T04:37:11.833Z] LOG    5. [MAPS] Smithsonian's National Air and Space Museum
+[2026-01-10T04:37:11.833Z] LOG       placeId: places/ChIJISQme4O3t4kRG-iM3TfJ5_g
+[2026-01-10T04:37:11.834Z] LOG       uri: https://maps.google.com/?cid=17935525282803673115
+[2026-01-10T04:37:11.834Z] LOG    6. [MAPS] Museum of Illusions Washington DC
+[2026-01-10T04:37:11.835Z] LOG       placeId: places/ChIJ9WjtKrW3t4kRRy7260R17tk
+[2026-01-10T04:37:11.836Z] LOG       uri: https://maps.google.com/?cid=15703617889564503623
+[2026-01-10T04:37:11.836Z] LOG    7. [MAPS] National Museum of African American History and Culture
+[2026-01-10T04:37:11.837Z] LOG       placeId: places/ChIJF4Mpspi3t4kRBi9jWNebAZg
+[2026-01-10T04:37:11.838Z] LOG       uri: https://maps.google.com/?cid=10953207117944925958
+[2026-01-10T04:37:11.838Z] LOG    8. [MAPS] Smithsonian National Postal Museum
+[2026-01-10T04:37:11.839Z] LOG       placeId: places/ChIJoX3lMSe4t4kRIijaqecXwLA
+[2026-01-10T04:37:11.839Z] LOG       uri: https://maps.google.com/?cid=12736206029958293538
+[2026-01-10T04:37:11.840Z] LOG    9. [MAPS] United States Holocaust Memorial Museum
+[2026-01-10T04:37:11.840Z] LOG       placeId: places/ChIJZaAQK6C3t4kRsx10rk51z3M
+[2026-01-10T04:37:11.841Z] LOG       uri: https://maps.google.com/?cid=8345017615335562675
+[2026-01-10T04:37:11.842Z] LOG    10. [MAPS] National Children's Museum
+[2026-01-10T04:37:11.842Z] LOG       placeId: places/ChIJDcAfqHawt4kRAWyr2VKHjTI
+[2026-01-10T04:37:11.842Z] LOG       uri: https://maps.google.com/?cid=3642716463521557505
+[2026-01-10T04:37:11.843Z] LOG    11. [MAPS] National Building Museum
+[2026-01-10T04:37:11.843Z] LOG       placeId: places/ChIJc1s06I63t4kRRV9ykdE7I0g
+[2026-01-10T04:37:11.843Z] LOG       uri: https://maps.google.com/?cid=5198064166190079813
+[2026-01-10T04:37:11.844Z] LOG    12. [MAPS] Renwick Gallery of the Smithsonian American Art Museum
+[2026-01-10T04:37:11.844Z] LOG       placeId: places/ChIJj2jfgLy3t4kRYSELN0_MkHk
+[2026-01-10T04:37:11.845Z] LOG       uri: https://maps.google.com/?cid=8759725915833573729
+[2026-01-10T04:37:11.845Z] LOG    13. [MAPS] National Museum of the American Indian
+[2026-01-10T04:37:11.846Z] LOG       placeId: places/ChIJF-dY_IO3t4kRGBj1JD-V4Q0
+[2026-01-10T04:37:11.846Z] LOG       uri: https://maps.google.com/?cid=1000244690688481304
+[2026-01-10T04:37:11.847Z] LOG    14. [MAPS] National Portrait Gallery
+[2026-01-10T04:37:11.848Z] LOG       placeId: places/ChIJldJnhJG3t4kRnJ3McC1qVyo
+[2026-01-10T04:37:11.848Z] LOG       uri: https://maps.google.com/?cid=3051024015965330844
+[2026-01-10T04:37:11.849Z] LOG    15. [MAPS] Smithsonian American Art Museum
+[2026-01-10T04:37:11.850Z] LOG       placeId: places/ChIJldJnhJG3t4kRHEGl8KSqTcY
+[2026-01-10T04:37:11.850Z] LOG       uri: https://maps.google.com/?cid=14289264818105172252
+[2026-01-10T04:37:11.850Z] LOG    16. [MAPS] National Museum of Asian Art
+[2026-01-10T04:37:11.852Z] LOG       placeId: places/ChIJjSN0Kpy3t4kRYfYpsKGZ8IM
+[2026-01-10T04:37:11.852Z] LOG       uri: https://maps.google.com/?cid=9507267733103441505
+[2026-01-10T04:37:11.853Z] LOG    17. [MAPS] The Phillips Collection
+[2026-01-10T04:37:11.854Z] LOG       placeId: places/ChIJERCNwci3t4kR92ClBSxkv14
+[2026-01-10T04:37:11.854Z] LOG       uri: https://maps.google.com/?cid=6827285700353024247
+[2026-01-10T04:37:11.855Z] LOG    18. [MAPS] Smithsonian National Zoological Park
+[2026-01-10T04:37:11.855Z] LOG       placeId: places/ChIJ3_DHHda3t4kR5BsMSyCsaJ4
+[2026-01-10T04:37:11.856Z] LOG       uri: https://maps.google.com/?cid=11414562510268537828
+[2026-01-10T04:37:11.857Z] LOG    19. [MAPS] Museum of the Bible
+[2026-01-10T04:37:11.857Z] LOG       placeId: places/ChIJEZs38oG3t4kRTkDK3t7nVDc
+[2026-01-10T04:37:11.858Z] LOG       uri: https://maps.google.com/?cid=3987066514536284238
+[2026-01-10T04:37:11.859Z] LOG    20. [MAPS] Steven F. Udvar-Hazy Center
+[2026-01-10T04:37:11.859Z] LOG       placeId: places/ChIJcyBkMutGtokRqMoMaOdxXrE
+[2026-01-10T04:37:11.860Z] LOG       uri: https://maps.google.com/?cid=12780778031221099176
+[2026-01-10T04:37:11.861Z] LOG    21. [MAPS] Old Ebbitt Grill
+[2026-01-10T04:37:11.861Z] LOG       placeId: places/ChIJgRwXf723t4kRdfqt36VafUU
+[2026-01-10T04:37:11.862Z] LOG       uri: https://maps.google.com/?cid=5007258029174684277
+[2026-01-10T04:37:11.863Z] LOG    22. [MAPS] Elephant & Castle
+[2026-01-10T04:37:11.863Z] LOG       placeId: places/ChIJm58UV5e3t4kR-YGGDcKtV5U
+[2026-01-10T04:37:11.864Z] LOG       uri: https://maps.google.com/?cid=10761260883587269113
+[2026-01-10T04:37:11.865Z] LOG    23. [MAPS] Cuba Libre Restaurant & Rum Bar
+[2026-01-10T04:37:11.866Z] LOG       placeId: places/ChIJWbms0pK3t4kRD09SSIL-X3k
+[2026-01-10T04:37:11.866Z] LOG       uri: https://maps.google.com/?cid=8745988836889349903
+[2026-01-10T04:37:11.867Z] LOG    24. [MAPS] MI VIDA
+[2026-01-10T04:37:11.867Z] LOG       placeId: places/ChIJWWfNzna3t4kRMRvtHG6ZAVY
+[2026-01-10T04:37:11.868Z] LOG       uri: https://maps.google.com/?cid=6197403260449266481
+[2026-01-10T04:37:11.869Z] LOG    25. [MAPS] The Smith
+[2026-01-10T04:37:11.869Z] LOG       placeId: places/ChIJI2TrrZG3t4kRhR-5UmDcits
+[2026-01-10T04:37:11.870Z] LOG       uri: https://maps.google.com/?cid=15819698947355123589
+[2026-01-10T04:37:11.871Z] LOG    26. [MAPS] Urban Roast
+[2026-01-10T04:37:11.872Z] LOG       placeId: places/ChIJ7_urgUS3t4kRazOIOoFZKxw
+[2026-01-10T04:37:11.873Z] LOG       uri: https://maps.google.com/?cid=2029814468628198251
+[2026-01-10T04:37:11.874Z] LOG    27. [MAPS] Carmine's - Washington DC
+[2026-01-10T04:37:11.874Z] LOG       placeId: places/ChIJfzxy4Y-3t4kRbnTqSV0k8uA
+[2026-01-10T04:37:11.875Z] LOG       uri: https://maps.google.com/?cid=16209057991950496878
+[2026-01-10T04:37:11.876Z] LOG    28. [MAPS] Proper 21 - F Street
+[2026-01-10T04:37:11.877Z] LOG       placeId: places/ChIJqz0eqpe3t4kRMuxCTOWna4o
+[2026-01-10T04:37:11.879Z] LOG       uri: https://maps.google.com/?cid=9974250403010898994
+[2026-01-10T04:37:11.880Z] LOG    29. [MAPS] Kinfolk Southern Inspired Kitchen
+[2026-01-10T04:37:11.882Z] LOG       placeId: places/ChIJq2lXvhm3t4kRj1EMXeRrj_8
+[2026-01-10T04:37:11.882Z] LOG       uri: https://maps.google.com/?cid=18415056029899051407
+[2026-01-10T04:37:11.883Z] LOG    30. [MAPS] La Grande Boucherie DC
+[2026-01-10T04:37:11.884Z] LOG       placeId: places/ChIJTzlOd6C3t4kR5pkF4ORwiyY
+[2026-01-10T04:37:11.884Z] LOG       uri: https://maps.google.com/?cid=2777437723517360614
+[2026-01-10T04:37:11.885Z] LOG    31. [MAPS] The Hamilton
+[2026-01-10T04:37:11.886Z] LOG       placeId: places/ChIJ0zjVx5e3t4kRPiQqmswuh9c
+[2026-01-10T04:37:11.886Z] LOG       uri: https://maps.google.com/?cid=15530433296305103934
+[2026-01-10T04:37:11.887Z] LOG    32. [MAPS] The Dubliner Restaurant
+[2026-01-10T04:37:11.888Z] LOG       placeId: places/ChIJkROMRie4t4kRZq0Li3cNUyM
+[2026-01-10T04:37:11.889Z] LOG       uri: https://maps.google.com/?cid=2545393021479529830
+[2026-01-10T04:37:11.890Z] LOG    33. [MAPS] The Bazaar by José Andrés
+[2026-01-10T04:37:11.890Z] LOG       placeId: places/ChIJs0tsVZK3t4kRgQvbdSXM0JE
+[2026-01-10T04:37:11.891Z] LOG       uri: https://maps.google.com/?cid=10507122391918513025
+[2026-01-10T04:37:11.892Z] LOG    34. [MAPS] Le Diplomate
+[2026-01-10T04:37:11.892Z] LOG       placeId: places/ChIJgYIki-m3t4kRZImvuN_pp9Q
+[2026-01-10T04:37:11.893Z] LOG       uri: https://maps.google.com/?cid=15323473404236892516
+[2026-01-10T04:37:11.894Z] LOG    35. [MAPS] Filomena Ristorante
+[2026-01-10T04:37:11.895Z] LOG       placeId: places/ChIJPTqF_Uu2t4kR9o9RyZkZPWA
+[2026-01-10T04:37:11.896Z] LOG       uri: https://maps.google.com/?cid=6934727149518688246
+[2026-01-10T04:37:11.896Z] LOG    36. [MAPS] OLIO E PIÙ
+[2026-01-10T04:37:11.897Z] LOG       placeId: places/ChIJMSwrjea3t4kReK-Q6Xxa1TA
+[2026-01-10T04:37:11.897Z] LOG       uri: https://maps.google.com/?cid=3518818176400928632
+[2026-01-10T04:37:11.898Z] LOG    37. [MAPS] Café Riggs
+[2026-01-10T04:37:11.899Z] LOG       placeId: places/ChIJERjvIb23t4kRg6bI0NDVr00
+[2026-01-10T04:37:11.899Z] LOG       uri: https://maps.google.com/?cid=5597927954677540483
+[2026-01-10T04:37:11.900Z] LOG    38. [MAPS] Ted's Bulletin - 14th Street
+[2026-01-10T04:37:11.901Z] LOG       placeId: places/ChIJkceyP-i3t4kRISOyo8QO6Mo
+[2026-01-10T04:37:11.901Z] LOG       uri: https://maps.google.com/?cid=14620952427981054753
+[2026-01-10T04:37:11.902Z] LOG    39. [MAPS] Clyde's of Gallery Place
+[2026-01-10T04:37:11.903Z] LOG       placeId: places/ChIJX2DN_423t4kRXPqouiDTazQ
+[2026-01-10T04:37:11.903Z] LOG       uri: https://maps.google.com/?cid=3777344850004343388
+[2026-01-10T04:37:11.904Z] LOG    40. [MAPS] The Roost
+[2026-01-10T04:37:11.904Z] LOG       placeId: places/ChIJP8jjaJu5t4kRD1DjpW0gsl4
+[2026-01-10T04:37:11.905Z] LOG       uri: https://maps.google.com/?cid=6823552040726384655
+[2026-01-10T04:37:11.906Z] WARN ⚠️ Could not parse JSON, attempting natural language parsing...
+[2026-01-10T04:37:11.907Z] ERROR ❌ Gemini Grounding Agent error: {}
+[2026-01-10T04:37:11.917Z] ERROR    Error message: COULD_NOT_PARSE_JSON
+[2026-01-10T04:37:11.920Z] ERROR    Error stack: Error: COULD_NOT_PARSE_JSON
+    at GeminiGroundingAgent.parseGeminiResponse (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\services\gemini-grounding-agent.ts:306:13)
+    at GeminiGroundingAgent.getRecommendations (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\services\gemini-grounding-agent.ts:152:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at <anonymous> (C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\routes\api.ts:179:28)
+
+--- Summary ---
+Completed

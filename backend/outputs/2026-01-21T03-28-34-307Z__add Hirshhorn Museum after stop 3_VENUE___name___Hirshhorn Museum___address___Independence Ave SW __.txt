@@ -1,0 +1,914 @@
+User Prompt: add Hirshhorn Museum after stop 3[VENUE:{"name":"Hirshhorn Museum","address":"Independence Ave SW &, 7th St SW, Washington, DC 20560, United States","location":{"lat":38.8881608,"lng":-77.0229682,"coordinates":"38.8881608,-77.0229682"},"rating":4.5,"priceLevel":"N/A","placeId":"ChIJhx1puJy3t4kRmXVaeMNjBDU","types":["tourist_attraction","museum","point_of_interest","establishment"],"description":"This modern and contemporary art museum, distinctive for its cylindrical architecture, features works from the mid-20th century to the present, alongside an outdoor sculpture garden. [15]","photos":["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AcnlKN18yYZr_3shVPFq70ngRHnpXJ3QRzRwvgsq--vtROQnc1P1KcOnGkdMpZhSvttkYFWSyxI6bWi6NkOVv1SFfI0PGQnnacmmVbUwYty3DGj7osuoDTQZG7Nh-BJLGQD2qPDJ1ekOv_rVRaTpDbq8UeGkFbu3BxXjC1wjUq6sO5_qYxqmjwWh5mOdPLnmoMTk7zmvQw8ZStanfFldV0f-OyF_pObXd5X2dzoOLlVUoGhKkxhwVx33i1qmfTZ3620yT8w2vZ9ErG5n_NNv7tPciOD___Wg6xKCvnIENRMy34GxB2l_axOiyov6TpUQHl2de2M0gcyQIeIBVu52cGxOs1xcLhbtuTlMvkhBXRjd2nOZkRcfzir7s64OJxZd3YFVUBtV9F7qmuKV3upU1LEO1CkdgKi4jxxK6n6LkVKipuxwEQWuvHf3Zy6DeCcYyl2sHjXutbfXC_PllsiE8WFKE1Jb_v1RxIYGpOhHS0pzWgr4xfv9Y5EJaioP4FkEUQA3M0P1zwEu_dIu65Z2QXXXt7vEMKL_cvZ52s2uNBmPuJ0fjYOo9rEQidab0XpS5_GnrlLbeTKs&key=AIzaSyD_WC6QvbEThRWY_jYnE3zQGosqXkXtMrM"]}]
+
+[2026-01-21T03:28:34.308Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-01-21T03:28:34.309Z] LOG 📝 User prompt: "add Hirshhorn Museum after stop 3[VENUE:{"name":"Hirshhorn Museum","address":"Independence Ave SW &, 7th St SW, Washington, DC 20560, United States","location":{"lat":38.8881608,"lng":-77.0229682,"coordinates":"38.8881608,-77.0229682"},"rating":4.5,"priceLevel":"N/A","placeId":"ChIJhx1puJy3t4kRmXVaeMNjBDU","types":["tourist_attraction","museum","point_of_interest","establishment"],"description":"This modern and contemporary art museum, distinctive for its cylindrical architecture, features works from the mid-20th century to the present, alongside an outdoor sculpture garden. [15]","photos":["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AcnlKN18yYZr_3shVPFq70ngRHnpXJ3QRzRwvgsq--vtROQnc1P1KcOnGkdMpZhSvttkYFWSyxI6bWi6NkOVv1SFfI0PGQnnacmmVbUwYty3DGj7osuoDTQZG7Nh-BJLGQD2qPDJ1ekOv_rVRaTpDbq8UeGkFbu3BxXjC1wjUq6sO5_qYxqmjwWh5mOdPLnmoMTk7zmvQw8ZStanfFldV0f-OyF_pObXd5X2dzoOLlVUoGhKkxhwVx33i1qmfTZ3620yT8w2vZ9ErG5n_NNv7tPciOD___Wg6xKCvnIENRMy34GxB2l_axOiyov6TpUQHl2de2M0gcyQIeIBVu52cGxOs1xcLhbtuTlMvkhBXRjd2nOZkRcfzir7s64OJxZd3YFVUBtV9F7qmuKV3upU1LEO1CkdgKi4jxxK6n6LkVKipuxwEQWuvHf3Zy6DeCcYyl2sHjXutbfXC_PllsiE8WFKE1Jb_v1RxIYGpOhHS0pzWgr4xfv9Y5EJaioP4FkEUQA3M0P1zwEu_dIu65Z2QXXXt7vEMKL_cvZ52s2uNBmPuJ0fjYOo9rEQidab0XpS5_GnrlLbeTKs&key=AIzaSyD_WC6QvbEThRWY_jYnE3zQGosqXkXtMrM"]}]"
+[2026-01-21T03:28:34.311Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:28:40.696Z] LOG POST /api/plan
+[2026-01-21T03:28:40.697Z] LOG 
+================================================================================
+[2026-01-21T03:28:40.698Z] LOG 📥 Received: "add Hirshhorn Museum after stop 3[VENUE:{"name":"Hirshhorn Museum","address":"Independence Ave SW &, 7th St SW, Washington, DC 20560, United States","location":{"lat":38.8881608,"lng":-77.0229682,"coordinates":"38.8881608,-77.0229682"},"rating":4.5,"priceLevel":"N/A","placeId":"ChIJhx1puJy3t4kRmXVaeMNjBDU","types":["tourist_attraction","museum","point_of_interest","establishment"],"description":"This modern and contemporary art museum, distinctive for its cylindrical architecture, features works from the mid-20th century to the present, alongside an outdoor sculpture garden. [15]","photos":["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AcnlKN18yYZr_3shVPFq70ngRHnpXJ3QRzRwvgsq--vtROQnc1P1KcOnGkdMpZhSvttkYFWSyxI6bWi6NkOVv1SFfI0PGQnnacmmVbUwYty3DGj7osuoDTQZG7Nh-BJLGQD2qPDJ1ekOv_rVRaTpDbq8UeGkFbu3BxXjC1wjUq6sO5_qYxqmjwWh5mOdPLnmoMTk7zmvQw8ZStanfFldV0f-OyF_pObXd5X2dzoOLlVUoGhKkxhwVx33i1qmfTZ3620yT8w2vZ9ErG5n_NNv7tPciOD___Wg6xKCvnIENRMy34GxB2l_axOiyov6TpUQHl2de2M0gcyQIeIBVu52cGxOs1xcLhbtuTlMvkhBXRjd2nOZkRcfzir7s64OJxZd3YFVUBtV9F7qmuKV3upU1LEO1CkdgKi4jxxK6n6LkVKipuxwEQWuvHf3Zy6DeCcYyl2sHjXutbfXC_PllsiE8WFKE1Jb_v1RxIYGpOhHS0pzWgr4xfv9Y5EJaioP4FkEUQA3M0P1zwEu_dIu65Z2QXXXt7vEMKL_cvZ52s2uNBmPuJ0fjYOo9rEQidab0XpS5_GnrlLbeTKs&key=AIzaSyD_WC6QvbEThRWY_jYnE3zQGosqXkXtMrM"]}]"
+[2026-01-21T03:28:40.698Z] LOG 📋 Current itinerary: 5 venues
+[2026-01-21T03:28:40.699Z] LOG ================================================================================
+[2026-01-21T03:28:40.699Z] LOG 
+🔍 Classifying intent...
+[2026-01-21T03:28:40.700Z] LOG 🛤️ Corridor pattern detected, forcing Gemini routing
+[2026-01-21T03:28:42.062Z] LOG 🛤️ Overriding to Gemini for corridor query
+[2026-01-21T03:28:42.064Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"gemini","queryType":"itinerary_modification","reasoning":"The user wants to add a venue to their existing itinerary, which is a modification request. [Corridor pattern detected - routed to Gemini]","useGeminiGrounding":true,"hasCurrentItinerary":true,"corridorDetected":true}
+[2026-01-21T03:28:42.064Z] LOG 
+⚡ NEW CANDIDATE FLOW: Gemini → Enrich All → Venue Selector → Mapbox
+[2026-01-21T03:28:42.065Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-01-21T03:28:42.065Z] LOG 
+🔍 STEP 2: Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:28:42.066Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-01-21T03:28:42.067Z] LOG 📝 User prompt: "add Hirshhorn Museum after stop 3[VENUE:{"name":"Hirshhorn Museum","address":"Independence Ave SW &, 7th St SW, Washington, DC 20560, United States","location":{"lat":38.8881608,"lng":-77.0229682,"coordinates":"38.8881608,-77.0229682"},"rating":4.5,"priceLevel":"N/A","placeId":"ChIJhx1puJy3t4kRmXVaeMNjBDU","types":["tourist_attraction","museum","point_of_interest","establishment"],"description":"This modern and contemporary art museum, distinctive for its cylindrical architecture, features works from the mid-20th century to the present, alongside an outdoor sculpture garden. [15]","photos":["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AcnlKN18yYZr_3shVPFq70ngRHnpXJ3QRzRwvgsq--vtROQnc1P1KcOnGkdMpZhSvttkYFWSyxI6bWi6NkOVv1SFfI0PGQnnacmmVbUwYty3DGj7osuoDTQZG7Nh-BJLGQD2qPDJ1ekOv_rVRaTpDbq8UeGkFbu3BxXjC1wjUq6sO5_qYxqmjwWh5mOdPLnmoMTk7zmvQw8ZStanfFldV0f-OyF_pObXd5X2dzoOLlVUoGhKkxhwVx33i1qmfTZ3620yT8w2vZ9ErG5n_NNv7tPciOD___Wg6xKCvnIENRMy34GxB2l_axOiyov6TpUQHl2de2M0gcyQIeIBVu52cGxOs1xcLhbtuTlMvkhBXRjd2nOZkRcfzir7s64OJxZd3YFVUBtV9F7qmuKV3upU1LEO1CkdgKi4jxxK6n6LkVKipuxwEQWuvHf3Zy6DeCcYyl2sHjXutbfXC_PllsiE8WFKE1Jb_v1RxIYGpOhHS0pzWgr4xfv9Y5EJaioP4FkEUQA3M0P1zwEu_dIu65Z2QXXXt7vEMKL_cvZ52s2uNBmPuJ0fjYOo9rEQidab0XpS5_GnrlLbeTKs&key=AIzaSyD_WC6QvbEThRWY_jYnE3zQGosqXkXtMrM"]}]"
+[2026-01-21T03:28:42.067Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:29:15.924Z] LOG ✅ Gemini response received
+[2026-01-21T03:29:15.925Z] LOG 📄 Response length: 12035 characters
+[2026-01-21T03:29:15.926Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-01-21T03:29:15.926Z] LOG 📍 Grounding chunks: 80 sources
+[2026-01-21T03:29:15.927Z] LOG    📊 Parsed: 7 must_have, 12 nice_to_have
+[2026-01-21T03:29:15.928Z] LOG 
+✨ Parsed 19 CANDIDATES:
+[2026-01-21T03:29:15.929Z] LOG    🎯 Must-have: 7
+[2026-01-21T03:29:15.929Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T03:29:15.930Z] LOG 📋 Plan: Cultural & Museum Tour, 5 target stops
+
+--- Summary ---
+Completed
+[2026-01-21T03:29:20.682Z] LOG    ✅ Gemini returned 19 candidates
+[2026-01-21T03:29:20.682Z] LOG    🎯 Must-have: 7
+[2026-01-21T03:29:20.682Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T03:29:20.683Z] LOG 
+📍 STEP 3: Enriching ALL candidates via Google Places...
+[2026-01-21T03:29:20.684Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T03:29:20.684Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-21T03:29:20.685Z] LOG    🎯 Must-have: 7
+[2026-01-21T03:29:20.685Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T03:29:20.685Z] LOG 📍 Location hint: National Mall
+[2026-01-21T03:29:20.686Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-21T03:29:20.686Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T03:29:20.687Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T03:29:20.687Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T03:29:20.688Z] LOG    1. Searching "Hirshhorn Museum" in "National Mall"
+[2026-01-21T03:29:20.688Z] LOG 🔍 [Google Places] Text search: "Hirshhorn Museum" in National Mall
+[2026-01-21T03:29:20.689Z] LOG    2. Searching "Smithsonian National Museum of Natural History" in "National Mall"
+[2026-01-21T03:29:20.690Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of Natural History" in National Mall
+[2026-01-21T03:29:20.691Z] LOG    3. Searching "Smithsonian's National Air and Space Museum" in "National Mall"
+[2026-01-21T03:29:20.692Z] LOG 🔍 [Google Places] Text search: "Smithsonian's National Air and Space Museum" in National Mall
+[2026-01-21T03:29:20.695Z] LOG    4. Searching "National Gallery of Art" in "National Mall"
+[2026-01-21T03:29:20.697Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in National Mall
+[2026-01-21T03:29:20.698Z] LOG    5. Searching "Smithsonian National Museum of American History" in "National Mall"
+[2026-01-21T03:29:20.698Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of American History" in National Mall
+[2026-01-21T03:29:20.699Z] LOG    6. Searching "National Museum of African American History and Culture" in "National Mall"
+[2026-01-21T03:29:20.699Z] LOG 🔍 [Google Places] Text search: "National Museum of African American History and Culture" in National Mall
+[2026-01-21T03:29:20.701Z] LOG    7. Searching "International Spy Museum" in "Southwest Washington"
+[2026-01-21T03:29:20.701Z] LOG 🔍 [Google Places] Text search: "International Spy Museum" in Southwest Washington
+[2026-01-21T03:29:20.703Z] LOG    8. Searching "Hirshhorn Sculpture Garden" in "National Mall"
+[2026-01-21T03:29:20.704Z] LOG 🔍 [Google Places] Text search: "Hirshhorn Sculpture Garden" in National Mall
+[2026-01-21T03:29:20.706Z] LOG    9. Searching "National Mall" in "National Mall"
+[2026-01-21T03:29:20.707Z] LOG 🔍 [Google Places] Text search: "National Mall" in National Mall
+[2026-01-21T03:29:20.708Z] LOG    10. Searching "Washington Monument" in "National Mall"
+[2026-01-21T03:29:20.708Z] LOG 🔍 [Google Places] Text search: "Washington Monument" in National Mall
+[2026-01-21T03:29:20.766Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.768Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.769Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.771Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.772Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.778Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.780Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.785Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.812Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.829Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-21T03:29:20.830Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.831Z] LOG    ⚠️  Hirshhorn Sculpture Garden: No editorial summary available
+[2026-01-21T03:29:20.832Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.836Z] LOG    ✅ Smithsonian National Museum of American History: Got description (99 chars)
+[2026-01-21T03:29:20.838Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.840Z] LOG    ✅ National Museum of African American History and Culture: Got description (97 chars)
+[2026-01-21T03:29:20.841Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.842Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-01-21T03:29:20.843Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.844Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-21T03:29:20.845Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.854Z] LOG    ✅ Hirshhorn Museum: Got description (99 chars)
+[2026-01-21T03:29:20.855Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.860Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-21T03:29:20.861Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.888Z] LOG    ✅ National Mall: Got description (97 chars)
+[2026-01-21T03:29:20.889Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.271Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.323Z] LOG    ✅ National Mall: Got description (97 chars)
+[2026-01-21T03:29:21.324Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.325Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 637ms
+[2026-01-21T03:29:21.325Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T03:29:21.326Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T03:29:21.531Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-21T03:29:21.532Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T03:29:21.532Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-21T03:29:21.533Z] LOG    1. Searching "Lincoln Memorial" in "National Mall"
+[2026-01-21T03:29:21.534Z] LOG 🔍 [Google Places] Text search: "Lincoln Memorial" in National Mall
+[2026-01-21T03:29:21.535Z] LOG    2. Searching "United States Botanic Garden" in "Capitol Hill"
+[2026-01-21T03:29:21.535Z] LOG 🔍 [Google Places] Text search: "United States Botanic Garden" in Capitol Hill
+[2026-01-21T03:29:21.536Z] LOG    3. Searching "The Wharf DC" in "Southwest Waterfront"
+[2026-01-21T03:29:21.537Z] LOG 🔍 [Google Places] Text search: "The Wharf DC" in Southwest Waterfront
+[2026-01-21T03:29:21.537Z] LOG    4. Searching "National Portrait Gallery" in "Penn Quarter"
+[2026-01-21T03:29:21.538Z] LOG 🔍 [Google Places] Text search: "National Portrait Gallery" in Penn Quarter
+[2026-01-21T03:29:21.539Z] LOG    5. Searching "National Museum of Asian Art" in "National Mall"
+[2026-01-21T03:29:21.539Z] LOG 🔍 [Google Places] Text search: "National Museum of Asian Art" in National Mall
+[2026-01-21T03:29:21.540Z] LOG    6. Searching "Museum of Illusions Washington DC" in "Penn Quarter"
+[2026-01-21T03:29:21.540Z] LOG 🔍 [Google Places] Text search: "Museum of Illusions Washington DC" in Penn Quarter
+[2026-01-21T03:29:21.541Z] LOG    7. Searching "National Building Museum" in "Penn Quarter"
+[2026-01-21T03:29:21.541Z] LOG 🔍 [Google Places] Text search: "National Building Museum" in Penn Quarter
+[2026-01-21T03:29:21.542Z] LOG    8. Searching "Meridian Hill Park" in "Columbia Heights"
+[2026-01-21T03:29:21.543Z] LOG 🔍 [Google Places] Text search: "Meridian Hill Park" in Columbia Heights
+[2026-01-21T03:29:21.544Z] LOG    9. Searching "Tidal Basin" in "National Mall"
+[2026-01-21T03:29:21.545Z] LOG 🔍 [Google Places] Text search: "Tidal Basin" in National Mall
+[2026-01-21T03:29:21.598Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.600Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.614Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.620Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.671Z] LOG    ✅ Lincoln Memorial: Got description (100 chars)
+[2026-01-21T03:29:21.673Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.676Z] LOG    ✅ National Portrait Gallery: Got description (96 chars)
+[2026-01-21T03:29:21.677Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.678Z] LOG    ✅ United States Botanic Garden: Got description (99 chars)
+[2026-01-21T03:29:21.679Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.680Z] LOG    ⚠️  The Wharf DC: No editorial summary available
+[2026-01-21T03:29:21.681Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.898Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.945Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.972Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.992Z] LOG    ✅ National Museum of Asian Art: Got description (84 chars)
+[2026-01-21T03:29:21.994Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:22.019Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:22.021Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2026-01-21T03:29:22.022Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:22.055Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:22.058Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-21T03:29:22.058Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:22.144Z] LOG    ⚠️  Tidal Basin: No editorial summary available
+[2026-01-21T03:29:22.145Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:22.173Z] LOG    ✅ Meridian Hill Park: Got description (92 chars)
+[2026-01-21T03:29:22.174Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:22.175Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 643ms
+[2026-01-21T03:29:22.176Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T03:29:22.177Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-21T03:29:22.177Z] LOG    ✅ Hirshhorn Museum → Hirshhorn Museum (must_have)
+[2026-01-21T03:29:22.178Z] LOG    ✅ Smithsonian National Museum of Natural History → Smithsonian National Museum of Natural History (must_have)
+[2026-01-21T03:29:22.179Z] LOG    ✅ Smithsonian's National Air and Space Museum → Smithsonian's National Air and Space Museum (must_have)
+[2026-01-21T03:29:22.179Z] LOG    ✅ National Gallery of Art → National Gallery of Art (must_have)
+[2026-01-21T03:29:22.180Z] LOG    ✅ Smithsonian National Museum of American History → Smithsonian National Museum of American History (must_have)
+[2026-01-21T03:29:22.181Z] LOG    ✅ National Museum of African American History and Culture → National Museum of African American History and Culture (must_have)
+[2026-01-21T03:29:22.182Z] LOG    ✅ International Spy Museum → International Spy Museum (must_have)
+[2026-01-21T03:29:22.183Z] LOG    ✅ Hirshhorn Sculpture Garden → Hirshhorn Sculpture Garden (nice_to_have)
+[2026-01-21T03:29:22.184Z] LOG    ✅ National Mall → National Mall (nice_to_have)
+[2026-01-21T03:29:22.184Z] LOG    ✅ Washington Monument → National Mall (nice_to_have)
+[2026-01-21T03:29:22.185Z] LOG    ✅ Lincoln Memorial → Lincoln Memorial (nice_to_have)
+[2026-01-21T03:29:22.185Z] LOG    ✅ United States Botanic Garden → United States Botanic Garden (nice_to_have)
+[2026-01-21T03:29:22.186Z] LOG    ✅ The Wharf DC → The Wharf DC (nice_to_have)
+[2026-01-21T03:29:22.186Z] LOG    ✅ National Portrait Gallery → National Portrait Gallery (nice_to_have)
+[2026-01-21T03:29:22.187Z] LOG    ✅ National Museum of Asian Art → National Museum of Asian Art (nice_to_have)
+[2026-01-21T03:29:22.187Z] LOG    ✅ Museum of Illusions Washington DC → Museum of Illusions Washington DC (nice_to_have)
+[2026-01-21T03:29:22.188Z] LOG    ✅ National Building Museum → National Building Museum (nice_to_have)
+[2026-01-21T03:29:22.189Z] LOG    ✅ Meridian Hill Park → Meridian Hill Park (nice_to_have)
+[2026-01-21T03:29:22.189Z] LOG    ✅ Tidal Basin → Tidal Basin (nice_to_have)
+[2026-01-21T03:29:22.190Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T03:29:22.191Z] LOG    Total enriched: 19
+[2026-01-21T03:29:22.192Z] LOG    🎯 Must-have: 7
+[2026-01-21T03:29:22.193Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T03:29:22.193Z] LOG    ❌ Failed: 0
+[2026-01-21T03:29:22.194Z] LOG    ⏱️ Time: 1511ms
+[2026-01-21T03:29:22.194Z] LOG    ✅ Enriched 19 candidates
+[2026-01-21T03:29:22.195Z] LOG    🎯 Must-have found: 7
+[2026-01-21T03:29:22.195Z] LOG    ✨ Nice-to-have found: 12
+[2026-01-21T03:29:22.195Z] LOG 
+🎯 STEP 4: Selecting optimal venues...
+[2026-01-21T03:29:22.196Z] LOG 
+🔍 CORRIDOR DETECTION: Analyzing query...
+[2026-01-21T03:29:22.196Z] LOG    Query: "add Hirshhorn Museum after stop 3[VENUE:{"name":"Hirshhorn Museum","address":"Independence Ave SW &, 7th St SW, Washington, DC 20560, United States","location":{"lat":38.8881608,"lng":-77.0229682,"coordinates":"38.8881608,-77.0229682"},"rating":4.5,"priceLevel":"N/A","placeId":"ChIJhx1puJy3t4kRmXVaeMNjBDU","types":["tourist_attraction","museum","point_of_interest","establishment"],"description":"This modern and contemporary art museum, distinctive for its cylindrical architecture, features works from the mid-20th century to the present, alongside an outdoor sculpture garden. [15]","photos":["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AcnlKN18yYZr_3shVPFq70ngRHnpXJ3QRzRwvgsq--vtROQnc1P1KcOnGkdMpZhSvttkYFWSyxI6bWi6NkOVv1SFfI0PGQnnacmmVbUwYty3DGj7osuoDTQZG7Nh-BJLGQD2qPDJ1ekOv_rVRaTpDbq8UeGkFbu3BxXjC1wjUq6sO5_qYxqmjwWh5mOdPLnmoMTk7zmvQw8ZStanfFldV0f-OyF_pObXd5X2dzoOLlVUoGhKkxhwVx33i1qmfTZ3620yT8w2vZ9ErG5n_NNv7tPciOD___Wg6xKCvnIENRMy34GxB2l_axOiyov6TpUQHl2de2M0gcyQIeIBVu52cGxOs1xcLhbtuTlMvkhBXRjd2nOZkRcfzir7s64OJxZd3YFVUBtV9F7qmuKV3upU1LEO1CkdgKi4jxxK6n6LkVKipuxwEQWuvHf3Zy6DeCcYyl2sHjXutbfXC_PllsiE8WFKE1Jb_v1RxIYGpOhHS0pzWgr4xfv9Y5EJaioP4FkEUQA3M0P1zwEu_dIu65Z2QXXXt7vEMKL_cvZ52s2uNBmPuJ0fjYOo9rEQidab0XpS5_GnrlLbeTKs&key=AIzaSyD_WC6QvbEThRWY_jYnE3zQGosqXkXtMrM"]}]"
+[2026-01-21T03:29:22.197Z] LOG    ℹ️ No corridor pattern, using cluster mode
+[2026-01-21T03:29:22.197Z] LOG    📍 Mode: CLUSTER
+[2026-01-21T03:29:22.198Z] LOG 
+🔍 INTENT FILTER: Analyzing user intent...
+[2026-01-21T03:29:23.370Z] LOG    Focused query: undefined
+[2026-01-21T03:29:23.371Z] LOG    Allowed categories: ALL
+[2026-01-21T03:29:23.373Z] LOG    Reasoning: User named a specific venue to add to their route.
+[2026-01-21T03:29:23.374Z] LOG    ✅ Exploratory query - keeping all candidates
+[2026-01-21T03:29:23.375Z] LOG 
+🎯 VENUE SELECTOR: Starting geographic optimization
+[2026-01-21T03:29:23.377Z] LOG    Input: 19 candidates
+[2026-01-21T03:29:23.378Z] LOG    Target: 5 venues
+[2026-01-21T03:29:23.378Z] LOG    🎯 Must-haves available: 7
+[2026-01-21T03:29:23.379Z] LOG    ✨ Nice-to-haves available: 12
+[2026-01-21T03:29:23.379Z] LOG 
+   📍 Selected 3 must-haves:
+[2026-01-21T03:29:23.379Z] LOG       - Smithsonian National Museum of American History
+[2026-01-21T03:29:23.380Z] LOG       - National Museum of African American History and Culture
+[2026-01-21T03:29:23.380Z] LOG       - Smithsonian National Museum of Natural History
+[2026-01-21T03:29:23.380Z] LOG    📍 Cluster center: (38.8912, -77.0296)
+[2026-01-21T03:29:23.381Z] LOG 
+   ✨ Selected 2 nice-to-haves:
+[2026-01-21T03:29:23.381Z] LOG       - National Museum of Asian Art (0.39km from center)
+[2026-01-21T03:29:23.381Z] LOG       - Hirshhorn Sculpture Garden (0.62km from center)
+[2026-01-21T03:29:23.382Z] LOG 
+   ✅ SELECTION COMPLETE
+[2026-01-21T03:29:23.382Z] LOG    Total selected: 5
+[2026-01-21T03:29:23.382Z] LOG    Cluster radius: 0.62km
+[2026-01-21T03:29:23.382Z] LOG    🔄 Alternatives: 11 total
+[2026-01-21T03:29:23.383Z] LOG    Selected 3 core venues + 2 complementary stops. Route is walkable (0.62km radius).
+[2026-01-21T03:29:23.383Z] LOG    ✅ Selected 5 venues
+[2026-01-21T03:29:23.383Z] LOG    📍 Cluster radius: 0.62km
+[2026-01-21T03:29:23.383Z] LOG 
+🗺️ STEP 5: Optimizing route order...
+[2026-01-21T03:29:23.384Z] WARN    ⚠️ Route optimization failed, using original order: {}
+[2026-01-21T03:29:23.385Z] LOG 📍 Calculating route distances...
+[2026-01-21T03:29:23.385Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:29:23.472Z] LOG ✅ Route calculated: 0.3 mi, 5 min
+[2026-01-21T03:29:23.473Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:29:23.485Z] LOG ✅ Route calculated: 0.5 mi, 9 min
+[2026-01-21T03:29:23.485Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:29:23.527Z] LOG ✅ Route calculated: 0.4 mi, 8 min
+[2026-01-21T03:29:23.528Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:29:23.660Z] LOG ✅ Route calculated: 0.3 mi, 5 min
+[2026-01-21T03:29:23.662Z] LOG    ✅ Route calculated: 1.4 mi, 28 min
+[2026-01-21T03:29:23.665Z] LOG ✅ Output saved to: C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\dist\outputs\planmate_output_2026-01-21T03-29-23.txt
+[2026-01-21T03:29:23.666Z] LOG 
+================================================================================
+[2026-01-21T03:29:23.667Z] LOG ✅ REQUEST COMPLETED (NEW CANDIDATE FLOW)
+[2026-01-21T03:29:23.667Z] LOG    Candidates: 19 → Selected: 5
+[2026-01-21T03:29:23.668Z] LOG    Mode: cluster
+[2026-01-21T03:29:23.668Z] LOG    Cluster radius: 0.62km
+[2026-01-21T03:29:23.668Z] LOG ================================================================================
+
+[2026-01-21T03:30:31.869Z] LOG POST /api/plan
+[2026-01-21T03:30:31.870Z] LOG 
+================================================================================
+[2026-01-21T03:30:31.870Z] LOG 📥 Received: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-01-21T03:30:31.871Z] LOG ================================================================================
+[2026-01-21T03:30:31.871Z] LOG 
+🔍 Classifying intent...
+[2026-01-21T03:30:33.622Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"gemini","queryType":"itinerary_planning","reasoning":"User wants to plan an experience with multiple stops focused on halal food trucks in midtown NYC.","useGeminiGrounding":true,"hasCurrentItinerary":false,"corridorDetected":false}
+[2026-01-21T03:30:33.624Z] LOG 
+⚡ NEW CANDIDATE FLOW: Gemini → Enrich All → Venue Selector → Mapbox
+[2026-01-21T03:30:33.625Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-01-21T03:30:33.626Z] LOG 
+🔍 STEP 2: Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:30:33.629Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-01-21T03:30:33.629Z] LOG 📝 User prompt: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-01-21T03:30:33.630Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:31:12.508Z] LOG ✅ Gemini response received
+[2026-01-21T03:31:12.509Z] LOG 📄 Response length: 0 characters
+[2026-01-21T03:31:12.510Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-01-21T03:31:12.511Z] LOG 📍 Grounding chunks: 48 sources
+[2026-01-21T03:31:12.511Z] WARN ⚠️ Could not parse JSON, attempting fallback...
+[2026-01-21T03:31:12.512Z] ERROR ❌ Gemini Grounding Agent error: {}
+[2026-01-21T03:31:12.513Z] WARN ⚠️ Gemini returned no venues, falling back to direct Agent 2
+[2026-01-21T03:31:12.514Z] LOG 
+🤖 ReAct Agent: STANDARD MODE
+[2026-01-21T03:31:12.514Z] LOG 📝 Prompt: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-01-21T03:31:12.516Z] LOG 
+--- Iteration 1 ---
+[2026-01-21T03:31:13.982Z] LOG 🧠 Action: search_venues
+[2026-01-21T03:31:13.984Z] LOG    Reasoning: Searching for halal food trucks in Midtown NYC
+[2026-01-21T03:31:13.986Z] LOG    📤 Parameters: {"query":"halal food truck","location":"Midtown, New York","limit":"5"}
+[2026-01-21T03:31:13.988Z] LOG ⚙️  Executing tool: search_venues
+[2026-01-21T03:31:13.989Z] LOG 🔍 [VenueSearchTool] Broad search: "halal food truck" in "Midtown, New York"
+[2026-01-21T03:31:13.990Z] LOG 🔍 [Google Places] Text search: "halal food truck" in Midtown, New York
+[2026-01-21T03:31:15.114Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-21T03:31:15.267Z] LOG    ⚠️  The Halal Guys: No editorial summary available
+[2026-01-21T03:31:15.319Z] LOG    ⚠️  Express Halal Food truck: No editorial summary available
+[2026-01-21T03:31:15.320Z] LOG    ✅ NYC Halal Food Truck: Got description (76 chars)
+[2026-01-21T03:31:15.331Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-01-21T03:31:15.364Z] LOG    ⚠️  Shawarma Bay: No editorial summary available
+[2026-01-21T03:31:15.365Z] LOG ✅ Found 5 places
+[2026-01-21T03:31:15.366Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2026-01-21T03:31:15.368Z] LOG    📊 Observation: Found 5: [The Halal Guys|ChIJz7d4K2VZwokRGOW9yyiNsck|4.3⭐;Adel's Famous Halal Food|ChIJNRe1Mf9YwokRvxBdos5UEY4|4.3⭐;NYC Halal Food Truck|ChIJzybpPVxYwokRwinZFW8rh00|4.3⭐;Shawarma Bay|ChIJT4kVjDZZwokRs
+[2026-01-21T03:31:15.368Z] LOG ⏱️ Iteration 1 took 2853ms
+[2026-01-21T03:31:15.369Z] LOG 
+--- Iteration 2 ---
+[2026-01-21T03:31:19.872Z] LOG 🧠 Action: finish
+[2026-01-21T03:31:19.873Z] LOG    Reasoning: Here are some popular halal food trucks in Midtown NYC for your day out.
+[2026-01-21T03:31:19.874Z] LOG 
+✅ Agent completed task
+[2026-01-21T03:31:19.875Z] LOG ✅ Output saved to: C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\dist\outputs\planmate_output_2026-01-21T03-31-19.txt
+[2026-01-21T03:31:19.875Z] LOG 
+================================================================================
+[2026-01-21T03:31:19.876Z] LOG ✅ REQUEST COMPLETED
+[2026-01-21T03:31:19.876Z] LOG    Venues: 5
+[2026-01-21T03:31:19.876Z] LOG ================================================================================
+
+[2026-01-21T03:31:33.390Z] LOG POST /api/plan
+[2026-01-21T03:31:33.390Z] LOG 
+================================================================================
+[2026-01-21T03:31:33.391Z] LOG 📥 Received: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-01-21T03:31:33.391Z] LOG ================================================================================
+[2026-01-21T03:31:33.392Z] LOG 
+🔍 Classifying intent...
+[2026-01-21T03:31:35.575Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"gemini","queryType":"itinerary_planning","reasoning":"User wants to plan an experience with multiple stops focused on halal food trucks in midtown NYC.","useGeminiGrounding":true,"hasCurrentItinerary":false,"corridorDetected":false}
+[2026-01-21T03:31:35.577Z] LOG 
+⚡ NEW CANDIDATE FLOW: Gemini → Enrich All → Venue Selector → Mapbox
+[2026-01-21T03:31:35.578Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-01-21T03:31:35.578Z] LOG 
+🔍 STEP 2: Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:31:35.579Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-01-21T03:31:35.580Z] LOG 📝 User prompt: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-01-21T03:31:35.581Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:32:12.848Z] LOG ✅ Gemini response received
+[2026-01-21T03:32:12.849Z] LOG 📄 Response length: 0 characters
+[2026-01-21T03:32:12.849Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-01-21T03:32:12.850Z] LOG 📍 Grounding chunks: 40 sources
+[2026-01-21T03:32:12.851Z] WARN ⚠️ Could not parse JSON, attempting fallback...
+[2026-01-21T03:32:12.851Z] ERROR ❌ Gemini Grounding Agent error: {}
+[2026-01-21T03:32:12.852Z] WARN ⚠️ Gemini returned no venues, falling back to direct Agent 2
+[2026-01-21T03:32:12.853Z] LOG 
+🤖 ReAct Agent: STANDARD MODE
+[2026-01-21T03:32:12.853Z] LOG 📝 Prompt: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-01-21T03:32:12.854Z] LOG 
+--- Iteration 1 ---
+[2026-01-21T03:32:13.982Z] LOG 🧠 Action: search_venues
+[2026-01-21T03:32:13.982Z] LOG    Reasoning: Searching for halal food trucks in Midtown NYC for a day out plan.
+[2026-01-21T03:32:13.983Z] LOG    📤 Parameters: {"query":"halal food truck","location":"Midtown, New York","limit":"5"}
+[2026-01-21T03:32:13.984Z] LOG ⚙️  Executing tool: search_venues
+[2026-01-21T03:32:13.984Z] LOG 🔍 [VenueSearchTool] Broad search: "halal food truck" in "Midtown, New York"
+[2026-01-21T03:32:13.985Z] LOG 🔍 [Google Places] Text search: "halal food truck" in Midtown, New York
+[2026-01-21T03:32:14.916Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-21T03:32:14.987Z] LOG    ⚠️  Express Halal Food truck: No editorial summary available
+[2026-01-21T03:32:15.048Z] LOG    ✅ NYC Halal Food Truck: Got description (76 chars)
+[2026-01-21T03:32:15.085Z] LOG    ⚠️  Tajeen Halal Food Truck: No editorial summary available
+[2026-01-21T03:32:15.120Z] LOG    ⚠️  5&29 Halal Gyro Cart: No editorial summary available
+[2026-01-21T03:32:15.137Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-01-21T03:32:15.138Z] LOG ✅ Found 5 places
+[2026-01-21T03:32:15.139Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2026-01-21T03:32:15.140Z] LOG    📊 Observation: Found 5: [Express Halal Food truck|ChIJY5Y3_IdZwokROwKEelD44BI|4.7⭐;5&29 Halal Gyro Cart|ChIJgUVsP9NZwokRlJ6gZ7vISsw|4.5⭐;Adel's Famous Halal Food|ChIJNRe1Mf9YwokRvxBdos5UEY4|4.3⭐;Tajeen Halal Food Tr
+[2026-01-21T03:32:15.141Z] LOG ⏱️ Iteration 1 took 2286ms
+[2026-01-21T03:32:15.141Z] LOG 
+--- Iteration 2 ---
+[2026-01-21T03:32:19.616Z] LOG 🧠 Action: finish
+[2026-01-21T03:32:19.618Z] LOG    Reasoning: I found several halal food trucks in Midtown NYC for your day out plan.
+[2026-01-21T03:32:19.620Z] LOG 
+✅ Agent completed task
+[2026-01-21T03:32:19.622Z] LOG ✅ Output saved to: C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\dist\outputs\planmate_output_2026-01-21T03-32-19.txt
+[2026-01-21T03:32:19.622Z] LOG 
+================================================================================
+[2026-01-21T03:32:19.623Z] LOG ✅ REQUEST COMPLETED
+[2026-01-21T03:32:19.623Z] LOG    Venues: 5
+[2026-01-21T03:32:19.624Z] LOG ================================================================================
+
+[2026-01-21T03:32:33.673Z] LOG POST /api/plan
+[2026-01-21T03:32:33.673Z] LOG 
+================================================================================
+[2026-01-21T03:32:33.674Z] LOG 📥 Received: "Plan a day of Formula-1 themed sightseeing in Monaco"
+[2026-01-21T03:32:33.674Z] LOG ================================================================================
+[2026-01-21T03:32:33.675Z] LOG 
+🔍 Classifying intent...
+[2026-01-21T03:32:34.974Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"gemini","queryType":"itinerary_planning","reasoning":"User wants to plan an experience with multiple stops related to Formula-1 in Monaco.","useGeminiGrounding":true,"hasCurrentItinerary":false,"corridorDetected":false}
+[2026-01-21T03:32:34.975Z] LOG 
+⚡ NEW CANDIDATE FLOW: Gemini → Enrich All → Venue Selector → Mapbox
+[2026-01-21T03:32:34.976Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-01-21T03:32:34.977Z] LOG 
+🔍 STEP 2: Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:32:34.979Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-01-21T03:32:34.980Z] LOG 📝 User prompt: "Plan a day of Formula-1 themed sightseeing in Monaco"
+[2026-01-21T03:32:34.980Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:33:18.344Z] LOG ✅ Gemini response received
+[2026-01-21T03:33:18.347Z] LOG 📄 Response length: 13951 characters
+[2026-01-21T03:33:18.348Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-01-21T03:33:18.348Z] LOG 📍 Grounding chunks: 19 sources
+[2026-01-21T03:33:18.349Z] LOG    📊 Parsed: 8 must_have, 12 nice_to_have
+[2026-01-21T03:33:18.349Z] LOG 
+✨ Parsed 20 CANDIDATES:
+[2026-01-21T03:33:18.350Z] LOG    🎯 Must-have: 8
+[2026-01-21T03:33:18.350Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T03:33:18.351Z] LOG 📋 Plan: Formula-1 Themed Sightseeing, 5 target stops
+[2026-01-21T03:33:18.352Z] LOG    ✅ Gemini returned 20 candidates
+[2026-01-21T03:33:18.352Z] LOG    🎯 Must-have: 8
+[2026-01-21T03:33:18.353Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T03:33:18.353Z] LOG 
+📍 STEP 3: Enriching ALL candidates via Google Places...
+[2026-01-21T03:33:18.354Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T03:33:18.355Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-21T03:33:18.356Z] LOG    🎯 Must-have: 8
+[2026-01-21T03:33:18.356Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T03:33:18.357Z] LOG 📍 Location hint: Monaco
+[2026-01-21T03:33:18.358Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-21T03:33:18.358Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T03:33:18.359Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T03:33:18.359Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T03:33:18.360Z] LOG    1. Searching "Fairmont Hairpin" in "Monte Carlo"
+[2026-01-21T03:33:18.360Z] LOG 🔍 [Google Places] Text search: "Fairmont Hairpin" in Monte Carlo
+[2026-01-21T03:33:18.363Z] LOG    2. Searching "La Rascasse" in "La Condamine / Port Hercule"
+[2026-01-21T03:33:18.363Z] LOG 🔍 [Google Places] Text search: "La Rascasse" in La Condamine / Port Hercule
+[2026-01-21T03:33:18.367Z] LOG    3. Searching "Église de Sainte-Dévote" in "La Condamine / Port Hercule"
+[2026-01-21T03:33:18.369Z] LOG 🔍 [Google Places] Text search: "Église de Sainte-Dévote" in La Condamine / Port Hercule
+[2026-01-21T03:33:18.372Z] LOG    4. Searching "Monaco Grand Prix grid - Start/Finish line" in "La Condamine / Port Hercule"
+[2026-01-21T03:33:18.372Z] LOG 🔍 [Google Places] Text search: "Monaco Grand Prix grid - Start/Finish line" in La Condamine / Port Hercule
+[2026-01-21T03:33:18.375Z] LOG    5. Searching "Private Cars Collection of HSH Prince of Monaco" in "Fontvieille / Port Hercule"
+[2026-01-21T03:33:18.376Z] LOG 🔍 [Google Places] Text search: "Private Cars Collection of HSH Prince of Monaco" in Fontvieille / Port Hercule
+[2026-01-21T03:33:18.382Z] LOG    6. Searching "Juan Manuel Fangio Statue" in "La Condamine / Port Hercule"
+[2026-01-21T03:33:18.382Z] LOG 🔍 [Google Places] Text search: "Juan Manuel Fangio Statue" in La Condamine / Port Hercule
+[2026-01-21T03:33:18.386Z] LOG    7. Searching "Boutique Formule 1" in "La Condamine"
+[2026-01-21T03:33:18.389Z] LOG 🔍 [Google Places] Text search: "Boutique Formule 1" in La Condamine
+[2026-01-21T03:33:18.395Z] LOG    8. Searching "Monaco Circuit" in "La Condamine / Port Hercule"
+[2026-01-21T03:33:18.396Z] LOG 🔍 [Google Places] Text search: "Monaco Circuit" in La Condamine / Port Hercule
+[2026-01-21T03:33:18.402Z] LOG    9. Searching "Casino de Monte-Carlo" in "Monte Carlo"
+[2026-01-21T03:33:18.403Z] LOG 🔍 [Google Places] Text search: "Casino de Monte-Carlo" in Monte Carlo
+[2026-01-21T03:33:18.409Z] LOG    10. Searching "Prince's Palace of Monaco" in "Monaco-Ville"
+[2026-01-21T03:33:18.411Z] LOG 🔍 [Google Places] Text search: "Prince's Palace of Monaco" in Monaco-Ville
+[2026-01-21T03:33:18.858Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:18.905Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:18.931Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:18.963Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:18.992Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco: Got description (98 chars)
+[2026-01-21T03:33:18.993Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:19.010Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:19.029Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:19.033Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:19.040Z] LOG    ⚠️  Fairmont Hairpin: No editorial summary available
+[2026-01-21T03:33:19.041Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:19.057Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:19.077Z] LOG    ⚠️  Monaco Grand Prix grid - Start/Finish line: No editorial summary available
+[2026-01-21T03:33:19.078Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:19.090Z] LOG    ⚠️  Boutique Formule 1: No editorial summary available
+[2026-01-21T03:33:19.091Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:19.094Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:19.136Z] LOG    ✅ Prince's Palace of Monaco: Got description (98 chars)
+[2026-01-21T03:33:19.137Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:19.138Z] LOG    ✅ Église de Sainte-Dévote: Got description (92 chars)
+[2026-01-21T03:33:19.139Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:19.186Z] LOG    ✅ La Rascasse: Got description (93 chars)
+[2026-01-21T03:33:19.187Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:19.189Z] LOG    ⚠️  Monaco Circuit: No editorial summary available
+[2026-01-21T03:33:19.189Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:19.203Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:19.226Z] LOG    ⚠️  Juan Manuel Fangio Statue: No editorial summary available
+[2026-01-21T03:33:19.227Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:19.340Z] LOG    ✅ Casino de Monte-Carlo: Got description (100 chars)
+[2026-01-21T03:33:19.340Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:19.341Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 982ms
+[2026-01-21T03:33:19.341Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T03:33:19.342Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T03:33:19.545Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-21T03:33:19.547Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T03:33:19.551Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T03:33:19.552Z] LOG    1. Searching "Oceanographic Museum of Monaco" in "Monaco-Ville"
+[2026-01-21T03:33:19.553Z] LOG 🔍 [Google Places] Text search: "Oceanographic Museum of Monaco" in Monaco-Ville
+[2026-01-21T03:33:19.554Z] LOG    2. Searching "Port Hercule" in "La Condamine / Port Hercule"
+[2026-01-21T03:33:19.555Z] LOG 🔍 [Google Places] Text search: "Port Hercule" in La Condamine / Port Hercule
+[2026-01-21T03:33:19.555Z] LOG    3. Searching "Larvotto Beach Monaco" in "Larvotto"
+[2026-01-21T03:33:19.556Z] LOG 🔍 [Google Places] Text search: "Larvotto Beach Monaco" in Larvotto
+[2026-01-21T03:33:19.557Z] LOG    4. Searching "Cathedral of Our Lady Immaculate" in "Monaco-Ville"
+[2026-01-21T03:33:19.557Z] LOG 🔍 [Google Places] Text search: "Cathedral of Our Lady Immaculate" in Monaco-Ville
+[2026-01-21T03:33:19.558Z] LOG    5. Searching "Opéra de Monte-Carlo" in "Monte Carlo"
+[2026-01-21T03:33:19.558Z] LOG 🔍 [Google Places] Text search: "Opéra de Monte-Carlo" in Monte Carlo
+[2026-01-21T03:33:19.559Z] LOG    6. Searching "Metropole Shopping Monte-Carlo" in "Monte Carlo"
+[2026-01-21T03:33:19.560Z] LOG 🔍 [Google Places] Text search: "Metropole Shopping Monte-Carlo" in Monte Carlo
+[2026-01-21T03:33:19.560Z] LOG    7. Searching "Place du Casino" in "Monte Carlo"
+[2026-01-21T03:33:19.561Z] LOG 🔍 [Google Places] Text search: "Place du Casino" in Monte Carlo
+[2026-01-21T03:33:19.561Z] LOG    8. Searching "Monaco Yacht Club" in "Port Hercule"
+[2026-01-21T03:33:19.562Z] LOG 🔍 [Google Places] Text search: "Monaco Yacht Club" in Port Hercule
+[2026-01-21T03:33:19.563Z] LOG    9. Searching "Jardin Japonais" in "Monte Carlo / Larvotto"
+[2026-01-21T03:33:19.564Z] LOG 🔍 [Google Places] Text search: "Jardin Japonais" in Monte Carlo / Larvotto
+[2026-01-21T03:33:19.567Z] LOG    10. Searching "Grimaldi Forum Monaco" in "Larvotto"
+[2026-01-21T03:33:19.568Z] LOG 🔍 [Google Places] Text search: "Grimaldi Forum Monaco" in Larvotto
+[2026-01-21T03:33:19.953Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:19.978Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:20.001Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:20.005Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:20.012Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:20.016Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:20.076Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:20.077Z] LOG    ✅ Port Hercule: Got description (99 chars)
+[2026-01-21T03:33:20.078Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:20.080Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:20.093Z] LOG    ✅ Cathedral of Our Lady Immaculate: Got description (88 chars)
+[2026-01-21T03:33:20.094Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:20.131Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:20.133Z] LOG    ✅ Larvotto Beach: Got description (94 chars)
+[2026-01-21T03:33:20.134Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:20.136Z] LOG    ✅ Musée océanographique de Monaco: Got description (96 chars)
+[2026-01-21T03:33:20.137Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:20.143Z] LOG    ⚠️  Pl. du Casino: No editorial summary available
+[2026-01-21T03:33:20.144Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:20.148Z] LOG    ✅ Monaco Yacht Club: Got description (95 chars)
+[2026-01-21T03:33:20.150Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:20.190Z] LOG    ✅ Metropole Shopping Monte-Carlo: Got description (94 chars)
+[2026-01-21T03:33:20.192Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:20.193Z] LOG    ✅ Opéra de Monte-Carlo: Got description (100 chars)
+[2026-01-21T03:33:20.194Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:20.208Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:33:20.213Z] LOG    ✅ Grimaldi Forum: Got description (97 chars)
+[2026-01-21T03:33:20.214Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:20.340Z] LOG    ✅ Princess Grace Japanese Garden: Got description (95 chars)
+[2026-01-21T03:33:20.341Z] LOG ✅ Found 1 places
+[2026-01-21T03:33:20.342Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 792ms
+[2026-01-21T03:33:20.343Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T03:33:20.343Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-21T03:33:20.344Z] LOG    ✅ Fairmont Hairpin → Fairmont Hairpin (must_have)
+[2026-01-21T03:33:20.345Z] LOG    ✅ La Rascasse → La Rascasse (must_have)
+[2026-01-21T03:33:20.345Z] LOG    ✅ Église de Sainte-Dévote → Église de Sainte-Dévote (must_have)
+[2026-01-21T03:33:20.345Z] LOG    ✅ Monaco Grand Prix grid - Start/Finish line → Monaco Grand Prix grid - Start/Finish line (must_have)
+[2026-01-21T03:33:20.346Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco → Private Cars Collection of HSH Prince of Monaco (must_have)
+[2026-01-21T03:33:20.346Z] LOG    ✅ Juan Manuel Fangio Statue → Juan Manuel Fangio Statue (must_have)
+[2026-01-21T03:33:20.347Z] LOG    ✅ Boutique Formule 1 → Boutique Formule 1 (must_have)
+[2026-01-21T03:33:20.347Z] LOG    ✅ Monaco Circuit → Monaco Circuit (must_have)
+[2026-01-21T03:33:20.347Z] LOG    ✅ Casino de Monte-Carlo → Casino de Monte-Carlo (nice_to_have)
+[2026-01-21T03:33:20.348Z] LOG    ✅ Prince's Palace of Monaco → Prince's Palace of Monaco (nice_to_have)
+[2026-01-21T03:33:20.348Z] LOG    ✅ Oceanographic Museum of Monaco → Musée océanographique de Monaco (nice_to_have)
+[2026-01-21T03:33:20.349Z] LOG    ✅ Port Hercule → Port Hercule (nice_to_have)
+[2026-01-21T03:33:20.349Z] LOG    ✅ Larvotto Beach Monaco → Larvotto Beach (nice_to_have)
+[2026-01-21T03:33:20.349Z] LOG    ✅ Cathedral of Our Lady Immaculate → Cathedral of Our Lady Immaculate (nice_to_have)
+[2026-01-21T03:33:20.350Z] LOG    ✅ Opéra de Monte-Carlo → Opéra de Monte-Carlo (nice_to_have)
+[2026-01-21T03:33:20.350Z] LOG    ✅ Metropole Shopping Monte-Carlo → Metropole Shopping Monte-Carlo (nice_to_have)
+[2026-01-21T03:33:20.351Z] LOG    ✅ Place du Casino → Pl. du Casino (nice_to_have)
+[2026-01-21T03:33:20.351Z] LOG    ✅ Monaco Yacht Club → Monaco Yacht Club (nice_to_have)
+[2026-01-21T03:33:20.351Z] LOG    ✅ Jardin Japonais → Princess Grace Japanese Garden (nice_to_have)
+[2026-01-21T03:33:20.352Z] LOG    ✅ Grimaldi Forum Monaco → Grimaldi Forum (nice_to_have)
+[2026-01-21T03:33:20.352Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T03:33:20.353Z] LOG    Total enriched: 20
+[2026-01-21T03:33:20.353Z] LOG    🎯 Must-have: 8
+[2026-01-21T03:33:20.354Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T03:33:20.355Z] LOG    ❌ Failed: 0
+[2026-01-21T03:33:20.356Z] LOG    ⏱️ Time: 2001ms
+[2026-01-21T03:33:20.357Z] LOG    ✅ Enriched 20 candidates
+[2026-01-21T03:33:20.357Z] LOG    🎯 Must-have found: 8
+[2026-01-21T03:33:20.358Z] LOG    ✨ Nice-to-have found: 12
+[2026-01-21T03:33:20.358Z] LOG 
+🎯 STEP 4: Selecting optimal venues...
+[2026-01-21T03:33:20.358Z] LOG 
+🔍 CORRIDOR DETECTION: Analyzing query...
+[2026-01-21T03:33:20.358Z] LOG    Query: "Plan a day of Formula-1 themed sightseeing in Monaco"
+[2026-01-21T03:33:20.359Z] LOG    ℹ️ No corridor pattern, using cluster mode
+[2026-01-21T03:33:20.359Z] LOG    📍 Mode: CLUSTER
+[2026-01-21T03:33:20.359Z] LOG 
+🔍 INTENT FILTER: Analyzing user intent...
+[2026-01-21T03:33:21.397Z] LOG    Focused query: undefined
+[2026-01-21T03:33:21.399Z] LOG    Allowed categories: ALL
+[2026-01-21T03:33:21.400Z] LOG    Reasoning: User wants variety in activities related to Formula-1 in Monaco.
+[2026-01-21T03:33:21.402Z] LOG    ✅ Exploratory query - keeping all candidates
+[2026-01-21T03:33:21.403Z] LOG 
+🎯 VENUE SELECTOR: Starting geographic optimization
+[2026-01-21T03:33:21.404Z] LOG    Input: 20 candidates
+[2026-01-21T03:33:21.405Z] LOG    Target: 5 venues
+[2026-01-21T03:33:21.405Z] LOG    🎯 Must-haves available: 8
+[2026-01-21T03:33:21.405Z] LOG    ✨ Nice-to-haves available: 12
+[2026-01-21T03:33:21.406Z] LOG 
+   📍 Selected 3 must-haves:
+[2026-01-21T03:33:21.406Z] LOG       - Monaco Grand Prix grid - Start/Finish line
+[2026-01-21T03:33:21.407Z] LOG       - Private Cars Collection of HSH Prince of Monaco
+[2026-01-21T03:33:21.407Z] LOG       - Monaco Circuit
+[2026-01-21T03:33:21.408Z] LOG    📍 Cluster center: (43.7348, 7.4216)
+[2026-01-21T03:33:21.408Z] LOG 
+   ✨ Selected 2 nice-to-haves:
+[2026-01-21T03:33:21.408Z] LOG       - Port Hercule (0.19km from center)
+[2026-01-21T03:33:21.408Z] LOG       - Prince's Palace of Monaco (0.43km from center)
+[2026-01-21T03:33:21.409Z] LOG 
+   ✅ SELECTION COMPLETE
+[2026-01-21T03:33:21.409Z] LOG    Total selected: 5
+[2026-01-21T03:33:21.409Z] LOG    Cluster radius: 0.43km
+[2026-01-21T03:33:21.410Z] LOG    🔄 Alternatives: 9 total
+[2026-01-21T03:33:21.410Z] LOG    Selected 3 core venues + 2 complementary stops. Route is highly walkable (0.43km radius).
+[2026-01-21T03:33:21.410Z] LOG    ✅ Selected 5 venues
+[2026-01-21T03:33:21.410Z] LOG    📍 Cluster radius: 0.43km
+[2026-01-21T03:33:21.411Z] LOG 
+🗺️ STEP 5: Optimizing route order...
+[2026-01-21T03:33:21.411Z] WARN    ⚠️ Route optimization failed, using original order: {}
+[2026-01-21T03:33:21.412Z] LOG 📍 Calculating route distances...
+[2026-01-21T03:33:21.412Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:33:21.580Z] LOG ✅ Route calculated: 0.3 mi, 5 min
+[2026-01-21T03:33:21.582Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:33:21.696Z] LOG ✅ Route calculated: 0.1 mi, 2 min
+[2026-01-21T03:33:21.698Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:33:21.816Z] LOG ✅ Route calculated: 0.1 mi, 2 min
+[2026-01-21T03:33:21.816Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:33:21.880Z] LOG ✅ Route calculated: 0.6 mi, 14 min
+[2026-01-21T03:33:21.880Z] LOG    ✅ Route calculated: 1.1 mi, 23 min
+[2026-01-21T03:33:21.881Z] LOG ✅ Output saved to: C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\dist\outputs\planmate_output_2026-01-21T03-33-21.txt
+[2026-01-21T03:33:21.882Z] LOG 
+================================================================================
+[2026-01-21T03:33:21.883Z] LOG ✅ REQUEST COMPLETED (NEW CANDIDATE FLOW)
+[2026-01-21T03:33:21.883Z] LOG    Candidates: 20 → Selected: 5
+[2026-01-21T03:33:21.884Z] LOG    Mode: cluster
+[2026-01-21T03:33:21.884Z] LOG    Cluster radius: 0.43km
+[2026-01-21T03:33:21.885Z] LOG ================================================================================
+
+[2026-01-21T03:36:59.978Z] LOG POST /api/plan
+[2026-01-21T03:36:59.979Z] LOG 
+================================================================================
+[2026-01-21T03:36:59.980Z] LOG 📥 Received: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-01-21T03:36:59.981Z] LOG ================================================================================
+[2026-01-21T03:36:59.982Z] LOG 
+🔍 Classifying intent...
+[2026-01-21T03:37:01.884Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"gemini","queryType":"itinerary_planning","reasoning":"User wants to plan an experience with multiple stops, specifically focusing on halal food trucks in midtown NYC.","useGeminiGrounding":true,"hasCurrentItinerary":false,"corridorDetected":false}
+[2026-01-21T03:37:01.887Z] LOG 
+⚡ NEW CANDIDATE FLOW: Gemini → Enrich All → Venue Selector → Mapbox
+[2026-01-21T03:37:01.888Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-01-21T03:37:01.890Z] LOG 
+🔍 STEP 2: Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:37:01.895Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-01-21T03:37:01.897Z] LOG 📝 User prompt: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-01-21T03:37:01.899Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:37:06.082Z] LOG ✅ Gemini response received
+[2026-01-21T03:37:06.085Z] LOG 📄 Response length: 0 characters
+[2026-01-21T03:37:06.087Z] LOG 📊 Grounding: Maps=false, Search=false
+[2026-01-21T03:37:06.089Z] WARN ⚠️ Could not parse JSON, attempting fallback...
+[2026-01-21T03:37:06.091Z] ERROR ❌ Gemini Grounding Agent error: {}
+[2026-01-21T03:37:06.093Z] WARN ⚠️ Gemini returned no venues, falling back to direct Agent 2
+[2026-01-21T03:37:06.093Z] LOG 
+🤖 ReAct Agent: STANDARD MODE
+[2026-01-21T03:37:06.094Z] LOG 📝 Prompt: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-01-21T03:37:06.096Z] LOG 
+--- Iteration 1 ---
+[2026-01-21T03:37:07.306Z] LOG 🧠 Action: search_venues
+[2026-01-21T03:37:07.310Z] LOG    Reasoning: Searching for halal food trucks in Midtown NYC for a day out.
+[2026-01-21T03:37:07.312Z] LOG    📤 Parameters: {"query":"halal food truck","location":"Midtown, New York","limit":"5"}
+[2026-01-21T03:37:07.314Z] LOG ⚙️  Executing tool: search_venues
+[2026-01-21T03:37:07.316Z] LOG 🔍 [VenueSearchTool] Broad search: "halal food truck" in "Midtown, New York"
+[2026-01-21T03:37:07.318Z] LOG 🔍 [Google Places] Text search: "halal food truck" in Midtown, New York
+[2026-01-21T03:37:08.400Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-21T03:37:08.495Z] LOG    ⚠️  Express Halal Food truck: No editorial summary available
+[2026-01-21T03:37:08.532Z] LOG    ⚠️  5&29 Halal Gyro Cart: No editorial summary available
+[2026-01-21T03:37:08.551Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-01-21T03:37:08.552Z] LOG    ⚠️  Tajeen Halal Food Truck: No editorial summary available
+[2026-01-21T03:37:08.565Z] LOG    ✅ NYC Halal Food Truck: Got description (76 chars)
+[2026-01-21T03:37:08.568Z] LOG ✅ Found 5 places
+[2026-01-21T03:37:08.569Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2026-01-21T03:37:08.571Z] LOG    📊 Observation: Found 5: [Express Halal Food truck|ChIJY5Y3_IdZwokROwKEelD44BI|4.7⭐;5&29 Halal Gyro Cart|ChIJgUVsP9NZwokRlJ6gZ7vISsw|4.5⭐;Adel's Famous Halal Food|ChIJNRe1Mf9YwokRvxBdos5UEY4|4.3⭐;Tajeen Halal Food Tr
+[2026-01-21T03:37:08.572Z] LOG ⏱️ Iteration 1 took 2475ms
+[2026-01-21T03:37:08.573Z] LOG 
+--- Iteration 2 ---
+[2026-01-21T03:37:12.228Z] LOG 🧠 Action: finish
+[2026-01-21T03:37:12.230Z] LOG    Reasoning: Found halal food trucks in Midtown NYC.
+[2026-01-21T03:37:12.232Z] LOG 
+✅ Agent completed task
+[2026-01-21T03:37:12.236Z] LOG ✅ Output saved to: C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\dist\outputs\planmate_output_2026-01-21T03-37-12.txt
+[2026-01-21T03:37:12.236Z] LOG 
+================================================================================
+[2026-01-21T03:37:12.237Z] LOG ✅ REQUEST COMPLETED
+[2026-01-21T03:37:12.238Z] LOG    Venues: 5
+[2026-01-21T03:37:12.239Z] LOG ================================================================================
+
+[2026-01-21T03:40:08.364Z] LOG POST /api/plan
+[2026-01-21T03:40:08.366Z] LOG 
+================================================================================
+[2026-01-21T03:40:08.367Z] LOG 📥 Received: "Give me ny iterery "
+[2026-01-21T03:40:08.368Z] LOG ================================================================================
+[2026-01-21T03:40:08.369Z] LOG 
+🔍 Classifying intent...
+[2026-01-21T03:40:09.579Z] LOG 🎯 Classification result: {"isRelevant":false,"routeTo":null,"queryType":"not_relevant","reasoning":"The query is unclear and does not specify a location, venue, or event.","useGeminiGrounding":false,"hasCurrentItinerary":false,"corridorDetected":false}
+[2026-01-21T03:40:33.100Z] LOG POST /api/plan
+[2026-01-21T03:40:33.101Z] LOG 
+================================================================================
+[2026-01-21T03:40:33.102Z] LOG 📥 Received: "Give me new york iternery "
+[2026-01-21T03:40:33.103Z] LOG ================================================================================
+[2026-01-21T03:40:33.104Z] LOG 
+🔍 Classifying intent...
+[2026-01-21T03:40:34.875Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"gemini","queryType":"itinerary_planning","reasoning":"User is asking for a planned experience in New York, which involves multiple stops.","useGeminiGrounding":true,"hasCurrentItinerary":false,"corridorDetected":false}
+[2026-01-21T03:40:34.877Z] LOG 
+⚡ NEW CANDIDATE FLOW: Gemini → Enrich All → Venue Selector → Mapbox
+[2026-01-21T03:40:34.878Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-01-21T03:40:34.880Z] LOG 
+🔍 STEP 2: Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:40:34.884Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-01-21T03:40:34.886Z] LOG 📝 User prompt: "Give me new york iternery "
+[2026-01-21T03:40:34.888Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-01-21T03:41:23.828Z] LOG ✅ Gemini response received
+[2026-01-21T03:41:23.829Z] LOG 📄 Response length: 12676 characters
+[2026-01-21T03:41:23.830Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-01-21T03:41:23.831Z] LOG 📍 Grounding chunks: 22 sources
+[2026-01-21T03:41:23.832Z] LOG    📊 Parsed: 7 must_have, 13 nice_to_have
+[2026-01-21T03:41:23.833Z] LOG 
+✨ Parsed 20 CANDIDATES:
+[2026-01-21T03:41:23.834Z] LOG    🎯 Must-have: 7
+[2026-01-21T03:41:23.835Z] LOG    ✨ Nice-to-have: 13
+[2026-01-21T03:41:23.836Z] LOG 📋 Plan: New York City Highlights Itinerary, 5 target stops
+[2026-01-21T03:41:23.838Z] LOG    ✅ Gemini returned 20 candidates
+[2026-01-21T03:41:23.838Z] LOG    🎯 Must-have: 7
+[2026-01-21T03:41:23.839Z] LOG    ✨ Nice-to-have: 13
+[2026-01-21T03:41:23.839Z] LOG 
+📍 STEP 3: Enriching ALL candidates via Google Places...
+[2026-01-21T03:41:23.841Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T03:41:23.842Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-21T03:41:23.843Z] LOG    🎯 Must-have: 7
+[2026-01-21T03:41:23.845Z] LOG    ✨ Nice-to-have: 13
+[2026-01-21T03:41:23.846Z] LOG 📍 Location hint: Midtown West
+[2026-01-21T03:41:23.847Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-21T03:41:23.848Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T03:41:23.850Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T03:41:23.851Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T03:41:23.853Z] LOG    1. Searching "Times Square" in "Midtown West"
+[2026-01-21T03:41:23.854Z] LOG 🔍 [Google Places] Text search: "Times Square" in Midtown West
+[2026-01-21T03:41:23.859Z] LOG    2. Searching "Statue of Liberty National Monument" in "New York Harbor"
+[2026-01-21T03:41:23.861Z] LOG 🔍 [Google Places] Text search: "Statue of Liberty National Monument" in New York Harbor
+[2026-01-21T03:41:23.870Z] LOG    3. Searching "Empire State Building" in "Midtown Manhattan"
+[2026-01-21T03:41:23.872Z] LOG 🔍 [Google Places] Text search: "Empire State Building" in Midtown Manhattan
+[2026-01-21T03:41:23.877Z] LOG    4. Searching "Central Park" in "Manhattan"
+[2026-01-21T03:41:23.878Z] LOG 🔍 [Google Places] Text search: "Central Park" in Manhattan
+[2026-01-21T03:41:23.882Z] LOG    5. Searching "Brooklyn Bridge" in "Lower Manhattan / Brooklyn"
+[2026-01-21T03:41:23.883Z] LOG 🔍 [Google Places] Text search: "Brooklyn Bridge" in Lower Manhattan / Brooklyn
+[2026-01-21T03:41:23.889Z] LOG    6. Searching "One World Observatory" in "Lower Manhattan"
+[2026-01-21T03:41:23.890Z] LOG 🔍 [Google Places] Text search: "One World Observatory" in Lower Manhattan
+[2026-01-21T03:41:23.895Z] LOG    7. Searching "Rockefeller Center" in "Midtown West"
+[2026-01-21T03:41:23.897Z] LOG 🔍 [Google Places] Text search: "Rockefeller Center" in Midtown West
+[2026-01-21T03:41:23.901Z] LOG    8. Searching "Grand Central Terminal" in "Midtown East"
+[2026-01-21T03:41:23.902Z] LOG 🔍 [Google Places] Text search: "Grand Central Terminal" in Midtown East
+[2026-01-21T03:41:23.907Z] LOG    9. Searching "The Metropolitan Museum of Art" in "Upper East Side"
+[2026-01-21T03:41:23.909Z] LOG 🔍 [Google Places] Text search: "The Metropolitan Museum of Art" in Upper East Side
+[2026-01-21T03:41:23.914Z] LOG    10. Searching "The Museum of Modern Art (MoMA)" in "Midtown West"
+[2026-01-21T03:41:23.915Z] LOG 🔍 [Google Places] Text search: "The Museum of Modern Art (MoMA)" in Midtown West
+[2026-01-21T03:41:24.442Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.447Z] LOG ⚠️  No results found
+[2026-01-21T03:41:24.452Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.455Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.501Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.508Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.575Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.593Z] LOG    ✅ Grand Central Terminal: Got description (95 chars)
+[2026-01-21T03:41:24.595Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.607Z] LOG    ✅ Brooklyn Bridge: Got description (95 chars)
+[2026-01-21T03:41:24.608Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.610Z] LOG    ✅ The Museum of Modern Art: Got description (96 chars)
+[2026-01-21T03:41:24.612Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.631Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.650Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:24.653Z] LOG    ✅ Central Park: Got description (100 chars)
+[2026-01-21T03:41:24.655Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.657Z] LOG    ✅ One World Observatory: Got description (93 chars)
+[2026-01-21T03:41:24.658Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.710Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2026-01-21T03:41:24.712Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.792Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2026-01-21T03:41:24.794Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:24.799Z] LOG    ✅ The Metropolitan Museum of Art: Got description (97 chars)
+[2026-01-21T03:41:24.801Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:25.501Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:25.644Z] LOG    ✅ Statue of Liberty: Got description (100 chars)
+[2026-01-21T03:41:25.646Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:25.647Z] LOG ✅ Batch complete: 10/10 searches succeeded, 9 total venues found in 1796ms
+[2026-01-21T03:41:25.648Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T03:41:25.650Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T03:41:25.853Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-21T03:41:25.855Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T03:41:25.856Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T03:41:25.857Z] LOG    1. Searching "The High Line" in "Chelsea"
+[2026-01-21T03:41:25.858Z] LOG 🔍 [Google Places] Text search: "The High Line" in Chelsea
+[2026-01-21T03:41:25.859Z] LOG    2. Searching "Washington Square Park" in "Greenwich Village"
+[2026-01-21T03:41:25.860Z] LOG 🔍 [Google Places] Text search: "Washington Square Park" in Greenwich Village
+[2026-01-21T03:41:25.862Z] LOG    3. Searching "DUMBO" in "Brooklyn"
+[2026-01-21T03:41:25.863Z] LOG 🔍 [Google Places] Text search: "DUMBO" in Brooklyn
+[2026-01-21T03:41:25.865Z] LOG    4. Searching "9/11 Memorial & Museum" in "Lower Manhattan"
+[2026-01-21T03:41:25.866Z] LOG 🔍 [Google Places] Text search: "9/11 Memorial & Museum" in Lower Manhattan
+[2026-01-21T03:41:25.867Z] LOG    5. Searching "Financial District (Wall Street & Charging Bull)" in "Lower Manhattan"
+[2026-01-21T03:41:25.868Z] LOG 🔍 [Google Places] Text search: "Financial District (Wall Street & Charging Bull)" in Lower Manhattan
+[2026-01-21T03:41:25.871Z] LOG    6. Searching "Broadway Theater District" in "Midtown West"
+[2026-01-21T03:41:25.872Z] LOG 🔍 [Google Places] Text search: "Broadway Theater District" in Midtown West
+[2026-01-21T03:41:25.875Z] LOG    7. Searching "Chelsea Market" in "Chelsea"
+[2026-01-21T03:41:25.876Z] LOG 🔍 [Google Places] Text search: "Chelsea Market" in Chelsea
+[2026-01-21T03:41:25.879Z] LOG    8. Searching "Chinatown" in "Lower Manhattan"
+[2026-01-21T03:41:25.881Z] LOG 🔍 [Google Places] Text search: "Chinatown" in Lower Manhattan
+[2026-01-21T03:41:25.883Z] LOG    9. Searching "Little Italy" in "Lower Manhattan"
+[2026-01-21T03:41:25.884Z] LOG 🔍 [Google Places] Text search: "Little Italy" in Lower Manhattan
+[2026-01-21T03:41:25.886Z] LOG    10. Searching "American Museum of Natural History" in "Upper West Side"
+[2026-01-21T03:41:25.888Z] LOG 🔍 [Google Places] Text search: "American Museum of Natural History" in Upper West Side
+[2026-01-21T03:41:26.367Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.394Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.398Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.417Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.423Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.464Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.498Z] LOG    ⚠️  Theater District: No editorial summary available
+[2026-01-21T03:41:26.500Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.504Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.543Z] LOG    ✅ Washington Square Park: Got description (100 chars)
+[2026-01-21T03:41:26.544Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.549Z] LOG    ✅ American Museum of Natural History: Got description (98 chars)
+[2026-01-21T03:41:26.550Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.552Z] LOG    ⚠️  Chinatown: No editorial summary available
+[2026-01-21T03:41:26.554Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.556Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.586Z] LOG    ✅ Charging Bull: Got description (100 chars)
+[2026-01-21T03:41:26.588Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.608Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.612Z] LOG    ⚠️  Dumbo: No editorial summary available
+[2026-01-21T03:41:26.613Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.655Z] LOG    ✅ The High Line: Got description (85 chars)
+[2026-01-21T03:41:26.657Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.672Z] LOG    ✅ Chelsea Market: Got description (98 chars)
+[2026-01-21T03:41:26.674Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.770Z] LOG    ⚠️  Little Italy: No editorial summary available
+[2026-01-21T03:41:26.772Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.814Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:41:26.993Z] LOG    ✅ 9/11 Memorial & Museum: Got description (100 chars)
+[2026-01-21T03:41:26.995Z] LOG ✅ Found 1 places
+[2026-01-21T03:41:26.996Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1140ms
+[2026-01-21T03:41:26.998Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T03:41:26.999Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-21T03:41:27.001Z] LOG    ⚠️ Times Square - not found in Google Places
+[2026-01-21T03:41:27.003Z] LOG    ✅ Statue of Liberty National Monument → Statue of Liberty (must_have)
+[2026-01-21T03:41:27.004Z] LOG    ✅ Empire State Building → Empire State Building (must_have)
+[2026-01-21T03:41:27.005Z] LOG    ✅ Central Park → Central Park (must_have)
+[2026-01-21T03:41:27.007Z] LOG    ✅ Brooklyn Bridge → Brooklyn Bridge (must_have)
+[2026-01-21T03:41:27.008Z] LOG    ✅ One World Observatory → One World Observatory (must_have)
+[2026-01-21T03:41:27.010Z] LOG    ✅ Rockefeller Center → Rockefeller Center (must_have)
+[2026-01-21T03:41:27.012Z] LOG    ✅ Grand Central Terminal → Grand Central Terminal (nice_to_have)
+[2026-01-21T03:41:27.013Z] LOG    ✅ The Metropolitan Museum of Art → The Metropolitan Museum of Art (nice_to_have)
+[2026-01-21T03:41:27.014Z] LOG    ✅ The Museum of Modern Art (MoMA) → The Museum of Modern Art (nice_to_have)
+[2026-01-21T03:41:27.015Z] LOG    ✅ The High Line → The High Line (nice_to_have)
+[2026-01-21T03:41:27.017Z] LOG    ✅ Washington Square Park → Washington Square Park (nice_to_have)
+[2026-01-21T03:41:27.019Z] LOG    ✅ DUMBO → Dumbo (nice_to_have)
+[2026-01-21T03:41:27.020Z] LOG    ✅ 9/11 Memorial & Museum → 9/11 Memorial & Museum (nice_to_have)
+[2026-01-21T03:41:27.021Z] LOG    ✅ Financial District (Wall Street & Charging Bull) → Charging Bull (nice_to_have)
+[2026-01-21T03:41:27.022Z] LOG    ✅ Broadway Theater District → Theater District (nice_to_have)
+[2026-01-21T03:41:27.024Z] LOG    ✅ Chelsea Market → Chelsea Market (nice_to_have)
+[2026-01-21T03:41:27.025Z] LOG    ✅ Chinatown → Chinatown (nice_to_have)
+[2026-01-21T03:41:27.027Z] LOG    ✅ Little Italy → Little Italy (nice_to_have)
+[2026-01-21T03:41:27.028Z] LOG    ✅ American Museum of Natural History → American Museum of Natural History (nice_to_have)
+[2026-01-21T03:41:27.030Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T03:41:27.031Z] LOG    Total enriched: 19
+[2026-01-21T03:41:27.032Z] LOG    🎯 Must-have: 6
+[2026-01-21T03:41:27.033Z] LOG    ✨ Nice-to-have: 13
+[2026-01-21T03:41:27.035Z] LOG    ❌ Failed: 1
+[2026-01-21T03:41:27.036Z] LOG    ⏱️ Time: 3195ms
+[2026-01-21T03:41:27.038Z] LOG    ✅ Enriched 19 candidates
+[2026-01-21T03:41:27.039Z] LOG    🎯 Must-have found: 6
+[2026-01-21T03:41:27.039Z] LOG    ✨ Nice-to-have found: 13
+[2026-01-21T03:41:27.040Z] LOG 
+🎯 STEP 4: Selecting optimal venues...
+[2026-01-21T03:41:27.041Z] LOG 
+🔍 CORRIDOR DETECTION: Analyzing query...
+[2026-01-21T03:41:27.042Z] LOG    Query: "Give me new york iternery "
+[2026-01-21T03:41:27.044Z] LOG    ℹ️ No corridor pattern, using cluster mode
+[2026-01-21T03:41:27.045Z] LOG    📍 Mode: CLUSTER
+[2026-01-21T03:41:27.047Z] LOG 
+🔍 INTENT FILTER: Analyzing user intent...
+[2026-01-21T03:41:28.039Z] LOG    Focused query: undefined
+[2026-01-21T03:41:28.040Z] LOG    Allowed categories: ALL
+[2026-01-21T03:41:28.040Z] LOG    Reasoning: User wants variety
+[2026-01-21T03:41:28.041Z] LOG    ✅ Exploratory query - keeping all candidates
+[2026-01-21T03:41:28.041Z] LOG 
+🎯 VENUE SELECTOR: Starting geographic optimization
+[2026-01-21T03:41:28.042Z] LOG    Input: 19 candidates
+[2026-01-21T03:41:28.043Z] LOG    Target: 5 venues
+[2026-01-21T03:41:28.043Z] LOG    🎯 Must-haves available: 6
+[2026-01-21T03:41:28.044Z] LOG    ✨ Nice-to-haves available: 13
+[2026-01-21T03:41:28.045Z] LOG 
+   📍 Selected 3 must-haves:
+[2026-01-21T03:41:28.046Z] LOG       - Empire State Building
+[2026-01-21T03:41:28.046Z] LOG       - Rockefeller Center
+[2026-01-21T03:41:28.047Z] LOG       - Central Park
+[2026-01-21T03:41:28.048Z] LOG    📍 Cluster center: (40.7632, -73.9766)
+[2026-01-21T03:41:28.049Z] LOG 
+   ✨ Selected 2 nice-to-haves:
+[2026-01-21T03:41:28.049Z] LOG       - The Museum of Modern Art (0.22km from center)
+[2026-01-21T03:41:28.050Z] LOG       - Theater District (0.81km from center)
+[2026-01-21T03:41:28.051Z] LOG 
+   ✅ SELECTION COMPLETE
+[2026-01-21T03:41:28.052Z] LOG    Total selected: 5
+[2026-01-21T03:41:28.054Z] LOG    Cluster radius: 2.34km
+[2026-01-21T03:41:28.055Z] LOG    🔄 Alternatives: 6 total
+[2026-01-21T03:41:28.056Z] LOG    Selected 3 core venues + 2 complementary stops. Route is spread out (2.34km radius).
+[2026-01-21T03:41:28.057Z] LOG    ✅ Selected 5 venues
+[2026-01-21T03:41:28.058Z] LOG    📍 Cluster radius: 2.34km
+[2026-01-21T03:41:28.059Z] LOG 
+🗺️ STEP 5: Optimizing route order...
+[2026-01-21T03:41:28.062Z] WARN    ⚠️ Route optimization failed, using original order: {}
+[2026-01-21T03:41:28.065Z] LOG 📍 Calculating route distances...
+[2026-01-21T03:41:28.067Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:41:28.279Z] LOG ✅ Route calculated: 0.9 mi, 18 min
+[2026-01-21T03:41:28.280Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:41:28.368Z] LOG ✅ Route calculated: 2.0 mi, 39 min
+[2026-01-21T03:41:28.369Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:41:28.543Z] LOG ✅ Route calculated: 1.9 mi, 35 min
+[2026-01-21T03:41:28.544Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-21T03:41:28.715Z] LOG ✅ Route calculated: 0.5 mi, 10 min
+[2026-01-21T03:41:28.716Z] LOG    ✅ Route calculated: 5.4 mi, 1h 41m
+[2026-01-21T03:41:28.718Z] LOG ✅ Output saved to: C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\dist\outputs\planmate_output_2026-01-21T03-41-28.txt
+[2026-01-21T03:41:28.718Z] LOG 
+================================================================================
+[2026-01-21T03:41:28.719Z] LOG ✅ REQUEST COMPLETED (NEW CANDIDATE FLOW)
+[2026-01-21T03:41:28.720Z] LOG    Candidates: 19 → Selected: 5
+[2026-01-21T03:41:28.720Z] LOG    Mode: cluster
+[2026-01-21T03:41:28.721Z] LOG    Cluster radius: 2.34km
+[2026-01-21T03:41:28.722Z] LOG ================================================================================
+

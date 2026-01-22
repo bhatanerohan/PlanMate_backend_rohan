@@ -1,0 +1,148 @@
+User Prompt: add Hirshhorn Museum after stop 3[VENUE:{"name":"Hirshhorn Museum","address":"Independence Ave SW &, 7th St SW, Washington, DC 20560, United States","location":{"lat":38.8881608,"lng":-77.0229682,"coordinates":"38.8881608,-77.0229682"},"rating":4.5,"priceLevel":"N/A","placeId":"ChIJhx1puJy3t4kRmXVaeMNjBDU","types":["tourist_attraction","museum","point_of_interest","establishment"],"description":"This modern and contemporary art museum, distinctive for its cylindrical architecture, features works from the mid-20th century to the present, alongside an outdoor sculpture garden. [15]","photos":["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AcnlKN18yYZr_3shVPFq70ngRHnpXJ3QRzRwvgsq--vtROQnc1P1KcOnGkdMpZhSvttkYFWSyxI6bWi6NkOVv1SFfI0PGQnnacmmVbUwYty3DGj7osuoDTQZG7Nh-BJLGQD2qPDJ1ekOv_rVRaTpDbq8UeGkFbu3BxXjC1wjUq6sO5_qYxqmjwWh5mOdPLnmoMTk7zmvQw8ZStanfFldV0f-OyF_pObXd5X2dzoOLlVUoGhKkxhwVx33i1qmfTZ3620yT8w2vZ9ErG5n_NNv7tPciOD___Wg6xKCvnIENRMy34GxB2l_axOiyov6TpUQHl2de2M0gcyQIeIBVu52cGxOs1xcLhbtuTlMvkhBXRjd2nOZkRcfzir7s64OJxZd3YFVUBtV9F7qmuKV3upU1LEO1CkdgKi4jxxK6n6LkVKipuxwEQWuvHf3Zy6DeCcYyl2sHjXutbfXC_PllsiE8WFKE1Jb_v1RxIYGpOhHS0pzWgr4xfv9Y5EJaioP4FkEUQA3M0P1zwEu_dIu65Z2QXXXt7vEMKL_cvZ52s2uNBmPuJ0fjYOo9rEQidab0XpS5_GnrlLbeTKs&key=AIzaSyD_WC6QvbEThRWY_jYnE3zQGosqXkXtMrM"]}]
+
+[2026-01-21T03:29:20.683Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T03:29:20.684Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-21T03:29:20.684Z] LOG    🎯 Must-have: 7
+[2026-01-21T03:29:20.685Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T03:29:20.685Z] LOG 📍 Location hint: National Mall
+[2026-01-21T03:29:20.686Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-21T03:29:20.686Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T03:29:20.687Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T03:29:20.687Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T03:29:20.688Z] LOG    1. Searching "Hirshhorn Museum" in "National Mall"
+[2026-01-21T03:29:20.688Z] LOG 🔍 [Google Places] Text search: "Hirshhorn Museum" in National Mall
+[2026-01-21T03:29:20.689Z] LOG    2. Searching "Smithsonian National Museum of Natural History" in "National Mall"
+[2026-01-21T03:29:20.689Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of Natural History" in National Mall
+[2026-01-21T03:29:20.691Z] LOG    3. Searching "Smithsonian's National Air and Space Museum" in "National Mall"
+[2026-01-21T03:29:20.692Z] LOG 🔍 [Google Places] Text search: "Smithsonian's National Air and Space Museum" in National Mall
+[2026-01-21T03:29:20.694Z] LOG    4. Searching "National Gallery of Art" in "National Mall"
+[2026-01-21T03:29:20.696Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in National Mall
+[2026-01-21T03:29:20.698Z] LOG    5. Searching "Smithsonian National Museum of American History" in "National Mall"
+[2026-01-21T03:29:20.698Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of American History" in National Mall
+[2026-01-21T03:29:20.699Z] LOG    6. Searching "National Museum of African American History and Culture" in "National Mall"
+[2026-01-21T03:29:20.699Z] LOG 🔍 [Google Places] Text search: "National Museum of African American History and Culture" in National Mall
+[2026-01-21T03:29:20.700Z] LOG    7. Searching "International Spy Museum" in "Southwest Washington"
+[2026-01-21T03:29:20.701Z] LOG 🔍 [Google Places] Text search: "International Spy Museum" in Southwest Washington
+[2026-01-21T03:29:20.703Z] LOG    8. Searching "Hirshhorn Sculpture Garden" in "National Mall"
+[2026-01-21T03:29:20.704Z] LOG 🔍 [Google Places] Text search: "Hirshhorn Sculpture Garden" in National Mall
+[2026-01-21T03:29:20.706Z] LOG    9. Searching "National Mall" in "National Mall"
+[2026-01-21T03:29:20.707Z] LOG 🔍 [Google Places] Text search: "National Mall" in National Mall
+[2026-01-21T03:29:20.707Z] LOG    10. Searching "Washington Monument" in "National Mall"
+[2026-01-21T03:29:20.708Z] LOG 🔍 [Google Places] Text search: "Washington Monument" in National Mall
+[2026-01-21T03:29:20.766Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.768Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.769Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.770Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.772Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.778Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.780Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.783Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.811Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:20.829Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-21T03:29:20.830Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.831Z] LOG    ⚠️  Hirshhorn Sculpture Garden: No editorial summary available
+[2026-01-21T03:29:20.831Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.836Z] LOG    ✅ Smithsonian National Museum of American History: Got description (99 chars)
+[2026-01-21T03:29:20.837Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.840Z] LOG    ✅ National Museum of African American History and Culture: Got description (97 chars)
+[2026-01-21T03:29:20.841Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.842Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-01-21T03:29:20.843Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.844Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-21T03:29:20.845Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.853Z] LOG    ✅ Hirshhorn Museum: Got description (99 chars)
+[2026-01-21T03:29:20.855Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.860Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-21T03:29:20.861Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:20.887Z] LOG    ✅ National Mall: Got description (97 chars)
+[2026-01-21T03:29:20.889Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.270Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.323Z] LOG    ✅ National Mall: Got description (97 chars)
+[2026-01-21T03:29:21.324Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.324Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 637ms
+[2026-01-21T03:29:21.325Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T03:29:21.326Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T03:29:21.531Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-21T03:29:21.531Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T03:29:21.532Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-21T03:29:21.533Z] LOG    1. Searching "Lincoln Memorial" in "National Mall"
+[2026-01-21T03:29:21.534Z] LOG 🔍 [Google Places] Text search: "Lincoln Memorial" in National Mall
+[2026-01-21T03:29:21.534Z] LOG    2. Searching "United States Botanic Garden" in "Capitol Hill"
+[2026-01-21T03:29:21.535Z] LOG 🔍 [Google Places] Text search: "United States Botanic Garden" in Capitol Hill
+[2026-01-21T03:29:21.536Z] LOG    3. Searching "The Wharf DC" in "Southwest Waterfront"
+[2026-01-21T03:29:21.536Z] LOG 🔍 [Google Places] Text search: "The Wharf DC" in Southwest Waterfront
+[2026-01-21T03:29:21.537Z] LOG    4. Searching "National Portrait Gallery" in "Penn Quarter"
+[2026-01-21T03:29:21.538Z] LOG 🔍 [Google Places] Text search: "National Portrait Gallery" in Penn Quarter
+[2026-01-21T03:29:21.538Z] LOG    5. Searching "National Museum of Asian Art" in "National Mall"
+[2026-01-21T03:29:21.539Z] LOG 🔍 [Google Places] Text search: "National Museum of Asian Art" in National Mall
+[2026-01-21T03:29:21.539Z] LOG    6. Searching "Museum of Illusions Washington DC" in "Penn Quarter"
+[2026-01-21T03:29:21.540Z] LOG 🔍 [Google Places] Text search: "Museum of Illusions Washington DC" in Penn Quarter
+[2026-01-21T03:29:21.541Z] LOG    7. Searching "National Building Museum" in "Penn Quarter"
+[2026-01-21T03:29:21.541Z] LOG 🔍 [Google Places] Text search: "National Building Museum" in Penn Quarter
+[2026-01-21T03:29:21.542Z] LOG    8. Searching "Meridian Hill Park" in "Columbia Heights"
+[2026-01-21T03:29:21.542Z] LOG 🔍 [Google Places] Text search: "Meridian Hill Park" in Columbia Heights
+[2026-01-21T03:29:21.544Z] LOG    9. Searching "Tidal Basin" in "National Mall"
+[2026-01-21T03:29:21.544Z] LOG 🔍 [Google Places] Text search: "Tidal Basin" in National Mall
+[2026-01-21T03:29:21.597Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.599Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.614Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.619Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.671Z] LOG    ✅ Lincoln Memorial: Got description (100 chars)
+[2026-01-21T03:29:21.672Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.676Z] LOG    ✅ National Portrait Gallery: Got description (96 chars)
+[2026-01-21T03:29:21.677Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.678Z] LOG    ✅ United States Botanic Garden: Got description (99 chars)
+[2026-01-21T03:29:21.678Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.680Z] LOG    ⚠️  The Wharf DC: No editorial summary available
+[2026-01-21T03:29:21.681Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:21.897Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.945Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.972Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:21.991Z] LOG    ✅ National Museum of Asian Art: Got description (84 chars)
+[2026-01-21T03:29:21.993Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:22.018Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:22.021Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2026-01-21T03:29:22.022Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:22.053Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T03:29:22.057Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-21T03:29:22.058Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:22.144Z] LOG    ⚠️  Tidal Basin: No editorial summary available
+[2026-01-21T03:29:22.144Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:22.173Z] LOG    ✅ Meridian Hill Park: Got description (92 chars)
+[2026-01-21T03:29:22.174Z] LOG ✅ Found 1 places
+[2026-01-21T03:29:22.175Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 643ms
+[2026-01-21T03:29:22.176Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T03:29:22.176Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-21T03:29:22.177Z] LOG    ✅ Hirshhorn Museum → Hirshhorn Museum (must_have)
+[2026-01-21T03:29:22.178Z] LOG    ✅ Smithsonian National Museum of Natural History → Smithsonian National Museum of Natural History (must_have)
+[2026-01-21T03:29:22.178Z] LOG    ✅ Smithsonian's National Air and Space Museum → Smithsonian's National Air and Space Museum (must_have)
+[2026-01-21T03:29:22.179Z] LOG    ✅ National Gallery of Art → National Gallery of Art (must_have)
+[2026-01-21T03:29:22.180Z] LOG    ✅ Smithsonian National Museum of American History → Smithsonian National Museum of American History (must_have)
+[2026-01-21T03:29:22.181Z] LOG    ✅ National Museum of African American History and Culture → National Museum of African American History and Culture (must_have)
+[2026-01-21T03:29:22.182Z] LOG    ✅ International Spy Museum → International Spy Museum (must_have)
+[2026-01-21T03:29:22.183Z] LOG    ✅ Hirshhorn Sculpture Garden → Hirshhorn Sculpture Garden (nice_to_have)
+[2026-01-21T03:29:22.183Z] LOG    ✅ National Mall → National Mall (nice_to_have)
+[2026-01-21T03:29:22.184Z] LOG    ✅ Washington Monument → National Mall (nice_to_have)
+[2026-01-21T03:29:22.185Z] LOG    ✅ Lincoln Memorial → Lincoln Memorial (nice_to_have)
+[2026-01-21T03:29:22.185Z] LOG    ✅ United States Botanic Garden → United States Botanic Garden (nice_to_have)
+[2026-01-21T03:29:22.186Z] LOG    ✅ The Wharf DC → The Wharf DC (nice_to_have)
+[2026-01-21T03:29:22.186Z] LOG    ✅ National Portrait Gallery → National Portrait Gallery (nice_to_have)
+[2026-01-21T03:29:22.187Z] LOG    ✅ National Museum of Asian Art → National Museum of Asian Art (nice_to_have)
+[2026-01-21T03:29:22.187Z] LOG    ✅ Museum of Illusions Washington DC → Museum of Illusions Washington DC (nice_to_have)
+[2026-01-21T03:29:22.188Z] LOG    ✅ National Building Museum → National Building Museum (nice_to_have)
+[2026-01-21T03:29:22.188Z] LOG    ✅ Meridian Hill Park → Meridian Hill Park (nice_to_have)
+[2026-01-21T03:29:22.189Z] LOG    ✅ Tidal Basin → Tidal Basin (nice_to_have)
+[2026-01-21T03:29:22.190Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T03:29:22.191Z] LOG    Total enriched: 19
+[2026-01-21T03:29:22.191Z] LOG    🎯 Must-have: 7
+[2026-01-21T03:29:22.193Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T03:29:22.193Z] LOG    ❌ Failed: 0
+[2026-01-21T03:29:22.194Z] LOG    ⏱️ Time: 1511ms
+
+--- Summary ---
+Enrichment completed

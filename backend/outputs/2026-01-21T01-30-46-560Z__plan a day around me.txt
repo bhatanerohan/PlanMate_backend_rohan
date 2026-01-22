@@ -1,0 +1,154 @@
+User Prompt: plan a day around me
+
+[2026-01-21T01:30:46.561Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T01:30:46.561Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-21T01:30:46.561Z] LOG    🎯 Must-have: 8
+[2026-01-21T01:30:46.562Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T01:30:46.562Z] LOG 📍 Location hint: me
+[2026-01-21T01:30:46.563Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-21T01:30:46.563Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T01:30:46.563Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T01:30:46.564Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T01:30:46.564Z] LOG    1. Searching "Boston Common" in "Downtown"
+[2026-01-21T01:30:46.564Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown
+[2026-01-21T01:30:46.566Z] LOG    2. Searching "Public Garden" in "Beacon Hill / Back Bay"
+[2026-01-21T01:30:46.567Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Beacon Hill / Back Bay
+[2026-01-21T01:30:46.568Z] LOG    3. Searching "Massachusetts State House" in "Beacon Hill"
+[2026-01-21T01:30:46.569Z] LOG 🔍 [Google Places] Text search: "Massachusetts State House" in Beacon Hill
+[2026-01-21T01:30:46.572Z] LOG    4. Searching "Faneuil Hall Marketplace" in "Government Center / Downtown"
+[2026-01-21T01:30:46.575Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Government Center / Downtown
+[2026-01-21T01:30:46.577Z] LOG    5. Searching "Old State House" in "Downtown"
+[2026-01-21T01:30:46.579Z] LOG 🔍 [Google Places] Text search: "Old State House" in Downtown
+[2026-01-21T01:30:46.585Z] LOG    6. Searching "Boston Tea Party Ships & Museum" in "Seaport / Waterfront"
+[2026-01-21T01:30:46.586Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Seaport / Waterfront
+[2026-01-21T01:30:46.589Z] LOG    7. Searching "Thinking Cup" in "Downtown / Boston Common"
+[2026-01-21T01:30:46.590Z] LOG 🔍 [Google Places] Text search: "Thinking Cup" in Downtown / Boston Common
+[2026-01-21T01:30:46.596Z] LOG    8. Searching "Artisan Bistro" in "Downtown / Boston Theater District"
+[2026-01-21T01:30:46.598Z] LOG 🔍 [Google Places] Text search: "Artisan Bistro" in Downtown / Boston Theater District
+[2026-01-21T01:30:46.602Z] LOG    9. Searching "New England Aquarium" in "Waterfront"
+[2026-01-21T01:30:46.603Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Waterfront
+[2026-01-21T01:30:46.608Z] LOG    10. Searching "WNDR Museum" in "Downtown Crossing"
+[2026-01-21T01:30:46.609Z] LOG 🔍 [Google Places] Text search: "WNDR Museum" in Downtown Crossing
+[2026-01-21T01:30:47.079Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:47.115Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:47.137Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-21T01:30:47.137Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:47.163Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:47.165Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:47.171Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:47.221Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:47.239Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-01-21T01:30:47.241Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:47.246Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:47.253Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2026-01-21T01:30:47.255Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:47.287Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-21T01:30:47.289Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:47.292Z] LOG    ✅ Old State House: Got description (98 chars)
+[2026-01-21T01:30:47.293Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:47.315Z] LOG    ✅ Massachusetts State House: Got description (96 chars)
+[2026-01-21T01:30:47.317Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:47.380Z] LOG    ✅ Thinking Cup: Got description (94 chars)
+[2026-01-21T01:30:47.381Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:47.465Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:47.510Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:47.527Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-21T01:30:47.528Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:47.565Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-01-21T01:30:47.566Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:48.038Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:48.179Z] LOG    ✅ Artisan Bistro: Got description (99 chars)
+[2026-01-21T01:30:48.180Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:48.181Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1617ms
+[2026-01-21T01:30:48.181Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T01:30:48.182Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T01:30:48.386Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-21T01:30:48.387Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T01:30:48.388Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T01:30:48.388Z] LOG    1. Searching "El Jefe's Taqueria - Boston Common" in "Boston Theater District"
+[2026-01-21T01:30:48.389Z] LOG 🔍 [Google Places] Text search: "El Jefe's Taqueria - Boston Common" in Boston Theater District
+[2026-01-21T01:30:48.390Z] LOG    2. Searching "Legal Sea Foods - Downtown Crossing" in "Downtown"
+[2026-01-21T01:30:48.390Z] LOG 🔍 [Google Places] Text search: "Legal Sea Foods - Downtown Crossing" in Downtown
+[2026-01-21T01:30:48.391Z] LOG    3. Searching "Cheers" in "Beacon Hill"
+[2026-01-21T01:30:48.392Z] LOG 🔍 [Google Places] Text search: "Cheers" in Beacon Hill
+[2026-01-21T01:30:48.392Z] LOG    4. Searching "Beacon Hill Books & Cafe" in "Beacon Hill"
+[2026-01-21T01:30:48.393Z] LOG 🔍 [Google Places] Text search: "Beacon Hill Books & Cafe" in Beacon Hill
+[2026-01-21T01:30:48.393Z] LOG    5. Searching "Charles River Esplanade" in "Back Bay"
+[2026-01-21T01:30:48.394Z] LOG 🔍 [Google Places] Text search: "Charles River Esplanade" in Back Bay
+[2026-01-21T01:30:48.394Z] LOG    6. Searching "View Boston" in "Back Bay"
+[2026-01-21T01:30:48.394Z] LOG 🔍 [Google Places] Text search: "View Boston" in Back Bay
+[2026-01-21T01:30:48.395Z] LOG    7. Searching "Trident Booksellers & Cafe" in "Back Bay"
+[2026-01-21T01:30:48.395Z] LOG 🔍 [Google Places] Text search: "Trident Booksellers & Cafe" in Back Bay
+[2026-01-21T01:30:48.396Z] LOG    8. Searching "Granary Burying Ground" in "Downtown"
+[2026-01-21T01:30:48.397Z] LOG 🔍 [Google Places] Text search: "Granary Burying Ground" in Downtown
+[2026-01-21T01:30:48.397Z] LOG    9. Searching "Isabella Stewart Gardner Museum" in "Fenway–Kenmore"
+[2026-01-21T01:30:48.398Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway–Kenmore
+[2026-01-21T01:30:48.398Z] LOG    10. Searching "Yvonne's" in "Downtown"
+[2026-01-21T01:30:48.399Z] LOG 🔍 [Google Places] Text search: "Yvonne's" in Downtown
+[2026-01-21T01:30:48.791Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:48.833Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:48.868Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:48.885Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:48.924Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:48.945Z] LOG    ✅ Trident Booksellers & Cafe: Got description (90 chars)
+[2026-01-21T01:30:48.946Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:48.956Z] LOG    ✅ Cheers: Got description (83 chars)
+[2026-01-21T01:30:48.958Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:48.961Z] LOG    ✅ Charles River Esplanade: Got description (99 chars)
+[2026-01-21T01:30:48.962Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:48.972Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-01-21T01:30:48.973Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:49.024Z] LOG    ✅ Yvonne's: Got description (94 chars)
+[2026-01-21T01:30:49.025Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:49.026Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:49.075Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:49.094Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-21T01:30:49.096Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:49.155Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:49.207Z] LOG    ⚠️  Beacon Hill Books & Cafe: No editorial summary available
+[2026-01-21T01:30:49.208Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:49.287Z] LOG    ⚠️  El Jefe's Taqueria - Boston Common: No editorial summary available
+[2026-01-21T01:30:49.288Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:49.307Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:49.421Z] LOG    ✅ Granary Burying Ground: Got description (99 chars)
+[2026-01-21T01:30:49.421Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:49.666Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:30:49.810Z] LOG    ✅ Legal Sea Foods - Downtown Crossing: Got description (89 chars)
+[2026-01-21T01:30:49.811Z] LOG ✅ Found 1 places
+[2026-01-21T01:30:49.812Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1424ms
+[2026-01-21T01:30:49.812Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T01:30:49.812Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-21T01:30:49.813Z] LOG    ✅ Boston Common → Boston Common (must_have)
+[2026-01-21T01:30:49.813Z] LOG    ✅ Public Garden → Public Garden (must_have)
+[2026-01-21T01:30:49.813Z] LOG    ✅ Massachusetts State House → Massachusetts State House (must_have)
+[2026-01-21T01:30:49.814Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (must_have)
+[2026-01-21T01:30:49.814Z] LOG    ✅ Old State House → Old State House (must_have)
+[2026-01-21T01:30:49.814Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (must_have)
+[2026-01-21T01:30:49.814Z] LOG    ✅ Thinking Cup → Thinking Cup (must_have)
+[2026-01-21T01:30:49.815Z] LOG    ✅ Artisan Bistro → Artisan Bistro (must_have)
+[2026-01-21T01:30:49.815Z] LOG    ✅ New England Aquarium → New England Aquarium (nice_to_have)
+[2026-01-21T01:30:49.815Z] LOG    ✅ WNDR Museum → WNDR Museum (nice_to_have)
+[2026-01-21T01:30:49.815Z] LOG    ✅ El Jefe's Taqueria - Boston Common → El Jefe's Taqueria - Boston Common (nice_to_have)
+[2026-01-21T01:30:49.816Z] LOG    ✅ Legal Sea Foods - Downtown Crossing → Legal Sea Foods - Downtown Crossing (nice_to_have)
+[2026-01-21T01:30:49.816Z] LOG    ✅ Cheers → Cheers (nice_to_have)
+[2026-01-21T01:30:49.816Z] LOG    ✅ Beacon Hill Books & Cafe → Beacon Hill Books & Cafe (nice_to_have)
+[2026-01-21T01:30:49.817Z] LOG    ✅ Charles River Esplanade → Charles River Esplanade (nice_to_have)
+[2026-01-21T01:30:49.817Z] LOG    ✅ View Boston → View Boston (nice_to_have)
+[2026-01-21T01:30:49.817Z] LOG    ✅ Trident Booksellers & Cafe → Trident Booksellers & Cafe (nice_to_have)
+[2026-01-21T01:30:49.817Z] LOG    ✅ Granary Burying Ground → Granary Burying Ground (nice_to_have)
+[2026-01-21T01:30:49.818Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-01-21T01:30:49.818Z] LOG    ✅ Yvonne's → Yvonne's (nice_to_have)
+[2026-01-21T01:30:49.819Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T01:30:49.819Z] LOG    Total enriched: 20
+[2026-01-21T01:30:49.819Z] LOG    🎯 Must-have: 8
+[2026-01-21T01:30:49.819Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T01:30:49.819Z] LOG    ❌ Failed: 0
+[2026-01-21T01:30:49.820Z] LOG    ⏱️ Time: 3260ms
+
+--- Summary ---
+Enrichment completed

@@ -1,0 +1,154 @@
+User Prompt: plan a day around me
+
+[2026-01-21T01:46:53.259Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T01:46:53.260Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-21T01:46:53.260Z] LOG    🎯 Must-have: 8
+[2026-01-21T01:46:53.260Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T01:46:53.261Z] LOG 📍 Location hint: me
+[2026-01-21T01:46:53.261Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-21T01:46:53.261Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T01:46:53.262Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T01:46:53.262Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T01:46:53.262Z] LOG    1. Searching "Harvard Square" in "Harvard Square"
+[2026-01-21T01:46:53.263Z] LOG 🔍 [Google Places] Text search: "Harvard Square" in Harvard Square
+[2026-01-21T01:46:53.265Z] LOG    2. Searching "Harvard Yard" in "Harvard University Area"
+[2026-01-21T01:46:53.266Z] LOG 🔍 [Google Places] Text search: "Harvard Yard" in Harvard University Area
+[2026-01-21T01:46:53.268Z] LOG    3. Searching "John Harvard Statue" in "Harvard University Area"
+[2026-01-21T01:46:53.268Z] LOG 🔍 [Google Places] Text search: "John Harvard Statue" in Harvard University Area
+[2026-01-21T01:46:53.272Z] LOG    4. Searching "Harvard Art Museums" in "Harvard University Area"
+[2026-01-21T01:46:53.274Z] LOG 🔍 [Google Places] Text search: "Harvard Art Museums" in Harvard University Area
+[2026-01-21T01:46:53.277Z] LOG    5. Searching "The Hourly Oyster House" in "Harvard Square"
+[2026-01-21T01:46:53.278Z] LOG 🔍 [Google Places] Text search: "The Hourly Oyster House" in Harvard Square
+[2026-01-21T01:46:53.282Z] LOG    6. Searching "Russell House Tavern" in "Harvard Square"
+[2026-01-21T01:46:53.284Z] LOG 🔍 [Google Places] Text search: "Russell House Tavern" in Harvard Square
+[2026-01-21T01:46:53.288Z] LOG    7. Searching "Tatte Bakery & Cafe | Harvard Square" in "Harvard Square"
+[2026-01-21T01:46:53.289Z] LOG 🔍 [Google Places] Text search: "Tatte Bakery & Cafe | Harvard Square" in Harvard Square
+[2026-01-21T01:46:53.295Z] LOG    8. Searching "Harvard Book Store" in "Harvard Square"
+[2026-01-21T01:46:53.296Z] LOG 🔍 [Google Places] Text search: "Harvard Book Store" in Harvard Square
+[2026-01-21T01:46:53.300Z] LOG    9. Searching "Cambridge Common" in "Harvard University Area"
+[2026-01-21T01:46:53.302Z] LOG 🔍 [Google Places] Text search: "Cambridge Common" in Harvard University Area
+[2026-01-21T01:46:53.307Z] LOG    10. Searching "The Harvard Museum of Natural History" in "Harvard University Area"
+[2026-01-21T01:46:53.308Z] LOG 🔍 [Google Places] Text search: "The Harvard Museum of Natural History" in Harvard University Area
+[2026-01-21T01:46:53.871Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:53.934Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:53.942Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:53.970Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:54.066Z] LOG    ✅ John Harvard Statue: Got description (87 chars)
+[2026-01-21T01:46:54.066Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:54.095Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:54.100Z] LOG    ✅ The Hourly Oyster House: Got description (100 chars)
+[2026-01-21T01:46:54.102Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:54.107Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:54.122Z] LOG    ✅ The Harvard Museum of Natural History: Got description (94 chars)
+[2026-01-21T01:46:54.123Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:54.153Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:54.159Z] LOG    ✅ Harvard Book Store: Got description (91 chars)
+[2026-01-21T01:46:54.161Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:54.195Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:54.199Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:54.224Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:54.230Z] LOG    ✅ Russell House Tavern: Got description (97 chars)
+[2026-01-21T01:46:54.233Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:54.280Z] LOG    ✅ Harvard Square: Got description (88 chars)
+[2026-01-21T01:46:54.281Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:54.302Z] LOG    ⚠️  Tatte Bakery & Cafe | Harvard Square: No editorial summary available
+[2026-01-21T01:46:54.302Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:54.346Z] LOG    ✅ Harvard Art Museums: Got description (99 chars)
+[2026-01-21T01:46:54.347Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:54.369Z] LOG    ✅ Harvard Yard: Got description (97 chars)
+[2026-01-21T01:46:54.371Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:54.376Z] LOG    ✅ Cambridge Common: Got description (98 chars)
+[2026-01-21T01:46:54.377Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:54.378Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1116ms
+[2026-01-21T01:46:54.379Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T01:46:54.379Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T01:46:54.580Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-21T01:46:54.580Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T01:46:54.581Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T01:46:54.581Z] LOG    1. Searching "Peabody Museum of Archaeology and Ethnology" in "Harvard University Area"
+[2026-01-21T01:46:54.582Z] LOG 🔍 [Google Places] Text search: "Peabody Museum of Archaeology and Ethnology" in Harvard University Area
+[2026-01-21T01:46:54.583Z] LOG    2. Searching "Felipe's Taqueria" in "Harvard Square"
+[2026-01-21T01:46:54.583Z] LOG 🔍 [Google Places] Text search: "Felipe's Taqueria" in Harvard Square
+[2026-01-21T01:46:54.584Z] LOG    3. Searching "Alden & Harlow" in "Harvard Square"
+[2026-01-21T01:46:54.585Z] LOG 🔍 [Google Places] Text search: "Alden & Harlow" in Harvard Square
+[2026-01-21T01:46:54.585Z] LOG    4. Searching "L.A. Burdick Handmade Chocolates" in "Harvard Square"
+[2026-01-21T01:46:54.585Z] LOG 🔍 [Google Places] Text search: "L.A. Burdick Handmade Chocolates" in Harvard Square
+[2026-01-21T01:46:54.586Z] LOG    5. Searching "The Brattle Theatre" in "Harvard Square"
+[2026-01-21T01:46:54.587Z] LOG 🔍 [Google Places] Text search: "The Brattle Theatre" in Harvard Square
+[2026-01-21T01:46:54.587Z] LOG    6. Searching "Life Alive Organic Cafe Harvard Square" in "Harvard Square"
+[2026-01-21T01:46:54.587Z] LOG 🔍 [Google Places] Text search: "Life Alive Organic Cafe Harvard Square" in Harvard Square
+[2026-01-21T01:46:54.588Z] LOG    7. Searching "The Harvard Shop" in "Harvard Square"
+[2026-01-21T01:46:54.588Z] LOG 🔍 [Google Places] Text search: "The Harvard Shop" in Harvard Square
+[2026-01-21T01:46:54.589Z] LOG    8. Searching "Zinneken's Belgian waffles | Harvard square" in "Harvard Square"
+[2026-01-21T01:46:54.589Z] LOG 🔍 [Google Places] Text search: "Zinneken's Belgian waffles | Harvard square" in Harvard Square
+[2026-01-21T01:46:54.590Z] LOG    9. Searching "Grafton Street Pub & Grill" in "Harvard Square"
+[2026-01-21T01:46:54.591Z] LOG 🔍 [Google Places] Text search: "Grafton Street Pub & Grill" in Harvard Square
+[2026-01-21T01:46:54.591Z] LOG    10. Searching "The Garage" in "Harvard Square"
+[2026-01-21T01:46:54.592Z] LOG 🔍 [Google Places] Text search: "The Garage" in Harvard Square
+[2026-01-21T01:46:55.005Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:55.034Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:55.081Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:55.092Z] LOG    ✅ Felipe's Taqueria: Got description (89 chars)
+[2026-01-21T01:46:55.092Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:55.119Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:55.134Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:55.153Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:55.184Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:55.191Z] LOG    ✅ Zinneken's Belgian waffles | Harvard square: Got description (97 chars)
+[2026-01-21T01:46:55.192Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:55.231Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:55.235Z] LOG    ✅ Alden & Harlow: Got description (98 chars)
+[2026-01-21T01:46:55.235Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:55.238Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:55.262Z] LOG    ⚠️  The Garage: No editorial summary available
+[2026-01-21T01:46:55.264Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:55.272Z] LOG    ✅ L.A. Burdick Handmade Chocolates: Got description (93 chars)
+[2026-01-21T01:46:55.272Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:55.294Z] LOG    ✅ Peabody Museum of Archaeology and Ethnology: Got description (100 chars)
+[2026-01-21T01:46:55.295Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:55.334Z] LOG    ✅ The Brattle Theatre: Got description (97 chars)
+[2026-01-21T01:46:55.335Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:55.361Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:46:55.389Z] LOG    ✅ The Harvard Shop: Got description (96 chars)
+[2026-01-21T01:46:55.390Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:55.391Z] LOG    ✅ Grafton Street Pub & Grill: Got description (97 chars)
+[2026-01-21T01:46:55.391Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:55.523Z] LOG    ⚠️  Life Alive Organic Cafe Harvard Square: No editorial summary available
+[2026-01-21T01:46:55.524Z] LOG ✅ Found 1 places
+[2026-01-21T01:46:55.524Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 943ms
+[2026-01-21T01:46:55.525Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T01:46:55.525Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-21T01:46:55.526Z] LOG    ✅ Harvard Square → Harvard Square (must_have)
+[2026-01-21T01:46:55.526Z] LOG    ✅ Harvard Yard → Harvard Yard (must_have)
+[2026-01-21T01:46:55.526Z] LOG    ✅ John Harvard Statue → John Harvard Statue (must_have)
+[2026-01-21T01:46:55.527Z] LOG    ✅ Harvard Art Museums → Harvard Art Museums (must_have)
+[2026-01-21T01:46:55.527Z] LOG    ✅ The Hourly Oyster House → The Hourly Oyster House (must_have)
+[2026-01-21T01:46:55.527Z] LOG    ✅ Russell House Tavern → Russell House Tavern (must_have)
+[2026-01-21T01:46:55.528Z] LOG    ✅ Tatte Bakery & Cafe | Harvard Square → Tatte Bakery & Cafe | Harvard Square (must_have)
+[2026-01-21T01:46:55.528Z] LOG    ✅ Harvard Book Store → Harvard Book Store (must_have)
+[2026-01-21T01:46:55.528Z] LOG    ✅ Cambridge Common → Cambridge Common (nice_to_have)
+[2026-01-21T01:46:55.528Z] LOG    ✅ The Harvard Museum of Natural History → The Harvard Museum of Natural History (nice_to_have)
+[2026-01-21T01:46:55.529Z] LOG    ✅ Peabody Museum of Archaeology and Ethnology → Peabody Museum of Archaeology and Ethnology (nice_to_have)
+[2026-01-21T01:46:55.529Z] LOG    ✅ Felipe's Taqueria → Felipe's Taqueria (nice_to_have)
+[2026-01-21T01:46:55.529Z] LOG    ✅ Alden & Harlow → Alden & Harlow (nice_to_have)
+[2026-01-21T01:46:55.529Z] LOG    ✅ L.A. Burdick Handmade Chocolates → L.A. Burdick Handmade Chocolates (nice_to_have)
+[2026-01-21T01:46:55.530Z] LOG    ✅ The Brattle Theatre → The Brattle Theatre (nice_to_have)
+[2026-01-21T01:46:55.530Z] LOG    ✅ Life Alive Organic Cafe Harvard Square → Life Alive Organic Cafe Harvard Square (nice_to_have)
+[2026-01-21T01:46:55.530Z] LOG    ✅ The Harvard Shop → The Harvard Shop (nice_to_have)
+[2026-01-21T01:46:55.530Z] LOG    ✅ Zinneken's Belgian waffles | Harvard square → Zinneken's Belgian waffles | Harvard square (nice_to_have)
+[2026-01-21T01:46:55.531Z] LOG    ✅ Grafton Street Pub & Grill → Grafton Street Pub & Grill (nice_to_have)
+[2026-01-21T01:46:55.531Z] LOG    ✅ The Garage → The Garage (nice_to_have)
+[2026-01-21T01:46:55.531Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T01:46:55.532Z] LOG    Total enriched: 20
+[2026-01-21T01:46:55.532Z] LOG    🎯 Must-have: 8
+[2026-01-21T01:46:55.532Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T01:46:55.533Z] LOG    ❌ Failed: 0
+[2026-01-21T01:46:55.533Z] LOG    ⏱️ Time: 2274ms
+
+--- Summary ---
+Enrichment completed

@@ -1,0 +1,154 @@
+User Prompt: plan tourist spots from newburry to cambridge in Boston
+
+[2026-01-20T00:06:05.763Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-20T00:06:05.764Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-20T00:06:05.764Z] LOG    🎯 Must-have: 7
+[2026-01-20T00:06:05.765Z] LOG    ✨ Nice-to-have: 13
+[2026-01-20T00:06:05.765Z] LOG 📍 Location hint: Boston
+[2026-01-20T00:06:05.766Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-20T00:06:05.766Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-20T00:06:05.768Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T00:06:05.770Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T00:06:05.772Z] LOG    1. Searching "Newbury Street" in "Back Bay"
+[2026-01-20T00:06:05.774Z] LOG 🔍 [Google Places] Text search: "Newbury Street" in Back Bay
+[2026-01-20T00:06:05.781Z] LOG    2. Searching "Boston Common" in "Downtown Boston"
+[2026-01-20T00:06:05.784Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown Boston
+[2026-01-20T00:06:05.791Z] LOG    3. Searching "Public Garden" in "Back Bay / Beacon Hill"
+[2026-01-20T00:06:05.793Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Back Bay / Beacon Hill
+[2026-01-20T00:06:05.798Z] LOG    4. Searching "Faneuil Hall Marketplace" in "Government Center"
+[2026-01-20T00:06:05.800Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Government Center
+[2026-01-20T00:06:05.806Z] LOG    5. Searching "The Paul Revere House" in "North End"
+[2026-01-20T00:06:05.810Z] LOG 🔍 [Google Places] Text search: "The Paul Revere House" in North End
+[2026-01-20T00:06:05.818Z] LOG    6. Searching "Harvard Square" in "Cambridge"
+[2026-01-20T00:06:05.822Z] LOG 🔍 [Google Places] Text search: "Harvard Square" in Cambridge
+[2026-01-20T00:06:05.832Z] LOG    7. Searching "Great Dome" in "MIT / Cambridge"
+[2026-01-20T00:06:05.835Z] LOG 🔍 [Google Places] Text search: "Great Dome" in MIT / Cambridge
+[2026-01-20T00:06:05.844Z] LOG    8. Searching "Museum of Fine Arts, Boston" in "Fenway–Kenmore"
+[2026-01-20T00:06:05.849Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Fenway–Kenmore
+[2026-01-20T00:06:05.859Z] LOG    9. Searching "Isabella Stewart Gardner Museum" in "Fenway–Kenmore"
+[2026-01-20T00:06:05.862Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway–Kenmore
+[2026-01-20T00:06:05.870Z] LOG    10. Searching "Charles River Esplanade" in "Back Bay / Beacon Hill / Cambridge"
+[2026-01-20T00:06:05.872Z] LOG 🔍 [Google Places] Text search: "Charles River Esplanade" in Back Bay / Beacon Hill / Cambridge
+[2026-01-20T00:06:06.429Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:06.446Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:06.498Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:06.503Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:06.523Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:06.550Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-20T00:06:06.551Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:06.610Z] LOG    ✅ Great Dome: Got description (90 chars)
+[2026-01-20T00:06:06.612Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:06.624Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-01-20T00:06:06.626Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:06.628Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:06.638Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:06.685Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:06.702Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-01-20T00:06:06.702Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:06.714Z] LOG    ⚠️  Harvard Square: No editorial summary available
+[2026-01-20T00:06:06.715Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:06.723Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:06.788Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-20T00:06:06.789Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:06.814Z] LOG    ✅ Charles River Esplanade: Got description (99 chars)
+[2026-01-20T00:06:06.815Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:06.818Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-20T00:06:06.819Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:06.888Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:06.902Z] LOG    ✅ Newbury St: Got description (100 chars)
+[2026-01-20T00:06:06.903Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:07.024Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-20T00:06:07.026Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:07.026Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1256ms
+[2026-01-20T00:06:07.027Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T00:06:07.028Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-20T00:06:07.231Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-20T00:06:07.232Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T00:06:07.232Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T00:06:07.233Z] LOG    1. Searching "View Boston" in "Back Bay"
+[2026-01-20T00:06:07.233Z] LOG 🔍 [Google Places] Text search: "View Boston" in Back Bay
+[2026-01-20T00:06:07.235Z] LOG    2. Searching "New England Aquarium" in "Waterfront"
+[2026-01-20T00:06:07.236Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Waterfront
+[2026-01-20T00:06:07.237Z] LOG    3. Searching "Boston Tea Party Ships & Museum" in "Fort Point"
+[2026-01-20T00:06:07.237Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Fort Point
+[2026-01-20T00:06:07.239Z] LOG    4. Searching "MIT Museum" in "Kendall Square / Cambridge"
+[2026-01-20T00:06:07.240Z] LOG 🔍 [Google Places] Text search: "MIT Museum" in Kendall Square / Cambridge
+[2026-01-20T00:06:07.241Z] LOG    5. Searching "Harvard Art Museums" in "Harvard University / Cambridge"
+[2026-01-20T00:06:07.241Z] LOG 🔍 [Google Places] Text search: "Harvard Art Museums" in Harvard University / Cambridge
+[2026-01-20T00:06:07.242Z] LOG    6. Searching "Copley Square" in "Back Bay"
+[2026-01-20T00:06:07.242Z] LOG 🔍 [Google Places] Text search: "Copley Square" in Back Bay
+[2026-01-20T00:06:07.244Z] LOG    7. Searching "Beacon Hill" in "Beacon Hill"
+[2026-01-20T00:06:07.245Z] LOG 🔍 [Google Places] Text search: "Beacon Hill" in Beacon Hill
+[2026-01-20T00:06:07.248Z] LOG    8. Searching "Bunker Hill Monument" in "Charlestown"
+[2026-01-20T00:06:07.249Z] LOG 🔍 [Google Places] Text search: "Bunker Hill Monument" in Charlestown
+[2026-01-20T00:06:07.252Z] LOG    9. Searching "Museum of Science" in "West End / East Cambridge"
+[2026-01-20T00:06:07.252Z] LOG 🔍 [Google Places] Text search: "Museum of Science" in West End / East Cambridge
+[2026-01-20T00:06:07.254Z] LOG    10. Searching "Cambridge Common" in "Cambridge"
+[2026-01-20T00:06:07.254Z] LOG 🔍 [Google Places] Text search: "Cambridge Common" in Cambridge
+[2026-01-20T00:06:07.737Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:07.741Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:07.766Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:07.782Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:07.873Z] LOG    ✅ Copley Square: Got description (95 chars)
+[2026-01-20T00:06:07.875Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:07.900Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:07.909Z] LOG    ⚠️  Beacon Hill: No editorial summary available
+[2026-01-20T00:06:07.910Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:07.932Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:07.943Z] LOG    ✅ Cambridge Common Restaurant: Got description (83 chars)
+[2026-01-20T00:06:07.944Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:07.951Z] LOG    ✅ Bunker Hill Monument: Got description (98 chars)
+[2026-01-20T00:06:07.952Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:07.963Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:08.021Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-01-20T00:06:08.021Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:08.031Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:08.066Z] LOG    ✅ Museum of Science: Got description (99 chars)
+[2026-01-20T00:06:08.067Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:08.094Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-01-20T00:06:08.096Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:08.166Z] LOG    ✅ Harvard Art Museums: Got description (99 chars)
+[2026-01-20T00:06:08.168Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:08.185Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:08.269Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:06:08.368Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-01-20T00:06:08.370Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:08.393Z] LOG    ✅ MIT Museum: Got description (97 chars)
+[2026-01-20T00:06:08.394Z] LOG ✅ Found 1 places
+[2026-01-20T00:06:08.394Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1162ms
+[2026-01-20T00:06:08.395Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T00:06:08.395Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-20T00:06:08.396Z] LOG    ✅ Newbury Street → Newbury St (must_have)
+[2026-01-20T00:06:08.396Z] LOG    ✅ Boston Common → Boston Common (must_have)
+[2026-01-20T00:06:08.397Z] LOG    ✅ Public Garden → Public Garden (must_have)
+[2026-01-20T00:06:08.397Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (must_have)
+[2026-01-20T00:06:08.398Z] LOG    ✅ The Paul Revere House → The Paul Revere House (must_have)
+[2026-01-20T00:06:08.398Z] LOG    ✅ Harvard Square → Harvard Square (must_have)
+[2026-01-20T00:06:08.398Z] LOG    ✅ Great Dome → Great Dome (must_have)
+[2026-01-20T00:06:08.399Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (nice_to_have)
+[2026-01-20T00:06:08.399Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-01-20T00:06:08.400Z] LOG    ✅ Charles River Esplanade → Charles River Esplanade (nice_to_have)
+[2026-01-20T00:06:08.400Z] LOG    ✅ View Boston → View Boston (nice_to_have)
+[2026-01-20T00:06:08.401Z] LOG    ✅ New England Aquarium → New England Aquarium (nice_to_have)
+[2026-01-20T00:06:08.401Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (nice_to_have)
+[2026-01-20T00:06:08.401Z] LOG    ✅ MIT Museum → MIT Museum (nice_to_have)
+[2026-01-20T00:06:08.401Z] LOG    ✅ Harvard Art Museums → Harvard Art Museums (nice_to_have)
+[2026-01-20T00:06:08.402Z] LOG    ✅ Copley Square → Copley Square (nice_to_have)
+[2026-01-20T00:06:08.402Z] LOG    ✅ Beacon Hill → Beacon Hill (nice_to_have)
+[2026-01-20T00:06:08.402Z] LOG    ✅ Bunker Hill Monument → Bunker Hill Monument (nice_to_have)
+[2026-01-20T00:06:08.403Z] LOG    ✅ Museum of Science → Museum of Science (nice_to_have)
+[2026-01-20T00:06:08.403Z] LOG    ✅ Cambridge Common → Cambridge Common Restaurant (nice_to_have)
+[2026-01-20T00:06:08.404Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-20T00:06:08.404Z] LOG    Total enriched: 20
+[2026-01-20T00:06:08.404Z] LOG    🎯 Must-have: 7
+[2026-01-20T00:06:08.405Z] LOG    ✨ Nice-to-have: 13
+[2026-01-20T00:06:08.405Z] LOG    ❌ Failed: 0
+[2026-01-20T00:06:08.406Z] LOG    ⏱️ Time: 2644ms
+
+--- Summary ---
+Enrichment completed

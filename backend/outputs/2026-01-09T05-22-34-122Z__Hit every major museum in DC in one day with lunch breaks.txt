@@ -1,0 +1,195 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-01-09T05:22:34.125Z] LOG 📍 Using fallback location (no user location): National Mall
+[2026-01-09T05:22:34.127Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2026-01-09T05:22:34.128Z] LOG    1. "Smithsonian National Museum of Natural History" in "National Mall"
+[2026-01-09T05:22:34.129Z] LOG    2. "National Gallery of Art" in "National Mall"
+[2026-01-09T05:22:34.130Z] LOG    3. "Elephant & Castle" in "Federal Triangle/Northwest Washington"
+[2026-01-09T05:22:34.130Z] LOG    4. "Smithsonian's National Air and Space Museum" in "National Mall"
+[2026-01-09T05:22:34.131Z] LOG    5. "The Capital Grille" in "Penn Quarter/Northwest Washington"
+[2026-01-09T05:22:34.131Z] LOG    6. "National Museum of African American History and Culture" in "National Mall"
+[2026-01-09T05:22:34.132Z] LOG 
+🔍 Executing batch search for 6 venues...
+[2026-01-09T05:22:34.134Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-09T05:22:34.135Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2026-01-09T05:22:34.137Z] LOG    1. Searching "Smithsonian National Museum of Natural History" in "National Mall"
+[2026-01-09T05:22:34.138Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of Natural History" in National Mall
+[2026-01-09T05:22:34.164Z] LOG    2. Searching "National Gallery of Art" in "National Mall"
+[2026-01-09T05:22:34.166Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in National Mall
+[2026-01-09T05:22:34.172Z] LOG    3. Searching "Elephant & Castle" in "Federal Triangle/Northwest Washington"
+[2026-01-09T05:22:34.173Z] LOG 🔍 [Google Places] Text search: "Elephant & Castle" in Federal Triangle/Northwest Washington
+[2026-01-09T05:22:34.180Z] LOG    4. Searching "Smithsonian's National Air and Space Museum" in "National Mall"
+[2026-01-09T05:22:34.183Z] LOG 🔍 [Google Places] Text search: "Smithsonian's National Air and Space Museum" in National Mall
+[2026-01-09T05:22:34.190Z] LOG    5. Searching "The Capital Grille" in "Penn Quarter/Northwest Washington"
+[2026-01-09T05:22:34.192Z] LOG 🔍 [Google Places] Text search: "The Capital Grille" in Penn Quarter/Northwest Washington
+[2026-01-09T05:22:34.199Z] LOG    6. Searching "National Museum of African American History and Culture" in "National Mall"
+[2026-01-09T05:22:34.201Z] LOG 🔍 [Google Places] Text search: "National Museum of African American History and Culture" in National Mall
+[2026-01-09T05:22:34.763Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-09T05:22:34.823Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-09T05:22:34.927Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-09T05:22:34.931Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-09T05:22:34.956Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-09T05:22:34.962Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-01-09T05:22:34.966Z] LOG ✅ Found 1 places
+[2026-01-09T05:22:35.038Z] LOG    ✅ The Capital Grille: Got description (97 chars)
+[2026-01-09T05:22:35.041Z] LOG ✅ Found 1 places
+[2026-01-09T05:22:35.087Z] LOG    ✅ National Museum of African American History and Culture: Got description (97 chars)
+[2026-01-09T05:22:35.089Z] LOG ✅ Found 1 places
+[2026-01-09T05:22:35.130Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-09T05:22:35.135Z] LOG ✅ Found 1 places
+[2026-01-09T05:22:35.145Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-09T05:22:35.147Z] LOG ✅ Found 1 places
+[2026-01-09T05:22:35.279Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-09T05:22:35.472Z] LOG    ✅ Elephant & Castle: Got description (90 chars)
+[2026-01-09T05:22:35.475Z] LOG ✅ Found 1 places
+[2026-01-09T05:22:35.476Z] LOG ✅ Batch complete: 6/6 searches succeeded, 6 total venues found in 1341ms
+[2026-01-09T05:22:35.476Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-09T05:22:35.477Z] LOG    Tool execution result: success=true
+[2026-01-09T05:22:35.477Z] LOG    ✅ Tool returned 6 search results
+[2026-01-09T05:22:35.478Z] LOG    ✅ Merged: Smithsonian National Museum of Natural History
+[2026-01-09T05:22:35.478Z] LOG       Places placeId: ChIJx7K17Ji3t4kRr3VvqMTw7cc
+[2026-01-09T05:22:35.479Z] LOG       Gemini description: Explore the vast collections covering everything from dinosa...
+[2026-01-09T05:22:35.479Z] LOG    ✅ Merged: National Gallery of Art
+[2026-01-09T05:22:35.479Z] LOG       Places placeId: ChIJSYxSO5u3t4kRm4eyKw_Y7Kg
+[2026-01-09T05:22:35.480Z] LOG       Gemini description: Housing an impressive collection of American and European ma...
+[2026-01-09T05:22:35.481Z] LOG    ✅ Merged: Elephant & Castle
+[2026-01-09T05:22:35.481Z] LOG       Places placeId: ChIJm58UV5e3t4kR-YGGDcKtV5U
+[2026-01-09T05:22:35.482Z] LOG       Gemini description: A lively British pub offering classic fare like fish 'n' chi...
+[2026-01-09T05:22:35.483Z] LOG    ✅ Merged: Smithsonian's National Air and Space Museum
+[2026-01-09T05:22:35.484Z] LOG       Places placeId: ChIJISQme4O3t4kRG-iM3TfJ5_g
+[2026-01-09T05:22:35.485Z] LOG       Gemini description: Dedicated to the history of aviation and space exploration, ...
+[2026-01-09T05:22:35.485Z] LOG    ✅ Merged: The Capital Grille
+[2026-01-09T05:22:35.486Z] LOG       Places placeId: ChIJJT16aoW3t4kRqUrkWxGsAR8
+[2026-01-09T05:22:35.487Z] LOG       Gemini description: An upscale steakhouse offering classic American fare, includ...
+[2026-01-09T05:22:35.487Z] LOG    ✅ Merged: National Museum of African American History and Culture
+[2026-01-09T05:22:35.488Z] LOG       Places placeId: ChIJF4Mpspi3t4kRBi9jWNebAZg
+[2026-01-09T05:22:35.488Z] LOG       Gemini description: This powerful Smithsonian museum is dedicated to documenting...
+[2026-01-09T05:22:35.489Z] LOG ✅ Phase 1 complete: Found 6/6 exact venues
+[2026-01-09T05:22:35.490Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2026-01-09T05:22:35.492Z] LOG    Searching for alternatives near 6 venues...
+[2026-01-09T05:22:35.494Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-09T05:22:35.496Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2026-01-09T05:22:35.496Z] LOG    1. Searching "museum" in "38.8912662,-77.0260654"
+[2026-01-09T05:22:35.497Z] LOG    📍 Using nearbySearch at coordinates (38.8912662, -77.0260654)
+[2026-01-09T05:22:35.497Z] LOG 🔍 [Google Places] Nearby search at (38.8912662, -77.0260654)
+[2026-01-09T05:22:35.500Z] LOG    2. Searching "museum" in "38.891298,-77.019965"
+[2026-01-09T05:22:35.502Z] LOG    📍 Using nearbySearch at coordinates (38.891298, -77.019965)
+[2026-01-09T05:22:35.505Z] LOG 🔍 [Google Places] Nearby search at (38.891298, -77.019965)
+[2026-01-09T05:22:35.510Z] LOG    3. Searching "restaurant" in "38.8957756,-77.028415"
+[2026-01-09T05:22:35.511Z] LOG    📍 Using nearbySearch at coordinates (38.8957756, -77.028415)
+[2026-01-09T05:22:35.512Z] LOG 🔍 [Google Places] Nearby search at (38.8957756, -77.028415)
+[2026-01-09T05:22:35.514Z] LOG    4. Searching "museum" in "38.8882063,-77.0198164"
+[2026-01-09T05:22:35.517Z] LOG    📍 Using nearbySearch at coordinates (38.8882063, -77.0198164)
+[2026-01-09T05:22:35.520Z] LOG 🔍 [Google Places] Nearby search at (38.8882063, -77.0198164)
+[2026-01-09T05:22:35.523Z] LOG    5. Searching "fine dining restaurant" in "38.89311,-77.020168"
+[2026-01-09T05:22:35.526Z] LOG    📍 Using nearbySearch at coordinates (38.89311, -77.020168)
+[2026-01-09T05:22:35.528Z] LOG 🔍 [Google Places] Nearby search at (38.89311, -77.020168)
+[2026-01-09T05:22:35.531Z] LOG    6. Searching "museum" in "38.8910644,-77.032614"
+[2026-01-09T05:22:35.532Z] LOG    📍 Using nearbySearch at coordinates (38.8910644, -77.032614)
+[2026-01-09T05:22:35.533Z] LOG 🔍 [Google Places] Nearby search at (38.8910644, -77.032614)
+[2026-01-09T05:22:36.264Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-09T05:22:36.275Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-09T05:22:36.297Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-09T05:22:36.338Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-09T05:22:36.391Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-09T05:22:36.478Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-09T05:22:36.483Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-09T05:22:36.493Z] LOG    ✅ Stan's DC Restaurant: Got description (96 chars)
+[2026-01-09T05:22:36.532Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-09T05:22:36.675Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-09T05:22:36.678Z] LOG    ⚠️  La Grande Boucherie DC: No editorial summary available
+[2026-01-09T05:22:36.681Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-09T05:22:36.683Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-09T05:22:36.685Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-09T05:22:36.687Z] LOG    ✅ The Capital Grille: Got description (97 chars)
+[2026-01-09T05:22:36.689Z] LOG    ✅ National Museum of Women in the Arts: Got description (95 chars)
+[2026-01-09T05:22:36.692Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-09T05:22:36.695Z] LOG    ✅ D.C. Alley Museum: Got description (94 chars)
+[2026-01-09T05:22:36.698Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-09T05:22:36.706Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-01-09T05:22:36.710Z] LOG    ✅ Hirshhorn Museum: Got description (99 chars)
+[2026-01-09T05:22:36.715Z] LOG    ✅ The Dubliner Restaurant: Got description (93 chars)
+[2026-01-09T05:22:36.723Z] LOG    ✅ Silk Restaurant and Lounge: Got description (112 chars)
+[2026-01-09T05:22:36.727Z] LOG    ⚠️  Kitchen + Kocktails By Kevin Kelley - DC: No editorial summary available
+[2026-01-09T05:22:36.732Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-09T05:22:36.740Z] LOG    ✅ Seven Reasons: Got description (98 chars)
+[2026-01-09T05:22:36.746Z] LOG    ✅ National Children's Museum: Got description (95 chars)
+[2026-01-09T05:22:36.747Z] LOG    ✅ Irish Channel Restaurant & Pub: Got description (96 chars)
+[2026-01-09T05:22:36.757Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2026-01-09T05:22:36.762Z] LOG    ✅ Ocean Prime: Got description (95 chars)
+[2026-01-09T05:22:36.903Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2026-01-09T05:22:36.907Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-09T05:22:36.910Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-09T05:22:36.912Z] LOG    ✅ Wok and Roll Restaurant Karaoke: Got description (91 chars)
+[2026-01-09T05:22:36.913Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-09T05:22:36.972Z] LOG    ⚠️  National Archives Museum: No editorial summary available
+[2026-01-09T05:22:36.974Z] LOG ✅ Batch complete: 6/6 searches succeeded, 30 total venues found in 1479ms
+[2026-01-09T05:22:36.975Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-09T05:22:36.976Z] LOG    ✅ Venue 1 (Smithsonian National Museum of Natural History): 4 alternatives
+[2026-01-09T05:22:36.976Z] LOG       1. International Spy Museum (4.4⭐)
+[2026-01-09T05:22:36.977Z] LOG       2. Museum of Illusions Washington DC (4.1⭐)
+[2026-01-09T05:22:36.977Z] LOG       3. National Children's Museum (4.3⭐)
+[2026-01-09T05:22:36.978Z] LOG    ✅ Venue 2 (National Gallery of Art): 4 alternatives
+[2026-01-09T05:22:36.978Z] LOG       1. Smithsonian National Museum of Natural History (4.8⭐)
+[2026-01-09T05:22:36.979Z] LOG       2. International Spy Museum (4.4⭐)
+[2026-01-09T05:22:36.979Z] LOG       3. Museum of Illusions Washington DC (4.1⭐)
+[2026-01-09T05:22:36.980Z] LOG    ✅ Venue 3 (Elephant & Castle): 4 alternatives
+[2026-01-09T05:22:36.980Z] LOG       1. Stan's DC Restaurant (4.6⭐)
+[2026-01-09T05:22:36.981Z] LOG       2. The Dubliner Restaurant (4.4⭐)
+[2026-01-09T05:22:36.981Z] LOG       3. Irish Channel Restaurant & Pub (4.5⭐)
+[2026-01-09T05:22:36.982Z] LOG    ✅ Venue 4 (Smithsonian's National Air and Space Museum): 4 alternatives
+[2026-01-09T05:22:36.982Z] LOG       1. Smithsonian National Museum of Natural History (4.8⭐)
+[2026-01-09T05:22:36.982Z] LOG       2. International Spy Museum (4.4⭐)
+[2026-01-09T05:22:36.983Z] LOG       3. Museum of Illusions Washington DC (4.1⭐)
+[2026-01-09T05:22:36.983Z] LOG    ✅ Venue 5 (The Capital Grille): 4 alternatives
+[2026-01-09T05:22:36.984Z] LOG       1. La Grande Boucherie DC (4.7⭐)
+[2026-01-09T05:22:36.984Z] LOG       2. Kitchen + Kocktails By Kevin Kelley - DC (4.8⭐)
+[2026-01-09T05:22:36.985Z] LOG       3. Ocean Prime (4.6⭐)
+[2026-01-09T05:22:36.985Z] LOG    ✅ Venue 6 (National Museum of African American History and Culture): 4 alternatives
+[2026-01-09T05:22:36.986Z] LOG       1. D.C. Alley Museum (4.3⭐)
+[2026-01-09T05:22:36.986Z] LOG       2. Museum of Illusions Washington DC (4.1⭐)
+[2026-01-09T05:22:36.986Z] LOG       3. Hirshhorn Museum (4.5⭐)
+[2026-01-09T05:22:36.987Z] LOG 
+📦 Phase 2 complete: 6 stops with alternatives
+[2026-01-09T05:22:36.988Z] LOG 
+🧹 Cleaning alternatives...
+[2026-01-09T05:22:36.988Z] LOG    Primary venues: 6 stops
+[2026-01-09T05:22:36.989Z] LOG    ❌ Removed "National Gallery of Art" - already in primary route
+[2026-01-09T05:22:36.989Z] LOG    🔧 Stop "ChIJx7K17Ji3t4kRr3Vv...": 4 → 3 alternatives
+[2026-01-09T05:22:36.990Z] LOG    ❌ Removed "Smithsonian National Museum of Natural History" - already in primary route
+[2026-01-09T05:22:36.991Z] LOG    ❌ Removed "International Spy Museum" - duplicate alternative
+[2026-01-09T05:22:36.992Z] LOG    ❌ Removed "Museum of Illusions Washington DC" - duplicate alternative
+[2026-01-09T05:22:36.993Z] LOG    ❌ Removed "Smithsonian's National Air and Space Museum" - already in primary route
+[2026-01-09T05:22:36.996Z] LOG    🔧 Stop "ChIJSYxSO5u3t4kRm4ey...": 4 → 0 alternatives
+[2026-01-09T05:22:36.998Z] LOG    ❌ Removed "Smithsonian National Museum of Natural History" - already in primary route
+[2026-01-09T05:22:36.998Z] LOG    ❌ Removed "International Spy Museum" - duplicate alternative
+[2026-01-09T05:22:36.999Z] LOG    ❌ Removed "Museum of Illusions Washington DC" - duplicate alternative
+[2026-01-09T05:22:37.000Z] LOG    🔧 Stop "ChIJISQme4O3t4kRG-iM...": 4 → 1 alternatives
+[2026-01-09T05:22:37.001Z] LOG    ❌ Removed "Museum of Illusions Washington DC" - duplicate alternative
+[2026-01-09T05:22:37.002Z] LOG    🔧 Stop "ChIJF4Mpspi3t4kRBi9j...": 4 → 3 alternatives
+[2026-01-09T05:22:37.003Z] LOG 
+✅ Cleaning complete:
+[2026-01-09T05:22:37.005Z] LOG    Removed 4 venues already in route
+[2026-01-09T05:22:37.006Z] LOG    Removed 5 duplicate alternatives
+[2026-01-09T05:22:37.007Z] LOG    Final: 5 stops with alternatives
+
+[2026-01-09T05:22:37.009Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2026-01-09T05:22:37.010Z] LOG    Primary venues: 6
+[2026-01-09T05:22:37.010Z] LOG    Alternatives: 5 stops with alternatives
+[2026-01-09T05:22:37.011Z] LOG    Execution time: 2889ms
+[2026-01-09T05:22:37.012Z] LOG 
+📋 Final alternatives:
+[2026-01-09T05:22:37.013Z] LOG    Smithsonian National Museum of Natural History: 3 alternatives
+[2026-01-09T05:22:37.014Z] LOG    Elephant & Castle: 4 alternatives
+[2026-01-09T05:22:37.014Z] LOG    Smithsonian's National Air and Space Museum: 1 alternatives
+[2026-01-09T05:22:37.015Z] LOG    The Capital Grille: 4 alternatives
+[2026-01-09T05:22:37.016Z] LOG    National Museum of African American History and Culture: 3 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 6
+Alternatives: 5

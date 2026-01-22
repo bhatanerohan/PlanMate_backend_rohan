@@ -1,0 +1,154 @@
+User Prompt: plan a day around me for sightseeing
+
+[2026-01-21T01:27:28.323Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T01:27:28.323Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-21T01:27:28.324Z] LOG    🎯 Must-have: 8
+[2026-01-21T01:27:28.324Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T01:27:28.324Z] LOG 📍 Location hint: me for sightseeing
+[2026-01-21T01:27:28.325Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-21T01:27:28.325Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T01:27:28.325Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T01:27:28.326Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T01:27:28.326Z] LOG    1. Searching "Boston Common" in "Downtown/Beacon Hill"
+[2026-01-21T01:27:28.326Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown/Beacon Hill
+[2026-01-21T01:27:28.328Z] LOG    2. Searching "Public Garden" in "Downtown/Beacon Hill"
+[2026-01-21T01:27:28.328Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Downtown/Beacon Hill
+[2026-01-21T01:27:28.330Z] LOG    3. Searching "Boston Tea Party Ships & Museum" in "Seaport/Waterfront"
+[2026-01-21T01:27:28.330Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Seaport/Waterfront
+[2026-01-21T01:27:28.332Z] LOG    4. Searching "The Paul Revere House" in "North End"
+[2026-01-21T01:27:28.333Z] LOG 🔍 [Google Places] Text search: "The Paul Revere House" in North End
+[2026-01-21T01:27:28.336Z] LOG    5. Searching "Bunker Hill Monument" in "Charlestown"
+[2026-01-21T01:27:28.336Z] LOG 🔍 [Google Places] Text search: "Bunker Hill Monument" in Charlestown
+[2026-01-21T01:27:28.341Z] LOG    6. Searching "Museum of Fine Arts, Boston" in "Fenway-Kenmore"
+[2026-01-21T01:27:28.342Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Fenway-Kenmore
+[2026-01-21T01:27:28.345Z] LOG    7. Searching "New England Aquarium" in "Waterfront/Downtown"
+[2026-01-21T01:27:28.346Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Waterfront/Downtown
+[2026-01-21T01:27:28.348Z] LOG    8. Searching "View Boston" in "Back Bay"
+[2026-01-21T01:27:28.349Z] LOG 🔍 [Google Places] Text search: "View Boston" in Back Bay
+[2026-01-21T01:27:28.354Z] LOG    9. Searching "Isabella Stewart Gardner Museum" in "Fenway-Kenmore"
+[2026-01-21T01:27:28.355Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway-Kenmore
+[2026-01-21T01:27:28.362Z] LOG    10. Searching "Back Bay Fens" in "Fenway-Kenmore"
+[2026-01-21T01:27:28.364Z] LOG 🔍 [Google Places] Text search: "Back Bay Fens" in Fenway-Kenmore
+[2026-01-21T01:27:28.914Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:28.919Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:28.930Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:28.942Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:28.958Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:28.964Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:29.059Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:29.062Z] LOG    ✅ Back Bay Fens: Got description (100 chars)
+[2026-01-21T01:27:29.063Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:29.076Z] LOG    ✅ Bunker Hill Monument: Got description (98 chars)
+[2026-01-21T01:27:29.077Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:29.081Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-01-21T01:27:29.082Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:29.094Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:29.096Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-21T01:27:29.097Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:29.100Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-01-21T01:27:29.100Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:29.110Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-01-21T01:27:29.112Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:29.146Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:29.169Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:29.228Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-21T01:27:29.228Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:29.231Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-01-21T01:27:29.231Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:29.296Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-01-21T01:27:29.297Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:29.304Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-21T01:27:29.304Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:29.305Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 979ms
+[2026-01-21T01:27:29.305Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T01:27:29.306Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T01:27:29.509Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-21T01:27:29.511Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T01:27:29.512Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T01:27:29.512Z] LOG    1. Searching "Fenway Park" in "Fenway-Kenmore"
+[2026-01-21T01:27:29.513Z] LOG 🔍 [Google Places] Text search: "Fenway Park" in Fenway-Kenmore
+[2026-01-21T01:27:29.514Z] LOG    2. Searching "Charles River Esplanade" in "Back Bay/Beacon Hill"
+[2026-01-21T01:27:29.514Z] LOG 🔍 [Google Places] Text search: "Charles River Esplanade" in Back Bay/Beacon Hill
+[2026-01-21T01:27:29.515Z] LOG    3. Searching "Museum of Science" in "West End/East Cambridge"
+[2026-01-21T01:27:29.515Z] LOG 🔍 [Google Places] Text search: "Museum of Science" in West End/East Cambridge
+[2026-01-21T01:27:29.516Z] LOG    4. Searching "Harvard Square" in "Cambridge"
+[2026-01-21T01:27:29.517Z] LOG 🔍 [Google Places] Text search: "Harvard Square" in Cambridge
+[2026-01-21T01:27:29.517Z] LOG    5. Searching "The Harvard Tour" in "Cambridge"
+[2026-01-21T01:27:29.518Z] LOG 🔍 [Google Places] Text search: "The Harvard Tour" in Cambridge
+[2026-01-21T01:27:29.518Z] LOG    6. Searching "Black Heritage Trail" in "Beacon Hill"
+[2026-01-21T01:27:29.518Z] LOG 🔍 [Google Places] Text search: "Black Heritage Trail" in Beacon Hill
+[2026-01-21T01:27:29.519Z] LOG    7. Searching "Christopher Columbus Waterfront Park" in "Waterfront/Downtown"
+[2026-01-21T01:27:29.519Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in Waterfront/Downtown
+[2026-01-21T01:27:29.520Z] LOG    8. Searching "Fan Pier Park" in "Seaport"
+[2026-01-21T01:27:29.520Z] LOG 🔍 [Google Places] Text search: "Fan Pier Park" in Seaport
+[2026-01-21T01:27:29.521Z] LOG    9. Searching "Copley Square" in "Back Bay"
+[2026-01-21T01:27:29.521Z] LOG 🔍 [Google Places] Text search: "Copley Square" in Back Bay
+[2026-01-21T01:27:29.522Z] LOG    10. Searching "Faneuil Hall Marketplace" in "Downtown/Waterfront"
+[2026-01-21T01:27:29.523Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Downtown/Waterfront
+[2026-01-21T01:27:30.007Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:30.033Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:30.047Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:30.059Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:30.088Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:30.100Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:30.140Z] LOG    ✅ Copley Square: Got description (95 chars)
+[2026-01-21T01:27:30.141Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:30.150Z] LOG    ✅ Fan Pier Park: Got description (97 chars)
+[2026-01-21T01:27:30.151Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:30.165Z] LOG    ✅ Museum of Science: Got description (99 chars)
+[2026-01-21T01:27:30.165Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:30.188Z] LOG    ✅ Black Heritage Trail: Got description (96 chars)
+[2026-01-21T01:27:30.189Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:30.194Z] LOG    ✅ Fenway Park: Got description (91 chars)
+[2026-01-21T01:27:30.195Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:30.236Z] LOG    ⚠️  Harvard Square: No editorial summary available
+[2026-01-21T01:27:30.237Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:30.263Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:30.368Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:30.382Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-01-21T01:27:30.382Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:30.398Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:30.510Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-21T01:27:30.511Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:30.538Z] LOG    ✅ Charles River Esplanade: Got description (99 chars)
+[2026-01-21T01:27:30.539Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:30.842Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T01:27:30.970Z] LOG    ⚠️  The Harvard Tour: No editorial summary available
+[2026-01-21T01:27:30.970Z] LOG ✅ Found 1 places
+[2026-01-21T01:27:30.971Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1459ms
+[2026-01-21T01:27:30.972Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T01:27:30.972Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-21T01:27:30.973Z] LOG    ✅ Boston Common → Boston Common (must_have)
+[2026-01-21T01:27:30.973Z] LOG    ✅ Public Garden → Public Garden (must_have)
+[2026-01-21T01:27:30.974Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (must_have)
+[2026-01-21T01:27:30.974Z] LOG    ✅ The Paul Revere House → The Paul Revere House (must_have)
+[2026-01-21T01:27:30.975Z] LOG    ✅ Bunker Hill Monument → Bunker Hill Monument (must_have)
+[2026-01-21T01:27:30.975Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (must_have)
+[2026-01-21T01:27:30.975Z] LOG    ✅ New England Aquarium → New England Aquarium (must_have)
+[2026-01-21T01:27:30.975Z] LOG    ✅ View Boston → View Boston (must_have)
+[2026-01-21T01:27:30.976Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-01-21T01:27:30.976Z] LOG    ✅ Back Bay Fens → Back Bay Fens (nice_to_have)
+[2026-01-21T01:27:30.976Z] LOG    ✅ Fenway Park → Fenway Park (nice_to_have)
+[2026-01-21T01:27:30.977Z] LOG    ✅ Charles River Esplanade → Charles River Esplanade (nice_to_have)
+[2026-01-21T01:27:30.977Z] LOG    ✅ Museum of Science → Museum of Science (nice_to_have)
+[2026-01-21T01:27:30.977Z] LOG    ✅ Harvard Square → Harvard Square (nice_to_have)
+[2026-01-21T01:27:30.977Z] LOG    ✅ The Harvard Tour → The Harvard Tour (nice_to_have)
+[2026-01-21T01:27:30.978Z] LOG    ✅ Black Heritage Trail → Black Heritage Trail (nice_to_have)
+[2026-01-21T01:27:30.978Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (nice_to_have)
+[2026-01-21T01:27:30.978Z] LOG    ✅ Fan Pier Park → Fan Pier Park (nice_to_have)
+[2026-01-21T01:27:30.978Z] LOG    ✅ Copley Square → Copley Square (nice_to_have)
+[2026-01-21T01:27:30.978Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (nice_to_have)
+[2026-01-21T01:27:30.979Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T01:27:30.979Z] LOG    Total enriched: 20
+[2026-01-21T01:27:30.979Z] LOG    🎯 Must-have: 8
+[2026-01-21T01:27:30.979Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T01:27:30.979Z] LOG    ❌ Failed: 0
+[2026-01-21T01:27:30.980Z] LOG    ⏱️ Time: 2658ms
+
+--- Summary ---
+Enrichment completed

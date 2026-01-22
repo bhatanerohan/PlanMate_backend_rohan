@@ -1,0 +1,124 @@
+User Prompt: Plan a route from my location to Northeastern University to starbucks near MIT
+
+[2026-01-21T02:47:35.136Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T02:47:35.137Z] LOG 📦 Processing 15 candidates from Gemini
+[2026-01-21T02:47:35.137Z] LOG    🎯 Must-have: 4
+[2026-01-21T02:47:35.138Z] LOG    ✨ Nice-to-have: 11
+[2026-01-21T02:47:35.138Z] LOG 📍 Location hint: MIT
+[2026-01-21T02:47:35.139Z] LOG 
+🔍 Enriching 15 candidates in 2 batch(es)...
+[2026-01-21T02:47:35.139Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T02:47:35.140Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T02:47:35.140Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T02:47:35.141Z] LOG    1. Searching "Northeastern University" in "Fenway–Kenmore"
+[2026-01-21T02:47:35.141Z] LOG 🔍 [Google Places] Text search: "Northeastern University" in Fenway–Kenmore
+[2026-01-21T02:47:35.148Z] LOG    2. Searching "Starbucks Coffee Company (120 Broadway, Cambridge, MA)" in "Kendall Square, Cambridge"
+[2026-01-21T02:47:35.149Z] LOG 🔍 [Google Places] Text search: "Starbucks Coffee Company (120 Broadway, Cambridge, MA)" in Kendall Square, Cambridge
+[2026-01-21T02:47:35.155Z] LOG    3. Searching "Starbucks Coffee Company (468 Broadway, Cambridge, MA)" in "Mid-Cambridge"
+[2026-01-21T02:47:35.155Z] LOG 🔍 [Google Places] Text search: "Starbucks Coffee Company (468 Broadway, Cambridge, MA)" in Mid-Cambridge
+[2026-01-21T02:47:35.158Z] LOG    4. Searching "Starbucks Coffee Company (450 Water St, Cambridge, MA)" in "East Cambridge"
+[2026-01-21T02:47:35.159Z] LOG 🔍 [Google Places] Text search: "Starbucks Coffee Company (450 Water St, Cambridge, MA)" in East Cambridge
+[2026-01-21T02:47:35.161Z] LOG    5. Searching "Museum of Fine Arts, Boston" in "Fenway–Kenmore"
+[2026-01-21T02:47:35.161Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Fenway–Kenmore
+[2026-01-21T02:47:35.165Z] LOG    6. Searching "Isabella Stewart Gardner Museum" in "Longwood Medical and Academic Area"
+[2026-01-21T02:47:35.166Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Longwood Medical and Academic Area
+[2026-01-21T02:47:35.171Z] LOG    7. Searching "Symphony Hall" in "Fenway–Kenmore"
+[2026-01-21T02:47:35.174Z] LOG 🔍 [Google Places] Text search: "Symphony Hall" in Fenway–Kenmore
+[2026-01-21T02:47:35.179Z] LOG    8. Searching "Back Bay Fens" in "Fenway–Kenmore"
+[2026-01-21T02:47:35.180Z] LOG 🔍 [Google Places] Text search: "Back Bay Fens" in Fenway–Kenmore
+[2026-01-21T02:47:35.183Z] LOG    9. Searching "Copley Square" in "Back Bay"
+[2026-01-21T02:47:35.184Z] LOG 🔍 [Google Places] Text search: "Copley Square" in Back Bay
+[2026-01-21T02:47:35.189Z] LOG    10. Searching "Boston Public Library - Central Library" in "Back Bay"
+[2026-01-21T02:47:35.190Z] LOG 🔍 [Google Places] Text search: "Boston Public Library - Central Library" in Back Bay
+[2026-01-21T02:47:35.724Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:35.763Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:35.813Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:35.860Z] LOG    ✅ Starbucks Coffee Company: Got description (98 chars)
+[2026-01-21T02:47:35.861Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:35.863Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:35.868Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:35.875Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:35.882Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:35.902Z] LOG    ✅ Symphony Hall: Got description (92 chars)
+[2026-01-21T02:47:35.904Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:35.908Z] LOG    ✅ Copley Square: Got description (95 chars)
+[2026-01-21T02:47:35.910Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:35.944Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:35.972Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:35.980Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2026-01-21T02:47:35.984Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:35.986Z] LOG    ✅ Starbucks Coffee Company: Got description (98 chars)
+[2026-01-21T02:47:35.987Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:36.005Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-01-21T02:47:36.008Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:36.015Z] LOG    ✅ Back Bay Fens: Got description (100 chars)
+[2026-01-21T02:47:36.016Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:36.049Z] LOG    ✅ Starbucks Coffee Company: Got description (98 chars)
+[2026-01-21T02:47:36.053Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:36.068Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-21T02:47:36.069Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:36.985Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:37.108Z] LOG    ✅ Northeastern University: Got description (100 chars)
+[2026-01-21T02:47:37.109Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:37.110Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1970ms
+[2026-01-21T02:47:37.111Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T02:47:37.111Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T02:47:37.326Z] LOG 
+   📦 Batch 2/2 (5 searches)...
+[2026-01-21T02:47:37.328Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T02:47:37.330Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2026-01-21T02:47:37.331Z] LOG    1. Searching "Prudential Center Boston" in "Back Bay"
+[2026-01-21T02:47:37.332Z] LOG 🔍 [Google Places] Text search: "Prudential Center Boston" in Back Bay
+[2026-01-21T02:47:37.333Z] LOG    2. Searching "Charles River Esplanades" in "Along Charles River"
+[2026-01-21T02:47:37.334Z] LOG 🔍 [Google Places] Text search: "Charles River Esplanades" in Along Charles River
+[2026-01-21T02:47:37.335Z] LOG    3. Searching "MIT Museum" in "Kendall Square, Cambridge"
+[2026-01-21T02:47:37.335Z] LOG 🔍 [Google Places] Text search: "MIT Museum" in Kendall Square, Cambridge
+[2026-01-21T02:47:37.336Z] LOG    4. Searching "Kendall Square" in "Kendall Square, Cambridge"
+[2026-01-21T02:47:37.337Z] LOG 🔍 [Google Places] Text search: "Kendall Square" in Kendall Square, Cambridge
+[2026-01-21T02:47:37.338Z] LOG    5. Searching "MIT List Visual Arts Center" in "Kendall Square, Cambridge"
+[2026-01-21T02:47:37.338Z] LOG 🔍 [Google Places] Text search: "MIT List Visual Arts Center" in Kendall Square, Cambridge
+[2026-01-21T02:47:37.770Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:37.774Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:37.808Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:37.810Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:37.891Z] LOG    ✅ MIT Museum: Got description (97 chars)
+[2026-01-21T02:47:37.893Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:37.895Z] LOG    ⚠️  Kendall Square: No editorial summary available
+[2026-01-21T02:47:37.897Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:37.898Z] LOG    ✅ Charles River Esplanade: Got description (99 chars)
+[2026-01-21T02:47:37.899Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:37.928Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:47:37.938Z] LOG    ✅ Prudential Center Boston: Got description (95 chars)
+[2026-01-21T02:47:37.938Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:38.068Z] LOG    ✅ MIT List Visual Arts Center: Got description (88 chars)
+[2026-01-21T02:47:38.070Z] LOG ✅ Found 1 places
+[2026-01-21T02:47:38.071Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 741ms
+[2026-01-21T02:47:38.073Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T02:47:38.075Z] LOG       ✅ Batch 2 complete: 5 results
+[2026-01-21T02:47:38.076Z] LOG    ✅ Northeastern University → Northeastern University (must_have)
+[2026-01-21T02:47:38.077Z] LOG    ✅ Starbucks Coffee Company (120 Broadway, Cambridge, MA) → Starbucks Coffee Company (must_have)
+[2026-01-21T02:47:38.077Z] LOG    ✅ Starbucks Coffee Company (468 Broadway, Cambridge, MA) → Starbucks Coffee Company (must_have)
+[2026-01-21T02:47:38.078Z] LOG    ✅ Starbucks Coffee Company (450 Water St, Cambridge, MA) → Starbucks Coffee Company (must_have)
+[2026-01-21T02:47:38.078Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (nice_to_have)
+[2026-01-21T02:47:38.079Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-01-21T02:47:38.079Z] LOG    ✅ Symphony Hall → Symphony Hall (nice_to_have)
+[2026-01-21T02:47:38.080Z] LOG    ✅ Back Bay Fens → Back Bay Fens (nice_to_have)
+[2026-01-21T02:47:38.080Z] LOG    ✅ Copley Square → Copley Square (nice_to_have)
+[2026-01-21T02:47:38.081Z] LOG    ✅ Boston Public Library - Central Library → Boston Public Library - Central Library (nice_to_have)
+[2026-01-21T02:47:38.081Z] LOG    ✅ Prudential Center Boston → Prudential Center Boston (nice_to_have)
+[2026-01-21T02:47:38.082Z] LOG    ✅ Charles River Esplanades → Charles River Esplanade (nice_to_have)
+[2026-01-21T02:47:38.082Z] LOG    ✅ MIT Museum → MIT Museum (nice_to_have)
+[2026-01-21T02:47:38.082Z] LOG    ✅ Kendall Square → Kendall Square (nice_to_have)
+[2026-01-21T02:47:38.083Z] LOG    ✅ MIT List Visual Arts Center → MIT List Visual Arts Center (nice_to_have)
+[2026-01-21T02:47:38.083Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T02:47:38.083Z] LOG    Total enriched: 15
+[2026-01-21T02:47:38.084Z] LOG    🎯 Must-have: 4
+[2026-01-21T02:47:38.084Z] LOG    ✨ Nice-to-have: 11
+[2026-01-21T02:47:38.084Z] LOG    ❌ Failed: 0
+[2026-01-21T02:47:38.084Z] LOG    ⏱️ Time: 2948ms
+
+--- Summary ---
+Enrichment completed

@@ -1,0 +1,154 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-01-10T04:33:54.748Z] LOG 📍 Using fallback location (no user location): National Mall, Northwest Washington
+[2026-01-10T04:33:54.748Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2026-01-10T04:33:54.749Z] LOG    1. "Smithsonian National Museum of Natural History" in "National Mall, Northwest Washington"
+[2026-01-10T04:33:54.750Z] LOG    2. "National Gallery of Art" in "National Mall, Northwest Washington"
+[2026-01-10T04:33:54.751Z] LOG    3. "Old Ebbitt Grill" in "Near White House, Northwest Washington"
+[2026-01-10T04:33:54.752Z] LOG    4. "Smithsonian's National Air and Space Museum" in "National Mall, Southwest Washington"
+[2026-01-10T04:33:54.752Z] LOG    5. "Smithsonian National Museum of American History" in "National Mall, Northwest Washington"
+[2026-01-10T04:33:54.753Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2026-01-10T04:33:54.753Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-10T04:33:54.754Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2026-01-10T04:33:54.755Z] LOG    1. Searching "Smithsonian National Museum of Natural History" in "National Mall, Northwest Washington"
+[2026-01-10T04:33:54.756Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of Natural History" in National Mall, Northwest Washington
+[2026-01-10T04:33:54.772Z] LOG    2. Searching "National Gallery of Art" in "National Mall, Northwest Washington"
+[2026-01-10T04:33:54.774Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in National Mall, Northwest Washington
+[2026-01-10T04:33:54.778Z] LOG    3. Searching "Old Ebbitt Grill" in "Near White House, Northwest Washington"
+[2026-01-10T04:33:54.779Z] LOG 🔍 [Google Places] Text search: "Old Ebbitt Grill" in Near White House, Northwest Washington
+[2026-01-10T04:33:54.783Z] LOG    4. Searching "Smithsonian's National Air and Space Museum" in "National Mall, Southwest Washington"
+[2026-01-10T04:33:54.784Z] LOG 🔍 [Google Places] Text search: "Smithsonian's National Air and Space Museum" in National Mall, Southwest Washington
+[2026-01-10T04:33:54.789Z] LOG    5. Searching "Smithsonian National Museum of American History" in "National Mall, Northwest Washington"
+[2026-01-10T04:33:54.790Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of American History" in National Mall, Northwest Washington
+[2026-01-10T04:33:55.309Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:33:55.406Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-10T04:33:55.408Z] LOG ✅ Found 1 places
+[2026-01-10T04:33:55.413Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:33:55.416Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:33:55.424Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:33:55.432Z] LOG ⚠️  No results found
+[2026-01-10T04:33:55.488Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-10T04:33:55.492Z] LOG ✅ Found 1 places
+[2026-01-10T04:33:55.501Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-01-10T04:33:55.502Z] LOG ✅ Found 1 places
+[2026-01-10T04:33:55.526Z] LOG    ✅ Smithsonian National Museum of American History: Got description (99 chars)
+[2026-01-10T04:33:55.532Z] LOG ✅ Found 1 places
+[2026-01-10T04:33:55.533Z] LOG ✅ Batch complete: 5/5 searches succeeded, 4 total venues found in 779ms
+[2026-01-10T04:33:55.534Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-10T04:33:55.535Z] LOG    Tool execution result: success=true
+[2026-01-10T04:33:55.535Z] LOG    ✅ Tool returned 5 search results
+[2026-01-10T04:33:55.536Z] LOG    ✅ Merged: Smithsonian National Museum of Natural History
+[2026-01-10T04:33:55.537Z] LOG       Places placeId: ChIJx7K17Ji3t4kRr3VvqMTw7cc
+[2026-01-10T04:33:55.537Z] LOG       Gemini description: This acclaimed museum celebrates the natural world with exhi...
+[2026-01-10T04:33:55.538Z] LOG    ✅ Merged: National Gallery of Art
+[2026-01-10T04:33:55.539Z] LOG       Places placeId: ChIJSYxSO5u3t4kRm4eyKw_Y7Kg
+[2026-01-10T04:33:55.539Z] LOG       Gemini description: Home to a vast collection of American and European works, th...
+[2026-01-10T04:33:55.540Z] WARN    ⚠️ Could not find "Old Ebbitt Grill" in Places API, skipping
+[2026-01-10T04:33:55.542Z] LOG    ✅ Merged: Smithsonian's National Air and Space Museum
+[2026-01-10T04:33:55.543Z] LOG       Places placeId: ChIJISQme4O3t4kRG-iM3TfJ5_g
+[2026-01-10T04:33:55.543Z] LOG       Gemini description: This museum documents the history of aviation and space expl...
+[2026-01-10T04:33:55.544Z] LOG    ✅ Merged: Smithsonian National Museum of American History
+[2026-01-10T04:33:55.544Z] LOG       Places placeId: ChIJx7K17Ji3t4kR6h3neQYXsjI
+[2026-01-10T04:33:55.545Z] LOG       Gemini description: A vast museum chronicling American history through diverse d...
+[2026-01-10T04:33:55.545Z] LOG ✅ Phase 1 complete: Found 4/5 exact venues
+[2026-01-10T04:33:55.546Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2026-01-10T04:33:55.546Z] LOG    Searching for alternatives near 4 venues...
+[2026-01-10T04:33:55.547Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-10T04:33:55.547Z] LOG 🔍 [BatchVenueSearchTool] Executing 4 searches in parallel
+[2026-01-10T04:33:55.548Z] LOG    1. Searching "museum" in "38.8912662,-77.0260654"
+[2026-01-10T04:33:55.548Z] LOG    📍 Using nearbySearch at coordinates (38.8912662, -77.0260654)
+[2026-01-10T04:33:55.550Z] LOG 🔍 [Google Places] Nearby search at (38.8912662, -77.0260654)
+[2026-01-10T04:33:55.556Z] LOG    2. Searching "museum" in "38.891298,-77.019965"
+[2026-01-10T04:33:55.558Z] LOG    📍 Using nearbySearch at coordinates (38.891298, -77.019965)
+[2026-01-10T04:33:55.559Z] LOG 🔍 [Google Places] Nearby search at (38.891298, -77.019965)
+[2026-01-10T04:33:55.564Z] LOG    3. Searching "museum" in "38.8882063,-77.0198164"
+[2026-01-10T04:33:55.567Z] LOG    📍 Using nearbySearch at coordinates (38.8882063, -77.0198164)
+[2026-01-10T04:33:55.570Z] LOG 🔍 [Google Places] Nearby search at (38.8882063, -77.0198164)
+[2026-01-10T04:33:55.574Z] LOG    4. Searching "museum" in "38.89127930000001,-77.03005089999999"
+[2026-01-10T04:33:55.575Z] LOG    📍 Using nearbySearch at coordinates (38.89127930000001, -77.03005089999999)
+[2026-01-10T04:33:55.575Z] LOG 🔍 [Google Places] Nearby search at (38.89127930000001, -77.03005089999999)
+[2026-01-10T04:33:56.107Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:33:56.160Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:33:56.189Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-10T04:33:56.198Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-10T04:33:56.222Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:33:56.260Z] LOG    ✅ D.C. Alley Museum: Got description (94 chars)
+[2026-01-10T04:33:56.271Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-10T04:33:56.273Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-10T04:33:56.286Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:33:56.302Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-10T04:33:56.306Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-10T04:33:56.310Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-10T04:33:56.334Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-10T04:33:56.355Z] LOG    ✅ Smithsonian National Postal Museum: Got description (100 chars)
+[2026-01-10T04:33:56.360Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2026-01-10T04:33:56.364Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-10T04:33:56.376Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-10T04:33:56.378Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-10T04:33:56.386Z] LOG    ⚠️  Museum of Illusions Washington DC: No editorial summary available
+[2026-01-10T04:33:56.403Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2026-01-10T04:33:56.411Z] LOG    ✅ Hirshhorn Museum: Got description (99 chars)
+[2026-01-10T04:33:56.426Z] LOG    ✅ National Museum of Women in the Arts: Got description (95 chars)
+[2026-01-10T04:33:56.440Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2026-01-10T04:33:56.472Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-10T04:33:56.477Z] LOG ✅ Batch complete: 4/4 searches succeeded, 20 total venues found in 930ms
+[2026-01-10T04:33:56.479Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-10T04:33:56.480Z] LOG    ✅ Venue 1 (Smithsonian National Museum of Natural History): 4 alternatives
+[2026-01-10T04:33:56.481Z] LOG       1. International Spy Museum (4.4⭐)
+[2026-01-10T04:33:56.482Z] LOG       2. Museum of Illusions Washington DC (4.1⭐)
+[2026-01-10T04:33:56.482Z] LOG       3. Smithsonian's National Air and Space Museum (4.6⭐)
+[2026-01-10T04:33:56.483Z] LOG    ✅ Venue 2 (National Gallery of Art): 4 alternatives
+[2026-01-10T04:33:56.484Z] LOG       1. D.C. Alley Museum (4.3⭐)
+[2026-01-10T04:33:56.486Z] LOG       2. Smithsonian National Postal Museum (4.7⭐)
+[2026-01-10T04:33:56.486Z] LOG       3. Museum of Illusions Washington DC (4.1⭐)
+[2026-01-10T04:33:56.487Z] LOG    ✅ Venue 3 (Smithsonian's National Air and Space Museum): 4 alternatives
+[2026-01-10T04:33:56.488Z] LOG       1. Smithsonian National Museum of Natural History (4.8⭐)
+[2026-01-10T04:33:56.488Z] LOG       2. International Spy Museum (4.4⭐)
+[2026-01-10T04:33:56.488Z] LOG       3. Museum of Illusions Washington DC (4.1⭐)
+[2026-01-10T04:33:56.489Z] LOG    ✅ Venue 4 (Smithsonian National Museum of American History): 4 alternatives
+[2026-01-10T04:33:56.490Z] LOG       1. Smithsonian National Museum of Natural History (4.8⭐)
+[2026-01-10T04:33:56.491Z] LOG       2. International Spy Museum (4.4⭐)
+[2026-01-10T04:33:56.491Z] LOG       3. Museum of Illusions Washington DC (4.1⭐)
+[2026-01-10T04:33:56.492Z] LOG 
+📦 Phase 2 complete: 4 stops with alternatives
+[2026-01-10T04:33:56.493Z] LOG 
+🧹 Cleaning alternatives...
+[2026-01-10T04:33:56.493Z] LOG    Primary venues: 4 stops
+[2026-01-10T04:33:56.494Z] LOG    ❌ Removed "Smithsonian's National Air and Space Museum" - already in primary route
+[2026-01-10T04:33:56.495Z] LOG    🔧 Stop "ChIJx7K17Ji3t4kRr3Vv...": 4 → 3 alternatives
+[2026-01-10T04:33:56.495Z] LOG    ❌ Removed "Museum of Illusions Washington DC" - duplicate alternative
+[2026-01-10T04:33:56.496Z] LOG    🔧 Stop "ChIJSYxSO5u3t4kRm4ey...": 4 → 3 alternatives
+[2026-01-10T04:33:56.496Z] LOG    ❌ Removed "Smithsonian National Museum of Natural History" - already in primary route
+[2026-01-10T04:33:56.498Z] LOG    ❌ Removed "International Spy Museum" - duplicate alternative
+[2026-01-10T04:33:56.499Z] LOG    ❌ Removed "Museum of Illusions Washington DC" - duplicate alternative
+[2026-01-10T04:33:56.500Z] LOG    ❌ Removed "United States Holocaust Memorial Museum" - duplicate alternative
+[2026-01-10T04:33:56.501Z] LOG    🔧 Stop "ChIJISQme4O3t4kRG-iM...": 4 → 0 alternatives
+[2026-01-10T04:33:56.502Z] LOG    ❌ Removed "Smithsonian National Museum of Natural History" - already in primary route
+[2026-01-10T04:33:56.502Z] LOG    ❌ Removed "International Spy Museum" - duplicate alternative
+[2026-01-10T04:33:56.503Z] LOG    ❌ Removed "Museum of Illusions Washington DC" - duplicate alternative
+[2026-01-10T04:33:56.504Z] LOG    ❌ Removed "Smithsonian's National Air and Space Museum" - already in primary route
+[2026-01-10T04:33:56.504Z] LOG    🔧 Stop "ChIJx7K17Ji3t4kR6h3n...": 4 → 0 alternatives
+[2026-01-10T04:33:56.505Z] LOG 
+✅ Cleaning complete:
+[2026-01-10T04:33:56.505Z] LOG    Removed 4 venues already in route
+[2026-01-10T04:33:56.506Z] LOG    Removed 6 duplicate alternatives
+[2026-01-10T04:33:56.507Z] LOG    Final: 2 stops with alternatives
+
+[2026-01-10T04:33:56.508Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2026-01-10T04:33:56.509Z] LOG    Primary venues: 4
+[2026-01-10T04:33:56.510Z] LOG    Alternatives: 2 stops with alternatives
+[2026-01-10T04:33:56.511Z] LOG    Execution time: 1762ms
+[2026-01-10T04:33:56.512Z] LOG 
+📋 Final alternatives:
+[2026-01-10T04:33:56.513Z] LOG    Smithsonian National Museum of Natural History: 3 alternatives
+[2026-01-10T04:33:56.515Z] LOG    National Gallery of Art: 3 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 4
+Alternatives: 2

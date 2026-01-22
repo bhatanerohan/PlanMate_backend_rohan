@@ -1,0 +1,154 @@
+User Prompt: find cute places near me
+
+[2026-01-21T02:01:42.400Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T02:01:42.401Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-21T02:01:42.401Z] LOG    🎯 Must-have: 7
+[2026-01-21T02:01:42.402Z] LOG    ✨ Nice-to-have: 13
+[2026-01-21T02:01:42.402Z] LOG 📍 Location hint: me
+[2026-01-21T02:01:42.403Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-21T02:01:42.403Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T02:01:42.404Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T02:01:42.404Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T02:01:42.405Z] LOG    1. Searching "Trident Booksellers & Cafe" in "Back Bay West, Newbury Street"
+[2026-01-21T02:01:42.405Z] LOG 🔍 [Google Places] Text search: "Trident Booksellers & Cafe" in Back Bay West, Newbury Street
+[2026-01-21T02:01:42.412Z] LOG    2. Searching "The Bittersweet Shoppe on Newbury" in "Back Bay, Newbury Street"
+[2026-01-21T02:01:42.415Z] LOG 🔍 [Google Places] Text search: "The Bittersweet Shoppe on Newbury" in Back Bay, Newbury Street
+[2026-01-21T02:01:42.419Z] LOG    3. Searching "Central Perk Coffee Co" in "Back Bay East, Newbury Street"
+[2026-01-21T02:01:42.420Z] LOG 🔍 [Google Places] Text search: "Central Perk Coffee Co" in Back Bay East, Newbury Street
+[2026-01-21T02:01:42.424Z] LOG    4. Searching "Mure and Grand - Back Bay" in "Back Bay East, Newbury Street"
+[2026-01-21T02:01:42.425Z] LOG 🔍 [Google Places] Text search: "Mure and Grand - Back Bay" in Back Bay East, Newbury Street
+[2026-01-21T02:01:42.430Z] LOG    5. Searching "Amorino Gelato - Boston Newbury Street" in "Back Bay, Newbury Street"
+[2026-01-21T02:01:42.431Z] LOG 🔍 [Google Places] Text search: "Amorino Gelato - Boston Newbury Street" in Back Bay, Newbury Street
+[2026-01-21T02:01:42.435Z] LOG    6. Searching "Little Miss Cupcape" in "Back Bay, Newbury Street"
+[2026-01-21T02:01:42.436Z] LOG 🔍 [Google Places] Text search: "Little Miss Cupcape" in Back Bay, Newbury Street
+[2026-01-21T02:01:42.438Z] LOG    7. Searching "The Fairy Shop" in "Back Bay West, Newbury Street"
+[2026-01-21T02:01:42.439Z] LOG 🔍 [Google Places] Text search: "The Fairy Shop" in Back Bay West, Newbury Street
+[2026-01-21T02:01:42.440Z] LOG    8. Searching "Commonwealth Avenue Mall" in "Back Bay"
+[2026-01-21T02:01:42.441Z] LOG 🔍 [Google Places] Text search: "Commonwealth Avenue Mall" in Back Bay
+[2026-01-21T02:01:42.442Z] LOG    9. Searching "Public Garden" in "Beacon Hill / Back Bay East"
+[2026-01-21T02:01:42.443Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Beacon Hill / Back Bay East
+[2026-01-21T02:01:42.445Z] LOG    10. Searching "Thinking Cup" in "Back Bay East, Newbury Street"
+[2026-01-21T02:01:42.446Z] LOG 🔍 [Google Places] Text search: "Thinking Cup" in Back Bay East, Newbury Street
+[2026-01-21T02:01:42.981Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:42.998Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:43.048Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:43.064Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:43.071Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:43.079Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:43.087Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:43.098Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:43.117Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:43.156Z] LOG    ⚠️  Little Miss Cupcape: No editorial summary available
+[2026-01-21T02:01:43.159Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:43.196Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-21T02:01:43.199Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:43.202Z] LOG    ✅ Trident Booksellers & Cafe: Got description (90 chars)
+[2026-01-21T02:01:43.204Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:43.208Z] LOG    ✅ Thinking Cup: Got description (94 chars)
+[2026-01-21T02:01:43.209Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:43.229Z] LOG    ⚠️  Central Perk Coffee Co: No editorial summary available
+[2026-01-21T02:01:43.232Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:43.233Z] LOG    ⚠️  The Bittersweet Shoppe on Newbury: No editorial summary available
+[2026-01-21T02:01:43.234Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:43.272Z] LOG    ⚠️  Mure and Grand - Back Bay: No editorial summary available
+[2026-01-21T02:01:43.273Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:43.278Z] LOG    ✅ Commonwealth Avenue Mall: Got description (97 chars)
+[2026-01-21T02:01:43.278Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:43.312Z] LOG    ⚠️  Amorino Gelato - Boston Newbury Street: No editorial summary available
+[2026-01-21T02:01:43.312Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:43.334Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:43.492Z] LOG    ✅ The Fairy Shop: Got description (90 chars)
+[2026-01-21T02:01:43.493Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:43.493Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1089ms
+[2026-01-21T02:01:43.494Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T02:01:43.494Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T02:01:43.698Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-21T02:01:43.699Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T02:01:43.700Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T02:01:43.700Z] LOG    1. Searching "Pavement Coffeehouse - Newbury" in "Back Bay West, Newbury Street"
+[2026-01-21T02:01:43.701Z] LOG 🔍 [Google Places] Text search: "Pavement Coffeehouse - Newbury" in Back Bay West, Newbury Street
+[2026-01-21T02:01:43.701Z] LOG    2. Searching "Sonsie" in "Back Bay West, Newbury Street"
+[2026-01-21T02:01:43.702Z] LOG 🔍 [Google Places] Text search: "Sonsie" in Back Bay West, Newbury Street
+[2026-01-21T02:01:43.703Z] LOG    3. Searching "Miss Mia Boutique" in "Back Bay West, Newbury Street"
+[2026-01-21T02:01:43.703Z] LOG 🔍 [Google Places] Text search: "Miss Mia Boutique" in Back Bay West, Newbury Street
+[2026-01-21T02:01:43.704Z] LOG    4. Searching "Soodee" in "Back Bay East, Newbury Street"
+[2026-01-21T02:01:43.705Z] LOG 🔍 [Google Places] Text search: "Soodee" in Back Bay East, Newbury Street
+[2026-01-21T02:01:43.706Z] LOG    5. Searching "No Rest For Bridget" in "Back Bay East, Newbury Street"
+[2026-01-21T02:01:43.706Z] LOG 🔍 [Google Places] Text search: "No Rest For Bridget" in Back Bay East, Newbury Street
+[2026-01-21T02:01:43.706Z] LOG    6. Searching "Levain Bakery" in "Back Bay East, Newbury Street"
+[2026-01-21T02:01:43.707Z] LOG 🔍 [Google Places] Text search: "Levain Bakery" in Back Bay East, Newbury Street
+[2026-01-21T02:01:43.708Z] LOG    7. Searching "Mr. Tea" in "Back Bay West, Newbury Street"
+[2026-01-21T02:01:43.708Z] LOG 🔍 [Google Places] Text search: "Mr. Tea" in Back Bay West, Newbury Street
+[2026-01-21T02:01:43.709Z] LOG    8. Searching "Tatte Bakery & Cafe | Back Bay" in "Back Bay"
+[2026-01-21T02:01:43.709Z] LOG 🔍 [Google Places] Text search: "Tatte Bakery & Cafe | Back Bay" in Back Bay
+[2026-01-21T02:01:43.710Z] LOG    9. Searching "Copley Square Park" in "Back Bay East"
+[2026-01-21T02:01:43.710Z] LOG 🔍 [Google Places] Text search: "Copley Square Park" in Back Bay East
+[2026-01-21T02:01:43.711Z] LOG    10. Searching "Posman Books" in "Back Bay East, Newbury Street"
+[2026-01-21T02:01:43.711Z] LOG 🔍 [Google Places] Text search: "Posman Books" in Back Bay East, Newbury Street
+[2026-01-21T02:01:44.080Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:44.154Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:44.188Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:44.199Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:44.231Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:44.234Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:44.235Z] LOG    ✅ No Rest For Bridget: Got description (95 chars)
+[2026-01-21T02:01:44.235Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:44.268Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:44.270Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:44.278Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:44.282Z] LOG    ✅ Sonsie: Got description (100 chars)
+[2026-01-21T02:01:44.283Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:44.329Z] LOG    ⚠️  Posman Books: No editorial summary available
+[2026-01-21T02:01:44.330Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:44.335Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T02:01:44.360Z] LOG    ✅ Tatte Bakery & Cafe | Back Bay: Got description (96 chars)
+[2026-01-21T02:01:44.364Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:44.365Z] LOG    ⚠️  Miss Mia Boutique: No editorial summary available
+[2026-01-21T02:01:44.366Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:44.367Z] LOG    ✅ Pavement Coffeehouse - Newbury: Got description (87 chars)
+[2026-01-21T02:01:44.367Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:44.411Z] LOG    ✅ Copley Square Park: Got description (97 chars)
+[2026-01-21T02:01:44.413Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:44.414Z] LOG    ⚠️  Mr. Tea: No editorial summary available
+[2026-01-21T02:01:44.414Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:44.447Z] LOG    ⚠️  Levain Bakery: No editorial summary available
+[2026-01-21T02:01:44.449Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:44.499Z] LOG    ✅ Soodee: Got description (98 chars)
+[2026-01-21T02:01:44.499Z] LOG ✅ Found 1 places
+[2026-01-21T02:01:44.500Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 800ms
+[2026-01-21T02:01:44.500Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T02:01:44.501Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-21T02:01:44.502Z] LOG    ✅ Trident Booksellers & Cafe → Trident Booksellers & Cafe (must_have)
+[2026-01-21T02:01:44.502Z] LOG    ✅ The Bittersweet Shoppe on Newbury → The Bittersweet Shoppe on Newbury (must_have)
+[2026-01-21T02:01:44.502Z] LOG    ✅ Central Perk Coffee Co → Central Perk Coffee Co (must_have)
+[2026-01-21T02:01:44.503Z] LOG    ✅ Mure and Grand - Back Bay → Mure and Grand - Back Bay (must_have)
+[2026-01-21T02:01:44.503Z] LOG    ✅ Amorino Gelato - Boston Newbury Street → Amorino Gelato - Boston Newbury Street (must_have)
+[2026-01-21T02:01:44.503Z] LOG    ✅ Little Miss Cupcape → Little Miss Cupcape (must_have)
+[2026-01-21T02:01:44.504Z] LOG    ✅ The Fairy Shop → The Fairy Shop (must_have)
+[2026-01-21T02:01:44.504Z] LOG    ✅ Commonwealth Avenue Mall → Commonwealth Avenue Mall (nice_to_have)
+[2026-01-21T02:01:44.504Z] LOG    ✅ Public Garden → Public Garden (nice_to_have)
+[2026-01-21T02:01:44.505Z] LOG    ✅ Thinking Cup → Thinking Cup (nice_to_have)
+[2026-01-21T02:01:44.505Z] LOG    ✅ Pavement Coffeehouse - Newbury → Pavement Coffeehouse - Newbury (nice_to_have)
+[2026-01-21T02:01:44.505Z] LOG    ✅ Sonsie → Sonsie (nice_to_have)
+[2026-01-21T02:01:44.506Z] LOG    ✅ Miss Mia Boutique → Miss Mia Boutique (nice_to_have)
+[2026-01-21T02:01:44.506Z] LOG    ✅ Soodee → Soodee (nice_to_have)
+[2026-01-21T02:01:44.506Z] LOG    ✅ No Rest For Bridget → No Rest For Bridget (nice_to_have)
+[2026-01-21T02:01:44.506Z] LOG    ✅ Levain Bakery → Levain Bakery (nice_to_have)
+[2026-01-21T02:01:44.506Z] LOG    ✅ Mr. Tea → Mr. Tea (nice_to_have)
+[2026-01-21T02:01:44.507Z] LOG    ✅ Tatte Bakery & Cafe | Back Bay → Tatte Bakery & Cafe | Back Bay (nice_to_have)
+[2026-01-21T02:01:44.507Z] LOG    ✅ Copley Square Park → Copley Square Park (nice_to_have)
+[2026-01-21T02:01:44.507Z] LOG    ✅ Posman Books → Posman Books (nice_to_have)
+[2026-01-21T02:01:44.508Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T02:01:44.508Z] LOG    Total enriched: 20
+[2026-01-21T02:01:44.508Z] LOG    🎯 Must-have: 7
+[2026-01-21T02:01:44.509Z] LOG    ✨ Nice-to-have: 13
+[2026-01-21T02:01:44.509Z] LOG    ❌ Failed: 0
+[2026-01-21T02:01:44.509Z] LOG    ⏱️ Time: 2109ms
+
+--- Summary ---
+Enrichment completed

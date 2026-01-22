@@ -1,0 +1,154 @@
+User Prompt: bars in downtown boston
+
+[2026-01-21T00:07:36.510Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-21T00:07:36.511Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-21T00:07:36.511Z] LOG    🎯 Must-have: 8
+[2026-01-21T00:07:36.512Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T00:07:36.512Z] LOG 📍 Location hint: downtown boston
+[2026-01-21T00:07:36.513Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-21T00:07:36.513Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-21T00:07:36.514Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T00:07:36.514Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T00:07:36.515Z] LOG    1. Searching "Apex Rooftop Bar and Lounge" in "Financial District"
+[2026-01-21T00:07:36.515Z] LOG 🔍 [Google Places] Text search: "Apex Rooftop Bar and Lounge" in Financial District
+[2026-01-21T00:07:36.519Z] LOG    2. Searching "The Dubliner Irish Pub" in "Government Center"
+[2026-01-21T00:07:36.520Z] LOG 🔍 [Google Places] Text search: "The Dubliner Irish Pub" in Government Center
+[2026-01-21T00:07:36.527Z] LOG    3. Searching "jm Curley" in "Downtown Crossing"
+[2026-01-21T00:07:36.528Z] LOG 🔍 [Google Places] Text search: "jm Curley" in Downtown Crossing
+[2026-01-21T00:07:36.535Z] LOG    4. Searching "The Tam" in "Theater District"
+[2026-01-21T00:07:36.537Z] LOG 🔍 [Google Places] Text search: "The Tam" in Theater District
+[2026-01-21T00:07:36.543Z] LOG    5. Searching "21st Amendment" in "Beacon Hill / Downtown"
+[2026-01-21T00:07:36.547Z] LOG 🔍 [Google Places] Text search: "21st Amendment" in Beacon Hill / Downtown
+[2026-01-21T00:07:36.555Z] LOG    6. Searching "The Black Rose" in "Faneuil Hall"
+[2026-01-21T00:07:36.559Z] LOG 🔍 [Google Places] Text search: "The Black Rose" in Faneuil Hall
+[2026-01-21T00:07:36.565Z] LOG    7. Searching "Bell in Hand" in "Faneuil Hall"
+[2026-01-21T00:07:36.567Z] LOG 🔍 [Google Places] Text search: "Bell in Hand" in Faneuil Hall
+[2026-01-21T00:07:36.577Z] LOG    8. Searching "OFFSUIT" in "Leather District"
+[2026-01-21T00:07:36.578Z] LOG 🔍 [Google Places] Text search: "OFFSUIT" in Leather District
+[2026-01-21T00:07:36.584Z] LOG    9. Searching "Faneuil Hall Marketplace" in "Faneuil Hall"
+[2026-01-21T00:07:36.586Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Faneuil Hall
+[2026-01-21T00:07:36.592Z] LOG    10. Searching "Quincy Market" in "Faneuil Hall"
+[2026-01-21T00:07:36.594Z] LOG 🔍 [Google Places] Text search: "Quincy Market" in Faneuil Hall
+[2026-01-21T00:07:37.016Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:37.070Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:37.105Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:37.125Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:37.154Z] LOG    ✅ jm Curley: Got description (98 chars)
+[2026-01-21T00:07:37.155Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:37.208Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:37.227Z] LOG    ✅ 21st Amendment: Got description (88 chars)
+[2026-01-21T00:07:37.229Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:37.234Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:37.238Z] LOG    ✅ Bell in Hand: Got description (83 chars)
+[2026-01-21T00:07:37.241Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:37.264Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:37.269Z] LOG    ✅ Quincy Market: Got description (97 chars)
+[2026-01-21T00:07:37.273Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:37.311Z] LOG    ⚠️  Apex Rooftop Bar and Lounge: No editorial summary available
+[2026-01-21T00:07:37.313Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:37.325Z] LOG    ✅ OFFSUIT: Got description (94 chars)
+[2026-01-21T00:07:37.326Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:37.335Z] LOG    ✅ The Black Rose: Got description (99 chars)
+[2026-01-21T00:07:37.336Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:37.351Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:37.434Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:37.473Z] LOG    ✅ The Dubliner Irish Pub: Got description (90 chars)
+[2026-01-21T00:07:37.474Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:37.498Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-21T00:07:37.499Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:37.606Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:37.741Z] LOG    ✅ The Tam: Got description (87 chars)
+[2026-01-21T00:07:37.744Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:37.744Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1230ms
+[2026-01-21T00:07:37.745Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T00:07:37.745Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-21T00:07:37.960Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-21T00:07:37.961Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-21T00:07:37.962Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-21T00:07:37.962Z] LOG    1. Searching "Boston Common" in "Beacon Hill / Downtown"
+[2026-01-21T00:07:37.963Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Beacon Hill / Downtown
+[2026-01-21T00:07:37.964Z] LOG    2. Searching "Boston Public Garden" in "Beacon Hill"
+[2026-01-21T00:07:37.965Z] LOG 🔍 [Google Places] Text search: "Boston Public Garden" in Beacon Hill
+[2026-01-21T00:07:37.967Z] LOG    3. Searching "Massachusetts State House" in "Beacon Hill"
+[2026-01-21T00:07:37.968Z] LOG 🔍 [Google Places] Text search: "Massachusetts State House" in Beacon Hill
+[2026-01-21T00:07:37.969Z] LOG    4. Searching "Granary Burying Ground" in "Downtown"
+[2026-01-21T00:07:37.970Z] LOG 🔍 [Google Places] Text search: "Granary Burying Ground" in Downtown
+[2026-01-21T00:07:37.972Z] LOG    5. Searching "Old State House" in "Financial District"
+[2026-01-21T00:07:37.973Z] LOG 🔍 [Google Places] Text search: "Old State House" in Financial District
+[2026-01-21T00:07:37.974Z] LOG    6. Searching "Old North Church" in "North End"
+[2026-01-21T00:07:37.974Z] LOG 🔍 [Google Places] Text search: "Old North Church" in North End
+[2026-01-21T00:07:37.976Z] LOG    7. Searching "Rose Fitzgerald Kennedy Greenway" in "Downtown"
+[2026-01-21T00:07:37.976Z] LOG 🔍 [Google Places] Text search: "Rose Fitzgerald Kennedy Greenway" in Downtown
+[2026-01-21T00:07:37.978Z] LOG    8. Searching "Downtown Crossing" in "Downtown Crossing"
+[2026-01-21T00:07:37.978Z] LOG 🔍 [Google Places] Text search: "Downtown Crossing" in Downtown Crossing
+[2026-01-21T00:07:37.979Z] LOG    9. Searching "Boston Tea Party Ships & Museum" in "Waterfront"
+[2026-01-21T00:07:37.980Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Waterfront
+[2026-01-21T00:07:37.981Z] LOG    10. Searching "New England Aquarium" in "Waterfront"
+[2026-01-21T00:07:37.982Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Waterfront
+[2026-01-21T00:07:38.417Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:38.431Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:38.433Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:38.462Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:38.464Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:38.467Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:38.524Z] LOG    ✅ Massachusetts State House: Got description (96 chars)
+[2026-01-21T00:07:38.526Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:38.556Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-21T00:07:38.557Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:38.562Z] LOG    ⚠️  Downtown Crossing: No editorial summary available
+[2026-01-21T00:07:38.564Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:38.570Z] LOG    ✅ Old State House: Got description (98 chars)
+[2026-01-21T00:07:38.572Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:38.603Z] LOG    ✅ Rose Fitzgerald Kennedy Greenway: Got description (97 chars)
+[2026-01-21T00:07:38.604Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:38.606Z] LOG    ✅ Old North Church: Got description (100 chars)
+[2026-01-21T00:07:38.607Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:38.685Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:38.760Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:38.762Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-21T00:07:38.763Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:38.792Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:38.843Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-01-21T00:07:38.844Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:38.914Z] LOG    ✅ Granary Burying Ground: Got description (99 chars)
+[2026-01-21T00:07:38.915Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:39.295Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-21T00:07:39.379Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-01-21T00:07:39.381Z] LOG ✅ Found 1 places
+[2026-01-21T00:07:39.382Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1420ms
+[2026-01-21T00:07:39.384Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-21T00:07:39.385Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-21T00:07:39.386Z] LOG    ✅ Apex Rooftop Bar and Lounge → Apex Rooftop Bar and Lounge (must_have)
+[2026-01-21T00:07:39.387Z] LOG    ✅ The Dubliner Irish Pub → The Dubliner Irish Pub (must_have)
+[2026-01-21T00:07:39.388Z] LOG    ✅ jm Curley → jm Curley (must_have)
+[2026-01-21T00:07:39.390Z] LOG    ✅ The Tam → The Tam (must_have)
+[2026-01-21T00:07:39.390Z] LOG    ✅ 21st Amendment → 21st Amendment (must_have)
+[2026-01-21T00:07:39.391Z] LOG    ✅ The Black Rose → The Black Rose (must_have)
+[2026-01-21T00:07:39.392Z] LOG    ✅ Bell in Hand → Bell in Hand (must_have)
+[2026-01-21T00:07:39.393Z] LOG    ✅ OFFSUIT → OFFSUIT (must_have)
+[2026-01-21T00:07:39.393Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (nice_to_have)
+[2026-01-21T00:07:39.394Z] LOG    ✅ Quincy Market → Quincy Market (nice_to_have)
+[2026-01-21T00:07:39.395Z] LOG    ✅ Boston Common → Boston Common (nice_to_have)
+[2026-01-21T00:07:39.395Z] LOG    ✅ Boston Public Garden → Public Garden (nice_to_have)
+[2026-01-21T00:07:39.395Z] LOG    ✅ Massachusetts State House → Massachusetts State House (nice_to_have)
+[2026-01-21T00:07:39.396Z] LOG    ✅ Granary Burying Ground → Granary Burying Ground (nice_to_have)
+[2026-01-21T00:07:39.396Z] LOG    ✅ Old State House → Old State House (nice_to_have)
+[2026-01-21T00:07:39.397Z] LOG    ✅ Old North Church → Old North Church (nice_to_have)
+[2026-01-21T00:07:39.398Z] LOG    ✅ Rose Fitzgerald Kennedy Greenway → Rose Fitzgerald Kennedy Greenway (nice_to_have)
+[2026-01-21T00:07:39.399Z] LOG    ✅ Downtown Crossing → Downtown Crossing (nice_to_have)
+[2026-01-21T00:07:39.400Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (nice_to_have)
+[2026-01-21T00:07:39.400Z] LOG    ✅ New England Aquarium → New England Aquarium (nice_to_have)
+[2026-01-21T00:07:39.401Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-21T00:07:39.401Z] LOG    Total enriched: 20
+[2026-01-21T00:07:39.402Z] LOG    🎯 Must-have: 8
+[2026-01-21T00:07:39.402Z] LOG    ✨ Nice-to-have: 12
+[2026-01-21T00:07:39.402Z] LOG    ❌ Failed: 0
+[2026-01-21T00:07:39.403Z] LOG    ⏱️ Time: 2893ms
+
+--- Summary ---
+Enrichment completed

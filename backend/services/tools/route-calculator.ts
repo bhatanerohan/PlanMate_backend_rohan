@@ -2,7 +2,19 @@
 
 import { Tool } from './base-tool.js';
 import type { ToolName, ToolDefinition, ToolResult, ToolExecutionContext } from '../../types/tools.js';
-import { getMapboxClient, MapboxClient } from '../api-clients/mapbox.js';
+import { getMapboxClient } from '../api-clients/mapbox.js';
+
+// 🆕 ADD: Local helper functions
+function formatDistance(meters: number): string {
+  const miles = meters / 1609.34;
+  return miles < 0.1 ? `${Math.round(meters)}m` : `${miles.toFixed(1)} mi`;
+}
+
+function formatDuration(seconds: number): string {
+  const minutes = Math.round(seconds / 60);
+  if (minutes < 60) return `${minutes} min`;
+  return `${Math.floor(minutes / 60)}h ${minutes % 60}m`;
+}
 
 /**
  * Route Calculator Tool
@@ -38,14 +50,12 @@ export class RouteCalculatorTool extends Tool {
   async execute(parameters: Record<string, any>, context?: ToolExecutionContext): Promise<ToolResult> {
     const startTime = Date.now();
 
-    // Validate parameters
     const validation = this.validate(parameters);
     if (!validation.valid) {
       return this.error(validation.error!);
     }
 
     try {
-      // Parse waypoints
       let waypoints: Array<{ lat: number; lng: number }>;
       
       if (typeof parameters.waypoints === 'string') {
@@ -60,7 +70,6 @@ export class RouteCalculatorTool extends Tool {
         return this.error('Waypoints must be an array or JSON string');
       }
 
-      // Validate waypoints
       if (!Array.isArray(waypoints) || waypoints.length < 2) {
         return this.error('Need at least 2 waypoints to calculate a route');
       }
@@ -69,7 +78,6 @@ export class RouteCalculatorTool extends Tool {
         return this.error('Maximum 25 waypoints allowed');
       }
 
-      // Validate each waypoint has lat/lng
       for (let i = 0; i < waypoints.length; i++) {
         const wp = waypoints[i];
         if (typeof wp.lat !== 'number' || typeof wp.lng !== 'number') {
@@ -81,7 +89,6 @@ export class RouteCalculatorTool extends Tool {
 
       console.log(`🗺️  [RouteCalculatorTool] Calculating ${mode} route with ${waypoints.length} waypoints`);
 
-      // Get Mapbox client and calculate route
       const mapboxClient = getMapboxClient();
       const route = await mapboxClient.getRoute(waypoints, { mode, steps: true });
 
@@ -90,15 +97,15 @@ export class RouteCalculatorTool extends Tool {
       return this.success(
         {
           distance: route.distance,
-          distanceFormatted: MapboxClient.formatDistance(route.distance),
+          distanceFormatted: formatDistance(route.distance),        // 🆕 CHANGED
           duration: route.duration,
-          durationFormatted: MapboxClient.formatDuration(route.duration),
-          geometry: route.geometry,  // GeoJSON LineString for frontend
+          durationFormatted: formatDuration(route.duration),        // 🆕 CHANGED
+          geometry: route.geometry,
           mode,
           waypoints: waypoints.map(wp => ({ lat: wp.lat, lng: wp.lng })),
-          steps: route.steps.slice(0, 5).map(step => ({  // Limit to first 5 steps
+          steps: route.steps.slice(0, 5).map(step => ({
             instruction: step.instruction,
-            distance: MapboxClient.formatDistance(step.distance)
+            distance: formatDistance(step.distance)                 // 🆕 CHANGED
           }))
         },
         {
@@ -117,9 +124,6 @@ export class RouteCalculatorTool extends Tool {
     }
   }
 
-  /**
-   * Custom validation for route calculator
-   */
   validate(parameters: Record<string, any>): { valid: boolean; error?: string } {
     if (!parameters.waypoints) {
       return {

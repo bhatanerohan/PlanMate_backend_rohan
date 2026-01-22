@@ -1,0 +1,148 @@
+User Prompt: plan a day out near me
+
+[2026-01-22T21:25:34.041Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-22T21:25:34.042Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-22T21:25:34.042Z] LOG    🎯 Must-have: 7
+[2026-01-22T21:25:34.042Z] LOG    ✨ Nice-to-have: 12
+[2026-01-22T21:25:34.044Z] LOG 📍 Location hint: me
+[2026-01-22T21:25:34.044Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-22T21:25:34.044Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-22T21:25:34.045Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-22T21:25:34.045Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-22T21:25:34.046Z] LOG    1. Searching "Museum of Fine Arts, Boston" in "Fenway-Kenmore"
+[2026-01-22T21:25:34.046Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Fenway-Kenmore
+[2026-01-22T21:25:34.049Z] LOG    2. Searching "Isabella Stewart Gardner Museum" in "Fenway-Kenmore"
+[2026-01-22T21:25:34.051Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway-Kenmore
+[2026-01-22T21:25:34.055Z] LOG    3. Searching "Harvard Square" in "Cambridge"
+[2026-01-22T21:25:34.056Z] LOG 🔍 [Google Places] Text search: "Harvard Square" in Cambridge
+[2026-01-22T21:25:34.059Z] LOG    4. Searching "Christian Herter Park" in "Lower Allston"
+[2026-01-22T21:25:34.061Z] LOG 🔍 [Google Places] Text search: "Christian Herter Park" in Lower Allston
+[2026-01-22T21:25:34.065Z] LOG    5. Searching "Lulu's Allston" in "Allston"
+[2026-01-22T21:25:34.066Z] LOG 🔍 [Google Places] Text search: "Lulu's Allston" in Allston
+[2026-01-22T21:25:34.071Z] LOG    6. Searching "Brookline Booksmith" in "Brookline"
+[2026-01-22T21:25:34.073Z] LOG 🔍 [Google Places] Text search: "Brookline Booksmith" in Brookline
+[2026-01-22T21:25:34.079Z] LOG    7. Searching "View Boston" in "Back Bay"
+[2026-01-22T21:25:34.080Z] LOG 🔍 [Google Places] Text search: "View Boston" in Back Bay
+[2026-01-22T21:25:34.085Z] LOG    8. Searching "Harvard Art Museums" in "Cambridge"
+[2026-01-22T21:25:34.087Z] LOG 🔍 [Google Places] Text search: "Harvard Art Museums" in Cambridge
+[2026-01-22T21:25:34.095Z] LOG    9. Searching "Back Bay Fens" in "Fenway-Kenmore"
+[2026-01-22T21:25:34.098Z] LOG 🔍 [Google Places] Text search: "Back Bay Fens" in Fenway-Kenmore
+[2026-01-22T21:25:34.103Z] LOG    10. Searching "Hopewell Bar & Kitchen" in "Allston"
+[2026-01-22T21:25:34.105Z] LOG 🔍 [Google Places] Text search: "Hopewell Bar & Kitchen" in Allston
+[2026-01-22T21:25:34.552Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:34.579Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:34.591Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:34.615Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:34.626Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:34.665Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:34.671Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:34.691Z] LOG    ✅ Lulu's Allston: Got description (95 chars)
+[2026-01-22T21:25:34.691Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:34.698Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-01-22T21:25:34.701Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:34.716Z] LOG    ✅ Hopewell Bar & Kitchen: Got description (99 chars)
+[2026-01-22T21:25:34.719Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:34.724Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:34.729Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:34.756Z] LOG    ✅ Harvard Art Museums: Got description (99 chars)
+[2026-01-22T21:25:34.757Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:34.774Z] LOG    ✅ Christian Herter Park: Got description (94 chars)
+[2026-01-22T21:25:34.775Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:34.796Z] LOG    ✅ Back Bay Fens: Got description (100 chars)
+[2026-01-22T21:25:34.797Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:34.812Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-22T21:25:34.812Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:34.819Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:34.857Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-01-22T21:25:34.858Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:34.865Z] LOG    ⚠️  Harvard Square: No editorial summary available
+[2026-01-22T21:25:34.865Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:34.918Z] LOG    ✅ Brookline Booksmith: Got description (87 chars)
+[2026-01-22T21:25:34.919Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:34.920Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 875ms
+[2026-01-22T21:25:34.920Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-22T21:25:34.921Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-22T21:25:35.135Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-22T21:25:35.136Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-22T21:25:35.137Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-22T21:25:35.137Z] LOG    1. Searching "Cafe Weekend" in "Allston"
+[2026-01-22T21:25:35.138Z] LOG 🔍 [Google Places] Text search: "Cafe Weekend" in Allston
+[2026-01-22T21:25:35.139Z] LOG    2. Searching "Lone Star Taco Bar" in "Allston"
+[2026-01-22T21:25:35.139Z] LOG 🔍 [Google Places] Text search: "Lone Star Taco Bar" in Allston
+[2026-01-22T21:25:35.140Z] LOG    3. Searching "Shabu-Zen" in "Allston"
+[2026-01-22T21:25:35.140Z] LOG 🔍 [Google Places] Text search: "Shabu-Zen" in Allston
+[2026-01-22T21:25:35.141Z] LOG    4. Searching "The Avenue Bar Allston" in "Allston"
+[2026-01-22T21:25:35.141Z] LOG 🔍 [Google Places] Text search: "The Avenue Bar Allston" in Allston
+[2026-01-22T21:25:35.142Z] LOG    5. Searching "Amory Playground" in "Brookline"
+[2026-01-22T21:25:35.142Z] LOG 🔍 [Google Places] Text search: "Amory Playground" in Brookline
+[2026-01-22T21:25:35.143Z] LOG    6. Searching "Charles River Reservation" in "Allston"
+[2026-01-22T21:25:35.143Z] LOG 🔍 [Google Places] Text search: "Charles River Reservation" in Allston
+[2026-01-22T21:25:35.143Z] LOG    7. Searching "Trident Booksellers & Cafe" in "Back Bay"
+[2026-01-22T21:25:35.144Z] LOG 🔍 [Google Places] Text search: "Trident Booksellers & Cafe" in Back Bay
+[2026-01-22T21:25:35.144Z] LOG    8. Searching "B2J Tasty Pot Allston 不二家酸菜鱼 Allston" in "Allston"
+[2026-01-22T21:25:35.145Z] LOG 🔍 [Google Places] Text search: "B2J Tasty Pot Allston 不二家酸菜鱼 Allston" in Allston
+[2026-01-22T21:25:35.145Z] LOG    9. Searching "Coreanos Allston" in "Allston"
+[2026-01-22T21:25:35.145Z] LOG 🔍 [Google Places] Text search: "Coreanos Allston" in Allston
+[2026-01-22T21:25:35.584Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:35.586Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:35.626Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:35.632Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:35.653Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:35.671Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:35.683Z] LOG    ⚠️  Cafe Weekend: No editorial summary available
+[2026-01-22T21:25:35.683Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:35.690Z] LOG    ✅ Shabu-Zen: Got description (97 chars)
+[2026-01-22T21:25:35.690Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:35.717Z] LOG    ✅ Trident Booksellers & Cafe: Got description (90 chars)
+[2026-01-22T21:25:35.718Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:35.740Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:35.745Z] LOG    ⚠️  Amory Playground: No editorial summary available
+[2026-01-22T21:25:35.746Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:35.747Z] LOG    ✅ The Avenue Bar Allston: Got description (93 chars)
+[2026-01-22T21:25:35.747Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:35.751Z] LOG    ⚠️  B2J Tasty Pot Allston 不二家酸菜鱼 Allston: No editorial summary available
+[2026-01-22T21:25:35.754Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:35.781Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:35.855Z] LOG    ✅ Charles River Reservation: Got description (92 chars)
+[2026-01-22T21:25:35.856Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:35.861Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T21:25:35.919Z] LOG    ✅ Coreanos Allston: Got description (88 chars)
+[2026-01-22T21:25:35.920Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:35.965Z] LOG    ✅ Lone Star Taco Bar: Got description (90 chars)
+[2026-01-22T21:25:35.965Z] LOG ✅ Found 1 places
+[2026-01-22T21:25:35.966Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 829ms
+[2026-01-22T21:25:35.966Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-22T21:25:35.967Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-22T21:25:35.967Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (must_have)
+[2026-01-22T21:25:35.968Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (must_have)
+[2026-01-22T21:25:35.968Z] LOG    ✅ Harvard Square → Harvard Square (must_have)
+[2026-01-22T21:25:35.968Z] LOG    ✅ Christian Herter Park → Christian Herter Park (must_have)
+[2026-01-22T21:25:35.968Z] LOG    ✅ Lulu's Allston → Lulu's Allston (must_have)
+[2026-01-22T21:25:35.969Z] LOG    ✅ Brookline Booksmith → Brookline Booksmith (must_have)
+[2026-01-22T21:25:35.969Z] LOG    ✅ View Boston → View Boston (must_have)
+[2026-01-22T21:25:35.969Z] LOG    ✅ Harvard Art Museums → Harvard Art Museums (nice_to_have)
+[2026-01-22T21:25:35.969Z] LOG    ✅ Back Bay Fens → Back Bay Fens (nice_to_have)
+[2026-01-22T21:25:35.970Z] LOG    ✅ Hopewell Bar & Kitchen → Hopewell Bar & Kitchen (nice_to_have)
+[2026-01-22T21:25:35.970Z] LOG    ✅ Cafe Weekend → Cafe Weekend (nice_to_have)
+[2026-01-22T21:25:35.970Z] LOG    ✅ Lone Star Taco Bar → Lone Star Taco Bar (nice_to_have)
+[2026-01-22T21:25:35.970Z] LOG    ✅ Shabu-Zen → Shabu-Zen (nice_to_have)
+[2026-01-22T21:25:35.971Z] LOG    ✅ The Avenue Bar Allston → The Avenue Bar Allston (nice_to_have)
+[2026-01-22T21:25:35.971Z] LOG    ✅ Amory Playground → Amory Playground (nice_to_have)
+[2026-01-22T21:25:35.971Z] LOG    ✅ Charles River Reservation → Charles River Reservation (nice_to_have)
+[2026-01-22T21:25:35.972Z] LOG    ✅ Trident Booksellers & Cafe → Trident Booksellers & Cafe (nice_to_have)
+[2026-01-22T21:25:35.972Z] LOG    ✅ B2J Tasty Pot Allston 不二家酸菜鱼 Allston → B2J Tasty Pot Allston 不二家酸菜鱼 Allston (nice_to_have)
+[2026-01-22T21:25:35.972Z] LOG    ✅ Coreanos Allston → Coreanos Allston (nice_to_have)
+[2026-01-22T21:25:35.972Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-22T21:25:35.973Z] LOG    Total enriched: 19
+[2026-01-22T21:25:35.973Z] LOG    🎯 Must-have: 7
+[2026-01-22T21:25:35.973Z] LOG    ✨ Nice-to-have: 12
+[2026-01-22T21:25:35.973Z] LOG    ❌ Failed: 0
+[2026-01-22T21:25:35.974Z] LOG    ⏱️ Time: 1933ms
+
+--- Summary ---
+Enrichment completed

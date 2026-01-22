@@ -1,0 +1,130 @@
+User Prompt: Plan a route from my location to Northeastern University to starbucks near MIT
+
+[2026-01-22T20:54:44.548Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-22T20:54:44.548Z] LOG 📦 Processing 16 candidates from Gemini
+[2026-01-22T20:54:44.548Z] LOG    🎯 Must-have: 3
+[2026-01-22T20:54:44.549Z] LOG    ✨ Nice-to-have: 13
+[2026-01-22T20:54:44.549Z] LOG 📍 Location hint: MIT
+[2026-01-22T20:54:44.549Z] LOG 
+🔍 Enriching 16 candidates in 2 batch(es)...
+[2026-01-22T20:54:44.550Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-22T20:54:44.550Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-22T20:54:44.551Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-22T20:54:44.551Z] LOG    1. Searching "Northeastern University" in "Fenway–Kenmore, Boston"
+[2026-01-22T20:54:44.552Z] LOG 🔍 [Google Places] Text search: "Northeastern University" in Fenway–Kenmore, Boston
+[2026-01-22T20:54:44.556Z] LOG    2. Searching "Starbucks Coffee Company" in "Kendall Square, Cambridge"
+[2026-01-22T20:54:44.558Z] LOG 🔍 [Google Places] Text search: "Starbucks Coffee Company" in Kendall Square, Cambridge
+[2026-01-22T20:54:44.561Z] LOG    3. Searching "Starbucks Coffee Company (Newbury St)" in "Back Bay, Boston"
+[2026-01-22T20:54:44.562Z] LOG 🔍 [Google Places] Text search: "Starbucks Coffee Company (Newbury St)" in Back Bay, Boston
+[2026-01-22T20:54:44.563Z] LOG    4. Searching "Museum of Fine Arts, Boston" in "Fenway–Kenmore, Boston"
+[2026-01-22T20:54:44.564Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Fenway–Kenmore, Boston
+[2026-01-22T20:54:44.565Z] LOG    5. Searching "Isabella Stewart Gardner Museum" in "Fenway–Kenmore, Boston"
+[2026-01-22T20:54:44.565Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway–Kenmore, Boston
+[2026-01-22T20:54:44.569Z] LOG    6. Searching "Symphony Hall" in "Fenway–Kenmore, Boston"
+[2026-01-22T20:54:44.571Z] LOG 🔍 [Google Places] Text search: "Symphony Hall" in Fenway–Kenmore, Boston
+[2026-01-22T20:54:44.575Z] LOG    7. Searching "Fenway Park" in "Fenway–Kenmore, Boston"
+[2026-01-22T20:54:44.576Z] LOG 🔍 [Google Places] Text search: "Fenway Park" in Fenway–Kenmore, Boston
+[2026-01-22T20:54:44.582Z] LOG    8. Searching "Boston Public Library - Copley Square" in "Back Bay, Boston"
+[2026-01-22T20:54:44.583Z] LOG 🔍 [Google Places] Text search: "Boston Public Library - Copley Square" in Back Bay, Boston
+[2026-01-22T20:54:44.587Z] LOG    9. Searching "Copley Square" in "Back Bay, Boston"
+[2026-01-22T20:54:44.589Z] LOG 🔍 [Google Places] Text search: "Copley Square" in Back Bay, Boston
+[2026-01-22T20:54:44.597Z] LOG    10. Searching "Newbury Street" in "Back Bay, Boston"
+[2026-01-22T20:54:44.599Z] LOG 🔍 [Google Places] Text search: "Newbury Street" in Back Bay, Boston
+[2026-01-22T20:54:45.113Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:45.115Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:45.149Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:45.151Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:45.164Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:45.174Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:45.250Z] LOG    ✅ Symphony Hall: Got description (92 chars)
+[2026-01-22T20:54:45.250Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:45.259Z] LOG    ✅ Starbucks Coffee Company: Got description (98 chars)
+[2026-01-22T20:54:45.259Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:45.273Z] LOG    ✅ Copley Square: Got description (95 chars)
+[2026-01-22T20:54:45.274Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:45.286Z] LOG    ✅ Fenway Park: Got description (91 chars)
+[2026-01-22T20:54:45.287Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:45.297Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-01-22T20:54:45.298Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:45.301Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-22T20:54:45.302Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:45.318Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:45.337Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:45.355Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:45.468Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2026-01-22T20:54:45.469Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:45.472Z] LOG    ✅ Northeastern University: Got description (100 chars)
+[2026-01-22T20:54:45.472Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:45.488Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:45.503Z] LOG    ✅ Newbury St: Got description (100 chars)
+[2026-01-22T20:54:45.504Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:45.647Z] LOG    ✅ Starbucks Coffee Company: Got description (98 chars)
+[2026-01-22T20:54:45.648Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:45.649Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1098ms
+[2026-01-22T20:54:45.650Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-22T20:54:45.650Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-22T20:54:45.854Z] LOG 
+   📦 Batch 2/2 (6 searches)...
+[2026-01-22T20:54:45.855Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-22T20:54:45.856Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2026-01-22T20:54:45.856Z] LOG    1. Searching "Boston Common" in "Downtown Boston"
+[2026-01-22T20:54:45.857Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown Boston
+[2026-01-22T20:54:45.858Z] LOG    2. Searching "Kendall Square, Cambridge" in "Cambridge"
+[2026-01-22T20:54:45.858Z] LOG 🔍 [Google Places] Text search: "Kendall Square, Cambridge" in Cambridge
+[2026-01-22T20:54:45.859Z] LOG    3. Searching "MIT Museum" in "Kendall Square, Cambridge"
+[2026-01-22T20:54:45.859Z] LOG 🔍 [Google Places] Text search: "MIT Museum" in Kendall Square, Cambridge
+[2026-01-22T20:54:45.860Z] LOG    4. Searching "Charles River Esplanade" in "Charles River, Boston/Cambridge"
+[2026-01-22T20:54:45.860Z] LOG 🔍 [Google Places] Text search: "Charles River Esplanade" in Charles River, Boston/Cambridge
+[2026-01-22T20:54:45.861Z] LOG    5. Searching "Museum of Science" in "West End, Boston"
+[2026-01-22T20:54:45.862Z] LOG 🔍 [Google Places] Text search: "Museum of Science" in West End, Boston
+[2026-01-22T20:54:45.863Z] LOG    6. Searching "Harvard University" in "Cambridge"
+[2026-01-22T20:54:45.863Z] LOG 🔍 [Google Places] Text search: "Harvard University" in Cambridge
+[2026-01-22T20:54:46.306Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:46.394Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:46.411Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:46.428Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-22T20:54:46.429Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:46.540Z] LOG    ✅ Museum of Science: Got description (99 chars)
+[2026-01-22T20:54:46.540Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:46.543Z] LOG    ✅ Charles River Esplanade: Got description (99 chars)
+[2026-01-22T20:54:46.543Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:46.581Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:46.608Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:46.656Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T20:54:46.667Z] LOG    ⚠️  Harvard University: No editorial summary available
+[2026-01-22T20:54:46.668Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:46.786Z] LOG    ⚠️  Kendall Square: No editorial summary available
+[2026-01-22T20:54:46.786Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:46.805Z] LOG    ✅ MIT Museum: Got description (97 chars)
+[2026-01-22T20:54:46.805Z] LOG ✅ Found 1 places
+[2026-01-22T20:54:46.806Z] LOG ✅ Batch complete: 6/6 searches succeeded, 6 total venues found in 951ms
+[2026-01-22T20:54:46.807Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-22T20:54:46.807Z] LOG       ✅ Batch 2 complete: 6 results
+[2026-01-22T20:54:46.807Z] LOG    ✅ Northeastern University → Northeastern University (must_have)
+[2026-01-22T20:54:46.808Z] LOG    ✅ Starbucks Coffee Company → Starbucks Coffee Company (must_have)
+[2026-01-22T20:54:46.809Z] LOG    ✅ Starbucks Coffee Company (Newbury St) → Starbucks Coffee Company (must_have)
+[2026-01-22T20:54:46.809Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (nice_to_have)
+[2026-01-22T20:54:46.810Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-01-22T20:54:46.810Z] LOG    ✅ Symphony Hall → Symphony Hall (nice_to_have)
+[2026-01-22T20:54:46.810Z] LOG    ✅ Fenway Park → Fenway Park (nice_to_have)
+[2026-01-22T20:54:46.810Z] LOG    ✅ Boston Public Library - Copley Square → Boston Public Library - Central Library (nice_to_have)
+[2026-01-22T20:54:46.811Z] LOG    ✅ Copley Square → Copley Square (nice_to_have)
+[2026-01-22T20:54:46.811Z] LOG    ✅ Newbury Street → Newbury St (nice_to_have)
+[2026-01-22T20:54:46.812Z] LOG    ✅ Boston Common → Boston Common (nice_to_have)
+[2026-01-22T20:54:46.812Z] LOG    ✅ Kendall Square, Cambridge → Kendall Square (nice_to_have)
+[2026-01-22T20:54:46.812Z] LOG    ✅ MIT Museum → MIT Museum (nice_to_have)
+[2026-01-22T20:54:46.813Z] LOG    ✅ Charles River Esplanade → Charles River Esplanade (nice_to_have)
+[2026-01-22T20:54:46.813Z] LOG    ✅ Museum of Science → Museum of Science (nice_to_have)
+[2026-01-22T20:54:46.814Z] LOG    ✅ Harvard University → Harvard University (nice_to_have)
+[2026-01-22T20:54:46.814Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-22T20:54:46.814Z] LOG    Total enriched: 16
+[2026-01-22T20:54:46.815Z] LOG    🎯 Must-have: 3
+[2026-01-22T20:54:46.816Z] LOG    ✨ Nice-to-have: 13
+[2026-01-22T20:54:46.816Z] LOG    ❌ Failed: 0
+[2026-01-22T20:54:46.816Z] LOG    ⏱️ Time: 2269ms
+
+--- Summary ---
+Enrichment completed

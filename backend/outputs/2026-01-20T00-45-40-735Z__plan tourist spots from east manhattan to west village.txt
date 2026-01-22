@@ -1,0 +1,148 @@
+User Prompt: plan tourist spots from east manhattan to west village
+
+[2026-01-20T00:45:40.735Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-20T00:45:40.736Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-20T00:45:40.736Z] LOG    🎯 Must-have: 10
+[2026-01-20T00:45:40.736Z] LOG    ✨ Nice-to-have: 9
+[2026-01-20T00:45:40.736Z] LOG 📍 Location hint: Lower East Side / East Village
+[2026-01-20T00:45:40.737Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-20T00:45:40.737Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-20T00:45:40.738Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T00:45:40.738Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T00:45:40.738Z] LOG    1. Searching "Tenement Museum" in "Lower East Side / East Village"
+[2026-01-20T00:45:40.739Z] LOG 🔍 [Google Places] Text search: "Tenement Museum" in Lower East Side / East Village
+[2026-01-20T00:45:40.741Z] LOG    2. Searching "Theodore Roosevelt Birthplace National Historic Site" in "Gramercy Park"
+[2026-01-20T00:45:40.741Z] LOG 🔍 [Google Places] Text search: "Theodore Roosevelt Birthplace National Historic Site" in Gramercy Park
+[2026-01-20T00:45:40.743Z] LOG    3. Searching "Union Square Park" in "Union Square"
+[2026-01-20T00:45:40.743Z] LOG 🔍 [Google Places] Text search: "Union Square Park" in Union Square
+[2026-01-20T00:45:40.745Z] LOG    4. Searching "Madison Square Park" in "Flatiron District"
+[2026-01-20T00:45:40.745Z] LOG 🔍 [Google Places] Text search: "Madison Square Park" in Flatiron District
+[2026-01-20T00:45:40.747Z] LOG    5. Searching "Washington Square Park" in "Greenwich Village / West Village"
+[2026-01-20T00:45:40.748Z] LOG 🔍 [Google Places] Text search: "Washington Square Park" in Greenwich Village / West Village
+[2026-01-20T00:45:40.751Z] LOG    6. Searching "Stonewall National Monument" in "West Village"
+[2026-01-20T00:45:40.752Z] LOG 🔍 [Google Places] Text search: "Stonewall National Monument" in West Village
+[2026-01-20T00:45:40.756Z] LOG    7. Searching "The High Line" in "Meatpacking District / Chelsea"
+[2026-01-20T00:45:40.757Z] LOG 🔍 [Google Places] Text search: "The High Line" in Meatpacking District / Chelsea
+[2026-01-20T00:45:40.761Z] LOG    8. Searching "Whitney Museum of American Art" in "Meatpacking District / West Village"
+[2026-01-20T00:45:40.762Z] LOG 🔍 [Google Places] Text search: "Whitney Museum of American Art" in Meatpacking District / West Village
+[2026-01-20T00:45:40.768Z] LOG    9. Searching "Friends Apartment Building" in "West Village"
+[2026-01-20T00:45:40.769Z] LOG 🔍 [Google Places] Text search: "Friends Apartment Building" in West Village
+[2026-01-20T00:45:40.774Z] LOG    10. Searching "Little Island" in "Hudson River Park / West Village"
+[2026-01-20T00:45:40.777Z] LOG 🔍 [Google Places] Text search: "Little Island" in Hudson River Park / West Village
+[2026-01-20T00:45:41.325Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:41.330Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:41.367Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:41.403Z] LOG    ✅ The High Line: Got description (85 chars)
+[2026-01-20T00:45:41.405Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:41.409Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:41.453Z] LOG    ✅ Washington Square Park: Got description (100 chars)
+[2026-01-20T00:45:41.455Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:41.465Z] LOG    ✅ Whitney Museum of American Art: Got description (100 chars)
+[2026-01-20T00:45:41.466Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:41.526Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:41.528Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:41.537Z] LOG    ✅ Little Island: Got description (100 chars)
+[2026-01-20T00:45:41.538Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:41.575Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:41.588Z] LOG    ✅ Madison Square Park: Got description (84 chars)
+[2026-01-20T00:45:41.589Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:41.595Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:41.664Z] LOG    ✅ Stonewall National Monument: Got description (94 chars)
+[2026-01-20T00:45:41.665Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:41.669Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:41.695Z] LOG    ✅ Theodore Roosevelt Birthplace National Historic Site: Got description (100 chars)
+[2026-01-20T00:45:41.695Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:41.753Z] LOG    ⚠️  Friends Apartment Building: No editorial summary available
+[2026-01-20T00:45:41.754Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:41.800Z] LOG    ✅ Union Square Park: Got description (87 chars)
+[2026-01-20T00:45:41.802Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:41.925Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:41.986Z] LOG    ✅ Tenement Museum: Got description (100 chars)
+[2026-01-20T00:45:41.987Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:41.988Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1250ms
+[2026-01-20T00:45:41.988Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T00:45:41.989Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-20T00:45:42.190Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-20T00:45:42.191Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T00:45:42.191Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-20T00:45:42.192Z] LOG    1. Searching "Museum of Reclaimed Urban Space (MoRUS)" in "East Village"
+[2026-01-20T00:45:42.192Z] LOG 🔍 [Google Places] Text search: "Museum of Reclaimed Urban Space (MoRUS)" in East Village
+[2026-01-20T00:45:42.193Z] LOG    2. Searching "Joey Ramone Place" in "East Village / Bowery"
+[2026-01-20T00:45:42.193Z] LOG 🔍 [Google Places] Text search: "Joey Ramone Place" in East Village / Bowery
+[2026-01-20T00:45:42.194Z] LOG    3. Searching "The Morgan Library & Museum" in "Murray Hill"
+[2026-01-20T00:45:42.195Z] LOG 🔍 [Google Places] Text search: "The Morgan Library & Museum" in Murray Hill
+[2026-01-20T00:45:42.195Z] LOG    4. Searching "East River Esplanade" in "Kips Bay"
+[2026-01-20T00:45:42.195Z] LOG 🔍 [Google Places] Text search: "East River Esplanade" in Kips Bay
+[2026-01-20T00:45:42.196Z] LOG    5. Searching "SUMMIT One Vanderbilt" in "Midtown East"
+[2026-01-20T00:45:42.196Z] LOG 🔍 [Google Places] Text search: "SUMMIT One Vanderbilt" in Midtown East
+[2026-01-20T00:45:42.197Z] LOG    6. Searching "Pier 57" in "West Village"
+[2026-01-20T00:45:42.197Z] LOG 🔍 [Google Places] Text search: "Pier 57" in West Village
+[2026-01-20T00:45:42.198Z] LOG    7. Searching "Museum of Illusions - New York" in "West Village"
+[2026-01-20T00:45:42.199Z] LOG 🔍 [Google Places] Text search: "Museum of Illusions - New York" in West Village
+[2026-01-20T00:45:42.199Z] LOG    8. Searching "MacDougal Alley" in "Greenwich Village"
+[2026-01-20T00:45:42.200Z] LOG 🔍 [Google Places] Text search: "MacDougal Alley" in Greenwich Village
+[2026-01-20T00:45:42.200Z] LOG    9. Searching "Jefferson Market Garden" in "West Village"
+[2026-01-20T00:45:42.200Z] LOG 🔍 [Google Places] Text search: "Jefferson Market Garden" in West Village
+[2026-01-20T00:45:42.585Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:42.590Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:42.603Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:42.626Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:42.631Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:42.633Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:42.652Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:42.678Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:42.690Z] LOG    ⚠️  MacDougal Alley: No editorial summary available
+[2026-01-20T00:45:42.691Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:42.704Z] LOG    ⚠️  E River Greenway: No editorial summary available
+[2026-01-20T00:45:42.705Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:42.706Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:45:42.739Z] LOG    ✅ Jefferson Market Garden: Got description (100 chars)
+[2026-01-20T00:45:42.740Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:42.741Z] LOG    ⚠️  SUMMIT One Vanderbilt: No editorial summary available
+[2026-01-20T00:45:42.742Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:42.766Z] LOG    ✅ Pier 57: Got description (100 chars)
+[2026-01-20T00:45:42.767Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:42.767Z] LOG    ✅ The Morgan Library & Museum: Got description (96 chars)
+[2026-01-20T00:45:42.768Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:42.806Z] LOG    ⚠️  Joey Ramone Place: No editorial summary available
+[2026-01-20T00:45:42.807Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:42.819Z] LOG    ⚠️  Museum of Reclaimed Urban Space (MoRUS): No editorial summary available
+[2026-01-20T00:45:42.819Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:42.983Z] LOG    ✅ Museum of Illusions - New York: Got description (93 chars)
+[2026-01-20T00:45:42.984Z] LOG ✅ Found 1 places
+[2026-01-20T00:45:42.984Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 793ms
+[2026-01-20T00:45:42.985Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T00:45:42.985Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-20T00:45:42.986Z] LOG    ✅ Tenement Museum → Tenement Museum (must_have)
+[2026-01-20T00:45:42.986Z] LOG    ✅ Theodore Roosevelt Birthplace National Historic Site → Theodore Roosevelt Birthplace National Historic Site (must_have)
+[2026-01-20T00:45:42.986Z] LOG    ✅ Union Square Park → Union Square Park (must_have)
+[2026-01-20T00:45:42.987Z] LOG    ✅ Madison Square Park → Madison Square Park (must_have)
+[2026-01-20T00:45:42.987Z] LOG    ✅ Washington Square Park → Washington Square Park (must_have)
+[2026-01-20T00:45:42.987Z] LOG    ✅ Stonewall National Monument → Stonewall National Monument (must_have)
+[2026-01-20T00:45:42.988Z] LOG    ✅ The High Line → The High Line (must_have)
+[2026-01-20T00:45:42.988Z] LOG    ✅ Whitney Museum of American Art → Whitney Museum of American Art (must_have)
+[2026-01-20T00:45:42.988Z] LOG    ✅ Friends Apartment Building → Friends Apartment Building (must_have)
+[2026-01-20T00:45:42.988Z] LOG    ✅ Little Island → Little Island (must_have)
+[2026-01-20T00:45:42.989Z] LOG    ✅ Museum of Reclaimed Urban Space (MoRUS) → Museum of Reclaimed Urban Space (MoRUS) (nice_to_have)
+[2026-01-20T00:45:42.989Z] LOG    ✅ Joey Ramone Place → Joey Ramone Place (nice_to_have)
+[2026-01-20T00:45:42.989Z] LOG    ✅ The Morgan Library & Museum → The Morgan Library & Museum (nice_to_have)
+[2026-01-20T00:45:42.989Z] LOG    ✅ East River Esplanade → E River Greenway (nice_to_have)
+[2026-01-20T00:45:42.990Z] LOG    ✅ SUMMIT One Vanderbilt → SUMMIT One Vanderbilt (nice_to_have)
+[2026-01-20T00:45:42.990Z] LOG    ✅ Pier 57 → Pier 57 (nice_to_have)
+[2026-01-20T00:45:42.990Z] LOG    ✅ Museum of Illusions - New York → Museum of Illusions - New York (nice_to_have)
+[2026-01-20T00:45:42.990Z] LOG    ✅ MacDougal Alley → MacDougal Alley (nice_to_have)
+[2026-01-20T00:45:42.991Z] LOG    ✅ Jefferson Market Garden → Jefferson Market Garden (nice_to_have)
+[2026-01-20T00:45:42.991Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-20T00:45:42.991Z] LOG    Total enriched: 19
+[2026-01-20T00:45:42.991Z] LOG    🎯 Must-have: 10
+[2026-01-20T00:45:42.992Z] LOG    ✨ Nice-to-have: 9
+[2026-01-20T00:45:42.992Z] LOG    ❌ Failed: 0
+[2026-01-20T00:45:42.992Z] LOG    ⏱️ Time: 2257ms
+
+--- Summary ---
+Enrichment completed

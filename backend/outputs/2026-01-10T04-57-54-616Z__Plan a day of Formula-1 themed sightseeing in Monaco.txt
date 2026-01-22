@@ -1,0 +1,167 @@
+User Prompt: Plan a day of Formula-1 themed sightseeing in Monaco
+
+[2026-01-10T04:57:54.619Z] LOG 📍 Using fallback location (no user location): Monaco
+[2026-01-10T04:57:54.621Z] LOG 
+📍 PHASE 1: Searching for exact venues Gemini recommended...
+[2026-01-10T04:57:54.621Z] LOG    1. "Private Cars Collection of HSH Prince of Monaco" in "Port Hercule"
+[2026-01-10T04:57:54.622Z] LOG    2. "Monaco Grand Prix Circuit - Start/Finish Line & Pit Lane Area" in "Port Hercule"
+[2026-01-10T04:57:54.623Z] LOG    3. "Fairmont Hairpin" in "Monte Carlo"
+[2026-01-10T04:57:54.623Z] LOG    4. "Place du Casino" in "Monte Carlo"
+[2026-01-10T04:57:54.624Z] LOG    5. "Prince's Palace of Monaco / Terrasse du Palais" in "Monaco-Ville"
+[2026-01-10T04:57:54.624Z] LOG 
+🔍 Executing batch search for 5 venues...
+[2026-01-10T04:57:54.626Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-10T04:57:54.628Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2026-01-10T04:57:54.629Z] LOG    1. Searching "Private Cars Collection of HSH Prince of Monaco" in "Port Hercule"
+[2026-01-10T04:57:54.629Z] LOG 🔍 [Google Places] Text search: "Private Cars Collection of HSH Prince of Monaco" in Port Hercule
+[2026-01-10T04:57:54.641Z] LOG    2. Searching "Monaco Grand Prix Circuit - Start/Finish Line & Pit Lane Area" in "Port Hercule"
+[2026-01-10T04:57:54.643Z] LOG 🔍 [Google Places] Text search: "Monaco Grand Prix Circuit - Start/Finish Line & Pit Lane Area" in Port Hercule
+[2026-01-10T04:57:54.646Z] LOG    3. Searching "Fairmont Hairpin" in "Monte Carlo"
+[2026-01-10T04:57:54.647Z] LOG 🔍 [Google Places] Text search: "Fairmont Hairpin" in Monte Carlo
+[2026-01-10T04:57:54.650Z] LOG    4. Searching "Place du Casino" in "Monte Carlo"
+[2026-01-10T04:57:54.651Z] LOG 🔍 [Google Places] Text search: "Place du Casino" in Monte Carlo
+[2026-01-10T04:57:54.654Z] LOG    5. Searching "Prince's Palace of Monaco / Terrasse du Palais" in "Monaco-Ville"
+[2026-01-10T04:57:54.656Z] LOG 🔍 [Google Places] Text search: "Prince's Palace of Monaco / Terrasse du Palais" in Monaco-Ville
+[2026-01-10T04:57:55.077Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:57:55.085Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:57:55.129Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:57:55.175Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:57:55.184Z] LOG    ⚠️  Fairmont Hairpin: No editorial summary available
+[2026-01-10T04:57:55.185Z] LOG ✅ Found 1 places
+[2026-01-10T04:57:55.223Z] LOG    ⚠️  Portier - Monaco Grand Prix: No editorial summary available
+[2026-01-10T04:57:55.224Z] LOG ✅ Found 1 places
+[2026-01-10T04:57:55.234Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-10T04:57:55.236Z] LOG    ⚠️  Pl. du Casino: No editorial summary available
+[2026-01-10T04:57:55.237Z] LOG ✅ Found 1 places
+[2026-01-10T04:57:55.321Z] LOG    ✅ Prince's Palace of Monaco: Got description (98 chars)
+[2026-01-10T04:57:55.322Z] LOG ✅ Found 1 places
+[2026-01-10T04:57:55.331Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco: Got description (98 chars)
+[2026-01-10T04:57:55.332Z] LOG ✅ Found 1 places
+[2026-01-10T04:57:55.333Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 706ms
+[2026-01-10T04:57:55.333Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-10T04:57:55.334Z] LOG    Tool execution result: success=true
+[2026-01-10T04:57:55.334Z] LOG    ✅ Tool returned 5 search results
+[2026-01-10T04:57:55.335Z] LOG    ✅ Merged: Private Cars Collection of HSH Prince of Monaco
+[2026-01-10T04:57:55.335Z] LOG       Places placeId: ChIJf-upvozCzRIRdHnR9OhEmts
+[2026-01-10T04:57:55.336Z] LOG       Gemini description: Start your F1 journey here, exploring a vast collection of c...
+[2026-01-10T04:57:55.336Z] LOG    ✅ Merged: Monaco Grand Prix Circuit - Start/Finish Line & Pit Lane Area
+[2026-01-10T04:57:55.336Z] LOG       Places placeId: ChIJ9Y3X6SPDzRIRmgPmLu-v2ws
+[2026-01-10T04:57:55.337Z] LOG       Gemini description: Walk directly on the iconic track where F1 legends have batt...
+[2026-01-10T04:57:55.338Z] LOG    ✅ Merged: Fairmont Hairpin
+[2026-01-10T04:57:55.338Z] LOG       Places placeId: ChIJY01BkXrDzRIRDim_zZiV2PA
+[2026-01-10T04:57:55.338Z] LOG       Gemini description: Witness one of the most famous and challenging corners in Fo...
+[2026-01-10T04:57:55.339Z] LOG    ✅ Merged: Place du Casino
+[2026-01-10T04:57:55.340Z] LOG       Places placeId: ChIJDzCA4IfCzRIRCp5KhvfrMLU
+[2026-01-10T04:57:55.340Z] LOG       Gemini description: Experience the opulence and glamour that defines Monaco, and...
+[2026-01-10T04:57:55.340Z] LOG    ✅ Merged: Prince's Palace of Monaco / Terrasse du Palais
+[2026-01-10T04:57:55.341Z] LOG       Places placeId: ChIJK8yrdpLCzRIRIcD7wv9f-U8
+[2026-01-10T04:57:55.341Z] LOG       Gemini description: Ascend to Monaco-Ville to visit the official residence of th...
+[2026-01-10T04:57:55.341Z] LOG ✅ Phase 1 complete: Found 5/5 exact venues
+[2026-01-10T04:57:55.342Z] LOG 
+📦 PHASE 2: Searching for alternatives near each venue...
+[2026-01-10T04:57:55.343Z] LOG    Searching for alternatives near 5 venues...
+[2026-01-10T04:57:55.344Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-10T04:57:55.344Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2026-01-10T04:57:55.345Z] LOG    1. Searching "museum" in "43.73526349999999,7.421720000000001"
+[2026-01-10T04:57:55.345Z] LOG    📍 Using nearbySearch at coordinates (43.73526349999999, 7.421720000000001)
+[2026-01-10T04:57:55.346Z] LOG 🔍 [Google Places] Nearby search at (43.73526349999999, 7.421720000000001)
+[2026-01-10T04:57:55.347Z] LOG    2. Searching "restaurant" in "43.7410222,7.430321299999999"
+[2026-01-10T04:57:55.348Z] LOG    📍 Using nearbySearch at coordinates (43.7410222, 7.430321299999999)
+[2026-01-10T04:57:55.348Z] LOG 🔍 [Google Places] Nearby search at (43.7410222, 7.430321299999999)
+[2026-01-10T04:57:55.351Z] LOG    3. Searching "tourist attraction" in "43.740298,7.429630499999999"
+[2026-01-10T04:57:55.352Z] LOG    📍 Using nearbySearch at coordinates (43.740298, 7.429630499999999)
+[2026-01-10T04:57:55.353Z] LOG 🔍 [Google Places] Nearby search at (43.740298, 7.429630499999999)
+[2026-01-10T04:57:55.355Z] LOG    4. Searching "restaurant" in "43.7397059,7.427328699999999"
+[2026-01-10T04:57:55.356Z] LOG    📍 Using nearbySearch at coordinates (43.7397059, 7.427328699999999)
+[2026-01-10T04:57:55.356Z] LOG 🔍 [Google Places] Nearby search at (43.7397059, 7.427328699999999)
+[2026-01-10T04:57:55.359Z] LOG    5. Searching "restaurant" in "43.7311154,7.420256299999998"
+[2026-01-10T04:57:55.359Z] LOG    📍 Using nearbySearch at coordinates (43.7311154, 7.420256299999998)
+[2026-01-10T04:57:55.360Z] LOG 🔍 [Google Places] Nearby search at (43.7311154, 7.420256299999998)
+[2026-01-10T04:57:55.888Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:57:55.895Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:57:55.941Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:57:55.953Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:57:56.024Z] LOG    ✅ Musée océanographique de Monaco: Got description (96 chars)
+[2026-01-10T04:57:56.049Z] LOG 📝 Fetching descriptions for 5 places...
+[2026-01-10T04:57:56.057Z] LOG    ⚠️  Chez Pierre - French Restaurant in Monaco with Bar: No editorial summary available
+[2026-01-10T04:57:56.086Z] LOG    ⚠️  Il fornaio: No editorial summary available
+[2026-01-10T04:57:56.105Z] LOG    ⚠️  Chez Pierre - French Restaurant in Monaco with Bar: No editorial summary available
+[2026-01-10T04:57:56.119Z] LOG    ⚠️  Il fornaio: No editorial summary available
+[2026-01-10T04:57:56.121Z] LOG    ⚠️  Le Messager: No editorial summary available
+[2026-01-10T04:57:56.126Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco: Got description (98 chars)
+[2026-01-10T04:57:56.128Z] LOG    ✅ Monaco Museum of Prehistoric Anthropology: Got description (96 chars)
+[2026-01-10T04:57:56.131Z] LOG    ✅ Caffè Milano: Got description (89 chars)
+[2026-01-10T04:57:56.141Z] LOG    ⚠️  Chez Pierre - French Restaurant in Monaco with Bar: No editorial summary available
+[2026-01-10T04:57:56.145Z] LOG    ⚠️  Les Ambassadeurs by Christophe Cussac: No editorial summary available
+[2026-01-10T04:57:56.157Z] LOG    ⚠️  Travelator: No editorial summary available
+[2026-01-10T04:57:56.160Z] LOG    ✅ Caffè Milano: Got description (89 chars)
+[2026-01-10T04:57:56.167Z] LOG    ✅ Grimaldi Forum: Got description (97 chars)
+[2026-01-10T04:57:56.170Z] LOG    ✅ New National Museum of Monaco - Villa Paloma: Got description (94 chars)
+[2026-01-10T04:57:56.185Z] LOG    ⚠️  Frame: No editorial summary available
+[2026-01-10T04:57:56.190Z] LOG    ⚠️  La Tavernetta: No editorial summary available
+[2026-01-10T04:57:56.193Z] LOG    ⚠️  Promenade Princesse Louise-Hyppolyte: No editorial summary available
+[2026-01-10T04:57:56.198Z] LOG    ⚠️  Les Ambassadeurs by Christophe Cussac: No editorial summary available
+[2026-01-10T04:57:56.205Z] LOG    ⚠️  Chez Les Grecs: No editorial summary available
+[2026-01-10T04:57:56.212Z] LOG    ⚠️  France Tour Premium: No editorial summary available
+[2026-01-10T04:57:56.216Z] LOG    ⚠️  Bella Vita: No editorial summary available
+[2026-01-10T04:57:56.217Z] LOG    ✅ Caffè Milano: Got description (89 chars)
+[2026-01-10T04:57:56.255Z] LOG    ⚠️  Tip Top: No editorial summary available
+[2026-01-10T04:57:56.257Z] LOG    ⚠️  Chez Les Grecs: No editorial summary available
+[2026-01-10T04:57:56.257Z] LOG ✅ Batch complete: 5/5 searches succeeded, 25 total venues found in 913ms
+[2026-01-10T04:57:56.258Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-10T04:57:56.258Z] LOG    ✅ Venue 1 (Private Cars Collection of HSH Prince of Monaco): 4 alternatives
+[2026-01-10T04:57:56.258Z] LOG       1. Musée océanographique de Monaco (4.5⭐)
+[2026-01-10T04:57:56.259Z] LOG       2. Monaco Museum of Prehistoric Anthropology (4.4⭐)
+[2026-01-10T04:57:56.259Z] LOG       3. Grimaldi Forum (4.6⭐)
+[2026-01-10T04:57:56.259Z] LOG    ✅ Venue 2 (Portier - Monaco Grand Prix): 4 alternatives
+[2026-01-10T04:57:56.259Z] LOG       1. Chez Pierre - French Restaurant in Monaco with Bar (4.9⭐)
+[2026-01-10T04:57:56.260Z] LOG       2. Il fornaio (4.9⭐)
+[2026-01-10T04:57:56.260Z] LOG       3. Caffè Milano (4.7⭐)
+[2026-01-10T04:57:56.260Z] LOG    ✅ Venue 3 (Fairmont Hairpin): 4 alternatives
+[2026-01-10T04:57:56.260Z] LOG       1. Le Messager (4.8⭐)
+[2026-01-10T04:57:56.261Z] LOG       2. Travelator (4.3⭐)
+[2026-01-10T04:57:56.261Z] LOG       3. Frame (4.7⭐)
+[2026-01-10T04:57:56.261Z] LOG    ✅ Venue 4 (Pl. du Casino): 4 alternatives
+[2026-01-10T04:57:56.262Z] LOG       1. Chez Pierre - French Restaurant in Monaco with Bar (4.9⭐)
+[2026-01-10T04:57:56.262Z] LOG       2. Il fornaio (4.9⭐)
+[2026-01-10T04:57:56.262Z] LOG       3. Caffè Milano (4.7⭐)
+[2026-01-10T04:57:56.263Z] LOG    ✅ Venue 5 (Prince's Palace of Monaco): 4 alternatives
+[2026-01-10T04:57:56.263Z] LOG       1. Caffè Milano (4.7⭐)
+[2026-01-10T04:57:56.263Z] LOG       2. Chez Pierre - French Restaurant in Monaco with Bar (4.9⭐)
+[2026-01-10T04:57:56.264Z] LOG       3. Bella Vita (4.2⭐)
+[2026-01-10T04:57:56.264Z] LOG 
+📦 Phase 2 complete: 5 stops with alternatives
+[2026-01-10T04:57:56.265Z] LOG 
+🧹 Cleaning alternatives...
+[2026-01-10T04:57:56.265Z] LOG    Primary venues: 5 stops
+[2026-01-10T04:57:56.266Z] LOG    ❌ Removed "Chez Pierre - French Restaurant in Monaco with Bar" - duplicate alternative
+[2026-01-10T04:57:56.267Z] LOG    ❌ Removed "Il fornaio" - duplicate alternative
+[2026-01-10T04:57:56.267Z] LOG    ❌ Removed "Caffè Milano" - duplicate alternative
+[2026-01-10T04:57:56.268Z] LOG    ❌ Removed "Les Ambassadeurs by Christophe Cussac" - duplicate alternative
+[2026-01-10T04:57:56.268Z] LOG    🔧 Stop "ChIJDzCA4IfCzRIRCp5K...": 4 → 0 alternatives
+[2026-01-10T04:57:56.269Z] LOG    ❌ Removed "Caffè Milano" - duplicate alternative
+[2026-01-10T04:57:56.269Z] LOG    ❌ Removed "Chez Pierre - French Restaurant in Monaco with Bar" - duplicate alternative
+[2026-01-10T04:57:56.270Z] LOG    🔧 Stop "ChIJK8yrdpLCzRIRIcD7...": 4 → 2 alternatives
+[2026-01-10T04:57:56.270Z] LOG 
+✅ Cleaning complete:
+[2026-01-10T04:57:56.270Z] LOG    Removed 0 venues already in route
+[2026-01-10T04:57:56.271Z] LOG    Removed 6 duplicate alternatives
+[2026-01-10T04:57:56.271Z] LOG    Final: 4 stops with alternatives
+
+[2026-01-10T04:57:56.271Z] LOG 
+✅ GROUNDING-ENHANCED MODE COMPLETE
+[2026-01-10T04:57:56.271Z] LOG    Primary venues: 5
+[2026-01-10T04:57:56.272Z] LOG    Alternatives: 4 stops with alternatives
+[2026-01-10T04:57:56.272Z] LOG    Execution time: 1655ms
+[2026-01-10T04:57:56.272Z] LOG 
+📋 Final alternatives:
+[2026-01-10T04:57:56.273Z] LOG    Private Cars Collection of HSH Prince of Monaco: 4 alternatives
+[2026-01-10T04:57:56.273Z] LOG    Portier - Monaco Grand Prix: 4 alternatives
+[2026-01-10T04:57:56.273Z] LOG    Fairmont Hairpin: 4 alternatives
+[2026-01-10T04:57:56.274Z] LOG    Prince's Palace of Monaco: 2 alternatives
+
+--- Summary ---
+Status: complete
+Iterations: 1
+Venues: 5
+Alternatives: 4

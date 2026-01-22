@@ -1,0 +1,142 @@
+User Prompt: parks nearby
+
+[2026-01-20T23:23:48.923Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-20T23:23:48.923Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-01-20T23:23:48.924Z] LOG    🎯 Must-have: 18
+[2026-01-20T23:23:48.924Z] LOG    ✨ Nice-to-have: 0
+[2026-01-20T23:23:48.925Z] LOG 📍 Location hint: Jamaica Plain
+[2026-01-20T23:23:48.926Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-01-20T23:23:48.926Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-20T23:23:48.927Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:23:48.928Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T23:23:48.929Z] LOG    1. Searching "Olmsted Park" in "Jamaica Plain"
+[2026-01-20T23:23:48.929Z] LOG 🔍 [Google Places] Text search: "Olmsted Park" in Jamaica Plain
+[2026-01-20T23:23:48.935Z] LOG    2. Searching "Mozart Park" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:23:48.937Z] LOG 🔍 [Google Places] Text search: "Mozart Park" in Hyde Square, Jamaica Plain
+[2026-01-20T23:23:48.942Z] LOG    3. Searching "Kevin W. Fitzgerald Park" in "Mission Hill"
+[2026-01-20T23:23:48.943Z] LOG 🔍 [Google Places] Text search: "Kevin W. Fitzgerald Park" in Mission Hill
+[2026-01-20T23:23:48.947Z] LOG    4. Searching "Jamaica Pond Park" in "Jamaica Hills, Jamaica Plain"
+[2026-01-20T23:23:48.950Z] LOG 🔍 [Google Places] Text search: "Jamaica Pond Park" in Jamaica Hills, Jamaica Plain
+[2026-01-20T23:23:48.956Z] LOG    5. Searching "McLaughlin Playground" in "Mission Hill"
+[2026-01-20T23:23:48.958Z] LOG 🔍 [Google Places] Text search: "McLaughlin Playground" in Mission Hill
+[2026-01-20T23:23:48.964Z] LOG    6. Searching "Marcella Playground" in "Fort Hill, Roxbury"
+[2026-01-20T23:23:48.965Z] LOG 🔍 [Google Places] Text search: "Marcella Playground" in Fort Hill, Roxbury
+[2026-01-20T23:23:48.973Z] LOG    7. Searching "Ramler Park" in "West Fens, Fenway–Kenmore"
+[2026-01-20T23:23:48.974Z] LOG 🔍 [Google Places] Text search: "Ramler Park" in West Fens, Fenway–Kenmore
+[2026-01-20T23:23:48.980Z] LOG    8. Searching "Highland Park" in "Fort Hill, Roxbury"
+[2026-01-20T23:23:48.983Z] LOG 🔍 [Google Places] Text search: "Highland Park" in Fort Hill, Roxbury
+[2026-01-20T23:23:48.987Z] LOG    9. Searching "Franklin Park" in "Franklin Park, Boston"
+[2026-01-20T23:23:48.989Z] LOG 🔍 [Google Places] Text search: "Franklin Park" in Franklin Park, Boston
+[2026-01-20T23:23:48.996Z] LOG    10. Searching "Amory Playground" in "Brookline"
+[2026-01-20T23:23:48.998Z] LOG 🔍 [Google Places] Text search: "Amory Playground" in Brookline
+[2026-01-20T23:23:49.503Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:49.518Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:49.543Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:49.560Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:49.572Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:49.583Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:49.595Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:49.658Z] LOG    ✅ Olmsted Park: Got description (100 chars)
+[2026-01-20T23:23:49.660Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:49.669Z] LOG    ✅ Marcella Playground: Got description (84 chars)
+[2026-01-20T23:23:49.670Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:49.697Z] LOG    ⚠️  Mozart Park: No editorial summary available
+[2026-01-20T23:23:49.698Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:49.715Z] LOG    ✅ Ramler Park: Got description (85 chars)
+[2026-01-20T23:23:49.716Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:49.719Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:49.733Z] LOG    ⚠️  Jamaica Pond Park: No editorial summary available
+[2026-01-20T23:23:49.733Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:49.743Z] LOG    ✅ Franklin Park: Got description (96 chars)
+[2026-01-20T23:23:49.745Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:49.769Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:49.802Z] LOG    ⚠️  Highland Park St: No editorial summary available
+[2026-01-20T23:23:49.804Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:49.842Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:49.845Z] LOG    ✅ Kevin W. Fitzgerald Park: Got description (92 chars)
+[2026-01-20T23:23:49.845Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:49.952Z] LOG    ⚠️  McLaughlin Playground: No editorial summary available
+[2026-01-20T23:23:49.953Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:50.024Z] LOG    ⚠️  Amory Playground: No editorial summary available
+[2026-01-20T23:23:50.025Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:50.026Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1098ms
+[2026-01-20T23:23:50.026Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:23:50.026Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-20T23:23:50.233Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-01-20T23:23:50.233Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:23:50.234Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-01-20T23:23:50.234Z] LOG    1. Searching "Boston Common" in "Beacon Hill, Boston"
+[2026-01-20T23:23:50.235Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Beacon Hill, Boston
+[2026-01-20T23:23:50.236Z] LOG    2. Searching "Horatio Harris Park" in "Washington Park, Roxbury"
+[2026-01-20T23:23:50.237Z] LOG 🔍 [Google Places] Text search: "Horatio Harris Park" in Washington Park, Roxbury
+[2026-01-20T23:23:50.238Z] LOG    3. Searching "Back Bay Fens" in "West Fens, Fenway–Kenmore"
+[2026-01-20T23:23:50.238Z] LOG 🔍 [Google Places] Text search: "Back Bay Fens" in West Fens, Fenway–Kenmore
+[2026-01-20T23:23:50.239Z] LOG    4. Searching "Griggs Park" in "Brookline"
+[2026-01-20T23:23:50.239Z] LOG 🔍 [Google Places] Text search: "Griggs Park" in Brookline
+[2026-01-20T23:23:50.240Z] LOG    5. Searching "Pinebank Promontory" in "Jamaica Hills, Jamaica Plain"
+[2026-01-20T23:23:50.240Z] LOG 🔍 [Google Places] Text search: "Pinebank Promontory" in Jamaica Hills, Jamaica Plain
+[2026-01-20T23:23:50.241Z] LOG    6. Searching "Emerson Garden" in "Brookline"
+[2026-01-20T23:23:50.241Z] LOG 🔍 [Google Places] Text search: "Emerson Garden" in Brookline
+[2026-01-20T23:23:50.241Z] LOG    7. Searching "Billy Ward Playground" in "Central Village, Brookline"
+[2026-01-20T23:23:50.242Z] LOG 🔍 [Google Places] Text search: "Billy Ward Playground" in Central Village, Brookline
+[2026-01-20T23:23:50.242Z] LOG    8. Searching "Winthrop Square" in "North Brookline"
+[2026-01-20T23:23:50.242Z] LOG 🔍 [Google Places] Text search: "Winthrop Square" in North Brookline
+[2026-01-20T23:23:50.750Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:50.766Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:50.790Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:50.811Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:50.859Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:50.892Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:50.896Z] LOG    ✅ Back Bay Fens: Got description (100 chars)
+[2026-01-20T23:23:50.897Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:50.911Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:50.929Z] LOG    ⚠️  Griggs Park: No editorial summary available
+[2026-01-20T23:23:50.930Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:50.932Z] LOG    ⚠️  Pinebank Promontory: No editorial summary available
+[2026-01-20T23:23:50.932Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:50.951Z] LOG    ✅ Winthrop Square: Got description (100 chars)
+[2026-01-20T23:23:50.953Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:50.962Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:23:50.965Z] LOG    ⚠️  Horatio Harris Park: No editorial summary available
+[2026-01-20T23:23:50.966Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:51.032Z] LOG    ⚠️  Emerson Garden: No editorial summary available
+[2026-01-20T23:23:51.033Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:51.034Z] LOG    ⚠️  Billy Ward Playground: No editorial summary available
+[2026-01-20T23:23:51.034Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:51.085Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-20T23:23:51.086Z] LOG ✅ Found 1 places
+[2026-01-20T23:23:51.086Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 852ms
+[2026-01-20T23:23:51.087Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:23:51.087Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-01-20T23:23:51.088Z] LOG    ✅ Olmsted Park → Olmsted Park (must_have)
+[2026-01-20T23:23:51.088Z] LOG    ✅ Mozart Park → Mozart Park (must_have)
+[2026-01-20T23:23:51.088Z] LOG    ✅ Kevin W. Fitzgerald Park → Kevin W. Fitzgerald Park (must_have)
+[2026-01-20T23:23:51.089Z] LOG    ✅ Jamaica Pond Park → Jamaica Pond Park (must_have)
+[2026-01-20T23:23:51.089Z] LOG    ✅ McLaughlin Playground → McLaughlin Playground (must_have)
+[2026-01-20T23:23:51.089Z] LOG    ✅ Marcella Playground → Marcella Playground (must_have)
+[2026-01-20T23:23:51.090Z] LOG    ✅ Ramler Park → Ramler Park (must_have)
+[2026-01-20T23:23:51.090Z] LOG    ✅ Highland Park → Highland Park St (must_have)
+[2026-01-20T23:23:51.090Z] LOG    ✅ Franklin Park → Franklin Park (must_have)
+[2026-01-20T23:23:51.090Z] LOG    ✅ Amory Playground → Amory Playground (must_have)
+[2026-01-20T23:23:51.091Z] LOG    ✅ Boston Common → Boston Common (must_have)
+[2026-01-20T23:23:51.091Z] LOG    ✅ Horatio Harris Park → Horatio Harris Park (must_have)
+[2026-01-20T23:23:51.091Z] LOG    ✅ Back Bay Fens → Back Bay Fens (must_have)
+[2026-01-20T23:23:51.092Z] LOG    ✅ Griggs Park → Griggs Park (must_have)
+[2026-01-20T23:23:51.092Z] LOG    ✅ Pinebank Promontory → Pinebank Promontory (must_have)
+[2026-01-20T23:23:51.092Z] LOG    ✅ Emerson Garden → Emerson Garden (must_have)
+[2026-01-20T23:23:51.092Z] LOG    ✅ Billy Ward Playground → Billy Ward Playground (must_have)
+[2026-01-20T23:23:51.093Z] LOG    ✅ Winthrop Square → Winthrop Square (must_have)
+[2026-01-20T23:23:51.093Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-20T23:23:51.093Z] LOG    Total enriched: 18
+[2026-01-20T23:23:51.093Z] LOG    🎯 Must-have: 18
+[2026-01-20T23:23:51.093Z] LOG    ✨ Nice-to-have: 0
+[2026-01-20T23:23:51.094Z] LOG    ❌ Failed: 0
+[2026-01-20T23:23:51.094Z] LOG    ⏱️ Time: 2171ms
+
+--- Summary ---
+Enrichment completed

@@ -1,0 +1,148 @@
+User Prompt: things to do in Back Bay Boston
+
+[2026-01-20T00:09:09.684Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-20T00:09:09.685Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-20T00:09:09.686Z] LOG    🎯 Must-have: 11
+[2026-01-20T00:09:09.686Z] LOG    ✨ Nice-to-have: 8
+[2026-01-20T00:09:09.687Z] LOG 📍 Location hint: Back Bay Boston
+[2026-01-20T00:09:09.687Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-20T00:09:09.688Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-20T00:09:09.689Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T00:09:09.691Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T00:09:09.692Z] LOG    1. Searching "View Boston" in "Back Bay"
+[2026-01-20T00:09:09.692Z] LOG 🔍 [Google Places] Text search: "View Boston" in Back Bay
+[2026-01-20T00:09:09.703Z] LOG    2. Searching "Prudential Center Boston" in "Back Bay"
+[2026-01-20T00:09:09.704Z] LOG 🔍 [Google Places] Text search: "Prudential Center Boston" in Back Bay
+[2026-01-20T00:09:09.707Z] LOG    3. Searching "Public Garden" in "Back Bay East"
+[2026-01-20T00:09:09.707Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Back Bay East
+[2026-01-20T00:09:09.709Z] LOG    4. Searching "Gibson House Museum" in "Back Bay East"
+[2026-01-20T00:09:09.709Z] LOG 🔍 [Google Places] Text search: "Gibson House Museum" in Back Bay East
+[2026-01-20T00:09:09.712Z] LOG    5. Searching "Charles River Esplanade" in "Back Bay"
+[2026-01-20T00:09:09.713Z] LOG 🔍 [Google Places] Text search: "Charles River Esplanade" in Back Bay
+[2026-01-20T00:09:09.718Z] LOG    6. Searching "Copley Square Park" in "Back Bay"
+[2026-01-20T00:09:09.720Z] LOG 🔍 [Google Places] Text search: "Copley Square Park" in Back Bay
+[2026-01-20T00:09:09.727Z] LOG    7. Searching "Isabella Stewart Gardner Museum" in "Fenway-Kenmore"
+[2026-01-20T00:09:09.730Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway-Kenmore
+[2026-01-20T00:09:09.734Z] LOG    8. Searching "Museum of Fine Arts, Boston" in "Fenway-Kenmore"
+[2026-01-20T00:09:09.737Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Fenway-Kenmore
+[2026-01-20T00:09:09.745Z] LOG    9. Searching "Boston Public Library - Central Library" in "Back Bay"
+[2026-01-20T00:09:09.748Z] LOG 🔍 [Google Places] Text search: "Boston Public Library - Central Library" in Back Bay
+[2026-01-20T00:09:09.756Z] LOG    10. Searching "Trinity Church" in "Back Bay"
+[2026-01-20T00:09:09.759Z] LOG 🔍 [Google Places] Text search: "Trinity Church" in Back Bay
+[2026-01-20T00:09:10.277Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:10.282Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:10.297Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:10.325Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:10.333Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:10.353Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:10.359Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-01-20T00:09:10.363Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:10.367Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-01-20T00:09:10.370Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:10.394Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-20T00:09:10.397Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:10.423Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:10.432Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:10.445Z] LOG    ✅ Trinity Church: Got description (95 chars)
+[2026-01-20T00:09:10.449Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:10.452Z] LOG    ✅ Prudential Center Boston: Got description (95 chars)
+[2026-01-20T00:09:10.453Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:10.466Z] LOG    ✅ Copley Square Park: Got description (97 chars)
+[2026-01-20T00:09:10.468Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:10.502Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-20T00:09:10.503Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:10.549Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2026-01-20T00:09:10.550Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:10.551Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:10.637Z] LOG    ✅ Charles River Esplanade: Got description (99 chars)
+[2026-01-20T00:09:10.639Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:10.767Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:10.895Z] LOG    ✅ Gibson House Museum: Got description (99 chars)
+[2026-01-20T00:09:10.897Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:10.898Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1207ms
+[2026-01-20T00:09:10.899Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T00:09:10.901Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-20T00:09:11.109Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-20T00:09:11.110Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T00:09:11.112Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-20T00:09:11.113Z] LOG    1. Searching "Newbury Street" in "Back Bay"
+[2026-01-20T00:09:11.114Z] LOG 🔍 [Google Places] Text search: "Newbury Street" in Back Bay
+[2026-01-20T00:09:11.116Z] LOG    2. Searching "Splash Fountain at Christian Science Plaza" in "Back Bay"
+[2026-01-20T00:09:11.117Z] LOG 🔍 [Google Places] Text search: "Splash Fountain at Christian Science Plaza" in Back Bay
+[2026-01-20T00:09:11.118Z] LOG    3. Searching "Buttermilk & Bourbon - Back Bay" in "Back Bay"
+[2026-01-20T00:09:11.118Z] LOG 🔍 [Google Places] Text search: "Buttermilk & Bourbon - Back Bay" in Back Bay
+[2026-01-20T00:09:11.119Z] LOG    4. Searching "Trident Booksellers & Cafe" in "Back Bay"
+[2026-01-20T00:09:11.120Z] LOG 🔍 [Google Places] Text search: "Trident Booksellers & Cafe" in Back Bay
+[2026-01-20T00:09:11.121Z] LOG    5. Searching "Back Bay Fens" in "Fenway-Kenmore"
+[2026-01-20T00:09:11.121Z] LOG 🔍 [Google Places] Text search: "Back Bay Fens" in Fenway-Kenmore
+[2026-01-20T00:09:11.122Z] LOG    6. Searching "The Fenway Garden Society" in "Back Bay Fens"
+[2026-01-20T00:09:11.122Z] LOG 🔍 [Google Places] Text search: "The Fenway Garden Society" in Back Bay Fens
+[2026-01-20T00:09:11.123Z] LOG    7. Searching "Old South Church in Boston" in "Back Bay"
+[2026-01-20T00:09:11.123Z] LOG 🔍 [Google Places] Text search: "Old South Church in Boston" in Back Bay
+[2026-01-20T00:09:11.125Z] LOG    8. Searching "Copley Place" in "Back Bay"
+[2026-01-20T00:09:11.125Z] LOG 🔍 [Google Places] Text search: "Copley Place" in Back Bay
+[2026-01-20T00:09:11.126Z] LOG    9. Searching "Galerie d'Orsay" in "Back Bay"
+[2026-01-20T00:09:11.127Z] LOG 🔍 [Google Places] Text search: "Galerie d'Orsay" in Back Bay
+[2026-01-20T00:09:11.484Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:11.504Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:11.507Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:11.526Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:11.599Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:11.614Z] LOG    ⚠️  Copley Pl: No editorial summary available
+[2026-01-20T00:09:11.615Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:11.624Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:11.627Z] LOG    ✅ Galerie d'Orsay: Got description (78 chars)
+[2026-01-20T00:09:11.628Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:11.631Z] LOG    ✅ Buttermilk & Bourbon - Back Bay: Got description (94 chars)
+[2026-01-20T00:09:11.632Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:11.639Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:11.642Z] LOG    ✅ Trident Booksellers & Cafe: Got description (90 chars)
+[2026-01-20T00:09:11.642Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:11.691Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:11.718Z] LOG    ✅ Back Bay Fens: Got description (100 chars)
+[2026-01-20T00:09:11.719Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:11.719Z] LOG    ✅ Old South Church in Boston: Got description (96 chars)
+[2026-01-20T00:09:11.720Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:11.789Z] LOG    ⚠️  Splash Fountain at Christian Science Plaza: No editorial summary available
+[2026-01-20T00:09:11.791Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:11.818Z] LOG    ✅ The Fenway Garden Society: Got description (92 chars)
+[2026-01-20T00:09:11.819Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:11.927Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T00:09:11.977Z] LOG    ✅ Newbury St: Got description (100 chars)
+[2026-01-20T00:09:11.978Z] LOG ✅ Found 1 places
+[2026-01-20T00:09:11.979Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 867ms
+[2026-01-20T00:09:11.979Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T00:09:11.980Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-20T00:09:11.981Z] LOG    ✅ View Boston → View Boston (must_have)
+[2026-01-20T00:09:11.981Z] LOG    ✅ Prudential Center Boston → Prudential Center Boston (must_have)
+[2026-01-20T00:09:11.981Z] LOG    ✅ Public Garden → Public Garden (must_have)
+[2026-01-20T00:09:11.982Z] LOG    ✅ Gibson House Museum → Gibson House Museum (must_have)
+[2026-01-20T00:09:11.982Z] LOG    ✅ Charles River Esplanade → Charles River Esplanade (must_have)
+[2026-01-20T00:09:11.982Z] LOG    ✅ Copley Square Park → Copley Square Park (must_have)
+[2026-01-20T00:09:11.983Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (must_have)
+[2026-01-20T00:09:11.983Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (must_have)
+[2026-01-20T00:09:11.983Z] LOG    ✅ Boston Public Library - Central Library → Boston Public Library - Central Library (must_have)
+[2026-01-20T00:09:11.984Z] LOG    ✅ Trinity Church → Trinity Church (must_have)
+[2026-01-20T00:09:11.984Z] LOG    ✅ Newbury Street → Newbury St (must_have)
+[2026-01-20T00:09:11.985Z] LOG    ✅ Splash Fountain at Christian Science Plaza → Splash Fountain at Christian Science Plaza (nice_to_have)
+[2026-01-20T00:09:11.985Z] LOG    ✅ Buttermilk & Bourbon - Back Bay → Buttermilk & Bourbon - Back Bay (nice_to_have)
+[2026-01-20T00:09:11.986Z] LOG    ✅ Trident Booksellers & Cafe → Trident Booksellers & Cafe (nice_to_have)
+[2026-01-20T00:09:11.986Z] LOG    ✅ Back Bay Fens → Back Bay Fens (nice_to_have)
+[2026-01-20T00:09:11.987Z] LOG    ✅ The Fenway Garden Society → The Fenway Garden Society (nice_to_have)
+[2026-01-20T00:09:11.987Z] LOG    ✅ Old South Church in Boston → Old South Church in Boston (nice_to_have)
+[2026-01-20T00:09:11.988Z] LOG    ✅ Copley Place → Copley Pl (nice_to_have)
+[2026-01-20T00:09:11.988Z] LOG    ✅ Galerie d'Orsay → Galerie d'Orsay (nice_to_have)
+[2026-01-20T00:09:11.989Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-20T00:09:11.990Z] LOG    Total enriched: 19
+[2026-01-20T00:09:11.990Z] LOG    🎯 Must-have: 11
+[2026-01-20T00:09:11.991Z] LOG    ✨ Nice-to-have: 8
+[2026-01-20T00:09:11.991Z] LOG    ❌ Failed: 0
+[2026-01-20T00:09:11.992Z] LOG    ⏱️ Time: 2309ms
+
+--- Summary ---
+Enrichment completed

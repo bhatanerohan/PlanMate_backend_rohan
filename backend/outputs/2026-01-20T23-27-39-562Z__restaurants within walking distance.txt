@@ -1,0 +1,148 @@
+User Prompt: restaurants within walking distance
+
+[2026-01-20T23:27:39.563Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-20T23:27:39.564Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-20T23:27:39.565Z] LOG    🎯 Must-have: 9
+[2026-01-20T23:27:39.565Z] LOG    ✨ Nice-to-have: 10
+[2026-01-20T23:27:39.566Z] LOG 📍 Location hint: Hyde Square, Jamaica Plain
+[2026-01-20T23:27:39.567Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-20T23:27:39.568Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-20T23:27:39.571Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:27:39.571Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-20T23:27:39.572Z] LOG    1. Searching "Top Mix Bar & Kitchen JP" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:39.572Z] LOG 🔍 [Google Places] Text search: "Top Mix Bar & Kitchen JP" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:39.575Z] LOG    2. Searching "Nicole's Jamaica Plain" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:39.576Z] LOG 🔍 [Google Places] Text search: "Nicole's Jamaica Plain" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:39.582Z] LOG    3. Searching "Miami Restaurant" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:39.584Z] LOG 🔍 [Google Places] Text search: "Miami Restaurant" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:39.594Z] LOG    4. Searching "Blue Nile Restaurant" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:39.601Z] LOG 🔍 [Google Places] Text search: "Blue Nile Restaurant" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:39.610Z] LOG    5. Searching "Alex's Chimis" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:39.615Z] LOG 🔍 [Google Places] Text search: "Alex's Chimis" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:39.624Z] LOG    6. Searching "Pikalo JP" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:39.628Z] LOG 🔍 [Google Places] Text search: "Pikalo JP" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:39.637Z] LOG    7. Searching "Tori Japan" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:39.642Z] LOG 🔍 [Google Places] Text search: "Tori Japan" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:39.655Z] LOG    8. Searching "Tres Gatos" in "Jamaica Plain Centre"
+[2026-01-20T23:27:39.660Z] LOG 🔍 [Google Places] Text search: "Tres Gatos" in Jamaica Plain Centre
+[2026-01-20T23:27:39.680Z] LOG    9. Searching "The Haven" in "Egleston Square, Jamaica Plain"
+[2026-01-20T23:27:39.683Z] LOG 🔍 [Google Places] Text search: "The Haven" in Egleston Square, Jamaica Plain
+[2026-01-20T23:27:39.699Z] LOG    10. Searching "Ethiopian Cafe" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:39.704Z] LOG 🔍 [Google Places] Text search: "Ethiopian Cafe" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:40.186Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:40.221Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:40.243Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:40.249Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:40.262Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:40.335Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:40.349Z] LOG    ✅ Tres Gatos: Got description (98 chars)
+[2026-01-20T23:27:40.351Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:40.363Z] LOG    ✅ The Haven: Got description (99 chars)
+[2026-01-20T23:27:40.363Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:40.376Z] LOG    ✅ Alex's Chimis: Got description (94 chars)
+[2026-01-20T23:27:40.377Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:40.388Z] LOG    ✅ Pikalo JP: Got description (87 chars)
+[2026-01-20T23:27:40.389Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:40.420Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:40.424Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:40.426Z] LOG    ⚠️  Nicole's Jamaica Plain: No editorial summary available
+[2026-01-20T23:27:40.427Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:40.467Z] LOG    ⚠️  Tori Japan: No editorial summary available
+[2026-01-20T23:27:40.468Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:40.558Z] LOG    ✅ Blue Nile Restaurant: Got description (89 chars)
+[2026-01-20T23:27:40.559Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:40.569Z] LOG    ✅ Ethiopian Cafe: Got description (98 chars)
+[2026-01-20T23:27:40.570Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:40.639Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:40.794Z] LOG    ⚠️  Top Mix Bar & Kitchen JP: No editorial summary available
+[2026-01-20T23:27:40.796Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:40.808Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:40.961Z] LOG    ✅ Miami Restaurant: Got description (97 chars)
+[2026-01-20T23:27:40.963Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:40.964Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1393ms
+[2026-01-20T23:27:40.965Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:27:40.966Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-20T23:27:41.178Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-20T23:27:41.180Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-20T23:27:41.181Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-20T23:27:41.183Z] LOG    1. Searching "Brendan Behan Pub" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:41.184Z] LOG 🔍 [Google Places] Text search: "Brendan Behan Pub" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:41.187Z] LOG    2. Searching "Tostado Sandwich Bar" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:41.188Z] LOG 🔍 [Google Places] Text search: "Tostado Sandwich Bar" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:41.190Z] LOG    3. Searching "Mozart Park" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:41.191Z] LOG 🔍 [Google Places] Text search: "Mozart Park" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:41.193Z] LOG    4. Searching "Yely's Coffee Shop" in "Hyde Square, Jamaica Plain"
+[2026-01-20T23:27:41.195Z] LOG 🔍 [Google Places] Text search: "Yely's Coffee Shop" in Hyde Square, Jamaica Plain
+[2026-01-20T23:27:41.199Z] LOG    5. Searching "Olmsted Park" in "Jamaica Hills, Jamaica Plain"
+[2026-01-20T23:27:41.200Z] LOG 🔍 [Google Places] Text search: "Olmsted Park" in Jamaica Hills, Jamaica Plain
+[2026-01-20T23:27:41.203Z] LOG    6. Searching "Cafe La Paz" in "Jamaica Plain"
+[2026-01-20T23:27:41.206Z] LOG 🔍 [Google Places] Text search: "Cafe La Paz" in Jamaica Plain
+[2026-01-20T23:27:41.207Z] LOG    7. Searching "Pinebank Promontory" in "Jamaica Pond, Jamaica Plain"
+[2026-01-20T23:27:41.208Z] LOG 🔍 [Google Places] Text search: "Pinebank Promontory" in Jamaica Pond, Jamaica Plain
+[2026-01-20T23:27:41.210Z] LOG    8. Searching "Ula Café" in "Egleston Square, Jamaica Plain"
+[2026-01-20T23:27:41.211Z] LOG 🔍 [Google Places] Text search: "Ula Café" in Egleston Square, Jamaica Plain
+[2026-01-20T23:27:41.213Z] LOG    9. Searching "Jamaica Pond Park" in "Jamaica Plain"
+[2026-01-20T23:27:41.214Z] LOG 🔍 [Google Places] Text search: "Jamaica Pond Park" in Jamaica Plain
+[2026-01-20T23:27:41.583Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:41.648Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:41.663Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:41.687Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:41.696Z] LOG    ⚠️  Mozart Park: No editorial summary available
+[2026-01-20T23:27:41.699Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:41.714Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:41.721Z] LOG    ✅ Brendan Behan Pub: Got description (99 chars)
+[2026-01-20T23:27:41.724Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:41.740Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:41.770Z] LOG    ✅ Olmsted Park: Got description (100 chars)
+[2026-01-20T23:27:41.770Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:41.781Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:41.784Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:41.807Z] LOG    ⚠️  Jamaica Pond Park: No editorial summary available
+[2026-01-20T23:27:41.809Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:41.812Z] LOG    ✅ Tostado Sandwich Bar: Got description (86 chars)
+[2026-01-20T23:27:41.813Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:41.815Z] LOG    ⚠️  Yely's Coffee Shop: No editorial summary available
+[2026-01-20T23:27:41.816Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:41.917Z] LOG    ✅ Ula Café: Got description (91 chars)
+[2026-01-20T23:27:41.919Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:41.927Z] LOG    ⚠️  Cafe La Paz: No editorial summary available
+[2026-01-20T23:27:41.928Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:42.027Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-20T23:27:42.095Z] LOG    ⚠️  Pinebank Promontory: No editorial summary available
+[2026-01-20T23:27:42.097Z] LOG ✅ Found 1 places
+[2026-01-20T23:27:42.098Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 917ms
+[2026-01-20T23:27:42.100Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-20T23:27:42.101Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-20T23:27:42.102Z] LOG    ✅ Top Mix Bar & Kitchen JP → Top Mix Bar & Kitchen JP (must_have)
+[2026-01-20T23:27:42.103Z] LOG    ✅ Nicole's Jamaica Plain → Nicole's Jamaica Plain (must_have)
+[2026-01-20T23:27:42.105Z] LOG    ✅ Miami Restaurant → Miami Restaurant (must_have)
+[2026-01-20T23:27:42.106Z] LOG    ✅ Blue Nile Restaurant → Blue Nile Restaurant (must_have)
+[2026-01-20T23:27:42.108Z] LOG    ✅ Alex's Chimis → Alex's Chimis (must_have)
+[2026-01-20T23:27:42.109Z] LOG    ✅ Pikalo JP → Pikalo JP (must_have)
+[2026-01-20T23:27:42.111Z] LOG    ✅ Tori Japan → Tori Japan (must_have)
+[2026-01-20T23:27:42.112Z] LOG    ✅ Tres Gatos → Tres Gatos (must_have)
+[2026-01-20T23:27:42.113Z] LOG    ✅ The Haven → The Haven (must_have)
+[2026-01-20T23:27:42.115Z] LOG    ✅ Ethiopian Cafe → Ethiopian Cafe (nice_to_have)
+[2026-01-20T23:27:42.116Z] LOG    ✅ Brendan Behan Pub → Brendan Behan Pub (nice_to_have)
+[2026-01-20T23:27:42.118Z] LOG    ✅ Tostado Sandwich Bar → Tostado Sandwich Bar (nice_to_have)
+[2026-01-20T23:27:42.119Z] LOG    ✅ Mozart Park → Mozart Park (nice_to_have)
+[2026-01-20T23:27:42.121Z] LOG    ✅ Yely's Coffee Shop → Yely's Coffee Shop (nice_to_have)
+[2026-01-20T23:27:42.122Z] LOG    ✅ Olmsted Park → Olmsted Park (nice_to_have)
+[2026-01-20T23:27:42.123Z] LOG    ✅ Cafe La Paz → Cafe La Paz (nice_to_have)
+[2026-01-20T23:27:42.124Z] LOG    ✅ Pinebank Promontory → Pinebank Promontory (nice_to_have)
+[2026-01-20T23:27:42.125Z] LOG    ✅ Ula Café → Ula Café (nice_to_have)
+[2026-01-20T23:27:42.127Z] LOG    ✅ Jamaica Pond Park → Jamaica Pond Park (nice_to_have)
+[2026-01-20T23:27:42.128Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-20T23:27:42.129Z] LOG    Total enriched: 19
+[2026-01-20T23:27:42.130Z] LOG    🎯 Must-have: 9
+[2026-01-20T23:27:42.130Z] LOG    ✨ Nice-to-have: 10
+[2026-01-20T23:27:42.132Z] LOG    ❌ Failed: 0
+[2026-01-20T23:27:42.133Z] LOG    ⏱️ Time: 2572ms
+
+--- Summary ---
+Enrichment completed

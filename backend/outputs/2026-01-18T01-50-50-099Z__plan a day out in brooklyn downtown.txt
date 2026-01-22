@@ -1,0 +1,154 @@
+User Prompt: plan a day out in brooklyn downtown
+
+[2026-01-18T01:50:50.099Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-18T01:50:50.100Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-18T01:50:50.100Z] LOG    🎯 Must-have: 6
+[2026-01-18T01:50:50.101Z] LOG    ✨ Nice-to-have: 14
+[2026-01-18T01:50:50.101Z] LOG 📍 Location hint: brooklyn downtown
+[2026-01-18T01:50:50.102Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-18T01:50:50.103Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-18T01:50:50.104Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-18T01:50:50.104Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-18T01:50:50.105Z] LOG    1. Searching "Brooklyn Bridge Park" in "Dumbo/Brooklyn Heights"
+[2026-01-18T01:50:50.105Z] LOG 🔍 [Google Places] Text search: "Brooklyn Bridge Park" in Dumbo/Brooklyn Heights
+[2026-01-18T01:50:50.108Z] LOG    2. Searching "DUMBO Manhattan Bridge View" in "Dumbo"
+[2026-01-18T01:50:50.109Z] LOG 🔍 [Google Places] Text search: "DUMBO Manhattan Bridge View" in Dumbo
+[2026-01-18T01:50:50.112Z] LOG    3. Searching "Dekalb Market Hall / City Point BKLYN" in "Downtown Brooklyn"
+[2026-01-18T01:50:50.113Z] LOG 🔍 [Google Places] Text search: "Dekalb Market Hall / City Point BKLYN" in Downtown Brooklyn
+[2026-01-18T01:50:50.114Z] LOG    4. Searching "New York Transit Museum" in "Downtown Brooklyn"
+[2026-01-18T01:50:50.115Z] LOG 🔍 [Google Places] Text search: "New York Transit Museum" in Downtown Brooklyn
+[2026-01-18T01:50:50.117Z] LOG    5. Searching "Junior's Restaurant & Bakery" in "Downtown Brooklyn"
+[2026-01-18T01:50:50.118Z] LOG 🔍 [Google Places] Text search: "Junior's Restaurant & Bakery" in Downtown Brooklyn
+[2026-01-18T01:50:50.120Z] LOG    6. Searching "Brooklyn Heights Promenade" in "Brooklyn Heights"
+[2026-01-18T01:50:50.121Z] LOG 🔍 [Google Places] Text search: "Brooklyn Heights Promenade" in Brooklyn Heights
+[2026-01-18T01:50:50.123Z] LOG    7. Searching "Time Out Market New York" in "Dumbo"
+[2026-01-18T01:50:50.123Z] LOG 🔍 [Google Places] Text search: "Time Out Market New York" in Dumbo
+[2026-01-18T01:50:50.128Z] LOG    8. Searching "Jane's Carousel" in "Dumbo"
+[2026-01-18T01:50:50.129Z] LOG 🔍 [Google Places] Text search: "Jane's Carousel" in Dumbo
+[2026-01-18T01:50:50.131Z] LOG    9. Searching "Gage & Tollner" in "Downtown Brooklyn"
+[2026-01-18T01:50:50.132Z] LOG 🔍 [Google Places] Text search: "Gage & Tollner" in Downtown Brooklyn
+[2026-01-18T01:50:50.135Z] LOG    10. Searching "Kimoto Rooftop Restaurant & Garden Lounge" in "Downtown Brooklyn"
+[2026-01-18T01:50:50.136Z] LOG 🔍 [Google Places] Text search: "Kimoto Rooftop Restaurant & Garden Lounge" in Downtown Brooklyn
+[2026-01-18T01:50:50.616Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:50.678Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:50.689Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:50.705Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:50.752Z] LOG    ✅ DUMBO Manhattan Bridge View: Got description (92 chars)
+[2026-01-18T01:50:50.761Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:50.788Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:50.815Z] LOG    ✅ Time Out Market New York: Got description (103 chars)
+[2026-01-18T01:50:50.820Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:50.827Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:50.834Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:50.844Z] LOG    ✅ Jane's Carousel: Got description (93 chars)
+[2026-01-18T01:50:50.846Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:50.850Z] LOG    ✅ Brooklyn Bridge Park: Got description (87 chars)
+[2026-01-18T01:50:50.852Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:50.928Z] LOG    ✅ Gage & Tollner: Got description (99 chars)
+[2026-01-18T01:50:50.931Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:50.992Z] LOG    ✅ Brooklyn Heights Promenade: Got description (94 chars)
+[2026-01-18T01:50:50.994Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:50.998Z] LOG    ✅ Dekalb Market Hall: Got description (90 chars)
+[2026-01-18T01:50:50.999Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:51.005Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:51.084Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:51.151Z] LOG    ✅ Kimoto Rooftop Restaurant & Garden Lounge: Got description (99 chars)
+[2026-01-18T01:50:51.153Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:51.225Z] LOG    ✅ Junior's Restaurant & Bakery: Got description (81 chars)
+[2026-01-18T01:50:51.227Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:51.447Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:51.632Z] LOG    ✅ New York Transit Museum: Got description (95 chars)
+[2026-01-18T01:50:51.636Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:51.637Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1533ms
+[2026-01-18T01:50:51.638Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-18T01:50:51.639Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-18T01:50:51.851Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-18T01:50:51.855Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-18T01:50:51.857Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-18T01:50:51.858Z] LOG    1. Searching "Boutros" in "Boerum Hill"
+[2026-01-18T01:50:51.858Z] LOG 🔍 [Google Places] Text search: "Boutros" in Boerum Hill
+[2026-01-18T01:50:51.861Z] LOG    2. Searching "Celestine" in "Dumbo"
+[2026-01-18T01:50:51.862Z] LOG 🔍 [Google Places] Text search: "Celestine" in Dumbo
+[2026-01-18T01:50:51.864Z] LOG    3. Searching "Cadman Plaza Park" in "Downtown Brooklyn"
+[2026-01-18T01:50:51.864Z] LOG 🔍 [Google Places] Text search: "Cadman Plaza Park" in Downtown Brooklyn
+[2026-01-18T01:50:51.865Z] LOG    4. Searching "Fort Greene Park" in "Fort Greene"
+[2026-01-18T01:50:51.866Z] LOG 🔍 [Google Places] Text search: "Fort Greene Park" in Fort Greene
+[2026-01-18T01:50:51.869Z] LOG    5. Searching "POWERHOUSE Arena" in "Dumbo"
+[2026-01-18T01:50:51.870Z] LOG 🔍 [Google Places] Text search: "POWERHOUSE Arena" in Dumbo
+[2026-01-18T01:50:51.871Z] LOG    6. Searching "Unearth Vintage" in "Boerum Hill"
+[2026-01-18T01:50:51.871Z] LOG 🔍 [Google Places] Text search: "Unearth Vintage" in Boerum Hill
+[2026-01-18T01:50:51.872Z] LOG    7. Searching "Bluestone Lane DUMBO Café" in "Dumbo"
+[2026-01-18T01:50:51.872Z] LOG 🔍 [Google Places] Text search: "Bluestone Lane DUMBO Café" in Dumbo
+[2026-01-18T01:50:51.874Z] LOG    8. Searching "Devoción (Livingston St)" in "Downtown Brooklyn"
+[2026-01-18T01:50:51.875Z] LOG 🔍 [Google Places] Text search: "Devoción (Livingston St)" in Downtown Brooklyn
+[2026-01-18T01:50:51.876Z] LOG    9. Searching "Alamo Drafthouse Cinema Brooklyn" in "Downtown Brooklyn"
+[2026-01-18T01:50:51.877Z] LOG 🔍 [Google Places] Text search: "Alamo Drafthouse Cinema Brooklyn" in Downtown Brooklyn
+[2026-01-18T01:50:51.877Z] LOG    10. Searching "Sunken Harbor Club" in "Downtown Brooklyn"
+[2026-01-18T01:50:51.878Z] LOG 🔍 [Google Places] Text search: "Sunken Harbor Club" in Downtown Brooklyn
+[2026-01-18T01:50:52.271Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:52.287Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:52.319Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:52.348Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:52.398Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:52.405Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:52.410Z] LOG    ✅ Celestine: Got description (111 chars)
+[2026-01-18T01:50:52.413Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:52.436Z] LOG    ⚠️  Bluestone Lane DUMBO Café: No editorial summary available
+[2026-01-18T01:50:52.438Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:52.453Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:52.456Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:52.460Z] LOG    ✅ Fort Greene Park: Got description (100 chars)
+[2026-01-18T01:50:52.461Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:52.500Z] LOG    ✅ POWERHOUSE Arena: Got description (99 chars)
+[2026-01-18T01:50:52.502Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:52.503Z] LOG    ✅ Cadman Plaza Park: Got description (96 chars)
+[2026-01-18T01:50:52.503Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:52.546Z] LOG    ✅ Devoción: Got description (73 chars)
+[2026-01-18T01:50:52.548Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:52.582Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:52.589Z] LOG    ✅ Boutros: Got description (96 chars)
+[2026-01-18T01:50:52.591Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:52.592Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-18T01:50:52.618Z] LOG    ✅ Unearth Vintage: Got description (85 chars)
+[2026-01-18T01:50:52.620Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:52.723Z] LOG    ✅ Alamo Drafthouse Cinema Brooklyn: Got description (99 chars)
+[2026-01-18T01:50:52.728Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:52.733Z] LOG    ⚠️  Sunken Harbor Club: No editorial summary available
+[2026-01-18T01:50:52.734Z] LOG ✅ Found 1 places
+[2026-01-18T01:50:52.735Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 878ms
+[2026-01-18T01:50:52.735Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-18T01:50:52.736Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-18T01:50:52.736Z] LOG    ✅ Brooklyn Bridge Park → Brooklyn Bridge Park (must_have)
+[2026-01-18T01:50:52.737Z] LOG    ✅ DUMBO Manhattan Bridge View → DUMBO Manhattan Bridge View (must_have)
+[2026-01-18T01:50:52.737Z] LOG    ✅ Dekalb Market Hall / City Point BKLYN → Dekalb Market Hall (must_have)
+[2026-01-18T01:50:52.738Z] LOG    ✅ New York Transit Museum → New York Transit Museum (must_have)
+[2026-01-18T01:50:52.738Z] LOG    ✅ Junior's Restaurant & Bakery → Junior's Restaurant & Bakery (must_have)
+[2026-01-18T01:50:52.738Z] LOG    ✅ Brooklyn Heights Promenade → Brooklyn Heights Promenade (must_have)
+[2026-01-18T01:50:52.739Z] LOG    ✅ Time Out Market New York → Time Out Market New York (nice_to_have)
+[2026-01-18T01:50:52.739Z] LOG    ✅ Jane's Carousel → Jane's Carousel (nice_to_have)
+[2026-01-18T01:50:52.740Z] LOG    ✅ Gage & Tollner → Gage & Tollner (nice_to_have)
+[2026-01-18T01:50:52.741Z] LOG    ✅ Kimoto Rooftop Restaurant & Garden Lounge → Kimoto Rooftop Restaurant & Garden Lounge (nice_to_have)
+[2026-01-18T01:50:52.741Z] LOG    ✅ Boutros → Boutros (nice_to_have)
+[2026-01-18T01:50:52.742Z] LOG    ✅ Celestine → Celestine (nice_to_have)
+[2026-01-18T01:50:52.742Z] LOG    ✅ Cadman Plaza Park → Cadman Plaza Park (nice_to_have)
+[2026-01-18T01:50:52.743Z] LOG    ✅ Fort Greene Park → Fort Greene Park (nice_to_have)
+[2026-01-18T01:50:52.743Z] LOG    ✅ POWERHOUSE Arena → POWERHOUSE Arena (nice_to_have)
+[2026-01-18T01:50:52.744Z] LOG    ✅ Unearth Vintage → Unearth Vintage (nice_to_have)
+[2026-01-18T01:50:52.744Z] LOG    ✅ Bluestone Lane DUMBO Café → Bluestone Lane DUMBO Café (nice_to_have)
+[2026-01-18T01:50:52.745Z] LOG    ✅ Devoción (Livingston St) → Devoción (nice_to_have)
+[2026-01-18T01:50:52.746Z] LOG    ✅ Alamo Drafthouse Cinema Brooklyn → Alamo Drafthouse Cinema Brooklyn (nice_to_have)
+[2026-01-18T01:50:52.746Z] LOG    ✅ Sunken Harbor Club → Sunken Harbor Club (nice_to_have)
+[2026-01-18T01:50:52.747Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-18T01:50:52.748Z] LOG    Total enriched: 20
+[2026-01-18T01:50:52.748Z] LOG    🎯 Must-have: 6
+[2026-01-18T01:50:52.748Z] LOG    ✨ Nice-to-have: 14
+[2026-01-18T01:50:52.749Z] LOG    ❌ Failed: 0
+[2026-01-18T01:50:52.749Z] LOG    ⏱️ Time: 2650ms
+
+--- Summary ---
+Enrichment completed
