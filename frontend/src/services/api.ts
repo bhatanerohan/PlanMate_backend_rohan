@@ -1,7 +1,7 @@
 // frontend/src/services/api.ts
 
 import axios from 'axios';
-import type { PlanResponse, Venue } from '../types';
+import type { GeoPreferenceMode, PlanResponse, Venue } from '../types';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
@@ -51,7 +51,8 @@ export const planApi = {
   async createPlan(
     prompt: string, 
     userLocation?: { lat: number; lng: number; name: string },
-    currentItinerary?: CurrentItinerary  // 🆕 Optional itinerary for modifications
+    currentItinerary?: CurrentItinerary,  // 🆕 Optional itinerary for modifications
+    geoPreference?: GeoPreferenceMode
   ): Promise<PlanResponse> {
     const response = await apiClient.post<PlanResponse>('/api/plan', {
       prompt,
@@ -60,6 +61,7 @@ export const planApi = {
         lng: userLocation.lng,
         name: userLocation.name
       } : undefined,
+      geoPreference,
       currentItinerary: currentItinerary ? {  // 🆕 Send itinerary if exists
         venues: currentItinerary.venues,
         originalPrompt: currentItinerary.originalPrompt,

@@ -1,0 +1,154 @@
+User Prompt: walkable best pizza in Boston (anywhere is fine)
+
+[2026-01-23T02:58:34.436Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-23T02:58:34.437Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-23T02:58:34.437Z] LOG    🎯 Must-have: 8
+[2026-01-23T02:58:34.437Z] LOG    ✨ Nice-to-have: 12
+[2026-01-23T02:58:34.438Z] LOG 📍 Location hint: North End
+[2026-01-23T02:58:34.439Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-23T02:58:34.439Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-23T02:58:34.441Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-23T02:58:34.442Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-23T02:58:34.443Z] LOG    1. Searching "Regina Pizzeria" in "North End"
+[2026-01-23T02:58:34.444Z] LOG 🔍 [Google Places] Text search: "Regina Pizzeria" in North End
+[2026-01-23T02:58:34.454Z] LOG    2. Searching "Galleria Umberto" in "North End"
+[2026-01-23T02:58:34.457Z] LOG 🔍 [Google Places] Text search: "Galleria Umberto" in North End
+[2026-01-23T02:58:34.465Z] LOG    3. Searching "Santarpio's Pizza" in "East Boston"
+[2026-01-23T02:58:34.466Z] LOG 🔍 [Google Places] Text search: "Santarpio's Pizza" in East Boston
+[2026-01-23T02:58:34.474Z] LOG    4. Searching "Descendant Detroit Style Pizza" in "Back Bay"
+[2026-01-23T02:58:34.475Z] LOG 🔍 [Google Places] Text search: "Descendant Detroit Style Pizza" in Back Bay
+[2026-01-23T02:58:34.481Z] LOG    5. Searching "Picco" in "South End"
+[2026-01-23T02:58:34.484Z] LOG 🔍 [Google Places] Text search: "Picco" in South End
+[2026-01-23T02:58:34.490Z] LOG    6. Searching "Brewer's Fork" in "Charlestown"
+[2026-01-23T02:58:34.493Z] LOG 🔍 [Google Places] Text search: "Brewer's Fork" in Charlestown
+[2026-01-23T02:58:34.500Z] LOG    7. Searching "Dirty Water Dough Company" in "Back Bay"
+[2026-01-23T02:58:34.502Z] LOG 🔍 [Google Places] Text search: "Dirty Water Dough Company" in Back Bay
+[2026-01-23T02:58:34.511Z] LOG    8. Searching "FLORINA Pizzeria & Paninoteca" in "Beacon Hill"
+[2026-01-23T02:58:34.515Z] LOG 🔍 [Google Places] Text search: "FLORINA Pizzeria & Paninoteca" in Beacon Hill
+[2026-01-23T02:58:34.528Z] LOG    9. Searching "Faneuil Hall Marketplace" in "Downtown/Waterfront"
+[2026-01-23T02:58:34.531Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Downtown/Waterfront
+[2026-01-23T02:58:34.540Z] LOG    10. Searching "Public Garden" in "Beacon Hill/Back Bay"
+[2026-01-23T02:58:34.541Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Beacon Hill/Back Bay
+[2026-01-23T02:58:34.971Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:34.998Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:35.042Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:35.053Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:35.071Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:35.079Z] LOG    ✅ Regina Pizzeria: Got description (80 chars)
+[2026-01-23T02:58:35.080Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:35.103Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:35.138Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:35.140Z] LOG    ✅ Brewer's Fork: Got description (100 chars)
+[2026-01-23T02:58:35.141Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:35.142Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:35.157Z] LOG    ✅ Picco: Got description (91 chars)
+[2026-01-23T02:58:35.159Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:35.168Z] LOG    ✅ Santarpio's Pizza: Got description (95 chars)
+[2026-01-23T02:58:35.170Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:35.203Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-23T02:58:35.206Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:35.211Z] LOG    ✅ Dirty Water Dough Company: Got description (99 chars)
+[2026-01-23T02:58:35.214Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:35.218Z] LOG    ⚠️  Descendant Detroit Style Pizza: No editorial summary available
+[2026-01-23T02:58:35.219Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:35.232Z] LOG    ✅ Galleria Umberto: Got description (99 chars)
+[2026-01-23T02:58:35.234Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:35.418Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:35.534Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:35.562Z] LOG    ✅ FLORINA Pizzeria & Paninoteca: Got description (92 chars)
+[2026-01-23T02:58:35.564Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:35.676Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-23T02:58:35.677Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:35.678Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1236ms
+[2026-01-23T02:58:35.679Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-23T02:58:35.679Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-23T02:58:35.895Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-23T02:58:35.896Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-23T02:58:35.897Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-23T02:58:35.897Z] LOG    1. Searching "Copley Square" in "Back Bay"
+[2026-01-23T02:58:35.897Z] LOG 🔍 [Google Places] Text search: "Copley Square" in Back Bay
+[2026-01-23T02:58:35.898Z] LOG    2. Searching "Paul Revere House" in "North End"
+[2026-01-23T02:58:35.899Z] LOG 🔍 [Google Places] Text search: "Paul Revere House" in North End
+[2026-01-23T02:58:35.900Z] LOG    3. Searching "Bunker Hill Monument" in "Charlestown"
+[2026-01-23T02:58:35.900Z] LOG 🔍 [Google Places] Text search: "Bunker Hill Monument" in Charlestown
+[2026-01-23T02:58:35.901Z] LOG    4. Searching "USS Constitution Museum" in "Charlestown"
+[2026-01-23T02:58:35.901Z] LOG 🔍 [Google Places] Text search: "USS Constitution Museum" in Charlestown
+[2026-01-23T02:58:35.902Z] LOG    5. Searching "Massachusetts State House" in "Beacon Hill"
+[2026-01-23T02:58:35.902Z] LOG 🔍 [Google Places] Text search: "Massachusetts State House" in Beacon Hill
+[2026-01-23T02:58:35.903Z] LOG    6. Searching "Newbury Street" in "Back Bay"
+[2026-01-23T02:58:35.903Z] LOG 🔍 [Google Places] Text search: "Newbury Street" in Back Bay
+[2026-01-23T02:58:35.904Z] LOG    7. Searching "Boston Common" in "Downtown"
+[2026-01-23T02:58:35.904Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown
+[2026-01-23T02:58:35.905Z] LOG    8. Searching "Old North Church" in "North End"
+[2026-01-23T02:58:35.906Z] LOG 🔍 [Google Places] Text search: "Old North Church" in North End
+[2026-01-23T02:58:35.907Z] LOG    9. Searching "Boston Public Library - Central Library" in "Back Bay"
+[2026-01-23T02:58:35.908Z] LOG 🔍 [Google Places] Text search: "Boston Public Library - Central Library" in Back Bay
+[2026-01-23T02:58:35.909Z] LOG    10. Searching "Piers Park" in "East Boston"
+[2026-01-23T02:58:35.910Z] LOG 🔍 [Google Places] Text search: "Piers Park" in East Boston
+[2026-01-23T02:58:36.315Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:36.320Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:36.338Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:36.401Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-23T02:58:36.402Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:36.409Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:36.436Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:36.463Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:36.465Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:36.466Z] LOG    ⚠️  Piers Park: No editorial summary available
+[2026-01-23T02:58:36.467Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:36.468Z] LOG    ✅ USS Constitution Museum: Got description (98 chars)
+[2026-01-23T02:58:36.468Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:36.488Z] LOG    ✅ Copley Square: Got description (95 chars)
+[2026-01-23T02:58:36.489Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:36.492Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:36.519Z] LOG    ✅ Bunker Hill Monument: Got description (98 chars)
+[2026-01-23T02:58:36.521Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:36.545Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:36.572Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:58:36.575Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-01-23T02:58:36.576Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:36.577Z] LOG    ✅ Old North Church: Got description (100 chars)
+[2026-01-23T02:58:36.577Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:36.600Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2026-01-23T02:58:36.601Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:36.633Z] LOG    ✅ Massachusetts State House: Got description (96 chars)
+[2026-01-23T02:58:36.634Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:36.693Z] LOG    ✅ Newbury St: Got description (100 chars)
+[2026-01-23T02:58:36.694Z] LOG ✅ Found 1 places
+[2026-01-23T02:58:36.694Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 797ms
+[2026-01-23T02:58:36.695Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-23T02:58:36.696Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-23T02:58:36.696Z] LOG    ✅ Regina Pizzeria → Regina Pizzeria (must_have)
+[2026-01-23T02:58:36.697Z] LOG    ✅ Galleria Umberto → Galleria Umberto (must_have)
+[2026-01-23T02:58:36.697Z] LOG    ✅ Santarpio's Pizza → Santarpio's Pizza (must_have)
+[2026-01-23T02:58:36.697Z] LOG    ✅ Descendant Detroit Style Pizza → Descendant Detroit Style Pizza (must_have)
+[2026-01-23T02:58:36.698Z] LOG    ✅ Picco → Picco (must_have)
+[2026-01-23T02:58:36.698Z] LOG    ✅ Brewer's Fork → Brewer's Fork (must_have)
+[2026-01-23T02:58:36.699Z] LOG    ✅ Dirty Water Dough Company → Dirty Water Dough Company (must_have)
+[2026-01-23T02:58:36.699Z] LOG    ✅ FLORINA Pizzeria & Paninoteca → FLORINA Pizzeria & Paninoteca (must_have)
+[2026-01-23T02:58:36.699Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (nice_to_have)
+[2026-01-23T02:58:36.700Z] LOG    ✅ Public Garden → Public Garden (nice_to_have)
+[2026-01-23T02:58:36.700Z] LOG    ✅ Copley Square → Copley Square (nice_to_have)
+[2026-01-23T02:58:36.701Z] LOG    ✅ Paul Revere House → The Paul Revere House (nice_to_have)
+[2026-01-23T02:58:36.701Z] LOG    ✅ Bunker Hill Monument → Bunker Hill Monument (nice_to_have)
+[2026-01-23T02:58:36.701Z] LOG    ✅ USS Constitution Museum → USS Constitution Museum (nice_to_have)
+[2026-01-23T02:58:36.702Z] LOG    ✅ Massachusetts State House → Massachusetts State House (nice_to_have)
+[2026-01-23T02:58:36.702Z] LOG    ✅ Newbury Street → Newbury St (nice_to_have)
+[2026-01-23T02:58:36.702Z] LOG    ✅ Boston Common → Boston Common (nice_to_have)
+[2026-01-23T02:58:36.703Z] LOG    ✅ Old North Church → Old North Church (nice_to_have)
+[2026-01-23T02:58:36.703Z] LOG    ✅ Boston Public Library - Central Library → Boston Public Library - Central Library (nice_to_have)
+[2026-01-23T02:58:36.703Z] LOG    ✅ Piers Park → Piers Park (nice_to_have)
+[2026-01-23T02:58:36.703Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-23T02:58:36.704Z] LOG    Total enriched: 20
+[2026-01-23T02:58:36.704Z] LOG    🎯 Must-have: 8
+[2026-01-23T02:58:36.705Z] LOG    ✨ Nice-to-have: 12
+[2026-01-23T02:58:36.705Z] LOG    ❌ Failed: 0
+[2026-01-23T02:58:36.705Z] LOG    ⏱️ Time: 2270ms
+
+--- Summary ---
+Enrichment completed

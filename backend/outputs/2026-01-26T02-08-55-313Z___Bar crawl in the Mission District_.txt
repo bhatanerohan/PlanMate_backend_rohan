@@ -1,0 +1,154 @@
+User Prompt: "Bar crawl in the Mission District"
+
+[2026-01-26T02:08:55.313Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-26T02:08:55.314Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-26T02:08:55.314Z] LOG    🎯 Must-have: 8
+[2026-01-26T02:08:55.314Z] LOG    ✨ Nice-to-have: 12
+[2026-01-26T02:08:55.317Z] LOG 📍 Location hint: Mission District
+[2026-01-26T02:08:55.317Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-26T02:08:55.317Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-26T02:08:55.319Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-26T02:08:55.319Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-26T02:08:55.320Z] LOG    1. Searching "Lost Resort" in "Mission District"
+[2026-01-26T02:08:55.320Z] LOG 🔍 [Google Places] Text search: "Lost Resort" in Mission District
+[2026-01-26T02:08:55.328Z] LOG    2. Searching "Trick Dog" in "Mission District"
+[2026-01-26T02:08:55.330Z] LOG 🔍 [Google Places] Text search: "Trick Dog" in Mission District
+[2026-01-26T02:08:55.335Z] LOG    3. Searching "Zeitgeist" in "Mission District"
+[2026-01-26T02:08:55.337Z] LOG 🔍 [Google Places] Text search: "Zeitgeist" in Mission District
+[2026-01-26T02:08:55.343Z] LOG    4. Searching "ABV" in "Mission Dolores"
+[2026-01-26T02:08:55.346Z] LOG 🔍 [Google Places] Text search: "ABV" in Mission Dolores
+[2026-01-26T02:08:55.350Z] LOG    5. Searching "Casements Bar" in "Mission District"
+[2026-01-26T02:08:55.354Z] LOG 🔍 [Google Places] Text search: "Casements Bar" in Mission District
+[2026-01-26T02:08:55.362Z] LOG    6. Searching "The Beehive" in "Mission Dolores"
+[2026-01-26T02:08:55.364Z] LOG 🔍 [Google Places] Text search: "The Beehive" in Mission Dolores
+[2026-01-26T02:08:55.370Z] LOG    7. Searching "True Laurel" in "Mission District"
+[2026-01-26T02:08:55.372Z] LOG 🔍 [Google Places] Text search: "True Laurel" in Mission District
+[2026-01-26T02:08:55.379Z] LOG    8. Searching "The Sycamore" in "Mission District"
+[2026-01-26T02:08:55.381Z] LOG 🔍 [Google Places] Text search: "The Sycamore" in Mission District
+[2026-01-26T02:08:55.389Z] LOG    9. Searching "Taquería El Farolito" in "Mission District"
+[2026-01-26T02:08:55.393Z] LOG 🔍 [Google Places] Text search: "Taquería El Farolito" in Mission District
+[2026-01-26T02:08:55.401Z] LOG    10. Searching "Foreign Cinema" in "Mission District"
+[2026-01-26T02:08:55.403Z] LOG 🔍 [Google Places] Text search: "Foreign Cinema" in Mission District
+[2026-01-26T02:08:55.850Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:55.868Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:55.917Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:55.938Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:55.952Z] LOG    ✅ The Beehive: Got description (99 chars)
+[2026-01-26T02:08:55.956Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:55.966Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:55.987Z] LOG    ✅ ABV: Got description (100 chars)
+[2026-01-26T02:08:55.989Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:55.999Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:56.022Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:56.041Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:56.064Z] LOG    ✅ Casements Bar: Got description (100 chars)
+[2026-01-26T02:08:56.065Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:56.072Z] LOG    ✅ Taquería El Farolito: Got description (97 chars)
+[2026-01-26T02:08:56.072Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:56.132Z] LOG    ✅ The Sycamore: Got description (97 chars)
+[2026-01-26T02:08:56.133Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:56.147Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:56.152Z] LOG    ✅ Trick Dog: Got description (97 chars)
+[2026-01-26T02:08:56.154Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:56.164Z] LOG    ✅ Lost Resort: Got description (97 chars)
+[2026-01-26T02:08:56.166Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:56.203Z] LOG    ✅ Foreign Cinema: Got description (99 chars)
+[2026-01-26T02:08:56.204Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:56.257Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:56.276Z] LOG    ✅ Zeitgeist: Got description (100 chars)
+[2026-01-26T02:08:56.277Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:56.429Z] LOG    ✅ True Laurel: Got description (98 chars)
+[2026-01-26T02:08:56.429Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:56.430Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1111ms
+[2026-01-26T02:08:56.430Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-26T02:08:56.431Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-26T02:08:56.644Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-26T02:08:56.645Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-26T02:08:56.646Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-26T02:08:56.647Z] LOG    1. Searching "Flour + Water" in "Mission District"
+[2026-01-26T02:08:56.648Z] LOG 🔍 [Google Places] Text search: "Flour + Water" in Mission District
+[2026-01-26T02:08:56.650Z] LOG    2. Searching "Burma Love" in "Mission District"
+[2026-01-26T02:08:56.650Z] LOG 🔍 [Google Places] Text search: "Burma Love" in Mission District
+[2026-01-26T02:08:56.651Z] LOG    3. Searching "Tartine Manufactory" in "Mission District"
+[2026-01-26T02:08:56.652Z] LOG 🔍 [Google Places] Text search: "Tartine Manufactory" in Mission District
+[2026-01-26T02:08:56.653Z] LOG    4. Searching "Four Barrel Coffee" in "Mission District"
+[2026-01-26T02:08:56.653Z] LOG 🔍 [Google Places] Text search: "Four Barrel Coffee" in Mission District
+[2026-01-26T02:08:56.654Z] LOG    5. Searching "Stable Cafe" in "Mission District"
+[2026-01-26T02:08:56.654Z] LOG 🔍 [Google Places] Text search: "Stable Cafe" in Mission District
+[2026-01-26T02:08:56.655Z] LOG    6. Searching "Ritual Coffee Roasters" in "Mission District"
+[2026-01-26T02:08:56.655Z] LOG 🔍 [Google Places] Text search: "Ritual Coffee Roasters" in Mission District
+[2026-01-26T02:08:56.656Z] LOG    7. Searching "Dynamo Donut & Coffee" in "Mission District"
+[2026-01-26T02:08:56.656Z] LOG 🔍 [Google Places] Text search: "Dynamo Donut & Coffee" in Mission District
+[2026-01-26T02:08:56.658Z] LOG    8. Searching "Mission Dolores Park" in "Mission Dolores"
+[2026-01-26T02:08:56.658Z] LOG 🔍 [Google Places] Text search: "Mission Dolores Park" in Mission Dolores
+[2026-01-26T02:08:56.659Z] LOG    9. Searching "Mission of San Francisco de Asis (Mission Dolores)" in "Mission Dolores"
+[2026-01-26T02:08:56.659Z] LOG 🔍 [Google Places] Text search: "Mission of San Francisco de Asis (Mission Dolores)" in Mission Dolores
+[2026-01-26T02:08:56.660Z] LOG    10. Searching "Balmy Alley" in "Mission District"
+[2026-01-26T02:08:56.660Z] LOG 🔍 [Google Places] Text search: "Balmy Alley" in Mission District
+[2026-01-26T02:08:57.007Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:57.067Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:57.083Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:57.140Z] LOG    ✅ Flour + Water: Got description (95 chars)
+[2026-01-26T02:08:57.141Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:57.146Z] LOG    ✅ Balmy Alley: Got description (96 chars)
+[2026-01-26T02:08:57.147Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:57.193Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:57.199Z] LOG    ✅ Mission Dolores Park: Got description (81 chars)
+[2026-01-26T02:08:57.201Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:57.221Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:57.237Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:57.245Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:57.253Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:57.273Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:57.281Z] LOG    ✅ Four Barrel Coffee: Got description (97 chars)
+[2026-01-26T02:08:57.282Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:57.308Z] LOG    ✅ Stable Cafe: Got description (100 chars)
+[2026-01-26T02:08:57.310Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:57.368Z] LOG    ✅ Tartine Manufactory: Got description (91 chars)
+[2026-01-26T02:08:57.371Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:57.379Z] LOG    ✅ Mission of San Francisco de Asis: Got description (100 chars)
+[2026-01-26T02:08:57.380Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:57.384Z] LOG    ✅ Burma Love: Got description (99 chars)
+[2026-01-26T02:08:57.386Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:57.421Z] LOG    ✅ Dynamo Donut & Coffee: Got description (93 chars)
+[2026-01-26T02:08:57.422Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:57.541Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:08:57.659Z] LOG    ✅ Ritual Coffee Roasters: Got description (100 chars)
+[2026-01-26T02:08:57.661Z] LOG ✅ Found 1 places
+[2026-01-26T02:08:57.661Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1015ms
+[2026-01-26T02:08:57.662Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-26T02:08:57.663Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-26T02:08:57.664Z] LOG    ✅ Lost Resort → Lost Resort (must_have)
+[2026-01-26T02:08:57.665Z] LOG    ✅ Trick Dog → Trick Dog (must_have)
+[2026-01-26T02:08:57.666Z] LOG    ✅ Zeitgeist → Zeitgeist (must_have)
+[2026-01-26T02:08:57.667Z] LOG    ✅ ABV → ABV (must_have)
+[2026-01-26T02:08:57.668Z] LOG    ✅ Casements Bar → Casements Bar (must_have)
+[2026-01-26T02:08:57.668Z] LOG    ✅ The Beehive → The Beehive (must_have)
+[2026-01-26T02:08:57.669Z] LOG    ✅ True Laurel → True Laurel (must_have)
+[2026-01-26T02:08:57.669Z] LOG    ✅ The Sycamore → The Sycamore (must_have)
+[2026-01-26T02:08:57.670Z] LOG    ✅ Taquería El Farolito → Taquería El Farolito (nice_to_have)
+[2026-01-26T02:08:57.670Z] LOG    ✅ Foreign Cinema → Foreign Cinema (nice_to_have)
+[2026-01-26T02:08:57.670Z] LOG    ✅ Flour + Water → Flour + Water (nice_to_have)
+[2026-01-26T02:08:57.671Z] LOG    ✅ Burma Love → Burma Love (nice_to_have)
+[2026-01-26T02:08:57.671Z] LOG    ✅ Tartine Manufactory → Tartine Manufactory (nice_to_have)
+[2026-01-26T02:08:57.672Z] LOG    ✅ Four Barrel Coffee → Four Barrel Coffee (nice_to_have)
+[2026-01-26T02:08:57.672Z] LOG    ✅ Stable Cafe → Stable Cafe (nice_to_have)
+[2026-01-26T02:08:57.673Z] LOG    ✅ Ritual Coffee Roasters → Ritual Coffee Roasters (nice_to_have)
+[2026-01-26T02:08:57.673Z] LOG    ✅ Dynamo Donut & Coffee → Dynamo Donut & Coffee (nice_to_have)
+[2026-01-26T02:08:57.674Z] LOG    ✅ Mission Dolores Park → Mission Dolores Park (nice_to_have)
+[2026-01-26T02:08:57.675Z] LOG    ✅ Mission of San Francisco de Asis (Mission Dolores) → Mission of San Francisco de Asis (nice_to_have)
+[2026-01-26T02:08:57.676Z] LOG    ✅ Balmy Alley → Balmy Alley (nice_to_have)
+[2026-01-26T02:08:57.676Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-26T02:08:57.677Z] LOG    Total enriched: 20
+[2026-01-26T02:08:57.677Z] LOG    🎯 Must-have: 8
+[2026-01-26T02:08:57.678Z] LOG    ✨ Nice-to-have: 12
+[2026-01-26T02:08:57.678Z] LOG    ❌ Failed: 0
+[2026-01-26T02:08:57.679Z] LOG    ⏱️ Time: 2366ms
+
+--- Summary ---
+Enrichment completed

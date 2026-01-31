@@ -1,0 +1,16 @@
+name = "cf-ai-roam-planner"
+pages_build_output_dir = ".vercel/output/static"
+compatibility_date = "2024-09-23"
+
+# Enable Node.js compatibility for libraries that need it
+compatibility_flags = ["nodejs_compat"]
+
+# Keep KV binding (for reading results)
+[[kv_namespaces]]
+binding = "TRIP_CACHE"
+id = "8a3cdef6bde84656a5db4154a3dff132"
+
+# Service binding to connect to backend Worker
+[[services]]
+binding = "BACKEND"
+service = "cf-ai-roam-backend"

@@ -1,0 +1,154 @@
+User Prompt: plan a day our in north end
+
+[2026-01-22T22:41:41.241Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-22T22:41:41.242Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-22T22:41:41.242Z] LOG    🎯 Must-have: 7
+[2026-01-22T22:41:41.243Z] LOG    ✨ Nice-to-have: 13
+[2026-01-22T22:41:41.244Z] LOG 📍 Location hint: north end
+[2026-01-22T22:41:41.244Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-22T22:41:41.245Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-22T22:41:41.246Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-22T22:41:41.249Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-22T22:41:41.250Z] LOG    1. Searching "The Paul Revere House" in "North End"
+[2026-01-22T22:41:41.251Z] LOG 🔍 [Google Places] Text search: "The Paul Revere House" in North End
+[2026-01-22T22:41:41.255Z] LOG    2. Searching "Old North Church" in "North End"
+[2026-01-22T22:41:41.256Z] LOG 🔍 [Google Places] Text search: "Old North Church" in North End
+[2026-01-22T22:41:41.263Z] LOG    3. Searching "Mike's Pastry" in "North End"
+[2026-01-22T22:41:41.266Z] LOG 🔍 [Google Places] Text search: "Mike's Pastry" in North End
+[2026-01-22T22:41:41.271Z] LOG    4. Searching "Modern Pastry" in "North End"
+[2026-01-22T22:41:41.274Z] LOG 🔍 [Google Places] Text search: "Modern Pastry" in North End
+[2026-01-22T22:41:41.281Z] LOG    5. Searching "Regina Pizzeria" in "North End"
+[2026-01-22T22:41:41.283Z] LOG 🔍 [Google Places] Text search: "Regina Pizzeria" in North End
+[2026-01-22T22:41:41.288Z] LOG    6. Searching "Giacomo's Boston North End" in "North End"
+[2026-01-22T22:41:41.290Z] LOG 🔍 [Google Places] Text search: "Giacomo's Boston North End" in North End
+[2026-01-22T22:41:41.294Z] LOG    7. Searching "Cantina Italiana" in "North End"
+[2026-01-22T22:41:41.297Z] LOG 🔍 [Google Places] Text search: "Cantina Italiana" in North End
+[2026-01-22T22:41:41.301Z] LOG    8. Searching "Paul Revere Statue" in "North End"
+[2026-01-22T22:41:41.301Z] LOG 🔍 [Google Places] Text search: "Paul Revere Statue" in North End
+[2026-01-22T22:41:41.305Z] LOG    9. Searching "Copps Hill Burying Ground" in "North End"
+[2026-01-22T22:41:41.307Z] LOG 🔍 [Google Places] Text search: "Copps Hill Burying Ground" in North End
+[2026-01-22T22:41:41.311Z] LOG    10. Searching "Skinny House (Spite House) Boston, MA" in "North End"
+[2026-01-22T22:41:41.312Z] LOG 🔍 [Google Places] Text search: "Skinny House (Spite House) Boston, MA" in North End
+[2026-01-22T22:41:41.836Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:41.839Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:41.896Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:41.926Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:41.933Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:41.953Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:41.969Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:41.971Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:41.984Z] LOG    ⚠️  Copps Hill Burying Ground: No editorial summary available
+[2026-01-22T22:41:41.985Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:42.001Z] LOG    ✅ Mike's Pastry: Got description (93 chars)
+[2026-01-22T22:41:42.003Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:42.022Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:42.037Z] LOG    ✅ Regina Pizzeria: Got description (80 chars)
+[2026-01-22T22:41:42.038Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:42.041Z] LOG    ✅ Cantina Italiana: Got description (84 chars)
+[2026-01-22T22:41:42.042Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:42.087Z] LOG    ✅ Old North Church: Got description (100 chars)
+[2026-01-22T22:41:42.089Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:42.116Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-01-22T22:41:42.117Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:42.138Z] LOG    ⚠️  Skinny House (Spite House) Boston, MA: No editorial summary available
+[2026-01-22T22:41:42.140Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:42.146Z] LOG    ✅ Giacomo's Boston North End: Got description (88 chars)
+[2026-01-22T22:41:42.147Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:42.211Z] LOG    ✅ Modern Pastry Shop: Got description (93 chars)
+[2026-01-22T22:41:42.212Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:42.260Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:42.415Z] LOG    ✅ Paul Revere Statue: Got description (95 chars)
+[2026-01-22T22:41:42.416Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:42.417Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1168ms
+[2026-01-22T22:41:42.417Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-22T22:41:42.418Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-22T22:41:42.631Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-22T22:41:42.632Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-22T22:41:42.633Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-22T22:41:42.633Z] LOG    1. Searching "Bova's Bakery" in "North End"
+[2026-01-22T22:41:42.633Z] LOG 🔍 [Google Places] Text search: "Bova's Bakery" in North End
+[2026-01-22T22:41:42.634Z] LOG    2. Searching "Caffe Vittoria" in "North End"
+[2026-01-22T22:41:42.634Z] LOG 🔍 [Google Places] Text search: "Caffe Vittoria" in North End
+[2026-01-22T22:41:42.635Z] LOG    3. Searching "Caffè Paradiso" in "North End"
+[2026-01-22T22:41:42.635Z] LOG 🔍 [Google Places] Text search: "Caffè Paradiso" in North End
+[2026-01-22T22:41:42.637Z] LOG    4. Searching "Polcari’s Coffee" in "North End"
+[2026-01-22T22:41:42.637Z] LOG 🔍 [Google Places] Text search: "Polcari’s Coffee" in North End
+[2026-01-22T22:41:42.638Z] LOG    5. Searching "Christopher Columbus Waterfront Park" in "Waterfront"
+[2026-01-22T22:41:42.639Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in Waterfront
+[2026-01-22T22:41:42.639Z] LOG    6. Searching "Faneuil Hall Marketplace" in "Downtown/Waterfront"
+[2026-01-22T22:41:42.640Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Downtown/Waterfront
+[2026-01-22T22:41:42.640Z] LOG    7. Searching "Old North Memorial Garden" in "North End"
+[2026-01-22T22:41:42.641Z] LOG 🔍 [Google Places] Text search: "Old North Memorial Garden" in North End
+[2026-01-22T22:41:42.641Z] LOG    8. Searching "The North End- Italian Neighborhood" in "North End"
+[2026-01-22T22:41:42.642Z] LOG 🔍 [Google Places] Text search: "The North End- Italian Neighborhood" in North End
+[2026-01-22T22:41:42.643Z] LOG    9. Searching "St. Leonard's Peace Garden - Christopher Columbus Statue" in "North End"
+[2026-01-22T22:41:42.643Z] LOG 🔍 [Google Places] Text search: "St. Leonard's Peace Garden - Christopher Columbus Statue" in North End
+[2026-01-22T22:41:42.644Z] LOG    10. Searching "Caffè dello Sport" in "North End"
+[2026-01-22T22:41:42.645Z] LOG 🔍 [Google Places] Text search: "Caffè dello Sport" in North End
+[2026-01-22T22:41:43.037Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:43.136Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:43.139Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:43.155Z] LOG    ✅ Bova's Bakery: Got description (95 chars)
+[2026-01-22T22:41:43.157Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:43.203Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:43.214Z] LOG    ✅ Caffè dello Sport: Got description (91 chars)
+[2026-01-22T22:41:43.215Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:43.216Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:43.264Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:43.271Z] LOG    ✅ Caffe Vittoria: Got description (82 chars)
+[2026-01-22T22:41:43.272Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:43.279Z] LOG    ⚠️  The North End- Italian Neighborhood: No editorial summary available
+[2026-01-22T22:41:43.280Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:43.288Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:43.293Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:43.304Z] LOG    ✅ Polcari’s Coffee: Got description (97 chars)
+[2026-01-22T22:41:43.306Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:43.332Z] LOG    ✅ Caffè Paradiso: Got description (97 chars)
+[2026-01-22T22:41:43.334Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:43.335Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:43.378Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:41:43.384Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-01-22T22:41:43.385Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:43.459Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-22T22:41:43.460Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:43.478Z] LOG    ⚠️  Old North Memorial Garden: No editorial summary available
+[2026-01-22T22:41:43.480Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:43.482Z] LOG    ⚠️  St. Leonard's Peace Garden - Christopher Columbus Statue: No editorial summary available
+[2026-01-22T22:41:43.483Z] LOG ✅ Found 1 places
+[2026-01-22T22:41:43.485Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 852ms
+[2026-01-22T22:41:43.486Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-22T22:41:43.487Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-22T22:41:43.489Z] LOG    ✅ The Paul Revere House → The Paul Revere House (must_have)
+[2026-01-22T22:41:43.492Z] LOG    ✅ Old North Church → Old North Church (must_have)
+[2026-01-22T22:41:43.494Z] LOG    ✅ Mike's Pastry → Mike's Pastry (must_have)
+[2026-01-22T22:41:43.495Z] LOG    ✅ Modern Pastry → Modern Pastry Shop (must_have)
+[2026-01-22T22:41:43.498Z] LOG    ✅ Regina Pizzeria → Regina Pizzeria (must_have)
+[2026-01-22T22:41:43.501Z] LOG    ✅ Giacomo's Boston North End → Giacomo's Boston North End (must_have)
+[2026-01-22T22:41:43.506Z] LOG    ✅ Cantina Italiana → Cantina Italiana (must_have)
+[2026-01-22T22:41:43.512Z] LOG    ✅ Paul Revere Statue → Paul Revere Statue (nice_to_have)
+[2026-01-22T22:41:43.518Z] LOG    ✅ Copps Hill Burying Ground → Copps Hill Burying Ground (nice_to_have)
+[2026-01-22T22:41:43.521Z] LOG    ✅ Skinny House (Spite House) Boston, MA → Skinny House (Spite House) Boston, MA (nice_to_have)
+[2026-01-22T22:41:43.526Z] LOG    ✅ Bova's Bakery → Bova's Bakery (nice_to_have)
+[2026-01-22T22:41:43.530Z] LOG    ✅ Caffe Vittoria → Caffe Vittoria (nice_to_have)
+[2026-01-22T22:41:43.536Z] LOG    ✅ Caffè Paradiso → Caffè Paradiso (nice_to_have)
+[2026-01-22T22:41:43.544Z] LOG    ✅ Polcari’s Coffee → Polcari’s Coffee (nice_to_have)
+[2026-01-22T22:41:43.550Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (nice_to_have)
+[2026-01-22T22:41:43.555Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (nice_to_have)
+[2026-01-22T22:41:43.560Z] LOG    ✅ Old North Memorial Garden → Old North Memorial Garden (nice_to_have)
+[2026-01-22T22:41:43.564Z] LOG    ✅ The North End- Italian Neighborhood → The North End- Italian Neighborhood (nice_to_have)
+[2026-01-22T22:41:43.574Z] LOG    ✅ St. Leonard's Peace Garden - Christopher Columbus Statue → St. Leonard's Peace Garden - Christopher Columbus Statue (nice_to_have)
+[2026-01-22T22:41:43.577Z] LOG    ✅ Caffè dello Sport → Caffè dello Sport (nice_to_have)
+[2026-01-22T22:41:43.581Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-22T22:41:43.584Z] LOG    Total enriched: 20
+[2026-01-22T22:41:43.587Z] LOG    🎯 Must-have: 7
+[2026-01-22T22:41:43.589Z] LOG    ✨ Nice-to-have: 13
+[2026-01-22T22:41:43.591Z] LOG    ❌ Failed: 0
+[2026-01-22T22:41:43.593Z] LOG    ⏱️ Time: 2352ms
+
+--- Summary ---
+Enrichment completed

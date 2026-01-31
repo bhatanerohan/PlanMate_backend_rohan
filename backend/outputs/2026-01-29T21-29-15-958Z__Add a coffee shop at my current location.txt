@@ -1,0 +1,148 @@
+User Prompt: Add a coffee shop at my current location
+
+[2026-01-29T21:29:15.959Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-29T21:29:15.959Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-29T21:29:15.961Z] LOG    🎯 Must-have: 8
+[2026-01-29T21:29:15.961Z] LOG    ✨ Nice-to-have: 11
+[2026-01-29T21:29:15.962Z] LOG 📍 Location hint: Jamaica Plain
+[2026-01-29T21:29:15.963Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-29T21:29:15.963Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-29T21:29:15.964Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-29T21:29:15.965Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-29T21:29:15.966Z] LOG    1. Searching "Yely's Coffee Shop" in "Jamaica Plain"
+[2026-01-29T21:29:15.966Z] LOG 🔍 [Google Places] Text search: "Yely's Coffee Shop" in Jamaica Plain
+[2026-01-29T21:29:15.972Z] LOG    2. Searching "Brothers & Sisters Co." in "Brookline Village"
+[2026-01-29T21:29:15.973Z] LOG 🔍 [Google Places] Text search: "Brothers & Sisters Co." in Brookline Village
+[2026-01-29T21:29:15.976Z] LOG    3. Searching "Cafe Siete" in "Jamaica Plain"
+[2026-01-29T21:29:15.978Z] LOG 🔍 [Google Places] Text search: "Cafe Siete" in Jamaica Plain
+[2026-01-29T21:29:15.981Z] LOG    4. Searching "Green Haus Cafe" in "Mission Hill"
+[2026-01-29T21:29:15.982Z] LOG 🔍 [Google Places] Text search: "Green Haus Cafe" in Mission Hill
+[2026-01-29T21:29:15.989Z] LOG    5. Searching "Cafe La Paz" in "Jamaica Plain"
+[2026-01-29T21:29:15.991Z] LOG 🔍 [Google Places] Text search: "Cafe La Paz" in Jamaica Plain
+[2026-01-29T21:29:15.997Z] LOG    6. Searching "Caffè Nero" in "Jamaica Plain"
+[2026-01-29T21:29:16.000Z] LOG 🔍 [Google Places] Text search: "Caffè Nero" in Jamaica Plain
+[2026-01-29T21:29:16.005Z] LOG    7. Searching "Ula Café" in "Jamaica Plain"
+[2026-01-29T21:29:16.007Z] LOG 🔍 [Google Places] Text search: "Ula Café" in Jamaica Plain
+[2026-01-29T21:29:16.011Z] LOG    8. Searching "Mike & Patty's Breakfast | Jamaica Plain" in "Jamaica Plain"
+[2026-01-29T21:29:16.012Z] LOG 🔍 [Google Places] Text search: "Mike & Patty's Breakfast | Jamaica Plain" in Jamaica Plain
+[2026-01-29T21:29:16.015Z] LOG    9. Searching "Gondres Bakery" in "Jamaica Plain"
+[2026-01-29T21:29:16.016Z] LOG 🔍 [Google Places] Text search: "Gondres Bakery" in Jamaica Plain
+[2026-01-29T21:29:16.021Z] LOG    10. Searching "Santia's Bakery" in "Jamaica Plain"
+[2026-01-29T21:29:16.022Z] LOG 🔍 [Google Places] Text search: "Santia's Bakery" in Jamaica Plain
+[2026-01-29T21:29:16.433Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:16.443Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:16.448Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:16.451Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:16.455Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:16.462Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:16.473Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:16.489Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:16.574Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:16.587Z] LOG    ✅ Gondres Bakery: Got description (96 chars)
+[2026-01-29T21:29:16.588Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:16.595Z] LOG    ⚠️  Cafe La Paz: No editorial summary available
+[2026-01-29T21:29:16.596Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:16.614Z] LOG    ✅ Caffè Nero: Got description (85 chars)
+[2026-01-29T21:29:16.616Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:16.678Z] LOG    ⚠️  Cafe Siete: No editorial summary available
+[2026-01-29T21:29:16.679Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:16.680Z] LOG    ✅ Ula Café: Got description (91 chars)
+[2026-01-29T21:29:16.680Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:16.681Z] LOG    ✅ Brothers & Sisters Co.: Got description (96 chars)
+[2026-01-29T21:29:16.682Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:16.684Z] LOG    ⚠️  Santia's Bakery: No editorial summary available
+[2026-01-29T21:29:16.684Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:16.717Z] LOG    ⚠️  Yely's Coffee Shop: No editorial summary available
+[2026-01-29T21:29:16.719Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:16.720Z] LOG    ⚠️  Mike & Patty's Breakfast | Jamaica Plain: No editorial summary available
+[2026-01-29T21:29:16.721Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:16.787Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:16.958Z] LOG    ⚠️  Green Haus Cafe: No editorial summary available
+[2026-01-29T21:29:16.959Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:16.961Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 996ms
+[2026-01-29T21:29:16.963Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-29T21:29:16.964Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-29T21:29:17.175Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-29T21:29:17.177Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-29T21:29:17.178Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-29T21:29:17.178Z] LOG    1. Searching "Third Cliff Bakery" in "Jamaica Plain"
+[2026-01-29T21:29:17.179Z] LOG 🔍 [Google Places] Text search: "Third Cliff Bakery" in Jamaica Plain
+[2026-01-29T21:29:17.181Z] LOG    2. Searching "Olmsted Park" in "Jamaica Plain"
+[2026-01-29T21:29:17.181Z] LOG 🔍 [Google Places] Text search: "Olmsted Park" in Jamaica Plain
+[2026-01-29T21:29:17.184Z] LOG    3. Searching "Mozart Park" in "Jamaica Plain"
+[2026-01-29T21:29:17.185Z] LOG 🔍 [Google Places] Text search: "Mozart Park" in Jamaica Plain
+[2026-01-29T21:29:17.186Z] LOG    4. Searching "Jamaica Pond Park" in "Jamaica Plain"
+[2026-01-29T21:29:17.187Z] LOG 🔍 [Google Places] Text search: "Jamaica Pond Park" in Jamaica Plain
+[2026-01-29T21:29:17.191Z] LOG    5. Searching "Lucy Parsons Center" in "Jamaica Plain"
+[2026-01-29T21:29:17.192Z] LOG 🔍 [Google Places] Text search: "Lucy Parsons Center" in Jamaica Plain
+[2026-01-29T21:29:17.193Z] LOG    6. Searching "Papercuts Bookshop" in "Jamaica Plain"
+[2026-01-29T21:29:17.194Z] LOG 🔍 [Google Places] Text search: "Papercuts Bookshop" in Jamaica Plain
+[2026-01-29T21:29:17.195Z] LOG    7. Searching "Isabella Stewart Gardner Museum" in "Fenway–Kenmore"
+[2026-01-29T21:29:17.195Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway–Kenmore
+[2026-01-29T21:29:17.196Z] LOG    8. Searching "MassArt Art Museum" in "Mission Hill"
+[2026-01-29T21:29:17.197Z] LOG 🔍 [Google Places] Text search: "MassArt Art Museum" in Mission Hill
+[2026-01-29T21:29:17.198Z] LOG    9. Searching "Core Cannabis Museum" in "Jamaica Plain"
+[2026-01-29T21:29:17.199Z] LOG 🔍 [Google Places] Text search: "Core Cannabis Museum" in Jamaica Plain
+[2026-01-29T21:29:17.451Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:17.489Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:17.504Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:17.510Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:17.519Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:17.530Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:17.552Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:17.583Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:17.585Z] LOG    ⚠️  Papercuts Bookshop: No editorial summary available
+[2026-01-29T21:29:17.586Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:17.607Z] LOG    ⚠️  Jamaica Pond Park: No editorial summary available
+[2026-01-29T21:29:17.608Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:17.609Z] LOG    ✅ Olmsted Park: Got description (100 chars)
+[2026-01-29T21:29:17.609Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:17.611Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:29:17.637Z] LOG    ⚠️  Third Cliff Bakery: No editorial summary available
+[2026-01-29T21:29:17.638Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:17.684Z] LOG    ⚠️  Mozart Park: No editorial summary available
+[2026-01-29T21:29:17.685Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:17.699Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-29T21:29:17.699Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:17.718Z] LOG    ✅ Lucy Parsons Center: Got description (99 chars)
+[2026-01-29T21:29:17.719Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:17.751Z] LOG    ⚠️  Core Cannabis Museum: No editorial summary available
+[2026-01-29T21:29:17.752Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:17.772Z] LOG    ⚠️  MassArt Art Museum: No editorial summary available
+[2026-01-29T21:29:17.774Z] LOG ✅ Found 1 places
+[2026-01-29T21:29:17.775Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 597ms
+[2026-01-29T21:29:17.776Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-29T21:29:17.777Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-29T21:29:17.779Z] LOG    ✅ Yely's Coffee Shop → Yely's Coffee Shop (must_have)
+[2026-01-29T21:29:17.780Z] LOG    ✅ Brothers & Sisters Co. → Brothers & Sisters Co. (must_have)
+[2026-01-29T21:29:17.780Z] LOG    ✅ Cafe Siete → Cafe Siete (must_have)
+[2026-01-29T21:29:17.781Z] LOG    ✅ Green Haus Cafe → Green Haus Cafe (must_have)
+[2026-01-29T21:29:17.782Z] LOG    ✅ Cafe La Paz → Cafe La Paz (must_have)
+[2026-01-29T21:29:17.782Z] LOG    ✅ Caffè Nero → Caffè Nero (must_have)
+[2026-01-29T21:29:17.783Z] LOG    ✅ Ula Café → Ula Café (must_have)
+[2026-01-29T21:29:17.783Z] LOG    ✅ Mike & Patty's Breakfast | Jamaica Plain → Mike & Patty's Breakfast | Jamaica Plain (must_have)
+[2026-01-29T21:29:17.783Z] LOG    ✅ Gondres Bakery → Gondres Bakery (nice_to_have)
+[2026-01-29T21:29:17.784Z] LOG    ✅ Santia's Bakery → Santia's Bakery (nice_to_have)
+[2026-01-29T21:29:17.785Z] LOG    ✅ Third Cliff Bakery → Third Cliff Bakery (nice_to_have)
+[2026-01-29T21:29:17.785Z] LOG    ✅ Olmsted Park → Olmsted Park (nice_to_have)
+[2026-01-29T21:29:17.785Z] LOG    ✅ Mozart Park → Mozart Park (nice_to_have)
+[2026-01-29T21:29:17.786Z] LOG    ✅ Jamaica Pond Park → Jamaica Pond Park (nice_to_have)
+[2026-01-29T21:29:17.786Z] LOG    ✅ Lucy Parsons Center → Lucy Parsons Center (nice_to_have)
+[2026-01-29T21:29:17.787Z] LOG    ✅ Papercuts Bookshop → Papercuts Bookshop (nice_to_have)
+[2026-01-29T21:29:17.787Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-01-29T21:29:17.788Z] LOG    ✅ MassArt Art Museum → MassArt Art Museum (nice_to_have)
+[2026-01-29T21:29:17.788Z] LOG    ✅ Core Cannabis Museum → Core Cannabis Museum (nice_to_have)
+[2026-01-29T21:29:17.789Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-29T21:29:17.789Z] LOG    Total enriched: 19
+[2026-01-29T21:29:17.789Z] LOG    🎯 Must-have: 8
+[2026-01-29T21:29:17.790Z] LOG    ✨ Nice-to-have: 11
+[2026-01-29T21:29:17.790Z] LOG    ❌ Failed: 0
+[2026-01-29T21:29:17.790Z] LOG    ⏱️ Time: 1832ms
+
+--- Summary ---
+Enrichment completed

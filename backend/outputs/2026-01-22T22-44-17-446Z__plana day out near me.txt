@@ -1,0 +1,148 @@
+User Prompt: plana day out near me
+
+[2026-01-22T22:44:17.446Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-22T22:44:17.447Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-22T22:44:17.447Z] LOG    🎯 Must-have: 7
+[2026-01-22T22:44:17.448Z] LOG    ✨ Nice-to-have: 12
+[2026-01-22T22:44:17.450Z] LOG 📍 Location hint: me
+[2026-01-22T22:44:17.451Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-22T22:44:17.451Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-22T22:44:17.452Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-22T22:44:17.453Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-22T22:44:17.454Z] LOG    1. Searching "Museum of Fine Arts, Boston" in "Fenway–Kenmore"
+[2026-01-22T22:44:17.454Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Fenway–Kenmore
+[2026-01-22T22:44:17.468Z] LOG    2. Searching "Isabella Stewart Gardner Museum" in "Longwood Medical and Academic Area"
+[2026-01-22T22:44:17.471Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Longwood Medical and Academic Area
+[2026-01-22T22:44:17.478Z] LOG    3. Searching "Franklin Park Zoo" in "Franklin Park"
+[2026-01-22T22:44:17.481Z] LOG 🔍 [Google Places] Text search: "Franklin Park Zoo" in Franklin Park
+[2026-01-22T22:44:17.489Z] LOG    4. Searching "Boston Common" in "Beacon Hill / Downtown"
+[2026-01-22T22:44:17.492Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Beacon Hill / Downtown
+[2026-01-22T22:44:17.497Z] LOG    5. Searching "Harvard Square" in "Cambridge"
+[2026-01-22T22:44:17.501Z] LOG 🔍 [Google Places] Text search: "Harvard Square" in Cambridge
+[2026-01-22T22:44:17.506Z] LOG    6. Searching "Museum of Science" in "West End / East Cambridge"
+[2026-01-22T22:44:17.510Z] LOG 🔍 [Google Places] Text search: "Museum of Science" in West End / East Cambridge
+[2026-01-22T22:44:17.516Z] LOG    7. Searching "New England Aquarium" in "Waterfront"
+[2026-01-22T22:44:17.520Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Waterfront
+[2026-01-22T22:44:17.532Z] LOG    8. Searching "Olmsted Park" in "Jamaica Plain"
+[2026-01-22T22:44:17.534Z] LOG 🔍 [Google Places] Text search: "Olmsted Park" in Jamaica Plain
+[2026-01-22T22:44:17.542Z] LOG    9. Searching "Jamaica Pond Park" in "Jamaica Plain"
+[2026-01-22T22:44:17.544Z] LOG 🔍 [Google Places] Text search: "Jamaica Pond Park" in Jamaica Plain
+[2026-01-22T22:44:17.553Z] LOG    10. Searching "Charles River Esplanade" in "Back Bay"
+[2026-01-22T22:44:17.555Z] LOG 🔍 [Google Places] Text search: "Charles River Esplanade" in Back Bay
+[2026-01-22T22:44:18.046Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:18.071Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:18.126Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:18.165Z] LOG    ✅ Olmsted Park: Got description (100 chars)
+[2026-01-22T22:44:18.165Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:18.209Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:18.246Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-22T22:44:18.246Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:18.248Z] LOG    ⚠️  Harvard Square: No editorial summary available
+[2026-01-22T22:44:18.249Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:18.286Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:18.289Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:18.291Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:18.330Z] LOG    ✅ Charles River Esplanade: Got description (99 chars)
+[2026-01-22T22:44:18.333Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:18.338Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:18.347Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:18.397Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-01-22T22:44:18.398Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:18.437Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-22T22:44:18.440Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:18.459Z] LOG    ✅ Franklin Park Zoo: Got description (97 chars)
+[2026-01-22T22:44:18.460Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:18.486Z] LOG    ⚠️  Jamaica Pond Park: No editorial summary available
+[2026-01-22T22:44:18.488Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:18.501Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-01-22T22:44:18.502Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:18.512Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:18.602Z] LOG    ✅ Museum of Science: Got description (99 chars)
+[2026-01-22T22:44:18.603Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:18.604Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1151ms
+[2026-01-22T22:44:18.604Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-22T22:44:18.605Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-22T22:44:18.817Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-22T22:44:18.818Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-22T22:44:18.818Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-22T22:44:18.818Z] LOG    1. Searching "View Boston" in "Back Bay"
+[2026-01-22T22:44:18.819Z] LOG 🔍 [Google Places] Text search: "View Boston" in Back Bay
+[2026-01-22T22:44:18.819Z] LOG    2. Searching "Boston Tea Party Ships & Museum" in "Fort Point"
+[2026-01-22T22:44:18.820Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Fort Point
+[2026-01-22T22:44:18.821Z] LOG    3. Searching "Chinatown Gate" in "Chinatown"
+[2026-01-22T22:44:18.821Z] LOG 🔍 [Google Places] Text search: "Chinatown Gate" in Chinatown
+[2026-01-22T22:44:18.822Z] LOG    4. Searching "Christopher Columbus Waterfront Park" in "Waterfront"
+[2026-01-22T22:44:18.822Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in Waterfront
+[2026-01-22T22:44:18.823Z] LOG    5. Searching "WNDR Museum" in "Downtown Crossing"
+[2026-01-22T22:44:18.824Z] LOG 🔍 [Google Places] Text search: "WNDR Museum" in Downtown Crossing
+[2026-01-22T22:44:18.824Z] LOG    6. Searching "The Haven" in "Jamaica Plain"
+[2026-01-22T22:44:18.825Z] LOG 🔍 [Google Places] Text search: "The Haven" in Jamaica Plain
+[2026-01-22T22:44:18.826Z] LOG    7. Searching "Life Alive Organic Cafe Jamaica Plain" in "Jamaica Plain"
+[2026-01-22T22:44:18.827Z] LOG 🔍 [Google Places] Text search: "Life Alive Organic Cafe Jamaica Plain" in Jamaica Plain
+[2026-01-22T22:44:18.828Z] LOG    8. Searching "Pikalo JP" in "Jamaica Plain"
+[2026-01-22T22:44:18.828Z] LOG 🔍 [Google Places] Text search: "Pikalo JP" in Jamaica Plain
+[2026-01-22T22:44:18.830Z] LOG    9. Searching "Brendan Behan Pub" in "Jamaica Plain"
+[2026-01-22T22:44:18.832Z] LOG 🔍 [Google Places] Text search: "Brendan Behan Pub" in Jamaica Plain
+[2026-01-22T22:44:19.339Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:19.402Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:19.425Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:19.446Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:19.453Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:19.471Z] LOG    ✅ Chinatown Gate: Got description (92 chars)
+[2026-01-22T22:44:19.473Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:19.491Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:19.528Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-01-22T22:44:19.531Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:19.534Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2026-01-22T22:44:19.536Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:19.539Z] LOG    ✅ Pikalo JP: Got description (87 chars)
+[2026-01-22T22:44:19.540Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:19.569Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:19.592Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-01-22T22:44:19.595Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:19.617Z] LOG    ✅ The Haven: Got description (99 chars)
+[2026-01-22T22:44:19.620Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:19.629Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:19.677Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-01-22T22:44:19.678Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:19.771Z] LOG    ⚠️  Life Alive Organic Cafe Jamaica Plain: No editorial summary available
+[2026-01-22T22:44:19.773Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:22.842Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-22T22:44:22.935Z] LOG    ✅ Brendan Behan Pub: Got description (99 chars)
+[2026-01-22T22:44:22.936Z] LOG ✅ Found 1 places
+[2026-01-22T22:44:22.937Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 4119ms
+[2026-01-22T22:44:22.938Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-22T22:44:22.938Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-22T22:44:22.939Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (must_have)
+[2026-01-22T22:44:22.939Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (must_have)
+[2026-01-22T22:44:22.939Z] LOG    ✅ Franklin Park Zoo → Franklin Park Zoo (must_have)
+[2026-01-22T22:44:22.940Z] LOG    ✅ Boston Common → Boston Common (must_have)
+[2026-01-22T22:44:22.941Z] LOG    ✅ Harvard Square → Harvard Square (must_have)
+[2026-01-22T22:44:22.941Z] LOG    ✅ Museum of Science → Museum of Science (must_have)
+[2026-01-22T22:44:22.941Z] LOG    ✅ New England Aquarium → New England Aquarium (must_have)
+[2026-01-22T22:44:22.942Z] LOG    ✅ Olmsted Park → Olmsted Park (nice_to_have)
+[2026-01-22T22:44:22.942Z] LOG    ✅ Jamaica Pond Park → Jamaica Pond Park (nice_to_have)
+[2026-01-22T22:44:22.943Z] LOG    ✅ Charles River Esplanade → Charles River Esplanade (nice_to_have)
+[2026-01-22T22:44:22.943Z] LOG    ✅ View Boston → View Boston (nice_to_have)
+[2026-01-22T22:44:22.943Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (nice_to_have)
+[2026-01-22T22:44:22.944Z] LOG    ✅ Chinatown Gate → Chinatown Gate (nice_to_have)
+[2026-01-22T22:44:22.945Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (nice_to_have)
+[2026-01-22T22:44:22.945Z] LOG    ✅ WNDR Museum → WNDR Museum (nice_to_have)
+[2026-01-22T22:44:22.946Z] LOG    ✅ The Haven → The Haven (nice_to_have)
+[2026-01-22T22:44:22.946Z] LOG    ✅ Life Alive Organic Cafe Jamaica Plain → Life Alive Organic Cafe Jamaica Plain (nice_to_have)
+[2026-01-22T22:44:22.946Z] LOG    ✅ Pikalo JP → Pikalo JP (nice_to_have)
+[2026-01-22T22:44:22.947Z] LOG    ✅ Brendan Behan Pub → Brendan Behan Pub (nice_to_have)
+[2026-01-22T22:44:22.947Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-22T22:44:22.948Z] LOG    Total enriched: 19
+[2026-01-22T22:44:22.948Z] LOG    🎯 Must-have: 7
+[2026-01-22T22:44:22.949Z] LOG    ✨ Nice-to-have: 12
+[2026-01-22T22:44:22.949Z] LOG    ❌ Failed: 0
+[2026-01-22T22:44:22.950Z] LOG    ⏱️ Time: 5504ms
+
+--- Summary ---
+Enrichment completed

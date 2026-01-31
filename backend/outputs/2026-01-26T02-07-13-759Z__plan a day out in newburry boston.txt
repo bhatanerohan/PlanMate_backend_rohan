@@ -1,0 +1,154 @@
+User Prompt: plan a day out in newburry boston
+
+[2026-01-26T02:07:13.760Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-26T02:07:13.760Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-26T02:07:13.761Z] LOG    🎯 Must-have: 13
+[2026-01-26T02:07:13.761Z] LOG    ✨ Nice-to-have: 7
+[2026-01-26T02:07:13.762Z] LOG 📍 Location hint: newburry boston
+[2026-01-26T02:07:13.763Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-26T02:07:13.763Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-26T02:07:13.764Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-26T02:07:13.764Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-26T02:07:13.765Z] LOG    1. Searching "Newbury Street" in "Back Bay"
+[2026-01-26T02:07:13.766Z] LOG 🔍 [Google Places] Text search: "Newbury Street" in Back Bay
+[2026-01-26T02:07:13.769Z] LOG    2. Searching "Joe’s on Newbury" in "Newbury Street"
+[2026-01-26T02:07:13.770Z] LOG 🔍 [Google Places] Text search: "Joe’s on Newbury" in Newbury Street
+[2026-01-26T02:07:13.776Z] LOG    3. Searching "Sonsie" in "Newbury Street"
+[2026-01-26T02:07:13.778Z] LOG 🔍 [Google Places] Text search: "Sonsie" in Newbury Street
+[2026-01-26T02:07:13.785Z] LOG    4. Searching "Piattini" in "Newbury Street"
+[2026-01-26T02:07:13.788Z] LOG 🔍 [Google Places] Text search: "Piattini" in Newbury Street
+[2026-01-26T02:07:13.795Z] LOG    5. Searching "La Voile" in "Newbury Street"
+[2026-01-26T02:07:13.799Z] LOG 🔍 [Google Places] Text search: "La Voile" in Newbury Street
+[2026-01-26T02:07:13.804Z] LOG    6. Searching "Thinking Cup" in "Newbury Street"
+[2026-01-26T02:07:13.807Z] LOG 🔍 [Google Places] Text search: "Thinking Cup" in Newbury Street
+[2026-01-26T02:07:13.814Z] LOG    7. Searching "Trident Booksellers & Cafe" in "Newbury Street"
+[2026-01-26T02:07:13.818Z] LOG 🔍 [Google Places] Text search: "Trident Booksellers & Cafe" in Newbury Street
+[2026-01-26T02:07:13.827Z] LOG    8. Searching "Vose Galleries LLC" in "Newbury Street"
+[2026-01-26T02:07:13.830Z] LOG 🔍 [Google Places] Text search: "Vose Galleries LLC" in Newbury Street
+[2026-01-26T02:07:13.840Z] LOG    9. Searching "Pucker Gallery" in "Newbury Street"
+[2026-01-26T02:07:13.846Z] LOG 🔍 [Google Places] Text search: "Pucker Gallery" in Newbury Street
+[2026-01-26T02:07:13.854Z] LOG    10. Searching "Galerie d'Orsay" in "Newbury Street"
+[2026-01-26T02:07:13.857Z] LOG 🔍 [Google Places] Text search: "Galerie d'Orsay" in Newbury Street
+[2026-01-26T02:07:14.423Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:14.430Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:14.438Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:14.468Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:14.475Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:14.486Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:14.523Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:14.557Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:14.576Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:14.609Z] LOG    ✅ La Voile: Got description (85 chars)
+[2026-01-26T02:07:14.610Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:14.636Z] LOG    ✅ Pucker Gallery: Got description (97 chars)
+[2026-01-26T02:07:14.637Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:14.641Z] LOG    ✅ Piattini: Got description (81 chars)
+[2026-01-26T02:07:14.641Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:14.654Z] LOG    ✅ Vose Galleries LLC: Got description (100 chars)
+[2026-01-26T02:07:14.655Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:14.677Z] LOG    ✅ Thinking Cup: Got description (94 chars)
+[2026-01-26T02:07:14.679Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:14.682Z] LOG    ✅ Galerie d'Orsay: Got description (78 chars)
+[2026-01-26T02:07:14.685Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:14.690Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:14.693Z] LOG    ✅ Joe’s on Newbury: Got description (91 chars)
+[2026-01-26T02:07:14.696Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:14.729Z] LOG    ✅ Sonsie: Got description (100 chars)
+[2026-01-26T02:07:14.730Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:14.748Z] LOG    ✅ Newbury St: Got description (100 chars)
+[2026-01-26T02:07:14.749Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:14.839Z] LOG    ✅ Trident Booksellers & Cafe: Got description (90 chars)
+[2026-01-26T02:07:14.840Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:14.842Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1077ms
+[2026-01-26T02:07:14.842Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-26T02:07:14.843Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-26T02:07:15.050Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-26T02:07:15.052Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-26T02:07:15.052Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-26T02:07:15.053Z] LOG    1. Searching "Apple Boylston Street" in "Back Bay"
+[2026-01-26T02:07:15.054Z] LOG 🔍 [Google Places] Text search: "Apple Boylston Street" in Back Bay
+[2026-01-26T02:07:15.056Z] LOG    2. Searching "Shake Shack Newbury Street" in "Newbury Street"
+[2026-01-26T02:07:15.057Z] LOG 🔍 [Google Places] Text search: "Shake Shack Newbury Street" in Newbury Street
+[2026-01-26T02:07:15.058Z] LOG    3. Searching "Amorino Gelato - Boston Newbury Street" in "Newbury Street"
+[2026-01-26T02:07:15.059Z] LOG 🔍 [Google Places] Text search: "Amorino Gelato - Boston Newbury Street" in Newbury Street
+[2026-01-26T02:07:15.059Z] LOG    4. Searching "Boston Public Garden" in "Public Garden"
+[2026-01-26T02:07:15.060Z] LOG 🔍 [Google Places] Text search: "Boston Public Garden" in Public Garden
+[2026-01-26T02:07:15.060Z] LOG    5. Searching "Commonwealth Avenue Mall" in "Back Bay"
+[2026-01-26T02:07:15.061Z] LOG 🔍 [Google Places] Text search: "Commonwealth Avenue Mall" in Back Bay
+[2026-01-26T02:07:15.063Z] LOG    6. Searching "Boston Public Library - Central Library" in "Copley Square"
+[2026-01-26T02:07:15.063Z] LOG 🔍 [Google Places] Text search: "Boston Public Library - Central Library" in Copley Square
+[2026-01-26T02:07:15.064Z] LOG    7. Searching "Copley Square" in "Copley Square"
+[2026-01-26T02:07:15.064Z] LOG 🔍 [Google Places] Text search: "Copley Square" in Copley Square
+[2026-01-26T02:07:15.065Z] LOG    8. Searching "Contessa Boston" in "Back Bay"
+[2026-01-26T02:07:15.065Z] LOG 🔍 [Google Places] Text search: "Contessa Boston" in Back Bay
+[2026-01-26T02:07:15.066Z] LOG    9. Searching "Buttermilk & Bourbon - Back Bay" in "Back Bay"
+[2026-01-26T02:07:15.067Z] LOG 🔍 [Google Places] Text search: "Buttermilk & Bourbon - Back Bay" in Back Bay
+[2026-01-26T02:07:15.070Z] LOG    10. Searching "Prudential Center" in "Back Bay"
+[2026-01-26T02:07:15.072Z] LOG 🔍 [Google Places] Text search: "Prudential Center" in Back Bay
+[2026-01-26T02:07:15.544Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:15.553Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:15.607Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:15.614Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:15.651Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:15.656Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:15.660Z] LOG    ✅ Commonwealth Avenue Mall: Got description (97 chars)
+[2026-01-26T02:07:15.661Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:15.665Z] LOG    ⚠️  Amorino Gelato - Boston Newbury Street: No editorial summary available
+[2026-01-26T02:07:15.666Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:15.668Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:15.672Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:15.724Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:15.735Z] LOG    ✅ Apple Boylston Street: Got description (76 chars)
+[2026-01-26T02:07:15.737Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:15.739Z] LOG    ✅ Buttermilk & Bourbon - Back Bay: Got description (94 chars)
+[2026-01-26T02:07:15.739Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:15.775Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-26T02:07:15.777Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:15.790Z] LOG    ✅ Copley Square: Got description (95 chars)
+[2026-01-26T02:07:15.791Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:15.842Z] LOG    ✅ Contessa Boston: Got description (100 chars)
+[2026-01-26T02:07:15.844Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:15.862Z] LOG    ✅ Shake Shack Newbury Street: Got description (95 chars)
+[2026-01-26T02:07:15.863Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:15.864Z] LOG    ✅ Prudential Center Boston: Got description (95 chars)
+[2026-01-26T02:07:15.865Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:16.231Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:07:16.374Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2026-01-26T02:07:16.376Z] LOG ✅ Found 1 places
+[2026-01-26T02:07:16.377Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1325ms
+[2026-01-26T02:07:16.377Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-26T02:07:16.378Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-26T02:07:16.380Z] LOG    ✅ Newbury Street → Newbury St (must_have)
+[2026-01-26T02:07:16.381Z] LOG    ✅ Joe’s on Newbury → Joe’s on Newbury (must_have)
+[2026-01-26T02:07:16.382Z] LOG    ✅ Sonsie → Sonsie (must_have)
+[2026-01-26T02:07:16.383Z] LOG    ✅ Piattini → Piattini (must_have)
+[2026-01-26T02:07:16.384Z] LOG    ✅ La Voile → La Voile (must_have)
+[2026-01-26T02:07:16.384Z] LOG    ✅ Thinking Cup → Thinking Cup (must_have)
+[2026-01-26T02:07:16.384Z] LOG    ✅ Trident Booksellers & Cafe → Trident Booksellers & Cafe (must_have)
+[2026-01-26T02:07:16.385Z] LOG    ✅ Vose Galleries LLC → Vose Galleries LLC (must_have)
+[2026-01-26T02:07:16.385Z] LOG    ✅ Pucker Gallery → Pucker Gallery (must_have)
+[2026-01-26T02:07:16.386Z] LOG    ✅ Galerie d'Orsay → Galerie d'Orsay (must_have)
+[2026-01-26T02:07:16.386Z] LOG    ✅ Apple Boylston Street → Apple Boylston Street (must_have)
+[2026-01-26T02:07:16.387Z] LOG    ✅ Shake Shack Newbury Street → Shake Shack Newbury Street (must_have)
+[2026-01-26T02:07:16.387Z] LOG    ✅ Amorino Gelato - Boston Newbury Street → Amorino Gelato - Boston Newbury Street (must_have)
+[2026-01-26T02:07:16.389Z] LOG    ✅ Boston Public Garden → Public Garden (nice_to_have)
+[2026-01-26T02:07:16.390Z] LOG    ✅ Commonwealth Avenue Mall → Commonwealth Avenue Mall (nice_to_have)
+[2026-01-26T02:07:16.391Z] LOG    ✅ Boston Public Library - Central Library → Boston Public Library - Central Library (nice_to_have)
+[2026-01-26T02:07:16.392Z] LOG    ✅ Copley Square → Copley Square (nice_to_have)
+[2026-01-26T02:07:16.393Z] LOG    ✅ Contessa Boston → Contessa Boston (nice_to_have)
+[2026-01-26T02:07:16.393Z] LOG    ✅ Buttermilk & Bourbon - Back Bay → Buttermilk & Bourbon - Back Bay (nice_to_have)
+[2026-01-26T02:07:16.394Z] LOG    ✅ Prudential Center → Prudential Center Boston (nice_to_have)
+[2026-01-26T02:07:16.394Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-26T02:07:16.395Z] LOG    Total enriched: 20
+[2026-01-26T02:07:16.395Z] LOG    🎯 Must-have: 13
+[2026-01-26T02:07:16.396Z] LOG    ✨ Nice-to-have: 7
+[2026-01-26T02:07:16.396Z] LOG    ❌ Failed: 0
+[2026-01-26T02:07:16.397Z] LOG    ⏱️ Time: 2638ms
+
+--- Summary ---
+Enrichment completed

@@ -1,0 +1,34 @@
+User Prompt: Find Italian food near me
+
+[2026-01-29T21:17:06.946Z] LOG 
+--- Iteration 1 ---
+[2026-01-29T21:17:08.030Z] LOG 🧠 Action: search_venues
+[2026-01-29T21:17:08.031Z] LOG    Reasoning: Searching for Italian restaurants nearby.
+[2026-01-29T21:17:08.032Z] LOG    📤 Parameters: {"query":"Italian food","location":"Current location","limit":"10"}
+[2026-01-29T21:17:08.033Z] LOG ⚙️  Executing tool: search_venues
+[2026-01-29T21:17:08.034Z] LOG 🔍 [VenueSearchTool] Broad search: "Italian food" in "Current location"
+[2026-01-29T21:17:08.035Z] LOG 🔍 [Google Places] Text search: "Italian food" in Current location
+[2026-01-29T21:17:08.673Z] LOG 📝 Fetching descriptions for 10 places...
+[2026-01-29T21:17:08.880Z] LOG    ✅ Bottega di Capri: Got description (100 chars)
+[2026-01-29T21:17:08.882Z] LOG    ✅ The Salty Pig: Got description (95 chars)
+[2026-01-29T21:17:08.899Z] LOG    ⚠️  MIDA: No editorial summary available
+[2026-01-29T21:17:08.907Z] LOG    ✅ Lilly's Gourmet Pasta Express: Got description (93 chars)
+[2026-01-29T21:17:08.911Z] LOG    ✅ BOTTEGA Fiorentina: Got description (96 chars)
+[2026-01-29T21:17:08.912Z] LOG    ✅ MIDA: Got description (67 chars)
+[2026-01-29T21:17:08.914Z] LOG    ✅ Carmelina's: Got description (99 chars)
+[2026-01-29T21:17:08.922Z] LOG    ✅ Il Mondo Pizzeria: Got description (81 chars)
+[2026-01-29T21:17:08.932Z] LOG    ⚠️  Mario's: No editorial summary available
+[2026-01-29T21:17:08.933Z] LOG    ⚠️  Tonino: No editorial summary available
+[2026-01-29T21:17:08.934Z] LOG ✅ Found 10 places
+[2026-01-29T21:17:08.934Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2026-01-29T21:17:08.935Z] LOG    📊 Observation: Found 10: [Lilly's Gourmet Pasta Express|ChIJe-w4WYh544kRo72wY60NYsQ|4.8⭐;Bottega di Capri|ChIJN9X4jpd544kRQUxG6ZwdAiw|4.6⭐;MIDA|ChIJhbgcaPR544kRDmis9pjs75I|4.5⭐;MIDA|ChIJrSFKORR644kR7Rnj3V5W4cE|4.5⭐;
+[2026-01-29T21:17:08.935Z] LOG ⏱️ Iteration 1 took 1989ms
+[2026-01-29T21:17:08.936Z] LOG 
+--- Iteration 2 ---
+[2026-01-29T21:17:16.748Z] LOG 🧠 Action: finish
+[2026-01-29T21:17:16.750Z] LOG    Reasoning: Here are Italian restaurants near you:
+[2026-01-29T21:17:16.751Z] LOG 
+✅ Agent completed task
+
+--- Summary ---
+Completed

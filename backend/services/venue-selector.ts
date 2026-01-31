@@ -32,6 +32,8 @@ interface VenueWithDistance extends EnrichedCandidate {
   distanceToCenter?: number;
 }
 
+type SelectionPreference = 'walkable' | 'spread';
+
 interface IntentFilterResult {
   isFocusedQuery: boolean;
   allowedCategories: string[];
@@ -166,17 +168,42 @@ export class VenueSelector {
       corridorEnd?: { lat: number; lng: number };
       isCorridorQuery?: boolean;
       userPrompt?: string;
+      selectionPreference?: SelectionPreference;
+      anchorCoords?: { lat: number; lng: number };
+      radiusKm?: number;
     }
   ): Promise<VenueSelectionResult> {
-    const { corridorStart, corridorEnd, isCorridorQuery, userPrompt } = options;
+    const {
+      corridorStart,
+      corridorEnd,
+      isCorridorQuery,
+      userPrompt,
+      selectionPreference,
+      anchorCoords,
+      radiusKm
+    } = options;
     
     // 🆕 Filter by user intent BEFORE geographic selection
     let filteredCandidates = candidates;
     if (userPrompt) {
       filteredCandidates = await filterCandidatesByIntent(userPrompt, candidates);
     }
-    
-    if (isCorridorQuery && corridorStart && corridorEnd) {
+
+    const isCorridor = !!(isCorridorQuery && corridorStart && corridorEnd);
+
+    // Walkable preference: keep candidates within radius of anchor if possible (cluster mode only)
+    if (!isCorridor && selectionPreference === 'walkable' && anchorCoords) {
+      const targetCount = options.userRequestedCount || this.config.targetCount;
+      const maxRadiusKm = radiusKm || this.config.maxWalkingDistanceKm;
+      filteredCandidates = this.filterCandidatesByRadius(
+        filteredCandidates,
+        anchorCoords,
+        maxRadiusKm,
+        targetCount
+      );
+    }
+
+    if (isCorridor) {
       console.log('🛤️ CORRIDOR MODE: Selecting venues along route');
       return this.selectAlongCorridor(
         filteredCandidates, 
@@ -187,7 +214,11 @@ export class VenueSelector {
     }
     
     console.log('📍 CLUSTER MODE: Selecting walkable cluster');
-    return this.selectVenuesInternal(filteredCandidates, options.userRequestedCount);
+    return this.selectVenuesInternal(
+      filteredCandidates,
+      options.userRequestedCount,
+      selectionPreference
+    );
   }
 
   // ==========================================================================
@@ -275,15 +306,29 @@ export class VenueSelector {
   async selectVenues(
     candidates: EnrichedCandidate[],
     userRequestedCount?: number,
-    userPrompt?: string
+    userPrompt?: string,
+    selectionPreference?: SelectionPreference,
+    anchorCoords?: { lat: number; lng: number },
+    radiusKm?: number
   ): Promise<VenueSelectionResult> {
     // 🆕 Filter by user intent if prompt provided
     let filteredCandidates = candidates;
     if (userPrompt) {
       filteredCandidates = await filterCandidatesByIntent(userPrompt, candidates);
     }
+
+    if (selectionPreference === 'walkable' && anchorCoords) {
+      const targetCount = userRequestedCount || this.config.targetCount;
+      const maxRadiusKm = radiusKm || this.config.maxWalkingDistanceKm;
+      filteredCandidates = this.filterCandidatesByRadius(
+        filteredCandidates,
+        anchorCoords,
+        maxRadiusKm,
+        targetCount
+      );
+    }
     
-    return this.selectVenuesInternal(filteredCandidates, userRequestedCount);
+    return this.selectVenuesInternal(filteredCandidates, userRequestedCount, selectionPreference);
   }
 
   // ==========================================================================
@@ -291,13 +336,19 @@ export class VenueSelector {
   // ==========================================================================
   private selectVenuesInternal(
     candidates: EnrichedCandidate[],
-    userRequestedCount?: number
+    userRequestedCount?: number,
+    selectionPreference: SelectionPreference = 'walkable'
   ): VenueSelectionResult {
     console.log('\n🎯 VENUE SELECTOR: Starting geographic optimization');
     console.log(`   Input: ${candidates.length} candidates`);
     
     const targetCount = userRequestedCount || this.config.targetCount;
     console.log(`   Target: ${targetCount} venues`);
+
+    if (selectionPreference === 'spread') {
+      console.log('   📍 Preference: SPREAD (maximize coverage)');
+      return this.selectSpreadVenues(candidates, targetCount);
+    }
     
     const mustHaves = candidates.filter(c => c.priority === 'must_have');
     const niceToHaves = candidates.filter(c => c.priority === 'nice_to_have');
@@ -308,12 +359,12 @@ export class VenueSelector {
     // 🆕 If all candidates are same priority (after filtering), select from all
     if (mustHaves.length === 0) {
       console.log('   ⚠️ No must-haves! Selecting from nice-to-haves only');
-      return this.selectFromSingleCategory(niceToHaves, targetCount);
+      return this.selectFromSingleCategory(niceToHaves, targetCount, selectionPreference);
     }
     
     if (niceToHaves.length === 0) {
       console.log('   ℹ️ Only must-haves available, selecting from them');
-      return this.selectFromSingleCategory(mustHaves, targetCount);
+      return this.selectFromSingleCategory(mustHaves, targetCount, selectionPreference);
     }
     
     // 🆕 Adjust must-have count based on target
@@ -497,8 +548,14 @@ export class VenueSelector {
     return Array.from(selected).map(i => venues[i]);
   }
 
-  private selectFromSingleCategory(venues: EnrichedCandidate[], count: number): VenueSelectionResult {
-    const selected = this.selectTightestCluster(venues, count);
+  private selectFromSingleCategory(
+    venues: EnrichedCandidate[],
+    count: number,
+    selectionPreference: SelectionPreference = 'walkable'
+  ): VenueSelectionResult {
+    const selected = selectionPreference === 'spread'
+      ? this.selectSpreadCandidates(venues, count)
+      : this.selectTightestCluster(venues, count);
     const center = this.calculateCentroid(selected);
     const radius = this.calculateClusterRadius(selected, center);
     
@@ -507,6 +564,10 @@ export class VenueSelector {
     const unselected = venues.filter(v => !selectedPlaceIds.has(v.placeId));
     const alternativesMap = this.buildAlternativesMap(selected, unselected);
     
+    const reasoning = selectionPreference === 'spread'
+      ? `Selected ${selected.length} venues across a wider area (${radius.toFixed(2)}km radius)`
+      : `Selected ${selected.length} venues forming a tight cluster (${radius.toFixed(2)}km radius)`;
+
     return {
       success: true,
       selectedVenues: selected,
@@ -514,7 +575,65 @@ export class VenueSelector {
       niceToHavesSelected: selected.filter(v => v.priority === 'nice_to_have').length,
       clusterCenter: center,
       clusterRadiusKm: radius,
-      reasoning: `Selected ${selected.length} venues forming a tight cluster (${radius.toFixed(2)}km radius)`,
+      reasoning,
+      selectionMode: 'cluster',
+      alternativesMap
+    };
+  }
+
+  private selectSpreadVenues(venues: EnrichedCandidate[], count: number): VenueSelectionResult {
+    console.log('\n📍 SPREAD SELECTOR: Selecting venues across a wider area');
+    console.log(`   Candidates: ${venues.length}`);
+
+    if (venues.length <= count) {
+      return this.selectFromSingleCategory(venues, count, 'spread');
+    }
+
+    const mustHaves = venues.filter(c => c.priority === 'must_have');
+    const niceToHaves = venues.filter(c => c.priority === 'nice_to_have');
+
+    if (mustHaves.length === 0) {
+      return this.selectFromSingleCategory(niceToHaves, count, 'spread');
+    }
+
+    if (niceToHaves.length === 0) {
+      return this.selectFromSingleCategory(mustHaves, count, 'spread');
+    }
+
+    const mustHaveTarget = Math.min(
+      mustHaves.length,
+      Math.max(this.config.minMustHaves, Math.ceil(count * 0.6))
+    );
+
+    const selectedMustHaves = this.selectSpreadCandidates(mustHaves, mustHaveTarget);
+    const remainingSlots = Math.max(0, count - selectedMustHaves.length);
+    const selectedNiceToHaves = this.selectSpreadCandidates(
+      niceToHaves.filter(v => !selectedMustHaves.some(s => s.placeId === v.placeId)),
+      remainingSlots,
+      selectedMustHaves
+    );
+
+    const selectedVenues: EnrichedCandidate[] = [
+      ...selectedMustHaves,
+      ...selectedNiceToHaves
+    ];
+
+    const selectedPlaceIds = new Set(selectedVenues.map(v => v.placeId));
+    const unselected = venues.filter(v => !selectedPlaceIds.has(v.placeId));
+    const alternativesMap = this.buildAlternativesMap(selectedVenues, unselected);
+
+    const center = this.calculateCentroid(selectedVenues);
+    const radius = this.calculateClusterRadius(selectedVenues, center);
+    const reasoning = `Selected ${selectedMustHaves.length} core venues + ${selectedNiceToHaves.length} complementary stops across a wider area (${radius.toFixed(2)}km radius).`;
+
+    return {
+      success: true,
+      selectedVenues,
+      mustHavesSelected: selectedMustHaves.length,
+      niceToHavesSelected: selectedNiceToHaves.length,
+      clusterCenter: center,
+      clusterRadiusKm: radius,
+      reasoning,
       selectionMode: 'cluster',
       alternativesMap
     };
@@ -593,6 +712,104 @@ export class VenueSelector {
                         radiusKm <= 1.0 ? 'walkable' :
                         radiusKm <= 2.0 ? 'mostly walkable' : 'spread out';
     return `Selected ${mustHaveCount} core venues + ${niceToHaveCount} complementary stops. Route is ${walkability} (${radiusKm.toFixed(2)}km radius).`;
+  }
+
+  private filterCandidatesByRadius(
+    candidates: EnrichedCandidate[],
+    anchor: { lat: number; lng: number },
+    radiusKm: number,
+    targetCount: number
+  ): EnrichedCandidate[] {
+    const filtered = candidates.filter(candidate => {
+      const dist = this.haversineDistance(
+        anchor.lat,
+        anchor.lng,
+        candidate.location.lat,
+        candidate.location.lng
+      );
+      return dist <= radiusKm;
+    });
+
+    const minNeeded = Math.min(targetCount, 3);
+    if (filtered.length < minNeeded) {
+      console.log(`   ⚠️ Walkable filter too strict (${filtered.length} found). Keeping full candidate set.`);
+      return candidates;
+    }
+
+    console.log(`   ✅ Walkable filter: ${candidates.length} → ${filtered.length} within ${radiusKm.toFixed(2)}km`);
+    return filtered;
+  }
+
+  private selectSpreadCandidates(
+    candidates: EnrichedCandidate[],
+    count: number,
+    seed: EnrichedCandidate[] = []
+  ): EnrichedCandidate[] {
+    if (count <= 0) return [];
+    if (candidates.length <= count) return candidates;
+
+    const remaining = candidates.filter(c => !seed.some(s => s.placeId === c.placeId));
+    const selected: EnrichedCandidate[] = [];
+    const distanceReference: EnrichedCandidate[] = [...seed];
+
+    if (remaining.length === 0) return [];
+
+    if (distanceReference.length === 0) {
+      const first = this.pickHighestRank(remaining);
+      selected.push(first);
+      distanceReference.push(first);
+      const firstIndex = remaining.findIndex(candidate => candidate.placeId === first.placeId);
+      if (firstIndex >= 0) {
+        remaining.splice(firstIndex, 1);
+      }
+    }
+
+    while (selected.length < count && remaining.length > 0) {
+      let bestIndex = -1;
+      let bestDistance = -1;
+      let bestRank = -Infinity;
+
+      for (let i = 0; i < remaining.length; i++) {
+        const candidate = remaining[i];
+        const minDist = distanceReference.reduce((min, selectedVenue) => {
+          const dist = this.haversineDistance(
+            candidate.location.lat,
+            candidate.location.lng,
+            selectedVenue.location.lat,
+            selectedVenue.location.lng
+          );
+          return Math.min(min, dist);
+        }, Infinity);
+
+        const rank = this.rankVenue(candidate);
+        if (minDist > bestDistance || (minDist === bestDistance && rank > bestRank)) {
+          bestDistance = minDist;
+          bestIndex = i;
+          bestRank = rank;
+        }
+      }
+
+      if (bestIndex === -1) break;
+      const chosen = remaining.splice(bestIndex, 1)[0];
+      selected.push(chosen);
+      distanceReference.push(chosen);
+    }
+
+    return selected;
+  }
+
+  private pickHighestRank(candidates: EnrichedCandidate[]): EnrichedCandidate {
+    return candidates.reduce((best, current) => {
+      return this.rankVenue(current) > this.rankVenue(best) ? current : best;
+    }, candidates[0]);
+  }
+
+  private rankVenue(venue: EnrichedCandidate): number {
+    const priorityBoost = venue.priority === 'must_have' ? 1000 : 0;
+    const ratingScore = venue.rating ? venue.rating * 10 : 0;
+    const confidenceScore = venue.gemini_confidence ? venue.gemini_confidence * 100 : 0;
+    const reviewScore = venue.userRatingCount ? Math.min(venue.userRatingCount / 100, 50) : 0;
+    return priorityBoost + ratingScore + confidenceScore + reviewScore;
   }
 }
 

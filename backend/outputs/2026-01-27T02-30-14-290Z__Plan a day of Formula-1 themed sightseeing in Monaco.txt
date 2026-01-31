@@ -1,0 +1,142 @@
+User Prompt: Plan a day of Formula-1 themed sightseeing in Monaco
+
+[2026-01-27T02:30:14.291Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-27T02:30:14.292Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-01-27T02:30:14.293Z] LOG    🎯 Must-have: 6
+[2026-01-27T02:30:14.293Z] LOG    ✨ Nice-to-have: 12
+[2026-01-27T02:30:14.294Z] LOG 📍 Location hint: Monaco
+[2026-01-27T02:30:14.295Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-01-27T02:30:14.295Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-27T02:30:14.297Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-27T02:30:14.299Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-27T02:30:14.301Z] LOG    1. Searching "Monaco Circuit" in "La Condamine / Port Hercule"
+[2026-01-27T02:30:14.302Z] LOG 🔍 [Google Places] Text search: "Monaco Circuit" in La Condamine / Port Hercule
+[2026-01-27T02:30:14.316Z] LOG    2. Searching "Fairmont Hairpin" in "Monte Carlo"
+[2026-01-27T02:30:14.318Z] LOG 🔍 [Google Places] Text search: "Fairmont Hairpin" in Monte Carlo
+[2026-01-27T02:30:14.327Z] LOG    3. Searching "Port Hercule" in "Port Hercule"
+[2026-01-27T02:30:14.330Z] LOG 🔍 [Google Places] Text search: "Port Hercule" in Port Hercule
+[2026-01-27T02:30:14.336Z] LOG    4. Searching "Private Cars Collection of HSH Prince of Monaco" in "Port Hercule / Fontvieille"
+[2026-01-27T02:30:14.338Z] LOG 🔍 [Google Places] Text search: "Private Cars Collection of HSH Prince of Monaco" in Port Hercule / Fontvieille
+[2026-01-27T02:30:14.345Z] LOG    5. Searching "Automobile Club of Monaco" in "La Condamine"
+[2026-01-27T02:30:14.347Z] LOG 🔍 [Google Places] Text search: "Automobile Club of Monaco" in La Condamine
+[2026-01-27T02:30:14.356Z] LOG    6. Searching "La Rascasse" in "Port Hercule"
+[2026-01-27T02:30:14.358Z] LOG 🔍 [Google Places] Text search: "La Rascasse" in Port Hercule
+[2026-01-27T02:30:14.367Z] LOG    7. Searching "Casino de Monte-Carlo" in "Monte Carlo"
+[2026-01-27T02:30:14.370Z] LOG 🔍 [Google Places] Text search: "Casino de Monte-Carlo" in Monte Carlo
+[2026-01-27T02:30:14.379Z] LOG    8. Searching "Place du Casino" in "Monte Carlo"
+[2026-01-27T02:30:14.381Z] LOG 🔍 [Google Places] Text search: "Place du Casino" in Monte Carlo
+[2026-01-27T02:30:14.387Z] LOG    9. Searching "Opéra de Monte-Carlo" in "Monte Carlo"
+[2026-01-27T02:30:14.389Z] LOG 🔍 [Google Places] Text search: "Opéra de Monte-Carlo" in Monte Carlo
+[2026-01-27T02:30:14.396Z] LOG    10. Searching "Prince's Palace of Monaco" in "Monaco-Ville"
+[2026-01-27T02:30:14.398Z] LOG 🔍 [Google Places] Text search: "Prince's Palace of Monaco" in Monaco-Ville
+[2026-01-27T02:30:14.873Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:14.880Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:14.891Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:14.912Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:14.922Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:14.929Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:14.952Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:14.961Z] LOG    ⚠️  Fairmont Hairpin: No editorial summary available
+[2026-01-27T02:30:14.967Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:14.975Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco: Got description (98 chars)
+[2026-01-27T02:30:14.980Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:14.985Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:14.994Z] LOG    ⚠️  Pl. du Casino: No editorial summary available
+[2026-01-27T02:30:14.996Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:14.997Z] LOG    ✅ Opéra de Monte-Carlo: Got description (100 chars)
+[2026-01-27T02:30:14.997Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:14.999Z] LOG    ✅ Port Hercule: Got description (99 chars)
+[2026-01-27T02:30:14.999Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:15.020Z] LOG    ⚠️  Monaco Circuit: No editorial summary available
+[2026-01-27T02:30:15.024Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:15.053Z] LOG    ✅ La Rascasse: Got description (93 chars)
+[2026-01-27T02:30:15.054Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:15.094Z] LOG    ⚠️  Automobile Club of Monaco: No editorial summary available
+[2026-01-27T02:30:15.094Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:15.122Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:15.209Z] LOG    ✅ Prince's Palace of Monaco: Got description (98 chars)
+[2026-01-27T02:30:15.211Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:15.480Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:15.584Z] LOG    ✅ Casino de Monte-Carlo: Got description (100 chars)
+[2026-01-27T02:30:15.585Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:15.587Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1288ms
+[2026-01-27T02:30:15.588Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-27T02:30:15.589Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-27T02:30:15.797Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-01-27T02:30:15.798Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-27T02:30:15.799Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-01-27T02:30:15.800Z] LOG    1. Searching "Musée océanographique de Monaco" in "Monaco-Ville"
+[2026-01-27T02:30:15.801Z] LOG 🔍 [Google Places] Text search: "Musée océanographique de Monaco" in Monaco-Ville
+[2026-01-27T02:30:15.802Z] LOG    2. Searching "Jardin Exotique de Monaco" in "Jardin Exotique"
+[2026-01-27T02:30:15.802Z] LOG 🔍 [Google Places] Text search: "Jardin Exotique de Monaco" in Jardin Exotique
+[2026-01-27T02:30:15.805Z] LOG    3. Searching "Princess Grace Japanese Garden" in "Larvotto"
+[2026-01-27T02:30:15.806Z] LOG 🔍 [Google Places] Text search: "Princess Grace Japanese Garden" in Larvotto
+[2026-01-27T02:30:15.808Z] LOG    4. Searching "Larvotto Beach" in "Larvotto"
+[2026-01-27T02:30:15.808Z] LOG 🔍 [Google Places] Text search: "Larvotto Beach" in Larvotto
+[2026-01-27T02:30:15.810Z] LOG    5. Searching "Cathedral of Our Lady Immaculate" in "Monaco-Ville"
+[2026-01-27T02:30:15.811Z] LOG 🔍 [Google Places] Text search: "Cathedral of Our Lady Immaculate" in Monaco-Ville
+[2026-01-27T02:30:15.815Z] LOG    6. Searching "Port de Fontvieille" in "Fontvieille"
+[2026-01-27T02:30:15.816Z] LOG 🔍 [Google Places] Text search: "Port de Fontvieille" in Fontvieille
+[2026-01-27T02:30:15.820Z] LOG    7. Searching "Metropole Shopping Monte-Carlo" in "Monte Carlo"
+[2026-01-27T02:30:15.822Z] LOG 🔍 [Google Places] Text search: "Metropole Shopping Monte-Carlo" in Monte Carlo
+[2026-01-27T02:30:15.826Z] LOG    8. Searching "Marché de La Condamine" in "La Condamine"
+[2026-01-27T02:30:15.828Z] LOG 🔍 [Google Places] Text search: "Marché de La Condamine" in La Condamine
+[2026-01-27T02:30:16.160Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:16.181Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:16.203Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:16.219Z] LOG    ✅ Larvotto Beach: Got description (94 chars)
+[2026-01-27T02:30:16.220Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:16.227Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:16.237Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:16.243Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:16.248Z] LOG    ✅ Princess Grace Japanese Garden: Got description (95 chars)
+[2026-01-27T02:30:16.249Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:16.281Z] LOG    ✅ Cathedral of Our Lady Immaculate: Got description (88 chars)
+[2026-01-27T02:30:16.282Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:16.316Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:16.317Z] LOG    ✅ Musée océanographique de Monaco: Got description (96 chars)
+[2026-01-27T02:30:16.318Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:16.356Z] LOG    ✅ Metropole Shopping Monte-Carlo: Got description (94 chars)
+[2026-01-27T02:30:16.357Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:16.389Z] LOG    ✅ Port de Fontvieille: Got description (95 chars)
+[2026-01-27T02:30:16.391Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:16.434Z] LOG    ⚠️  Marché de La Condamine: No editorial summary available
+[2026-01-27T02:30:16.435Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:16.461Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:30:16.600Z] LOG    ✅ Exotic Garden of Monaco: Got description (88 chars)
+[2026-01-27T02:30:16.602Z] LOG ✅ Found 1 places
+[2026-01-27T02:30:16.604Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 805ms
+[2026-01-27T02:30:16.606Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-27T02:30:16.606Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-01-27T02:30:16.608Z] LOG    ✅ Monaco Circuit → Monaco Circuit (must_have)
+[2026-01-27T02:30:16.608Z] LOG    ✅ Fairmont Hairpin → Fairmont Hairpin (must_have)
+[2026-01-27T02:30:16.609Z] LOG    ✅ Port Hercule → Port Hercule (must_have)
+[2026-01-27T02:30:16.609Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco → Private Cars Collection of HSH Prince of Monaco (must_have)
+[2026-01-27T02:30:16.610Z] LOG    ✅ Automobile Club of Monaco → Automobile Club of Monaco (must_have)
+[2026-01-27T02:30:16.611Z] LOG    ✅ La Rascasse → La Rascasse (must_have)
+[2026-01-27T02:30:16.611Z] LOG    ✅ Casino de Monte-Carlo → Casino de Monte-Carlo (nice_to_have)
+[2026-01-27T02:30:16.612Z] LOG    ✅ Place du Casino → Pl. du Casino (nice_to_have)
+[2026-01-27T02:30:16.612Z] LOG    ✅ Opéra de Monte-Carlo → Opéra de Monte-Carlo (nice_to_have)
+[2026-01-27T02:30:16.613Z] LOG    ✅ Prince's Palace of Monaco → Prince's Palace of Monaco (nice_to_have)
+[2026-01-27T02:30:16.614Z] LOG    ✅ Musée océanographique de Monaco → Musée océanographique de Monaco (nice_to_have)
+[2026-01-27T02:30:16.614Z] LOG    ✅ Jardin Exotique de Monaco → Exotic Garden of Monaco (nice_to_have)
+[2026-01-27T02:30:16.615Z] LOG    ✅ Princess Grace Japanese Garden → Princess Grace Japanese Garden (nice_to_have)
+[2026-01-27T02:30:16.616Z] LOG    ✅ Larvotto Beach → Larvotto Beach (nice_to_have)
+[2026-01-27T02:30:16.616Z] LOG    ✅ Cathedral of Our Lady Immaculate → Cathedral of Our Lady Immaculate (nice_to_have)
+[2026-01-27T02:30:16.617Z] LOG    ✅ Port de Fontvieille → Port de Fontvieille (nice_to_have)
+[2026-01-27T02:30:16.617Z] LOG    ✅ Metropole Shopping Monte-Carlo → Metropole Shopping Monte-Carlo (nice_to_have)
+[2026-01-27T02:30:16.618Z] LOG    ✅ Marché de La Condamine → Marché de La Condamine (nice_to_have)
+[2026-01-27T02:30:16.619Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-27T02:30:16.619Z] LOG    Total enriched: 18
+[2026-01-27T02:30:16.620Z] LOG    🎯 Must-have: 6
+[2026-01-27T02:30:16.620Z] LOG    ✨ Nice-to-have: 12
+[2026-01-27T02:30:16.621Z] LOG    ❌ Failed: 0
+[2026-01-27T02:30:16.621Z] LOG    ⏱️ Time: 2331ms
+
+--- Summary ---
+Enrichment completed

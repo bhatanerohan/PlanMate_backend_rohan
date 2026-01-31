@@ -1,0 +1,154 @@
+User Prompt: Plan a day in Chicago with a mix of pizza, museums, and skyline views—city-wide
+
+[2026-01-26T03:15:04.539Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-26T03:15:04.540Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-26T03:15:04.541Z] LOG    🎯 Must-have: 7
+[2026-01-26T03:15:04.541Z] LOG    ✨ Nice-to-have: 13
+[2026-01-26T03:15:04.542Z] LOG 📍 Location hint: Chicago
+[2026-01-26T03:15:04.542Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-26T03:15:04.543Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-26T03:15:04.543Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-26T03:15:04.544Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-26T03:15:04.544Z] LOG    1. Searching "Lou Malnati's Pizzeria" in "River North / Various"
+[2026-01-26T03:15:04.545Z] LOG 🔍 [Google Places] Text search: "Lou Malnati's Pizzeria" in River North / Various
+[2026-01-26T03:15:04.551Z] LOG    2. Searching "Giordano's" in "Loop / Various"
+[2026-01-26T03:15:04.553Z] LOG 🔍 [Google Places] Text search: "Giordano's" in Loop / Various
+[2026-01-26T03:15:04.557Z] LOG    3. Searching "The Art Institute of Chicago" in "Loop / Museum Campus"
+[2026-01-26T03:15:04.558Z] LOG 🔍 [Google Places] Text search: "The Art Institute of Chicago" in Loop / Museum Campus
+[2026-01-26T03:15:04.565Z] LOG    4. Searching "Field Museum" in "Museum Campus"
+[2026-01-26T03:15:04.567Z] LOG 🔍 [Google Places] Text search: "Field Museum" in Museum Campus
+[2026-01-26T03:15:04.572Z] LOG    5. Searching "Skydeck Chicago at Willis Tower" in "Loop"
+[2026-01-26T03:15:04.575Z] LOG 🔍 [Google Places] Text search: "Skydeck Chicago at Willis Tower" in Loop
+[2026-01-26T03:15:04.583Z] LOG    6. Searching "360 Chicago Observation Deck" in "Magnificent Mile"
+[2026-01-26T03:15:04.586Z] LOG 🔍 [Google Places] Text search: "360 Chicago Observation Deck" in Magnificent Mile
+[2026-01-26T03:15:04.593Z] LOG    7. Searching "Museum of Science and Industry" in "Hyde Park"
+[2026-01-26T03:15:04.595Z] LOG 🔍 [Google Places] Text search: "Museum of Science and Industry" in Hyde Park
+[2026-01-26T03:15:04.602Z] LOG    8. Searching "Pequod's Pizza" in "Lincoln Park"
+[2026-01-26T03:15:04.605Z] LOG 🔍 [Google Places] Text search: "Pequod's Pizza" in Lincoln Park
+[2026-01-26T03:15:04.612Z] LOG    9. Searching "Uno Pizzeria & Grill" in "River North"
+[2026-01-26T03:15:04.613Z] LOG 🔍 [Google Places] Text search: "Uno Pizzeria & Grill" in River North
+[2026-01-26T03:15:04.623Z] LOG    10. Searching "Shedd Aquarium" in "Museum Campus"
+[2026-01-26T03:15:04.625Z] LOG 🔍 [Google Places] Text search: "Shedd Aquarium" in Museum Campus
+[2026-01-26T03:15:05.072Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:05.157Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:05.177Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:05.182Z] LOG    ✅ Pequod's Pizza: Got description (98 chars)
+[2026-01-26T03:15:05.185Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:05.210Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:05.221Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:05.228Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:05.248Z] LOG    ✅ Lou Malnati's Pizzeria: Got description (100 chars)
+[2026-01-26T03:15:05.250Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:05.305Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:05.318Z] LOG    ✅ Giordano's: Got description (97 chars)
+[2026-01-26T03:15:05.320Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:05.324Z] LOG    ✅ Griffin Museum of Science and Industry: Got description (96 chars)
+[2026-01-26T03:15:05.326Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:05.340Z] LOG    ✅ Pizzeria Uno: Got description (85 chars)
+[2026-01-26T03:15:05.341Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:05.383Z] LOG    ✅ The Art Institute of Chicago: Got description (98 chars)
+[2026-01-26T03:15:05.384Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:05.390Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:05.414Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:05.418Z] LOG    ✅ Skydeck Chicago: Got description (94 chars)
+[2026-01-26T03:15:05.421Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:05.502Z] LOG    ✅ Shedd Aquarium: Got description (94 chars)
+[2026-01-26T03:15:05.505Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:05.534Z] LOG    ✅ Field Museum: Got description (92 chars)
+[2026-01-26T03:15:05.535Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:05.734Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:05.873Z] LOG    ✅ 360 CHICAGO: Got description (98 chars)
+[2026-01-26T03:15:05.874Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:05.875Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1331ms
+[2026-01-26T03:15:05.876Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-26T03:15:05.876Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-26T03:15:06.089Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-26T03:15:06.090Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-26T03:15:06.092Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-26T03:15:06.093Z] LOG    1. Searching "Museum of Contemporary Art Chicago (MCA)" in "Streeterville / Near Magnificent Mile"
+[2026-01-26T03:15:06.094Z] LOG 🔍 [Google Places] Text search: "Museum of Contemporary Art Chicago (MCA)" in Streeterville / Near Magnificent Mile
+[2026-01-26T03:15:06.096Z] LOG    2. Searching "Adler Planetarium" in "Museum Campus"
+[2026-01-26T03:15:06.097Z] LOG 🔍 [Google Places] Text search: "Adler Planetarium" in Museum Campus
+[2026-01-26T03:15:06.099Z] LOG    3. Searching "Millennium Park" in "Loop"
+[2026-01-26T03:15:06.099Z] LOG 🔍 [Google Places] Text search: "Millennium Park" in Loop
+[2026-01-26T03:15:06.101Z] LOG    4. Searching "Cloud Gate (The Bean)" in "Millennium Park"
+[2026-01-26T03:15:06.101Z] LOG 🔍 [Google Places] Text search: "Cloud Gate (The Bean)" in Millennium Park
+[2026-01-26T03:15:06.103Z] LOG    5. Searching "Chicago Riverwalk" in "Loop"
+[2026-01-26T03:15:06.103Z] LOG 🔍 [Google Places] Text search: "Chicago Riverwalk" in Loop
+[2026-01-26T03:15:06.105Z] LOG    6. Searching "Navy Pier" in "Streeterville"
+[2026-01-26T03:15:06.107Z] LOG 🔍 [Google Places] Text search: "Navy Pier" in Streeterville
+[2026-01-26T03:15:06.109Z] LOG    7. Searching "Chicago Architecture Foundation Center River Cruise" in "River North / Loop"
+[2026-01-26T03:15:06.109Z] LOG 🔍 [Google Places] Text search: "Chicago Architecture Foundation Center River Cruise" in River North / Loop
+[2026-01-26T03:15:06.112Z] LOG    8. Searching "Grant Park" in "Loop"
+[2026-01-26T03:15:06.112Z] LOG 🔍 [Google Places] Text search: "Grant Park" in Loop
+[2026-01-26T03:15:06.113Z] LOG    9. Searching "Magnificent Mile" in "Magnificent Mile"
+[2026-01-26T03:15:06.115Z] LOG 🔍 [Google Places] Text search: "Magnificent Mile" in Magnificent Mile
+[2026-01-26T03:15:06.118Z] LOG    10. Searching "Chicago Cultural Center" in "Loop"
+[2026-01-26T03:15:06.119Z] LOG 🔍 [Google Places] Text search: "Chicago Cultural Center" in Loop
+[2026-01-26T03:15:06.503Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:06.511Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:06.516Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:06.547Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:06.566Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:06.574Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:06.602Z] LOG    ✅ Cloud Gate: Got description (92 chars)
+[2026-01-26T03:15:06.603Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:06.622Z] LOG    ✅ Navy Pier: Got description (93 chars)
+[2026-01-26T03:15:06.623Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:06.638Z] LOG    ✅ Millennium Park: Got description (97 chars)
+[2026-01-26T03:15:06.640Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:06.655Z] LOG    ⚠️  Magnificent Mile: No editorial summary available
+[2026-01-26T03:15:06.659Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:06.693Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:06.697Z] LOG    ✅ Museum Of Contemporary Art Chicago: Got description (98 chars)
+[2026-01-26T03:15:06.698Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:06.699Z] LOG    ✅ Adler Planetarium: Got description (93 chars)
+[2026-01-26T03:15:06.700Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:06.777Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:06.825Z] LOG    ✅ Chicago Cultural Center: Got description (100 chars)
+[2026-01-26T03:15:06.826Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:06.907Z] LOG    ⚠️  Chicago River Boat Architecture Tours: No editorial summary available
+[2026-01-26T03:15:06.908Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:07.053Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:07.149Z] LOG    ✅ Grant Park: Got description (80 chars)
+[2026-01-26T03:15:07.150Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:07.789Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T03:15:07.872Z] LOG    ✅ Chicago Riverwalk: Got description (95 chars)
+[2026-01-26T03:15:07.874Z] LOG ✅ Found 1 places
+[2026-01-26T03:15:07.875Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1783ms
+[2026-01-26T03:15:07.876Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-26T03:15:07.878Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-26T03:15:07.879Z] LOG    ✅ Lou Malnati's Pizzeria → Lou Malnati's Pizzeria (must_have)
+[2026-01-26T03:15:07.879Z] LOG    ✅ Giordano's → Giordano's (must_have)
+[2026-01-26T03:15:07.879Z] LOG    ✅ The Art Institute of Chicago → The Art Institute of Chicago (must_have)
+[2026-01-26T03:15:07.880Z] LOG    ✅ Field Museum → Field Museum (must_have)
+[2026-01-26T03:15:07.880Z] LOG    ✅ Skydeck Chicago at Willis Tower → Skydeck Chicago (must_have)
+[2026-01-26T03:15:07.882Z] LOG    ✅ 360 Chicago Observation Deck → 360 CHICAGO (must_have)
+[2026-01-26T03:15:07.882Z] LOG    ✅ Museum of Science and Industry → Griffin Museum of Science and Industry (must_have)
+[2026-01-26T03:15:07.882Z] LOG    ✅ Pequod's Pizza → Pequod's Pizza (nice_to_have)
+[2026-01-26T03:15:07.884Z] LOG    ✅ Uno Pizzeria & Grill → Pizzeria Uno (nice_to_have)
+[2026-01-26T03:15:07.885Z] LOG    ✅ Shedd Aquarium → Shedd Aquarium (nice_to_have)
+[2026-01-26T03:15:07.886Z] LOG    ✅ Museum of Contemporary Art Chicago (MCA) → Museum Of Contemporary Art Chicago (nice_to_have)
+[2026-01-26T03:15:07.887Z] LOG    ✅ Adler Planetarium → Adler Planetarium (nice_to_have)
+[2026-01-26T03:15:07.888Z] LOG    ✅ Millennium Park → Millennium Park (nice_to_have)
+[2026-01-26T03:15:07.889Z] LOG    ✅ Cloud Gate (The Bean) → Cloud Gate (nice_to_have)
+[2026-01-26T03:15:07.889Z] LOG    ✅ Chicago Riverwalk → Chicago Riverwalk (nice_to_have)
+[2026-01-26T03:15:07.890Z] LOG    ✅ Navy Pier → Navy Pier (nice_to_have)
+[2026-01-26T03:15:07.890Z] LOG    ✅ Chicago Architecture Foundation Center River Cruise → Chicago River Boat Architecture Tours (nice_to_have)
+[2026-01-26T03:15:07.891Z] LOG    ✅ Grant Park → Grant Park (nice_to_have)
+[2026-01-26T03:15:07.892Z] LOG    ✅ Magnificent Mile → Magnificent Mile (nice_to_have)
+[2026-01-26T03:15:07.892Z] LOG    ✅ Chicago Cultural Center → Chicago Cultural Center (nice_to_have)
+[2026-01-26T03:15:07.892Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-26T03:15:07.893Z] LOG    Total enriched: 20
+[2026-01-26T03:15:07.893Z] LOG    🎯 Must-have: 7
+[2026-01-26T03:15:07.894Z] LOG    ✨ Nice-to-have: 13
+[2026-01-26T03:15:07.895Z] LOG    ❌ Failed: 0
+[2026-01-26T03:15:07.895Z] LOG    ⏱️ Time: 3357ms
+
+--- Summary ---
+Enrichment completed

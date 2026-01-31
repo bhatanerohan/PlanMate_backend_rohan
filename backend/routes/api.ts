@@ -11,6 +11,7 @@ import { getMapboxClient } from '../services/api-clients/mapbox.js';
 import { getGooglePlacesClient } from '../services/api-clients/google-places.js';
 import { outputLogger } from '../services/output-logger.js';
 import { nearestNeighborOptimization, optimizeFromUserLocation, formatDistance, formatDuration } from '../services/utils/route_optimizer.js';
+import { formatItineraryMessage } from '../services/itinerary-formatter.js';
 
 const router = Router();
 
@@ -228,6 +229,233 @@ function buildNearestAlternativesMessage(primary: any, alternatives: any[], near
 }
 
 // ============================================================================
+// HELPER: Determine walkable vs spread preference and radius
+// ============================================================================
+type GeoPreference = {
+  mode: 'walkable' | 'spread';
+  radiusKm: number;
+  anchorLabel?: string;
+  reason: string;
+};
+
+type GeoPreferenceOverride = 'auto' | 'walkable' | 'spread';
+
+const WALKABLE_CUE_PATTERNS = [
+  /\bwalkable\b/i,
+  /\bwalking\b/i,
+  /\bon\s+foot\b/i,
+  /\bnearby\b/i,
+  /\bclose\s+to\b/i,
+  /\bwithin\s+\d+(\.\d+)?\s*(minutes?|mins?)\s*walk/i
+];
+
+const SPREAD_CUE_PATTERNS = [
+  /\banywhere\b/i,
+  /\bcity[-\s]?wide\b/i,
+  /\bacross\s+(the\s+)?city\b/i,
+  /\ball\s+over\b/i,
+  /\bspread\s+out\b/i,
+  /\bfar\s+apart\b/i
+];
+
+const NEAR_ME_PATTERNS = [
+  /\bnear\s+me\b/i,
+  /\baround\s+me\b/i,
+  /\bclose\s+to\s+me\b/i,
+  /\bnear\s+my\s+location\b/i,
+  /\bcurrent\s+location\b/i,
+  /\bmy\s+location\b/i,
+  /\bhere\b/i
+];
+const ANYWHERE_FINE_PATTERN = /\banywhere\s+(is\s+)?fine\b/i;
+
+function parseRadiusKm(prompt: string): number | null {
+  const distanceMatch = prompt.match(/\bwithin\s+(\d+(?:\.\d+)?)\s*(miles?|mi|kilometers?|km|meters?|m)\b/i);
+  if (distanceMatch) {
+    const value = Number(distanceMatch[1]);
+    const unit = distanceMatch[2].toLowerCase();
+    if (unit.startsWith('mi')) return value * 1.609;
+    if (unit.startsWith('km')) return value;
+    if (unit.startsWith('m')) return value / 1000;
+  }
+
+  const walkMatch = prompt.match(/\b(\d+(?:\.\d+)?)\s*(minutes?|mins?)\s*walk\b/i);
+  if (walkMatch) {
+    const minutes = Number(walkMatch[1]);
+    const kmPerMin = 5 / 60;
+    return minutes * kmPerMin;
+  }
+
+  return null;
+}
+
+function extractAreaHint(prompt: string): string | null {
+  const nearTerms = extractNearSearchTerms(prompt);
+  if (nearTerms?.near) {
+    return nearTerms.near;
+  }
+
+  const match = prompt.match(/\b(?:in|around|within)\s+([a-z0-9\s&'".-]+?)(?:,|\.|!|\?|$)/i);
+  if (!match) return null;
+
+  const candidate = match[1].trim();
+  if (!candidate) return null;
+  if (/\b(minutes?|mins?|hours?|miles?|km)\b/i.test(candidate)) return null;
+  if (candidate.length < 3) return null;
+
+  return candidate;
+}
+
+function isUserLocationReference(label: string): boolean {
+  const normalized = label.trim().toLowerCase();
+  return normalized === 'me' ||
+    normalized === 'here' ||
+    normalized === 'my location' ||
+    normalized === 'current location';
+}
+
+function deriveGeoPreference(
+  prompt: string,
+  userLocation?: { lat: number; lng: number; name: string }
+): GeoPreference {
+  const radiusKm = parseRadiusKm(prompt);
+  const hasWalkableCue = WALKABLE_CUE_PATTERNS.some(pattern => pattern.test(prompt));
+  const hasSpreadCue = SPREAD_CUE_PATTERNS.some(pattern => pattern.test(prompt));
+  const hasNearMeCue = NEAR_ME_PATTERNS.some(pattern => pattern.test(prompt));
+  const hasAnywhereFine = ANYWHERE_FINE_PATTERN.test(prompt);
+  const areaHint = extractAreaHint(prompt);
+
+  let mode: 'walkable' | 'spread' = 'spread';
+  let reason = 'default';
+
+  if (hasSpreadCue && (!hasWalkableCue || hasAnywhereFine)) {
+    mode = 'spread';
+    reason = 'spread cue';
+  } else if (hasWalkableCue || radiusKm !== null || hasNearMeCue) {
+    mode = 'walkable';
+    reason = 'walkable cue';
+  } else if (areaHint) {
+    mode = 'walkable';
+    reason = 'area anchor';
+  } else if (userLocation && Number.isFinite(userLocation.lat) && Number.isFinite(userLocation.lng)) {
+    mode = 'walkable';
+    reason = 'user location default';
+  }
+
+  const anchorLabel = areaHint && !isUserLocationReference(areaHint) ? areaHint : undefined;
+
+  return {
+    mode,
+    radiusKm: radiusKm || 1.5,
+    anchorLabel,
+    reason
+  };
+}
+
+function normalizeGeoPreferenceOverride(value: any): GeoPreferenceOverride | undefined {
+  if (!value) return undefined;
+  const normalized = String(value).trim().toLowerCase();
+  if (normalized === 'auto') return 'auto';
+  if (normalized === 'walkable' || normalized === 'tight') return 'walkable';
+  if (normalized === 'spread' || normalized === 'wide' || normalized === 'explore' || normalized === 'exploration') {
+    return 'spread';
+  }
+  return undefined;
+}
+
+function applyGeoPreferenceOverride(
+  derived: GeoPreference,
+  override?: GeoPreferenceOverride
+): GeoPreference {
+  if (!override || override === 'auto') return derived;
+  return {
+    ...derived,
+    mode: override,
+    reason: 'user override'
+  };
+}
+
+// ============================================================================
+// HELPER: Parse requested result count from prompt
+// ============================================================================
+function parseRequestedCount(prompt: string): number | null {
+  const patterns = [
+    /\btop\s+(\d+)\b/i,
+    /\bshow\s+me\s+(\d+)\b/i,
+    /\b(\d+)\s+(?:places|venues|spots|restaurants|cafes|coffee\s+shops|bars|museums)\b/i
+  ];
+
+  for (const pattern of patterns) {
+    const match = prompt.match(pattern);
+    if (match) {
+      const count = Number(match[1]);
+      if (Number.isFinite(count) && count >= 1 && count <= 20) {
+        return count;
+      }
+    }
+  }
+
+  return null;
+}
+
+// ============================================================================
+// HELPER: Build alternatives map from tool results (Agent 2 path)
+// ============================================================================
+function buildAlternativesFromToolResults(
+  toolResults: any[],
+  selectedVenueIds: string[] | undefined
+): Record<string, any[]> {
+  const alternativesMap: Record<string, any[]> = {};
+  const selectedSet = new Set(selectedVenueIds || []);
+  const assignedAlternativeIds = new Set<string>();
+
+  const collect = (venues: any[]) => {
+    if (!Array.isArray(venues) || venues.length < 2) return;
+    let primary = venues[0];
+    if (selectedSet.size > 0) {
+      const match = venues.find(v => v?.placeId && selectedSet.has(v.placeId));
+      if (match) primary = match;
+    }
+    if (!primary?.placeId) return;
+
+    const alternatives = venues.filter(v => v?.placeId && v.placeId !== primary.placeId);
+    const uniqueAlternatives = alternatives.filter(v => {
+      if (!v.placeId || assignedAlternativeIds.has(v.placeId)) return false;
+      assignedAlternativeIds.add(v.placeId);
+      return true;
+    });
+
+    if (uniqueAlternatives.length > 0) {
+      alternativesMap[primary.placeId] = uniqueAlternatives;
+    }
+  };
+
+  toolResults.forEach(result => {
+    if (!result?.success || !result?.data) return;
+    if (result.action === 'search_venues' && Array.isArray(result.data.venues)) {
+      collect(result.data.venues);
+    }
+    if (result.action === 'batch_search_venues' && Array.isArray(result.data.results)) {
+      result.data.results.forEach((searchResult: any) => {
+        if (searchResult?.success && Array.isArray(searchResult.venues)) {
+          collect(searchResult.venues);
+        }
+      });
+    }
+  });
+
+  if (selectedSet.size > 0) {
+    Object.keys(alternativesMap).forEach(placeId => {
+      if (!selectedSet.has(placeId)) {
+        delete alternativesMap[placeId];
+      }
+    });
+  }
+
+  return alternativesMap;
+}
+
+// ============================================================================
 // HELPER: Build result message for chat display
 // ============================================================================
 function buildResultMessage(
@@ -361,7 +589,7 @@ async function calculateAndAppendRouteInfo(
 // ============================================================================
 router.post('/plan', async (req: Request, res: Response) => {
   try {
-    const { prompt, userLocation, currentItinerary } = req.body;
+    const { prompt, userLocation, currentItinerary, geoPreference: geoPreferenceOverride } = req.body;
 
     if (!prompt || typeof prompt !== 'string' || prompt.trim().length === 0) {
       return res.status(400).json({
@@ -403,6 +631,13 @@ router.post('/plan', async (req: Request, res: Response) => {
         message: classification.reasoning || "I can only help with location-based queries."
       });
     }
+
+    const geoPreference = applyGeoPreferenceOverride(
+      deriveGeoPreference(prompt, userLocation),
+      normalizeGeoPreferenceOverride(geoPreferenceOverride)
+    );
+    const requestedCount = parseRequestedCount(prompt) ?? undefined;
+    console.log(`\n📍 Geo preference: ${geoPreference.mode} (${geoPreference.reason})`);
 
     let agentResponse: any = null;
     let mode: 'route' | 'discovery' = 'discovery';
@@ -492,17 +727,21 @@ router.post('/plan', async (req: Request, res: Response) => {
       
       const geminiResult = await geminiGroundingAgent.getRecommendations(prompt, userLocation);
       
-      if (!geminiResult.venues || geminiResult.venues.length === 0) {
-        console.warn('⚠️ Gemini returned no venues, falling back to direct Agent 2');
+        if (!geminiResult.venues || geminiResult.venues.length === 0) {
+          console.warn('⚠️ Gemini returned no venues, falling back to direct Agent 2');
         
-        const agent2 = new ReActAgent(DEFAULT_SAFETY_CONFIG);
-        agentResponse = await agent2.execute(prompt, userLocation, {
-          isItinerary: classification.queryType === 'itinerary_planning',
-          originalPrompt: prompt
-        });
-        mode = 'discovery';
+          const agent2 = new ReActAgent(DEFAULT_SAFETY_CONFIG);
+          agentResponse = await agent2.execute(prompt, userLocation, {
+            isItinerary: classification.queryType === 'itinerary_planning',
+            originalPrompt: prompt,
+            searchPreference: geoPreference.mode,
+            searchRadiusKm: geoPreference.radiusKm,
+            anchorLabel: geoPreference.anchorLabel,
+            requestedCount
+          });
+          mode = 'discovery';
         
-      } else {
+        } else {
         console.log(`   ✅ Gemini returned ${geminiResult.venues.length} candidates`);
         console.log(`   🎯 Must-have: ${geminiResult.must_have_count}`);
         console.log(`   ✨ Nice-to-have: ${geminiResult.nice_to_have_count}`);
@@ -530,6 +769,19 @@ router.post('/plan', async (req: Request, res: Response) => {
         
         // 🆕 Detect corridor query FIRST
         const corridorInfo = await detectCorridorQuery(prompt);
+        let selectionAnchorCoords: { lat: number; lng: number } | undefined;
+        if (geoPreference.mode === 'walkable') {
+          if (geoPreference.anchorLabel && !isUserLocationReference(geoPreference.anchorLabel)) {
+            try {
+              const placesClient = getGooglePlacesClient();
+              selectionAnchorCoords = await geocodeLocation(placesClient, geoPreference.anchorLabel) || undefined;
+            } catch (anchorError) {
+              console.warn('⚠️ Anchor geocode failed:', anchorError);
+            }
+          } else if (userLocation && Number.isFinite(userLocation.lat) && Number.isFinite(userLocation.lng)) {
+            selectionAnchorCoords = { lat: userLocation.lat, lng: userLocation.lng };
+          }
+        }
         
         let selectionResult;
         
@@ -540,11 +792,12 @@ router.post('/plan', async (req: Request, res: Response) => {
           selectionResult = await venueSelector.selectVenuesWithMode(
             enrichmentResult.candidates,
             {
-              userRequestedCount: geminiResult.plan?.total_stops || 6,
+              userRequestedCount: requestedCount || geminiResult.plan?.total_stops || 6,
               corridorStart: corridorInfo.startCoords,
               corridorEnd: corridorInfo.endCoords,
               isCorridorQuery: true,
-              userPrompt: prompt  // 🆕 Add this
+              userPrompt: prompt,  // 🆕 Add this
+              selectionPreference: geoPreference.mode
             }
           );
         } else {
@@ -553,8 +806,11 @@ router.post('/plan', async (req: Request, res: Response) => {
           
           selectionResult = await venueSelector.selectVenues(
             enrichmentResult.candidates,
-            geminiResult.plan?.total_stops || 6,
-            prompt  // 🆕 Add this
+            requestedCount || geminiResult.plan?.total_stops || 6,
+            prompt,  // 🆕 Add this
+            geoPreference.mode,
+            selectionAnchorCoords,
+            geoPreference.radiusKm
           );
         }
 
@@ -698,11 +954,19 @@ router.post('/plan', async (req: Request, res: Response) => {
           'route'
         );
 
+        const formattedResult = await formatItineraryMessage({
+          prompt,
+          plan: geminiResult.plan,
+          venues: finalVenues,
+          routes
+        });
+        const finalResultMessage = formattedResult || enhancedResult;
+
         try {
           await outputLogger.saveOutput({
             prompt,
             userLocation,
-            result: enhancedResult,
+            result: finalResultMessage,
             venues: finalVenues,
             events: [],
             mode: 'route',
@@ -725,7 +989,7 @@ router.post('/plan', async (req: Request, res: Response) => {
 
         return res.json({
           success: true,
-          result: enhancedResult,
+          result: finalResultMessage,
           mode: 'route',
           queryType: classification.queryType,
           venues: finalVenues.map(v => ({
@@ -771,7 +1035,11 @@ router.post('/plan', async (req: Request, res: Response) => {
       const reactAgent = new ReActAgent(DEFAULT_SAFETY_CONFIG);
       agentResponse = await reactAgent.execute(prompt, userLocation, {
         isItinerary: classification.queryType === 'explicit_route',
-        originalPrompt: prompt
+        originalPrompt: prompt,
+        searchPreference: geoPreference.mode,
+        searchRadiusKm: geoPreference.radiusKm,
+        anchorLabel: geoPreference.anchorLabel,
+        requestedCount
       });
       
       mode = classification.queryType === 'explicit_route' ? 'route' : 'discovery';
@@ -816,6 +1084,50 @@ router.post('/plan', async (req: Request, res: Response) => {
       enrichedVenues = orderedVenues;
     }
 
+    if (mode === 'route' && enrichedVenues.length > 1 && (!selectedVenueIds || selectedVenueIds.length === 0)) {
+      try {
+        const userLat = Number(userLocation?.lat);
+        const userLng = Number(userLocation?.lng);
+        const hasUserLocationCoords =
+          !!userLocation && Number.isFinite(userLat) && Number.isFinite(userLng);
+
+        const venueCoordinates = enrichedVenues.map(v => ({
+          lat: Number(v?.location?.lat),
+          lng: Number(v?.location?.lng)
+        }));
+        const venuesHaveCoords = venueCoordinates.every(
+          coord => Number.isFinite(coord.lat) && Number.isFinite(coord.lng)
+        );
+
+        if (!venuesHaveCoords) {
+          console.log('   ⚠️ Route optimization skipped: missing venue coordinates');
+        } else if (hasUserLocationCoords) {
+          const coordinates = [{ lat: userLat, lng: userLng }, ...venueCoordinates];
+          const optimizedResult = optimizeFromUserLocation(coordinates, 0);
+          const venueOrder = optimizedResult.optimizedOrder
+            .filter(idx => idx !== 0)
+            .map(idx => idx - 1);
+
+          if (venueOrder.length === enrichedVenues.length) {
+            const originalVenues = [...enrichedVenues];
+            enrichedVenues = venueOrder.map(idx => originalVenues[idx]);
+            console.log('   ✅ Route optimized via Multi-Start Nearest Neighbor (Agent 2)');
+          }
+        } else {
+          const optimizedResult = nearestNeighborOptimization(venueCoordinates);
+          const venueOrder = optimizedResult.optimizedOrder;
+
+          if (venueOrder.length === enrichedVenues.length) {
+            const originalVenues = [...enrichedVenues];
+            enrichedVenues = venueOrder.map(idx => originalVenues[idx]);
+            console.log('   ✅ Route optimized via Multi-Start Nearest Neighbor (Agent 2)');
+          }
+        }
+      } catch (optimizationError) {
+        console.warn('   ⚠️ Route optimization failed, using original order:', optimizationError);
+      }
+    }
+
     if (userLocation && enrichedVenues.length > 0 && mode === 'route') {
       const hasUserLocation = enrichedVenues.some(v => v.placeId === 'user-location');
       if (!hasUserLocation) {
@@ -839,6 +1151,12 @@ router.post('/plan', async (req: Request, res: Response) => {
     Object.entries(alternativesMap).forEach(([placeId, info]: [string, any]) => {
       simplifiedAlternativesMap[placeId] = info.alternatives || info;
     });
+    if (Object.keys(simplifiedAlternativesMap).length === 0 && agentResponse?.state?.toolResults) {
+      simplifiedAlternativesMap = buildAlternativesFromToolResults(
+        agentResponse.state.toolResults,
+        selectedVenueIds
+      );
+    }
 
     let resultMessage = agentResponse?.result || 'Your plan is ready!';
 
@@ -916,17 +1234,33 @@ router.post('/plan', async (req: Request, res: Response) => {
       }
     }
 
+    if (requestedCount && enrichedVenues.length > requestedCount && !selectedVenueIds?.length) {
+      enrichedVenues = enrichedVenues.slice(0, requestedCount);
+    }
+
     const { enhancedResult, routes: calculatedRoutes } = await calculateAndAppendRouteInfo(
       resultMessage,
       enrichedVenues,
       mode
     );
 
+    let finalResultMessage = enhancedResult;
+    if (mode === 'route') {
+      const formattedResult = await formatItineraryMessage({
+        prompt,
+        venues: enrichedVenues,
+        routes: calculatedRoutes
+      });
+      if (formattedResult) {
+        finalResultMessage = formattedResult;
+      }
+    }
+
     try {
       await outputLogger.saveOutput({
         prompt,
         userLocation,
-        result: enhancedResult,
+        result: finalResultMessage,
         venues: enrichedVenues,
         events: events,
         mode,
@@ -948,7 +1282,7 @@ router.post('/plan', async (req: Request, res: Response) => {
 
     return res.json({
       success: agentResponse?.success ?? false,
-      result: enhancedResult,
+      result: finalResultMessage,
       mode,
       queryType: classification.queryType,
       venues: enrichedVenues,

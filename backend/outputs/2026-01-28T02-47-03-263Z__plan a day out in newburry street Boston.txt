@@ -1,0 +1,154 @@
+User Prompt: plan a day out in newburry street Boston
+
+[2026-01-28T02:47:03.263Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-28T02:47:03.263Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-28T02:47:03.263Z] LOG    🎯 Must-have: 8
+[2026-01-28T02:47:03.264Z] LOG    ✨ Nice-to-have: 12
+[2026-01-28T02:47:03.264Z] LOG 📍 Location hint: newburry street Boston
+[2026-01-28T02:47:03.265Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-28T02:47:03.265Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-28T02:47:03.266Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-28T02:47:03.267Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-28T02:47:03.267Z] LOG    1. Searching "Tatte Bakery & Cafe" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:03.268Z] LOG 🔍 [Google Places] Text search: "Tatte Bakery & Cafe" in Newbury Street, Back Bay
+[2026-01-28T02:47:03.273Z] LOG    2. Searching "Patagonia Boston" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:03.274Z] LOG 🔍 [Google Places] Text search: "Patagonia Boston" in Newbury Street, Back Bay
+[2026-01-28T02:47:03.275Z] LOG    3. Searching "Burberry" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:03.276Z] LOG 🔍 [Google Places] Text search: "Burberry" in Newbury Street, Back Bay
+[2026-01-28T02:47:03.277Z] LOG    4. Searching "Arden Gallery" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:03.277Z] LOG 🔍 [Google Places] Text search: "Arden Gallery" in Newbury Street, Back Bay
+[2026-01-28T02:47:03.279Z] LOG    5. Searching "Sonsie" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:03.279Z] LOG 🔍 [Google Places] Text search: "Sonsie" in Newbury Street, Back Bay
+[2026-01-28T02:47:03.281Z] LOG    6. Searching "Stephanie's On Newbury" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:03.281Z] LOG 🔍 [Google Places] Text search: "Stephanie's On Newbury" in Newbury Street, Back Bay
+[2026-01-28T02:47:03.284Z] LOG    7. Searching "The Friendly Toast" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:03.284Z] LOG 🔍 [Google Places] Text search: "The Friendly Toast" in Newbury Street, Back Bay
+[2026-01-28T02:47:03.286Z] LOG    8. Searching "Copley Society of Art" in "Back Bay (near Newbury Street)"
+[2026-01-28T02:47:03.286Z] LOG 🔍 [Google Places] Text search: "Copley Society of Art" in Back Bay (near Newbury Street)
+[2026-01-28T02:47:03.288Z] LOG    9. Searching "Boston Public Garden" in "Adjacent to Newbury Street, Back Bay"
+[2026-01-28T02:47:03.288Z] LOG 🔍 [Google Places] Text search: "Boston Public Garden" in Adjacent to Newbury Street, Back Bay
+[2026-01-28T02:47:03.290Z] LOG    10. Searching "Tiffany & Co." in "Newbury Street, Back Bay"
+[2026-01-28T02:47:03.290Z] LOG 🔍 [Google Places] Text search: "Tiffany & Co." in Newbury Street, Back Bay
+[2026-01-28T02:47:03.811Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:03.815Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:03.823Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:03.845Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:03.850Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:03.853Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:03.861Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:03.875Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:03.922Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:03.940Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:03.945Z] LOG    ✅ Tatte Bakery & Cafe | Back Bay: Got description (96 chars)
+[2026-01-28T02:47:03.946Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:03.963Z] LOG    ✅ Stephanie's On Newbury: Got description (86 chars)
+[2026-01-28T02:47:03.964Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:03.968Z] LOG    ✅ Burberry: Got description (100 chars)
+[2026-01-28T02:47:03.969Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:03.974Z] LOG    ⚠️  Patagonia: No editorial summary available
+[2026-01-28T02:47:03.975Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:03.998Z] LOG    ✅ The Friendly Toast: Got description (85 chars)
+[2026-01-28T02:47:03.998Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.020Z] LOG    ✅ Tiffany & Co.: Got description (89 chars)
+[2026-01-28T02:47:04.021Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.032Z] LOG    ⚠️  Copley Society of Art: No editorial summary available
+[2026-01-28T02:47:04.033Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.043Z] LOG    ✅ Sonsie: Got description (100 chars)
+[2026-01-28T02:47:04.044Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.075Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-28T02:47:04.076Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.097Z] LOG    ⚠️  Arden Gallery Ltd.: No editorial summary available
+[2026-01-28T02:47:04.099Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.100Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 833ms
+[2026-01-28T02:47:04.100Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-28T02:47:04.101Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-28T02:47:04.303Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-28T02:47:04.304Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-28T02:47:04.304Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-28T02:47:04.305Z] LOG    1. Searching "Saltie Girl" in "Back Bay (near Newbury Street)"
+[2026-01-28T02:47:04.305Z] LOG 🔍 [Google Places] Text search: "Saltie Girl" in Back Bay (near Newbury Street)
+[2026-01-28T02:47:04.306Z] LOG    2. Searching "AllSaints" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:04.307Z] LOG 🔍 [Google Places] Text search: "AllSaints" in Newbury Street, Back Bay
+[2026-01-28T02:47:04.308Z] LOG    3. Searching "Tapeo Restaurant & Tapas Bar" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:04.308Z] LOG 🔍 [Google Places] Text search: "Tapeo Restaurant & Tapas Bar" in Newbury Street, Back Bay
+[2026-01-28T02:47:04.309Z] LOG    4. Searching "Axelle Fine Arts International" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:04.309Z] LOG 🔍 [Google Places] Text search: "Axelle Fine Arts International" in Newbury Street, Back Bay
+[2026-01-28T02:47:04.310Z] LOG    5. Searching "Boston Common" in "Adjacent to Newbury Street, Downtown Boston"
+[2026-01-28T02:47:04.311Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Adjacent to Newbury Street, Downtown Boston
+[2026-01-28T02:47:04.311Z] LOG    6. Searching "Trinity Church" in "Copley Square, Back Bay (near Newbury Street)"
+[2026-01-28T02:47:04.312Z] LOG 🔍 [Google Places] Text search: "Trinity Church" in Copley Square, Back Bay (near Newbury Street)
+[2026-01-28T02:47:04.312Z] LOG    7. Searching "Boston Public Library - Central Branch" in "Copley Square, Back Bay (near Newbury Street)"
+[2026-01-28T02:47:04.312Z] LOG 🔍 [Google Places] Text search: "Boston Public Library - Central Branch" in Copley Square, Back Bay (near Newbury Street)
+[2026-01-28T02:47:04.313Z] LOG    8. Searching "The Thinking Cup" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:04.313Z] LOG 🔍 [Google Places] Text search: "The Thinking Cup" in Newbury Street, Back Bay
+[2026-01-28T02:47:04.314Z] LOG    9. Searching "Georgetown Cupcake" in "Newbury Street, Back Bay"
+[2026-01-28T02:47:04.314Z] LOG 🔍 [Google Places] Text search: "Georgetown Cupcake" in Newbury Street, Back Bay
+[2026-01-28T02:47:04.314Z] LOG    10. Searching "Prudential Center" in "Back Bay (near Newbury Street)"
+[2026-01-28T02:47:04.315Z] LOG 🔍 [Google Places] Text search: "Prudential Center" in Back Bay (near Newbury Street)
+[2026-01-28T02:47:04.780Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:04.788Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:04.794Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:04.814Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:04.819Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:04.824Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:04.936Z] LOG    ⚠️  Axelle Fine Arts Galerie: No editorial summary available
+[2026-01-28T02:47:04.937Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.939Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:04.940Z] LOG    ✅ Trinity Church: Got description (95 chars)
+[2026-01-28T02:47:04.941Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.949Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-28T02:47:04.949Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.966Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:04.970Z] LOG    ✅ Georgetown Cupcake: Got description (89 chars)
+[2026-01-28T02:47:04.970Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.976Z] LOG    ✅ Tapeo: Got description (93 chars)
+[2026-01-28T02:47:04.977Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:04.985Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:05.002Z] LOG    ✅ Thinking Cup: Got description (94 chars)
+[2026-01-28T02:47:05.003Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:05.010Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T02:47:05.109Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2026-01-28T02:47:05.110Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:05.111Z] LOG    ✅ Saltie Girl: Got description (81 chars)
+[2026-01-28T02:47:05.111Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:05.129Z] LOG    ✅ Prudential Center Boston: Got description (95 chars)
+[2026-01-28T02:47:05.129Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:05.153Z] LOG    ⚠️  ALO: No editorial summary available
+[2026-01-28T02:47:05.154Z] LOG ✅ Found 1 places
+[2026-01-28T02:47:05.154Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 850ms
+[2026-01-28T02:47:05.154Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-28T02:47:05.154Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-28T02:47:05.155Z] LOG    ✅ Tatte Bakery & Cafe → Tatte Bakery & Cafe | Back Bay (must_have)
+[2026-01-28T02:47:05.155Z] LOG    ✅ Patagonia Boston → Patagonia (must_have)
+[2026-01-28T02:47:05.155Z] LOG    ✅ Burberry → Burberry (must_have)
+[2026-01-28T02:47:05.156Z] LOG    ✅ Arden Gallery → Arden Gallery Ltd. (must_have)
+[2026-01-28T02:47:05.156Z] LOG    ✅ Sonsie → Sonsie (must_have)
+[2026-01-28T02:47:05.156Z] LOG    ✅ Stephanie's On Newbury → Stephanie's On Newbury (must_have)
+[2026-01-28T02:47:05.156Z] LOG    ✅ The Friendly Toast → The Friendly Toast (must_have)
+[2026-01-28T02:47:05.157Z] LOG    ✅ Copley Society of Art → Copley Society of Art (must_have)
+[2026-01-28T02:47:05.157Z] LOG    ✅ Boston Public Garden → Public Garden (nice_to_have)
+[2026-01-28T02:47:05.157Z] LOG    ✅ Tiffany & Co. → Tiffany & Co. (nice_to_have)
+[2026-01-28T02:47:05.157Z] LOG    ✅ Saltie Girl → Saltie Girl (nice_to_have)
+[2026-01-28T02:47:05.158Z] LOG    ✅ AllSaints → ALO (nice_to_have)
+[2026-01-28T02:47:05.158Z] LOG    ✅ Tapeo Restaurant & Tapas Bar → Tapeo (nice_to_have)
+[2026-01-28T02:47:05.158Z] LOG    ✅ Axelle Fine Arts International → Axelle Fine Arts Galerie (nice_to_have)
+[2026-01-28T02:47:05.158Z] LOG    ✅ Boston Common → Boston Common (nice_to_have)
+[2026-01-28T02:47:05.159Z] LOG    ✅ Trinity Church → Trinity Church (nice_to_have)
+[2026-01-28T02:47:05.159Z] LOG    ✅ Boston Public Library - Central Branch → Boston Public Library - Central Library (nice_to_have)
+[2026-01-28T02:47:05.159Z] LOG    ✅ The Thinking Cup → Thinking Cup (nice_to_have)
+[2026-01-28T02:47:05.160Z] LOG    ✅ Georgetown Cupcake → Georgetown Cupcake (nice_to_have)
+[2026-01-28T02:47:05.160Z] LOG    ✅ Prudential Center → Prudential Center Boston (nice_to_have)
+[2026-01-28T02:47:05.160Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-28T02:47:05.161Z] LOG    Total enriched: 20
+[2026-01-28T02:47:05.161Z] LOG    🎯 Must-have: 8
+[2026-01-28T02:47:05.161Z] LOG    ✨ Nice-to-have: 12
+[2026-01-28T02:47:05.161Z] LOG    ❌ Failed: 0
+[2026-01-28T02:47:05.162Z] LOG    ⏱️ Time: 1899ms
+
+--- Summary ---
+Enrichment completed

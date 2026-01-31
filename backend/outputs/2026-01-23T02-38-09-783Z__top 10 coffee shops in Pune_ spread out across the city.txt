@@ -1,0 +1,142 @@
+User Prompt: top 10 coffee shops in Pune, spread out across the city
+
+[2026-01-23T02:38:09.783Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-23T02:38:09.784Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-01-23T02:38:09.784Z] LOG    🎯 Must-have: 7
+[2026-01-23T02:38:09.785Z] LOG    ✨ Nice-to-have: 11
+[2026-01-23T02:38:09.785Z] LOG 📍 Location hint: Koregaon Park
+[2026-01-23T02:38:09.786Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-01-23T02:38:09.786Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-23T02:38:09.787Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-23T02:38:09.787Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-23T02:38:09.788Z] LOG    1. Searching "Cafe - The Voyage" in "Koregaon Park"
+[2026-01-23T02:38:09.788Z] LOG 🔍 [Google Places] Text search: "Cafe - The Voyage" in Koregaon Park
+[2026-01-23T02:38:09.795Z] LOG    2. Searching "CAFE MHUZO GOA" in "Shivajinagar/FC Road"
+[2026-01-23T02:38:09.797Z] LOG 🔍 [Google Places] Text search: "CAFE MHUZO GOA" in Shivajinagar/FC Road
+[2026-01-23T02:38:09.800Z] LOG    3. Searching "Vohuman Cafe" in "Sangamvadi"
+[2026-01-23T02:38:09.803Z] LOG 🔍 [Google Places] Text search: "Vohuman Cafe" in Sangamvadi
+[2026-01-23T02:38:09.808Z] LOG    4. Searching "Cafe Kathaa" in "Deccan Gymkhana/FC Road"
+[2026-01-23T02:38:09.809Z] LOG 🔍 [Google Places] Text search: "Cafe Kathaa" in Deccan Gymkhana/FC Road
+[2026-01-23T02:38:09.820Z] LOG    5. Searching "It’s Street Coffee" in "Deccan Gymkhana"
+[2026-01-23T02:38:09.822Z] LOG 🔍 [Google Places] Text search: "It’s Street Coffee" in Deccan Gymkhana
+[2026-01-23T02:38:09.832Z] LOG    6. Searching "Nothing Before Coffee - NIBM, Pune" in "NIBM, Wanwadi"
+[2026-01-23T02:38:09.835Z] LOG 🔍 [Google Places] Text search: "Nothing Before Coffee - NIBM, Pune" in NIBM, Wanwadi
+[2026-01-23T02:38:09.843Z] LOG    7. Searching "Third Wave Coffee" in "Koregaon Park"
+[2026-01-23T02:38:09.846Z] LOG 🔍 [Google Places] Text search: "Third Wave Coffee" in Koregaon Park
+[2026-01-23T02:38:09.857Z] LOG    8. Searching "Zen Cafe" in "Koregaon Park"
+[2026-01-23T02:38:09.860Z] LOG 🔍 [Google Places] Text search: "Zen Cafe" in Koregaon Park
+[2026-01-23T02:38:09.869Z] LOG    9. Searching "German Bakery" in "Koregaon Park"
+[2026-01-23T02:38:09.872Z] LOG 🔍 [Google Places] Text search: "German Bakery" in Koregaon Park
+[2026-01-23T02:38:09.880Z] LOG    10. Searching "Mocha Pune" in "Koregaon Park"
+[2026-01-23T02:38:09.883Z] LOG 🔍 [Google Places] Text search: "Mocha Pune" in Koregaon Park
+[2026-01-23T02:38:10.377Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:10.403Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:10.407Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:10.437Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:10.443Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:10.580Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:10.582Z] LOG    ⚠️  Cafe - The Voyage: No editorial summary available
+[2026-01-23T02:38:10.583Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:10.583Z] LOG    ✅ Vohuman Cafe: Got description (90 chars)
+[2026-01-23T02:38:10.584Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:10.586Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:10.588Z] LOG    ⚠️  Third Wave Coffee: No editorial summary available
+[2026-01-23T02:38:10.589Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:10.589Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:10.594Z] LOG    ⚠️  Cafe Kathaa: No editorial summary available
+[2026-01-23T02:38:10.595Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:10.663Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:10.688Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:10.713Z] LOG    ⚠️  CAFE MHUZO GOA: No editorial summary available
+[2026-01-23T02:38:10.714Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:10.739Z] LOG    ⚠️  Mocha Pune: No editorial summary available
+[2026-01-23T02:38:10.740Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:10.743Z] LOG    ⚠️  German Bakery: No editorial summary available
+[2026-01-23T02:38:10.743Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:10.765Z] LOG    ⚠️  Zen Cafe: No editorial summary available
+[2026-01-23T02:38:10.768Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:10.810Z] LOG    ⚠️  It’s Street Coffee: No editorial summary available
+[2026-01-23T02:38:10.813Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:10.824Z] LOG    ⚠️  Nothing Before Coffee - NIBM, Pune: No editorial summary available
+[2026-01-23T02:38:10.825Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:10.826Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1039ms
+[2026-01-23T02:38:10.827Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-23T02:38:10.827Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-23T02:38:11.033Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-01-23T02:38:11.034Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-23T02:38:11.034Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-01-23T02:38:11.035Z] LOG    1. Searching "Chafa Cafe And Studio" in "Koregaon Park"
+[2026-01-23T02:38:11.035Z] LOG 🔍 [Google Places] Text search: "Chafa Cafe And Studio" in Koregaon Park
+[2026-01-23T02:38:11.037Z] LOG    2. Searching "Starbucks" in "Koregaon Park"
+[2026-01-23T02:38:11.038Z] LOG 🔍 [Google Places] Text search: "Starbucks" in Koregaon Park
+[2026-01-23T02:38:11.040Z] LOG    3. Searching "One O Eight Lifestyle Cafe" in "Koregaon Park"
+[2026-01-23T02:38:11.040Z] LOG 🔍 [Google Places] Text search: "One O Eight Lifestyle Cafe" in Koregaon Park
+[2026-01-23T02:38:11.041Z] LOG    4. Searching "Coffee Nation" in "Erandwane"
+[2026-01-23T02:38:11.041Z] LOG 🔍 [Google Places] Text search: "Coffee Nation" in Erandwane
+[2026-01-23T02:38:11.042Z] LOG    5. Searching "Flour Story - Bakery & Coffee Bar" in "Magarpatta, Hadapsar"
+[2026-01-23T02:38:11.042Z] LOG 🔍 [Google Places] Text search: "Flour Story - Bakery & Coffee Bar" in Magarpatta, Hadapsar
+[2026-01-23T02:38:11.044Z] LOG    6. Searching "Ambrozia Café and Pâtisserie" in "Viman Nagar"
+[2026-01-23T02:38:11.044Z] LOG 🔍 [Google Places] Text search: "Ambrozia Café and Pâtisserie" in Viman Nagar
+[2026-01-23T02:38:11.045Z] LOG    7. Searching "Alag Aasmaan-The Travel Cafe" in "Viman Nagar"
+[2026-01-23T02:38:11.045Z] LOG 🔍 [Google Places] Text search: "Alag Aasmaan-The Travel Cafe" in Viman Nagar
+[2026-01-23T02:38:11.046Z] LOG    8. Searching "bai mu dan" in "Koregaon Park"
+[2026-01-23T02:38:11.047Z] LOG 🔍 [Google Places] Text search: "bai mu dan" in Koregaon Park
+[2026-01-23T02:38:11.479Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:11.489Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:11.509Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:11.544Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:11.627Z] LOG    ⚠️  bai mu dan: No editorial summary available
+[2026-01-23T02:38:11.628Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:11.637Z] LOG    ⚠️  Coffee Nation: No editorial summary available
+[2026-01-23T02:38:11.638Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:11.641Z] LOG    ✅ Starbucks: Got description (98 chars)
+[2026-01-23T02:38:11.642Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:11.668Z] LOG    ⚠️  Flour Story - Bakery & Coffee Bar: No editorial summary available
+[2026-01-23T02:38:11.670Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:11.693Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:11.743Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:11.842Z] LOG    ✅ One O Eight Lifestyle Cafe: Got description (92 chars)
+[2026-01-23T02:38:11.843Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:11.852Z] LOG    ⚠️  Alag Aasmaan-The Travel Cafe: No editorial summary available
+[2026-01-23T02:38:11.853Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:11.854Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:11.977Z] LOG    ✅ Chafa Cafe And Studio: Got description (96 chars)
+[2026-01-23T02:38:11.979Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:12.004Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:38:12.105Z] LOG    ⚠️  Ambrozia Café and Pâtisserie: No editorial summary available
+[2026-01-23T02:38:12.106Z] LOG ✅ Found 1 places
+[2026-01-23T02:38:12.107Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 1073ms
+[2026-01-23T02:38:12.107Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-23T02:38:12.108Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-01-23T02:38:12.108Z] LOG    ✅ Cafe - The Voyage → Cafe - The Voyage (must_have)
+[2026-01-23T02:38:12.108Z] LOG    ✅ CAFE MHUZO GOA → CAFE MHUZO GOA (must_have)
+[2026-01-23T02:38:12.109Z] LOG    ✅ Vohuman Cafe → Vohuman Cafe (must_have)
+[2026-01-23T02:38:12.109Z] LOG    ✅ Cafe Kathaa → Cafe Kathaa (must_have)
+[2026-01-23T02:38:12.110Z] LOG    ✅ It’s Street Coffee → It’s Street Coffee (must_have)
+[2026-01-23T02:38:12.110Z] LOG    ✅ Nothing Before Coffee - NIBM, Pune → Nothing Before Coffee - NIBM, Pune (must_have)
+[2026-01-23T02:38:12.111Z] LOG    ✅ Third Wave Coffee → Third Wave Coffee (must_have)
+[2026-01-23T02:38:12.111Z] LOG    ✅ Zen Cafe → Zen Cafe (nice_to_have)
+[2026-01-23T02:38:12.112Z] LOG    ✅ German Bakery → German Bakery (nice_to_have)
+[2026-01-23T02:38:12.112Z] LOG    ✅ Mocha Pune → Mocha Pune (nice_to_have)
+[2026-01-23T02:38:12.113Z] LOG    ✅ Chafa Cafe And Studio → Chafa Cafe And Studio (nice_to_have)
+[2026-01-23T02:38:12.113Z] LOG    ✅ Starbucks → Starbucks (nice_to_have)
+[2026-01-23T02:38:12.114Z] LOG    ✅ One O Eight Lifestyle Cafe → One O Eight Lifestyle Cafe (nice_to_have)
+[2026-01-23T02:38:12.114Z] LOG    ✅ Coffee Nation → Coffee Nation (nice_to_have)
+[2026-01-23T02:38:12.114Z] LOG    ✅ Flour Story - Bakery & Coffee Bar → Flour Story - Bakery & Coffee Bar (nice_to_have)
+[2026-01-23T02:38:12.115Z] LOG    ✅ Ambrozia Café and Pâtisserie → Ambrozia Café and Pâtisserie (nice_to_have)
+[2026-01-23T02:38:12.115Z] LOG    ✅ Alag Aasmaan-The Travel Cafe → Alag Aasmaan-The Travel Cafe (nice_to_have)
+[2026-01-23T02:38:12.116Z] LOG    ✅ bai mu dan → bai mu dan (nice_to_have)
+[2026-01-23T02:38:12.116Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-23T02:38:12.116Z] LOG    Total enriched: 18
+[2026-01-23T02:38:12.117Z] LOG    🎯 Must-have: 7
+[2026-01-23T02:38:12.117Z] LOG    ✨ Nice-to-have: 11
+[2026-01-23T02:38:12.118Z] LOG    ❌ Failed: 0
+[2026-01-23T02:38:12.118Z] LOG    ⏱️ Time: 2335ms
+
+--- Summary ---
+Enrichment completed

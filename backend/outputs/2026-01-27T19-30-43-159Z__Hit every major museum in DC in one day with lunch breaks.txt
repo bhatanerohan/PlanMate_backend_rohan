@@ -1,0 +1,154 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-01-27T19:30:43.160Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-27T19:30:43.160Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-27T19:30:43.160Z] LOG    🎯 Must-have: 8
+[2026-01-27T19:30:43.161Z] LOG    ✨ Nice-to-have: 12
+[2026-01-27T19:30:43.161Z] LOG 📍 Location hint: DC in one day
+[2026-01-27T19:30:43.162Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-27T19:30:43.162Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-27T19:30:43.163Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-27T19:30:43.163Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-27T19:30:43.164Z] LOG    1. Searching "Smithsonian National Museum of Natural History" in "National Mall"
+[2026-01-27T19:30:43.164Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of Natural History" in National Mall
+[2026-01-27T19:30:43.171Z] LOG    2. Searching "National Air and Space Museum" in "National Mall"
+[2026-01-27T19:30:43.171Z] LOG 🔍 [Google Places] Text search: "National Air and Space Museum" in National Mall
+[2026-01-27T19:30:43.173Z] LOG    3. Searching "National Museum of American History" in "National Mall"
+[2026-01-27T19:30:43.174Z] LOG 🔍 [Google Places] Text search: "National Museum of American History" in National Mall
+[2026-01-27T19:30:43.176Z] LOG    4. Searching "National Gallery of Art" in "National Mall"
+[2026-01-27T19:30:43.176Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in National Mall
+[2026-01-27T19:30:43.179Z] LOG    5. Searching "National Museum of African American History and Culture" in "National Mall"
+[2026-01-27T19:30:43.179Z] LOG 🔍 [Google Places] Text search: "National Museum of African American History and Culture" in National Mall
+[2026-01-27T19:30:43.183Z] LOG    6. Searching "United States Holocaust Memorial Museum" in "Near National Mall / Southwest D.C."
+[2026-01-27T19:30:43.184Z] LOG 🔍 [Google Places] Text search: "United States Holocaust Memorial Museum" in Near National Mall / Southwest D.C.
+[2026-01-27T19:30:43.187Z] LOG    7. Searching "International Spy Museum" in "L'Enfant Plaza"
+[2026-01-27T19:30:43.188Z] LOG 🔍 [Google Places] Text search: "International Spy Museum" in L'Enfant Plaza
+[2026-01-27T19:30:43.190Z] LOG    8. Searching "National Portrait Gallery" in "Penn Quarter/Chinatown"
+[2026-01-27T19:30:43.191Z] LOG 🔍 [Google Places] Text search: "National Portrait Gallery" in Penn Quarter/Chinatown
+[2026-01-27T19:30:43.195Z] LOG    9. Searching "Hirshhorn Museum and Sculpture Garden" in "National Mall"
+[2026-01-27T19:30:43.196Z] LOG 🔍 [Google Places] Text search: "Hirshhorn Museum and Sculpture Garden" in National Mall
+[2026-01-27T19:30:43.199Z] LOG    10. Searching "National Museum of the American Indian" in "National Mall"
+[2026-01-27T19:30:43.199Z] LOG 🔍 [Google Places] Text search: "National Museum of the American Indian" in National Mall
+[2026-01-27T19:30:43.929Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:44.105Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-01-27T19:30:44.106Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:44.158Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:44.166Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:44.187Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:44.310Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:44.312Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:44.314Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:44.315Z] LOG    ✅ National Portrait Gallery: Got description (96 chars)
+[2026-01-27T19:30:44.315Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:44.316Z] LOG    ✅ National Museum of the American Indian: Got description (98 chars)
+[2026-01-27T19:30:44.317Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:44.317Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-27T19:30:44.318Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:44.321Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:44.346Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:44.387Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-01-27T19:30:44.388Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:44.514Z] LOG    ✅ Hirshhorn Museum: Got description (99 chars)
+[2026-01-27T19:30:44.515Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:44.516Z] LOG    ✅ National Museum of African American History and Culture: Got description (97 chars)
+[2026-01-27T19:30:44.516Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:44.517Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2026-01-27T19:30:44.517Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:44.518Z] LOG    ✅ Smithsonian National Museum of American History: Got description (99 chars)
+[2026-01-27T19:30:44.519Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:44.719Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:44.925Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-01-27T19:30:44.925Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:44.926Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1763ms
+[2026-01-27T19:30:44.926Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-27T19:30:44.927Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-27T19:30:45.135Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-27T19:30:45.136Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-27T19:30:45.137Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-27T19:30:45.137Z] LOG    1. Searching "Renwick Gallery" in "Near White House"
+[2026-01-27T19:30:45.138Z] LOG 🔍 [Google Places] Text search: "Renwick Gallery" in Near White House
+[2026-01-27T19:30:45.139Z] LOG    2. Searching "Smithsonian American Art Museum" in "Penn Quarter/Chinatown"
+[2026-01-27T19:30:45.139Z] LOG 🔍 [Google Places] Text search: "Smithsonian American Art Museum" in Penn Quarter/Chinatown
+[2026-01-27T19:30:45.140Z] LOG    3. Searching "Pavilion Cafe" in "National Mall"
+[2026-01-27T19:30:45.140Z] LOG 🔍 [Google Places] Text search: "Pavilion Cafe" in National Mall
+[2026-01-27T19:30:45.141Z] LOG    4. Searching "Mitsitam Cafe" in "National Mall"
+[2026-01-27T19:30:45.141Z] LOG 🔍 [Google Places] Text search: "Mitsitam Cafe" in National Mall
+[2026-01-27T19:30:45.142Z] LOG    5. Searching "Smithsonian Castle Cafe" in "National Mall"
+[2026-01-27T19:30:45.142Z] LOG 🔍 [Google Places] Text search: "Smithsonian Castle Cafe" in National Mall
+[2026-01-27T19:30:45.143Z] LOG    6. Searching "Shake Shack F Street NW" in "Penn Quarter/Chinatown"
+[2026-01-27T19:30:45.143Z] LOG 🔍 [Google Places] Text search: "Shake Shack F Street NW" in Penn Quarter/Chinatown
+[2026-01-27T19:30:45.144Z] LOG    7. Searching "Old Ebbitt Grill" in "Near White House"
+[2026-01-27T19:30:45.144Z] LOG 🔍 [Google Places] Text search: "Old Ebbitt Grill" in Near White House
+[2026-01-27T19:30:45.144Z] LOG    8. Searching "Pret A Manger (1227 F St NW)" in "Penn Quarter/Chinatown"
+[2026-01-27T19:30:45.145Z] LOG 🔍 [Google Places] Text search: "Pret A Manger (1227 F St NW)" in Penn Quarter/Chinatown
+[2026-01-27T19:30:45.146Z] LOG    9. Searching "Sweetgreen (L'Enfant Plaza)" in "L'Enfant Plaza"
+[2026-01-27T19:30:45.146Z] LOG 🔍 [Google Places] Text search: "Sweetgreen (L'Enfant Plaza)" in L'Enfant Plaza
+[2026-01-27T19:30:45.147Z] LOG    10. Searching "&pizza - Metro Center" in "Metro Center/Penn Quarter"
+[2026-01-27T19:30:45.147Z] LOG 🔍 [Google Places] Text search: "&pizza - Metro Center" in Metro Center/Penn Quarter
+[2026-01-27T19:30:45.610Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:45.621Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:45.744Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:45.746Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:45.747Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:45.748Z] LOG    ✅ Shake Shack F Street: Got description (95 chars)
+[2026-01-27T19:30:45.749Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:45.786Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:45.787Z] LOG    ✅ Old Ebbitt Grill: Got description (98 chars)
+[2026-01-27T19:30:45.788Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:45.803Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:45.826Z] LOG    ✅ Mitsitam Native Foods Cafe: Got description (98 chars)
+[2026-01-27T19:30:45.827Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:45.963Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:45.965Z] LOG    ✅ Smithsonian American Art Museum: Got description (98 chars)
+[2026-01-27T19:30:45.966Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:45.966Z] LOG    ✅ Pavilion Café: Got description (99 chars)
+[2026-01-27T19:30:45.967Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:45.968Z] LOG    ✅ &pizza: Got description (98 chars)
+[2026-01-27T19:30:45.968Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:45.969Z] LOG    ✅ Pret A Manger: Got description (85 chars)
+[2026-01-27T19:30:45.969Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:46.031Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:46.055Z] LOG    ✅ Renwick Gallery of the Smithsonian American Art Museum: Got description (98 chars)
+[2026-01-27T19:30:46.056Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:46.157Z] LOG    ✅ sweetgreen - Healthy Salads, Bowls and Plates: Got description (77 chars)
+[2026-01-27T19:30:46.158Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:46.197Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T19:30:46.263Z] LOG    ✅ Mitsitam Native Foods Cafe: Got description (98 chars)
+[2026-01-27T19:30:46.264Z] LOG ✅ Found 1 places
+[2026-01-27T19:30:46.264Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1127ms
+[2026-01-27T19:30:46.265Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-27T19:30:46.265Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-27T19:30:46.266Z] LOG    ✅ Smithsonian National Museum of Natural History → Smithsonian National Museum of Natural History (must_have)
+[2026-01-27T19:30:46.267Z] LOG    ✅ National Air and Space Museum → Smithsonian's National Air and Space Museum (must_have)
+[2026-01-27T19:30:46.267Z] LOG    ✅ National Museum of American History → Smithsonian National Museum of American History (must_have)
+[2026-01-27T19:30:46.268Z] LOG    ✅ National Gallery of Art → National Gallery of Art (must_have)
+[2026-01-27T19:30:46.268Z] LOG    ✅ National Museum of African American History and Culture → National Museum of African American History and Culture (must_have)
+[2026-01-27T19:30:46.269Z] LOG    ✅ United States Holocaust Memorial Museum → United States Holocaust Memorial Museum (must_have)
+[2026-01-27T19:30:46.269Z] LOG    ✅ International Spy Museum → International Spy Museum (must_have)
+[2026-01-27T19:30:46.269Z] LOG    ✅ National Portrait Gallery → National Portrait Gallery (must_have)
+[2026-01-27T19:30:46.269Z] LOG    ✅ Hirshhorn Museum and Sculpture Garden → Hirshhorn Museum (nice_to_have)
+[2026-01-27T19:30:46.270Z] LOG    ✅ National Museum of the American Indian → National Museum of the American Indian (nice_to_have)
+[2026-01-27T19:30:46.270Z] LOG    ✅ Renwick Gallery → Renwick Gallery of the Smithsonian American Art Museum (nice_to_have)
+[2026-01-27T19:30:46.270Z] LOG    ✅ Smithsonian American Art Museum → Smithsonian American Art Museum (nice_to_have)
+[2026-01-27T19:30:46.271Z] LOG    ✅ Pavilion Cafe → Pavilion Café (nice_to_have)
+[2026-01-27T19:30:46.272Z] LOG    ✅ Mitsitam Cafe → Mitsitam Native Foods Cafe (nice_to_have)
+[2026-01-27T19:30:46.272Z] LOG    ✅ Smithsonian Castle Cafe → Mitsitam Native Foods Cafe (nice_to_have)
+[2026-01-27T19:30:46.272Z] LOG    ✅ Shake Shack F Street NW → Shake Shack F Street (nice_to_have)
+[2026-01-27T19:30:46.272Z] LOG    ✅ Old Ebbitt Grill → Old Ebbitt Grill (nice_to_have)
+[2026-01-27T19:30:46.273Z] LOG    ✅ Pret A Manger (1227 F St NW) → Pret A Manger (nice_to_have)
+[2026-01-27T19:30:46.273Z] LOG    ✅ Sweetgreen (L'Enfant Plaza) → sweetgreen - Healthy Salads, Bowls and Plates (nice_to_have)
+[2026-01-27T19:30:46.273Z] LOG    ✅ &pizza - Metro Center → &pizza (nice_to_have)
+[2026-01-27T19:30:46.274Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-27T19:30:46.274Z] LOG    Total enriched: 20
+[2026-01-27T19:30:46.274Z] LOG    🎯 Must-have: 8
+[2026-01-27T19:30:46.275Z] LOG    ✨ Nice-to-have: 12
+[2026-01-27T19:30:46.275Z] LOG    ❌ Failed: 0
+[2026-01-27T19:30:46.275Z] LOG    ⏱️ Time: 3116ms
+
+--- Summary ---
+Enrichment completed

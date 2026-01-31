@@ -1,0 +1,154 @@
+User Prompt: a trip to most iconic spots in mumbai
+
+[2026-01-23T03:06:05.615Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-23T03:06:05.616Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-23T03:06:05.616Z] LOG    🎯 Must-have: 7
+[2026-01-23T03:06:05.616Z] LOG    ✨ Nice-to-have: 13
+[2026-01-23T03:06:05.617Z] LOG 📍 Location hint: mumbai
+[2026-01-23T03:06:05.618Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-23T03:06:05.618Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-23T03:06:05.619Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-23T03:06:05.619Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-23T03:06:05.620Z] LOG    1. Searching "Gateway Of India Mumbai" in "Colaba"
+[2026-01-23T03:06:05.621Z] LOG 🔍 [Google Places] Text search: "Gateway Of India Mumbai" in Colaba
+[2026-01-23T03:06:05.624Z] LOG    2. Searching "The Taj Mahal Palace, Mumbai" in "Colaba"
+[2026-01-23T03:06:05.625Z] LOG 🔍 [Google Places] Text search: "The Taj Mahal Palace, Mumbai" in Colaba
+[2026-01-23T03:06:05.629Z] LOG    3. Searching "Chhatrapati Shivaji Maharaj Terminus" in "Fort"
+[2026-01-23T03:06:05.629Z] LOG 🔍 [Google Places] Text search: "Chhatrapati Shivaji Maharaj Terminus" in Fort
+[2026-01-23T03:06:05.631Z] LOG    4. Searching "Marine Drive" in "South Mumbai Coast"
+[2026-01-23T03:06:05.632Z] LOG 🔍 [Google Places] Text search: "Marine Drive" in South Mumbai Coast
+[2026-01-23T03:06:05.633Z] LOG    5. Searching "Haji Ali Dargah" in "Worli"
+[2026-01-23T03:06:05.635Z] LOG 🔍 [Google Places] Text search: "Haji Ali Dargah" in Worli
+[2026-01-23T03:06:05.640Z] LOG    6. Searching "Dhobi Ghat" in "Mahalaxmi"
+[2026-01-23T03:06:05.642Z] LOG 🔍 [Google Places] Text search: "Dhobi Ghat" in Mahalaxmi
+[2026-01-23T03:06:05.649Z] LOG    7. Searching "Elephanta Caves" in "Elephanta Island (off Mumbai coast)"
+[2026-01-23T03:06:05.651Z] LOG 🔍 [Google Places] Text search: "Elephanta Caves" in Elephanta Island (off Mumbai coast)
+[2026-01-23T03:06:05.657Z] LOG    8. Searching "Siddhivinayak Temple" in "Prabhadevi"
+[2026-01-23T03:06:05.662Z] LOG 🔍 [Google Places] Text search: "Siddhivinayak Temple" in Prabhadevi
+[2026-01-23T03:06:05.665Z] LOG    9. Searching "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya" in "Fort"
+[2026-01-23T03:06:05.668Z] LOG 🔍 [Google Places] Text search: "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya" in Fort
+[2026-01-23T03:06:05.675Z] LOG    10. Searching "Colaba Causeway" in "Colaba"
+[2026-01-23T03:06:05.679Z] LOG 🔍 [Google Places] Text search: "Colaba Causeway" in Colaba
+[2026-01-23T03:06:06.185Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:06.199Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:06.220Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:06.253Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:06.255Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:06.257Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:06.275Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:06.320Z] LOG    ✅ Gateway Of India Mumbai: Got description (92 chars)
+[2026-01-23T03:06:06.322Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:06.327Z] LOG    ⚠️  Dhobi Ghat: No editorial summary available
+[2026-01-23T03:06:06.327Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:06.334Z] LOG    ✅ Elephanta Caves: Got description (91 chars)
+[2026-01-23T03:06:06.334Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:06.367Z] LOG    ✅ Colaba Causeway: Got description (87 chars)
+[2026-01-23T03:06:06.368Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:06.404Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:06.412Z] LOG    ✅ Chhatrapati Shivaji Maharaj Vastu Sangrahalaya: Got description (99 chars)
+[2026-01-23T03:06:06.412Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:06.420Z] LOG    ✅ Haji Ali Dargah: Got description (93 chars)
+[2026-01-23T03:06:06.421Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:06.443Z] LOG    ✅ The Taj Mahal Palace, Mumbai: Got description (94 chars)
+[2026-01-23T03:06:06.445Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:06.497Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:06.540Z] LOG    ⚠️  Chhatrapati Shivaji Maharaj Terminus: No editorial summary available
+[2026-01-23T03:06:06.540Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:06.634Z] LOG    ✅ Shree Siddhivinayak Temple: Got description (96 chars)
+[2026-01-23T03:06:06.635Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:06.778Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:06.907Z] LOG    ⚠️  Marine Drive Beach,Mumbai: No editorial summary available
+[2026-01-23T03:06:06.908Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:06.909Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1290ms
+[2026-01-23T03:06:06.909Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-23T03:06:06.910Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-23T03:06:07.115Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-23T03:06:07.116Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-23T03:06:07.116Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-23T03:06:07.117Z] LOG    1. Searching "Mani Bhavan Gandhi Sangrahalaya" in "Gamdevi, Girgaon"
+[2026-01-23T03:06:07.117Z] LOG 🔍 [Google Places] Text search: "Mani Bhavan Gandhi Sangrahalaya" in Gamdevi, Girgaon
+[2026-01-23T03:06:07.118Z] LOG    2. Searching "Bandra-Worli Sea Link" in "Bandra/Worli"
+[2026-01-23T03:06:07.118Z] LOG 🔍 [Google Places] Text search: "Bandra-Worli Sea Link" in Bandra/Worli
+[2026-01-23T03:06:07.119Z] LOG    3. Searching "Crawford Market" in "Fort"
+[2026-01-23T03:06:07.119Z] LOG 🔍 [Google Places] Text search: "Crawford Market" in Fort
+[2026-01-23T03:06:07.121Z] LOG    4. Searching "Juhu Beach" in "Juhu"
+[2026-01-23T03:06:07.121Z] LOG 🔍 [Google Places] Text search: "Juhu Beach" in Juhu
+[2026-01-23T03:06:07.122Z] LOG    5. Searching "Mount Mary Church" in "Bandra"
+[2026-01-23T03:06:07.122Z] LOG 🔍 [Google Places] Text search: "Mount Mary Church" in Bandra
+[2026-01-23T03:06:07.123Z] LOG    6. Searching "Global Vipassana Pagoda" in "Gorai (Northern Mumbai)"
+[2026-01-23T03:06:07.124Z] LOG 🔍 [Google Places] Text search: "Global Vipassana Pagoda" in Gorai (Northern Mumbai)
+[2026-01-23T03:06:07.124Z] LOG    7. Searching "Dr. Bhau Daji Lad Mumbai City Museum" in "Byculla East"
+[2026-01-23T03:06:07.125Z] LOG 🔍 [Google Places] Text search: "Dr. Bhau Daji Lad Mumbai City Museum" in Byculla East
+[2026-01-23T03:06:07.125Z] LOG    8. Searching "Worli Sea Face" in "Worli"
+[2026-01-23T03:06:07.126Z] LOG 🔍 [Google Places] Text search: "Worli Sea Face" in Worli
+[2026-01-23T03:06:07.126Z] LOG    9. Searching "Flora Fountain" in "Fort"
+[2026-01-23T03:06:07.127Z] LOG 🔍 [Google Places] Text search: "Flora Fountain" in Fort
+[2026-01-23T03:06:07.130Z] LOG    10. Searching "Jehangir Art Gallery" in "Fort"
+[2026-01-23T03:06:07.131Z] LOG 🔍 [Google Places] Text search: "Jehangir Art Gallery" in Fort
+[2026-01-23T03:06:07.496Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:07.529Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:07.566Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:07.568Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:07.569Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:07.605Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:07.617Z] LOG    ✅ Basilica of Our Lady of the Mount (Bandra, Mumbai): Got description (98 chars)
+[2026-01-23T03:06:07.618Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:07.640Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:07.674Z] LOG    ✅ Flora Fountain: Got description (87 chars)
+[2026-01-23T03:06:07.675Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:07.683Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:07.685Z] LOG    ⚠️  Bandra Worli Sea Link Bridge: No editorial summary available
+[2026-01-23T03:06:07.686Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:07.697Z] LOG    ⚠️  Worli Sea Face: No editorial summary available
+[2026-01-23T03:06:07.698Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:07.718Z] LOG    ✅ Dr. Bhau Daji Lad Museum: Got description (99 chars)
+[2026-01-23T03:06:07.719Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:07.733Z] LOG    ✅ Mani Bhavan Gandhi Sangrahalaya: Got description (99 chars)
+[2026-01-23T03:06:07.734Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:07.746Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:07.778Z] LOG    ⚠️  Juhu: No editorial summary available
+[2026-01-23T03:06:07.779Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:07.818Z] LOG    ✅ Global Vipassana Pagoda: Got description (96 chars)
+[2026-01-23T03:06:07.819Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:07.832Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T03:06:07.897Z] LOG    ⚠️  Crawford Market: No editorial summary available
+[2026-01-23T03:06:07.898Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:07.928Z] LOG    ✅ Jehangir Art Gallery: Got description (84 chars)
+[2026-01-23T03:06:07.929Z] LOG ✅ Found 1 places
+[2026-01-23T03:06:07.929Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 813ms
+[2026-01-23T03:06:07.930Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-23T03:06:07.930Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-23T03:06:07.931Z] LOG    ✅ Gateway Of India Mumbai → Gateway Of India Mumbai (must_have)
+[2026-01-23T03:06:07.931Z] LOG    ✅ The Taj Mahal Palace, Mumbai → The Taj Mahal Palace, Mumbai (must_have)
+[2026-01-23T03:06:07.932Z] LOG    ✅ Chhatrapati Shivaji Maharaj Terminus → Chhatrapati Shivaji Maharaj Terminus (must_have)
+[2026-01-23T03:06:07.932Z] LOG    ✅ Marine Drive → Marine Drive Beach,Mumbai (must_have)
+[2026-01-23T03:06:07.932Z] LOG    ✅ Haji Ali Dargah → Haji Ali Dargah (must_have)
+[2026-01-23T03:06:07.933Z] LOG    ✅ Dhobi Ghat → Dhobi Ghat (must_have)
+[2026-01-23T03:06:07.933Z] LOG    ✅ Elephanta Caves → Elephanta Caves (must_have)
+[2026-01-23T03:06:07.934Z] LOG    ✅ Siddhivinayak Temple → Shree Siddhivinayak Temple (nice_to_have)
+[2026-01-23T03:06:07.935Z] LOG    ✅ Chhatrapati Shivaji Maharaj Vastu Sangrahalaya → Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (nice_to_have)
+[2026-01-23T03:06:07.935Z] LOG    ✅ Colaba Causeway → Colaba Causeway (nice_to_have)
+[2026-01-23T03:06:07.936Z] LOG    ✅ Mani Bhavan Gandhi Sangrahalaya → Mani Bhavan Gandhi Sangrahalaya (nice_to_have)
+[2026-01-23T03:06:07.937Z] LOG    ✅ Bandra-Worli Sea Link → Bandra Worli Sea Link Bridge (nice_to_have)
+[2026-01-23T03:06:07.937Z] LOG    ✅ Crawford Market → Crawford Market (nice_to_have)
+[2026-01-23T03:06:07.938Z] LOG    ✅ Juhu Beach → Juhu (nice_to_have)
+[2026-01-23T03:06:07.939Z] LOG    ✅ Mount Mary Church → Basilica of Our Lady of the Mount (Bandra, Mumbai) (nice_to_have)
+[2026-01-23T03:06:07.940Z] LOG    ✅ Global Vipassana Pagoda → Global Vipassana Pagoda (nice_to_have)
+[2026-01-23T03:06:07.940Z] LOG    ✅ Dr. Bhau Daji Lad Mumbai City Museum → Dr. Bhau Daji Lad Museum (nice_to_have)
+[2026-01-23T03:06:07.941Z] LOG    ✅ Worli Sea Face → Worli Sea Face (nice_to_have)
+[2026-01-23T03:06:07.941Z] LOG    ✅ Flora Fountain → Flora Fountain (nice_to_have)
+[2026-01-23T03:06:07.942Z] LOG    ✅ Jehangir Art Gallery → Jehangir Art Gallery (nice_to_have)
+[2026-01-23T03:06:07.942Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-23T03:06:07.943Z] LOG    Total enriched: 20
+[2026-01-23T03:06:07.943Z] LOG    🎯 Must-have: 7
+[2026-01-23T03:06:07.944Z] LOG    ✨ Nice-to-have: 13
+[2026-01-23T03:06:07.944Z] LOG    ❌ Failed: 0
+[2026-01-23T03:06:07.945Z] LOG    ⏱️ Time: 2330ms
+
+--- Summary ---
+Enrichment completed

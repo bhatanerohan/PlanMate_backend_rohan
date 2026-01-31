@@ -39,6 +39,10 @@ interface AgentMetadata {
   originalPrompt?: string;
   geminiRecommendations?: GeminiVenueRecommendation[];
   useGroundingMode?: boolean;
+  searchPreference?: 'walkable' | 'spread';
+  searchRadiusKm?: number;
+  anchorLabel?: string;
+  requestedCount?: number;
 }
 
 interface AlternativesMap {
@@ -111,9 +115,9 @@ export class ReActAgent {
 
   private extractCityFromUserLocation(userLocation?: { lat: number; lng: number; name: string }): string | null {
     if (!userLocation || !userLocation.name) return null;
-    
+
     const parts = userLocation.name.split(',').map((p: string) => p.trim());
-    
+
     if (parts.length >= 3) {
       const city = parts[1];
       const state = parts[2];
@@ -136,49 +140,49 @@ export class ReActAgent {
   ): Promise<EnrichmentResult> {
     const startTime = Date.now();
     const stopCapture = startCapture(userPrompt);
-    
+
     console.log('\n🔄 CANDIDATE ENRICHMENT MODE');
     console.log(`📦 Processing ${geminiCandidates.length} candidates from Gemini`);
-    
+
     const mustHaves = geminiCandidates.filter(c => c.priority === 'must_have');
     const niceToHaves = geminiCandidates.filter(c => c.priority === 'nice_to_have');
-    
+
     console.log(`   🎯 Must-have: ${mustHaves.length}`);
     console.log(`   ✨ Nice-to-have: ${niceToHaves.length}`);
-    
+
     try {
       const locationHint = this.extractLocationHint(userPrompt, geminiCandidates);
       console.log(`📍 Location hint: ${locationHint}`);
-      
+
       // Build all searches
       const allSearches = geminiCandidates.map(candidate => ({
         query: candidate.name,
         location: candidate.general_location || locationHint,
         limit: 1
       }));
-      
+
       // Split into batches of 10 (tool limit)
       const BATCH_SIZE = 10;
       const batches: typeof allSearches[] = [];
       for (let i = 0; i < allSearches.length; i += BATCH_SIZE) {
         batches.push(allSearches.slice(i, i + BATCH_SIZE));
       }
-      
+
       console.log(`\n🔍 Enriching ${allSearches.length} candidates in ${batches.length} batch(es)...`);
-      
+
       // Process all batches and collect results
       const allResults: any[] = [];
-      
+
       for (let batchIdx = 0; batchIdx < batches.length; batchIdx++) {
         const batch = batches[batchIdx];
         console.log(`\n   📦 Batch ${batchIdx + 1}/${batches.length} (${batch.length} searches)...`);
-        
+
         const searchResult = await toolRegistry.executeTool(
           'batch_search_venues',
           { searches: JSON.stringify(batch) },
           { iteration: batchIdx + 1, timestamp: Date.now(), previousResults: [] }
         );
-        
+
         if (searchResult.success && searchResult.data?.results) {
           allResults.push(...searchResult.data.results);
           console.log(`      ✅ Batch ${batchIdx + 1} complete: ${searchResult.data.results.length} results`);
@@ -189,24 +193,24 @@ export class ReActAgent {
             allResults.push({ success: false, venues: [] });
           }
         }
-        
+
         // Small delay between batches to avoid rate limiting
         if (batchIdx < batches.length - 1) {
           await new Promise(resolve => setTimeout(resolve, 200));
         }
       }
-      
+
       // Process all results
       const enrichedCandidates: EnrichedCandidate[] = [];
       let failedCount = 0;
-      
+
       allResults.forEach((result: any, idx: number) => {
         const geminiCandidate = geminiCandidates[idx];
         if (!geminiCandidate) return;
-        
+
         if (result.success && result.venues && result.venues.length > 0) {
           const placesVenue = result.venues[0];
-          
+
           enrichedCandidates.push({
             placeId: placesVenue.placeId,
             name: placesVenue.name,
@@ -226,24 +230,24 @@ export class ReActAgent {
             enriched: true,
             enrichmentSource: 'google_places'
           });
-          
+
           console.log(`   ✅ ${geminiCandidate.name} → ${placesVenue.name} (${geminiCandidate.priority})`);
         } else {
           console.log(`   ⚠️ ${geminiCandidate.name} - not found in Google Places`);
           failedCount++;
         }
       });
-      
+
       const enrichedMustHaves = enrichedCandidates.filter(c => c.priority === 'must_have');
       const enrichedNiceToHaves = enrichedCandidates.filter(c => c.priority === 'nice_to_have');
-      
+
       console.log(`\n✅ ENRICHMENT COMPLETE`);
       console.log(`   Total enriched: ${enrichedCandidates.length}`);
       console.log(`   🎯 Must-have: ${enrichedMustHaves.length}`);
       console.log(`   ✨ Nice-to-have: ${enrichedNiceToHaves.length}`);
       console.log(`   ❌ Failed: ${failedCount}`);
       console.log(`   ⏱️ Time: ${Date.now() - startTime}ms`);
-      
+
       return {
         success: enrichedCandidates.length > 0,
         candidates: enrichedCandidates,
@@ -252,7 +256,7 @@ export class ReActAgent {
         failed_count: failedCount,
         executionTimeMs: Date.now() - startTime
       };
-      
+
     } catch (error) {
       console.error('❌ Enrichment error:', error);
       return {
@@ -265,7 +269,7 @@ export class ReActAgent {
       };
     } finally {
       if (stopCapture) {
-        try { stopCapture('Enrichment completed'); } catch (e) {}
+        try { stopCapture('Enrichment completed'); } catch (e) { }
       }
     }
   }
@@ -276,18 +280,18 @@ export class ReActAgent {
       /\baround\s+([A-Za-z\s]+?)(?:\s+where|\s+with|\s*$)/i,
       /\bnear\s+([A-Za-z\s]+?)(?:\s+where|\s+with|\s*$)/i,
     ];
-    
+
     for (const pattern of patterns) {
       const match = userPrompt.match(pattern);
       if (match && match[1]) return match[1].trim();
     }
-    
+
     const firstLocation = candidates.find(c => c.general_location)?.general_location;
     if (firstLocation) return firstLocation;
-    
+
     const cityMatch = userPrompt.match(/\b(NYC|New York|Boston|LA|Los Angeles|Chicago|Miami|Seattle|SF|San Francisco)\b/i);
     if (cityMatch) return cityMatch[1];
-    
+
     return 'nearby';
   }
 
@@ -319,13 +323,13 @@ export class ReActAgent {
 
     try {
       state.currentIteration = 1;
-      
-      const locationHint = userPrompt.match(/in\s+([^,]+)/i)?.[1] || 
-                          geminiRecommendations[0]?.general_location ||
-                          this.extractCityFromUserLocation(userLocation);
+
+      const locationHint = userPrompt.match(/in\s+([^,]+)/i)?.[1] ||
+        geminiRecommendations[0]?.general_location ||
+        this.extractCityFromUserLocation(userLocation);
 
       console.log('\n🔍 Searching for venues...');
-      
+
       const exactSearches = geminiRecommendations.map(geminiVenue => ({
         query: geminiVenue.name,
         location: geminiVenue.general_location || locationHint,
@@ -400,11 +404,11 @@ export class ReActAgent {
 
       message += `${idx + 1}. **${venue.name}** (⭐ ${rating} • ${priceLevel})\n`;
       message += `   ${venue.description}\n`;
-      
+
       if (venue.gemini_reasoning) {
         message += `   💡 ${venue.gemini_reasoning}\n`;
       }
-      
+
       message += `\n`;
     });
 
@@ -421,7 +425,7 @@ export class ReActAgent {
   // ============================================================================
 
   async execute(
-    userPrompt: string, 
+    userPrompt: string,
     userLocation?: { lat: number; lng: number; name: string },
     metadata?: AgentMetadata
   ): Promise<ReActResponse> {
@@ -438,7 +442,7 @@ export class ReActAgent {
       conversationHistory: [
         {
           role: 'system',
-          content: this.getSystemPrompt(userLocation),
+          content: this.getSystemPrompt(userLocation, metadata),
           timestamp: Date.now()
         },
         {
@@ -486,7 +490,7 @@ export class ReActAgent {
         // Handle finish action
         if (action.action === 'finish') {
           console.log('\n✅ Agent completed task');
-          
+
           if (!action.parameters.result) {
             action.parameters.result = 'Task completed';
           }
@@ -532,8 +536,8 @@ export class ReActAgent {
         iterations: state.currentIteration,
         tokensUsed: state.totalTokensUsed,
         executionTimeMs: Date.now() - state.startTime,
-        stoppedReason: state.status === 'complete' ? 'completed' : 
-                       state.currentIteration >= this.config.maxIterations ? 'max_iterations' : 'error',
+        stoppedReason: state.status === 'complete' ? 'completed' :
+          state.currentIteration >= this.config.maxIterations ? 'max_iterations' : 'error',
         error: state.error
       };
 
@@ -550,7 +554,7 @@ export class ReActAgent {
       };
     } finally {
       if (stopCapture) {
-        try { stopCapture('Completed'); } catch (e) {}
+        try { stopCapture('Completed'); } catch (e) { }
       }
     }
   }
@@ -559,134 +563,134 @@ export class ReActAgent {
   // THINK - LLM reasoning step
   // ============================================================================
 
-// ============================================================================
-// THINK - LLM reasoning step (FIXED VERSION)
-// ============================================================================
+  // ============================================================================
+  // THINK - LLM reasoning step (FIXED VERSION)
+  // ============================================================================
 
-private async think(state: AgentState): Promise<AgentAction | null> {
-  try {
-    const messages = state.conversationHistory.map(msg => ({
-      role: msg.role as 'system' | 'user' | 'assistant',
-      content: msg.content
-    }));
+  private async think(state: AgentState): Promise<AgentAction | null> {
+    try {
+      const messages = state.conversationHistory.map(msg => ({
+        role: msg.role as 'system' | 'user' | 'assistant',
+        content: msg.content
+      }));
 
-    const response = await this.openai.chat.completions.create({
-      model: 'gpt-4o-mini',
-      messages,
-      temperature: 0.7,
-      tools: [
-        {
-          type: 'function',
-          function: {
-            name: 'search_venues',
-            description: 'Search for venues like restaurants, cafes, attractions',
-            parameters: {
-              type: 'object',
-              properties: {
-                reasoning: { type: 'string', description: 'Why you are searching for this' },
-                query: { type: 'string', description: 'Search query (e.g., "Starbucks", "coffee shops", "parks")' },
-                location: { type: 'string', description: 'Location to search in (e.g., "Hudson Yards, New York", "Boston")' },
-                limit: { type: 'string', description: 'Max results (default: 5)' }
-              },
-              required: ['reasoning', 'query', 'location']
+      const response = await this.openai.chat.completions.create({
+        model: 'gpt-4o-mini',
+        messages,
+        temperature: 0.7,
+        tools: [
+          {
+            type: 'function',
+            function: {
+              name: 'search_venues',
+              description: 'Search for venues like restaurants, cafes, attractions',
+              parameters: {
+                type: 'object',
+                properties: {
+                  reasoning: { type: 'string', description: 'Why you are searching for this' },
+                  query: { type: 'string', description: 'Search query (e.g., "Starbucks", "coffee shops", "parks")' },
+                  location: { type: 'string', description: 'Location to search in (e.g., "Hudson Yards, New York", "Boston")' },
+                  limit: { type: 'string', description: 'Max results (default: 5)' }
+                },
+                required: ['reasoning', 'query', 'location']
+              }
+            }
+          },
+          {
+            type: 'function',
+            function: {
+              name: 'batch_search_venues',
+              description: 'Search for multiple venue types in parallel',
+              parameters: {
+                type: 'object',
+                properties: {
+                  reasoning: { type: 'string', description: 'Why you are doing this batch search' },
+                  searches: {
+                    type: 'string',
+                    description: 'JSON array of searches. Example: [{"query":"coffee","location":"Boston","limit":3}]'
+                  }
+                },
+                required: ['reasoning', 'searches']
+              }
+            }
+          },
+          {
+            type: 'function',
+            function: {
+              name: 'search_events',
+              description: 'Search for events and activities',
+              parameters: {
+                type: 'object',
+                properties: {
+                  reasoning: { type: 'string', description: 'Why you are searching for events' },
+                  query: { type: 'string', description: 'Event search query' },
+                  location: { type: 'string', description: 'Location for events' },
+                  date: { type: 'string', description: 'Date for events (optional)' }
+                },
+                required: ['reasoning', 'query', 'location']
+              }
+            }
+          },
+          {
+            type: 'function',
+            function: {
+              name: 'finish',
+              description: 'Complete the task and return results to user',
+              parameters: {
+                type: 'object',
+                properties: {
+                  reasoning: { type: 'string', description: 'Summary of what was accomplished' },
+                  result: { type: 'string', description: 'Message to show the user' },
+                  mode: { type: 'string', enum: ['discovery', 'route'], description: 'Type of result' },
+                  selected_venues: {
+                    type: 'array',
+                    items: { type: 'string' },
+                    description: 'Array of placeIds from search results'
+                  }
+                },
+                required: ['reasoning', 'result', 'mode']
+              }
             }
           }
-        },
-        {
-          type: 'function',
-          function: {
-            name: 'batch_search_venues',
-            description: 'Search for multiple venue types in parallel',
-            parameters: {
-              type: 'object',
-              properties: {
-                reasoning: { type: 'string', description: 'Why you are doing this batch search' },
-                searches: { 
-                  type: 'string', 
-                  description: 'JSON array of searches. Example: [{"query":"coffee","location":"Boston","limit":3}]' 
-                }
-              },
-              required: ['reasoning', 'searches']
-            }
-          }
-        },
-        {
-          type: 'function',
-          function: {
-            name: 'search_events',
-            description: 'Search for events and activities',
-            parameters: {
-              type: 'object',
-              properties: {
-                reasoning: { type: 'string', description: 'Why you are searching for events' },
-                query: { type: 'string', description: 'Event search query' },
-                location: { type: 'string', description: 'Location for events' },
-                date: { type: 'string', description: 'Date for events (optional)' }
-              },
-              required: ['reasoning', 'query', 'location']
-            }
-          }
-        },
-        {
-          type: 'function',
-          function: {
-            name: 'finish',
-            description: 'Complete the task and return results to user',
-            parameters: {
-              type: 'object',
-              properties: {
-                reasoning: { type: 'string', description: 'Summary of what was accomplished' },
-                result: { type: 'string', description: 'Message to show the user' },
-                mode: { type: 'string', enum: ['discovery', 'route'], description: 'Type of result' },
-                selected_venues: { 
-                  type: 'array', 
-                  items: { type: 'string' },
-                  description: 'Array of placeIds from search results' 
-                }
-              },
-              required: ['reasoning', 'result', 'mode']
-            }
-          }
-        }
-      ],
-      tool_choice: 'required'
-    });
+        ],
+        tool_choice: 'required'
+      });
 
-    if (response.usage) {
-      state.totalTokensUsed += response.usage.total_tokens;
+      if (response.usage) {
+        state.totalTokensUsed += response.usage.total_tokens;
+      }
+
+      // Parse tool call (new format)
+      const toolCall = response.choices[0]?.message?.tool_calls?.[0];
+      if (!toolCall?.function) return null;
+
+      const actionName = toolCall.function.name as ActionType;
+      const args = JSON.parse(toolCall.function.arguments || '{}');
+
+      // Extract reasoning and parameters
+      const reasoning = args.reasoning || 'No reasoning provided';
+      delete args.reasoning;  // Remove from parameters
+
+      const action: AgentAction = {
+        action: actionName,
+        reasoning: reasoning,
+        parameters: args
+      };
+
+      state.conversationHistory.push({
+        role: 'assistant',
+        content: `Reasoning: ${action.reasoning}\nAction: ${action.action}`,
+        timestamp: Date.now(),
+        iteration: state.currentIteration
+      });
+
+      return action;
+
+    } catch (error) {
+      console.error('Think error:', error);
+      return null;
     }
-
-    // Parse tool call (new format)
-    const toolCall = response.choices[0]?.message?.tool_calls?.[0];
-    if (!toolCall?.function) return null;
-
-    const actionName = toolCall.function.name as ActionType;
-    const args = JSON.parse(toolCall.function.arguments || '{}');
-    
-    // Extract reasoning and parameters
-    const reasoning = args.reasoning || 'No reasoning provided';
-    delete args.reasoning;  // Remove from parameters
-    
-    const action: AgentAction = {
-      action: actionName,
-      reasoning: reasoning,
-      parameters: args
-    };
-
-    state.conversationHistory.push({
-      role: 'assistant',
-      content: `Reasoning: ${action.reasoning}\nAction: ${action.action}`,
-      timestamp: Date.now(),
-      iteration: state.currentIteration
-    });
-
-    return action;
-
-  } catch (error) {
-    console.error('Think error:', error);
-    return null;
   }
-}
 
   // ============================================================================
   // ACT - Execute tool
@@ -746,7 +750,7 @@ private async think(state: AgentState): Promise<AgentAction | null> {
 
   private observe(actionName: ActionType, result: ToolResultType, state: AgentState): void {
     let observation: string;
-    
+
     if (!result.success) {
       observation = `Action '${actionName}' failed. Error: ${result.error}`;
     } else {
@@ -755,7 +759,7 @@ private async think(state: AgentState): Promise<AgentAction | null> {
           const batchResults = result.data?.results || [];
           const compactSummary = batchResults.map((r: any) => {
             if (!r.success || !r.venues?.length) return `${r.query}:0`;
-            const venueList = r.venues.map((v: any) => 
+            const venueList = r.venues.map((v: any) =>
               `${v.name}|${v.placeId}|${v.rating || 'N/A'}⭐`
             ).join(';');
             return `${r.query}(${r.count}):[${venueList}]`;
@@ -768,7 +772,7 @@ private async think(state: AgentState): Promise<AgentAction | null> {
           if (venues.length === 0) {
             observation = `Found 0 venues`;
           } else {
-            const venueList = venues.map((v: any) => 
+            const venueList = venues.map((v: any) =>
               `${v.name}|${v.placeId}|${v.rating || 'N/A'}⭐`
             ).join(';');
             observation = `Found ${venues.length}: [${venueList}]`;
@@ -777,7 +781,7 @@ private async think(state: AgentState): Promise<AgentAction | null> {
 
         case 'search_events':
           const events = result.data?.events || [];
-          observation = events.length === 0 
+          observation = events.length === 0
             ? `Found 0 events`
             : `Found ${events.length} events`;
           break;
@@ -802,15 +806,37 @@ private async think(state: AgentState): Promise<AgentAction | null> {
 
   // In react-agent.ts, REPLACE the getSystemPrompt method:
 
-private getSystemPrompt(userLocation?: { lat: number; lng: number; name: string }): string {
-  const locationContext = userLocation 
-    ? `User's current location: ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})`
-    : 'User location not provided.';
+  private getSystemPrompt(
+    userLocation?: { lat: number; lng: number; name: string },
+    metadata?: AgentMetadata
+  ): string {
+    const locationContext = userLocation
+      ? `User's current location: ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})`
+      : 'User location not provided.';
 
-  return `You are a travel assistant. ${locationContext}
+    let preferenceContext = '';
+    if (metadata?.searchPreference) {
+      const radiusKm = metadata.searchRadiusKm || 1.5;
+      const radiusMiles = (radiusKm / 1.609).toFixed(1);
+      if (metadata.searchPreference === 'walkable') {
+        preferenceContext = `Search preference: walkable.\n` +
+          (userLocation ? `- Use near_coordinates with radius about ${radiusMiles} miles unless the prompt names a different anchor.\n` : '') +
+          (metadata.anchorLabel ? `- Anchor hint: ${metadata.anchorLabel}\n` : '');
+      } else {
+        preferenceContext = `Search preference: spread out across the broader area.\n` +
+          (metadata.anchorLabel ? `- Anchor hint: ${metadata.anchorLabel}\n` : '');
+      }
+    }
+    const countContext = metadata?.requestedCount
+      ? `User requested ${metadata.requestedCount} results. Prefer limit=${metadata.requestedCount} and return up to ${metadata.requestedCount} placeIds.`
+      : 'Default to limit=10 when searching.';
+
+    return `You are a travel assistant. ${locationContext}
+${preferenceContext ? `\n${preferenceContext}` : ''}
+${countContext ? `\n${countContext}` : ''}
 
 === TOOLS ===
-- search_venues: Search for venues. Params: query, location, limit
+- search_venues: Search for venues. Params: query, location, limit, optional near_coordinates + radius
 - batch_search_venues: Search multiple types. Params: searches (array)
 - search_events: Search events. Params: query, location, date
 - finish: REQUIRED to return results. Params: result, mode, selected_venues
@@ -863,15 +889,24 @@ Parameters: {
   "selected_venues": []
 }
 
+=== ITINERARY MODIFICATION ===
+If the user asks to modify an existing itinerary (add/remove/replace):
+1. ADJUST the list of selected venues based on the request.
+2. In 'finish', the 'result' MUST be the COMPLETE updated itinerary.
+   - RE-LIST ALL remaining stops with full descriptions.
+   - Do NOT just say "I removed the stop".
+   - Example: "Here is your updated itinerary:\n1. Place A\n2. Place B (new)\n3. Place C"
+   - Ensure 'selected_venues' contains the updated list of placeIds in the correct order.
+
 NEVER do more than 2-3 iterations. ALWAYS call finish.`;
-}
+  }
   // ============================================================================
   // HELPER: Clean alternatives map
   // ============================================================================
 
   private cleanAlternatives(selectedPlaceIds: string[]): void {
     const selectedSet = new Set(selectedPlaceIds);
-    
+
     Object.keys(this.alternativesMap).forEach(placeId => {
       if (!selectedSet.has(placeId)) {
         delete this.alternativesMap[placeId];

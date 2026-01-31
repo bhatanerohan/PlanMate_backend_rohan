@@ -1,0 +1,154 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-01-27T03:44:04.886Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-27T03:44:04.887Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-27T03:44:04.888Z] LOG    🎯 Must-have: 7
+[2026-01-27T03:44:04.888Z] LOG    ✨ Nice-to-have: 13
+[2026-01-27T03:44:04.889Z] LOG 📍 Location hint: DC in one day
+[2026-01-27T03:44:04.890Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-27T03:44:04.890Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-27T03:44:04.891Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-27T03:44:04.892Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-27T03:44:04.893Z] LOG    1. Searching "National Gallery of Art" in "National Mall"
+[2026-01-27T03:44:04.893Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in National Mall
+[2026-01-27T03:44:04.898Z] LOG    2. Searching "National Museum of African American History and Culture" in "National Mall"
+[2026-01-27T03:44:04.900Z] LOG 🔍 [Google Places] Text search: "National Museum of African American History and Culture" in National Mall
+[2026-01-27T03:44:04.903Z] LOG    3. Searching "United States Holocaust Memorial Museum" in "Southwest Federal Center"
+[2026-01-27T03:44:04.904Z] LOG 🔍 [Google Places] Text search: "United States Holocaust Memorial Museum" in Southwest Federal Center
+[2026-01-27T03:44:04.908Z] LOG    4. Searching "International Spy Museum" in "L'Enfant Plaza"
+[2026-01-27T03:44:04.909Z] LOG 🔍 [Google Places] Text search: "International Spy Museum" in L'Enfant Plaza
+[2026-01-27T03:44:04.912Z] LOG    5. Searching "National Portrait Gallery" in "Penn Quarter"
+[2026-01-27T03:44:04.913Z] LOG 🔍 [Google Places] Text search: "National Portrait Gallery" in Penn Quarter
+[2026-01-27T03:44:04.916Z] LOG    6. Searching "Smithsonian American Art Museum" in "Penn Quarter"
+[2026-01-27T03:44:04.917Z] LOG 🔍 [Google Places] Text search: "Smithsonian American Art Museum" in Penn Quarter
+[2026-01-27T03:44:04.920Z] LOG    7. Searching "Museum of the Bible" in "Southwest Federal Center"
+[2026-01-27T03:44:04.921Z] LOG 🔍 [Google Places] Text search: "Museum of the Bible" in Southwest Federal Center
+[2026-01-27T03:44:04.925Z] LOG    8. Searching "Renwick Gallery of the Smithsonian American Art Museum" in "Near White House"
+[2026-01-27T03:44:04.926Z] LOG 🔍 [Google Places] Text search: "Renwick Gallery of the Smithsonian American Art Museum" in Near White House
+[2026-01-27T03:44:04.931Z] LOG    9. Searching "National Building Museum" in "Penn Quarter"
+[2026-01-27T03:44:04.931Z] LOG 🔍 [Google Places] Text search: "National Building Museum" in Penn Quarter
+[2026-01-27T03:44:04.936Z] LOG    10. Searching "Planet Word" in "Downtown"
+[2026-01-27T03:44:04.937Z] LOG 🔍 [Google Places] Text search: "Planet Word" in Downtown
+[2026-01-27T03:44:05.378Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:05.498Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-01-27T03:44:05.499Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:05.529Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:05.543Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:05.549Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:05.560Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:05.566Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:05.623Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:05.655Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2026-01-27T03:44:05.657Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:05.665Z] LOG    ✅ Smithsonian American Art Museum: Got description (98 chars)
+[2026-01-27T03:44:05.665Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:05.667Z] LOG    ✅ National Museum of African American History and Culture: Got description (97 chars)
+[2026-01-27T03:44:05.668Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:05.669Z] LOG    ✅ Museum of the Bible: Got description (99 chars)
+[2026-01-27T03:44:05.670Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:05.686Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:05.694Z] LOG    ✅ National Portrait Gallery: Got description (96 chars)
+[2026-01-27T03:44:05.695Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:05.757Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:05.779Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-01-27T03:44:05.781Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:05.834Z] LOG    ✅ Planet Word: Got description (97 chars)
+[2026-01-27T03:44:05.836Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:05.841Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:05.844Z] LOG    ✅ Renwick Gallery of the Smithsonian American Art Museum: Got description (98 chars)
+[2026-01-27T03:44:05.845Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:05.936Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2026-01-27T03:44:05.938Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:05.939Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1047ms
+[2026-01-27T03:44:05.939Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-27T03:44:05.940Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-27T03:44:06.154Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-27T03:44:06.156Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-27T03:44:06.157Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-27T03:44:06.159Z] LOG    1. Searching "The Phillips Collection" in "Dupont Circle"
+[2026-01-27T03:44:06.160Z] LOG 🔍 [Google Places] Text search: "The Phillips Collection" in Dupont Circle
+[2026-01-27T03:44:06.161Z] LOG    2. Searching "maman" in "Penn Quarter"
+[2026-01-27T03:44:06.162Z] LOG 🔍 [Google Places] Text search: "maman" in Penn Quarter
+[2026-01-27T03:44:06.164Z] LOG    3. Searching "Urban Roast" in "Penn Quarter"
+[2026-01-27T03:44:06.165Z] LOG 🔍 [Google Places] Text search: "Urban Roast" in Penn Quarter
+[2026-01-27T03:44:06.168Z] LOG    4. Searching "Teaism Penn Quarter" in "Penn Quarter"
+[2026-01-27T03:44:06.170Z] LOG 🔍 [Google Places] Text search: "Teaism Penn Quarter" in Penn Quarter
+[2026-01-27T03:44:06.172Z] LOG    5. Searching "Founding Farmers DC" in "Foggy Bottom"
+[2026-01-27T03:44:06.173Z] LOG 🔍 [Google Places] Text search: "Founding Farmers DC" in Foggy Bottom
+[2026-01-27T03:44:06.175Z] LOG    6. Searching "The Smith" in "Penn Quarter"
+[2026-01-27T03:44:06.176Z] LOG 🔍 [Google Places] Text search: "The Smith" in Penn Quarter
+[2026-01-27T03:44:06.178Z] LOG    7. Searching "Timgad Café" in "Federal Triangle"
+[2026-01-27T03:44:06.179Z] LOG 🔍 [Google Places] Text search: "Timgad Café" in Federal Triangle
+[2026-01-27T03:44:06.181Z] LOG    8. Searching "Good Company Doughnuts & Cafe - Penn Quarter" in "Penn Quarter"
+[2026-01-27T03:44:06.181Z] LOG 🔍 [Google Places] Text search: "Good Company Doughnuts & Cafe - Penn Quarter" in Penn Quarter
+[2026-01-27T03:44:06.183Z] LOG    9. Searching "SUCCOTASH" in "Penn Quarter"
+[2026-01-27T03:44:06.184Z] LOG 🔍 [Google Places] Text search: "SUCCOTASH" in Penn Quarter
+[2026-01-27T03:44:06.185Z] LOG    10. Searching "Café Riggs" in "Penn Quarter"
+[2026-01-27T03:44:06.186Z] LOG 🔍 [Google Places] Text search: "Café Riggs" in Penn Quarter
+[2026-01-27T03:44:06.578Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:06.582Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:06.590Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:06.594Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:06.598Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:06.601Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:06.615Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:06.690Z] LOG    ✅ The Phillips Collection: Got description (85 chars)
+[2026-01-27T03:44:06.692Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:06.700Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:06.718Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:06.726Z] LOG    ✅ Teaism Penn Quarter: Got description (96 chars)
+[2026-01-27T03:44:06.727Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:06.742Z] LOG    ✅ Urban Roast: Got description (84 chars)
+[2026-01-27T03:44:06.742Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:06.746Z] LOG    ⚠️  maman: No editorial summary available
+[2026-01-27T03:44:06.747Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:06.750Z] LOG    ✅ SUCCOTASH: Got description (81 chars)
+[2026-01-27T03:44:06.751Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:06.753Z] LOG    ✅ Founding Farmers DC: Got description (88 chars)
+[2026-01-27T03:44:06.753Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:06.783Z] LOG    ✅ The Smith: Got description (97 chars)
+[2026-01-27T03:44:06.784Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:06.800Z] LOG    ✅ Timgad Café: Got description (95 chars)
+[2026-01-27T03:44:06.801Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:06.819Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:44:06.863Z] LOG    ✅ Café Riggs: Got description (92 chars)
+[2026-01-27T03:44:06.864Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:06.941Z] LOG    ⚠️  Good Company Doughnuts & Cafe - Penn Quarter: No editorial summary available
+[2026-01-27T03:44:06.942Z] LOG ✅ Found 1 places
+[2026-01-27T03:44:06.943Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 786ms
+[2026-01-27T03:44:06.943Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-27T03:44:06.944Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-27T03:44:06.945Z] LOG    ✅ National Gallery of Art → National Gallery of Art (must_have)
+[2026-01-27T03:44:06.945Z] LOG    ✅ National Museum of African American History and Culture → National Museum of African American History and Culture (must_have)
+[2026-01-27T03:44:06.946Z] LOG    ✅ United States Holocaust Memorial Museum → United States Holocaust Memorial Museum (must_have)
+[2026-01-27T03:44:06.946Z] LOG    ✅ International Spy Museum → International Spy Museum (must_have)
+[2026-01-27T03:44:06.947Z] LOG    ✅ National Portrait Gallery → National Portrait Gallery (must_have)
+[2026-01-27T03:44:06.947Z] LOG    ✅ Smithsonian American Art Museum → Smithsonian American Art Museum (must_have)
+[2026-01-27T03:44:06.947Z] LOG    ✅ Museum of the Bible → Museum of the Bible (must_have)
+[2026-01-27T03:44:06.948Z] LOG    ✅ Renwick Gallery of the Smithsonian American Art Museum → Renwick Gallery of the Smithsonian American Art Museum (nice_to_have)
+[2026-01-27T03:44:06.948Z] LOG    ✅ National Building Museum → National Building Museum (nice_to_have)
+[2026-01-27T03:44:06.948Z] LOG    ✅ Planet Word → Planet Word (nice_to_have)
+[2026-01-27T03:44:06.949Z] LOG    ✅ The Phillips Collection → The Phillips Collection (nice_to_have)
+[2026-01-27T03:44:06.949Z] LOG    ✅ maman → maman (nice_to_have)
+[2026-01-27T03:44:06.950Z] LOG    ✅ Urban Roast → Urban Roast (nice_to_have)
+[2026-01-27T03:44:06.950Z] LOG    ✅ Teaism Penn Quarter → Teaism Penn Quarter (nice_to_have)
+[2026-01-27T03:44:06.951Z] LOG    ✅ Founding Farmers DC → Founding Farmers DC (nice_to_have)
+[2026-01-27T03:44:06.951Z] LOG    ✅ The Smith → The Smith (nice_to_have)
+[2026-01-27T03:44:06.952Z] LOG    ✅ Timgad Café → Timgad Café (nice_to_have)
+[2026-01-27T03:44:06.953Z] LOG    ✅ Good Company Doughnuts & Cafe - Penn Quarter → Good Company Doughnuts & Cafe - Penn Quarter (nice_to_have)
+[2026-01-27T03:44:06.953Z] LOG    ✅ SUCCOTASH → SUCCOTASH (nice_to_have)
+[2026-01-27T03:44:06.954Z] LOG    ✅ Café Riggs → Café Riggs (nice_to_have)
+[2026-01-27T03:44:06.954Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-27T03:44:06.955Z] LOG    Total enriched: 20
+[2026-01-27T03:44:06.956Z] LOG    🎯 Must-have: 7
+[2026-01-27T03:44:06.956Z] LOG    ✨ Nice-to-have: 13
+[2026-01-27T03:44:06.957Z] LOG    ❌ Failed: 0
+[2026-01-27T03:44:06.957Z] LOG    ⏱️ Time: 2072ms
+
+--- Summary ---
+Enrichment completed

@@ -1,0 +1,69 @@
+User Prompt: Plan a day out in midtown NYC where I could try out halal food trucks
+
+[2026-01-27T03:03:41.555Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-27T03:03:41.557Z] LOG 📦 Processing 7 candidates from Gemini
+[2026-01-27T03:03:41.559Z] LOG    🎯 Must-have: 5
+[2026-01-27T03:03:41.561Z] LOG    ✨ Nice-to-have: 2
+[2026-01-27T03:03:41.562Z] LOG 📍 Location hint: midtown NYC
+[2026-01-27T03:03:41.564Z] LOG 
+🔍 Enriching 7 candidates in 1 batch(es)...
+[2026-01-27T03:03:41.569Z] LOG 
+   📦 Batch 1/1 (7 searches)...
+[2026-01-27T03:03:41.572Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-27T03:03:41.574Z] LOG 🔍 [BatchVenueSearchTool] Executing 7 searches in parallel
+[2026-01-27T03:03:41.577Z] LOG    1. Searching "Halal Guys 53rd and 6th" in "Midtown NYC"
+[2026-01-27T03:03:41.582Z] LOG 🔍 [Google Places] Text search: "Halal Guys 53rd and 6th" in Midtown NYC
+[2026-01-27T03:03:41.605Z] LOG    2. Searching "Kwik Meal Halal Cart NYC" in "Midtown NYC"
+[2026-01-27T03:03:41.608Z] LOG 🔍 [Google Places] Text search: "Kwik Meal Halal Cart NYC" in Midtown NYC
+[2026-01-27T03:03:41.618Z] LOG    3. Searching "Adel's Famous Halal Food Midtown" in "Midtown NYC"
+[2026-01-27T03:03:41.621Z] LOG 🔍 [Google Places] Text search: "Adel's Famous Halal Food Midtown" in Midtown NYC
+[2026-01-27T03:03:41.625Z] LOG    4. Searching "Sam's Halal Food Midtown" in "Midtown NYC"
+[2026-01-27T03:03:41.628Z] LOG 🔍 [Google Places] Text search: "Sam's Halal Food Midtown" in Midtown NYC
+[2026-01-27T03:03:41.636Z] LOG    5. Searching "The Halal Cart on 49th St & 6th Ave" in "Midtown NYC"
+[2026-01-27T03:03:41.638Z] LOG 🔍 [Google Places] Text search: "The Halal Cart on 49th St & 6th Ave" in Midtown NYC
+[2026-01-27T03:03:41.649Z] LOG    6. Searching "Patel's Halal Food Midtown NYC" in "Midtown NYC"
+[2026-01-27T03:03:41.651Z] LOG 🔍 [Google Places] Text search: "Patel's Halal Food Midtown NYC" in Midtown NYC
+[2026-01-27T03:03:41.658Z] LOG    7. Searching "NY Biryani Cart Midtown NYC" in "Midtown NYC"
+[2026-01-27T03:03:41.661Z] LOG 🔍 [Google Places] Text search: "NY Biryani Cart Midtown NYC" in Midtown NYC
+[2026-01-27T03:03:42.212Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:03:42.243Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:03:42.337Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-01-27T03:03:42.339Z] LOG ✅ Found 1 places
+[2026-01-27T03:03:42.367Z] LOG    ⚠️  The Halal Guys: No editorial summary available
+[2026-01-27T03:03:42.370Z] LOG ✅ Found 1 places
+[2026-01-27T03:03:42.492Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:03:42.524Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:03:42.571Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:03:42.582Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-01-27T03:03:42.584Z] LOG ✅ Found 1 places
+[2026-01-27T03:03:42.622Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:03:42.643Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:03:42.654Z] LOG    ✅ Kwik Meal NYC: Got description (92 chars)
+[2026-01-27T03:03:42.656Z] LOG ✅ Found 1 places
+[2026-01-27T03:03:42.732Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-01-27T03:03:42.735Z] LOG ✅ Found 1 places
+[2026-01-27T03:03:42.740Z] LOG    ✅ Sammy’s Halal Food: Got description (97 chars)
+[2026-01-27T03:03:42.743Z] LOG ✅ Found 1 places
+[2026-01-27T03:03:42.764Z] LOG    ⚠️  Biryani Cart: No editorial summary available
+[2026-01-27T03:03:42.767Z] LOG ✅ Found 1 places
+[2026-01-27T03:03:42.770Z] LOG ✅ Batch complete: 7/7 searches succeeded, 7 total venues found in 1195ms
+[2026-01-27T03:03:42.771Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-27T03:03:42.772Z] LOG       ✅ Batch 1 complete: 7 results
+[2026-01-27T03:03:42.773Z] LOG    ✅ Halal Guys 53rd and 6th → The Halal Guys (must_have)
+[2026-01-27T03:03:42.774Z] LOG    ✅ Kwik Meal Halal Cart NYC → Kwik Meal NYC (must_have)
+[2026-01-27T03:03:42.774Z] LOG    ✅ Adel's Famous Halal Food Midtown → Adel's Famous Halal Food (must_have)
+[2026-01-27T03:03:42.776Z] LOG    ✅ Sam's Halal Food Midtown → Sammy’s Halal Food (must_have)
+[2026-01-27T03:03:42.776Z] LOG    ✅ The Halal Cart on 49th St & 6th Ave → Adel's Famous Halal Food (must_have)
+[2026-01-27T03:03:42.777Z] LOG    ✅ Patel's Halal Food Midtown NYC → Adel's Famous Halal Food (nice_to_have)
+[2026-01-27T03:03:42.777Z] LOG    ✅ NY Biryani Cart Midtown NYC → Biryani Cart (nice_to_have)
+[2026-01-27T03:03:42.778Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-27T03:03:42.779Z] LOG    Total enriched: 7
+[2026-01-27T03:03:42.781Z] LOG    🎯 Must-have: 5
+[2026-01-27T03:03:42.782Z] LOG    ✨ Nice-to-have: 2
+[2026-01-27T03:03:42.782Z] LOG    ❌ Failed: 0
+[2026-01-27T03:03:42.783Z] LOG    ⏱️ Time: 1228ms
+
+--- Summary ---
+Enrichment completed

@@ -2,6 +2,8 @@
 
 import type { ReactNode } from "react";
 
+export type GeoPreferenceMode = 'auto' | 'walkable' | 'spread';
+
 export interface Venue {
   name: string;
   address: string;
@@ -11,6 +13,7 @@ export interface Venue {
     coordinates: string;
   };
   rating?: number;
+  userRatingCount?: number;
   priceLevel?: string;
   placeId: string;
   types?: string[];
@@ -18,6 +21,10 @@ export interface Venue {
   description?: string;
   photoUrl?: string;
   videos?: YouTubeVideo[];
+  category?: string;
+  priority?: 'must_have' | 'nice_to_have';
+  reasoning?: string;
+  reviewsSummary?: string;
 }
 
 export interface YouTubeVideo {

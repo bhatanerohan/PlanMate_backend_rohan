@@ -1,0 +1,41 @@
+{
+  "name": "drift",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:cloudflare": "npx @cloudflare/next-on-pages",
+    "start": "next start",
+    "lint": "eslint",
+    "preview": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat"
+  },
+  "dependencies": {
+    "@cloudflare/ai": "^1.2.2",
+    "@google/generative-ai": "^0.24.1",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^12.23.26",
+    "groq-sdk": "^0.37.0",
+    "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
+    "next": "16.1.0",
+    "openai": "^6.15.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-leaflet": "^5.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
+    "@cloudflare/workers-types": "^4.20260113.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/leaflet": "^1.9.21",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.0",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "wrangler": "^4.58.0"
+  }
+}

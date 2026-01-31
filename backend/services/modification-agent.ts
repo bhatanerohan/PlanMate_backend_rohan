@@ -52,7 +52,7 @@ export interface ModificationResult {
 }
 
 export class ModificationAgent {
-  
+
   /**
    * 🆕 Extract city name from user location for search queries
    * Converts "Madrid, Madrid, Spain" → "Madrid"
@@ -61,22 +61,22 @@ export class ModificationAgent {
     if (!userLocation || !userLocation.name) {
       return null;
     }
-    
+
     const parts = userLocation.name.split(',').map((p: string) => p.trim());
-    
+
     // Handle different location name formats:
     // "Madrid, Madrid, Spain" → ["Madrid", "Madrid", "Spain"]
     // "Chinatown, New York, New York, United States" → ["Chinatown", "New York", "New York", "United States"]
     // "Boston, Massachusetts, United States" → ["Boston", "Massachusetts", "United States"]
-    
+
     if (parts.length >= 3) {
       // Get city (2nd part) and state/region (3rd part)
       const city = parts[1];
       const state = parts[2];
-      
+
       // Check if state is a short code or country
       const isStateCode = state.length <= 3;
-      
+
       return isStateCode ? `${city}, ${state}` : city;
     } else if (parts.length === 2) {
       // Just city and country: "Paris, France"
@@ -102,7 +102,7 @@ export class ModificationAgent {
     const embeddedVenueMatch = userPrompt.match(/\[VENUE:(.*?)\]$/);
     let embeddedVenue: any = null;
     let cleanPrompt = userPrompt;
-    
+
     if (embeddedVenueMatch) {
       try {
         embeddedVenue = JSON.parse(embeddedVenueMatch[1]);
@@ -116,18 +116,18 @@ export class ModificationAgent {
 
     try {
       const parsed = await this.parseModification(cleanPrompt, currentItinerary);
-      
+
       // Phase 3: Check if multiple operations
       if (Array.isArray(parsed)) {
         console.log(`🎯 Multi-operation detected: ${parsed.length} operations`);
         return await this.executeMultiOperation(parsed, currentItinerary, userLocation, embeddedVenue);
       }
-      
+
       // Single operation (Phase 1/2)
       const operation = parsed as ModificationOperation;
       const isMultiVenue = (operation.venues && operation.venues.length > 1) ||
-                          (operation.targetVenues && operation.targetVenues.length > 1);
-      
+        (operation.targetVenues && operation.targetVenues.length > 1);
+
       if (isMultiVenue) {
         console.log(`🎯 Multi-venue operation: ${operation.venues?.length || operation.targetVenues?.length} items`);
       }
@@ -143,7 +143,7 @@ export class ModificationAgent {
       }
 
       let result: ModificationResult;
-      
+
       switch (operation.type) {
         case 'ADD':
           result = await this.executeAdd(operation, currentItinerary, userLocation, embeddedVenue);
@@ -179,7 +179,7 @@ export class ModificationAgent {
     embeddedVenue?: any
   ): Promise<ModificationResult> {
     console.log('\n📊 Executing Multi-Operation Sequence');
-    
+
     let workingItinerary = { ...currentItinerary, venues: [...currentItinerary.venues] };
     const messages: string[] = [];
     const allSubResults: SubOperationResult[] = [];
@@ -188,9 +188,9 @@ export class ModificationAgent {
     for (let i = 0; i < operations.length; i++) {
       const op = operations[i];
       console.log(`\n🔹 Operation ${i + 1}/${operations.length}: ${op.type}`);
-      
+
       let result: ModificationResult;
-      
+
       try {
         switch (op.type) {
           case 'REMOVE':
@@ -226,8 +226,8 @@ export class ModificationAgent {
       }
     }
 
-    const finalMessage = `✅ Completed ${operations.length} operations:\n\n${messages.join('\n\n')}`;
-    
+    const finalMessage = this.generateFullItineraryText(workingItinerary.venues, `✅ Completed ${operations.length} operations`);
+
     return {
       success: true,
       operations,
@@ -415,11 +415,11 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     if (!content) throw new Error('No response');
 
     const parsed = JSON.parse(content);
-    
+
     if (parsed.operations && Array.isArray(parsed.operations)) {
       return parsed.operations.map((op: any) => this.normalizeOperation(op));
     }
-    
+
     return this.normalizeOperation(parsed);
   }
 
@@ -458,29 +458,29 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
   }
 
   private async executeAdd(
-    op: ModificationOperation, 
-    itinerary: CurrentItinerary, 
+    op: ModificationOperation,
+    itinerary: CurrentItinerary,
     userLocation?: any,
     embeddedVenue?: any
   ): Promise<ModificationResult> {
     const venues = op.venues!;
     console.log(`\n➕ ADD: ${venues.length} venues`);
     console.log(`   User location available: ${userLocation ? 'Yes' : 'No'}`);
-    
+
     // If we have embedded venue data, use it directly!
     if (embeddedVenue && venues.length === 1) {
       console.log(`⚡ Using embedded venue data - SKIPPING Google Places API call`);
       console.log(`   Venue: ${embeddedVenue.name}`);
       console.log(`   PlaceId: ${embeddedVenue.placeId}`);
-      
+
       const updated = [...itinerary.venues];
       updated.push(embeddedVenue);
-      
+
       const msg = `✅ Added venue:\n\n1. 📍 ${embeddedVenue.name}\n   (using cached data - no API call needed)`;
-      
-      return { 
-        success: true, 
-        updatedVenues: updated, 
+
+      return {
+        success: true,
+        updatedVenues: updated,
         message: msg,
         subResults: [{ success: true, venue: embeddedVenue.name, position: updated.length - 1, venueName: embeddedVenue.name }],
         partialFailure: false
@@ -488,13 +488,13 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     }
 
     const placesClient = getGooglePlacesClient();
-    
+
     const searchPromises = venues.map(async (venueSpec) => {
       // Normalize to VenueSearchSpec
-      const spec: VenueSearchSpec = typeof venueSpec === 'string' 
+      const spec: VenueSearchSpec = typeof venueSpec === 'string'
         ? { name: venueSpec, searchStrategy: 'near_user' }
         : venueSpec;
-      
+
       console.log(`\n🔍 Searching for "${spec.name}"`);
       console.log(`   Strategy: ${spec.searchStrategy}`);
       if (spec.referencePlace) {
@@ -503,18 +503,18 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
 
       try {
         let results;
-        
+
         switch (spec.searchStrategy) {
           case 'near_place': {
             // LLM told us to search near a specific place
             if (!spec.referencePlace) {
               throw new Error('near_place strategy requires referencePlace');
             }
-            
+
             // Step 1: Find the reference place
             console.log(`➡️ Step 1: Finding reference place "${spec.referencePlace}"`);
             let refResults;
-            
+
             if (userLocation) {
               console.log(`   Searching near user location first`);
               refResults = await placesClient.nearbySearch(
@@ -525,19 +525,19 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
             } else {
               const city = this.extractCityFromItinerary(itinerary, userLocation);
               console.log(`   Searching in ${city}`);
-              refResults = await placesClient.textSearch({ 
-                query: `${spec.referencePlace} ${city}`, 
-                maxResults: 1 
+              refResults = await placesClient.textSearch({
+                query: `${spec.referencePlace} ${city}`,
+                maxResults: 1
               });
             }
-            
+
             if (refResults.length === 0) {
               throw new Error(`Could not find reference place: ${spec.referencePlace}`);
             }
-            
+
             const refLocation = refResults[0].location;
             console.log(`✅ Found "${spec.referencePlace}" at ${refLocation.lat}, ${refLocation.lng}`);
-            
+
             // Step 2: Search for venue near that place
             console.log(`➡️ Step 2: Searching for "${spec.name}" near reference place`);
             results = await placesClient.nearbySearch(
@@ -548,17 +548,17 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
             console.log(`⬅️ Found ${results.length} results`);
             break;
           }
-          
+
           case 'near_user': {
             // LLM told us to search near user's location
             if (!userLocation) {
               console.log(`⚠️ No user location available, falling back to city search`);
               const city = this.extractCityFromItinerary(itinerary, userLocation);
               console.log(`➡️ Searching in ${city}`);
-              results = await placesClient.textSearch({ 
-                query: spec.name, 
-                location: city, 
-                maxResults: 3 
+              results = await placesClient.textSearch({
+                query: spec.name,
+                location: city,
+                maxResults: 3
               });
             } else {
               console.log(`➡️ Searching near user location: ${userLocation.lat}, ${userLocation.lng}`);
@@ -571,28 +571,28 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
             console.log(`⬅️ Found ${results.length} results`);
             break;
           }
-          
+
           case 'in_city': {
             // LLM told us to search anywhere in the city
             const city = this.extractCityFromItinerary(itinerary, userLocation);
             console.log(`➡️ Searching in city: ${city}`);
-            results = await placesClient.textSearch({ 
-              query: spec.name, 
-              location: city, 
-              maxResults: 3 
+            results = await placesClient.textSearch({
+              query: spec.name,
+              location: city,
+              maxResults: 3
             });
             console.log(`⬅️ Found ${results.length} results`);
             break;
           }
-          
+
           default:
             throw new Error(`Unknown search strategy: ${(spec as any).searchStrategy}`);
         }
-        
-        return results.length > 0 
+
+        return results.length > 0
           ? { success: true, venue: this.formatVenue(results[0]), venueName: results[0].name }
           : { success: false, venue: spec.name, error: 'Not found' };
-          
+
       } catch (err) {
         console.error(`❌ Search error for "${spec.name}":`, err);
         return { success: false, venue: spec.name, error: err instanceof Error ? err.message : 'Search failed' };
@@ -604,39 +604,47 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     const failed = results.filter(r => !r.success);
 
     if (found.length === 0) {
-      return { 
-        success: false, 
-        updatedVenues: itinerary.venues, 
-        message: 'No venues found', 
-        error: 'Not found' 
+      return {
+        success: false,
+        updatedVenues: itinerary.venues,
+        message: 'No venues found',
+        error: 'Not found'
       };
     }
 
-    // Insert venues
+    // Insert venues with enrichment
     const updated = [...itinerary.venues];
-    found.forEach(r => updated.push(r.venue));
 
-    let msg = `✅ Added ${found.length} venue${found.length > 1 ? 's' : ''}:\n\n`;
-    found.forEach((r, i) => {
-      msg += `${i + 1}. 📍 ${r.venueName}\n`;
-    });
-    if (failed.length > 0) {
-      msg += `\n⚠️ Could not find: ${failed.map(r => r.venue).join(', ')}`;
-    }
+    // Enrich found venues with narrative text
+    console.log('✨ Enriching new venues with narrative text...');
+    const enrichedVenues = await Promise.all(found.map(async (r) => {
+      try {
+        const enriched = await this.enrichVenueWithNarrative(r.venue, itinerary);
+        return enriched;
+      } catch (e) {
+        console.warn(`⚠️ Failed to enrich venue ${r.venue.name}, using raw data`);
+        return r.venue;
+      }
+    }));
 
-    return { 
-      success: true, 
-      updatedVenues: updated, 
-      message: msg, 
-      subResults: results, 
-      partialFailure: failed.length > 0 
+    enrichedVenues.forEach(v => updated.push(v));
+
+    // Generate full itinerary message instead of just a diff
+    const msg = this.generateFullItineraryText(updated, `✅ Added ${found.length} venue${found.length > 1 ? 's' : ''}`);
+
+    return {
+      success: true,
+      updatedVenues: updated,
+      message: msg,
+      subResults: results,
+      partialFailure: failed.length > 0
     };
   }
 
   private async executeRemove(op: ModificationOperation, itinerary: CurrentItinerary): Promise<ModificationResult> {
     const targets = op.targetVenues || [];
     const positions = op.positions || [];
-    
+
     console.log(`\n➖ REMOVE: ${targets.length || positions.length} venues`);
     console.log(`   Target venues:`, targets);
     console.log(`   Positions:`, positions);
@@ -661,18 +669,21 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     const updated = [...itinerary.venues];
     sorted.forEach(idx => updated.splice(idx, 1));
 
-    return { success: true, updatedVenues: updated, message: `Removed ${names.length} venue${names.length > 1 ? 's' : ''}: ${names.join(', ')}` };
+    const successMsg = `Removed ${names.length} venue${names.length > 1 ? 's' : ''}: ${names.join(', ')}`;
+    const msg = this.generateFullItineraryText(updated, successMsg);
+
+    return { success: true, updatedVenues: updated, message: msg };
   }
 
   private async executeReplace(
-    op: ModificationOperation, 
-    itinerary: CurrentItinerary, 
+    op: ModificationOperation,
+    itinerary: CurrentItinerary,
     userLocation?: any,
     embeddedVenue?: any
   ): Promise<ModificationResult> {
     const targets = op.targetVenues || [];
     const replacements = op.replaceWith || [];
-    
+
     console.log(`\n🔄 REPLACE: ${targets.length} venues`);
     console.log(`   Target venues:`, targets);
     console.log(`   Positions:`, op.positions);
@@ -698,45 +709,45 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
       // Use embedded venue if available
       if (embeddedVenue && ops.length === 1) {
         console.log(`⚡ Using embedded venue for replacement - SKIPPING API call`);
-        return { 
-          success: true, 
-          index: o.index, 
-          oldName: o.oldVenue?.name, 
-          newVenue: embeddedVenue, 
-          newName: embeddedVenue.name 
+        return {
+          success: true,
+          index: o.index,
+          oldName: o.oldVenue?.name,
+          newVenue: embeddedVenue,
+          newName: embeddedVenue.name
         };
       }
-      
+
       // Normalize to VenueSearchSpec
       const spec: VenueSearchSpec = typeof o.replacement === 'string'
         ? { name: o.replacement, searchStrategy: 'near_existing' }
         : o.replacement;
-      
+
       console.log(`\n🔍 Replacing "${o.oldVenue?.name}" with "${spec.name}"`);
       console.log(`   Strategy: ${spec.searchStrategy}`);
-      
+
       try {
         let results;
         let attemptedStrategy = spec.searchStrategy;
-        
+
         switch (spec.searchStrategy) {
           case 'near_existing': {
             // Default: search near the venue being replaced
             console.log(`➡️ Searching near existing venue location`);
             results = await placesClient.nearbySearch(
-              o.oldVenue!.location.lat, 
-              o.oldVenue!.location.lng, 
+              o.oldVenue!.location.lat,
+              o.oldVenue!.location.lng,
               { query: spec.name, radius: 1609, maxResults: 3 }
             );
-            
+
             // 🆕 FALLBACK: If no results found nearby, try city-wide search
             if (results.length === 0) {
               console.log(`⚠️ No results found nearby, retrying with city-wide search...`);
               const city = this.extractCityFromItinerary(itinerary, userLocation);
-              results = await placesClient.textSearch({ 
-                query: spec.name, 
-                location: city, 
-                maxResults: 3 
+              results = await placesClient.textSearch({
+                query: spec.name,
+                location: city,
+                maxResults: 3
               });
               // Fix lint error: only assign valid type value to attemptedStrategy
               attemptedStrategy = 'in_city';
@@ -747,11 +758,11 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
             if (!spec.referencePlace) {
               throw new Error('near_place strategy requires referencePlace');
             }
-            
+
             // Find reference place first
             console.log(`➡️ Finding reference place "${spec.referencePlace}"`);
             let refResults;
-            
+
             if (userLocation) {
               refResults = await placesClient.nearbySearch(
                 userLocation.lat,
@@ -760,16 +771,16 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
               );
             } else {
               const city = this.extractCityFromItinerary(itinerary, userLocation);
-              refResults = await placesClient.textSearch({ 
-                query: `${spec.referencePlace} ${city}`, 
-                maxResults: 1 
+              refResults = await placesClient.textSearch({
+                query: `${spec.referencePlace} ${city}`,
+                maxResults: 1
               });
             }
-            
+
             if (refResults.length === 0) {
               throw new Error(`Could not find reference place: ${spec.referencePlace}`);
             }
-            
+
             console.log(`✅ Found reference, searching for replacement`);
             results = await placesClient.nearbySearch(
               refResults[0].location.lat,
@@ -778,13 +789,13 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
             );
             break;
           }
-          
+
           case 'near_user': {
             if (!userLocation) {
               console.log(`⚠️ No user location, falling back to near existing venue`);
               results = await placesClient.nearbySearch(
-                o.oldVenue!.location.lat, 
-                o.oldVenue!.location.lng, 
+                o.oldVenue!.location.lat,
+                o.oldVenue!.location.lng,
                 { query: spec.name, radius: 1609, maxResults: 3 }
               );
             } else {
@@ -797,33 +808,33 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
             }
             break;
           }
-          
+
           case 'in_city': {
             const city = this.extractCityFromItinerary(itinerary, userLocation);
             console.log(`➡️ Searching in city: ${city}`);
-            results = await placesClient.textSearch({ 
-              query: spec.name, 
-              location: city, 
-              maxResults: 3 
+            results = await placesClient.textSearch({
+              query: spec.name,
+              location: city,
+              maxResults: 3
             });
             break;
           }
-          
+
           default:
             // Fallback to near existing
             results = await placesClient.nearbySearch(
-              o.oldVenue!.location.lat, 
-              o.oldVenue!.location.lng, 
+              o.oldVenue!.location.lat,
+              o.oldVenue!.location.lng,
               { query: spec.name, radius: 1609, maxResults: 3 }
             );
         }
-        
+
         console.log(`⬅️ Found ${results.length} results using strategy: ${attemptedStrategy}`);
-        
-        return results.length > 0 
+
+        return results.length > 0
           ? { success: true, index: o.index, oldName: o.oldVenue?.name, newVenue: this.formatVenue(results[0]), newName: results[0].name }
           : { success: false, index: o.index, oldName: o.oldVenue?.name, error: 'Not found' };
-          
+
       } catch (err) {
         console.error(`❌ Replacement search error:`, err);
         return { success: false, index: o.index, oldName: o.oldVenue?.name, error: err instanceof Error ? err.message : 'Search failed' };
@@ -838,21 +849,36 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     }
 
     const updated = [...itinerary.venues];
-    successful.forEach(r => { updated[r.index!] = r.newVenue; });
+
+    // Enrich replacement venues with narrative text
+    console.log('✨ Enriching replacement venues with narrative text...');
+    const enrichedResults = await Promise.all(successful.map(async (r) => {
+      try {
+        const enriched = await this.enrichVenueWithNarrative(r.newVenue, itinerary);
+        return { index: r.index!, venue: enriched };
+      } catch (e) {
+        console.warn(`⚠️ Failed to enrich venue ${r.newVenue.name}, using raw data`);
+        return { index: r.index!, venue: r.newVenue };
+      }
+    }));
+
+    enrichedResults.forEach(r => { updated[r.index] = r.venue; });
 
     const pairs = successful.map(r => `${r.oldName} → ${r.newName}`).join(', ');
-    let msg = `Replaced ${successful.length} venue${successful.length > 1 ? 's' : ''}: ${pairs}`;
-    
+    const successMsg = `Replaced ${successful.length} venue${successful.length > 1 ? 's' : ''}: ${pairs}`;
+
+    let msg = this.generateFullItineraryText(updated, successMsg);
+
     const failed = results.filter(r => !r.success);
     if (failed.length > 0) {
-      msg += `. Could not find replacements for: ${failed.map(r => r.oldName).join(', ')}`;
+      msg += `\n⚠️ Could not find replacements for: ${failed.map(r => r.oldName).join(', ')}`;
     }
 
-    return { 
-      success: true, 
-      updatedVenues: updated, 
-      message: msg, 
-      partialFailure: failed.length > 0 
+    return {
+      success: true,
+      updatedVenues: updated,
+      message: msg,
+      partialFailure: failed.length > 0
     };
   }
 
@@ -892,16 +918,16 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
 
     if (op.targetVenue) {
       const target = op.targetVenue.toLowerCase();
-      
+
       let idx = venues.findIndex(v => v.name.toLowerCase() === target);
       if (idx !== -1) return idx;
-      
+
       idx = venues.findIndex(v => v.name.toLowerCase().includes(target));
       if (idx !== -1) return idx;
-      
+
       idx = venues.findIndex(v => target.includes(v.name.toLowerCase()));
       if (idx !== -1) return idx;
-      
+
       const firstWord = target.split(/[\s-]/)[0];
       if (firstWord.length > 3) {
         idx = venues.findIndex(v => v.name.toLowerCase().split(/[\s-]/)[0] === firstWord);
@@ -964,24 +990,24 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     if (itinerary.venues.length > 0) {
       const address = itinerary.venues[0].address;
       console.log(`   Trying to extract city from venue address: ${address}`);
-      
+
       // Handle different address formats:
       // "Retiro, 28014 Madrid, Spain" → "Madrid"
       // "123 Main St, Boston, MA 02101" → "Boston, MA"
       // "Pasadizo de San Ginés, 5, Centro, 28013 Madrid, Spain" → "Madrid"
-      
+
       const parts = address.split(',').map((p: string) => p.trim());
-      
+
       if (parts.length >= 2) {
         // Try to find city part (usually before postal code or country)
         for (let i = parts.length - 1; i >= 0; i--) {
           const part = parts[i];
-          
+
           // Skip country names (common ones)
           if (['Spain', 'United States', 'USA', 'France', 'Italy', 'UK', 'Germany'].includes(part)) {
             continue;
           }
-          
+
           // Skip parts with postal codes
           if (/\d{5}/.test(part)) {
             // Check if city name is in this part before postal code
@@ -992,7 +1018,7 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
             }
             continue;
           }
-          
+
           // If we find a part that looks like a city (starts with capital letter, no numbers)
           if (/^[A-Z][a-z]+/.test(part) && !/\d/.test(part)) {
             console.log(`   Extracted city: ${part}`);
@@ -1005,6 +1031,96 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     // Priority 3: Default to a reasonable fallback
     console.log(`   ⚠️ Could not extract city, using default: New York`);
     return 'New York';  // Better default than "Boston"
+  }
+
+  /**
+   * 🆕 Generates narrative description and reasoning for a new/replaced venue
+   * Ensures the new venue matches the style/richness of the existing itinerary
+   */
+  private async enrichVenueWithNarrative(venue: any, itinerary: CurrentItinerary): Promise<any> {
+    try {
+      // Create a context string from existing venues to match style
+      const existingExamples = itinerary.venues.slice(0, 3).map(v =>
+        `- ${v.name}: ${v.description?.substring(0, 50)}... (Reasoning: ${v.reasoning?.substring(0, 50)}...)`
+      ).join('\n');
+
+      const prompt = `
+      You are enhancing a travel itinerary. A user has added a new venue, but it lacks the rich narrative text.
+      
+      Trip Context: "${itinerary.originalPrompt || 'A curated city tour'}"
+      
+      Existing Venues (Match this style):
+      ${existingExamples}
+      
+      NEW VENUE TO ENRICH:
+      Name: ${venue.name}
+      Address: ${venue.address}
+      Types: ${venue.types?.join(', ')}
+      Rating: ${venue.rating}
+      
+      Task: Generate a JSON object with 'description' (2-3 sentences max) and 'reasoning' (1 sentence on why it matters).
+      The description should be engaging and relevant to the venue type.
+      The reasoning should explain why it fits directly into the user's trip context.
+      
+      Return JSON ONLY:
+      {
+        "description": "...",
+        "reasoning": "..."
+      }
+      `;
+
+      const response = await openai.chat.completions.create({
+        model: 'gpt-4o-mini',
+        messages: [{ role: 'user', content: prompt }],
+        response_format: { type: 'json_object' },
+        temperature: 0.7
+      });
+
+      const content = response.choices[0]?.message?.content;
+      if (!content) return venue;
+
+      const enriched = JSON.parse(content);
+
+      return {
+        ...venue,
+        description: enriched.description || venue.description || 'A great spot to visit.',
+        reasoning: enriched.reasoning || venue.reasoning || 'Fits well with your itinerary.',
+        // Ensure priority is set so it renders correctly if the UI relies on it
+        priority: venue.priority || 'must_have'
+      };
+
+    } catch (error) {
+      console.error('❌ Error enriching venue:', error);
+      return venue;
+    }
+  }
+
+  /**
+   * Helper to generate the rich full itinerary text
+   */
+  private generateFullItineraryText(venues: any[], headerMessage: string): string {
+    let msg = `${headerMessage}\n\nHere is your updated itinerary:\n\n`;
+
+    venues.forEach((v, i) => {
+      // Bold name, rating, price
+      msg += `${i + 1}. **${v.name}**`;
+      if (v.rating) msg += ` (⭐ ${v.rating}`;
+      if (v.priceLevel) msg += ` • ${v.priceLevel}`;
+      if (v.rating) msg += `)`;
+      msg += `\n`;
+
+      // Narrative text
+      if (v.description) msg += `${v.description}\n`;
+      if (v.reasoning) msg += `💡 Why it matters: ${v.reasoning}\n`;
+      if (v.reviewsSummary) msg += `📝 Reviewers praise: ${v.reviewsSummary}\n`;
+
+      // Travel info mock (since we don't have real routing in modification currently)
+      // msg += `Travel: ...\n`; 
+
+      msg += `\n`;
+    });
+
+    return msg;
   }
 }
 

@@ -1,0 +1,142 @@
+User Prompt: Plan a day out in midtown NYC where I could try out halal food trucks
+
+[2026-01-28T03:48:55.168Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-28T03:48:55.168Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-01-28T03:48:55.169Z] LOG    🎯 Must-have: 6
+[2026-01-28T03:48:55.169Z] LOG    ✨ Nice-to-have: 12
+[2026-01-28T03:48:55.170Z] LOG 📍 Location hint: midtown NYC
+[2026-01-28T03:48:55.170Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-01-28T03:48:55.171Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-28T03:48:55.171Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-28T03:48:55.172Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-28T03:48:55.173Z] LOG    1. Searching "The Halal Guys (53rd & 6th)" in "Midtown West"
+[2026-01-28T03:48:55.173Z] LOG 🔍 [Google Places] Text search: "The Halal Guys (53rd & 6th)" in Midtown West
+[2026-01-28T03:48:55.179Z] LOG    2. Searching "Kwik Meal Cart" in "Midtown West"
+[2026-01-28T03:48:55.179Z] LOG 🔍 [Google Places] Text search: "Kwik Meal Cart" in Midtown West
+[2026-01-28T03:48:55.181Z] LOG    3. Searching "Adel's Famous Halal Food" in "Midtown West"
+[2026-01-28T03:48:55.181Z] LOG 🔍 [Google Places] Text search: "Adel's Famous Halal Food" in Midtown West
+[2026-01-28T03:48:55.183Z] LOG    4. Searching "Sam's Halal Food" in "Midtown West"
+[2026-01-28T03:48:55.184Z] LOG 🔍 [Google Places] Text search: "Sam's Halal Food" in Midtown West
+[2026-01-28T03:48:55.185Z] LOG    5. Searching "The Best Halal Food Cart" in "Midtown West"
+[2026-01-28T03:48:55.186Z] LOG 🔍 [Google Places] Text search: "The Best Halal Food Cart" in Midtown West
+[2026-01-28T03:48:55.187Z] LOG    6. Searching "Rafiqi's Halal Food (W 46th St & 6th Ave)" in "Midtown West"
+[2026-01-28T03:48:55.187Z] LOG 🔍 [Google Places] Text search: "Rafiqi's Halal Food (W 46th St & 6th Ave)" in Midtown West
+[2026-01-28T03:48:55.189Z] LOG    7. Searching "Times Square" in "Midtown West"
+[2026-01-28T03:48:55.189Z] LOG 🔍 [Google Places] Text search: "Times Square" in Midtown West
+[2026-01-28T03:48:55.190Z] LOG    8. Searching "Bryant Park" in "Midtown East"
+[2026-01-28T03:48:55.191Z] LOG 🔍 [Google Places] Text search: "Bryant Park" in Midtown East
+[2026-01-28T03:48:55.192Z] LOG    9. Searching "New York Public Library (Stephen A. Schwarzman Building)" in "Midtown East"
+[2026-01-28T03:48:55.192Z] LOG 🔍 [Google Places] Text search: "New York Public Library (Stephen A. Schwarzman Building)" in Midtown East
+[2026-01-28T03:48:55.195Z] LOG    10. Searching "Rockefeller Center" in "Midtown East"
+[2026-01-28T03:48:55.195Z] LOG 🔍 [Google Places] Text search: "Rockefeller Center" in Midtown East
+[2026-01-28T03:48:55.758Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:55.812Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:55.937Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-01-28T03:48:55.938Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:55.940Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:55.942Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:55.943Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:55.945Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:55.946Z] LOG    ✅ Kwik Meal NYC: Got description (92 chars)
+[2026-01-28T03:48:55.947Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:55.947Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:55.978Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:56.155Z] LOG    ✅ Bryant Park: Got description (99 chars)
+[2026-01-28T03:48:56.156Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:56.158Z] LOG    ✅ Sammy’s Halal Food: Got description (97 chars)
+[2026-01-28T03:48:56.162Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:56.165Z] LOG    ⚠️  The Halal Guys: No editorial summary available
+[2026-01-28T03:48:56.166Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:56.168Z] LOG    ✅ New York Public Library - Stephen A. Schwarzman Building: Got description (100 chars)
+[2026-01-28T03:48:56.169Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:56.171Z] LOG    ✅ Times Square: Got description (100 chars)
+[2026-01-28T03:48:56.172Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:56.173Z] LOG    ⚠️  Rafiqi's Halal Food Cart: No editorial summary available
+[2026-01-28T03:48:56.175Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:56.190Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:56.345Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2026-01-28T03:48:56.346Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:56.591Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:56.756Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-01-28T03:48:56.757Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:56.758Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1586ms
+[2026-01-28T03:48:56.758Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-28T03:48:56.758Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-28T03:48:56.959Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-01-28T03:48:56.960Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-28T03:48:56.961Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-01-28T03:48:56.961Z] LOG    1. Searching "St. Patrick's Cathedral" in "Midtown East"
+[2026-01-28T03:48:56.961Z] LOG 🔍 [Google Places] Text search: "St. Patrick's Cathedral" in Midtown East
+[2026-01-28T03:48:56.962Z] LOG    2. Searching "Grand Central Terminal" in "Midtown East"
+[2026-01-28T03:48:56.962Z] LOG 🔍 [Google Places] Text search: "Grand Central Terminal" in Midtown East
+[2026-01-28T03:48:56.964Z] LOG    3. Searching "Museum of Modern Art (MoMA)" in "Midtown West"
+[2026-01-28T03:48:56.964Z] LOG 🔍 [Google Places] Text search: "Museum of Modern Art (MoMA)" in Midtown West
+[2026-01-28T03:48:56.965Z] LOG    4. Searching "Empire State Building" in "Midtown South"
+[2026-01-28T03:48:56.965Z] LOG 🔍 [Google Places] Text search: "Empire State Building" in Midtown South
+[2026-01-28T03:48:56.966Z] LOG    5. Searching "Paley Park" in "Midtown East"
+[2026-01-28T03:48:56.966Z] LOG 🔍 [Google Places] Text search: "Paley Park" in Midtown East
+[2026-01-28T03:48:56.966Z] LOG    6. Searching "Top of the Rock Observation Deck" in "Midtown East"
+[2026-01-28T03:48:56.967Z] LOG 🔍 [Google Places] Text search: "Top of the Rock Observation Deck" in Midtown East
+[2026-01-28T03:48:56.967Z] LOG    7. Searching "Radio City Music Hall" in "Midtown West"
+[2026-01-28T03:48:56.968Z] LOG 🔍 [Google Places] Text search: "Radio City Music Hall" in Midtown West
+[2026-01-28T03:48:56.968Z] LOG    8. Searching "Greenacre Park" in "Midtown East"
+[2026-01-28T03:48:56.969Z] LOG 🔍 [Google Places] Text search: "Greenacre Park" in Midtown East
+[2026-01-28T03:48:57.348Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:57.402Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:57.447Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:57.449Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:57.450Z] LOG    ✅ Grand Central Terminal: Got description (95 chars)
+[2026-01-28T03:48:57.450Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:57.461Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:57.484Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:57.511Z] LOG    ✅ Radio City Music Hall: Got description (98 chars)
+[2026-01-28T03:48:57.511Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:57.535Z] LOG    ✅ Greenacre Park: Got description (100 chars)
+[2026-01-28T03:48:57.536Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:57.538Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2026-01-28T03:48:57.538Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:57.550Z] LOG    ✅ Paley Park: Got description (84 chars)
+[2026-01-28T03:48:57.550Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:57.566Z] LOG    ✅ The Museum of Modern Art: Got description (96 chars)
+[2026-01-28T03:48:57.567Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:57.660Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:57.705Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-28T03:48:57.730Z] LOG    ✅ Top of The Rock: Got description (96 chars)
+[2026-01-28T03:48:57.731Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:57.771Z] LOG    ✅ St. Patrick's Cathedral: Got description (100 chars)
+[2026-01-28T03:48:57.772Z] LOG ✅ Found 1 places
+[2026-01-28T03:48:57.772Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 812ms
+[2026-01-28T03:48:57.772Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-28T03:48:57.773Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-01-28T03:48:57.773Z] LOG    ✅ The Halal Guys (53rd & 6th) → The Halal Guys (must_have)
+[2026-01-28T03:48:57.773Z] LOG    ✅ Kwik Meal Cart → Kwik Meal NYC (must_have)
+[2026-01-28T03:48:57.774Z] LOG    ✅ Adel's Famous Halal Food → Adel's Famous Halal Food (must_have)
+[2026-01-28T03:48:57.774Z] LOG    ✅ Sam's Halal Food → Sammy’s Halal Food (must_have)
+[2026-01-28T03:48:57.774Z] LOG    ✅ The Best Halal Food Cart → Adel's Famous Halal Food (must_have)
+[2026-01-28T03:48:57.774Z] LOG    ✅ Rafiqi's Halal Food (W 46th St & 6th Ave) → Rafiqi's Halal Food Cart (must_have)
+[2026-01-28T03:48:57.775Z] LOG    ✅ Times Square → Times Square (nice_to_have)
+[2026-01-28T03:48:57.775Z] LOG    ✅ Bryant Park → Bryant Park (nice_to_have)
+[2026-01-28T03:48:57.775Z] LOG    ✅ New York Public Library (Stephen A. Schwarzman Building) → New York Public Library - Stephen A. Schwarzman Building (nice_to_have)
+[2026-01-28T03:48:57.775Z] LOG    ✅ Rockefeller Center → Rockefeller Center (nice_to_have)
+[2026-01-28T03:48:57.776Z] LOG    ✅ St. Patrick's Cathedral → St. Patrick's Cathedral (nice_to_have)
+[2026-01-28T03:48:57.776Z] LOG    ✅ Grand Central Terminal → Grand Central Terminal (nice_to_have)
+[2026-01-28T03:48:57.776Z] LOG    ✅ Museum of Modern Art (MoMA) → The Museum of Modern Art (nice_to_have)
+[2026-01-28T03:48:57.776Z] LOG    ✅ Empire State Building → Empire State Building (nice_to_have)
+[2026-01-28T03:48:57.777Z] LOG    ✅ Paley Park → Paley Park (nice_to_have)
+[2026-01-28T03:48:57.777Z] LOG    ✅ Top of the Rock Observation Deck → Top of The Rock (nice_to_have)
+[2026-01-28T03:48:57.777Z] LOG    ✅ Radio City Music Hall → Radio City Music Hall (nice_to_have)
+[2026-01-28T03:48:57.778Z] LOG    ✅ Greenacre Park → Greenacre Park (nice_to_have)
+[2026-01-28T03:48:57.778Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-28T03:48:57.779Z] LOG    Total enriched: 18
+[2026-01-28T03:48:57.779Z] LOG    🎯 Must-have: 6
+[2026-01-28T03:48:57.779Z] LOG    ✨ Nice-to-have: 12
+[2026-01-28T03:48:57.780Z] LOG    ❌ Failed: 0
+[2026-01-28T03:48:57.780Z] LOG    ⏱️ Time: 2613ms
+
+--- Summary ---
+Enrichment completed

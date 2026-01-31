@@ -1,0 +1,136 @@
+User Prompt: "Road trip from LA to Vegas with food stops"
+
+[2026-01-26T02:23:56.908Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-26T02:23:56.909Z] LOG 📦 Processing 17 candidates from Gemini
+[2026-01-26T02:23:56.909Z] LOG    🎯 Must-have: 9
+[2026-01-26T02:23:56.910Z] LOG    ✨ Nice-to-have: 8
+[2026-01-26T02:23:56.911Z] LOG 📍 Location hint: Victorville, CA
+[2026-01-26T02:23:56.912Z] LOG 
+🔍 Enriching 17 candidates in 2 batch(es)...
+[2026-01-26T02:23:56.913Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-26T02:23:56.915Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-26T02:23:56.917Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-26T02:23:56.917Z] LOG    1. Searching "Emma Jean's Holland Burger Cafe" in "Victorville, CA"
+[2026-01-26T02:23:56.919Z] LOG 🔍 [Google Places] Text search: "Emma Jean's Holland Burger Cafe" in Victorville, CA
+[2026-01-26T02:23:56.921Z] LOG    2. Searching "In-N-Out Burger (Victorville)" in "Victorville, CA"
+[2026-01-26T02:23:56.924Z] LOG 🔍 [Google Places] Text search: "In-N-Out Burger (Victorville)" in Victorville, CA
+[2026-01-26T02:23:56.929Z] LOG    3. Searching "Bottle Tree Ranch" in "Oro Grande, CA"
+[2026-01-26T02:23:56.931Z] LOG 🔍 [Google Places] Text search: "Bottle Tree Ranch" in Oro Grande, CA
+[2026-01-26T02:23:56.936Z] LOG    4. Searching "Peggy Sue's 50's Diner" in "Yermo, CA"
+[2026-01-26T02:23:56.938Z] LOG 🔍 [Google Places] Text search: "Peggy Sue's 50's Diner" in Yermo, CA
+[2026-01-26T02:23:56.945Z] LOG    5. Searching "Black Bear Diner Barstow" in "Barstow, CA"
+[2026-01-26T02:23:56.947Z] LOG 🔍 [Google Places] Text search: "Black Bear Diner Barstow" in Barstow, CA
+[2026-01-26T02:23:56.952Z] LOG    6. Searching "Barstow Route 66 Mother Road Museum" in "Barstow, CA"
+[2026-01-26T02:23:56.954Z] LOG 🔍 [Google Places] Text search: "Barstow Route 66 Mother Road Museum" in Barstow, CA
+[2026-01-26T02:23:56.966Z] LOG    7. Searching "Southern Twist" in "Barstow, CA"
+[2026-01-26T02:23:56.969Z] LOG 🔍 [Google Places] Text search: "Southern Twist" in Barstow, CA
+[2026-01-26T02:23:56.976Z] LOG    8. Searching "EddieWorld" in "Yermo, CA"
+[2026-01-26T02:23:56.980Z] LOG 🔍 [Google Places] Text search: "EddieWorld" in Yermo, CA
+[2026-01-26T02:23:56.987Z] LOG    9. Searching "The Mad Greek Cafe" in "Baker, CA"
+[2026-01-26T02:23:56.989Z] LOG 🔍 [Google Places] Text search: "The Mad Greek Cafe" in Baker, CA
+[2026-01-26T02:23:56.996Z] LOG    10. Searching "Alien Fresh Jerky" in "Baker, CA"
+[2026-01-26T02:23:56.997Z] LOG 🔍 [Google Places] Text search: "Alien Fresh Jerky" in Baker, CA
+[2026-01-26T02:23:57.528Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:57.534Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:57.545Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:57.579Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:57.607Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:57.613Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:57.623Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:57.639Z] LOG    ✅ Elmer's Bottle Tree Ranch: Got description (93 chars)
+[2026-01-26T02:23:57.639Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:57.649Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:57.658Z] LOG    ✅ Peggy Sue's 50's Diner: Got description (99 chars)
+[2026-01-26T02:23:57.659Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:57.670Z] LOG    ⚠️  EddieWorld: No editorial summary available
+[2026-01-26T02:23:57.671Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:57.684Z] LOG    ⚠️  Southern Twist: No editorial summary available
+[2026-01-26T02:23:57.684Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:57.685Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:57.707Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:57.720Z] LOG    ✅ Black Bear Diner Barstow: Got description (85 chars)
+[2026-01-26T02:23:57.721Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:57.737Z] LOG    ✅ Emma Jean's Holland Burger Cafe: Got description (94 chars)
+[2026-01-26T02:23:57.738Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:57.760Z] LOG    ✅ The Mad Greek: Got description (93 chars)
+[2026-01-26T02:23:57.763Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:57.781Z] LOG    ✅ In-N-Out Burger: Got description (75 chars)
+[2026-01-26T02:23:57.783Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:57.829Z] LOG    ⚠️  Alien Fresh Jerky: No editorial summary available
+[2026-01-26T02:23:57.829Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:57.886Z] LOG    ⚠️  Route 66 Mother Road Museum: No editorial summary available
+[2026-01-26T02:23:57.887Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:57.887Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 971ms
+[2026-01-26T02:23:57.888Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-26T02:23:57.888Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-26T02:23:58.090Z] LOG 
+   📦 Batch 2/2 (7 searches)...
+[2026-01-26T02:23:58.092Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-26T02:23:58.092Z] LOG 🔍 [BatchVenueSearchTool] Executing 7 searches in parallel
+[2026-01-26T02:23:58.093Z] LOG    1. Searching "World's Tallest Thermometer" in "Baker, CA"
+[2026-01-26T02:23:58.094Z] LOG 🔍 [Google Places] Text search: "World's Tallest Thermometer" in Baker, CA
+[2026-01-26T02:23:58.095Z] LOG    2. Searching "Los Domingos Restaurant and Lounge" in "Barstow, CA"
+[2026-01-26T02:23:58.096Z] LOG 🔍 [Google Places] Text search: "Los Domingos Restaurant and Lounge" in Barstow, CA
+[2026-01-26T02:23:58.098Z] LOG    3. Searching "Mojave National Preserve" in "Mojave Desert, CA"
+[2026-01-26T02:23:58.099Z] LOG 🔍 [Google Places] Text search: "Mojave National Preserve" in Mojave Desert, CA
+[2026-01-26T02:23:58.100Z] LOG    4. Searching "Primm Valley Casino Resorts" in "Primm, NV"
+[2026-01-26T02:23:58.102Z] LOG 🔍 [Google Places] Text search: "Primm Valley Casino Resorts" in Primm, NV
+[2026-01-26T02:23:58.104Z] LOG    5. Searching "Seven Magic Mountains" in "Henderson, NV (near Las Vegas)"
+[2026-01-26T02:23:58.104Z] LOG 🔍 [Google Places] Text search: "Seven Magic Mountains" in Henderson, NV (near Las Vegas)
+[2026-01-26T02:23:58.106Z] LOG    6. Searching "The Corner Café" in "Victorville, CA"
+[2026-01-26T02:23:58.107Z] LOG 🔍 [Google Places] Text search: "The Corner Café" in Victorville, CA
+[2026-01-26T02:23:58.109Z] LOG    7. Searching "Red Rock Canyon Visitor Center" in "Las Vegas, NV"
+[2026-01-26T02:23:58.110Z] LOG 🔍 [Google Places] Text search: "Red Rock Canyon Visitor Center" in Las Vegas, NV
+[2026-01-26T02:23:58.507Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:58.585Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:58.610Z] LOG    ✅ Mojave Desert: Got description (99 chars)
+[2026-01-26T02:23:58.612Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:58.613Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:58.669Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:58.680Z] LOG    ⚠️  The World's Tallest Thermometer: No editorial summary available
+[2026-01-26T02:23:58.682Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:58.712Z] LOG    ✅ Primm Valley Casino Resorts: Got description (99 chars)
+[2026-01-26T02:23:58.713Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:58.799Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:58.826Z] LOG    ✅ Red Rock Canyon Visitor Center: Got description (97 chars)
+[2026-01-26T02:23:58.827Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:58.929Z] LOG    ✅ Los Domingos Restaurant and Lounge: Got description (99 chars)
+[2026-01-26T02:23:58.930Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:59.049Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:59.215Z] LOG    ✅ Seven Magic Mountains: Got description (94 chars)
+[2026-01-26T02:23:59.215Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:59.457Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:23:59.617Z] LOG    ✅ The Corner Café: Got description (90 chars)
+[2026-01-26T02:23:59.618Z] LOG ✅ Found 1 places
+[2026-01-26T02:23:59.619Z] LOG ✅ Batch complete: 7/7 searches succeeded, 7 total venues found in 1527ms
+[2026-01-26T02:23:59.619Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-26T02:23:59.619Z] LOG       ✅ Batch 2 complete: 7 results
+[2026-01-26T02:23:59.620Z] LOG    ✅ Emma Jean's Holland Burger Cafe → Emma Jean's Holland Burger Cafe (must_have)
+[2026-01-26T02:23:59.620Z] LOG    ✅ In-N-Out Burger (Victorville) → In-N-Out Burger (must_have)
+[2026-01-26T02:23:59.620Z] LOG    ✅ Bottle Tree Ranch → Elmer's Bottle Tree Ranch (nice_to_have)
+[2026-01-26T02:23:59.621Z] LOG    ✅ Peggy Sue's 50's Diner → Peggy Sue's 50's Diner (must_have)
+[2026-01-26T02:23:59.621Z] LOG    ✅ Black Bear Diner Barstow → Black Bear Diner Barstow (must_have)
+[2026-01-26T02:23:59.622Z] LOG    ✅ Barstow Route 66 Mother Road Museum → Route 66 Mother Road Museum (nice_to_have)
+[2026-01-26T02:23:59.622Z] LOG    ✅ Southern Twist → Southern Twist (must_have)
+[2026-01-26T02:23:59.623Z] LOG    ✅ EddieWorld → EddieWorld (nice_to_have)
+[2026-01-26T02:23:59.624Z] LOG    ✅ The Mad Greek Cafe → The Mad Greek (must_have)
+[2026-01-26T02:23:59.625Z] LOG    ✅ Alien Fresh Jerky → Alien Fresh Jerky (nice_to_have)
+[2026-01-26T02:23:59.625Z] LOG    ✅ World's Tallest Thermometer → The World's Tallest Thermometer (nice_to_have)
+[2026-01-26T02:23:59.626Z] LOG    ✅ Los Domingos Restaurant and Lounge → Los Domingos Restaurant and Lounge (must_have)
+[2026-01-26T02:23:59.626Z] LOG    ✅ Mojave National Preserve → Mojave Desert (nice_to_have)
+[2026-01-26T02:23:59.626Z] LOG    ✅ Primm Valley Casino Resorts → Primm Valley Casino Resorts (must_have)
+[2026-01-26T02:23:59.627Z] LOG    ✅ Seven Magic Mountains → Seven Magic Mountains (nice_to_have)
+[2026-01-26T02:23:59.627Z] LOG    ✅ The Corner Café → The Corner Café (must_have)
+[2026-01-26T02:23:59.628Z] LOG    ✅ Red Rock Canyon Visitor Center → Red Rock Canyon Visitor Center (nice_to_have)
+[2026-01-26T02:23:59.628Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-26T02:23:59.628Z] LOG    Total enriched: 17
+[2026-01-26T02:23:59.629Z] LOG    🎯 Must-have: 9
+[2026-01-26T02:23:59.629Z] LOG    ✨ Nice-to-have: 8
+[2026-01-26T02:23:59.630Z] LOG    ❌ Failed: 0
+[2026-01-26T02:23:59.630Z] LOG    ⏱️ Time: 2723ms
+
+--- Summary ---
+Enrichment completed

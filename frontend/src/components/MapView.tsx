@@ -24,7 +24,7 @@ interface MapViewProps {
 const fetchMapboxRoutes = async (markers: MapMarker[], mapboxToken: string): Promise<Route[]> => {
   // Only use PRIMARY markers for routing (filter out alternatives)
   const primaryMarkers = markers.filter(m => m.id.startsWith('primary-') || m.id === 'user-location');
-  console.log('🗺️ Route markers order:', primaryMarkers.map(m => m.title));  
+  console.log('🗺️ Route markers order:', primaryMarkers.map(m => m.title));
   console.log('🗺️ fetchMapboxRoutes called:', {
     totalMarkers: markers.length,
     primaryMarkers: primaryMarkers.length,
@@ -40,18 +40,18 @@ const fetchMapboxRoutes = async (markers: MapMarker[], mapboxToken: string): Pro
     const coordinates = primaryMarkers.map(m => `${m.position.lng},${m.position.lat}`).join(';');
     // 🆕 Changed from 'driving' to 'walking' for walkable routes
     const url = `https://api.mapbox.com/directions/v5/mapbox/walking/${coordinates}?geometries=geojson&overview=full&steps=true&access_token=${mapboxToken}`;
-    
+
     console.log('🌐 Fetching route from Mapbox...');
     const response = await fetch(url);
-    
+
     if (!response.ok) {
       console.error('❌ Mapbox response not OK:', response.status);
       return createStraightLineRoutes(primaryMarkers);
     }
 
     const data = await response.json();
-    console.log('📦 Mapbox response:', { 
-      hasRoutes: !!data.routes, 
+    console.log('📦 Mapbox response:', {
+      hasRoutes: !!data.routes,
       routeCount: data.routes?.length,
       legsCount: data.routes?.[0]?.legs?.length
     });
@@ -69,10 +69,10 @@ const fetchMapboxRoutes = async (markers: MapMarker[], mapboxToken: string): Pro
       // Create one continuous route with the full geometry
       for (let i = 0; i < primaryMarkers.length - 1; i++) {
         const leg = fullRoute.legs[i];
-        
+
         // Extract coordinates from leg steps OR use leg geometry
         let coordinates: [number, number][] = [];
-        
+
         if (leg.steps && leg.steps.length > 0) {
           leg.steps.forEach((step: any) => {
             if (step.geometry && step.geometry.coordinates) {
@@ -80,7 +80,7 @@ const fetchMapboxRoutes = async (markers: MapMarker[], mapboxToken: string): Pro
             }
           });
         }
-        
+
         // Fallback to straight line if no step coordinates
         if (coordinates.length === 0) {
           coordinates = [
@@ -155,13 +155,13 @@ const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: numbe
 
 const toRad = (degrees: number): number => degrees * (Math.PI / 180);
 
-const MapView = ({ 
-  markers, 
-  routes: providedRoutes, 
-  selectedMarkerId, 
-  onMarkerClick, 
-  userLocation, 
-  onLocationChange, 
+const MapView = ({
+  markers,
+  routes: providedRoutes,
+  selectedMarkerId,
+  onMarkerClick,
+  userLocation,
+  onLocationChange,
   isRouteMode = false,
   currentItinerary,
   onQuickAction
@@ -178,7 +178,7 @@ const MapView = ({
   const [isLocating, setIsLocating] = useState(false);
   const [routes, setRoutes] = useState<Route[]>([]);
   const [isLoadingRoutes, setIsLoadingRoutes] = useState(false);
-  
+
   const [actionType, setActionType] = useState<'add' | 'remove' | 'replace' | ''>('');
   const [inputValue, setInputValue] = useState('');
   const [selectedStop, setSelectedStop] = useState('');
@@ -206,7 +206,7 @@ const MapView = ({
 
       // Count primary markers
       const primaryMarkers = markers.filter(m => m.id.startsWith('primary-') || m.id === 'user-location');
-      
+
       console.log('🔍 Route loading check:', {
         isRouteMode,
         totalMarkers: markers.length,
@@ -224,7 +224,7 @@ const MapView = ({
 
       setIsLoadingRoutes(true);
       const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
-      
+
       if (!mapboxToken) {
         console.warn('⚠️ No Mapbox token, using straight lines');
         setRoutes(createStraightLineRoutes(primaryMarkers));
@@ -351,9 +351,9 @@ const MapView = ({
 
   const handleQuickActionSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     let command = '';
-    
+
     if (actionType === 'add' && inputValue.trim()) {
       command = `add ${inputValue.trim()}`;
     } else if (actionType === 'remove' && selectedStop) {
@@ -361,7 +361,7 @@ const MapView = ({
     } else if (actionType === 'replace' && selectedStop && inputValue.trim()) {
       command = `replace stop ${selectedStop} with ${inputValue.trim()}`;
     }
-    
+
     if (command) {
       onQuickAction?.(command);
       setActionType('');
@@ -372,9 +372,9 @@ const MapView = ({
 
   // 🆕 Debug log for route rendering
   useEffect(() => {
-    console.log('🎨 MapView State:', { 
-      routeCount: routes.length, 
-      isLoadingRoutes, 
+    console.log('🎨 MapView State:', {
+      routeCount: routes.length,
+      isLoadingRoutes,
       isRouteMode,
       markersCount: markers.length,
       primaryMarkersCount: markers.filter(m => m.id.startsWith('primary-') || m.id === 'user-location').length,
@@ -400,15 +400,14 @@ const MapView = ({
                   setInputValue('');
                   setSelectedStop('');
                 }}
-                className={`flex-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  actionType === 'add' 
-                    ? 'bg-green-500 text-white' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                className={`flex-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${actionType === 'add'
+                  ? 'bg-green-500 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
               >
                 ➕ Add
               </button>
-              
+
               <button
                 type="button"
                 onClick={() => {
@@ -416,15 +415,14 @@ const MapView = ({
                   setInputValue('');
                   setSelectedStop('');
                 }}
-                className={`flex-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  actionType === 'remove' 
-                    ? 'bg-red-500 text-white' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                className={`flex-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${actionType === 'remove'
+                  ? 'bg-red-500 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
               >
                 ➖ Remove
               </button>
-              
+
               <button
                 type="button"
                 onClick={() => {
@@ -432,11 +430,10 @@ const MapView = ({
                   setInputValue('');
                   setSelectedStop('');
                 }}
-                className={`flex-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  actionType === 'replace' 
-                    ? 'bg-orange-500 text-white' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                className={`flex-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${actionType === 'replace'
+                  ? 'bg-orange-500 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
               >
                 🔄 Replace
               </button>
@@ -582,41 +579,41 @@ const MapView = ({
                   });
                   return {
                     type: 'Feature' as const,
-                    properties: { 
+                    properties: {
                       index: idx,
-                      distance: route.distanceFormatted, 
-                      duration: route.durationFormatted 
+                      distance: route.distanceFormatted,
+                      duration: route.durationFormatted
                     },
                     geometry: route.geometry
                   };
                 })
             }}
           >
-            <Layer 
+            <Layer
               id="route-border"
-              type="line" 
+              type="line"
               layout={{
                 'line-join': 'round',
                 'line-cap': 'round'
               }}
-              paint={{ 
-                'line-color': '#ffffff', 
-                'line-width': 8, 
-                'line-opacity': 0.8 
-              }} 
+              paint={{
+                'line-color': '#ffffff',
+                'line-width': 8,
+                'line-opacity': 0.8
+              }}
             />
-            <Layer 
+            <Layer
               id="route-line"
-              type="line" 
+              type="line"
               layout={{
                 'line-join': 'round',
                 'line-cap': 'round'
               }}
-              paint={{ 
-                'line-color': '#3b82f6', 
-                'line-width': 5, 
-                'line-opacity': 1 
-              }} 
+              paint={{
+                'line-color': '#3b82f6',
+                'line-width': 5,
+                'line-opacity': 1
+              }}
             />
           </Source>
         )}
@@ -626,19 +623,19 @@ const MapView = ({
           const isPrimary = marker.id.startsWith('primary-');
           const isAlternative = marker.id.startsWith('alternative-');
           const isUserLocation = marker.id === 'user-location';
-          
+
           // 🆕 FIX: Extract number from marker ID (e.g., "primary-0" -> 1, "primary-1" -> 2)
           let displayIndex = 0;
           if (isPrimary) {
             const idMatch = marker.id.match(/primary-(\d+)/);
             displayIndex = idMatch ? parseInt(idMatch[1], 10) + 1 : index + 1;
           }
-          
+
           // Also check metadata for stop number
           if (marker.metadata?.stopNumber) {
             displayIndex = marker.metadata.stopNumber;
           }
-          
+
           return (
             <Marker
               key={marker.id}
@@ -661,8 +658,13 @@ const MapView = ({
                       <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-green-500 rotate-45"></div>
                     </div>
                   ) : isAlternative ? (
-                    // Alternative venue - small gray dot
-                    <div className="w-3 h-3 sm:w-4 sm:h-4 bg-orange-400 rounded-full border-2 border-white shadow-md opacity-80 hover:opacity-100"></div>
+                    // Alternative venue - Orange Pin with Star
+                    <div className="relative">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-full border-3 border-white shadow-lg flex items-center justify-center">
+                        <span className="text-white text-sm">★</span>
+                      </div>
+                      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-orange-500 rotate-45"></div>
+                    </div>
                   ) : (
                     // Primary venue - numbered red marker
                     <div className="relative">
@@ -704,8 +706,8 @@ const MapView = ({
             maxWidth="none"
             className="venue-popup"
           >
-            <PopupContent 
-              marker={popupInfo} 
+            <PopupContent
+              marker={popupInfo}
               onQuickAction={onQuickAction}
               hasCurrentItinerary={!!currentItinerary}
             />
@@ -733,12 +735,12 @@ const MapView = ({
 };
 
 // PopupContent component
-const PopupContent = memo(({ 
-  marker, 
-  onQuickAction, 
-  hasCurrentItinerary 
-}: { 
-  marker: MapMarker; 
+const PopupContent = memo(({
+  marker,
+  onQuickAction,
+  hasCurrentItinerary
+}: {
+  marker: MapMarker;
   onQuickAction?: (action: string) => void;
   hasCurrentItinerary: boolean;
 }) => {
@@ -746,7 +748,7 @@ const PopupContent = memo(({
     const venue = marker.data as Venue;
     const isAlternative = marker.metadata?.isAlternative;
     const isPrimary = marker.metadata?.isPrimary;
-    
+
     const handleAddToRoute = () => {
       if (!onQuickAction) return;
       const venueJson = JSON.stringify({
@@ -761,84 +763,75 @@ const PopupContent = memo(({
         description: venue.description,
         photos: venue.photos
       });
-      
+
       if (marker.metadata?.primaryStopNumber) {
         onQuickAction(`add ${venue.name} after stop ${marker.metadata.primaryStopNumber}[VENUE:${venueJson}]`);
       } else {
         onQuickAction(`add ${venue.name}[VENUE:${venueJson}]`);
       }
     };
-    
+
     const handleRemoveFromRoute = () => {
       if (!onQuickAction || !marker.metadata?.stopNumber) return;
       onQuickAction(`remove stop ${marker.metadata.stopNumber}`);
     };
-    
+
     return (
-      <div className="w-[280px] sm:w-[320px] max-w-[90vw]">
+      <div className="compact-popup">
+        {/* Compact header image */}
         {venue.photoUrl && (
-          <div className="w-full h-[140px] sm:h-[160px] bg-gray-100 overflow-hidden rounded-t-lg">
-            <img 
-              src={venue.photoUrl} 
-              alt={venue.name}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-              }}
-            />
-          </div>
+          <img
+            src={venue.photoUrl}
+            alt={venue.name}
+            className="popup-image"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+            }}
+          />
         )}
-        
-        <div className="p-3 space-y-2">
-          <h3 className="font-bold text-sm sm:text-base leading-tight line-clamp-2">
-            {venue.name}
-          </h3>
-          <p className="text-xs text-gray-600 line-clamp-1">
-            {venue.address}
-          </p>
-          
-          {venue.description && (
-            <p className="text-xs text-gray-700 line-clamp-2 leading-relaxed">
-              {venue.description}
-            </p>
-          )}
-          
-          {(venue.rating || venue.priceLevel) && (
-            <div className="flex items-center gap-2 text-xs">
-              {venue.rating && (
-                <span className="flex items-center gap-1 text-gray-700 font-medium">
-                  <span className="text-yellow-500">⭐</span>
-                  {venue.rating}
-                </span>
-              )}
-              {venue.priceLevel && (
-                <span className="text-gray-600">
-                  {venue.priceLevel}
-                </span>
-              )}
+
+        <div className="popup-content">
+          {/* Stop number badge if applicable */}
+          {marker.metadata?.stopNumber && (
+            <div className="inline-flex items-center justify-center w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full mr-2 mb-1">
+              {marker.metadata.stopNumber}
             </div>
           )}
-          
+
+          <h3 className="popup-title">{venue.name}</h3>
+          <p className="popup-address">{venue.address}</p>
+
+          {/* Inline meta info */}
+          <div className="popup-meta">
+            {venue.rating && (
+              <span className="rating">⭐ {venue.rating}</span>
+            )}
+            {venue.priceLevel && (
+              <span>{venue.priceLevel}</span>
+            )}
+          </div>
+
+          {/* Action buttons */}
           {hasCurrentItinerary && (
-            <div className="pt-2 border-t border-gray-200">
+            <div className="popup-actions">
               {isAlternative && (
                 <button
                   onClick={handleAddToRoute}
-                  className="w-full px-3 py-2 bg-green-500 hover:bg-green-600 text-white text-xs font-medium rounded-lg transition-colors duration-150 flex items-center justify-center gap-1"
+                  className="action-btn success"
+                  title="Add to Route"
                 >
-                  <span>➕</span>
-                  <span>Add to Route</span>
+                  ➕
                 </button>
               )}
-              
+
               {isPrimary && marker.metadata?.stopNumber && (
                 <button
                   onClick={handleRemoveFromRoute}
-                  className="w-full px-3 py-2 bg-red-500 hover:bg-red-600 text-white text-xs font-medium rounded-lg transition-colors duration-150 flex items-center justify-center gap-1"
+                  className="action-btn danger"
+                  title="Remove from Route"
                 >
-                  <span>➖</span>
-                  <span>Remove from Route</span>
+                  ➖
                 </button>
               )}
             </div>

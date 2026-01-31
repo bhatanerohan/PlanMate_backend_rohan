@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Roam - AI Travel Curator</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6366f1",
+                        "primary-dark": "#4f46e5",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                        "surface-dark": "#1e293b",
+                        "surface-light": "#ffffff",
+                        "border-dark": "#334155",
+                        "border-light": "#e2e8f0",
+                        "text-secondary-dark": "#94a3b8",
+                        "text-secondary-light": "#64748b",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCBhGxTbNNdCSP668FRaUdonUasBFJ0TmDs_oCzxSiC305juYYBQrfDU0auQlKCdqE5_qzxIoBVkgMFjMcQu3_1qYTpTC2TLpPOIY36Y49ReVyWNdzwuneU-ZYxASFsxyfah5Qnjpz0rI_pUV7LtxL2QjmhBXrqD6zTIK3eZwREk89Fe5FrVdVQjb9Eo_pkFuZcIn7-Y7t4E1vRi_aF-RBm5So2UVLzCcIoh_AJJ10pVfcUdJ2edM2STn8CRQlclO3o8GL_I3QiWDfW");
+            background-size: cover;
+            background-position: center;
+        }
+
+        input[type=range] {
+            height: 4px;
+            -webkit-appearance: none;
+            margin: 10px 0;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 5px;
+            cursor: pointer;
+            animate: 0.2s;
+            box-shadow: 0px 0px 0px #000000;
+            background: #e2e8f0;
+            border-radius: 5px;
+            border: 0px solid #000000;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            box-shadow: 0px 0px 1px #000000;
+            border: 2px solid #6366f1;
+            height: 16px;
+            width: 16px;
+            border-radius: 25px;
+            background: #ffffff;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -6px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col overflow-x-hidden font-body text-gray-900 dark:text-gray-100">
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/history@5/umd/history.development.js"></script>
+    <script src="https://unpkg.com/react-router@6.3.0/umd/react-router.development.js"></script>
+    <script src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { createRoot } = ReactDOM;
+        const { MemoryRouter, Routes, Route, Link, useNavigate } = ReactRouterDOM;
+
+        // --- Shared Components ---
+
+        const Header = () => (
+            <header class="w-full absolute top-0 z-50 transition-all duration-300">
+                <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                    <Link to="/" class="flex items-center gap-3 text-white">
+                        <div class="size-8 text-white">
+                            <svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_6_319)">
+                                    <path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight">Roam</h2>
+                    </Link>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-white/90 hover:text-white text-sm font-medium transition-colors" href="#">My Trips</a>
+                        <a class="text-white/90 hover:text-white text-sm font-medium transition-colors" href="#">Saved</a>
+                        <a class="text-white/90 hover:text-white text-sm font-medium transition-colors" href="#">Community</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <div class="hidden md:flex gap-3">
+                            <button class="flex items-center justify-center rounded-full h-10 px-6 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-semibold hover:bg-white/20 transition-colors">
+                                Log In
+                            </button>
+                            <button class="flex items-center justify-center rounded-full h-10 px-6 bg-white text-indigo-600 text-sm font-bold shadow-lg hover:bg-gray-50 transition-colors">
+                                Sign Up
+                            </button>
+                        </div>
+                        <div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white/30 cursor-pointer shadow-md" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDr76QnktfFBOseLn7Nmqdl_1TNBrhuEzMt3qUFQVteLVY0drNGRKJ1ymAS3_gC5_E_8b1JA3SrUaT6KS9uOydG8CZrlrl_tGPczEnDxPAuXJEhnJZ96jK0WVp-gCUsUUd_lTuBlJPndYDfQ4WZz2beMcevmlPIvViIK7k1hYwXm3iGSLnQ4f5Ex_YR3FfqV3i7a0_qCnu0TE8Iwm-_Z6Vo6Uvi6Jh5ODLUpNwfTNRrJdKRyJjgQZya2WIzKlwFCmOqGxNaDbiFrm-c")' }}></div>
+                    </div>
+                </div>
+            </header>
+        );
+
+        const TrendingDestinations = () => (
+            <div class="bg-background-light dark:bg-slate-900 py-16 px-4 md:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+                        <div>
+                            <h3 class="text-slate-900 dark:text-white text-3xl font-bold mb-2">Trending Destinations</h3>
+                            <p class="text-slate-500 dark:text-slate-400">Curated by our AI based on recent popularity.</p>
+                        </div>
+                        <a class="text-indigo-600 hover:text-indigo-700 font-medium flex items-center gap-1 group" href="#">
+                            Explore all
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-lg">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                            {
+                                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuASxqmMuhJPzc1TvuI0C3qtacP0RDFfABbzW2-V78vY2GWGkgYFk1f2wcic-fPlfDM8lKHyfRZn7BITe6_GE_-O8MoOLyAXmKh8OSRKDxbHHA0c6KptaTaxRo96D5z88znkerKLCR_IuEhlvqAUY1IQ0hpPQAVEqNzYMMZGE--hEqEoAp2gYw5ZanOz3rJ80d828V_cQdYtPvjdonFEkzCi9qqEmSC7jIDXPSMUn1WqMAewB4xwdU9Zco_4cWFH2XJl3OJVmWR2jT-d",
+                                tag: "Cultural",
+                                title: "Japan",
+                                desc: "Experience the perfect blend of ancient tradition and futuristic innovation in Tokyo and Kyoto."
+                            },
+                            {
+                                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCCfPg-6TfE-xZ4smcNA_1Nx9tJlNdgMIKcl3BvalQoOH_wa0Ly-joJW4peeZTvDhhXl6FFZwZG-LHGuUtC18SLq6np4FesFUPc7dhj1vvoG6WpjoHFYB87ZJe6BrmwHYOou7P21hgLT2zwc0HAEsWzt7jH7FS-qvwkllmakJWRtMfP18wM4zhKtbos9ybpcsWSwn2SyDZoA1ExoBhDjkwixUWbD7COUoTqCM2kHdbEdSqfsBpkVuM2fNEfBdJAYJpwUXx06iuCujC8",
+                                tag: "Coastal",
+                                title: "Amalfi Coast",
+                                desc: "Breathtaking views, crystal clear waters, and authentic Italian cuisine waiting for you."
+                            },
+                            {
+                                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAdhKB_9_j3d-WGZMx_1GZCpUVCq7WYN9AHcGESMJcy4zIsu-kulXCu6uhCC_U_yEKu4ztjYk4CdYsCdi5fNN-rFZhHC9Hm133poXzI77ZimhPU6nrsHkYMSbGjvA4OouIX-Kmm2lnuN4iQR1dDGs7vcNKQrS9bz6wI9HMCIEEZJolH8SkjJ3wTXXv5QQXeqCE7u79nd6BGijLWuDdQCsPpqV7wZ-M0jXv9_NKHbZ54zwBXfo_RbC3-m7RLO3h-gIqvyB-xBxaBMiu9",
+                                tag: "Adventure",
+                                title: "Iceland",
+                                desc: "Chase the Northern Lights and explore dramatic landscapes of fire and ice."
+                            },
+                            {
+                                img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCBhGxTbNNdCSP668FRaUdonUasBFJ0TmDs_oCzxSiC305juYYBQrfDU0auQlKCdqE5_qzxIoBVkgMFjMcQu3_1qYTpTC2TLpPOIY36Y49ReVyWNdzwuneU-ZYxASFsxyfah5Qnjpz0rI_pUV7LtxL2QjmhBXrqD6zTIK3eZwREk89Fe5FrVdVQjb9Eo_pkFuZcIn7-Y7t4E1vRi_aF-RBm5So2UVLzCcIoh_AJJ10pVfcUdJ2edM2STn8CRQlclO3o8GL_I3QiWDfW",
+                                tag: "Tropical",
+                                title: "Bali",
+                                desc: "Discover spiritual temples, lush jungles, and serene beaches in paradise."
+                            }
+                        ].map((item, index) => (
+                            <div key={index} class="group relative h-96 rounded-[1.5rem] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 ring-1 ring-black/5">
+                                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url("${item.img}")` }}></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-90 transition-opacity"></div>
+                                <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                    <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-semibold text-white mb-3 border border-white/10">{item.tag}</span>
+                                    <h4 class="text-white text-2xl font-bold mb-1 drop-shadow-sm">{item.title}</h4>
+                                    <p class="text-gray-200 text-sm mb-4 line-clamp-2 drop-shadow-sm">{item.desc}</p>
+                                    <button class="w-full bg-white text-slate-900 font-bold py-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-sm shadow-lg">
+                                        <span>Plan this trip</span>
+                                        <span class="material-symbols-outlined text-sm">auto_awesome</span>
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        );
+
+        // --- Date Picker Component ---
+        const DatePickerPopup = ({ onClose, selectedRange, onSelectRange }) => {
+            const { start, end } = selectedRange || { start: 12, end: 16 };
+
+            const handleDayClick = (day) => {
+                if (!onSelectRange) return;
+
+                if (start && end) {
+                    onSelectRange({ start: day, end: null });
+                } else if (!start) {
+                    onSelectRange({ ...selectedRange, start: day });
+                } else if (day < start) {
+                    onSelectRange({ start: day, end: start });
+                } else {
+                    onSelectRange({ ...selectedRange, end: day });
+                }
+            };
+
+            return (
+                <div class="absolute bottom-full left-0 mb-3 w-[340px] bg-white rounded-2xl shadow-xl border border-gray-100/50 p-5 z-50 animate-fade-in-up origin-bottom-left ring-1 ring-black/5">
+                    <div class="flex items-center justify-between mb-5">
+                        <button class="size-8 flex items-center justify-center hover:bg-gray-50 rounded-full text-gray-500 transition-colors">
+                            <span class="material-symbols-outlined text-lg">chevron_left</span>
+                        </button>
+                        <span class="text-gray-800 font-bold text-lg font-display">September 2024</span>
+                        <button class="size-8 flex items-center justify-center hover:bg-gray-50 rounded-full text-gray-500 transition-colors">
+                            <span class="material-symbols-outlined text-lg">chevron_right</span>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-7 mb-3 text-center">
+                        {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(d => (
+                            <span key={d} class="text-xs text-gray-400 font-bold uppercase tracking-wide">{d}</span>
+                        ))}
+                    </div>
+                    <div class="grid grid-cols-7 gap-y-2 text-sm font-medium text-gray-600">
+                        {[...Array(30)].map((_, i) => {
+                            const day = i + 1;
+                            const isStart = start === day;
+                            const isEnd = end === day;
+                            const isRange = start && end && day > start && day < end;
+                            const showLeft = (isEnd || isRange) && start;
+                            const showRight = (isStart && end) || isRange;
+
+                            return (
+                                <div key={day} class="relative flex justify-center w-full" onClick={() => handleDayClick(day)}>
+                                    {showLeft && <div class="absolute left-0 inset-y-0 w-1/2 bg-indigo-50"></div>}
+                                    {showRight && <div class="absolute right-0 inset-y-0 w-1/2 bg-indigo-50"></div>}
+                                    <button class={`relative z-10 size-9 rounded-full transition-colors ${isStart || isEnd
+                                        ? 'bg-primary text-white shadow-md shadow-primary/30'
+                                        : isRange
+                                            ? 'text-primary hover:bg-indigo-100/50'
+                                            : 'hover:bg-gray-100'
+                                        }`}>
+                                        {day}
+                                    </button>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            );
+        };
+
+
+        // --- Screen Components ---
+
+        const HomePage = () => {
+            const navigate = useNavigate();
+            const [travelers, setTravelers] = useState(2);
+            const [budget, setBudget] = useState(3000);
+
+            return (
+                <div className="flex flex-col min-h-screen">
+                    <Header />
+                    <main class="flex-grow flex flex-col relative">
+                        <div class="relative min-h-[85vh] flex flex-col items-center justify-center px-4 md:px-8 hero-bg">
+                            <div class="w-full max-w-4xl relative z-10 flex flex-col items-center gap-8 mt-16">
+                                <div class="text-center space-y-6 animate-fade-in-up">
+                                    <h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight drop-shadow-xl">
+                                        Where to next?
+                                    </h1>
+                                    <p class="text-white/95 text-xl md:text-2xl max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg text-shadow-sm">
+                                        Your personal AI travel curator. From dream to destination in seconds.
+                                    </p>
+                                </div>
+                                <div class="w-full max-w-4xl bg-white/95 backdrop-blur-md border border-white/40 rounded-[2rem] shadow-2xl p-4 md:p-5 flex flex-col gap-4 mt-8 transform transition-all duration-300">
+                                    <div class="flex flex-col md:flex-row items-center gap-4 p-2">
+                                        <div class="flex-grow w-full md:w-auto relative group">
+                                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                                <span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+                                            </div>
+                                            <input class="w-full bg-transparent border-none rounded-xl py-4 pl-12 pr-4 text-gray-800 placeholder-gray-400 focus:ring-0 text-xl font-medium" placeholder="Ex: 10 days in Italy under $3k..." type="text" />
+                                        </div>
+                                        <button class="w-full md:w-auto shrink-0 bg-primary hover:bg-primary-dark text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-lg shadow-indigo-500/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                                            <span class="material-symbols-outlined">auto_awesome</span>
+                                            <span>Generate</span>
+                                        </button>
+                                    </div>
+                                    <div class="border-t border-gray-100 pt-5 pb-3 px-4 flex flex-wrap lg:flex-nowrap gap-4 items-center justify-start w-full">
+                                        {/* Date Input triggers Navigation to Calendar Page */}
+                                        <div
+                                            onClick={() => navigate('/calendar')}
+                                            class="flex items-center gap-3 px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl hover:bg-white hover:border-gray-300 hover:shadow-md transition-all cursor-pointer flex-1 min-w-[220px]"
+                                        >
+                                            <div class="bg-indigo-50 p-2 rounded-lg text-primary">
+                                                <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                                            </div>
+                                            <div class="flex flex-col w-full">
+                                                <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Dates</span>
+                                                <div class="text-sm font-medium text-gray-700 w-full h-5 flex items-center">Select dates</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center gap-3 px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl hover:bg-white hover:border-gray-300 hover:shadow-md transition-all flex-1 min-w-[180px]">
+                                            <div class="bg-indigo-50 p-2 rounded-lg text-primary">
+                                                <span class="material-symbols-outlined text-[20px]">group</span>
+                                            </div>
+                                            <div class="flex flex-col flex-grow">
+                                                <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Travelers</span>
+                                                <div class="flex items-center justify-between mt-1">
+                                                    <button onClick={() => setTravelers(Math.max(1, travelers - 1))} class="size-6 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors shadow-sm">
+                                                        <span class="material-symbols-outlined text-[14px]">remove</span>
+                                                    </button>
+                                                    <span class="text-sm font-bold text-gray-800 w-6 text-center">{travelers}</span>
+                                                    <button onClick={() => setTravelers(travelers + 1)} class="size-6 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors shadow-sm">
+                                                        <span class="material-symbols-outlined text-[14px]">add</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-3 px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl hover:bg-white hover:border-gray-300 hover:shadow-md transition-all flex-[2] min-w-[250px]">
+                                            <div class="bg-indigo-50 p-2 rounded-lg text-primary shrink-0">
+                                                <span class="material-symbols-outlined text-[20px]">attach_money</span>
+                                            </div>
+                                            <div class="flex flex-col flex-grow w-full">
+                                                <div class="flex justify-between items-center mb-1">
+                                                    <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Budget Range</span>
+                                                    <span class="text-xs font-bold text-primary bg-indigo-50 px-2 py-0.5 rounded-md">$1k - ${Math.round(budget / 1000)}k</span>
+                                                </div>
+                                                <input
+                                                    class="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
+                                                    max="10000" min="500" step="500" type="range"
+                                                    value={budget}
+                                                    onChange={(e) => setBudget(parseInt(e.target.value))}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-center gap-6 mt-8">
+                                    <div class="flex -space-x-3">
+                                        <img alt="User" class="w-9 h-9 rounded-full border-2 border-white shadow-sm object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4YxCU3Kir-WR647r4NH24pN5vAgj3oha9VSNQ59d28DEJD-Zl3NIdJf84Wkshmnf6yX5Zeu6IOsXR32uCm26t2NPVch0W00ENJJNYRokuBggRpD7mUSkfIXb3q6jIqPorL2DUB6ARTrGxiXv_6tTal1y9607uVl3B6zkutb1SgVMT-vjr0i2ppb24awGN1zAass_Hymt2rhqjLflFDPyk9wPlCP-oCw9wFmQAcw61SfukUumLNJXP7_JCsRpZxBZpiNZrTjgzaJ6x" />
+                                        <img alt="User" class="w-9 h-9 rounded-full border-2 border-white shadow-sm object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1MBF1DqBdpCbcVTaotY4kHTwl65UcSmk1X3Z7bH1OZ6J7YR6f9v4XNlOLQy3gYllxk3I0_qnZRTpbkymEhjW5Xg6HmYsdlH2UO1mW82nhCT8LK5itkRqbtcFRnQqf0e_uc4GPIvuGNHFvmQuEgMrPTTFjGz01b4Bq6f-ShhnKM0aneRdzhWXdFpKERGTMNzAZPUnR8_XAsmrlDZPZPAYgkPcjGNhok5AbnuR7tml53aNJUrCNAjFf-Zjx08Q7_IFLjKd64Hl5spkj" />
+                                        <img alt="User" class="w-9 h-9 rounded-full border-2 border-white shadow-sm object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEEcIX4NVhVlMR-QfFr5Xelfi7__DZWQCPflxoL5H94KBXCmxPITd3BHWKseWh-4kSpCuANMQIdBiEKy94h6A0YsgZjEHTWE9boiTcYZNJ27MtkJDfVS2u1bDDvhc6CCtKIJQTkJ86jNODI59h3MNoC0G74iWD8tax8QPyt8SvC5XtDIDdkVax3Cj-TcrohIUvi8FHyFvo2C5qWfj4aLfWkj-p_hiS-imujZTWdBqcPmjph3lwjfPVtXvaabn4xVq37WqH87AuVoaS" />
+                                        <div class="w-9 h-9 rounded-full border-2 border-white bg-indigo-900/80 backdrop-blur-sm text-white flex items-center justify-center text-xs font-bold shadow-sm">+2k</div>
+                                    </div>
+                                    <p class="text-white text-sm font-medium drop-shadow-md bg-black/20 px-3 py-1 rounded-full backdrop-blur-sm">Planned trips today</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                                <span class="material-symbols-outlined text-white text-4xl opacity-80 drop-shadow-md">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <TrendingDestinations />
+                    </main>
+                </div>
+            );
+        };
+
+        const CalendarPage = () => {
+            const navigate = useNavigate();
+            const [showCalendar, setShowCalendar] = useState(true);
+            const [travelers, setTravelers] = useState(2);
+            const [budget, setBudget] = useState(3000);
+            const [dateRange, setDateRange] = useState({ start: 12, end: 16 });
+
+            // Recreate the state on this page so the inputs remain consistent
+            // In a real app, this would be global state context
+
+            const handleCloseCalendar = () => {
+                setShowCalendar(false);
+            }
+
+            return (
+                <div className="flex flex-col min-h-screen">
+                    <Header />
+                    <main class="flex-grow flex flex-col relative">
+                        <div class="relative min-h-[85vh] flex flex-col items-center justify-center px-4 md:px-8 hero-bg">
+                            <div class="w-full max-w-4xl relative z-10 flex flex-col items-center gap-8 mt-16">
+                                <div class="text-center space-y-6 animate-fade-in-up">
+                                    <h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight drop-shadow-xl">
+                                        Where to next?
+                                    </h1>
+                                    <p class="text-white/95 text-xl md:text-2xl max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg text-shadow-sm">
+                                        Your personal AI travel curator. From dream to destination in seconds.
+                                    </p>
+                                </div>
+                                <div class="w-full max-w-4xl bg-white/95 backdrop-blur-md border border-white/40 rounded-[2rem] shadow-2xl p-4 md:p-5 flex flex-col gap-4 mt-8 transform transition-all duration-300">
+                                    <div class="flex flex-col md:flex-row items-center gap-4 p-2">
+                                        <div class="flex-grow w-full md:w-auto relative group">
+                                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                                <span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+                                            </div>
+                                            <input class="w-full bg-transparent border-none rounded-xl py-4 pl-12 pr-4 text-gray-800 placeholder-gray-400 focus:ring-0 text-xl font-medium" placeholder="Ex: 10 days in Italy under $3k..." type="text" />
+                                        </div>
+                                        <button class="w-full md:w-auto shrink-0 bg-primary hover:bg-primary-dark text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-lg shadow-indigo-500/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                                            <span class="material-symbols-outlined">auto_awesome</span>
+                                            <span>Generate</span>
+                                        </button>
+                                    </div>
+                                    <div class="border-t border-gray-100 pt-5 pb-3 px-4 flex flex-wrap lg:flex-nowrap gap-4 items-center justify-start w-full">
+                                        {/* Date Input with Open Calendar */}
+                                        <div class="relative flex items-center gap-3 px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl hover:bg-white hover:border-gray-300 hover:shadow-md transition-all cursor-pointer flex-1 min-w-[220px]">
+                                            <div class="bg-indigo-50 p-2 rounded-lg text-primary">
+                                                <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                                            </div>
+                                            <div class="flex flex-col flex-1" onClick={() => setShowCalendar(!showCalendar)}>
+                                                <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Dates</span>
+                                                <input class="bg-transparent border-none p-0 text-sm font-medium text-gray-700 focus:ring-0 cursor-pointer w-full" readonly type="text" value={`Sep ${dateRange.start}${dateRange.end ? ' - Sep ' + dateRange.end : ''}`} />
+                                            </div>
+
+                                            {showCalendar && (
+                                                <DatePickerPopup
+                                                    onClose={handleCloseCalendar}
+                                                    selectedRange={dateRange}
+                                                    onSelectRange={setDateRange}
+                                                />
+                                            )}
+                                        </div>
+
+                                        <div class="flex items-center gap-3 px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl hover:bg-white hover:border-gray-300 hover:shadow-md transition-all flex-1 min-w-[180px]">
+                                            <div class="bg-indigo-50 p-2 rounded-lg text-primary">
+                                                <span class="material-symbols-outlined text-[20px]">group</span>
+                                            </div>
+                                            <div class="flex flex-col flex-grow">
+                                                <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Travelers</span>
+                                                <div class="flex items-center justify-between mt-1">
+                                                    <button onClick={() => setTravelers(Math.max(1, travelers - 1))} class="size-6 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors shadow-sm">
+                                                        <span class="material-symbols-outlined text-[14px]">remove</span>
+                                                    </button>
+                                                    <span class="text-sm font-bold text-gray-800 w-6 text-center">{travelers}</span>
+                                                    <button onClick={() => setTravelers(travelers + 1)} class="size-6 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-600 hover:text-primary hover:border-primary transition-colors shadow-sm">
+                                                        <span class="material-symbols-outlined text-[14px]">add</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-3 px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl hover:bg-white hover:border-gray-300 hover:shadow-md transition-all flex-[2] min-w-[250px]">
+                                            <div class="bg-indigo-50 p-2 rounded-lg text-primary shrink-0">
+                                                <span class="material-symbols-outlined text-[20px]">attach_money</span>
+                                            </div>
+                                            <div class="flex flex-col flex-grow w-full">
+                                                <div class="flex justify-between items-center mb-1">
+                                                    <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Budget Range</span>
+                                                    <span class="text-xs font-bold text-primary bg-indigo-50 px-2 py-0.5 rounded-md">$1k - ${Math.round(budget / 1000)}k</span>
+                                                </div>
+                                                <input
+                                                    class="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
+                                                    max="10000" min="500" step="500" type="range"
+                                                    value={budget}
+                                                    onChange={(e) => setBudget(parseInt(e.target.value))}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-center gap-6 mt-8">
+                                    <div class="flex -space-x-3">
+                                        <img alt="User" class="w-9 h-9 rounded-full border-2 border-white shadow-sm object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4YxCU3Kir-WR647r4NH24pN5vAgj3oha9VSNQ59d28DEJD-Zl3NIdJf84Wkshmnf6yX5Zeu6IOsXR32uCm26t2NPVch0W00ENJJNYRokuBggRpD7mUSkfIXb3q6jIqPorL2DUB6ARTrGxiXv_6tTal1y9607uVl3B6zkutb1SgVMT-vjr0i2ppb24awGN1zAass_Hymt2rhqjLflFDPyk9wPlCP-oCw9wFmQAcw61SfukUumLNJXP7_JCsRpZxBZpiNZrTjgzaJ6x" />
+                                        <img alt="User" class="w-9 h-9 rounded-full border-2 border-white shadow-sm object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1MBF1DqBdpCbcVTaotY4kHTwl65UcSmk1X3Z7bH1OZ6J7YR6f9v4XNlOLQy3gYllxk3I0_qnZRTpbkymEhjW5Xg6HmYsdlH2UO1mW82nhCT8LK5itkRqbtcFRnQqf0e_uc4GPIvuGNHFvmQuEgMrPTTFjGz01b4Bq6f-ShhnKM0aneRdzhWXdFpKERGTMNzAZPUnR8_XAsmrlDZPZPAYgkPcjGNhok5AbnuR7tml53aNJUrCNAjFf-Zjx08Q7_IFLjKd64Hl5spkj" />
+                                        <img alt="User" class="w-9 h-9 rounded-full border-2 border-white shadow-sm object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEEcIX4NVhVlMR-QfFr5Xelfi7__DZWQCPflxoL5H94KBXCmxPITd3BHWKseWh-4kSpCuANMQIdBiEKy94h6A0YsgZjEHTWE9boiTcYZNJ27MtkJDfVS2u1bDDvhc6CCtKIJQTkJ86jNODI59h3MNoC0G74iWD8tax8QPyt8SvC5XtDIDdkVax3Cj-TcrohIUvi8FHyFvo2C5qWfj4aLfWkj-p_hiS-imujZTWdBqcPmjph3lwjfPVtXvaabn4xVq37WqH87AuVoaS" />
+                                        <div class="w-9 h-9 rounded-full border-2 border-white bg-indigo-900/80 backdrop-blur-sm text-white flex items-center justify-center text-xs font-bold shadow-sm">+2k</div>
+                                    </div>
+                                    <p class="text-white text-sm font-medium drop-shadow-md bg-black/20 px-3 py-1 rounded-full backdrop-blur-sm">Planned trips today</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                                <span class="material-symbols-outlined text-white text-4xl opacity-80 drop-shadow-md">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <TrendingDestinations />
+                    </main>
+                </div>
+            )
+        };
+
+        const App = () => {
+            return (
+                <MemoryRouter>
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/calendar" element={<CalendarPage />} />
+                    </Routes>
+                </MemoryRouter>
+            );
+        };
+
+        const root = createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>

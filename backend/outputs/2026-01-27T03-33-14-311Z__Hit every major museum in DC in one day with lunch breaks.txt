@@ -1,0 +1,201 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-01-27T03:33:14.311Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-01-27T03:33:14.312Z] LOG 📝 User prompt: "Hit every major museum in DC in one day with lunch breaks"
+[2026-01-27T03:33:14.312Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-01-27T03:33:39.121Z] LOG POST /api/plan
+[2026-01-27T03:33:39.123Z] LOG 
+================================================================================
+[2026-01-27T03:33:39.124Z] LOG 📥 Received: "add St. Patrick's Cathedral after stop 4[VENUE:{"name":"St. Patrick's Cathedral","address":"5th Ave, New York, NY 10022, United States","location":{"lat":40.7586117,"lng":-73.9761953,"coordinates":"40.7586117,-73.9761953"},"rating":4.8,"priceLevel":"N/A","placeId":"ChIJUW4vEPxYwokRW6o24DU0YIg","types":["tourist_attraction","church","place_of_worship","point_of_interest","establishment"],"description":"A towering Neo-Gothic Roman Catholic cathedral, built in 1879, with impressive twin spires and intricate architectural details. It stands as a serene landmark amidst the bustling city.","photos":["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AcnlKN22Tr7-JR699_c4OR5kTp6beXF4wf-XsdkxhdWWUuTFsG1GHuGHpy1bUEYJuTQi7sy7BXHPdEq6DvUXEtWApb9TnUmXE8UxNB9kSCC4wFeAIS-e_v_nIX0aPZJV2wyrsqCFb7AvIrWa8vFRKsIVT9cQYlxrwcLT6K-k3gGyZ8qqPGBF5UZj-VcGGKKuQcdhf0yGP3aDeQWEG444wepj43d39zyb2eTvfdQhXGCsyF9GCwejXjbxueGjzpVnKnKWt_y_R42BvZ03YQM5cpQ_5N3rKpytcQBJc0DlRzPaPrur2x76vrwAX1cF0IEQ0zCa-5C97n5O6FmUocoXcOZ5_LpiXod6sQOCPoF45gJWEC8jxCjPK1dvcKrpPWL3ATircDzKcNL-9_hVBGE3RRJW-kFUMy0sV-qZmoLZevOz9XbLx53E0RKW5otsyh6OH4yt-avvuvuSRaVQhUm6-irqp7ukgxd0u-jd5HfJ_LVogtKCWbOT8W9suGa2XgYcXvmJjyTw6Vz3z2w97cfCpHX-WsHWDblOO60NYN8BKOdXHkUBfB5aZLxz69DVKn98gjO98I4WQeWF&key=AIzaSyD_WC6QvbEThRWY_jYnE3zQGosqXkXtMrM"]}]"
+[2026-01-27T03:33:39.124Z] LOG 📋 Current itinerary: 5 venues
+[2026-01-27T03:33:39.125Z] LOG ================================================================================
+[2026-01-27T03:33:39.125Z] LOG 
+🔍 Classifying intent...
+[2026-01-27T03:33:40.954Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"agent4","queryType":"itinerary_modification","reasoning":"The user wants to add a specific venue to their existing itinerary.","useGeminiGrounding":false,"hasCurrentItinerary":true,"corridorDetected":false,"explicitRouteDetected":false}
+[2026-01-27T03:33:40.956Z] LOG 
+📍 Geo preference: walkable (area anchor)
+[2026-01-27T03:33:40.957Z] LOG 
+🔄 MODIFICATION FLOW
+[2026-01-27T03:33:40.957Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-01-27T03:33:40.958Z] LOG 
+🔧 Agent 4: Modification Agent (Phase 3) starting...
+[2026-01-27T03:33:40.959Z] LOG 📝 User request: "add St. Patrick's Cathedral after stop 4[VENUE:{"name":"St. Patrick's Cathedral","address":"5th Ave, New York, NY 10022, United States","location":{"lat":40.7586117,"lng":-73.9761953,"coordinates":"40.7586117,-73.9761953"},"rating":4.8,"priceLevel":"N/A","placeId":"ChIJUW4vEPxYwokRW6o24DU0YIg","types":["tourist_attraction","church","place_of_worship","point_of_interest","establishment"],"description":"A towering Neo-Gothic Roman Catholic cathedral, built in 1879, with impressive twin spires and intricate architectural details. It stands as a serene landmark amidst the bustling city.","photos":["https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AcnlKN22Tr7-JR699_c4OR5kTp6beXF4wf-XsdkxhdWWUuTFsG1GHuGHpy1bUEYJuTQi7sy7BXHPdEq6DvUXEtWApb9TnUmXE8UxNB9kSCC4wFeAIS-e_v_nIX0aPZJV2wyrsqCFb7AvIrWa8vFRKsIVT9cQYlxrwcLT6K-k3gGyZ8qqPGBF5UZj-VcGGKKuQcdhf0yGP3aDeQWEG444wepj43d39zyb2eTvfdQhXGCsyF9GCwejXjbxueGjzpVnKnKWt_y_R42BvZ03YQM5cpQ_5N3rKpytcQBJc0DlRzPaPrur2x76vrwAX1cF0IEQ0zCa-5C97n5O6FmUocoXcOZ5_LpiXod6sQOCPoF45gJWEC8jxCjPK1dvcKrpPWL3ATircDzKcNL-9_hVBGE3RRJW-kFUMy0sV-qZmoLZevOz9XbLx53E0RKW5otsyh6OH4yt-avvuvuSRaVQhUm6-irqp7ukgxd0u-jd5HfJ_LVogtKCWbOT8W9suGa2XgYcXvmJjyTw6Vz3z2w97cfCpHX-WsHWDblOO60NYN8BKOdXHkUBfB5aZLxz69DVKn98gjO98I4WQeWF&key=AIzaSyD_WC6QvbEThRWY_jYnE3zQGosqXkXtMrM"]}]"
+[2026-01-27T03:33:40.960Z] LOG ✅ Found embedded venue data: St. Patrick's Cathedral
+[2026-01-27T03:33:40.961Z] LOG    Cleaned prompt: "add St. Patrick's Cathedral after stop 4"
+[2026-01-27T03:33:43.328Z] LOG 🎯 Multi-operation detected: 1 operations
+[2026-01-27T03:33:43.330Z] LOG 
+📊 Executing Multi-Operation Sequence
+[2026-01-27T03:33:43.330Z] LOG 
+🔹 Operation 1/1: ADD
+[2026-01-27T03:33:43.331Z] LOG 
+➕ ADD: 1 venues
+[2026-01-27T03:33:43.332Z] LOG    User location available: No
+[2026-01-27T03:33:43.332Z] LOG ⚡ Using embedded venue data - SKIPPING Google Places API call
+[2026-01-27T03:33:43.333Z] LOG    Venue: St. Patrick's Cathedral
+[2026-01-27T03:33:43.334Z] LOG    PlaceId: ChIJUW4vEPxYwokRW6o24DU0YIg
+[2026-01-27T03:34:15.130Z] LOG POST /api/plan
+[2026-01-27T03:34:15.131Z] LOG 
+================================================================================
+[2026-01-27T03:34:15.132Z] LOG 📥 Received: "Hit every major museum in DC in one day with lunch breaks"
+[2026-01-27T03:34:15.133Z] LOG ================================================================================
+[2026-01-27T03:34:15.133Z] LOG 
+🔍 Classifying intent...
+[2026-01-27T03:34:16.658Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"gemini","queryType":"itinerary_planning","reasoning":"User wants to plan an experience with multiple stops, specifically visiting major museums in DC with breaks.","useGeminiGrounding":true,"hasCurrentItinerary":false,"corridorDetected":false,"explicitRouteDetected":false}
+[2026-01-27T03:34:16.661Z] LOG 
+📍 Geo preference: walkable (area anchor)
+[2026-01-27T03:34:16.662Z] LOG 
+⚡ NEW CANDIDATE FLOW: Gemini → Enrich All → Venue Selector → Mapbox
+[2026-01-27T03:34:16.663Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-01-27T03:34:16.664Z] LOG 
+🔍 STEP 2: Calling Gemini for 15-20 CANDIDATES...
+[2026-01-27T03:34:16.665Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-01-27T03:34:16.666Z] LOG 📝 User prompt: "Hit every major museum in DC in one day with lunch breaks"
+[2026-01-27T03:34:16.667Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-01-27T03:34:40.048Z] LOG ✅ Gemini response received
+[2026-01-27T03:34:40.049Z] LOG 📄 Response length: 15135 characters
+[2026-01-27T03:34:40.050Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-01-27T03:34:40.052Z] LOG 📍 Grounding chunks: 28 sources
+[2026-01-27T03:34:40.053Z] LOG 🔄 Parsing Gemini response...
+[2026-01-27T03:34:40.055Z] LOG    📊 Parsed: 8 must_have, 12 nice_to_have
+[2026-01-27T03:34:40.055Z] LOG 
+✨ Parsed 20 CANDIDATES:
+[2026-01-27T03:34:40.056Z] LOG    🎯 Must-have: 8
+[2026-01-27T03:34:40.056Z] LOG    ✨ Nice-to-have: 12
+[2026-01-27T03:34:40.057Z] LOG 📋 Plan: DC Major Museum Exploration, 5 target stops
+
+--- Summary ---
+Completed
+[2026-01-27T03:34:55.484Z] LOG    ✅ Gemini returned 3 candidates
+[2026-01-27T03:34:55.485Z] LOG    🎯 Must-have: 1
+[2026-01-27T03:34:55.485Z] LOG    ✨ Nice-to-have: 2
+[2026-01-27T03:34:55.486Z] LOG 
+📍 STEP 3: Enriching ALL candidates via Google Places...
+[2026-01-27T03:34:55.488Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-27T03:34:55.489Z] LOG 📦 Processing 3 candidates from Gemini
+[2026-01-27T03:34:55.490Z] LOG    🎯 Must-have: 1
+[2026-01-27T03:34:55.491Z] LOG    ✨ Nice-to-have: 2
+[2026-01-27T03:34:55.491Z] LOG 📍 Location hint: DC in one day
+[2026-01-27T03:34:55.492Z] LOG 
+🔍 Enriching 3 candidates in 1 batch(es)...
+[2026-01-27T03:34:55.493Z] LOG 
+   📦 Batch 1/1 (3 searches)...
+[2026-01-27T03:34:55.494Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-27T03:34:55.495Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2026-01-27T03:34:55.495Z] LOG    1. Searching "The Modern Art Museum" in "Downtown"
+[2026-01-27T03:34:55.496Z] LOG 🔍 [Google Places] Text search: "The Modern Art Museum" in Downtown
+[2026-01-27T03:34:55.498Z] LOG    2. Searching "Riverside Park" in "Uptown"
+[2026-01-27T03:34:55.499Z] LOG 🔍 [Google Places] Text search: "Riverside Park" in Uptown
+[2026-01-27T03:34:55.501Z] LOG    3. Searching "Café Gourmet" in "Midtown"
+[2026-01-27T03:34:55.501Z] LOG 🔍 [Google Places] Text search: "Café Gourmet" in Midtown
+[2026-01-27T03:34:56.019Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:34:56.109Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:34:56.169Z] LOG    ⚠️  Riverside Press Park: No editorial summary available
+[2026-01-27T03:34:56.171Z] LOG ✅ Found 1 places
+[2026-01-27T03:34:56.199Z] LOG    ✅ Crema Gourmet: Got description (96 chars)
+[2026-01-27T03:34:56.202Z] LOG ✅ Found 1 places
+[2026-01-27T03:34:56.444Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:34:56.518Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2026-01-27T03:34:56.519Z] LOG ✅ Found 1 places
+[2026-01-27T03:34:56.520Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 1025ms
+[2026-01-27T03:34:56.520Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-27T03:34:56.521Z] LOG       ✅ Batch 1 complete: 3 results
+[2026-01-27T03:34:56.522Z] LOG    ✅ The Modern Art Museum → Institute of Contemporary Art (must_have)
+[2026-01-27T03:34:56.523Z] LOG    ✅ Riverside Park → Riverside Press Park (nice_to_have)
+[2026-01-27T03:34:56.523Z] LOG    ✅ Café Gourmet → Crema Gourmet (nice_to_have)
+[2026-01-27T03:34:56.524Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-27T03:34:56.524Z] LOG    Total enriched: 3
+[2026-01-27T03:34:56.525Z] LOG    🎯 Must-have: 1
+[2026-01-27T03:34:56.526Z] LOG    ✨ Nice-to-have: 2
+[2026-01-27T03:34:56.526Z] LOG    ❌ Failed: 0
+[2026-01-27T03:34:56.527Z] LOG    ⏱️ Time: 1040ms
+[2026-01-27T03:34:56.528Z] LOG    ✅ Enriched 3 candidates
+[2026-01-27T03:34:56.528Z] LOG    🎯 Must-have found: 1
+[2026-01-27T03:34:56.529Z] LOG    ✨ Nice-to-have found: 2
+[2026-01-27T03:34:56.529Z] LOG 
+🎯 STEP 4: Selecting optimal venues...
+[2026-01-27T03:34:56.530Z] LOG 
+🔍 CORRIDOR DETECTION: Analyzing query...
+[2026-01-27T03:34:56.530Z] LOG    Query: "Hit every major museum in DC in one day with lunch breaks"
+[2026-01-27T03:34:56.531Z] LOG    ℹ️ No corridor pattern, using cluster mode
+[2026-01-27T03:34:56.531Z] LOG 🔍 [Google Places] Text search: "DC in one day with lunch breaks"
+[2026-01-27T03:34:56.623Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T03:34:56.693Z] LOG    ✅ Old Ebbitt Grill: Got description (98 chars)
+[2026-01-27T03:34:56.694Z] LOG ✅ Found 1 places
+[2026-01-27T03:34:56.696Z] LOG       ✓ Geocoded "DC in one day with lunch breaks"
+[2026-01-27T03:34:56.697Z] LOG    📍 Mode: CLUSTER
+[2026-01-27T03:34:56.699Z] LOG 
+🔍 INTENT FILTER: Analyzing user intent...
+[2026-01-27T03:34:57.596Z] LOG    Focused query: undefined
+[2026-01-27T03:34:57.598Z] LOG    Allowed categories: ALL
+[2026-01-27T03:34:57.598Z] LOG    Reasoning: User wants variety
+[2026-01-27T03:34:57.599Z] LOG    ✅ Exploratory query - keeping all candidates
+[2026-01-27T03:34:57.599Z] LOG    ⚠️ Walkable filter too strict (0 found). Keeping full candidate set.
+[2026-01-27T03:34:57.600Z] LOG 
+🎯 VENUE SELECTOR: Starting geographic optimization
+[2026-01-27T03:34:57.600Z] LOG    Input: 3 candidates
+[2026-01-27T03:34:57.600Z] LOG    Target: 3 venues
+[2026-01-27T03:34:57.601Z] LOG    🎯 Must-haves available: 1
+[2026-01-27T03:34:57.601Z] LOG    ✨ Nice-to-haves available: 2
+[2026-01-27T03:34:57.601Z] LOG 
+   📍 Selected 1 must-haves:
+[2026-01-27T03:34:57.602Z] LOG       - Institute of Contemporary Art
+[2026-01-27T03:34:57.602Z] LOG    📍 Cluster center: (42.3528, -71.0433)
+[2026-01-27T03:34:57.602Z] LOG 
+   ✨ Selected 2 nice-to-haves:
+[2026-01-27T03:34:57.603Z] LOG       - Riverside Press Park (6.01km from center)
+[2026-01-27T03:34:57.603Z] LOG       - Crema Gourmet (302.37km from center)
+[2026-01-27T03:34:57.604Z] LOG 
+   ✅ SELECTION COMPLETE
+[2026-01-27T03:34:57.605Z] LOG    Total selected: 3
+[2026-01-27T03:34:57.606Z] LOG    Cluster radius: 302.37km
+[2026-01-27T03:34:57.606Z] LOG    🔄 Alternatives: 0 total
+[2026-01-27T03:34:57.607Z] LOG    Selected 1 core venues + 2 complementary stops. Route is spread out (302.37km radius).
+[2026-01-27T03:34:57.607Z] LOG    ✅ Selected 3 venues
+[2026-01-27T03:34:57.607Z] LOG    📍 Cluster radius: 302.37km
+[2026-01-27T03:34:57.608Z] LOG 
+🗺️ STEP 5: Optimizing route order...
+[2026-01-27T03:34:57.608Z] LOG 🔄 [NearestNeighbor] Optimizing 3 waypoints
+[2026-01-27T03:34:57.609Z] LOG    Testing 3 starting point(s)...
+[2026-01-27T03:34:57.610Z] LOG ✅ [NearestNeighbor] Optimization complete
+[2026-01-27T03:34:57.610Z] LOG    Best starting point: waypoint 0
+[2026-01-27T03:34:57.611Z] LOG    Original order: [0 → 1 → 2]
+[2026-01-27T03:34:57.612Z] LOG    Optimized order: [0 → 1 → 2]
+[2026-01-27T03:34:57.612Z] LOG    Original distance: 304.17 km
+[2026-01-27T03:34:57.613Z] LOG    Optimized distance: 304.17 km
+[2026-01-27T03:34:57.613Z] LOG    Improvement: 0.0%
+[2026-01-27T03:34:57.614Z] LOG    Est. walking time: 3647 minutes
+[2026-01-27T03:34:57.614Z] LOG    ✅ Route optimized via Multi-Start Nearest Neighbor (no user location)
+[2026-01-27T03:34:57.615Z] LOG    Best starting point: venue 0
+[2026-01-27T03:34:57.615Z] LOG    Original: Institute of Contemporary Art → Riverside Press Park → Crema Gourmet
+[2026-01-27T03:34:57.615Z] LOG    Optimized: Institute of Contemporary Art → Riverside Press Park → Crema Gourmet
+[2026-01-27T03:34:57.616Z] LOG    Total distance: 189.0 mi
+[2026-01-27T03:34:57.616Z] LOG    Est. walking time: 60h 47m
+[2026-01-27T03:34:57.616Z] LOG    Improvement: 0.0% shorter
+[2026-01-27T03:34:57.617Z] LOG 📍 Calculating route distances...
+[2026-01-27T03:34:57.618Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-27T03:34:57.953Z] LOG ✅ Route calculated: 5.4 mi, 1h 20m
+[2026-01-27T03:34:57.954Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-01-27T03:34:58.308Z] LOG ✅ Output saved to: C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\dist\outputs\planmate_output_2026-01-27T03-34-58.txt
+[2026-01-27T03:34:58.310Z] LOG 
+================================================================================
+[2026-01-27T03:34:58.311Z] LOG ✅ REQUEST COMPLETED (NEW CANDIDATE FLOW)
+[2026-01-27T03:34:58.313Z] LOG    Candidates: 20 → Selected: 5
+[2026-01-27T03:34:58.314Z] LOG    Mode: cluster
+[2026-01-27T03:34:58.316Z] LOG    Cluster radius: 0.59km
+[2026-01-27T03:34:58.317Z] LOG ================================================================================
+
+[2026-01-27T03:34:59.733Z] LOG ✅ Route calculated: 397.4 mi, 47h 9m
+[2026-01-27T03:34:59.737Z] LOG    ✅ Route calculated: 402.9 mi, 48h 29m
+[2026-01-27T03:35:06.423Z] LOG ✅ Output saved to: C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\dist\outputs\planmate_output_2026-01-27T03-35-06.txt
+[2026-01-27T03:35:06.424Z] LOG 
+================================================================================
+[2026-01-27T03:35:06.425Z] LOG ✅ REQUEST COMPLETED (NEW CANDIDATE FLOW)
+[2026-01-27T03:35:06.425Z] LOG    Candidates: 3 → Selected: 3
+[2026-01-27T03:35:06.425Z] LOG    Mode: cluster
+[2026-01-27T03:35:06.426Z] LOG    Cluster radius: 302.37km
+[2026-01-27T03:35:06.426Z] LOG ================================================================================
+

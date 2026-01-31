@@ -1,0 +1,45 @@
+User Prompt: Plan a day of Formula-1 themed sightseeing in Monaco
+
+[2026-01-27T02:54:51.012Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-27T02:54:51.014Z] LOG 📦 Processing 3 candidates from Gemini
+[2026-01-27T02:54:51.016Z] LOG    🎯 Must-have: 1
+[2026-01-27T02:54:51.017Z] LOG    ✨ Nice-to-have: 2
+[2026-01-27T02:54:51.019Z] LOG 📍 Location hint: Monaco
+[2026-01-27T02:54:51.021Z] LOG 
+🔍 Enriching 3 candidates in 1 batch(es)...
+[2026-01-27T02:54:51.022Z] LOG 
+   📦 Batch 1/1 (3 searches)...
+[2026-01-27T02:54:51.026Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-27T02:54:51.030Z] LOG 🔍 [BatchVenueSearchTool] Executing 3 searches in parallel
+[2026-01-27T02:54:51.034Z] LOG    1. Searching "The Modern Art Museum" in "Downtown"
+[2026-01-27T02:54:51.037Z] LOG 🔍 [Google Places] Text search: "The Modern Art Museum" in Downtown
+[2026-01-27T02:54:51.063Z] LOG    2. Searching "Riverside Park" in "Uptown"
+[2026-01-27T02:54:51.068Z] LOG 🔍 [Google Places] Text search: "Riverside Park" in Uptown
+[2026-01-27T02:54:51.078Z] LOG    3. Searching "Café de Flore" in "Midtown"
+[2026-01-27T02:54:51.082Z] LOG 🔍 [Google Places] Text search: "Café de Flore" in Midtown
+[2026-01-27T02:54:51.634Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:54:51.650Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:54:51.832Z] LOG    ✅ Café de Flore: Got description (100 chars)
+[2026-01-27T02:54:51.839Z] LOG ✅ Found 1 places
+[2026-01-27T02:54:51.880Z] LOG    ⚠️  Riverside Park: No editorial summary available
+[2026-01-27T02:54:51.885Z] LOG ✅ Found 1 places
+[2026-01-27T02:54:52.256Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-27T02:54:52.448Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2026-01-27T02:54:52.453Z] LOG ✅ Found 1 places
+[2026-01-27T02:54:52.459Z] LOG ✅ Batch complete: 3/3 searches succeeded, 3 total venues found in 1428ms
+[2026-01-27T02:54:52.466Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-27T02:54:52.471Z] LOG       ✅ Batch 1 complete: 3 results
+[2026-01-27T02:54:52.476Z] LOG    ✅ The Modern Art Museum → Institute of Contemporary Art (must_have)
+[2026-01-27T02:54:52.481Z] LOG    ✅ Riverside Park → Riverside Park (nice_to_have)
+[2026-01-27T02:54:52.484Z] LOG    ✅ Café de Flore → Café de Flore (nice_to_have)
+[2026-01-27T02:54:52.488Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-27T02:54:52.492Z] LOG    Total enriched: 3
+[2026-01-27T02:54:52.496Z] LOG    🎯 Must-have: 1
+[2026-01-27T02:54:52.499Z] LOG    ✨ Nice-to-have: 2
+[2026-01-27T02:54:52.504Z] LOG    ❌ Failed: 0
+[2026-01-27T02:54:52.508Z] LOG    ⏱️ Time: 1498ms
+
+--- Summary ---
+Enrichment completed

@@ -1,0 +1,154 @@
+User Prompt: between MIT and Harvard, pick 6 stops for a 3-hour walk
+
+[2026-01-23T02:43:31.848Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-23T02:43:31.849Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-23T02:43:31.850Z] LOG    🎯 Must-have: 9
+[2026-01-23T02:43:31.850Z] LOG    ✨ Nice-to-have: 11
+[2026-01-23T02:43:31.854Z] LOG 📍 Location hint: Kendall Square/East Cambridge
+[2026-01-23T02:43:31.856Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-23T02:43:31.857Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-23T02:43:31.858Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-23T02:43:31.858Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-23T02:43:31.859Z] LOG    1. Searching "Massachusetts Institute of Technology (MIT) Campus" in "Kendall Square/East Cambridge"
+[2026-01-23T02:43:31.859Z] LOG 🔍 [Google Places] Text search: "Massachusetts Institute of Technology (MIT) Campus" in Kendall Square/East Cambridge
+[2026-01-23T02:43:31.886Z] LOG    2. Searching "Stata Center (MIT)" in "Kendall Square/MIT"
+[2026-01-23T02:43:31.887Z] LOG 🔍 [Google Places] Text search: "Stata Center (MIT)" in Kendall Square/MIT
+[2026-01-23T02:43:31.890Z] LOG    3. Searching "MIT Museum" in "Kendall Square/MIT"
+[2026-01-23T02:43:31.890Z] LOG 🔍 [Google Places] Text search: "MIT Museum" in Kendall Square/MIT
+[2026-01-23T02:43:31.894Z] LOG    4. Searching "Harvard University Campus" in "Harvard Square"
+[2026-01-23T02:43:31.894Z] LOG 🔍 [Google Places] Text search: "Harvard University Campus" in Harvard Square
+[2026-01-23T02:43:31.896Z] LOG    5. Searching "Harvard Yard" in "Harvard Square"
+[2026-01-23T02:43:31.897Z] LOG 🔍 [Google Places] Text search: "Harvard Yard" in Harvard Square
+[2026-01-23T02:43:31.899Z] LOG    6. Searching "John Harvard Statue" in "Harvard Square"
+[2026-01-23T02:43:31.902Z] LOG 🔍 [Google Places] Text search: "John Harvard Statue" in Harvard Square
+[2026-01-23T02:43:31.906Z] LOG    7. Searching "Harvard Museum of Natural History" in "Harvard University"
+[2026-01-23T02:43:31.907Z] LOG 🔍 [Google Places] Text search: "Harvard Museum of Natural History" in Harvard University
+[2026-01-23T02:43:31.909Z] LOG    8. Searching "Memorial Hall (Harvard)" in "Harvard University"
+[2026-01-23T02:43:31.910Z] LOG 🔍 [Google Places] Text search: "Memorial Hall (Harvard)" in Harvard University
+[2026-01-23T02:43:31.913Z] LOG    9. Searching "Kresge Auditorium (MIT)" in "MIT Campus"
+[2026-01-23T02:43:31.915Z] LOG 🔍 [Google Places] Text search: "Kresge Auditorium (MIT)" in MIT Campus
+[2026-01-23T02:43:31.936Z] LOG    10. Searching "Flour Bakery + Cafe" in "Kendall Square"
+[2026-01-23T02:43:31.937Z] LOG 🔍 [Google Places] Text search: "Flour Bakery + Cafe" in Kendall Square
+[2026-01-23T02:43:32.458Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:32.467Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:32.505Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:32.517Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:32.525Z] LOG    ⚠️  Harvard University: No editorial summary available
+[2026-01-23T02:43:32.529Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:32.558Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:32.573Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:32.588Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:32.597Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:32.603Z] LOG    ✅ Massachusetts Institute of Technology: Got description (97 chars)
+[2026-01-23T02:43:32.606Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:32.613Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:32.658Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:32.668Z] LOG    ⚠️  Memorial Hall: No editorial summary available
+[2026-01-23T02:43:32.672Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:32.697Z] LOG    ✅ The Harvard Museum of Natural History: Got description (94 chars)
+[2026-01-23T02:43:32.701Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:32.708Z] LOG    ✅ John Harvard Statue: Got description (87 chars)
+[2026-01-23T02:43:32.711Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:32.721Z] LOG    ⚠️  Kresge Auditorium: No editorial summary available
+[2026-01-23T02:43:32.724Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:32.740Z] LOG    ⚠️  Ray and Maria Stata Center: No editorial summary available
+[2026-01-23T02:43:32.744Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:32.750Z] LOG    ✅ Harvard Yard: Got description (97 chars)
+[2026-01-23T02:43:32.753Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:32.776Z] LOG    ✅ MIT Museum: Got description (97 chars)
+[2026-01-23T02:43:32.781Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:32.805Z] LOG    ✅ Flour Bakery + Cafe: Got description (100 chars)
+[2026-01-23T02:43:32.809Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:32.812Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 954ms
+[2026-01-23T02:43:32.814Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-23T02:43:32.818Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-23T02:43:33.026Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-23T02:43:33.030Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-23T02:43:33.032Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-23T02:43:33.034Z] LOG    1. Searching "Urban Park (UP) Roof Garden" in "Kendall Square"
+[2026-01-23T02:43:33.035Z] LOG 🔍 [Google Places] Text search: "Urban Park (UP) Roof Garden" in Kendall Square
+[2026-01-23T02:43:33.038Z] LOG    2. Searching "Larz Anderson Bridge" in "Charles River/Between Harvard & MIT"
+[2026-01-23T02:43:33.039Z] LOG 🔍 [Google Places] Text search: "Larz Anderson Bridge" in Charles River/Between Harvard & MIT
+[2026-01-23T02:43:33.045Z] LOG    3. Searching "Longfellow Park" in "Near Charles River/Between Harvard & MIT"
+[2026-01-23T02:43:33.049Z] LOG 🔍 [Google Places] Text search: "Longfellow Park" in Near Charles River/Between Harvard & MIT
+[2026-01-23T02:43:33.052Z] LOG    4. Searching "Central Square" in "Central Square"
+[2026-01-23T02:43:33.054Z] LOG 🔍 [Google Places] Text search: "Central Square" in Central Square
+[2026-01-23T02:43:33.057Z] LOG    5. Searching "The Harvard Coop" in "Harvard Square"
+[2026-01-23T02:43:33.059Z] LOG 🔍 [Google Places] Text search: "The Harvard Coop" in Harvard Square
+[2026-01-23T02:43:33.062Z] LOG    6. Searching "Harvard Book Store" in "Harvard Square"
+[2026-01-23T02:43:33.063Z] LOG 🔍 [Google Places] Text search: "Harvard Book Store" in Harvard Square
+[2026-01-23T02:43:33.065Z] LOG    7. Searching "Tatte Bakery & Cafe | Harvard Square" in "Harvard Square"
+[2026-01-23T02:43:33.066Z] LOG 🔍 [Google Places] Text search: "Tatte Bakery & Cafe | Harvard Square" in Harvard Square
+[2026-01-23T02:43:33.069Z] LOG    8. Searching "Le Laboratoire Cambridge" in "Harvard Square"
+[2026-01-23T02:43:33.072Z] LOG 🔍 [Google Places] Text search: "Le Laboratoire Cambridge" in Harvard Square
+[2026-01-23T02:43:33.078Z] LOG    9. Searching "Grendel's Den Restaurant & Bar" in "Harvard Square"
+[2026-01-23T02:43:33.080Z] LOG 🔍 [Google Places] Text search: "Grendel's Den Restaurant & Bar" in Harvard Square
+[2026-01-23T02:43:33.084Z] LOG    10. Searching "Weeks Footbridge" in "Charles River/Near Harvard"
+[2026-01-23T02:43:33.085Z] LOG 🔍 [Google Places] Text search: "Weeks Footbridge" in Charles River/Near Harvard
+[2026-01-23T02:43:33.542Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:33.556Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:33.571Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:33.606Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:33.624Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:33.648Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:33.657Z] LOG    ✅ Urban Park (UP) Roof Garden: Got description (83 chars)
+[2026-01-23T02:43:33.658Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:33.680Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:33.688Z] LOG    ⚠️  Central Square: No editorial summary available
+[2026-01-23T02:43:33.689Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:33.691Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:33.724Z] LOG    ⚠️  John W. Weeks Footbridge: No editorial summary available
+[2026-01-23T02:43:33.725Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:33.745Z] LOG    ✅ Harvard Coop: Got description (92 chars)
+[2026-01-23T02:43:33.747Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:33.758Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:33.765Z] LOG    ⚠️  Lauder Laboratory: No editorial summary available
+[2026-01-23T02:43:33.767Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:33.788Z] LOG    ✅ Longfellow Park: Got description (100 chars)
+[2026-01-23T02:43:33.790Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:33.822Z] LOG    ✅ Harvard Book Store: Got description (91 chars)
+[2026-01-23T02:43:33.823Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:33.840Z] LOG    ✅ Grendel's Den Restaurant & Bar: Got description (91 chars)
+[2026-01-23T02:43:33.842Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:33.852Z] LOG    ⚠️  Anderson Memorial Bridge: No editorial summary available
+[2026-01-23T02:43:33.856Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:33.905Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:43:34.044Z] LOG    ⚠️  Tatte Bakery & Cafe | Harvard Square: No editorial summary available
+[2026-01-23T02:43:34.045Z] LOG ✅ Found 1 places
+[2026-01-23T02:43:34.045Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1013ms
+[2026-01-23T02:43:34.046Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-23T02:43:34.046Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-23T02:43:34.047Z] LOG    ✅ Massachusetts Institute of Technology (MIT) Campus → Massachusetts Institute of Technology (must_have)
+[2026-01-23T02:43:34.048Z] LOG    ✅ Stata Center (MIT) → Ray and Maria Stata Center (must_have)
+[2026-01-23T02:43:34.048Z] LOG    ✅ MIT Museum → MIT Museum (must_have)
+[2026-01-23T02:43:34.049Z] LOG    ✅ Harvard University Campus → Harvard University (must_have)
+[2026-01-23T02:43:34.050Z] LOG    ✅ Harvard Yard → Harvard Yard (must_have)
+[2026-01-23T02:43:34.050Z] LOG    ✅ John Harvard Statue → John Harvard Statue (must_have)
+[2026-01-23T02:43:34.051Z] LOG    ✅ Harvard Museum of Natural History → The Harvard Museum of Natural History (must_have)
+[2026-01-23T02:43:34.052Z] LOG    ✅ Memorial Hall (Harvard) → Memorial Hall (must_have)
+[2026-01-23T02:43:34.052Z] LOG    ✅ Kresge Auditorium (MIT) → Kresge Auditorium (must_have)
+[2026-01-23T02:43:34.053Z] LOG    ✅ Flour Bakery + Cafe → Flour Bakery + Cafe (nice_to_have)
+[2026-01-23T02:43:34.053Z] LOG    ✅ Urban Park (UP) Roof Garden → Urban Park (UP) Roof Garden (nice_to_have)
+[2026-01-23T02:43:34.054Z] LOG    ✅ Larz Anderson Bridge → Anderson Memorial Bridge (nice_to_have)
+[2026-01-23T02:43:34.054Z] LOG    ✅ Longfellow Park → Longfellow Park (nice_to_have)
+[2026-01-23T02:43:34.054Z] LOG    ✅ Central Square → Central Square (nice_to_have)
+[2026-01-23T02:43:34.055Z] LOG    ✅ The Harvard Coop → Harvard Coop (nice_to_have)
+[2026-01-23T02:43:34.055Z] LOG    ✅ Harvard Book Store → Harvard Book Store (nice_to_have)
+[2026-01-23T02:43:34.056Z] LOG    ✅ Tatte Bakery & Cafe | Harvard Square → Tatte Bakery & Cafe | Harvard Square (nice_to_have)
+[2026-01-23T02:43:34.056Z] LOG    ✅ Le Laboratoire Cambridge → Lauder Laboratory (nice_to_have)
+[2026-01-23T02:43:34.057Z] LOG    ✅ Grendel's Den Restaurant & Bar → Grendel's Den Restaurant & Bar (nice_to_have)
+[2026-01-23T02:43:34.057Z] LOG    ✅ Weeks Footbridge → John W. Weeks Footbridge (nice_to_have)
+[2026-01-23T02:43:34.057Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-23T02:43:34.058Z] LOG    Total enriched: 20
+[2026-01-23T02:43:34.058Z] LOG    🎯 Must-have: 9
+[2026-01-23T02:43:34.058Z] LOG    ✨ Nice-to-have: 11
+[2026-01-23T02:43:34.059Z] LOG    ❌ Failed: 0
+[2026-01-23T02:43:34.059Z] LOG    ⏱️ Time: 2212ms
+
+--- Summary ---
+Enrichment completed

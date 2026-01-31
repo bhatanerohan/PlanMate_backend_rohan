@@ -1,0 +1,154 @@
+User Prompt: top 10 coffee shops in Boston, spread out across the city
+
+[2026-01-23T02:36:40.062Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-23T02:36:40.063Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-23T02:36:40.063Z] LOG    🎯 Must-have: 8
+[2026-01-23T02:36:40.063Z] LOG    ✨ Nice-to-have: 12
+[2026-01-23T02:36:40.064Z] LOG 📍 Location hint: Leather District
+[2026-01-23T02:36:40.065Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-23T02:36:40.065Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-23T02:36:40.066Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-23T02:36:40.066Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-23T02:36:40.067Z] LOG    1. Searching "Gracenote Coffee Boston" in "Leather District"
+[2026-01-23T02:36:40.067Z] LOG 🔍 [Google Places] Text search: "Gracenote Coffee Boston" in Leather District
+[2026-01-23T02:36:40.070Z] LOG    2. Searching "PHIN COFFEE HOUSE - Financial District" in "Financial District"
+[2026-01-23T02:36:40.072Z] LOG 🔍 [Google Places] Text search: "PHIN COFFEE HOUSE - Financial District" in Financial District
+[2026-01-23T02:36:40.076Z] LOG    3. Searching "Caffe Vittoria" in "North End"
+[2026-01-23T02:36:40.077Z] LOG 🔍 [Google Places] Text search: "Caffe Vittoria" in North End
+[2026-01-23T02:36:40.080Z] LOG    4. Searching "Central Perk Coffee Co" in "Back Bay"
+[2026-01-23T02:36:40.082Z] LOG 🔍 [Google Places] Text search: "Central Perk Coffee Co" in Back Bay
+[2026-01-23T02:36:40.085Z] LOG    5. Searching "Madhouse Cafe" in "Roxbury"
+[2026-01-23T02:36:40.086Z] LOG 🔍 [Google Places] Text search: "Madhouse Cafe" in Roxbury
+[2026-01-23T02:36:40.091Z] LOG    6. Searching "Little Wolf Coffee" in "Fort Point"
+[2026-01-23T02:36:40.091Z] LOG 🔍 [Google Places] Text search: "Little Wolf Coffee" in Fort Point
+[2026-01-23T02:36:40.095Z] LOG    7. Searching "Green Haus Cafe" in "Mission Hill"
+[2026-01-23T02:36:40.097Z] LOG 🔍 [Google Places] Text search: "Green Haus Cafe" in Mission Hill
+[2026-01-23T02:36:40.100Z] LOG    8. Searching "Tradesman Coffee Shop and Lounge" in "Financial District"
+[2026-01-23T02:36:40.101Z] LOG 🔍 [Google Places] Text search: "Tradesman Coffee Shop and Lounge" in Financial District
+[2026-01-23T02:36:40.104Z] LOG    9. Searching "Public Garden" in "Beacon Hill / Back Bay"
+[2026-01-23T02:36:40.106Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Beacon Hill / Back Bay
+[2026-01-23T02:36:40.111Z] LOG    10. Searching "Boston Common" in "Downtown / Beacon Hill"
+[2026-01-23T02:36:40.114Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown / Beacon Hill
+[2026-01-23T02:36:40.599Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:40.632Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:40.662Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:40.703Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:40.729Z] LOG    ✅ PHIN COFFEE HOUSE - Financial District: Got description (93 chars)
+[2026-01-23T02:36:40.730Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:40.751Z] LOG    ⚠️  Little Wolf Coffee: No editorial summary available
+[2026-01-23T02:36:40.752Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:40.763Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:40.799Z] LOG    ⚠️  Madhouse Cafe: No editorial summary available
+[2026-01-23T02:36:40.799Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:40.810Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:40.812Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:40.839Z] LOG    ⚠️  Central Perk Coffee Co: No editorial summary available
+[2026-01-23T02:36:40.840Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:40.883Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:40.887Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-23T02:36:40.888Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:40.898Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-23T02:36:40.900Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:40.939Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:40.947Z] LOG    ✅ Gracenote Coffee Boston: Got description (89 chars)
+[2026-01-23T02:36:40.947Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:40.948Z] LOG    ⚠️  Green Haus Cafe: No editorial summary available
+[2026-01-23T02:36:40.948Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:40.965Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:41.062Z] LOG    ✅ Tradesman Coffee Shop and Lounge: Got description (98 chars)
+[2026-01-23T02:36:41.063Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:41.086Z] LOG    ✅ Caffe Vittoria: Got description (82 chars)
+[2026-01-23T02:36:41.087Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:41.087Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1021ms
+[2026-01-23T02:36:41.088Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-23T02:36:41.088Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-23T02:36:41.291Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-23T02:36:41.292Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-23T02:36:41.293Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-23T02:36:41.294Z] LOG    1. Searching "Faneuil Hall Marketplace" in "Downtown / Government Center"
+[2026-01-23T02:36:41.294Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Downtown / Government Center
+[2026-01-23T02:36:41.295Z] LOG    2. Searching "New England Aquarium" in "Waterfront"
+[2026-01-23T02:36:41.295Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Waterfront
+[2026-01-23T02:36:41.296Z] LOG    3. Searching "Museum of Fine Arts, Boston" in "Fenway-Kenmore"
+[2026-01-23T02:36:41.296Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Fenway-Kenmore
+[2026-01-23T02:36:41.297Z] LOG    4. Searching "Isabella Stewart Gardner Museum" in "Fenway-Kenmore"
+[2026-01-23T02:36:41.298Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway-Kenmore
+[2026-01-23T02:36:41.298Z] LOG    5. Searching "Boston Tea Party Ships & Museum" in "Fort Point"
+[2026-01-23T02:36:41.299Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Fort Point
+[2026-01-23T02:36:41.299Z] LOG    6. Searching "The Paul Revere House" in "North End"
+[2026-01-23T02:36:41.300Z] LOG 🔍 [Google Places] Text search: "The Paul Revere House" in North End
+[2026-01-23T02:36:41.300Z] LOG    7. Searching "Bunker Hill Monument" in "Charlestown"
+[2026-01-23T02:36:41.301Z] LOG 🔍 [Google Places] Text search: "Bunker Hill Monument" in Charlestown
+[2026-01-23T02:36:41.302Z] LOG    8. Searching "View Boston" in "Back Bay"
+[2026-01-23T02:36:41.303Z] LOG 🔍 [Google Places] Text search: "View Boston" in Back Bay
+[2026-01-23T02:36:41.306Z] LOG    9. Searching "Christopher Columbus Waterfront Park" in "Waterfront"
+[2026-01-23T02:36:41.307Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in Waterfront
+[2026-01-23T02:36:41.307Z] LOG    10. Searching "Fenway Park" in "Fenway-Kenmore"
+[2026-01-23T02:36:41.308Z] LOG 🔍 [Google Places] Text search: "Fenway Park" in Fenway-Kenmore
+[2026-01-23T02:36:41.726Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:41.770Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:41.778Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:41.780Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:41.809Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:41.845Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-01-23T02:36:41.845Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:41.865Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:41.871Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-01-23T02:36:41.874Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:41.897Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-23T02:36:41.899Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:41.933Z] LOG    ✅ Bunker Hill Monument: Got description (98 chars)
+[2026-01-23T02:36:41.936Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:41.942Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:41.969Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-01-23T02:36:41.969Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:42.004Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-01-23T02:36:42.005Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:42.014Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:42.049Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:42.076Z] LOG    ✅ Fenway Park: Got description (91 chars)
+[2026-01-23T02:36:42.076Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:42.138Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-01-23T02:36:42.139Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:42.193Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-23T02:36:42.194Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:42.214Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-23T02:36:42.332Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-01-23T02:36:42.333Z] LOG ✅ Found 1 places
+[2026-01-23T02:36:42.334Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1041ms
+[2026-01-23T02:36:42.334Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-23T02:36:42.335Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-23T02:36:42.335Z] LOG    ✅ Gracenote Coffee Boston → Gracenote Coffee Boston (must_have)
+[2026-01-23T02:36:42.335Z] LOG    ✅ PHIN COFFEE HOUSE - Financial District → PHIN COFFEE HOUSE - Financial District (must_have)
+[2026-01-23T02:36:42.336Z] LOG    ✅ Caffe Vittoria → Caffe Vittoria (must_have)
+[2026-01-23T02:36:42.336Z] LOG    ✅ Central Perk Coffee Co → Central Perk Coffee Co (must_have)
+[2026-01-23T02:36:42.336Z] LOG    ✅ Madhouse Cafe → Madhouse Cafe (must_have)
+[2026-01-23T02:36:42.337Z] LOG    ✅ Little Wolf Coffee → Little Wolf Coffee (must_have)
+[2026-01-23T02:36:42.337Z] LOG    ✅ Green Haus Cafe → Green Haus Cafe (must_have)
+[2026-01-23T02:36:42.338Z] LOG    ✅ Tradesman Coffee Shop and Lounge → Tradesman Coffee Shop and Lounge (must_have)
+[2026-01-23T02:36:42.338Z] LOG    ✅ Public Garden → Public Garden (nice_to_have)
+[2026-01-23T02:36:42.338Z] LOG    ✅ Boston Common → Boston Common (nice_to_have)
+[2026-01-23T02:36:42.338Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (nice_to_have)
+[2026-01-23T02:36:42.339Z] LOG    ✅ New England Aquarium → New England Aquarium (nice_to_have)
+[2026-01-23T02:36:42.339Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (nice_to_have)
+[2026-01-23T02:36:42.339Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-01-23T02:36:42.340Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (nice_to_have)
+[2026-01-23T02:36:42.340Z] LOG    ✅ The Paul Revere House → The Paul Revere House (nice_to_have)
+[2026-01-23T02:36:42.340Z] LOG    ✅ Bunker Hill Monument → Bunker Hill Monument (nice_to_have)
+[2026-01-23T02:36:42.341Z] LOG    ✅ View Boston → View Boston (nice_to_have)
+[2026-01-23T02:36:42.347Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (nice_to_have)
+[2026-01-23T02:36:42.347Z] LOG    ✅ Fenway Park → Fenway Park (nice_to_have)
+[2026-01-23T02:36:42.348Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-23T02:36:42.348Z] LOG    Total enriched: 20
+[2026-01-23T02:36:42.348Z] LOG    🎯 Must-have: 8
+[2026-01-23T02:36:42.349Z] LOG    ✨ Nice-to-have: 12
+[2026-01-23T02:36:42.349Z] LOG    ❌ Failed: 0
+[2026-01-23T02:36:42.349Z] LOG    ⏱️ Time: 2287ms
+
+--- Summary ---
+Enrichment completed

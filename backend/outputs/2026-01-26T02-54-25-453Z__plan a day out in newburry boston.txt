@@ -1,0 +1,148 @@
+User Prompt: plan a day out in newburry boston
+
+[2026-01-26T02:54:25.453Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-26T02:54:25.454Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-26T02:54:25.454Z] LOG    🎯 Must-have: 11
+[2026-01-26T02:54:25.454Z] LOG    ✨ Nice-to-have: 8
+[2026-01-26T02:54:25.455Z] LOG 📍 Location hint: newburry boston
+[2026-01-26T02:54:25.455Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-26T02:54:25.456Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-26T02:54:25.456Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-26T02:54:25.457Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-26T02:54:25.457Z] LOG    1. Searching "Chanel Boston" in "Newbury Street (East End)"
+[2026-01-26T02:54:25.457Z] LOG 🔍 [Google Places] Text search: "Chanel Boston" in Newbury Street (East End)
+[2026-01-26T02:54:25.461Z] LOG    2. Searching "Valentino" in "Newbury Street (East End)"
+[2026-01-26T02:54:25.462Z] LOG 🔍 [Google Places] Text search: "Valentino" in Newbury Street (East End)
+[2026-01-26T02:54:25.466Z] LOG    3. Searching "Riccardi" in "Newbury Street (Mid-East)"
+[2026-01-26T02:54:25.468Z] LOG 🔍 [Google Places] Text search: "Riccardi" in Newbury Street (Mid-East)
+[2026-01-26T02:54:25.474Z] LOG    4. Searching "Mure and Grand - Back Bay" in "Newbury Street (Mid-West)"
+[2026-01-26T02:54:25.475Z] LOG 🔍 [Google Places] Text search: "Mure and Grand - Back Bay" in Newbury Street (Mid-West)
+[2026-01-26T02:54:25.482Z] LOG    5. Searching "Urban Outfitters" in "Newbury Street (West End)"
+[2026-01-26T02:54:25.484Z] LOG 🔍 [Google Places] Text search: "Urban Outfitters" in Newbury Street (West End)
+[2026-01-26T02:54:25.490Z] LOG    6. Searching "Joe’s on Newbury" in "Newbury Street (Central)"
+[2026-01-26T02:54:25.493Z] LOG 🔍 [Google Places] Text search: "Joe’s on Newbury" in Newbury Street (Central)
+[2026-01-26T02:54:25.498Z] LOG    7. Searching "Sonsie" in "Newbury Street (West End)"
+[2026-01-26T02:54:25.501Z] LOG 🔍 [Google Places] Text search: "Sonsie" in Newbury Street (West End)
+[2026-01-26T02:54:25.507Z] LOG    8. Searching "La Voile" in "Newbury Street (West End)"
+[2026-01-26T02:54:25.510Z] LOG 🔍 [Google Places] Text search: "La Voile" in Newbury Street (West End)
+[2026-01-26T02:54:25.516Z] LOG    9. Searching "LITTLE WHALE OYSTER BAR" in "Newbury Street (West End)"
+[2026-01-26T02:54:25.518Z] LOG 🔍 [Google Places] Text search: "LITTLE WHALE OYSTER BAR" in Newbury Street (West End)
+[2026-01-26T02:54:25.524Z] LOG    10. Searching "Thinking Cup" in "Newbury Street (East End)"
+[2026-01-26T02:54:25.525Z] LOG 🔍 [Google Places] Text search: "Thinking Cup" in Newbury Street (East End)
+[2026-01-26T02:54:26.021Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.023Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.050Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.059Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.070Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.073Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.076Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.077Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.123Z] LOG    ✅ Sonsie: Got description (100 chars)
+[2026-01-26T02:54:26.125Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:26.126Z] LOG    ⚠️  Mure and Grand - Back Bay: No editorial summary available
+[2026-01-26T02:54:26.126Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:26.127Z] LOG    ✅ Joe’s on Newbury: Got description (91 chars)
+[2026-01-26T02:54:26.128Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:26.130Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.139Z] LOG    ✅ Thinking Cup: Got description (94 chars)
+[2026-01-26T02:54:26.140Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:26.156Z] LOG    ✅ Riccardi: Got description (95 chars)
+[2026-01-26T02:54:26.157Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:26.198Z] LOG    ✅ Valentino: Got description (100 chars)
+[2026-01-26T02:54:26.200Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:26.205Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.224Z] LOG    ✅ La Voile: Got description (85 chars)
+[2026-01-26T02:54:26.225Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:26.228Z] LOG    ⚠️  LITTLE WHALE OYSTER BAR: No editorial summary available
+[2026-01-26T02:54:26.229Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:26.244Z] LOG    ✅ Urban Outfitters: Got description (93 chars)
+[2026-01-26T02:54:26.245Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:26.287Z] LOG    ✅ Chanel Boston: Got description (50 chars)
+[2026-01-26T02:54:26.288Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:26.288Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 831ms
+[2026-01-26T02:54:26.289Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-26T02:54:26.289Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-26T02:54:26.503Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-26T02:54:26.504Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-26T02:54:26.505Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-26T02:54:26.506Z] LOG    1. Searching "Central Perk Coffee Co" in "Newbury Street (Central)"
+[2026-01-26T02:54:26.507Z] LOG 🔍 [Google Places] Text search: "Central Perk Coffee Co" in Newbury Street (Central)
+[2026-01-26T02:54:26.508Z] LOG    2. Searching "Boston Public Garden" in "Adjacent to Newbury Street (East End)"
+[2026-01-26T02:54:26.509Z] LOG 🔍 [Google Places] Text search: "Boston Public Garden" in Adjacent to Newbury Street (East End)
+[2026-01-26T02:54:26.510Z] LOG    3. Searching "Boston Public Library - Central Library" in "Adjacent to Newbury Street (South)"
+[2026-01-26T02:54:26.511Z] LOG 🔍 [Google Places] Text search: "Boston Public Library - Central Library" in Adjacent to Newbury Street (South)
+[2026-01-26T02:54:26.511Z] LOG    4. Searching "Trident Booksellers & Cafe" in "Newbury Street (West End)"
+[2026-01-26T02:54:26.512Z] LOG 🔍 [Google Places] Text search: "Trident Booksellers & Cafe" in Newbury Street (West End)
+[2026-01-26T02:54:26.513Z] LOG    5. Searching "Amorino Gelato - Boston Newbury Street" in "Newbury Street (Mid-West)"
+[2026-01-26T02:54:26.514Z] LOG 🔍 [Google Places] Text search: "Amorino Gelato - Boston Newbury Street" in Newbury Street (Mid-West)
+[2026-01-26T02:54:26.515Z] LOG    6. Searching "Tatte Bakery & Cafe | Back Bay" in "Adjacent to Newbury Street (East End)"
+[2026-01-26T02:54:26.516Z] LOG 🔍 [Google Places] Text search: "Tatte Bakery & Cafe | Back Bay" in Adjacent to Newbury Street (East End)
+[2026-01-26T02:54:26.517Z] LOG    7. Searching "The Capital Burger" in "Newbury Street (Central)"
+[2026-01-26T02:54:26.518Z] LOG 🔍 [Google Places] Text search: "The Capital Burger" in Newbury Street (Central)
+[2026-01-26T02:54:26.521Z] LOG    8. Searching "Piattini" in "Newbury Street (Mid-West)"
+[2026-01-26T02:54:26.522Z] LOG 🔍 [Google Places] Text search: "Piattini" in Newbury Street (Mid-West)
+[2026-01-26T02:54:26.523Z] LOG    9. Searching "Faccia a Faccia" in "Newbury Street (West End)"
+[2026-01-26T02:54:26.523Z] LOG 🔍 [Google Places] Text search: "Faccia a Faccia" in Newbury Street (West End)
+[2026-01-26T02:54:26.914Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.931Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.934Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.945Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.950Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:26.998Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:27.007Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:27.011Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-26T02:54:27.012Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:27.019Z] LOG    ✅ Piattini: Got description (81 chars)
+[2026-01-26T02:54:27.022Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:27.042Z] LOG    ⚠️  Central Perk Coffee Co: No editorial summary available
+[2026-01-26T02:54:27.044Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:27.052Z] LOG    ✅ Trident Booksellers & Cafe: Got description (90 chars)
+[2026-01-26T02:54:27.055Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:27.065Z] LOG    ✅ Tatte Bakery & Cafe | Back Bay: Got description (96 chars)
+[2026-01-26T02:54:27.066Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:27.073Z] LOG    ⚠️  Amorino Gelato - Boston Newbury Street: No editorial summary available
+[2026-01-26T02:54:27.074Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:27.079Z] LOG    ⚠️  The Capital Burger: No editorial summary available
+[2026-01-26T02:54:27.080Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:27.092Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:27.135Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-26T02:54:27.152Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2026-01-26T02:54:27.154Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:27.235Z] LOG    ⚠️  Faccia a Faccia: No editorial summary available
+[2026-01-26T02:54:27.237Z] LOG ✅ Found 1 places
+[2026-01-26T02:54:27.237Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 732ms
+[2026-01-26T02:54:27.238Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-26T02:54:27.238Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-26T02:54:27.239Z] LOG    ✅ Chanel Boston → Chanel Boston (must_have)
+[2026-01-26T02:54:27.239Z] LOG    ✅ Valentino → Valentino (must_have)
+[2026-01-26T02:54:27.239Z] LOG    ✅ Riccardi → Riccardi (must_have)
+[2026-01-26T02:54:27.240Z] LOG    ✅ Mure and Grand - Back Bay → Mure and Grand - Back Bay (must_have)
+[2026-01-26T02:54:27.240Z] LOG    ✅ Urban Outfitters → Urban Outfitters (must_have)
+[2026-01-26T02:54:27.240Z] LOG    ✅ Joe’s on Newbury → Joe’s on Newbury (must_have)
+[2026-01-26T02:54:27.240Z] LOG    ✅ Sonsie → Sonsie (must_have)
+[2026-01-26T02:54:27.241Z] LOG    ✅ La Voile → La Voile (must_have)
+[2026-01-26T02:54:27.241Z] LOG    ✅ LITTLE WHALE OYSTER BAR → LITTLE WHALE OYSTER BAR (must_have)
+[2026-01-26T02:54:27.242Z] LOG    ✅ Thinking Cup → Thinking Cup (must_have)
+[2026-01-26T02:54:27.242Z] LOG    ✅ Central Perk Coffee Co → Central Perk Coffee Co (must_have)
+[2026-01-26T02:54:27.242Z] LOG    ✅ Boston Public Garden → Public Garden (nice_to_have)
+[2026-01-26T02:54:27.243Z] LOG    ✅ Boston Public Library - Central Library → Boston Public Library - Central Library (nice_to_have)
+[2026-01-26T02:54:27.243Z] LOG    ✅ Trident Booksellers & Cafe → Trident Booksellers & Cafe (nice_to_have)
+[2026-01-26T02:54:27.243Z] LOG    ✅ Amorino Gelato - Boston Newbury Street → Amorino Gelato - Boston Newbury Street (nice_to_have)
+[2026-01-26T02:54:27.244Z] LOG    ✅ Tatte Bakery & Cafe | Back Bay → Tatte Bakery & Cafe | Back Bay (nice_to_have)
+[2026-01-26T02:54:27.244Z] LOG    ✅ The Capital Burger → The Capital Burger (nice_to_have)
+[2026-01-26T02:54:27.245Z] LOG    ✅ Piattini → Piattini (nice_to_have)
+[2026-01-26T02:54:27.245Z] LOG    ✅ Faccia a Faccia → Faccia a Faccia (nice_to_have)
+[2026-01-26T02:54:27.245Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-26T02:54:27.246Z] LOG    Total enriched: 19
+[2026-01-26T02:54:27.246Z] LOG    🎯 Must-have: 11
+[2026-01-26T02:54:27.247Z] LOG    ✨ Nice-to-have: 8
+[2026-01-26T02:54:27.247Z] LOG    ❌ Failed: 0
+[2026-01-26T02:54:27.248Z] LOG    ⏱️ Time: 1795ms
+
+--- Summary ---
+Enrichment completed

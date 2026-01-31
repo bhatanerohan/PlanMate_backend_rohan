@@ -1,0 +1,148 @@
+User Prompt: Plan a day out in midtown NYC where I could try out halal food trucks
+
+[2026-01-29T20:59:42.896Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-29T20:59:42.896Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-01-29T20:59:42.897Z] LOG    🎯 Must-have: 8
+[2026-01-29T20:59:42.897Z] LOG    ✨ Nice-to-have: 11
+[2026-01-29T20:59:42.898Z] LOG 📍 Location hint: midtown NYC
+[2026-01-29T20:59:42.898Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-01-29T20:59:42.899Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-29T20:59:42.899Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-29T20:59:42.900Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-29T20:59:42.900Z] LOG    1. Searching "The Halal Guys" in "Midtown West"
+[2026-01-29T20:59:42.901Z] LOG 🔍 [Google Places] Text search: "The Halal Guys" in Midtown West
+[2026-01-29T20:59:42.907Z] LOG    2. Searching "Adel's Famous Halal Food" in "Midtown West"
+[2026-01-29T20:59:42.907Z] LOG 🔍 [Google Places] Text search: "Adel's Famous Halal Food" in Midtown West
+[2026-01-29T20:59:42.910Z] LOG    3. Searching "Kwik Meal NYC" in "Midtown West"
+[2026-01-29T20:59:42.910Z] LOG 🔍 [Google Places] Text search: "Kwik Meal NYC" in Midtown West
+[2026-01-29T20:59:42.912Z] LOG    4. Searching "Sharif's Famous" in "Midtown South"
+[2026-01-29T20:59:42.913Z] LOG 🔍 [Google Places] Text search: "Sharif's Famous" in Midtown South
+[2026-01-29T20:59:42.915Z] LOG    5. Searching "Royal Grill Halal Food" in "Midtown West"
+[2026-01-29T20:59:42.915Z] LOG 🔍 [Google Places] Text search: "Royal Grill Halal Food" in Midtown West
+[2026-01-29T20:59:42.917Z] LOG    6. Searching "Halal Street Food by Kamal" in "Garment District"
+[2026-01-29T20:59:42.917Z] LOG 🔍 [Google Places] Text search: "Halal Street Food by Kamal" in Garment District
+[2026-01-29T20:59:42.920Z] LOG    7. Searching "NYC Halal Food Truck" in "Hell's Kitchen"
+[2026-01-29T20:59:42.921Z] LOG 🔍 [Google Places] Text search: "NYC Halal Food Truck" in Hell's Kitchen
+[2026-01-29T20:59:42.923Z] LOG    8. Searching "Famous Halal Food (Food Truck)" in "Hell's Kitchen"
+[2026-01-29T20:59:42.923Z] LOG 🔍 [Google Places] Text search: "Famous Halal Food (Food Truck)" in Hell's Kitchen
+[2026-01-29T20:59:42.925Z] LOG    9. Searching "Times Square" in "Midtown West"
+[2026-01-29T20:59:42.925Z] LOG 🔍 [Google Places] Text search: "Times Square" in Midtown West
+[2026-01-29T20:59:42.927Z] LOG    10. Searching "Bryant Park" in "Midtown South"
+[2026-01-29T20:59:42.927Z] LOG 🔍 [Google Places] Text search: "Bryant Park" in Midtown South
+[2026-01-29T20:59:43.289Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:43.308Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:43.312Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:43.345Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:43.377Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:43.397Z] LOG    ⚠️  Sharif's Famous: No editorial summary available
+[2026-01-29T20:59:43.398Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:43.403Z] LOG    ⚠️  Halal Street Food by Kamal: No editorial summary available
+[2026-01-29T20:59:43.404Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:43.425Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:43.454Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-01-29T20:59:43.455Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:43.486Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:43.501Z] LOG    ⚠️  The Halal Guys: No editorial summary available
+[2026-01-29T20:59:43.502Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:43.516Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:43.534Z] LOG    ✅ Bryant Park: Got description (99 chars)
+[2026-01-29T20:59:43.535Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:43.547Z] LOG    ✅ Kwik Meal NYC: Got description (92 chars)
+[2026-01-29T20:59:43.548Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:43.603Z] LOG    ✅ Royal Grill Halal Food: Got description (68 chars)
+[2026-01-29T20:59:43.604Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:43.664Z] LOG    ✅ Times Square: Got description (100 chars)
+[2026-01-29T20:59:43.665Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:43.672Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:43.691Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:43.797Z] LOG    ⚠️  Famous Halal Food (Food Truck): No editorial summary available
+[2026-01-29T20:59:43.798Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:43.881Z] LOG    ✅ NYC Halal Food Truck: Got description (76 chars)
+[2026-01-29T20:59:43.882Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:43.882Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 982ms
+[2026-01-29T20:59:43.883Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-29T20:59:43.883Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-29T20:59:44.098Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-01-29T20:59:44.099Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-29T20:59:44.100Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-01-29T20:59:44.101Z] LOG    1. Searching "Rockefeller Center" in "Midtown West"
+[2026-01-29T20:59:44.101Z] LOG 🔍 [Google Places] Text search: "Rockefeller Center" in Midtown West
+[2026-01-29T20:59:44.102Z] LOG    2. Searching "Top of The Rock" in "Midtown West"
+[2026-01-29T20:59:44.102Z] LOG 🔍 [Google Places] Text search: "Top of The Rock" in Midtown West
+[2026-01-29T20:59:44.103Z] LOG    3. Searching "Empire State Building" in "Midtown South"
+[2026-01-29T20:59:44.104Z] LOG 🔍 [Google Places] Text search: "Empire State Building" in Midtown South
+[2026-01-29T20:59:44.104Z] LOG    4. Searching "The Museum of Modern Art (MoMA)" in "Midtown West"
+[2026-01-29T20:59:44.105Z] LOG 🔍 [Google Places] Text search: "The Museum of Modern Art (MoMA)" in Midtown West
+[2026-01-29T20:59:44.106Z] LOG    5. Searching "Grand Central Terminal" in "Midtown East"
+[2026-01-29T20:59:44.106Z] LOG 🔍 [Google Places] Text search: "Grand Central Terminal" in Midtown East
+[2026-01-29T20:59:44.108Z] LOG    6. Searching "St. Patrick's Cathedral" in "Midtown East"
+[2026-01-29T20:59:44.108Z] LOG 🔍 [Google Places] Text search: "St. Patrick's Cathedral" in Midtown East
+[2026-01-29T20:59:44.108Z] LOG    7. Searching "Madame Tussauds New York" in "Midtown West"
+[2026-01-29T20:59:44.109Z] LOG 🔍 [Google Places] Text search: "Madame Tussauds New York" in Midtown West
+[2026-01-29T20:59:44.110Z] LOG    8. Searching "Edge NYC" in "Hudson Yards"
+[2026-01-29T20:59:44.110Z] LOG 🔍 [Google Places] Text search: "Edge NYC" in Hudson Yards
+[2026-01-29T20:59:44.110Z] LOG    9. Searching "The High Line" in "Chelsea"
+[2026-01-29T20:59:44.111Z] LOG 🔍 [Google Places] Text search: "The High Line" in Chelsea
+[2026-01-29T20:59:44.409Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:44.413Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:44.433Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:44.438Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:44.448Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:44.449Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:44.468Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:44.477Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:44.484Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T20:59:44.548Z] LOG    ✅ Top of The Rock: Got description (96 chars)
+[2026-01-29T20:59:44.549Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:44.556Z] LOG    ✅ The Museum of Modern Art: Got description (96 chars)
+[2026-01-29T20:59:44.557Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:44.559Z] LOG    ✅ Grand Central Terminal: Got description (95 chars)
+[2026-01-29T20:59:44.559Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:44.569Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2026-01-29T20:59:44.570Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:44.573Z] LOG    ✅ Edge NYC: Got description (93 chars)
+[2026-01-29T20:59:44.574Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:44.582Z] LOG    ✅ The High Line: Got description (85 chars)
+[2026-01-29T20:59:44.583Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:44.613Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2026-01-29T20:59:44.614Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:44.619Z] LOG    ✅ St. Patrick's Cathedral: Got description (100 chars)
+[2026-01-29T20:59:44.620Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:44.641Z] LOG    ✅ Madame Tussauds New York: Got description (97 chars)
+[2026-01-29T20:59:44.641Z] LOG ✅ Found 1 places
+[2026-01-29T20:59:44.642Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 542ms
+[2026-01-29T20:59:44.643Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-29T20:59:44.643Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-01-29T20:59:44.643Z] LOG    ✅ The Halal Guys → The Halal Guys (must_have)
+[2026-01-29T20:59:44.644Z] LOG    ✅ Adel's Famous Halal Food → Adel's Famous Halal Food (must_have)
+[2026-01-29T20:59:44.644Z] LOG    ✅ Kwik Meal NYC → Kwik Meal NYC (must_have)
+[2026-01-29T20:59:44.645Z] LOG    ✅ Sharif's Famous → Sharif's Famous (must_have)
+[2026-01-29T20:59:44.645Z] LOG    ✅ Royal Grill Halal Food → Royal Grill Halal Food (must_have)
+[2026-01-29T20:59:44.645Z] LOG    ✅ Halal Street Food by Kamal → Halal Street Food by Kamal (must_have)
+[2026-01-29T20:59:44.646Z] LOG    ✅ NYC Halal Food Truck → NYC Halal Food Truck (must_have)
+[2026-01-29T20:59:44.646Z] LOG    ✅ Famous Halal Food (Food Truck) → Famous Halal Food (Food Truck) (must_have)
+[2026-01-29T20:59:44.647Z] LOG    ✅ Times Square → Times Square (nice_to_have)
+[2026-01-29T20:59:44.647Z] LOG    ✅ Bryant Park → Bryant Park (nice_to_have)
+[2026-01-29T20:59:44.647Z] LOG    ✅ Rockefeller Center → Rockefeller Center (nice_to_have)
+[2026-01-29T20:59:44.648Z] LOG    ✅ Top of The Rock → Top of The Rock (nice_to_have)
+[2026-01-29T20:59:44.648Z] LOG    ✅ Empire State Building → Empire State Building (nice_to_have)
+[2026-01-29T20:59:44.649Z] LOG    ✅ The Museum of Modern Art (MoMA) → The Museum of Modern Art (nice_to_have)
+[2026-01-29T20:59:44.649Z] LOG    ✅ Grand Central Terminal → Grand Central Terminal (nice_to_have)
+[2026-01-29T20:59:44.649Z] LOG    ✅ St. Patrick's Cathedral → St. Patrick's Cathedral (nice_to_have)
+[2026-01-29T20:59:44.650Z] LOG    ✅ Madame Tussauds New York → Madame Tussauds New York (nice_to_have)
+[2026-01-29T20:59:44.650Z] LOG    ✅ Edge NYC → Edge NYC (nice_to_have)
+[2026-01-29T20:59:44.650Z] LOG    ✅ The High Line → The High Line (nice_to_have)
+[2026-01-29T20:59:44.650Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-29T20:59:44.651Z] LOG    Total enriched: 19
+[2026-01-29T20:59:44.651Z] LOG    🎯 Must-have: 8
+[2026-01-29T20:59:44.651Z] LOG    ✨ Nice-to-have: 11
+[2026-01-29T20:59:44.651Z] LOG    ❌ Failed: 0
+[2026-01-29T20:59:44.652Z] LOG    ⏱️ Time: 1757ms
+
+--- Summary ---
+Enrichment completed

@@ -1,0 +1,154 @@
+User Prompt: Find something fun 50 miles away
+
+[2026-01-29T21:31:08.946Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-29T21:31:08.946Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-29T21:31:08.946Z] LOG    🎯 Must-have: 7
+[2026-01-29T21:31:08.947Z] LOG    ✨ Nice-to-have: 13
+[2026-01-29T21:31:08.947Z] LOG 📍 Location hint: Providence, RI
+[2026-01-29T21:31:08.948Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-29T21:31:08.948Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-29T21:31:08.948Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-29T21:31:08.949Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-29T21:31:08.949Z] LOG    1. Searching "Level99 Providence" in "Providence, RI"
+[2026-01-29T21:31:08.949Z] LOG 🔍 [Google Places] Text search: "Level99 Providence" in Providence, RI
+[2026-01-29T21:31:08.951Z] LOG    2. Searching "WaterFire" in "Providence, RI"
+[2026-01-29T21:31:08.951Z] LOG 🔍 [Google Places] Text search: "WaterFire" in Providence, RI
+[2026-01-29T21:31:08.953Z] LOG    3. Searching "Roger Williams Park Zoo" in "Providence, RI"
+[2026-01-29T21:31:08.954Z] LOG 🔍 [Google Places] Text search: "Roger Williams Park Zoo" in Providence, RI
+[2026-01-29T21:31:08.955Z] LOG    4. Searching "Apex Entertainment Marlborough" in "Marlborough, MA (near Worcester)"
+[2026-01-29T21:31:08.955Z] LOG 🔍 [Google Places] Text search: "Apex Entertainment Marlborough" in Marlborough, MA (near Worcester)
+[2026-01-29T21:31:08.957Z] LOG    5. Searching "EcoTarium" in "Worcester, MA"
+[2026-01-29T21:31:08.957Z] LOG 🔍 [Google Places] Text search: "EcoTarium" in Worcester, MA
+[2026-01-29T21:31:08.958Z] LOG    6. Searching "Hilltop Fun Center" in "Somersworth, NH (near Portsmouth)"
+[2026-01-29T21:31:08.959Z] LOG 🔍 [Google Places] Text search: "Hilltop Fun Center" in Somersworth, NH (near Portsmouth)
+[2026-01-29T21:31:08.960Z] LOG    7. Searching "Goat Walks Plymouth" in "Plymouth, MA"
+[2026-01-29T21:31:08.960Z] LOG 🔍 [Google Places] Text search: "Goat Walks Plymouth" in Plymouth, MA
+[2026-01-29T21:31:08.962Z] LOG    8. Searching "Escape Rhode Island" in "Providence, RI"
+[2026-01-29T21:31:08.962Z] LOG 🔍 [Google Places] Text search: "Escape Rhode Island" in Providence, RI
+[2026-01-29T21:31:08.964Z] LOG    9. Searching "RISD Museum" in "Providence, RI"
+[2026-01-29T21:31:08.964Z] LOG 🔍 [Google Places] Text search: "RISD Museum" in Providence, RI
+[2026-01-29T21:31:08.966Z] LOG    10. Searching "The Bubbler VR" in "Providence, RI"
+[2026-01-29T21:31:08.966Z] LOG 🔍 [Google Places] Text search: "The Bubbler VR" in Providence, RI
+[2026-01-29T21:31:09.316Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:09.324Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:09.348Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:09.371Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:09.380Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:09.384Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:09.410Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:09.435Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:09.439Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:09.459Z] LOG    ✅ WaterFire: Got description (86 chars)
+[2026-01-29T21:31:09.460Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:09.463Z] LOG    ⚠️  Level99 Providence: No editorial summary available
+[2026-01-29T21:31:09.464Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:09.487Z] LOG    ⚠️  Goat Walks Plymouth: No editorial summary available
+[2026-01-29T21:31:09.488Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:09.489Z] LOG    ✅ Roger Williams Park Zoo: Got description (100 chars)
+[2026-01-29T21:31:09.489Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:09.535Z] LOG    ⚠️  The Bubbler VR: No editorial summary available
+[2026-01-29T21:31:09.535Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:09.541Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:09.543Z] LOG    ✅ RISD Museum: Got description (96 chars)
+[2026-01-29T21:31:09.544Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:09.544Z] LOG    ✅ EcoTarium: Got description (94 chars)
+[2026-01-29T21:31:09.545Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:09.575Z] LOG    ⚠️  Apex Entertainment Marlborough: No editorial summary available
+[2026-01-29T21:31:09.576Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:09.584Z] LOG    ⚠️  Escape Rhode Island: No editorial summary available
+[2026-01-29T21:31:09.584Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:09.783Z] LOG    ⚠️  Hilltop Fun Center: No editorial summary available
+[2026-01-29T21:31:09.783Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:09.784Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 835ms
+[2026-01-29T21:31:09.785Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-29T21:31:09.786Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-29T21:31:10.001Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-29T21:31:10.002Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-29T21:31:10.003Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-29T21:31:10.004Z] LOG    1. Searching "Green Hill Park" in "Worcester, MA"
+[2026-01-29T21:31:10.004Z] LOG 🔍 [Google Places] Text search: "Green Hill Park" in Worcester, MA
+[2026-01-29T21:31:10.005Z] LOG    2. Searching "New England Botanic Garden at Tower Hill" in "Boylston, MA (near Worcester)"
+[2026-01-29T21:31:10.005Z] LOG 🔍 [Google Places] Text search: "New England Botanic Garden at Tower Hill" in Boylston, MA (near Worcester)
+[2026-01-29T21:31:10.006Z] LOG    3. Searching "Freeplay Bar Arcade" in "Worcester, MA"
+[2026-01-29T21:31:10.007Z] LOG 🔍 [Google Places] Text search: "Freeplay Bar Arcade" in Worcester, MA
+[2026-01-29T21:31:10.007Z] LOG    4. Searching "Seacoast Science Center" in "Rye, NH (near Portsmouth)"
+[2026-01-29T21:31:10.007Z] LOG 🔍 [Google Places] Text search: "Seacoast Science Center" in Rye, NH (near Portsmouth)
+[2026-01-29T21:31:10.008Z] LOG    5. Searching "Game Show Face Off" in "Newington, NH (near Portsmouth)"
+[2026-01-29T21:31:10.009Z] LOG 🔍 [Google Places] Text search: "Game Show Face Off" in Newington, NH (near Portsmouth)
+[2026-01-29T21:31:10.009Z] LOG    6. Searching "Monkey Mind Escape Rooms (Downtown Portsmouth)" in "Portsmouth, NH"
+[2026-01-29T21:31:10.010Z] LOG 🔍 [Google Places] Text search: "Monkey Mind Escape Rooms (Downtown Portsmouth)" in Portsmouth, NH
+[2026-01-29T21:31:10.010Z] LOG    7. Searching "Plimoth Patuxet Crafts Center" in "Plymouth, MA"
+[2026-01-29T21:31:10.011Z] LOG 🔍 [Google Places] Text search: "Plimoth Patuxet Crafts Center" in Plymouth, MA
+[2026-01-29T21:31:10.012Z] LOG    8. Searching "Dead of night ghost tours" in "Plymouth, MA"
+[2026-01-29T21:31:10.012Z] LOG 🔍 [Google Places] Text search: "Dead of night ghost tours" in Plymouth, MA
+[2026-01-29T21:31:10.013Z] LOG    9. Searching "Pilgrim Memorial State Park" in "Plymouth, MA"
+[2026-01-29T21:31:10.013Z] LOG 🔍 [Google Places] Text search: "Pilgrim Memorial State Park" in Plymouth, MA
+[2026-01-29T21:31:10.014Z] LOG    10. Searching "Nova Trampoline Park" in "Plymouth, MA"
+[2026-01-29T21:31:10.014Z] LOG 🔍 [Google Places] Text search: "Nova Trampoline Park" in Plymouth, MA
+[2026-01-29T21:31:10.321Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:10.329Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:10.368Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:10.395Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:10.396Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:10.405Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:10.431Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:10.443Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:10.464Z] LOG    ⚠️  Freeplay Bar Arcade: No editorial summary available
+[2026-01-29T21:31:10.464Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:10.466Z] LOG    ✅ Pilgrim Memorial State Park: Got description (98 chars)
+[2026-01-29T21:31:10.467Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:10.505Z] LOG    ⚠️  Plimoth Patuxet Crafts Center: No editorial summary available
+[2026-01-29T21:31:10.506Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:10.540Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:10.541Z] LOG    ⚠️  Monkey Mind Escape Rooms (Downtown Portsmouth): No editorial summary available
+[2026-01-29T21:31:10.542Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:10.548Z] LOG    ⚠️  Nova Trampoline Park: No editorial summary available
+[2026-01-29T21:31:10.549Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:10.572Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-29T21:31:10.581Z] LOG    ✅ Seacoast Science Center: Got description (93 chars)
+[2026-01-29T21:31:10.582Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:10.586Z] LOG    ⚠️  Game Show Face Off: No editorial summary available
+[2026-01-29T21:31:10.587Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:10.661Z] LOG    ✅ Green Hill Park: Got description (97 chars)
+[2026-01-29T21:31:10.662Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:10.673Z] LOG    ✅ New England Botanic Garden at Tower Hill: Got description (98 chars)
+[2026-01-29T21:31:10.674Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:10.722Z] LOG    ⚠️  Dead of night ghost tours: No editorial summary available
+[2026-01-29T21:31:10.723Z] LOG ✅ Found 1 places
+[2026-01-29T21:31:10.724Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 721ms
+[2026-01-29T21:31:10.724Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-29T21:31:10.724Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-29T21:31:10.725Z] LOG    ✅ Level99 Providence → Level99 Providence (must_have)
+[2026-01-29T21:31:10.725Z] LOG    ✅ WaterFire → WaterFire (must_have)
+[2026-01-29T21:31:10.725Z] LOG    ✅ Roger Williams Park Zoo → Roger Williams Park Zoo (must_have)
+[2026-01-29T21:31:10.726Z] LOG    ✅ Apex Entertainment Marlborough → Apex Entertainment Marlborough (must_have)
+[2026-01-29T21:31:10.726Z] LOG    ✅ EcoTarium → EcoTarium (must_have)
+[2026-01-29T21:31:10.726Z] LOG    ✅ Hilltop Fun Center → Hilltop Fun Center (must_have)
+[2026-01-29T21:31:10.727Z] LOG    ✅ Goat Walks Plymouth → Goat Walks Plymouth (must_have)
+[2026-01-29T21:31:10.727Z] LOG    ✅ Escape Rhode Island → Escape Rhode Island (nice_to_have)
+[2026-01-29T21:31:10.727Z] LOG    ✅ RISD Museum → RISD Museum (nice_to_have)
+[2026-01-29T21:31:10.728Z] LOG    ✅ The Bubbler VR → The Bubbler VR (nice_to_have)
+[2026-01-29T21:31:10.728Z] LOG    ✅ Green Hill Park → Green Hill Park (nice_to_have)
+[2026-01-29T21:31:10.728Z] LOG    ✅ New England Botanic Garden at Tower Hill → New England Botanic Garden at Tower Hill (nice_to_have)
+[2026-01-29T21:31:10.728Z] LOG    ✅ Freeplay Bar Arcade → Freeplay Bar Arcade (nice_to_have)
+[2026-01-29T21:31:10.729Z] LOG    ✅ Seacoast Science Center → Seacoast Science Center (nice_to_have)
+[2026-01-29T21:31:10.729Z] LOG    ✅ Game Show Face Off → Game Show Face Off (nice_to_have)
+[2026-01-29T21:31:10.729Z] LOG    ✅ Monkey Mind Escape Rooms (Downtown Portsmouth) → Monkey Mind Escape Rooms (Downtown Portsmouth) (nice_to_have)
+[2026-01-29T21:31:10.730Z] LOG    ✅ Plimoth Patuxet Crafts Center → Plimoth Patuxet Crafts Center (nice_to_have)
+[2026-01-29T21:31:10.730Z] LOG    ✅ Dead of night ghost tours → Dead of night ghost tours (nice_to_have)
+[2026-01-29T21:31:10.730Z] LOG    ✅ Pilgrim Memorial State Park → Pilgrim Memorial State Park (nice_to_have)
+[2026-01-29T21:31:10.730Z] LOG    ✅ Nova Trampoline Park → Nova Trampoline Park (nice_to_have)
+[2026-01-29T21:31:10.731Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-29T21:31:10.731Z] LOG    Total enriched: 20
+[2026-01-29T21:31:10.731Z] LOG    🎯 Must-have: 7
+[2026-01-29T21:31:10.731Z] LOG    ✨ Nice-to-have: 13
+[2026-01-29T21:31:10.732Z] LOG    ❌ Failed: 0
+[2026-01-29T21:31:10.732Z] LOG    ⏱️ Time: 1787ms
+
+--- Summary ---
+Enrichment completed

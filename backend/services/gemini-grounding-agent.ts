@@ -1,6 +1,7 @@
 // backend/services/gemini-grounding-agent.ts
 
 import { GoogleGenAI } from '@google/genai';
+import OpenAI from 'openai';
 import dotenv from 'dotenv';
 import { startCapture } from './logger.js';
 
@@ -16,17 +17,17 @@ export interface GeminiVenueRecommendation {
   category: string;
   reasoning?: string;
   general_location?: string;
-  
+
   // Priority: must_have = core intent, nice_to_have = complementary
   priority: 'must_have' | 'nice_to_have';
-  
+
   // Optional enrichment data from grounding
   placeId?: string;
   rating?: number;
   userRatingCount?: number;
   reviewsSummary?: string;
   priceLevel?: string;
-  
+
   gemini_confidence?: number;
 }
 
@@ -45,14 +46,14 @@ export interface GeminiGroundingResult {
   grounding_used: boolean;
   search_used: boolean;
   total_venues_found: number;
-  
+
   // NEW: Track user's requested count (if specified)
   user_requested_count?: number;
-  
+
   // NEW: Separate counts for debugging
   must_have_count: number;
   nice_to_have_count: number;
-  
+
   raw_grounding_chunks?: any[];
 }
 
@@ -62,14 +63,16 @@ export interface GeminiGroundingResult {
 
 export class GeminiGroundingAgent {
   private ai: GoogleGenAI;
+  private openai: OpenAI;
 
   constructor() {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
       throw new Error('GEMINI_API_KEY not found in environment variables');
     }
-    
+
     this.ai = new GoogleGenAI({ apiKey });
+    this.openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   }
 
   /**
@@ -89,7 +92,7 @@ export class GeminiGroundingAgent {
     if (userLocation) {
       console.log(`📍 User location: ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})`);
     }
-    
+
     try {
       // Extract user's requested count if specified
       const userRequestedCount = this.extractRequestedCount(userPrompt);
@@ -98,9 +101,9 @@ export class GeminiGroundingAgent {
       }
 
       const geminiPrompt = this.buildGroundingPrompt(userPrompt, userLocation, userRequestedCount);
-      
+
       console.log('🔮 Calling Gemini for 15-20 CANDIDATES...');
-      
+
       const config: any = {
         tools: [{ googleMaps: {} }]
       };
@@ -126,21 +129,21 @@ export class GeminiGroundingAgent {
       const text = response?.text || '';
       console.log('✅ Gemini response received');
       console.log(`📄 Response length: ${text.length} characters`);
-      
+
       // Check grounding metadata
       const candidate = response.candidates?.[0];
       const groundingMetadata = candidate?.groundingMetadata;
-      
+
       const grounding_used = !!groundingMetadata?.groundingChunks?.length;
       const search_used = !!groundingMetadata?.searchEntryPoint;
-      
+
       console.log(`📊 Grounding: Maps=${grounding_used}, Search=${search_used}`);
-      
+
       if (groundingMetadata?.groundingChunks) {
         groundingChunks = groundingMetadata.groundingChunks;
         console.log(`📍 Grounding chunks: ${groundingChunks.length} sources`);
       }
-      
+
       // Parse the response with new categorized format
       const parsed = await this.parseGeminiResponse(text, grounding_used);
 
@@ -150,7 +153,7 @@ export class GeminiGroundingAgent {
       console.log(`\n✨ Parsed ${parsed.venues.length} CANDIDATES:`);
       console.log(`   🎯 Must-have: ${mustHaveCount}`);
       console.log(`   ✨ Nice-to-have: ${niceToHaveCount}`);
-      
+
       if (parsed.plan) {
         console.log(`📋 Plan: ${parsed.plan.type}, ${parsed.plan.total_stops} target stops`);
       }
@@ -167,7 +170,7 @@ export class GeminiGroundingAgent {
         nice_to_have_count: niceToHaveCount,
         raw_grounding_chunks: groundingChunks
       };
-      
+
     } catch (error) {
       console.error('❌ Gemini Grounding Agent error:', error);
 
@@ -198,11 +201,11 @@ export class GeminiGroundingAgent {
     } finally {
       try {
         if (stopCapture) {
-          try { (stopCapture as any).appendRaw('gemini_raw_response', response); } catch (e) {}
-          try { (stopCapture as any).appendRaw('grounding_chunks', groundingChunks); } catch (e) {}
-          try { stopCapture('Completed'); } catch (e) {}
+          try { (stopCapture as any).appendRaw('gemini_raw_response', response); } catch (e) { }
+          try { (stopCapture as any).appendRaw('grounding_chunks', groundingChunks); } catch (e) { }
+          try { stopCapture('Completed'); } catch (e) { }
         }
-      } catch (e) {}
+      } catch (e) { }
     }
   }
 
@@ -238,17 +241,17 @@ export class GeminiGroundingAgent {
     userLocation?: { lat: number; lng: number; name: string },
     userRequestedCount?: number
   ): string {
-    
+
     let prompt = '';
-    
+
     if (userLocation) {
       prompt += `User's current location: ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})\n\n`;
     }
-    
+
     prompt += `User request: "${userPrompt}"\n\n`;
-    
+
     const targetStops = userRequestedCount || '5-7';
-    
+
     prompt += `
 🎯 YOUR TASK: Return 15-20 CANDIDATE venues (not final picks!)
 
@@ -358,66 +361,82 @@ Spread candidates across the requested area so our optimizer has options:
     text: string,
     groundingUsed: boolean
   ): Promise<{ plan?: any; venues: GeminiVenueRecommendation[]; context: string }> {
-    
+
     try {
-      // Try to extract JSON from markdown code block
-      const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
-      
-      // Also try raw JSON (no code block)
-      const rawJsonMatch = text.match(/\{[\s\S]*"venues"[\s\S]*\}/);
+      console.log('🔄 Parsing Gemini response...');
 
-      const jsonStr = jsonMatch?.[1] || rawJsonMatch?.[0];
+      // 1. Clean the text of markdown code blocks first
+      let cleanText = text.replace(/```json\s*|\s*```/g, '').trim();
 
-      if (jsonStr) {
-        const parsed = JSON.parse(jsonStr);
+      // 2. Find the first '{' and last '}' to isolate the JSON object
+      const firstOpen = cleanText.indexOf('{');
+      const lastClose = cleanText.lastIndexOf('}');
 
-        if (parsed.venues && Array.isArray(parsed.venues)) {
-          const venues: GeminiVenueRecommendation[] = parsed.venues.map((v: any) => ({
-            name: v.name || 'Unknown',
-            description: v.description || '',
-            category: v.category || 'venue',
-            priority: this.normalizePriority(v.priority),
-            reasoning: v.reasoning,
-            general_location: v.general_location || v.location || v.neighborhood,
-            placeId: v.placeId || v.place_id,
-            rating: v.rating,
-            userRatingCount: v.userRatingCount || v.reviewCount || v.user_rating_count,
-            reviewsSummary: v.reviewsSummary || v.reviewInsights || v.review_summary,
-            priceLevel: v.priceLevel || v.price_level,
-            gemini_confidence: groundingUsed ? 0.9 : 0.7
-          }));
-
-          // Validate we have both categories
-          const mustHaves = venues.filter(v => v.priority === 'must_have');
-          const niceToHaves = venues.filter(v => v.priority === 'nice_to_have');
-          
-          console.log(`   📊 Parsed: ${mustHaves.length} must_have, ${niceToHaves.length} nice_to_have`);
-
-          // If Gemini didn't categorize properly, auto-categorize based on position
-          if (mustHaves.length === 0 && venues.length > 0) {
-            console.log('   ⚠️ No must_haves found, auto-categorizing first 5 as must_have');
-            venues.slice(0, 5).forEach(v => v.priority = 'must_have');
-            venues.slice(5).forEach(v => v.priority = 'nice_to_have');
-          }
-
-          return {
-            plan: parsed.plan,
-            venues,
-            context: parsed.context || 'Venue candidates based on your request'
-          };
-        }
+      if (firstOpen !== -1 && lastClose !== -1 && lastClose > firstOpen) {
+        cleanText = cleanText.substring(firstOpen, lastClose + 1);
+      } else {
+        console.warn('⚠️ Could not find valid JSON object markers `{}` in response');
       }
 
-      console.warn('⚠️ Could not parse JSON, attempting fallback...');
-      throw new Error('COULD_NOT_PARSE_JSON');
+      // 3. Attempt parsing
+      let parsed: any;
+      try {
+        parsed = JSON.parse(cleanText);
+      } catch (e) {
+        console.warn('⚠️ JSON parse failed on cleaned text, trying aggressive cleanup...');
+        // Fallback: dangerous regex cleanup if simple extraction failed
+        // This handles cases like comments in JSON or bad escaping if needed in simpler cases
+        // But usually identifying the outer brackets is the most important step.
+        throw new Error('COULD_NOT_PARSE_JSON');
+      }
+
+      if (parsed.venues && Array.isArray(parsed.venues)) {
+        const venues: GeminiVenueRecommendation[] = parsed.venues.map((v: any) => ({
+          name: v.name || 'Unknown',
+          description: v.description || '',
+          category: v.category || 'venue',
+          priority: this.normalizePriority(v.priority),
+          reasoning: v.reasoning,
+          general_location: v.general_location || v.location || v.neighborhood,
+          placeId: v.placeId || v.place_id,
+          rating: v.rating,
+          userRatingCount: v.userRatingCount || v.reviewCount || v.user_rating_count,
+          reviewsSummary: v.reviewsSummary || v.reviewInsights || v.review_summary,
+          priceLevel: v.priceLevel || v.price_level,
+          gemini_confidence: groundingUsed ? 0.9 : 0.7
+        }));
+
+        // Validate we have both categories
+        const mustHaves = venues.filter(v => v.priority === 'must_have');
+        const niceToHaves = venues.filter(v => v.priority === 'nice_to_have');
+
+        console.log(`   📊 Parsed: ${mustHaves.length} must_have, ${niceToHaves.length} nice_to_have`);
+
+        // If Gemini didn't categorize properly, auto-categorize based on position
+        if (mustHaves.length === 0 && venues.length > 0) {
+          console.log('   ⚠️ No must_haves found, auto-categorizing first 5 as must_have');
+          venues.slice(0, 5).forEach(v => v.priority = 'must_have');
+          venues.slice(5).forEach(v => v.priority = 'nice_to_have');
+        }
+
+        return {
+          plan: parsed.plan,
+          venues,
+          context: parsed.context || 'Venue candidates based on your request'
+        };
+      } else {
+        // Valid JSON but missing 'venues' array
+        console.warn('⚠️ Valid JSON but missing "venues" array');
+        throw new Error('INVALID_SCHEMA');
+      }
 
     } catch (error) {
-      if (error instanceof Error && error.message === 'COULD_NOT_PARSE_JSON') {
-        throw error;
-      }
-
       console.error('❌ Failed to parse Gemini response:', error);
-      return this.parseNaturalLanguageResponse(text);
+      console.log('📄 Raw text start:', text.substring(0, 100));
+
+      // Use GPT-4o-mini as intelligent fallback parser
+      console.log('🔄 Attempting GPT-4o-mini cleanup parsing...');
+      return await this.parseWithGPT(text, groundingUsed);
     }
   }
 
@@ -426,9 +445,9 @@ Spread candidates across the requested area so our optimizer has options:
    */
   private normalizePriority(priority: any): 'must_have' | 'nice_to_have' {
     if (!priority) return 'nice_to_have';
-    
+
     const normalized = String(priority).toLowerCase().replace(/[\s-]/g, '_');
-    
+
     if (normalized.includes('must') || normalized === 'required' || normalized === 'core') {
       return 'must_have';
     }
@@ -438,19 +457,19 @@ Spread candidates across the requested area so our optimizer has options:
   /**
    * Fallback parser for non-JSON responses
    */
-  private parseNaturalLanguageResponse(text: string): { 
-    plan?: any; 
-    venues: GeminiVenueRecommendation[]; 
-    context: string 
+  private parseNaturalLanguageResponse(text: string): {
+    plan?: any;
+    venues: GeminiVenueRecommendation[];
+    context: string
   } {
     const venues: GeminiVenueRecommendation[] = [];
-    
+
     const venuePatterns = [
       /\d+\.\s*\*\*(.+?)\*\*/g,
       /\d+\.\s*(.+?)(?:\n|:)/g,
       /\*\*(.+?)\*\*\s*[-–—]\s*/g
     ];
-    
+
     for (const pattern of venuePatterns) {
       const matches = text.matchAll(pattern);
       for (const match of matches) {
@@ -464,15 +483,104 @@ Spread candidates across the requested area so our optimizer has options:
           });
         }
       }
-      
+
       if (venues.length >= 5) break;
     }
-    
+
     return {
       plan: undefined,
       venues,
       context: 'Parsed from natural language response'
     };
+  }
+
+  /**
+   * GPT-4o-mini fallback parser - uses AI to extract structured data from messy text
+   */
+  private async parseWithGPT(
+    messyText: string,
+    groundingUsed: boolean
+  ): Promise<{ plan?: any; venues: GeminiVenueRecommendation[]; context: string }> {
+    try {
+      const response = await this.openai.chat.completions.create({
+        model: 'gpt-4o-mini',
+        messages: [{
+          role: 'user',
+          content: `Extract venue recommendations from this text and return ONLY valid JSON.
+
+INPUT TEXT:
+${messyText}
+
+RETURN THIS EXACT JSON FORMAT:
+{
+  "plan": {
+    "type": "string describing the experience type",
+    "total_stops": number
+  },
+  "venues": [
+    {
+      "name": "exact venue name",
+      "description": "brief description",
+      "category": "restaurant|bar|cafe|museum|park|landmark|venue",
+      "priority": "must_have" or "nice_to_have",
+      "reasoning": "why this venue was recommended",
+      "rating": number or null,
+      "reviewsSummary": "key highlights from reviews" or null,
+      "general_location": "neighborhood or area name"
+    }
+  ],
+  "context": "brief summary of the recommendations"
+}
+
+IMPORTANT:
+- Extract ALL venues mentioned in the text
+- Venues that are core to the user's request should be "must_have"
+- Complementary/optional venues should be "nice_to_have"
+- Return ONLY the JSON, no markdown, no explanation`
+        }],
+        response_format: { type: "json_object" },
+        temperature: 0,
+        max_tokens: 4000
+      });
+
+      const content = response.choices[0]?.message?.content;
+      if (!content) {
+        console.warn('⚠️ GPT-4o-mini returned empty response');
+        return this.parseNaturalLanguageResponse(messyText);
+      }
+
+      const parsed = JSON.parse(content);
+
+      if (parsed.venues && Array.isArray(parsed.venues)) {
+        const venues: GeminiVenueRecommendation[] = parsed.venues.map((v: any) => ({
+          name: v.name || 'Unknown',
+          description: v.description || '',
+          category: v.category || 'venue',
+          priority: this.normalizePriority(v.priority),
+          reasoning: v.reasoning,
+          general_location: v.general_location || v.location,
+          rating: v.rating,
+          reviewsSummary: v.reviewsSummary,
+          gemini_confidence: groundingUsed ? 0.8 : 0.6  // Slightly lower confidence for GPT-parsed
+        }));
+
+        console.log(`✅ GPT-4o-mini extracted ${venues.length} venues`);
+
+        return {
+          plan: parsed.plan,
+          venues,
+          context: parsed.context || 'Extracted via GPT-4o-mini cleanup'
+        };
+      }
+
+      console.warn('⚠️ GPT-4o-mini response missing venues array');
+      return this.parseNaturalLanguageResponse(messyText);
+
+    } catch (error) {
+      console.error('❌ GPT-4o-mini parsing failed:', error);
+      // Ultimate fallback to regex parser
+      return this.parseNaturalLanguageResponse(messyText);
+    }
   }
 }
 
