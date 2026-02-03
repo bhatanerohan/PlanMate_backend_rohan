@@ -24,6 +24,7 @@ interface ChatInterfaceProps {
   onLocationChange?: (loc: Location) => void;
   currentItinerary?: CurrentItinerary | null;
   onClearItinerary?: () => void;
+  onNewChat?: () => void;
 }
 
 function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
@@ -79,7 +80,8 @@ const ChatInterface = forwardRef(({
   onMarkerSelect,
   userLocation,
   currentItinerary,
-  onClearItinerary
+  onClearItinerary,
+  onNewChat
 }: ChatInterfaceProps, ref) => {
   const [input, setInput] = useState('');
   const [geoPreference, setGeoPreference] = useState<GeoPreferenceMode>('auto');
@@ -505,6 +507,29 @@ const ChatInterface = forwardRef(({
 
   return (
     <div className="flex flex-col h-full">
+      {/* Header */}
+      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-white">
+        <h1 className="text-lg font-bold text-gray-800 flex items-center gap-2">
+          <span>PlanMate</span>
+          {currentItinerary && (
+            <span className="text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full font-medium">
+              Active Plan
+            </span>
+          )}
+        </h1>
+        {onNewChat && (
+          <button
+            onClick={onNewChat}
+            className="text-gray-500 hover:text-red-500 hover:bg-red-50 px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5"
+            title="Start a new chat"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+            </svg>
+            New Chat
+          </button>
+        )}
+      </div>
 
       <div className="flex-1 overflow-hidden flex flex-col">
         <div className="flex-1 overflow-y-auto p-3">

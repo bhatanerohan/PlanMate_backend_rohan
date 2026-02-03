@@ -5,7 +5,7 @@ import Map, { Marker, Source, Layer, Popup } from 'react-map-gl';
 import type { MapRef } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
-import type { MapMarker, Venue, Event, Route, Location } from '../types';
+import type { MapMarker, Venue, Event, Route, Location, InstagramReel } from '../types';
 import React from 'react';
 
 interface MapViewProps {
@@ -18,6 +18,9 @@ interface MapViewProps {
   isRouteMode?: boolean;
   currentItinerary?: { venues: Venue[] } | null;
   onQuickAction?: (action: string) => void;
+  onPlayReel?: (reel: InstagramReel, allReels?: InstagramReel[]) => void;
+  isMobile?: boolean;
+  onVenueSelect?: (venue: Venue, isPrimary: boolean, stopNumber?: number) => void;
 }
 
 // 🆕 Use WALKING mode for walkable itineraries
@@ -164,7 +167,10 @@ const MapView = ({
   onLocationChange,
   isRouteMode = false,
   currentItinerary,
-  onQuickAction
+  onQuickAction,
+  onPlayReel,
+  isMobile = false,
+  onVenueSelect
 }: MapViewProps) => {
   const mapRef = useRef<MapRef>(null);
   const [popupInfo, setPopupInfo] = useState<MapMarker | null>(null);
@@ -269,7 +275,13 @@ const MapView = ({
   useEffect(() => {
     if (!userLocation || !mapRef.current) return;
     const map = mapRef.current.getMap();
-    map.flyTo({ center: [userLocation.lng, userLocation.lat], zoom: 13, duration: 800 });
+    const offset: [number, number] = isMobile ? [0, -150] : [0, 0];
+    map.flyTo({
+      center: [userLocation.lng, userLocation.lat],
+      zoom: 13,
+      duration: 800,
+      offset
+    });
     setViewState((s) => ({ ...s, longitude: userLocation.lng, latitude: userLocation.lat }));
   }, [userLocation]);
 
@@ -279,13 +291,33 @@ const MapView = ({
     if (!marker) return;
 
     const map = mapRef.current.getMap();
-    map.flyTo({ center: [marker.position.lng, marker.position.lat], zoom: 16, duration: 1000 });
-    setPopupInfo(marker);
-  }, [selectedMarkerId, markers]);
+    // On mobile, offset the center to visible area (top half) since bottom sheet covers bottom
+    const offset: [number, number] = isMobile ? [0, -150] : [0, 0];
+    map.flyTo({
+      center: [marker.position.lng, marker.position.lat],
+      zoom: 16,
+      duration: 1000,
+      offset
+    });
+
+    // Don't show popup on mobile - venue sheet handles it
+    if (!isMobile) {
+      setPopupInfo(marker);
+    }
+  }, [selectedMarkerId, markers, isMobile]);
 
   const handleMarkerClick = (marker: MapMarker) => {
     onMarkerClick(marker.id);
-    setPopupInfo(marker);
+
+    // On mobile, open venue sheet instead of popup
+    if (isMobile && onVenueSelect && marker.type === 'venue') {
+      const venue = marker.data as Venue;
+      const isPrimary = marker.id.startsWith('primary-');
+      const stopNumber = marker.metadata?.stopNumber;
+      onVenueSelect(venue, isPrimary, stopNumber);
+    } else {
+      setPopupInfo(marker);
+    }
   };
 
   const handleUseMyLocation = () => {
@@ -305,7 +337,8 @@ const MapView = ({
       onLocationChange?.(loc);
       if (mapRef.current) {
         const map = mapRef.current.getMap();
-        map.flyTo({ center: [loc.lng, loc.lat], zoom: 13 });
+        const offset: [number, number] = isMobile ? [0, -150] : [0, 0];
+        map.flyTo({ center: [loc.lng, loc.lat], zoom: 13, offset });
       }
     }, (err) => {
       setIsLocating(false);
@@ -341,7 +374,8 @@ const MapView = ({
       onLocationChange?.(loc);
       if (mapRef.current) {
         const map = mapRef.current.getMap();
-        map.flyTo({ center: [lng, lat], zoom: 13 });
+        const offset: [number, number] = isMobile ? [0, -150] : [0, 0];
+        map.flyTo({ center: [lng, lat], zoom: 13, offset });
       }
     } catch (err) {
       console.error(err);
@@ -390,7 +424,7 @@ const MapView = ({
     <div className="relative w-full h-full min-h-[40vh] md:min-h-full">
       {/* Quick Actions - TOP LEFT */}
       {currentItinerary && currentItinerary.venues.length > 0 && (
-        <div className="absolute top-16 left-1/2 -translate-x-1/2 z-50 bg-white rounded-lg shadow-lg p-3 w-[92vw] max-w-sm sm:top-4 sm:left-4 sm:translate-x-0 sm:w-auto sm:max-w-none sm:min-w-[280px]">
+        <div className="absolute top-2 left-1/2 -translate-x-1/2 z-50 bg-white rounded-lg shadow-lg p-3 w-[92vw] max-w-sm sm:top-4 sm:left-4 sm:translate-x-0 sm:w-auto sm:max-w-none sm:min-w-[280px]">
           <form onSubmit={handleQuickActionSubmit} className="space-y-2">
             <div className="flex gap-2">
               <button
@@ -520,6 +554,8 @@ const MapView = ({
         </div>
       )}
 
+      {/* Reel player overlay moved to App level for proper z-index on mobile */}
+
       {/* Location Controls - TOP RIGHT */}
       <div className="absolute bottom-4 left-3 right-3 z-50 flex flex-col gap-2 sm:bottom-auto sm:top-4 sm:right-4 sm:left-auto sm:w-auto">
         <div className="flex flex-col gap-2 sm:flex-row">
@@ -570,13 +606,6 @@ const MapView = ({
               features: routes
                 .filter(route => route.geometry && route.geometry.type === 'LineString' && route.geometry.coordinates?.length >= 2)
                 .map((route, idx) => {
-                  console.log(`🛤️ Adding route segment ${idx}:`, {
-                    coordinateCount: route.geometry.coordinates?.length,
-                    start: route.start,
-                    end: route.end,
-                    firstCoord: route.geometry.coordinates?.[0],
-                    lastCoord: route.geometry.coordinates?.[route.geometry.coordinates.length - 1]
-                  });
                   return {
                     type: 'Feature' as const,
                     properties: {
@@ -618,20 +647,16 @@ const MapView = ({
           </Source>
         )}
 
-        {/* MARKER RENDERING with Primary/Alternative distinction */}
+        {/* MARKER RENDERING */}
         {markers.map((marker, index) => {
           const isPrimary = marker.id.startsWith('primary-');
           const isAlternative = marker.id.startsWith('alternative-');
           const isUserLocation = marker.id === 'user-location';
-
-          // 🆕 FIX: Extract number from marker ID (e.g., "primary-0" -> 1, "primary-1" -> 2)
           let displayIndex = 0;
           if (isPrimary) {
             const idMatch = marker.id.match(/primary-(\d+)/);
             displayIndex = idMatch ? parseInt(idMatch[1], 10) + 1 : index + 1;
           }
-
-          // Also check metadata for stop number
           if (marker.metadata?.stopNumber) {
             displayIndex = marker.metadata.stopNumber;
           }
@@ -650,7 +675,6 @@ const MapView = ({
               <div className={`cursor-pointer transform transition-all duration-200 hover:scale-110 ${selectedMarkerId === marker.id ? 'scale-125' : ''}`}>
                 {marker.type === 'venue' ? (
                   isUserLocation ? (
-                    // User location marker - green pin
                     <div className="relative">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-full border-3 border-white shadow-lg flex items-center justify-center">
                         <span className="text-white text-sm">📍</span>
@@ -658,7 +682,6 @@ const MapView = ({
                       <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-green-500 rotate-45"></div>
                     </div>
                   ) : isAlternative ? (
-                    // Alternative venue - Orange Pin with Star
                     <div className="relative">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-full border-3 border-white shadow-lg flex items-center justify-center">
                         <span className="text-white text-sm">★</span>
@@ -666,7 +689,6 @@ const MapView = ({
                       <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-orange-500 rotate-45"></div>
                     </div>
                   ) : (
-                    // Primary venue - numbered red marker
                     <div className="relative">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 bg-red-500 rounded-full border-3 border-white shadow-lg flex items-center justify-center text-white font-bold text-sm sm:text-lg">
                         {displayIndex}
@@ -675,7 +697,6 @@ const MapView = ({
                     </div>
                   )
                 ) : (
-                  // Event marker - blue
                   <div className="relative">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full border-3 border-white shadow-lg flex items-center justify-center text-white font-bold text-sm sm:text-lg">
                       {index + 1}
@@ -710,6 +731,7 @@ const MapView = ({
               marker={popupInfo}
               onQuickAction={onQuickAction}
               hasCurrentItinerary={!!currentItinerary}
+              onPlayReel={onPlayReel}
             />
           </Popup>
         )}
@@ -738,11 +760,13 @@ const MapView = ({
 const PopupContent = memo(({
   marker,
   onQuickAction,
-  hasCurrentItinerary
+  hasCurrentItinerary,
+  onPlayReel
 }: {
   marker: MapMarker;
   onQuickAction?: (action: string) => void;
   hasCurrentItinerary: boolean;
+  onPlayReel?: (reel: InstagramReel, allReels?: InstagramReel[]) => void;
 }) => {
   if (marker.type === 'venue') {
     const venue = marker.data as Venue;
@@ -812,6 +836,51 @@ const PopupContent = memo(({
             )}
           </div>
 
+          {/* Instagram Reels */}
+          {venue.instagramReels && venue.instagramReels.length > 0 && (
+            <div className="mt-2 pt-2 border-t border-gray-100">
+              <div className="text-xs text-gray-500 mb-1.5">📸 Reels ({venue.instagramReels.length})</div>
+              <div className="flex gap-2 overflow-x-auto pb-1" style={{ scrollSnapType: 'x mandatory' }}>
+                {venue.instagramReels.map((reel, idx) => (
+                  <button
+                    key={reel.id || idx}
+                    onClick={() => onPlayReel?.(reel, venue.instagramReels)}
+                    className="flex-shrink-0 group"
+                    style={{ scrollSnapAlign: 'start' }}
+                  >
+                    <div className="relative w-24 h-32 bg-black rounded-md overflow-hidden shadow-sm border border-gray-200">
+                      {reel.thumbnailUrl ? (
+                        <img
+                          src={reel.thumbnailUrl}
+                          alt={`Reel ${idx + 1}`}
+                          referrerPolicy="no-referrer"
+                          className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = 'https://placehold.co/100x130/black/white?text=No+Preview';
+                          }}
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-gray-800 text-white text-xs">
+                          No Preview
+                        </div>
+                      )}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-8 h-8 bg-black/40 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                          <span className="text-white text-sm ml-0.5">▶️</span>
+                        </div>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-1">
+                        <div className="text-[8px] text-white font-medium truncate">
+                          @{reel.ownerUsername}
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Action buttons */}
           {hasCurrentItinerary && (
             <div className="popup-actions">
@@ -840,6 +909,7 @@ const PopupContent = memo(({
       </div>
     );
   } else {
+    // Event popup
     const event = marker.data as Event;
     return (
       <div className="w-[240px] sm:w-[280px] max-w-[90vw] p-3 space-y-2">

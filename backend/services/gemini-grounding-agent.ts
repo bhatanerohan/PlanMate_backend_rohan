@@ -4,6 +4,8 @@ import { GoogleGenAI } from '@google/genai';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
 import { startCapture } from './logger.js';
+import fs from 'fs';
+import path from 'path';
 
 dotenv.config();
 
@@ -129,6 +131,21 @@ export class GeminiGroundingAgent {
       const text = response?.text || '';
       console.log('✅ Gemini response received');
       console.log(`📄 Response length: ${text.length} characters`);
+
+      // LOGGING TO FILE
+      try {
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const outputDir = path.join(process.cwd(), 'output');
+        if (!fs.existsSync(outputDir)) {
+          fs.mkdirSync(outputDir, { recursive: true });
+        }
+        const logPath = path.join(outputDir, `gemini_output_${timestamp}.txt`);
+        const logContent = `PROMPT:\n${geminiPrompt}\n\n${'='.repeat(50)}\n\nRESPONSE:\n${text}`;
+        fs.writeFileSync(logPath, logContent);
+        console.log(`📝 Logged Gemini output to ${logPath}`);
+      } catch (err) {
+        console.error('Failed to log Gemini output:', err);
+      }
 
       // Check grounding metadata
       const candidate = response.candidates?.[0];

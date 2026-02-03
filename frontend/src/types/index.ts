@@ -21,6 +21,7 @@ export interface Venue {
   description?: string;
   photoUrl?: string;
   videos?: YouTubeVideo[];
+  instagramReels?: InstagramReel[];
   category?: string;
   priority?: 'must_have' | 'nice_to_have';
   reasoning?: string;
@@ -38,6 +39,21 @@ export interface YouTubeVideo {
   duration: string;
   viewCount?: string;
   likeCount?: string;
+}
+
+export interface InstagramReel {
+  id: string;
+  shortCode: string;
+  caption: string;
+  videoUrl: string;
+  thumbnailUrl: string;
+  likesCount: number;
+  viewCount: number;
+  commentsCount: number;
+  ownerUsername: string;
+  hashtags: string[];
+  timestamp: string;
+  url: string;
 }
 
 export interface Event {

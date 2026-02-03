@@ -93,9 +93,7 @@ const DynamicLoadingIndicator = () => {
 
   return (
     <div className="flex items-start gap-3">
-      <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center text-white">
-        🧭
-      </div>
+
       <div className="flex-1 bg-[#081622] rounded-lg p-4 border border-[#0f2a3a]">
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -374,11 +372,7 @@ const MessageBubble = ({ message, onMarkerSelect, currentItinerary }: MessageBub
 
   return (
     <div className={`flex w-full mb-4 animate-fade-in ${isUser ? 'justify-end' : 'justify-start'}`}>
-      {!isUser && (
-        <div className="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center mr-2 flex-shrink-0 shadow-lg">
-          <span className="text-sm">🤖</span>
-        </div>
-      )}
+
 
       <div className={isUser ? "max-w-[80%]" : "flex-1 min-w-0"}>
         <div className={`rounded-lg p-4 border ${isUser ? 'bg-[#1e40af] border-blue-700 text-white' : 'bg-[#0f1b28] border-[#10222b]'}`}>

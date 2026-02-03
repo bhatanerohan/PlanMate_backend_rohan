@@ -5,7 +5,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ChatInterface from './components/ChatInterface';
 import MapView from './components/MapView';
 import BottomSheet, { type BottomSheetHandle } from './components/BottomSheet';
-import type { Message, MapMarker, Route, Location, Venue } from './types';
+import VenueDetailSheet from './components/VenueDetailSheet';
+import type { Message, MapMarker, Route, Location, Venue, InstagramReel } from './types';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,21 +28,62 @@ interface CurrentItinerary {
 }
 
 function App() {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '0',
-      type: 'system',
-      content: 'Welcome to PlanMate! 🗺️ Tell me what you\'d like to do and I\'ll help you plan it.',
-      timestamp: Date.now(),
-    },
-  ]);
+  // Persistent State Initialization
+  const [messages, setMessages] = useState<Message[]>(() => {
+    try {
+      const saved = localStorage.getItem('planmate_messages');
+      return saved ? JSON.parse(saved) : [{
+        id: '0',
+        type: 'system',
+        content: 'Welcome to PlanMate! 🗺️ Tell me what you\'d like to do and I\'ll help you plan it.',
+        timestamp: Date.now(),
+      }];
+    } catch {
+      return [{
+        id: '0',
+        type: 'system',
+        content: 'Welcome to PlanMate! 🗺️ Tell me what you\'d like to do and I\'ll help you plan it.',
+        timestamp: Date.now(),
+      }];
+    }
+  });
 
-  const [markers, setMarkers] = useState<MapMarker[]>([]);
-  const [routes, setRoutes] = useState<Route[]>([]);
+  const [markers, setMarkers] = useState<MapMarker[]>(() => {
+    try {
+      const saved = localStorage.getItem('planmate_markers');
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
+
+  const [routes, setRoutes] = useState<Route[]>(() => {
+    try {
+      const saved = localStorage.getItem('planmate_routes');
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
+
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
-  const [userLocation, setUserLocation] = useState<Location | null>(null);
-  const [isRouteMode, setIsRouteMode] = useState(false);
-  const [currentItinerary, setCurrentItinerary] = useState<CurrentItinerary | null>(null);
+
+  const [userLocation, setUserLocation] = useState<Location | null>(() => {
+    try {
+      const saved = localStorage.getItem('planmate_user_location');
+      return saved ? JSON.parse(saved) : null;
+    } catch { return null; }
+  });
+
+  const [isRouteMode, setIsRouteMode] = useState(() => {
+    try {
+      const saved = localStorage.getItem('planmate_route_mode');
+      return saved ? JSON.parse(saved) : false;
+    } catch { return false; }
+  });
+
+  const [currentItinerary, setCurrentItinerary] = useState<CurrentItinerary | null>(() => {
+    try {
+      const saved = localStorage.getItem('planmate_itinerary');
+      return saved ? JSON.parse(saved) : null;
+    } catch { return null; }
+  });
 
   const [chatWidthPx, setChatWidthPx] = useState(600);
   const [isDragging, setIsDragging] = useState(false);
@@ -50,6 +92,41 @@ function App() {
   const containerRef = useRef<HTMLDivElement>(null);
   const bottomSheetRef = useRef<BottomSheetHandle>(null);
   const chatInterfaceRef = useRef<any>(null);
+
+  // Mobile venue detail sheet state
+  const [selectedVenueForSheet, setSelectedVenueForSheet] = useState<{
+    venue: Venue;
+    isPrimary: boolean;
+    stopNumber?: number;
+  } | null>(null);
+
+  // Reel player state (lifted to App for proper z-index on mobile)
+  const [activeReels, setActiveReels] = useState<InstagramReel[]>([]);
+  const [activeReelIndex, setActiveReelIndex] = useState(0);
+
+  const handlePlayReel = (reel: InstagramReel, allReels?: InstagramReel[]) => {
+    if (allReels && allReels.length > 0) {
+      const index = allReels.findIndex(r => r.id === reel.id);
+      setActiveReels(allReels);
+      setActiveReelIndex(index >= 0 ? index : 0);
+    } else {
+      setActiveReels([reel]);
+      setActiveReelIndex(0);
+    }
+  };
+
+  const handleCloseReelPlayer = () => {
+    setActiveReels([]);
+    setActiveReelIndex(0);
+  };
+
+  const handlePrevReel = () => {
+    setActiveReelIndex(prev => (prev > 0 ? prev - 1 : activeReels.length - 1));
+  };
+
+  const handleNextReel = () => {
+    setActiveReelIndex(prev => (prev < activeReels.length - 1 ? prev + 1 : 0));
+  };
 
   const handleNewPlan = (
     message: Message,
@@ -83,7 +160,11 @@ function App() {
         return [...prev, message];
       });
     } else {
-      setMessages((prev) => [...prev, message]);
+      setMessages((prev) => {
+        // Remove welcome message (id: '0') when adding first new message
+        const filtered = prev.filter(m => m.id !== '0');
+        return [...filtered, message];
+      });
     }
 
     if (newMarkers.length > 0) {
@@ -179,6 +260,64 @@ function App() {
     console.log('📍 User location updated:', loc);
   };
 
+  // State Persistence Effects
+  useEffect(() => {
+    localStorage.setItem('planmate_messages', JSON.stringify(messages));
+  }, [messages]);
+
+  useEffect(() => {
+    localStorage.setItem('planmate_markers', JSON.stringify(markers));
+  }, [markers]);
+
+  useEffect(() => {
+    localStorage.setItem('planmate_routes', JSON.stringify(routes));
+  }, [routes]);
+
+  useEffect(() => {
+    if (userLocation) {
+      localStorage.setItem('planmate_user_location', JSON.stringify(userLocation));
+    } else {
+      localStorage.removeItem('planmate_user_location');
+    }
+  }, [userLocation]);
+
+  useEffect(() => {
+    localStorage.setItem('planmate_route_mode', JSON.stringify(isRouteMode));
+  }, [isRouteMode]);
+
+  useEffect(() => {
+    if (currentItinerary) {
+      localStorage.setItem('planmate_itinerary', JSON.stringify(currentItinerary));
+    } else {
+      localStorage.removeItem('planmate_itinerary');
+    }
+  }, [currentItinerary]);
+
+  const handleResetChat = () => {
+    if (window.confirm("Start a new chat? This will clear your current plan.")) {
+      const initialMessage = {
+        id: '0',
+        type: 'system' as const,
+        content: 'Welcome to PlanMate! 🗺️ Tell me what you\'d like to do and I\'ll help you plan it.',
+        timestamp: Date.now(),
+      };
+      setMessages([initialMessage]);
+      setMarkers([]);
+      setRoutes([]);
+      setCurrentItinerary(null);
+      setSelectedMarkerId(null);
+      setIsRouteMode(false);
+      // We purposefully do NOT clear userLocation as that's environmental
+
+      // Clear persistence immediately (optional, as effects will run, but good for safety)
+      localStorage.setItem('planmate_messages', JSON.stringify([initialMessage]));
+      localStorage.setItem('planmate_markers', JSON.stringify([]));
+      localStorage.setItem('planmate_routes', JSON.stringify([]));
+      localStorage.removeItem('planmate_itinerary');
+      localStorage.setItem('planmate_route_mode', 'false');
+    }
+  };
+
   useEffect(() => {
     if (!containerRef.current) return;
     const handleMouseMove = (e: MouseEvent) => {
@@ -270,6 +409,7 @@ function App() {
                 onLocationChange={handleLocationChange}
                 currentItinerary={currentItinerary}
                 onClearItinerary={() => setCurrentItinerary(null)}
+                onNewChat={handleResetChat}
               />
             </div>
 
@@ -298,6 +438,7 @@ function App() {
                 isRouteMode={isRouteMode}
                 currentItinerary={currentItinerary}
                 onQuickAction={handleQuickAction}
+                onPlayReel={handlePlayReel}
               />
             </div>
           </div>
@@ -318,25 +459,118 @@ function App() {
                 isRouteMode={isRouteMode}
                 currentItinerary={currentItinerary}
                 onQuickAction={handleQuickAction}
+                onPlayReel={handlePlayReel}
+                isMobile={true}
+                onVenueSelect={(venue, isPrimary, stopNumber) => {
+                  setSelectedVenueForSheet({ venue, isPrimary, stopNumber });
+                }}
               />
             </div>
 
-            {/* Chat in sliding BottomSheet */}
-            <BottomSheet ref={bottomSheetRef} snapPoints={[20, 50, 85]} defaultSnapIndex={1}>
-              <ChatInterface
-                ref={chatInterfaceRef}
-                messages={messages}
-                onNewPlan={handleNewPlan}
-                onMarkerSelect={handleMarkerSelect}
-                userLocation={userLocation}
-                onLocationChange={handleLocationChange}
-                currentItinerary={currentItinerary}
-                onClearItinerary={() => setCurrentItinerary(null)}
+            {/* Chat in sliding BottomSheet - hidden when venue sheet is open */}
+            {!selectedVenueForSheet && (
+              <BottomSheet ref={bottomSheetRef} snapPoints={[20, 50, 100]} defaultSnapIndex={1}>
+                <ChatInterface
+                  ref={chatInterfaceRef}
+                  messages={messages}
+                  onNewPlan={handleNewPlan}
+                  onMarkerSelect={handleMarkerSelect}
+                  userLocation={userLocation}
+                  onLocationChange={handleLocationChange}
+                  currentItinerary={currentItinerary}
+                  onClearItinerary={() => setCurrentItinerary(null)}
+                  onNewChat={handleResetChat}
+                />
+              </BottomSheet>
+            )}
+
+            {/* Venue Detail Sheet - shown when a venue is selected on mobile */}
+            {selectedVenueForSheet && (
+              <VenueDetailSheet
+                venue={selectedVenueForSheet.venue}
+                isPrimary={selectedVenueForSheet.isPrimary}
+                stopNumber={selectedVenueForSheet.stopNumber}
+                onClose={() => setSelectedVenueForSheet(null)}
+                onPlayReel={handlePlayReel}
+                onQuickAction={handleQuickAction}
               />
-            </BottomSheet>
+            )}
           </div>
         )}
       </div>
+
+      {/* Reel Player Overlay - Rendered at App level for proper z-index */}
+      {activeReels.length > 0 && activeReels[activeReelIndex] && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+          {/* Previous Button */}
+          {activeReels.length > 1 && (
+            <button
+              onClick={handlePrevReel}
+              className="absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors z-20"
+            >
+              ◀
+            </button>
+          )}
+
+          <div className="relative w-full max-w-[350px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20">
+            {/* Video Player */}
+            <video
+              key={activeReels[activeReelIndex].id}
+              src={activeReels[activeReelIndex].videoUrl}
+              poster={activeReels[activeReelIndex].thumbnailUrl}
+              className="w-full h-full object-cover"
+              controls
+              autoPlay
+              playsInline
+              loop
+            />
+
+            {/* Close Button */}
+            <button
+              onClick={handleCloseReelPlayer}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-black/50 backdrop-blur-md rounded-full text-white hover:bg-black/70 transition-colors z-10"
+            >
+              ✕
+            </button>
+
+            {/* Reel Counter */}
+            {activeReels.length > 1 && (
+              <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md rounded-full px-3 py-1 text-white text-xs font-medium z-10">
+                {activeReelIndex + 1} / {activeReels.length}
+              </div>
+            )}
+
+            {/* Overlay Info */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 pt-12 pointer-events-none">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-bold bg-blue-600 text-white px-2 py-0.5 rounded-full">Instagram</span>
+                <span className="text-xs text-white/70">@{activeReels[activeReelIndex].ownerUsername}</span>
+              </div>
+              <p className="text-white text-sm font-medium line-clamp-2 mb-2 opacity-90">
+                {activeReels[activeReelIndex].caption}
+              </p>
+              <div className="flex items-center gap-3 text-white/80 text-xs">
+                <span className="flex items-center gap-1">❤️ {activeReels[activeReelIndex].likesCount}</span>
+                <span className="flex items-center gap-1">💬 {activeReels[activeReelIndex].commentsCount}</span>
+                <span className="flex items-center gap-1">👁️ {activeReels[activeReelIndex].viewCount}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Next Button */}
+          {activeReels.length > 1 && (
+            <button
+              onClick={handleNextReel}
+              className="absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors z-20"
+            >
+              ▶
+            </button>
+          )}
+
+          {/* Backdrop interaction to close */}
+          <div className="absolute inset-0 -z-10" onClick={handleCloseReelPlayer} />
+        </div>
+      )}
     </QueryClientProvider>
   );
 }

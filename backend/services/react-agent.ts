@@ -78,6 +78,8 @@ export interface EnrichedCandidate {
   enrichmentSource: 'google_places' | 'gemini_only';
   // Optional flag indicating this entry represents the user's current location
   isUserLocation?: boolean;
+  // Instagram Reels attached to this venue
+  instagramReels?: any[];
 }
 
 export interface EnrichmentResult {

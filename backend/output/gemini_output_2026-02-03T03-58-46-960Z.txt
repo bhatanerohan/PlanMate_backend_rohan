@@ -1,0 +1,320 @@
+PROMPT:
+User request: "a trip to most iconic spots in mumbai"
+
+
+🎯 YOUR TASK: Return 15-20 CANDIDATE venues (not final picks!)
+
+The user wants approximately 5-7 stops in their final itinerary.
+However, YOU must provide 15-20 OPTIONS so our system can select the most 
+geographically efficient subset while preserving user intent.
+
+═══════════════════════════════════════════════════════════════════════════════
+📋 CATEGORIZATION RULES (CRITICAL!)
+═══════════════════════════════════════════════════════════════════════════════
+
+**MUST_HAVE** = Core to user's intent. Cannot be skipped.
+  Examples for "halal food trucks in midtown":
+  - Halal Guys → must_have (directly matches "halal food trucks")
+  - Kwik Meal → must_have (halal food truck)
+  - Adel's Famous → must_have (halal food truck)
+  
+**NICE_TO_HAVE** = Complementary attractions. Can be swapped for closer alternatives.
+  Examples for "halal food trucks in midtown":
+  - Times Square → nice_to_have (nearby attraction, not core intent)
+  - Bryant Park → nice_to_have (nice to visit, but not what they asked for)
+  - NY Public Library → nice_to_have (cultural stop, not required)
+
+═══════════════════════════════════════════════════════════════════════════════
+🎯 QUANTITY GUIDELINES
+═══════════════════════════════════════════════════════════════════════════════
+
+Return:
+- 5-8 MUST_HAVE venues (core intent options)
+- 10-12 NICE_TO_HAVE venues (complementary options)
+- Total: 15-20 candidates
+
+Why? Our optimization system will:
+1. Pick 2-3 must_haves that are geographically close to each other
+2. Fill remaining slots with nice_to_haves near those must_haves
+3. Result: Walkable route that preserves user intent
+
+═══════════════════════════════════════════════════════════════════════════════
+🗺️ GEOGRAPHIC SPREAD
+═══════════════════════════════════════════════════════════════════════════════
+
+Spread candidates across the requested area so our optimizer has options:
+- Some in north part of area
+- Some in south part
+- Some in center
+- Include hidden gems AND popular spots
+
+═══════════════════════════════════════════════════════════════════════════════
+📦 REQUIRED JSON FORMAT
+═══════════════════════════════════════════════════════════════════════════════
+
+```json
+{
+  "plan": {
+    "type": "Experience type (e.g., 'Halal Food Tour', 'Bar Crawl')",
+    "total_stops": 5,
+    "estimated_duration": "3-4 hours",
+    "travel_mode": "walking | walking + transit | transit/driving",
+    "theme": "Brief vibe description",
+    "scale": "neighborhood | district | city-wide"
+  },
+  "venues": [
+    {
+      "name": "Exact Google Maps name",
+      "description": "What makes it special (2-3 sentences)",
+      "category": "food_truck | restaurant | bar | cafe | museum | park | landmark",
+      "priority": "must_have",
+      "reasoning": "Why this is core to user's request",
+      "rating": 4.5,
+      "reviewsSummary": "What people love about it",
+      "general_location": "Neighborhood/area name"
+    },
+    {
+      "name": "Another venue",
+      "description": "Description",
+      "category": "park",
+      "priority": "nice_to_have",
+      "reasoning": "Complementary stop near the food trucks",
+      "rating": 4.3,
+      "reviewsSummary": "Reviews summary",
+      "general_location": "Area name"
+    }
+  ],
+  "context": "Brief explanation of the overall plan"
+}
+```
+
+═══════════════════════════════════════════════════════════════════════════════
+⚠️ IMPORTANT REMINDERS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Return 15-20 candidates, NOT the final 5-7 picks
+2. MUST categorize each venue as "must_have" or "nice_to_have"
+3. Must_have = directly matches user's stated intent
+4. Nice_to_have = would enhance the experience but isn't required
+5. Use exact venue names that Google Maps will recognize
+6. Spread venues geographically within the requested area
+
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Iconic Mumbai Exploration",
+    "total_stops": 5,
+    "estimated_duration": "2-3 days",
+    "travel_mode": "transit/driving",
+    "theme": "Discovering Mumbai's historical, cultural, and modern landmarks",
+    "scale": "city-wide"
+  },
+  "venues": [
+    {
+      "name": "Gateway Of India Mumbai",
+      "description": "A grand, 26-meter-tall triumphal stone arch built in Indo-Saracenic style on the waterfront in 1924, serving as Mumbai's most iconic landmark. It offers panoramic views of the Arabian Sea and is a popular starting point for ferry rides to Elephanta Caves.",
+      "category": "landmark",
+      "priority": "must_have",
+      "reasoning": "This is Mumbai's most recognizable and iconic monument, crucial for any trip.",
+      "rating": 4.6,
+      "reviewsSummary": "Visitors love the historical significance, the grand architecture, and the vibrant atmosphere with street vendors and photographers. It's especially beautiful at sunset.",
+      "general_location": "Colaba"
+    },
+    {
+      "name": "Chhatrapati Shivaji Maharaj Terminus",
+      "description": "A UNESCO World Heritage Site, this historic railway station is an outstanding example of Victorian Gothic Revival architecture blended with traditional Indian elements. It's a busy hub and an architectural marvel.",
+      "category": "landmark",
+      "priority": "must_have",
+      "reasoning": "Recognized globally for its architecture and historical significance as a major transport hub.",
+      "rating": 4.5,
+      "reviewsSummary": "Praised for its magnificent architecture, historical value, and being a bustling, well-maintained railway station. A must-see for its grandeur.",
+      "general_location": "Fort"
+    },
+    {
+      "name": "Marine Drive",
+      "description": "Known as the 'Queen's Necklace', Marine Drive is a 3.6 km long promenade along the coast, offering stunning views of the Arabian Sea and the city skyline, particularly beautiful in the evenings as the streetlights resemble a string of pearls.",
+      "category": "promenade",
+      "priority": "must_have",
+      "reasoning": "An iconic stretch of coastline famous for its views and evening ambiance, representing modern Mumbai.",
+      "rating": 4.8,
+      "reviewsSummary": "People enjoy the scenic views, refreshing sea breeze, and the lively atmosphere for walks and relaxation. It’s particularly popular for sunset views and its 'Queen's Necklace' appearance at night.",
+      "general_location": "South Mumbai Coastline"
+    },
+    {
+      "name": "Haji Ali Dargah",
+      "description": "A beautiful mosque and tomb located on a tiny islet in the Arabian Sea, accessible via a narrow causeway during low tide. It's a prominent pilgrimage site and an architectural marvel with its white dome and minarets.",
+      "category": "place_of_worship",
+      "priority": "must_have",
+      "reasoning": "A unique religious and architectural landmark, showcasing Mumbai's diverse cultural fabric.",
+      "rating": 4.4,
+      "reviewsSummary": "Visitors appreciate the serene atmosphere, unique island location, and stunning views, especially during sunset. It's considered a spiritual and peaceful place.",
+      "general_location": "Haji Ali"
+    },
+    {
+      "name": "Shree Siddhivinayak Temple",
+      "description": "Dedicated to Lord Ganesha, this grand Hindu temple is one of Mumbai's richest and most visited temples. It features an inner gold-plated roof and intricately carved doors, attracting devotees and tourists alike.",
+      "category": "place_of_worship",
+      "priority": "must_have",
+      "reasoning": "A highly revered and iconic religious site in Mumbai, representing a significant aspect of local culture.",
+      "rating": 4.8,
+      "reviewsSummary": "Known for its divine atmosphere, cleanliness, and efficient crowd management. Devotees often visit for blessings and the spiritual experience.",
+      "general_location": "Prabhadevi"
+    },
+    {
+      "name": "Colaba Causeway",
+      "description": "A bustling street market and commercial artery, perfect for souvenir shopping, street food, and experiencing local life. It's lined with grand colonial buildings, boutiques, cafes, and an Art Deco cinema.",
+      "category": "market",
+      "priority": "must_have",
+      "reasoning": "Offers a vibrant, quintessential Mumbai street shopping and cultural experience.",
+      "rating": 4.4,
+      "reviewsSummary": "Loved for its lively atmosphere, variety of shopping options from street stalls to boutiques, and diverse food choices. A great place for people-watching.",
+      "general_location": "Colaba"
+    },
+    {
+      "name": "Elephanta Caves",
+      "description": "A UNESCO World Heritage Site, these ancient rock-cut caves on Elephanta Island house impressive sculptures dedicated to Lord Shiva, dating back to the 7th century. Accessible by ferry from the Gateway of India.",
+      "category": "historical_place",
+      "priority": "must_have",
+      "reasoning": "A significant historical and archaeological site, offering a glimpse into ancient Indian art and spirituality.",
+      "rating": 4.3,
+      "reviewsSummary": "Visitors are captivated by the intricate cave carvings and the historical depth of the site. The ferry ride to the island is also part of the experience.",
+      "general_location": "Elephanta Island"
+    },
+    {
+      "name": "Dhobi Ghat",
+      "description": "Mumbai's famous open-air laundromat, where thousands of dhobis (washermen) manually wash clothes from hotels and hospitals across the city. It's a fascinating and unique spectacle of everyday life.",
+      "category": "landmark",
+      "priority": "must_have",
+      "reasoning": "A truly unique cultural experience offering insight into an age-old profession, iconic to Mumbai.",
+      "rating": 4.3,
+      "reviewsSummary": "Described as a fascinating and eye-opening experience, showcasing a unique aspect of Mumbai's working culture. Best viewed from the bridge nearby.",
+      "general_location": "Mahalaxmi/Lower Parel"
+    },
+    {
+      "name": "The Taj Mahal Palace, Mumbai",
+      "description": "An iconic luxury hotel, standing majestically beside the Gateway of India. Its opulent architecture and rich history make it a landmark in itself, offering fine dining and a glimpse into colonial grandeur.",
+      "category": "hotel",
+      "priority": "nice_to_have",
+      "reasoning": "A prominent landmark directly adjacent to a 'must-have', offering historical and architectural significance and a luxurious experience.",
+      "rating": 4.7,
+      "reviewsSummary": "Guests rave about the impeccable service, stunning architecture, luxurious ambiance, and excellent dining options. It's a symbol of Mumbai's grandeur.",
+      "general_location": "Colaba"
+    },
+    {
+      "name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
+      "description": "Formerly known as the Prince of Wales Museum, this grand museum showcases Indian art, archaeology, and natural history in a stunning Indo-Saracenic building. It offers a deep dive into India's rich cultural heritage.",
+      "category": "museum",
+      "priority": "nice_to_have",
+      "reasoning": "A major museum offering cultural enrichment, conveniently located near other South Mumbai must-haves.",
+      "rating": 4.6,
+      "reviewsSummary": "Highly praised for its vast and well-maintained collection, beautiful architecture, and engaging exhibits for all ages. A quiet escape from the city's hustle.",
+      "general_location": "Fort/Kala Ghoda"
+    },
+    {
+      "name": "Juhu Beach",
+      "description": "One of Mumbai's most popular beaches, known for its vibrant street food stalls, especially pav bhaji and bhel puri, and stunning sunsets. It's a lively spot for families and evening strolls.",
+      "category": "beach",
+      "priority": "nice_to_have",
+      "reasoning": "A famous beach offering a different facet of Mumbai's recreational and culinary scene.",
+      "rating": 4.3,
+      "reviewsSummary": "Visitors enjoy the lively atmosphere, diverse street food, and beautiful sunset views. It's a great spot for local culture and relaxation.",
+      "general_location": "Juhu"
+    },
+    {
+      "name": "Mani Bhavan Gandhi Sangrahalaya",
+      "description": "This museum was once Mahatma Gandhi's मुंबई headquarters from 1917-1934. It features his room, a library, photos, and dioramas depicting his life and struggles, offering a profound insight into his philosophy.",
+      "category": "museum",
+      "priority": "nice_to_have",
+      "reasoning": "A significant historical museum dedicated to Mahatma Gandhi, offering a deeper understanding of India's independence movement.",
+      "rating": 4.6,
+      "reviewsSummary": "Described as a moving and informative museum that provides a detailed look into Gandhi's life and work. It's a peaceful and inspiring visit.",
+      "general_location": "Gamdevi/Babulnath"
+    },
+    {
+      "name": "Bandra Fort",
+      "description": "Also known as Castella de Aguada, this historic Portuguese fort offers rocky pathways and picturesque sea views, especially of the Bandra-Worli Sea Link. It's a popular spot for photography and relaxation.",
+      "category": "historical_place",
+      "priority": "nice_to_have",
+      "reasoning": "Provides historical context and excellent views of a modern Mumbai landmark (Sea Link).",
+      "rating": 4.4,
+      "reviewsSummary": "Loved for its historical charm, serene ambiance, and fantastic views of the Arabian Sea and the Sea Link. A great spot for a leisurely walk.",
+      "general_location": "Bandra West"
+    },
+    {
+      "name": "Flora Fountain",
+      "description": "A beautiful 19th-century sculptural fountain depicting the Roman goddess Flora, located in the historic Fort area. It's a significant landmark and a popular meeting point, surrounded by impressive colonial architecture.",
+      "category": "landmark",
+      "priority": "nice_to_have",
+      "reasoning": "An iconic historical landmark in South Mumbai, part of the city's architectural heritage.",
+      "rating": 4.5,
+      "reviewsSummary": "Visitors admire its intricate carvings and historical significance. It serves as a beautiful centerpiece in a bustling part of the city.",
+      "general_location": "Fort/Kala Ghoda"
+    },
+    {
+      "name": "Dr. Bhau Daji Lad Museum",
+      "description": "Mumbai's first museum, showcasing the city's cultural heritage through artistic and decorative artifacts, miniature displays, and art. It provides a charming insight into Mumbai's history and development.",
+      "category": "museum",
+      "priority": "nice_to_have",
+      "reasoning": "An important museum highlighting Mumbai's local history and culture, offering an alternative to the larger CSMVS.",
+      "rating": 4.4,
+      "reviewsSummary": "Appreciated for its well-preserved collections, beautiful building, and focus on Mumbai's cultural history. A lesser-known gem.",
+      "general_location": "Byculla East"
+    },
+    {
+      "name": "Basilica of Our Lady of the Mount (Bandra, Mumbai)",
+      "description": "A magnificent Roman Catholic basilica, rebuilt in 1761, known for its annual Bandra Fair. Perched on a hill, it offers spiritual solace and panoramic views of the sea and Bandra.",
+      "category": "place_of_worship",
+      "priority": "nice_to_have",
+      "reasoning": "An iconic religious site with historical significance and great views, representing the diverse religious landscape of Mumbai.",
+      "rating": 4.7,
+      "reviewsSummary": "Praised for its beautiful architecture, peaceful ambiance, and the stunning views it offers from Mount Mary Hill. A spiritually uplifting experience.",
+      "general_location": "Bandra West"
+    },
+    {
+      "name": "Kamala Nehru Park",
+      "description": "A popular park located on Malabar Hill, famous for its 'Old Woman's Shoe' structure (a giant boot slide for children) and offering panoramic views of Marine Drive and Chowpatty Beach.",
+      "category": "park",
+      "priority": "nice_to_have",
+      "reasoning": "Offers great panoramic views of Marine Drive and the city, providing a relaxing green space.",
+      "rating": 4.3,
+      "reviewsSummary": "Families love the children's play area and the iconic 'shoe' structure. The park is also appreciated for its beautiful flower beds and city views.",
+      "general_location": "Malabar Hill"
+    },
+    {
+      "name": "Banganga Tank",
+      "description": "An ancient water tank part of the Walkeshwar Temple Complex, steeped in Hindu mythology. It's a serene spot for spiritual rituals and a unique glimpse into Mumbai's ancient past.",
+      "category": "historical_place",
+      "priority": "nice_to_have",
+      "reasoning": "A unique ancient site with spiritual significance, offering a tranquil escape and historical insight.",
+      "rating": 4.3,
+      "reviewsSummary": "Visitors find the tank to be a peaceful and spiritual place, offering a distinct cultural experience. Its historical roots and local activities are highlights.",
+      "general_location": "Malabar Hill"
+    },
+    {
+      "name": "Shri Mahalakshmi Devi Temple, Mumbai",
+      "description": "An 18th-century seaside Hindu temple dedicated to the goddesses Lakshmi, Saraswati, and Kali. It's a revered pilgrimage site, especially during Navratri, and offers a vibrant spiritual experience.",
+      "category": "place_of_worship",
+      "priority": "nice_to_have",
+      "reasoning": "Another significant Hindu temple, near Haji Ali, contributing to the religious diversity of the itinerary.",
+      "rating": 4.7,
+      "reviewsSummary": "Known for its divine atmosphere, beautiful idols, and the spiritual energy felt by visitors. It's a clean and well-maintained temple.",
+      "general_location": "Mahalaxmi West"
+    },
+    {
+      "name": "Sea link view point",
+      "description": "A relaxed place for taking in the impressive Bandra-Worli Sea Link bridge and the urban skyline views, especially captivating at sunset. It's a modern engineering marvel and a scenic photo opportunity.",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have",
+      "reasoning": "Allows visitors to appreciate a modern iconic structure of Mumbai, offering great views.",
+      "rating": 4.6,
+      "reviewsSummary": "Visitors enjoy the spectacular views of the Sea Link, especially at dusk, and the refreshing sea breeze. It's a popular spot for photography.",
+      "general_location": "Bandra West"
+    }
+  ],
+  "context": "This plan provides a diverse selection of 20 iconic and culturally significant venues across Mumbai. It includes major historical landmarks, religious sites, bustling markets, museums, and scenic spots, offering a comprehensive experience of the city's rich heritage and modern allure. The 'must_have' venues are essential for a first-time visitor, while 'nice_to_have' options provide additional cultural, historical, or recreational value and geographic spread."
+}
+```

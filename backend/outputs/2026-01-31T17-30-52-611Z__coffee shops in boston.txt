@@ -1,0 +1,154 @@
+User Prompt: coffee shops in boston
+
+[2026-01-31T17:30:52.614Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-01-31T17:30:52.616Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-01-31T17:30:52.618Z] LOG    🎯 Must-have: 8
+[2026-01-31T17:30:52.619Z] LOG    ✨ Nice-to-have: 12
+[2026-01-31T17:30:52.620Z] LOG 📍 Location hint: boston
+[2026-01-31T17:30:52.621Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-01-31T17:30:52.623Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-01-31T17:30:52.624Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-31T17:30:52.626Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-31T17:30:52.627Z] LOG    1. Searching "Gracenote Coffee Boston" in "Leather District"
+[2026-01-31T17:30:52.628Z] LOG 🔍 [Google Places] Text search: "Gracenote Coffee Boston" in Leather District
+[2026-01-31T17:30:52.636Z] LOG    2. Searching "PHIN COFFEE HOUSE - Financial District" in "Financial District"
+[2026-01-31T17:30:52.637Z] LOG 🔍 [Google Places] Text search: "PHIN COFFEE HOUSE - Financial District" in Financial District
+[2026-01-31T17:30:52.645Z] LOG    3. Searching "Central Perk Coffee Co" in "Back Bay"
+[2026-01-31T17:30:52.647Z] LOG 🔍 [Google Places] Text search: "Central Perk Coffee Co" in Back Bay
+[2026-01-31T17:30:52.652Z] LOG    4. Searching "Farmers Horse Coffee" in "Back Bay"
+[2026-01-31T17:30:52.654Z] LOG 🔍 [Google Places] Text search: "Farmers Horse Coffee" in Back Bay
+[2026-01-31T17:30:52.658Z] LOG    5. Searching "Thinking Cup" in "Back Bay"
+[2026-01-31T17:30:52.660Z] LOG 🔍 [Google Places] Text search: "Thinking Cup" in Back Bay
+[2026-01-31T17:30:52.670Z] LOG    6. Searching "Sip of Joy Café & Bakery" in "South End"
+[2026-01-31T17:30:52.671Z] LOG 🔍 [Google Places] Text search: "Sip of Joy Café & Bakery" in South End
+[2026-01-31T17:30:52.677Z] LOG    7. Searching "Dandelion Coffee & Provisions" in "Waterfront"
+[2026-01-31T17:30:52.678Z] LOG 🔍 [Google Places] Text search: "Dandelion Coffee & Provisions" in Waterfront
+[2026-01-31T17:30:52.682Z] LOG    8. Searching "Phinista Cafe" in "Fenway-Kenmore"
+[2026-01-31T17:30:52.683Z] LOG 🔍 [Google Places] Text search: "Phinista Cafe" in Fenway-Kenmore
+[2026-01-31T17:30:52.687Z] LOG    9. Searching "Boston Common" in "Downtown/Beacon Hill"
+[2026-01-31T17:30:52.688Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Downtown/Beacon Hill
+[2026-01-31T17:30:52.693Z] LOG    10. Searching "Public Garden" in "Back Bay/Beacon Hill"
+[2026-01-31T17:30:52.696Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Back Bay/Beacon Hill
+[2026-01-31T17:30:53.087Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:53.096Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:53.106Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:53.118Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:53.123Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:53.137Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:53.193Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:53.226Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:53.237Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:53.253Z] LOG    ✅ Thinking Cup: Got description (94 chars)
+[2026-01-31T17:30:53.254Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:53.256Z] LOG    ⚠️  Central Perk Coffee Co: No editorial summary available
+[2026-01-31T17:30:53.257Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:53.270Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:53.278Z] LOG    ✅ PHIN COFFEE HOUSE - Financial District: Got description (93 chars)
+[2026-01-31T17:30:53.279Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:53.282Z] LOG    ✅ Phinista Cafe: Got description (91 chars)
+[2026-01-31T17:30:53.284Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:53.288Z] LOG    ⚠️  Dandelion Coffee & Provisions: No editorial summary available
+[2026-01-31T17:30:53.289Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:53.320Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-01-31T17:30:53.321Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:53.323Z] LOG    ✅ Gracenote Coffee Boston: Got description (89 chars)
+[2026-01-31T17:30:53.324Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:53.361Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-01-31T17:30:53.363Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:53.374Z] LOG    ⚠️  Sip of Joy Café & Bakery: No editorial summary available
+[2026-01-31T17:30:53.376Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:53.398Z] LOG    ✅ Farmers Horse Coffee: Got description (95 chars)
+[2026-01-31T17:30:53.400Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:53.401Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 775ms
+[2026-01-31T17:30:53.402Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-31T17:30:53.403Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-01-31T17:30:53.618Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-01-31T17:30:53.620Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-01-31T17:30:53.622Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-01-31T17:30:53.624Z] LOG    1. Searching "Faneuil Hall Marketplace" in "Downtown"
+[2026-01-31T17:30:53.625Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Downtown
+[2026-01-31T17:30:53.628Z] LOG    2. Searching "New England Aquarium" in "Waterfront"
+[2026-01-31T17:30:53.630Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Waterfront
+[2026-01-31T17:30:53.633Z] LOG    3. Searching "Museum of Fine Arts, Boston" in "Fenway-Kenmore"
+[2026-01-31T17:30:53.634Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Fenway-Kenmore
+[2026-01-31T17:30:53.638Z] LOG    4. Searching "Isabella Stewart Gardner Museum" in "Fenway-Kenmore"
+[2026-01-31T17:30:53.640Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Fenway-Kenmore
+[2026-01-31T17:30:53.643Z] LOG    5. Searching "Boston Tea Party Ships & Museum" in "Fort Point"
+[2026-01-31T17:30:53.644Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Fort Point
+[2026-01-31T17:30:53.647Z] LOG    6. Searching "The Paul Revere House" in "North End"
+[2026-01-31T17:30:53.648Z] LOG 🔍 [Google Places] Text search: "The Paul Revere House" in North End
+[2026-01-31T17:30:53.650Z] LOG    7. Searching "Bunker Hill Monument" in "Charlestown"
+[2026-01-31T17:30:53.651Z] LOG 🔍 [Google Places] Text search: "Bunker Hill Monument" in Charlestown
+[2026-01-31T17:30:53.654Z] LOG    8. Searching "View Boston" in "Back Bay"
+[2026-01-31T17:30:53.655Z] LOG 🔍 [Google Places] Text search: "View Boston" in Back Bay
+[2026-01-31T17:30:53.657Z] LOG    9. Searching "Christopher Columbus Waterfront Park" in "Waterfront"
+[2026-01-31T17:30:53.658Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in Waterfront
+[2026-01-31T17:30:53.661Z] LOG    10. Searching "Chinatown Gate" in "Chinatown"
+[2026-01-31T17:30:53.662Z] LOG 🔍 [Google Places] Text search: "Chinatown Gate" in Chinatown
+[2026-01-31T17:30:54.004Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:54.009Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:54.013Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:54.019Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:54.039Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:54.046Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:54.051Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:54.121Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:54.149Z] LOG    ✅ Chinatown Gate: Got description (92 chars)
+[2026-01-31T17:30:54.150Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:54.155Z] LOG    ✅ Bunker Hill Monument: Got description (98 chars)
+[2026-01-31T17:30:54.157Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:54.160Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-01-31T17:30:54.161Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:54.164Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:54.168Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-01-31T17:30:54.169Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:54.171Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-01-31T17:30:54.172Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:54.195Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-01-31T17:30:54.196Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:54.245Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-01-31T17:30:54.246Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:54.273Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-01-31T17:30:54.277Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-01-31T17:30:54.278Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:54.311Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-01-31T17:30:54.313Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:54.352Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-01-31T17:30:54.354Z] LOG ✅ Found 1 places
+[2026-01-31T17:30:54.355Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 733ms
+[2026-01-31T17:30:54.356Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-01-31T17:30:54.357Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-01-31T17:30:54.358Z] LOG    ✅ Gracenote Coffee Boston → Gracenote Coffee Boston (must_have)
+[2026-01-31T17:30:54.359Z] LOG    ✅ PHIN COFFEE HOUSE - Financial District → PHIN COFFEE HOUSE - Financial District (must_have)
+[2026-01-31T17:30:54.360Z] LOG    ✅ Central Perk Coffee Co → Central Perk Coffee Co (must_have)
+[2026-01-31T17:30:54.361Z] LOG    ✅ Farmers Horse Coffee → Farmers Horse Coffee (must_have)
+[2026-01-31T17:30:54.362Z] LOG    ✅ Thinking Cup → Thinking Cup (must_have)
+[2026-01-31T17:30:54.363Z] LOG    ✅ Sip of Joy Café & Bakery → Sip of Joy Café & Bakery (must_have)
+[2026-01-31T17:30:54.365Z] LOG    ✅ Dandelion Coffee & Provisions → Dandelion Coffee & Provisions (must_have)
+[2026-01-31T17:30:54.366Z] LOG    ✅ Phinista Cafe → Phinista Cafe (must_have)
+[2026-01-31T17:30:54.367Z] LOG    ✅ Boston Common → Boston Common (nice_to_have)
+[2026-01-31T17:30:54.369Z] LOG    ✅ Public Garden → Public Garden (nice_to_have)
+[2026-01-31T17:30:54.370Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (nice_to_have)
+[2026-01-31T17:30:54.371Z] LOG    ✅ New England Aquarium → New England Aquarium (nice_to_have)
+[2026-01-31T17:30:54.372Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (nice_to_have)
+[2026-01-31T17:30:54.374Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-01-31T17:30:54.375Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (nice_to_have)
+[2026-01-31T17:30:54.377Z] LOG    ✅ The Paul Revere House → The Paul Revere House (nice_to_have)
+[2026-01-31T17:30:54.379Z] LOG    ✅ Bunker Hill Monument → Bunker Hill Monument (nice_to_have)
+[2026-01-31T17:30:54.380Z] LOG    ✅ View Boston → View Boston (nice_to_have)
+[2026-01-31T17:30:54.381Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (nice_to_have)
+[2026-01-31T17:30:54.383Z] LOG    ✅ Chinatown Gate → Chinatown Gate (nice_to_have)
+[2026-01-31T17:30:54.384Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-01-31T17:30:54.385Z] LOG    Total enriched: 20
+[2026-01-31T17:30:54.386Z] LOG    🎯 Must-have: 8
+[2026-01-31T17:30:54.387Z] LOG    ✨ Nice-to-have: 12
+[2026-01-31T17:30:54.388Z] LOG    ❌ Failed: 0
+[2026-01-31T17:30:54.389Z] LOG    ⏱️ Time: 1778ms
+
+--- Summary ---
+Enrichment completed
