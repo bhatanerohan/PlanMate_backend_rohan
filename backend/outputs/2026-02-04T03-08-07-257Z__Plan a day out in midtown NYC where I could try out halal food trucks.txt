@@ -1,0 +1,115 @@
+User Prompt: Plan a day out in midtown NYC where I could try out halal food trucks
+
+[2026-02-04T03:08:07.259Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-04T03:08:07.262Z] LOG 📦 Processing 16 candidates from Gemini
+[2026-02-04T03:08:07.263Z] LOG    🎯 Must-have: 5
+[2026-02-04T03:08:07.264Z] LOG    ✨ Nice-to-have: 11
+[2026-02-04T03:08:07.266Z] LOG 📍 Location hint: midtown NYC
+[2026-02-04T03:08:07.270Z] LOG 
+🔍 Enriching 16 candidates in 2 batch(es)...
+[2026-02-04T03:08:07.272Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-04T03:08:07.273Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T03:08:07.274Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T03:08:07.276Z] LOG    1. Searching "The Halal Guys" in "midtown NYC"
+[2026-02-04T03:08:07.277Z] LOG 🔍 [Google Places] Text search: "The Halal Guys" in midtown NYC
+[2026-02-04T03:08:07.283Z] LOG    2. Searching "Adel's Famous Halal Food" in "midtown NYC"
+[2026-02-04T03:08:07.285Z] LOG 🔍 [Google Places] Text search: "Adel's Famous Halal Food" in midtown NYC
+[2026-02-04T03:08:07.288Z] LOG    3. Searching "Sharif's Famous" in "midtown NYC"
+[2026-02-04T03:08:07.290Z] LOG 🔍 [Google Places] Text search: "Sharif's Famous" in midtown NYC
+[2026-02-04T03:08:07.293Z] LOG    4. Searching "Famous Halal Food (Food Truck)" in "midtown NYC"
+[2026-02-04T03:08:07.295Z] LOG 🔍 [Google Places] Text search: "Famous Halal Food (Food Truck)" in midtown NYC
+[2026-02-04T03:08:07.298Z] LOG    5. Searching "MOE EATS NYC" in "midtown NYC"
+[2026-02-04T03:08:07.299Z] LOG 🔍 [Google Places] Text search: "MOE EATS NYC" in midtown NYC
+[2026-02-04T03:08:07.301Z] LOG    6. Searching "Rockefeller Center" in "midtown NYC"
+[2026-02-04T03:08:07.302Z] LOG 🔍 [Google Places] Text search: "Rockefeller Center" in midtown NYC
+[2026-02-04T03:08:07.305Z] LOG    7. Searching "Times Square" in "midtown NYC"
+[2026-02-04T03:08:07.306Z] LOG 🔍 [Google Places] Text search: "Times Square" in midtown NYC
+[2026-02-04T03:08:07.308Z] LOG    8. Searching "Bryant Park" in "midtown NYC"
+[2026-02-04T03:08:07.309Z] LOG 🔍 [Google Places] Text search: "Bryant Park" in midtown NYC
+[2026-02-04T03:08:07.312Z] LOG    9. Searching "Top of The Rock" in "midtown NYC"
+[2026-02-04T03:08:07.313Z] LOG 🔍 [Google Places] Text search: "Top of The Rock" in midtown NYC
+[2026-02-04T03:08:07.316Z] LOG    10. Searching "The Channel Gardens" in "midtown NYC"
+[2026-02-04T03:08:07.317Z] LOG 🔍 [Google Places] Text search: "The Channel Gardens" in midtown NYC
+[2026-02-04T03:08:07.690Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.702Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.705Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.711Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.742Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.754Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.765Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.777Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.783Z] LOG    ✅ Times Square: Got description (100 chars)
+[2026-02-04T03:08:07.785Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.791Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.803Z] LOG    ⚠️  Sharif's Famous: No editorial summary available
+[2026-02-04T03:08:07.805Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.827Z] LOG    ⚠️  The Halal Guys: No editorial summary available
+[2026-02-04T03:08:07.829Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.841Z] LOG    ✅ Top of The Rock: Got description (96 chars)
+[2026-02-04T03:08:07.842Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.843Z] LOG    ⚠️  MOE EATS NYC: No editorial summary available
+[2026-02-04T03:08:07.844Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.847Z] LOG    ✅ The Channel Gardens: Got description (96 chars)
+[2026-02-04T03:08:07.848Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.876Z] LOG    ✅ Bryant Park: Got description (99 chars)
+[2026-02-04T03:08:07.879Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.896Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2026-02-04T03:08:07.898Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.901Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-02-04T03:08:07.903Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.015Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.206Z] LOG    ⚠️  Famous Halal Food (Food Truck): No editorial summary available
+[2026-02-04T03:08:08.209Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.210Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 936ms
+[2026-02-04T03:08:08.211Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T03:08:08.212Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-04T03:08:08.417Z] LOG 
+   📦 Batch 2/2 (6 searches)...
+[2026-02-04T03:08:08.422Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T03:08:08.423Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2026-02-04T03:08:08.423Z] LOG    1. Searching "RiseNY" in "midtown NYC"
+[2026-02-04T03:08:08.424Z] LOG 🔍 [Google Places] Text search: "RiseNY" in midtown NYC
+[2026-02-04T03:08:08.425Z] LOG    2. Searching "The Museum of Modern Art" in "midtown NYC"
+[2026-02-04T03:08:08.425Z] LOG 🔍 [Google Places] Text search: "The Museum of Modern Art" in midtown NYC
+[2026-02-04T03:08:08.426Z] LOG    3. Searching "Empire State Building" in "midtown NYC"
+[2026-02-04T03:08:08.427Z] LOG 🔍 [Google Places] Text search: "Empire State Building" in midtown NYC
+[2026-02-04T03:08:08.428Z] LOG    4. Searching "SUMMIT One Vanderbilt" in "midtown NYC"
+[2026-02-04T03:08:08.429Z] LOG 🔍 [Google Places] Text search: "SUMMIT One Vanderbilt" in midtown NYC
+[2026-02-04T03:08:08.430Z] LOG    5. Searching "Madame Tussauds New York" in "midtown NYC"
+[2026-02-04T03:08:08.431Z] LOG 🔍 [Google Places] Text search: "Madame Tussauds New York" in midtown NYC
+[2026-02-04T03:08:08.431Z] LOG    6. Searching "Central Park" in "midtown NYC"
+[2026-02-04T03:08:08.432Z] LOG 🔍 [Google Places] Text search: "Central Park" in midtown NYC
+[2026-02-04T03:08:08.700Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.704Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.743Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.747Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.792Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2026-02-04T03:08:08.797Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.798Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.812Z] LOG    ⚠️  Central Park South: No editorial summary available
+[2026-02-04T03:08:08.816Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.868Z] LOG    ⚠️  SUMMIT One Vanderbilt: No editorial summary available
+[2026-02-04T03:08:08.876Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.877Z] LOG    ✅ The Museum of Modern Art: Got description (96 chars)
+[2026-02-04T03:08:08.878Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.909Z] LOG    ⚠️  RiseNY: No editorial summary available
+[2026-02-04T03:08:08.911Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.919Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.047Z] LOG ⏱️ Gemini API call took: 11653ms (11.65s)
+[2026-02-04T03:08:09.050Z] LOG ✅ Gemini response received
+[2026-02-04T03:08:09.051Z] LOG 📄 Response length: 2506 characters
+[2026-02-04T03:08:09.052Z] LOG 📝 Logged Gemini output to C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\output\gemini_output_2026-02-04T03-08-09-052Z.txt
+[2026-02-04T03:08:09.053Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-02-04T03:08:09.054Z] LOG 📍 Grounding chunks: 43 sources
+[2026-02-04T03:08:09.054Z] LOG 🔄 Parsing Gemini response...
+[2026-02-04T03:08:09.055Z] LOG    📊 Parsed: 5 must_have, 15 nice_to_have
+[2026-02-04T03:08:09.056Z] LOG 
+✨ Parsed 20 CANDIDATES:
+[2026-02-04T03:08:09.056Z] LOG    🎯 Must-have: 5
+[2026-02-04T03:08:09.057Z] LOG    ✨ Nice-to-have: 15
+[2026-02-04T03:08:09.058Z] LOG 📋 Plan: Formula-1 themed sightseeing, 5 target stops
+
+--- Summary ---
+Enrichment completed

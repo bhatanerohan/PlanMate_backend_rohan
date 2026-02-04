@@ -101,6 +101,7 @@ export interface AgentState {
 
 export interface PlanResponse {
   success: boolean;
+  session_id?: string;  // 🆕 Analytics session tracking
   result?: string;
   mode?: 'discovery' | 'route';
   queryType?: 'explicit_route' | 'itinerary_planning' | 'discovery' | 'itinerary_modification' | 'not_relevant';

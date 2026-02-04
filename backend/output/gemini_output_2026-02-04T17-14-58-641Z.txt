@@ -1,0 +1,127 @@
+PROMPT:
+User location: Paris, France (48.853495, 2.348392)
+
+Request: "plan a romantic honeymoon in paris"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Romantic Honeymoon",
+    "total_stops": 5,
+    "estimated_duration": "3 days",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Eiffel Tower",
+      "category": "landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "Louvre Museum",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sainte-Chapelle",
+      "category": "historic site",
+      "priority": "must_have"
+    },
+    {
+      "name": "Notre-Dame Cathedral",
+      "category": "cathedral",
+      "priority": "must_have"
+    },
+    {
+      "name": "Montmartre",
+      "category": "neighborhood",
+      "priority": "must_have"
+    },
+    {
+      "name": "Musée d'Orsay",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Luxembourg Gardens",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Seine River",
+      "category": "river",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Pont Neuf",
+      "category": "bridge",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Le Marais",
+      "category": "neighborhood",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Centre Pompidou",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Palace of Versailles",
+      "category": "palace",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Jardin des Tuileries",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Shakespeare and Company",
+      "category": "bookstore",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Latin Quarter",
+      "category": "neighborhood",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Canal Saint-Martin",
+      "category": "canal",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

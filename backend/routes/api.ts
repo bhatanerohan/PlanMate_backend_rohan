@@ -1,5 +1,6 @@
 
 import { Router, Request, Response } from 'express';
+import { v4 as uuidv4 } from 'uuid';
 import { ReActAgent } from '../services/react-agent.js';
 import type { EnrichedCandidate } from '../services/react-agent.js';
 import { DEFAULT_SAFETY_CONFIG } from '../types/react-agent.js';
@@ -13,6 +14,13 @@ import { outputLogger } from '../services/output-logger.js';
 import { nearestNeighborOptimization, optimizeFromUserLocation, formatDistance, formatDuration } from '../services/utils/route_optimizer.js';
 import { formatItineraryMessage } from '../services/itinerary-formatter.js';
 import { enrichWithInstagramReels } from '../services/video-enrichment-agent.js';
+import {
+  saveAnalyticsEvent,
+  trackModification,
+  trackReelClick,
+  getAllAnalytics,
+  type AnalyticsEvent
+} from '../services/analytics.js';
 
 const router = Router();
 
@@ -590,7 +598,14 @@ async function calculateAndAppendRouteInfo(
 // ============================================================================
 router.post('/plan', async (req: Request, res: Response) => {
   try {
-    const { prompt, userLocation, currentItinerary, geoPreference: geoPreferenceOverride } = req.body;
+    const { prompt, userLocation, currentItinerary, geoPreference: geoPreferenceOverride, deviceType } = req.body;
+
+    // Generate session ID for analytics tracking
+    const sessionId = uuidv4();
+
+    // Detect device type from request body or User-Agent header
+    const detectedDeviceType: 'mobile' | 'desktop' = deviceType ||
+      (req.headers['user-agent']?.toLowerCase().includes('mobile') ? 'mobile' : 'desktop');
 
     if (!prompt || typeof prompt !== 'string' || prompt.trim().length === 0) {
       return res.status(400).json({
@@ -601,6 +616,7 @@ router.post('/plan', async (req: Request, res: Response) => {
 
     console.log(`\n${'='.repeat(80)}`);
     console.log(`📥 Received: "${prompt}"`);
+    console.log(`📊 Session: ${sessionId} | Device: ${detectedDeviceType}`);
     if (userLocation) {
       console.log(`📍 User location: ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})`);
     }
@@ -613,6 +629,7 @@ router.post('/plan', async (req: Request, res: Response) => {
     // STEP 1: INTENT CLASSIFICATION
     // ========================================================================
     console.log('\n🔍 Classifying intent...');
+    const startClassification = Date.now();
 
     let classification;
     try {
@@ -624,6 +641,9 @@ router.post('/plan', async (req: Request, res: Response) => {
         error: 'Failed to classify intent'
       });
     }
+
+    const classificationDuration = Date.now() - startClassification;
+    console.log(`⏱️ [Perf] Intent Classification: ${classificationDuration}ms`);
 
     if (!classification.isRelevant) {
       return res.status(400).json({
@@ -639,6 +659,7 @@ router.post('/plan', async (req: Request, res: Response) => {
     );
     const requestedCount = parseRequestedCount(prompt) ?? undefined;
     console.log(`\n📍 Geo preference: ${geoPreference.mode} (${geoPreference.reason})`);
+
 
     let agentResponse: any = null;
     let mode: 'route' | 'discovery' = 'discovery';
@@ -721,12 +742,21 @@ router.post('/plan', async (req: Request, res: Response) => {
       console.log('\n⚡ NEW CANDIDATE FLOW: Gemini → Enrich All → Venue Selector → Mapbox');
       console.log('─'.repeat(80));
 
+      const perfStats: Record<string, number> = {
+        intent_classification: classificationDuration
+      };
+      const flowStart = Date.now();
+
       // ----------------------------------------------------------------------
       // STEP 2: GEMINI - Get 15-20 candidates with categories
       // ----------------------------------------------------------------------
       console.log('\n🔍 STEP 2: Calling Gemini for 15-20 CANDIDATES...');
+      const startGemini = Date.now();
 
       const geminiResult = await geminiGroundingAgent.getRecommendations(prompt, userLocation);
+
+      perfStats['gemini_generation'] = Date.now() - startGemini;
+      console.log(`⏱️ [Perf] Gemini Generation: ${perfStats['gemini_generation']}ms`);
 
       if (!geminiResult.venues || geminiResult.venues.length === 0) {
         console.warn('⚠️ Gemini returned no venues, falling back to direct Agent 2');
@@ -751,6 +781,7 @@ router.post('/plan', async (req: Request, res: Response) => {
         // STEP 3: ENRICH ALL CANDIDATES via Google Places API
         // ----------------------------------------------------------------------
         console.log('\n📍 STEP 3: Enriching ALL candidates via Google Places...');
+        const startEnrich = Date.now();
 
         const reactAgent = new ReActAgent(DEFAULT_SAFETY_CONFIG);
         const enrichmentResult = await reactAgent.enrichAllCandidates(
@@ -758,6 +789,9 @@ router.post('/plan', async (req: Request, res: Response) => {
           prompt,
           userLocation
         );
+
+        perfStats['enrichment'] = Date.now() - startEnrich;
+        console.log(`⏱️ [Perf] Google Places Enrichment: ${perfStats['enrichment']}ms`);
 
         console.log(`   ✅ Enriched ${enrichmentResult.candidates.length} candidates`);
         console.log(`   🎯 Must-have found: ${enrichmentResult.must_have_count}`);
@@ -767,6 +801,7 @@ router.post('/plan', async (req: Request, res: Response) => {
         // STEP 4: CORRIDOR DETECTION + VENUE SELECTION
         // ----------------------------------------------------------------------
         console.log('\n🎯 STEP 4: Selecting optimal venues...');
+        const startSelection = Date.now();
 
         // 🆕 Detect corridor query FIRST
         const corridorInfo = await detectCorridorQuery(prompt);
@@ -815,6 +850,9 @@ router.post('/plan', async (req: Request, res: Response) => {
           );
         }
 
+        perfStats['venue_selection'] = Date.now() - startSelection;
+        console.log(`⏱️ [Perf] Venue Selection: ${perfStats['venue_selection']}ms`);
+
         if (selectionResult.selectedVenues.length === 0) {
           return res.status(500).json({
             success: false,
@@ -829,6 +867,7 @@ router.post('/plan', async (req: Request, res: Response) => {
         // STEP 5: ROUTE OPTIMIZATION
         // ----------------------------------------------------------------------
         console.log('\n🗺️ STEP 5: Optimizing route order...');
+        const startOptimization = Date.now();
 
         let finalVenues = selectionResult.selectedVenues;
         let optimizationApplied = false;
@@ -925,6 +964,9 @@ router.post('/plan', async (req: Request, res: Response) => {
           }
         }
 
+        perfStats['route_optimization'] = Date.now() - startOptimization;
+        console.log(`⏱️ [Perf] Route Optimization: ${perfStats['route_optimization']}ms`);
+
         // Add user location at start (AFTER optimization)
         if (userLocation) {
           const userLocationVenue: EnrichedCandidate = {
@@ -946,7 +988,12 @@ router.post('/plan', async (req: Request, res: Response) => {
         // STEP 5.5: INSTAGRAM REELS ENRICHMENT
         // ----------------------------------------------------------------------
         console.log('\n📸 STEP 5.5: Enriching with Instagram Reels...');
+        const startVideo = Date.now();
+
         finalVenues = await enrichWithInstagramReels(finalVenues, { maxReelsPerVenue: 3 });
+
+        perfStats['video_enrichment'] = Date.now() - startVideo;
+        console.log(`⏱️ [Perf] Video Enrichment: ${perfStats['video_enrichment']}ms`);
 
         // DEBUG LOGGING
         finalVenues.forEach(v => {
@@ -980,6 +1027,55 @@ router.post('/plan', async (req: Request, res: Response) => {
         });
         const finalResultMessage = formattedResult || enhancedResult;
 
+        const totalTime = Date.now() - flowStart;
+        perfStats['total_end_to_end'] = totalTime;
+
+        console.log('\n' + '═'.repeat(60));
+        console.log('⚡ PERFORMANCE SUMMARY');
+        console.log('═'.repeat(60));
+        console.log(`Classification:     ${(perfStats['intent_classification'] / 1000).toFixed(2)}s`);
+        console.log(`Gemini Generation:  ${(perfStats['gemini_generation'] / 1000).toFixed(2)}s`);
+        console.log(`Enrichment:         ${(perfStats['enrichment'] / 1000).toFixed(2)}s`);
+        console.log(`Venue Selection:    ${(perfStats['venue_selection'] / 1000).toFixed(2)}s`);
+        console.log(`Route Optimization: ${(perfStats['route_optimization'] / 1000).toFixed(2)}s`);
+        console.log(`Video Enrichment:   ${(perfStats['video_enrichment'] / 1000).toFixed(2)}s`);
+        console.log('─'.repeat(60));
+        console.log(`TOTAL DURATION:     ${(totalTime / 1000).toFixed(2)}s`);
+        console.log('═'.repeat(60) + '\n');
+
+        // Save analytics event
+        try {
+          const analyticsEvent: AnalyticsEvent = {
+            session_id: sessionId,
+            device_type: detectedDeviceType,
+            user_prompt: prompt,
+            query_type: classification.queryType === 'itinerary_planning' ? 'planning' : 'discovery',
+            timing: {
+              intent_classification: perfStats['intent_classification'] || 0,
+              plan_creation: perfStats['gemini_generation'] || 0,
+              venue_enrichment: perfStats['enrichment'] || 0,
+              route_optimization: perfStats['route_optimization'] || 0,
+              video_enrichment: perfStats['video_enrichment'] || 0,
+              total: totalTime
+            },
+            gemini: {
+              input_tokens: (geminiResult as any).tokensUsed?.input || 0,
+              output_tokens: (geminiResult as any).tokensUsed?.output || 0,
+              raw_output: geminiResult.venues || []
+            },
+            final_output: {
+              venues: finalVenues.filter(v => v.placeId !== 'user-location'),
+              alternatives: [],
+              venue_count: finalVenues.filter(v => v.placeId !== 'user-location').length
+            },
+            modifications: { count: 0, prompts: [] },
+            clicked_reels: false
+          };
+          await saveAnalyticsEvent(analyticsEvent);
+        } catch (analyticsError) {
+          console.warn('⚠️ Failed to save analytics:', analyticsError);
+        }
+
         try {
           await outputLogger.saveOutput({
             prompt,
@@ -1007,6 +1103,7 @@ router.post('/plan', async (req: Request, res: Response) => {
 
         return res.json({
           success: true,
+          session_id: sessionId,
           result: finalResultMessage,
           mode: 'route',
           queryType: classification.queryType,
@@ -1323,6 +1420,57 @@ router.post('/plan', async (req: Request, res: Response) => {
       success: false,
       error: error instanceof Error ? error.message : 'Internal server error'
     });
+  }
+});
+
+// ============================================================================
+// ANALYTICS ENDPOINTS
+// ============================================================================
+
+/**
+ * Track itinerary modifications
+ */
+router.post('/analytics/modification', async (req: Request, res: Response) => {
+  try {
+    const { session_id, prompt } = req.body;
+    if (!session_id || !prompt) {
+      return res.status(400).json({ success: false, error: 'session_id and prompt required' });
+    }
+    await trackModification(session_id, prompt);
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Analytics modification error:', error);
+    res.status(500).json({ success: false, error: 'Failed to track modification' });
+  }
+});
+
+/**
+ * Track reel clicks with details and watch time
+ */
+router.post('/analytics/reel-click', async (req: Request, res: Response) => {
+  try {
+    const { session_id, reel_id, reel_url, watch_time_seconds } = req.body;
+    if (!session_id) {
+      return res.status(400).json({ success: false, error: 'session_id required' });
+    }
+    await trackReelClick(session_id, reel_id, reel_url, watch_time_seconds);
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Analytics reel-click error:', error);
+    res.status(500).json({ success: false, error: 'Failed to track reel click' });
+  }
+});
+
+/**
+ * Export all analytics data
+ */
+router.get('/analytics/export', async (req: Request, res: Response) => {
+  try {
+    const data = await getAllAnalytics();
+    res.json({ success: true, count: data.length, data });
+  } catch (error) {
+    console.error('Analytics export error:', error);
+    res.status(500).json({ success: false, error: 'Failed to export analytics' });
   }
 });
 

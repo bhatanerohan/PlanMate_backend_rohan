@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.32434074086052, -71.10765083395376)
+
+Request: "plan a day out with museum and lunch nearby"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Museums and Lunch",
+    "total_stops": 5,
+    "estimated_duration": "6 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Museum of Fine Arts, Boston",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Isabella Stewart Gardner Museum",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "MassArt Art Museum",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Joint",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mike & Patty's Breakfast | Jamaica Plain",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Museum of Illusions Boston",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Tea Party Ships & Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "USS Constitution Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "WNDR Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "MIT Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Harvard Art Museums",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Peabody Museum of Archaeology and Ethnology",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Institute of Contemporary Art",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Commonwealth Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Children's Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Larz Anderson Auto Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Pikalo JP",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Abuela's Table",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Life Alive Organic Cafe Jamaica Plain",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Top Mix Bar & Kitchen JP",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

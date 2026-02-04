@@ -37,6 +37,22 @@ apiClient.interceptors.response.use(
   }
 );
 
+// 🆕 Device type detection
+function getDeviceType(): 'mobile' | 'desktop' {
+  return window.innerWidth < 768 ? 'mobile' : 'desktop';
+}
+
+// 🆕 Session ID storage
+let currentSessionId: string | null = null;
+
+export function getSessionId(): string | null {
+  return currentSessionId;
+}
+
+export function setSessionId(sessionId: string): void {
+  currentSessionId = sessionId;
+}
+
 // 🆕 Current Itinerary Interface
 interface CurrentItinerary {
   venues: Venue[];
@@ -49,13 +65,14 @@ interface CurrentItinerary {
 
 export const planApi = {
   async createPlan(
-    prompt: string, 
+    prompt: string,
     userLocation?: { lat: number; lng: number; name: string },
     currentItinerary?: CurrentItinerary,  // 🆕 Optional itinerary for modifications
     geoPreference?: GeoPreferenceMode
   ): Promise<PlanResponse> {
     const response = await apiClient.post<PlanResponse>('/api/plan', {
       prompt,
+      deviceType: getDeviceType(),  // 🆕 Send device type
       userLocation: userLocation ? {
         lat: userLocation.lat,
         lng: userLocation.lng,
@@ -72,6 +89,12 @@ export const planApi = {
         hasUserLocation: (currentItinerary as any).hasUserLocation
       } : undefined
     });
+
+    // 🆕 Store session_id from response
+    if (response.data.session_id) {
+      currentSessionId = response.data.session_id;
+    }
+
     return response.data;
   },
 
@@ -81,4 +104,44 @@ export const planApi = {
   },
 };
 
+// 🆕 Analytics tracking functions
+export const analyticsApi = {
+  async trackModification(prompt: string): Promise<void> {
+    if (!currentSessionId) {
+      console.warn('No session ID available for analytics');
+      return;
+    }
+    try {
+      await apiClient.post('/api/analytics/modification', {
+        session_id: currentSessionId,
+        prompt
+      });
+    } catch (error) {
+      console.warn('Failed to track modification:', error);
+    }
+  },
+
+  async trackReelClick(
+    reelId?: string,
+    reelUrl?: string,
+    watchTimeSeconds?: number
+  ): Promise<void> {
+    if (!currentSessionId) {
+      console.warn('No session ID available for analytics');
+      return;
+    }
+    try {
+      await apiClient.post('/api/analytics/reel-click', {
+        session_id: currentSessionId,
+        reel_id: reelId,
+        reel_url: reelUrl,
+        watch_time_seconds: watchTimeSeconds
+      });
+    } catch (error) {
+      console.warn('Failed to track reel click:', error);
+    }
+  }
+};
+
 export default apiClient;
+

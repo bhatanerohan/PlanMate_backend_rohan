@@ -1,0 +1,148 @@
+User Prompt: what are best romantic spots near me
+
+[2026-02-04T16:49:15.821Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-04T16:49:15.822Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-02-04T16:49:15.823Z] LOG    🎯 Must-have: 5
+[2026-02-04T16:49:15.824Z] LOG    ✨ Nice-to-have: 14
+[2026-02-04T16:49:15.826Z] LOG 📍 Location hint: me
+[2026-02-04T16:49:15.827Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-02-04T16:49:15.828Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-04T16:49:15.829Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T16:49:15.830Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T16:49:15.831Z] LOG    1. Searching "Woods Hill Pier 4 - Seaport" in "me"
+[2026-02-04T16:49:15.832Z] LOG 🔍 [Google Places] Text search: "Woods Hill Pier 4 - Seaport" in me
+[2026-02-04T16:49:15.849Z] LOG    2. Searching "Ocean Prime" in "me"
+[2026-02-04T16:49:15.850Z] LOG 🔍 [Google Places] Text search: "Ocean Prime" in me
+[2026-02-04T16:49:15.855Z] LOG    3. Searching "75 on Liberty Wharf" in "me"
+[2026-02-04T16:49:15.857Z] LOG 🔍 [Google Places] Text search: "75 on Liberty Wharf" in me
+[2026-02-04T16:49:15.861Z] LOG    4. Searching "Serafina Seaport" in "me"
+[2026-02-04T16:49:15.863Z] LOG 🔍 [Google Places] Text search: "Serafina Seaport" in me
+[2026-02-04T16:49:15.865Z] LOG    5. Searching "Grace By Nia" in "me"
+[2026-02-04T16:49:15.866Z] LOG 🔍 [Google Places] Text search: "Grace By Nia" in me
+[2026-02-04T16:49:15.870Z] LOG    6. Searching "Fan Pier Park" in "me"
+[2026-02-04T16:49:15.872Z] LOG 🔍 [Google Places] Text search: "Fan Pier Park" in me
+[2026-02-04T16:49:15.877Z] LOG    7. Searching "Institute of Contemporary Art" in "me"
+[2026-02-04T16:49:15.879Z] LOG 🔍 [Google Places] Text search: "Institute of Contemporary Art" in me
+[2026-02-04T16:49:15.882Z] LOG    8. Searching "Deck 12" in "me"
+[2026-02-04T16:49:15.883Z] LOG 🔍 [Google Places] Text search: "Deck 12" in me
+[2026-02-04T16:49:15.886Z] LOG    9. Searching "Legal Sea Foods - Harborside" in "me"
+[2026-02-04T16:49:15.890Z] LOG 🔍 [Google Places] Text search: "Legal Sea Foods - Harborside" in me
+[2026-02-04T16:49:15.892Z] LOG    10. Searching "Chart House" in "me"
+[2026-02-04T16:49:15.894Z] LOG 🔍 [Google Places] Text search: "Chart House" in me
+[2026-02-04T16:49:16.292Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:16.298Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:16.302Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:16.305Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:16.308Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:16.313Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:16.335Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:16.367Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:16.417Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:16.423Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2026-02-04T16:49:16.424Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:16.446Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:16.474Z] LOG    ✅ Deck 12: Got description (91 chars)
+[2026-02-04T16:49:16.476Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:16.478Z] LOG    ⚠️  Grace By Nia: No editorial summary available
+[2026-02-04T16:49:16.480Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:16.484Z] LOG    ✅ 75 on Liberty Wharf: Got description (97 chars)
+[2026-02-04T16:49:16.486Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:16.488Z] LOG    ✅ Woods Hill Pier 4 - Seaport: Got description (100 chars)
+[2026-02-04T16:49:16.488Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:16.491Z] LOG    ✅ Ocean Prime: Got description (95 chars)
+[2026-02-04T16:49:16.492Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:16.519Z] LOG    ✅ Chart House: Got description (87 chars)
+[2026-02-04T16:49:16.522Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:16.543Z] LOG    ✅ Fan Pier Park: Got description (97 chars)
+[2026-02-04T16:49:16.545Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:16.573Z] LOG    ⚠️  Serafina Seaport: No editorial summary available
+[2026-02-04T16:49:16.576Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:16.603Z] LOG    ✅ Legal Sea Foods - Harborside: Got description (89 chars)
+[2026-02-04T16:49:16.605Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:16.606Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 775ms
+[2026-02-04T16:49:16.606Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T16:49:16.607Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-04T16:49:16.820Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-02-04T16:49:16.827Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T16:49:16.831Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-02-04T16:49:16.832Z] LOG    1. Searching "Lolita Fort Point" in "me"
+[2026-02-04T16:49:16.834Z] LOG 🔍 [Google Places] Text search: "Lolita Fort Point" in me
+[2026-02-04T16:49:16.836Z] LOG    2. Searching "Davio's Northern Italian Steakhouse" in "me"
+[2026-02-04T16:49:16.837Z] LOG 🔍 [Google Places] Text search: "Davio's Northern Italian Steakhouse" in me
+[2026-02-04T16:49:16.839Z] LOG    3. Searching "Mooo.... Seaport" in "me"
+[2026-02-04T16:49:16.840Z] LOG 🔍 [Google Places] Text search: "Mooo.... Seaport" in me
+[2026-02-04T16:49:16.841Z] LOG    4. Searching "Del Frisco's Double Eagle Steakhouse" in "me"
+[2026-02-04T16:49:16.841Z] LOG 🔍 [Google Places] Text search: "Del Frisco's Double Eagle Steakhouse" in me
+[2026-02-04T16:49:16.842Z] LOG    5. Searching "Limani Grille Seaport" in "me"
+[2026-02-04T16:49:16.843Z] LOG 🔍 [Google Places] Text search: "Limani Grille Seaport" in me
+[2026-02-04T16:49:16.844Z] LOG    6. Searching "Nautilus Pier 4" in "me"
+[2026-02-04T16:49:16.845Z] LOG 🔍 [Google Places] Text search: "Nautilus Pier 4" in me
+[2026-02-04T16:49:16.847Z] LOG    7. Searching "Eddie Merlot's" in "me"
+[2026-02-04T16:49:16.848Z] LOG 🔍 [Google Places] Text search: "Eddie Merlot's" in me
+[2026-02-04T16:49:16.849Z] LOG    8. Searching "Moxies Boston Seaport Restaurant" in "me"
+[2026-02-04T16:49:16.849Z] LOG 🔍 [Google Places] Text search: "Moxies Boston Seaport Restaurant" in me
+[2026-02-04T16:49:16.851Z] LOG    9. Searching "Coquette" in "me"
+[2026-02-04T16:49:16.852Z] LOG 🔍 [Google Places] Text search: "Coquette" in me
+[2026-02-04T16:49:17.126Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:17.145Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:17.162Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:17.176Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:17.181Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:17.185Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:17.223Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:17.243Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:17.283Z] LOG    ✅ Lolita Fort Point: Got description (104 chars)
+[2026-02-04T16:49:17.285Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:17.287Z] LOG    ⚠️  Limani Grille Seaport: No editorial summary available
+[2026-02-04T16:49:17.289Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:17.290Z] LOG    ⚠️  Moxies Boston Seaport Restaurant: No editorial summary available
+[2026-02-04T16:49:17.290Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:17.339Z] LOG    ✅ Eddie Merlot's: Got description (87 chars)
+[2026-02-04T16:49:17.341Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:17.343Z] LOG    ⚠️  Coquette: No editorial summary available
+[2026-02-04T16:49:17.344Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:17.352Z] LOG    ✅ Mooo.... Seaport: Got description (88 chars)
+[2026-02-04T16:49:17.353Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:17.372Z] LOG    ✅ Nautilus Pier 4: Got description (96 chars)
+[2026-02-04T16:49:17.374Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:17.390Z] LOG    ✅ Davio's Northern Italian Steakhouse: Got description (83 chars)
+[2026-02-04T16:49:17.391Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:17.510Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:49:17.642Z] LOG    ✅ Del Frisco's Double Eagle Steakhouse: Got description (98 chars)
+[2026-02-04T16:49:17.648Z] LOG ✅ Found 1 places
+[2026-02-04T16:49:17.653Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 823ms
+[2026-02-04T16:49:17.654Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T16:49:17.655Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-02-04T16:49:17.656Z] LOG    ✅ Woods Hill Pier 4 - Seaport → Woods Hill Pier 4 - Seaport (must_have)
+[2026-02-04T16:49:17.657Z] LOG    ✅ Ocean Prime → Ocean Prime (must_have)
+[2026-02-04T16:49:17.657Z] LOG    ✅ 75 on Liberty Wharf → 75 on Liberty Wharf (must_have)
+[2026-02-04T16:49:17.658Z] LOG    ✅ Serafina Seaport → Serafina Seaport (must_have)
+[2026-02-04T16:49:17.658Z] LOG    ✅ Grace By Nia → Grace By Nia (must_have)
+[2026-02-04T16:49:17.659Z] LOG    ✅ Fan Pier Park → Fan Pier Park (nice_to_have)
+[2026-02-04T16:49:17.659Z] LOG    ✅ Institute of Contemporary Art → Institute of Contemporary Art (nice_to_have)
+[2026-02-04T16:49:17.660Z] LOG    ✅ Deck 12 → Deck 12 (nice_to_have)
+[2026-02-04T16:49:17.660Z] LOG    ✅ Legal Sea Foods - Harborside → Legal Sea Foods - Harborside (nice_to_have)
+[2026-02-04T16:49:17.661Z] LOG    ✅ Chart House → Chart House (nice_to_have)
+[2026-02-04T16:49:17.662Z] LOG    ✅ Lolita Fort Point → Lolita Fort Point (nice_to_have)
+[2026-02-04T16:49:17.662Z] LOG    ✅ Davio's Northern Italian Steakhouse → Davio's Northern Italian Steakhouse (nice_to_have)
+[2026-02-04T16:49:17.663Z] LOG    ✅ Mooo.... Seaport → Mooo.... Seaport (nice_to_have)
+[2026-02-04T16:49:17.664Z] LOG    ✅ Del Frisco's Double Eagle Steakhouse → Del Frisco's Double Eagle Steakhouse (nice_to_have)
+[2026-02-04T16:49:17.665Z] LOG    ✅ Limani Grille Seaport → Limani Grille Seaport (nice_to_have)
+[2026-02-04T16:49:17.665Z] LOG    ✅ Nautilus Pier 4 → Nautilus Pier 4 (nice_to_have)
+[2026-02-04T16:49:17.666Z] LOG    ✅ Eddie Merlot's → Eddie Merlot's (nice_to_have)
+[2026-02-04T16:49:17.667Z] LOG    ✅ Moxies Boston Seaport Restaurant → Moxies Boston Seaport Restaurant (nice_to_have)
+[2026-02-04T16:49:17.667Z] LOG    ✅ Coquette → Coquette (nice_to_have)
+[2026-02-04T16:49:17.668Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-04T16:49:17.669Z] LOG    Total enriched: 19
+[2026-02-04T16:49:17.669Z] LOG    🎯 Must-have: 5
+[2026-02-04T16:49:17.670Z] LOG    ✨ Nice-to-have: 14
+[2026-02-04T16:49:17.670Z] LOG    ❌ Failed: 0
+[2026-02-04T16:49:17.671Z] LOG    ⏱️  Enrichment took: 1851ms (1.85s)
+
+--- Summary ---
+Enrichment completed

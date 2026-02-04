@@ -1,0 +1,154 @@
+User Prompt: plan a day out with museum and lunch nearby
+
+[2026-02-04T16:38:01.191Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-04T16:38:01.193Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-04T16:38:01.194Z] LOG    🎯 Must-have: 5
+[2026-02-04T16:38:01.194Z] LOG    ✨ Nice-to-have: 15
+[2026-02-04T16:38:01.195Z] LOG 📍 Location hint: nearby
+[2026-02-04T16:38:01.196Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-04T16:38:01.197Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-04T16:38:01.199Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T16:38:01.200Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T16:38:01.202Z] LOG    1. Searching "Museum of Fine Arts, Boston" in "nearby"
+[2026-02-04T16:38:01.203Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in nearby
+[2026-02-04T16:38:01.216Z] LOG    2. Searching "Isabella Stewart Gardner Museum" in "nearby"
+[2026-02-04T16:38:01.219Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in nearby
+[2026-02-04T16:38:01.223Z] LOG    3. Searching "MassArt Art Museum" in "nearby"
+[2026-02-04T16:38:01.225Z] LOG 🔍 [Google Places] Text search: "MassArt Art Museum" in nearby
+[2026-02-04T16:38:01.229Z] LOG    4. Searching "The Joint" in "nearby"
+[2026-02-04T16:38:01.230Z] LOG 🔍 [Google Places] Text search: "The Joint" in nearby
+[2026-02-04T16:38:01.236Z] LOG    5. Searching "Mike & Patty's Breakfast | Jamaica Plain" in "nearby"
+[2026-02-04T16:38:01.238Z] LOG 🔍 [Google Places] Text search: "Mike & Patty's Breakfast | Jamaica Plain" in nearby
+[2026-02-04T16:38:01.243Z] LOG    6. Searching "Museum of Illusions Boston" in "nearby"
+[2026-02-04T16:38:01.245Z] LOG 🔍 [Google Places] Text search: "Museum of Illusions Boston" in nearby
+[2026-02-04T16:38:01.252Z] LOG    7. Searching "Boston Tea Party Ships & Museum" in "nearby"
+[2026-02-04T16:38:01.254Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in nearby
+[2026-02-04T16:38:01.258Z] LOG    8. Searching "USS Constitution Museum" in "nearby"
+[2026-02-04T16:38:01.260Z] LOG 🔍 [Google Places] Text search: "USS Constitution Museum" in nearby
+[2026-02-04T16:38:01.264Z] LOG    9. Searching "WNDR Museum" in "nearby"
+[2026-02-04T16:38:01.266Z] LOG 🔍 [Google Places] Text search: "WNDR Museum" in nearby
+[2026-02-04T16:38:01.270Z] LOG    10. Searching "MIT Museum" in "nearby"
+[2026-02-04T16:38:01.271Z] LOG 🔍 [Google Places] Text search: "MIT Museum" in nearby
+[2026-02-04T16:38:01.716Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:01.721Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:01.732Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:01.734Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:01.737Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:01.764Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:01.787Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:01.790Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:01.866Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:01.896Z] LOG    ✅ MIT Museum: Got description (97 chars)
+[2026-02-04T16:38:01.898Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:01.907Z] LOG    ⚠️  Mike & Patty's Breakfast | Jamaica Plain: No editorial summary available
+[2026-02-04T16:38:01.908Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:01.921Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:01.924Z] LOG    ✅ USS Constitution Museum: Got description (98 chars)
+[2026-02-04T16:38:01.925Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:01.927Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-02-04T16:38:01.927Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:01.928Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-02-04T16:38:01.929Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:01.933Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2026-02-04T16:38:01.934Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:01.937Z] LOG    ✅ The Joint: Got description (96 chars)
+[2026-02-04T16:38:01.938Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:01.965Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2026-02-04T16:38:01.967Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:01.997Z] LOG    ⚠️  MassArt Art Museum: No editorial summary available
+[2026-02-04T16:38:01.999Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.086Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-02-04T16:38:02.089Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.090Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 890ms
+[2026-02-04T16:38:02.091Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T16:38:02.091Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-04T16:38:02.292Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-04T16:38:02.295Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T16:38:02.299Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T16:38:02.300Z] LOG    1. Searching "Harvard Art Museums" in "nearby"
+[2026-02-04T16:38:02.300Z] LOG 🔍 [Google Places] Text search: "Harvard Art Museums" in nearby
+[2026-02-04T16:38:02.301Z] LOG    2. Searching "Peabody Museum of Archaeology and Ethnology" in "nearby"
+[2026-02-04T16:38:02.302Z] LOG 🔍 [Google Places] Text search: "Peabody Museum of Archaeology and Ethnology" in nearby
+[2026-02-04T16:38:02.303Z] LOG    3. Searching "Institute of Contemporary Art" in "nearby"
+[2026-02-04T16:38:02.304Z] LOG 🔍 [Google Places] Text search: "Institute of Contemporary Art" in nearby
+[2026-02-04T16:38:02.304Z] LOG    4. Searching "Commonwealth Museum" in "nearby"
+[2026-02-04T16:38:02.305Z] LOG 🔍 [Google Places] Text search: "Commonwealth Museum" in nearby
+[2026-02-04T16:38:02.306Z] LOG    5. Searching "Boston Children's Museum" in "nearby"
+[2026-02-04T16:38:02.306Z] LOG 🔍 [Google Places] Text search: "Boston Children's Museum" in nearby
+[2026-02-04T16:38:02.307Z] LOG    6. Searching "Larz Anderson Auto Museum" in "nearby"
+[2026-02-04T16:38:02.307Z] LOG 🔍 [Google Places] Text search: "Larz Anderson Auto Museum" in nearby
+[2026-02-04T16:38:02.308Z] LOG    7. Searching "Pikalo JP" in "nearby"
+[2026-02-04T16:38:02.309Z] LOG 🔍 [Google Places] Text search: "Pikalo JP" in nearby
+[2026-02-04T16:38:02.310Z] LOG    8. Searching "Abuela's Table" in "nearby"
+[2026-02-04T16:38:02.310Z] LOG 🔍 [Google Places] Text search: "Abuela's Table" in nearby
+[2026-02-04T16:38:02.311Z] LOG    9. Searching "Life Alive Organic Cafe Jamaica Plain" in "nearby"
+[2026-02-04T16:38:02.311Z] LOG 🔍 [Google Places] Text search: "Life Alive Organic Cafe Jamaica Plain" in nearby
+[2026-02-04T16:38:02.312Z] LOG    10. Searching "Top Mix Bar & Kitchen JP" in "nearby"
+[2026-02-04T16:38:02.312Z] LOG 🔍 [Google Places] Text search: "Top Mix Bar & Kitchen JP" in nearby
+[2026-02-04T16:38:02.644Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:02.653Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:02.671Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:02.674Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:02.683Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:02.708Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:02.716Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:02.748Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:02.761Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:02.785Z] LOG    ✅ Harvard Art Museums: Got description (99 chars)
+[2026-02-04T16:38:02.786Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.799Z] LOG    ✅ Boston Children's Museum: Got description (92 chars)
+[2026-02-04T16:38:02.800Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.807Z] LOG    ⚠️  Commonwealth Museum: No editorial summary available
+[2026-02-04T16:38:02.808Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.821Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T16:38:02.852Z] LOG    ⚠️  Abuela's Table: No editorial summary available
+[2026-02-04T16:38:02.855Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.856Z] LOG    ✅ Peabody Museum of Archaeology and Ethnology: Got description (100 chars)
+[2026-02-04T16:38:02.857Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.858Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2026-02-04T16:38:02.859Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.860Z] LOG    ⚠️  Life Alive Organic Cafe Jamaica Plain: No editorial summary available
+[2026-02-04T16:38:02.860Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.868Z] LOG    ✅ Larz Anderson Auto Museum: Got description (100 chars)
+[2026-02-04T16:38:02.869Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.878Z] LOG    ✅ Pikalo JP: Got description (87 chars)
+[2026-02-04T16:38:02.879Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.918Z] LOG    ⚠️  Top Mix Bar & Kitchen JP: No editorial summary available
+[2026-02-04T16:38:02.921Z] LOG ✅ Found 1 places
+[2026-02-04T16:38:02.923Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 624ms
+[2026-02-04T16:38:02.923Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T16:38:02.923Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-04T16:38:02.924Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (must_have)
+[2026-02-04T16:38:02.925Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (must_have)
+[2026-02-04T16:38:02.925Z] LOG    ✅ MassArt Art Museum → MassArt Art Museum (must_have)
+[2026-02-04T16:38:02.926Z] LOG    ✅ The Joint → The Joint (must_have)
+[2026-02-04T16:38:02.927Z] LOG    ✅ Mike & Patty's Breakfast | Jamaica Plain → Mike & Patty's Breakfast | Jamaica Plain (must_have)
+[2026-02-04T16:38:02.928Z] LOG    ✅ Museum of Illusions Boston → Museum of Illusions Boston (nice_to_have)
+[2026-02-04T16:38:02.928Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (nice_to_have)
+[2026-02-04T16:38:02.929Z] LOG    ✅ USS Constitution Museum → USS Constitution Museum (nice_to_have)
+[2026-02-04T16:38:02.930Z] LOG    ✅ WNDR Museum → WNDR Museum (nice_to_have)
+[2026-02-04T16:38:02.930Z] LOG    ✅ MIT Museum → MIT Museum (nice_to_have)
+[2026-02-04T16:38:02.931Z] LOG    ✅ Harvard Art Museums → Harvard Art Museums (nice_to_have)
+[2026-02-04T16:38:02.931Z] LOG    ✅ Peabody Museum of Archaeology and Ethnology → Peabody Museum of Archaeology and Ethnology (nice_to_have)
+[2026-02-04T16:38:02.932Z] LOG    ✅ Institute of Contemporary Art → Institute of Contemporary Art (nice_to_have)
+[2026-02-04T16:38:02.932Z] LOG    ✅ Commonwealth Museum → Commonwealth Museum (nice_to_have)
+[2026-02-04T16:38:02.933Z] LOG    ✅ Boston Children's Museum → Boston Children's Museum (nice_to_have)
+[2026-02-04T16:38:02.933Z] LOG    ✅ Larz Anderson Auto Museum → Larz Anderson Auto Museum (nice_to_have)
+[2026-02-04T16:38:02.934Z] LOG    ✅ Pikalo JP → Pikalo JP (nice_to_have)
+[2026-02-04T16:38:02.934Z] LOG    ✅ Abuela's Table → Abuela's Table (nice_to_have)
+[2026-02-04T16:38:02.935Z] LOG    ✅ Life Alive Organic Cafe Jamaica Plain → Life Alive Organic Cafe Jamaica Plain (nice_to_have)
+[2026-02-04T16:38:02.935Z] LOG    ✅ Top Mix Bar & Kitchen JP → Top Mix Bar & Kitchen JP (nice_to_have)
+[2026-02-04T16:38:02.936Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-04T16:38:02.936Z] LOG    Total enriched: 20
+[2026-02-04T16:38:02.937Z] LOG    🎯 Must-have: 5
+[2026-02-04T16:38:02.938Z] LOG    ✨ Nice-to-have: 15
+[2026-02-04T16:38:02.938Z] LOG    ❌ Failed: 0
+[2026-02-04T16:38:02.939Z] LOG    ⏱️  Enrichment took: 1750ms (1.75s)
+
+--- Summary ---
+Enrichment completed

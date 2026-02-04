@@ -6,6 +6,8 @@ import ChatInterface from './components/ChatInterface';
 import MapView from './components/MapView';
 import BottomSheet, { type BottomSheetHandle } from './components/BottomSheet';
 import VenueDetailSheet from './components/VenueDetailSheet';
+import DesktopVenueCard from './components/DesktopVenueCard';
+import { analyticsApi } from './services/api';
 import type { Message, MapMarker, Route, Location, Venue, InstagramReel } from './types';
 
 const queryClient = new QueryClient({
@@ -104,7 +106,15 @@ function App() {
   const [activeReels, setActiveReels] = useState<InstagramReel[]>([]);
   const [activeReelIndex, setActiveReelIndex] = useState(0);
 
+  // Analytics: track which reel and when it was opened
+  const reelOpenTimeRef = useRef<number | null>(null);
+  const currentReelRef = useRef<InstagramReel | null>(null);
+
   const handlePlayReel = (reel: InstagramReel, allReels?: InstagramReel[]) => {
+    // Store start time and reel info for analytics
+    reelOpenTimeRef.current = Date.now();
+    currentReelRef.current = reel;
+
     if (allReels && allReels.length > 0) {
       const index = allReels.findIndex(r => r.id === reel.id);
       setActiveReels(allReels);
@@ -116,6 +126,16 @@ function App() {
   };
 
   const handleCloseReelPlayer = () => {
+    // Calculate watch time and track analytics
+    if (reelOpenTimeRef.current && currentReelRef.current) {
+      const watchTimeSeconds = Math.round((Date.now() - reelOpenTimeRef.current) / 1000);
+      const reel = currentReelRef.current;
+      analyticsApi.trackReelClick(reel.id, reel.url, watchTimeSeconds);
+    }
+
+    // Reset state
+    reelOpenTimeRef.current = null;
+    currentReelRef.current = null;
     setActiveReels([]);
     setActiveReelIndex(0);
   };
@@ -427,7 +447,7 @@ function App() {
             </div>
 
             {/* Map Panel */}
-            <div className="flex-1 bg-gray-200 min-w-0 min-h-0 overflow-hidden">
+            <div className="flex-1 bg-gray-200 min-w-0 min-h-0 overflow-hidden relative">
               <MapView
                 markers={markers}
                 routes={routes}
@@ -439,7 +459,22 @@ function App() {
                 currentItinerary={currentItinerary}
                 onQuickAction={handleQuickAction}
                 onPlayReel={handlePlayReel}
+                onVenueSelect={(venue, isPrimary, stopNumber) => {
+                  setSelectedVenueForSheet({ venue, isPrimary, stopNumber });
+                }}
               />
+
+              {/* Desktop Venue Card - appears at bottom of map only */}
+              {selectedVenueForSheet && (
+                <DesktopVenueCard
+                  venue={selectedVenueForSheet.venue}
+                  isPrimary={selectedVenueForSheet.isPrimary}
+                  stopNumber={selectedVenueForSheet.stopNumber}
+                  onClose={() => setSelectedVenueForSheet(null)}
+                  onPlayReel={handlePlayReel}
+                  onQuickAction={handleQuickAction}
+                />
+              )}
             </div>
           </div>
         )}

@@ -300,8 +300,9 @@ const MapView = ({
       offset
     });
 
-    // Don't show popup on mobile - venue sheet handles it
-    if (!isMobile) {
+    // Don't show popup for venues - venue sheet handles it on all devices
+    // Only show popup for events on desktop
+    if (!isMobile && marker.type !== 'venue') {
       setPopupInfo(marker);
     }
   }, [selectedMarkerId, markers, isMobile]);
@@ -309,13 +310,14 @@ const MapView = ({
   const handleMarkerClick = (marker: MapMarker) => {
     onMarkerClick(marker.id);
 
-    // On mobile, open venue sheet instead of popup
-    if (isMobile && onVenueSelect && marker.type === 'venue') {
+    // For venue markers, always use venue sheet (both mobile and desktop)
+    if (onVenueSelect && marker.type === 'venue') {
       const venue = marker.data as Venue;
       const isPrimary = marker.id.startsWith('primary-');
       const stopNumber = marker.metadata?.stopNumber;
       onVenueSelect(venue, isPrimary, stopNumber);
-    } else {
+    } else if (!isMobile) {
+      // For events on desktop, still use popup
       setPopupInfo(marker);
     }
   };
@@ -356,6 +358,21 @@ const MapView = ({
         geoErrorTimeoutRef.current = null;
       }, 6000);
     });
+  };
+
+  // Zoom controls
+  const handleZoomIn = () => {
+    if (mapRef.current) {
+      const map = mapRef.current.getMap();
+      map.zoomIn({ duration: 300 });
+    }
+  };
+
+  const handleZoomOut = () => {
+    if (mapRef.current) {
+      const map = mapRef.current.getMap();
+      map.zoomOut({ duration: 300 });
+    }
   };
 
   const handleGeocodeSearch = async () => {
@@ -574,13 +591,47 @@ const MapView = ({
             🔍
           </button>
         </div>
-        <button
-          onClick={handleUseMyLocation}
-          disabled={isLocating}
-          className="w-full sm:w-auto px-4 py-2 bg-white rounded-lg shadow text-sm font-medium text-gray-700 hover:bg-gray-50 border border-gray-200 disabled:opacity-50"
-        >
-          📍 {isLocating ? 'Locating...' : 'My location'}
-        </button>
+        {/* Map Controls */}
+        <div className="flex flex-row sm:flex-col items-center sm:items-end gap-2 w-full sm:w-auto justify-end">
+          {/* Locate Me Button */}
+          <button
+            onClick={handleUseMyLocation}
+            disabled={isLocating}
+            className="w-10 h-10 bg-white rounded-lg shadow flex items-center justify-center hover:bg-gray-50 active:bg-gray-100 transition-colors disabled:opacity-50 border border-gray-200"
+            title="My location"
+          >
+            {isLocating ? (
+              <div className="w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            ) : (
+              <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <circle cx="12" cy="12" r="3" strokeWidth="2" />
+                <path strokeLinecap="round" strokeWidth="2" d="M12 2v4m0 12v4M2 12h4m12 0h4" />
+              </svg>
+            )}
+          </button>
+
+          {/* Zoom Controls */}
+          <div className="bg-white rounded-lg shadow border border-gray-200 overflow-hidden flex flex-row sm:flex-col">
+            <button
+              onClick={handleZoomIn}
+              className="w-10 h-10 flex items-center justify-center hover:bg-gray-50 active:bg-gray-100 transition-colors border-r sm:border-r-0 sm:border-b border-gray-200"
+              title="Zoom in"
+            >
+              <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" d="M12 6v12M6 12h12" />
+              </svg>
+            </button>
+            <button
+              onClick={handleZoomOut}
+              className="w-10 h-10 flex items-center justify-center hover:bg-gray-50 active:bg-gray-100 transition-colors"
+              title="Zoom out"
+            >
+              <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" d="M6 12h12" />
+              </svg>
+            </button>
+          </div>
+        </div>
         {geoError && (
           <div className="text-xs text-red-600 bg-white border border-red-200 rounded-lg px-3 py-2 shadow">
             {geoError}
@@ -752,6 +803,8 @@ const MapView = ({
           </div>
         </div>
       )}
+
+
     </div>
   );
 };

@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import apiRoutes from './routes/api.js';
+import { initAnalyticsTable } from './services/analytics.js';
 
 dotenv.config();
 
@@ -22,10 +23,10 @@ const allowedOrigins = [
 ].filter(Boolean); // Remove undefined values
 
 app.use(cors({
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     // Allow requests with no origin (mobile apps, Postman, curl, etc.)
     if (!origin) return callback(null, true);
-     
+
     // Check if origin matches any allowed pattern
     const isAllowed = allowedOrigins.some(allowed => {
       if (typeof allowed === 'string') {
@@ -36,7 +37,7 @@ app.use(cors({
       }
       return false;
     });
-    
+
     if (isAllowed) {
       callback(null, true);
     } else {
@@ -88,14 +89,14 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   console.error('Server Error:', err);
   res.status(500).json({
     success: false,
-    error: process.env.NODE_ENV === 'production' 
-      ? 'Internal server error' 
+    error: process.env.NODE_ENV === 'production'
+      ? 'Internal server error'
       : err.message
   });
 });
 
 // Start server with error handling for address in use
-let server = app.listen(PORT, '0.0.0.0', () => {  // bind to all interfaces for LAN access
+let server = app.listen(PORT, '0.0.0.0', async () => {  // bind to all interfaces for LAN access
   const localIp = process.env.LOCAL_IP || 'YOUR_IP';
   console.log('\n' + '='.repeat(50));
   console.log(`🚀 PlanMate API Server running on port ${PORT}`);
@@ -103,6 +104,9 @@ let server = app.listen(PORT, '0.0.0.0', () => {  // bind to all interfaces for 
   console.log(`🌐 Local:   http://localhost:${PORT}`);
   console.log(`🌐 Network: http://${localIp}:${PORT}`);
   console.log('='.repeat(50) + '\n');
+
+  // Initialize analytics table
+  await initAnalyticsTable();
 });
 
 // Handle listen errors (e.g., EADDRINUSE) so nodemon doesn't crash silently

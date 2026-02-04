@@ -50,7 +50,7 @@ export class GooglePlacesClient {
     try {
       console.log(`🔍 [Google Places] Text search: "${params.query}"${params.location ? ` in ${params.location}` : ''}`);
 
-      const query = params.location 
+      const query = params.location
         ? `${params.query} in ${params.location}`
         : params.query;
 
@@ -73,7 +73,7 @@ export class GooglePlacesClient {
       }
 
       const places = response.data.results.slice(0, params.maxResults || 10);
-      
+
       // 🆕 Fetch descriptions in parallel
       const placesWithDescriptions = await this.enrichWithDescriptions(places);
 
@@ -115,7 +115,7 @@ export class GooglePlacesClient {
       }
 
       const places = response.data.results.slice(0, params.maxResults || 10);
-      
+
       // 🆕 Fetch descriptions in parallel
       const placesWithDescriptions = await this.enrichWithDescriptions(places);
 
@@ -162,23 +162,36 @@ export class GooglePlacesClient {
    */
   private async enrichWithDescriptions(places: any[]): Promise<PlaceResult[]> {
     console.log(`📝 Fetching descriptions for ${places.length} places...`);
-    
+
     const enrichmentPromises = places.map(async (place) => {
       try {
-        // Fetch place details with editorial_summary field
+        // Fetch place details with editorial_summary and photos fields
         const detailsResponse = await axios.get(`${this.baseUrl}/details/json`, {
           params: {
             place_id: place.place_id,
-            fields: 'editorial_summary',
+            fields: 'editorial_summary,photos',
             key: this.apiKey
           }
         });
 
-        if (detailsResponse.data.status === 'OK' && detailsResponse.data.result?.editorial_summary?.overview) {
-          place.editorial_summary = detailsResponse.data.result.editorial_summary.overview;
-          console.log(`   ✅ ${place.name}: Got description (${place.editorial_summary.length} chars)`);
+        if (detailsResponse.data.status === 'OK') {
+          const result = detailsResponse.data.result;
+
+          // Get editorial summary
+          if (result?.editorial_summary?.overview) {
+            place.editorial_summary = result.editorial_summary.overview;
+            console.log(`   ✅ ${place.name}: Got description (${place.editorial_summary.length} chars)`);
+          } else {
+            console.log(`   ⚠️  ${place.name}: No editorial summary available`);
+          }
+
+          // Merge photos from details (may have more than search results)
+          if (result?.photos && result.photos.length > 0) {
+            place.photos = result.photos;
+            console.log(`   📷 ${place.name}: Got ${result.photos.length} photos`);
+          }
         } else {
-          console.log(`   ⚠️  ${place.name}: No editorial summary available`);
+          console.log(`   ⚠️  ${place.name}: Place details request returned ${detailsResponse.data.status}`);
         }
 
       } catch (error) {
@@ -198,11 +211,11 @@ export class GooglePlacesClient {
   private formatPlace(place: any): PlaceResult {
     // Get main photo URL - handle both direct URLs and photo references
     let photoUrl: string | undefined;
-    
+
     try {
       if (place.photos && Array.isArray(place.photos) && place.photos.length > 0) {
         const firstPhoto = place.photos[0];
-        
+
         if (firstPhoto.getUrl) {
           photoUrl = firstPhoto.getUrl({ maxWidth: 800, maxHeight: 800 });
         } else if (typeof firstPhoto === 'string' && firstPhoto.startsWith('http')) {

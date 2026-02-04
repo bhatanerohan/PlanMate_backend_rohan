@@ -1,0 +1,120 @@
+PROMPT:
+Request: "plan a day out in rhode island"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Day Out",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "car"
+  },
+  "venues": [
+    {
+      "name": "Roger Williams Park Zoo",
+      "category": "zoo",
+      "priority": "must_have"
+    },
+    {
+      "name": "Roger Williams National Memorial",
+      "category": "tourist attraction",
+      "priority": "must_have"
+    },
+    {
+      "name": "Cliff Walk – South End",
+      "category": "hiking area",
+      "priority": "must_have"
+    },
+    {
+      "name": "International Tennis Hall of Fame",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Newport Mansions",
+      "category": "historic site",
+      "priority": "must_have"
+    },
+    {
+      "name": "WaterFire Providence",
+      "category": "art installation",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Providence Athenaeum",
+      "category": "library",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Benefit Street",
+      "category": "historic district",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Brown University",
+      "category": "university",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Block Island Ferry",
+      "category": "ferry terminal",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Ocean Drive",
+      "category": "scenic drive",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Chanler at Cliff Walk",
+      "category": "hotel",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fort Adams State Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Easton's Beach",
+      "category": "beach",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Ryan Family Amusements- Newport",
+      "category": "amusement center",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

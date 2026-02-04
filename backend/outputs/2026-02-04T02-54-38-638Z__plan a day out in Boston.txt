@@ -1,0 +1,154 @@
+User Prompt: plan a day out in Boston
+
+[2026-02-04T02:54:38.638Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-04T02:54:38.639Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-04T02:54:38.639Z] LOG    🎯 Must-have: 5
+[2026-02-04T02:54:38.640Z] LOG    ✨ Nice-to-have: 15
+[2026-02-04T02:54:38.640Z] LOG 📍 Location hint: Boston
+[2026-02-04T02:54:38.641Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-04T02:54:38.641Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-04T02:54:38.642Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T02:54:38.642Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T02:54:38.643Z] LOG    1. Searching "Faneuil Hall Marketplace" in "Boston"
+[2026-02-04T02:54:38.643Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Boston
+[2026-02-04T02:54:38.646Z] LOG    2. Searching "Boston Common" in "Boston"
+[2026-02-04T02:54:38.646Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Boston
+[2026-02-04T02:54:38.648Z] LOG    3. Searching "Public Garden" in "Boston"
+[2026-02-04T02:54:38.649Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Boston
+[2026-02-04T02:54:38.651Z] LOG    4. Searching "Old State House" in "Boston"
+[2026-02-04T02:54:38.652Z] LOG 🔍 [Google Places] Text search: "Old State House" in Boston
+[2026-02-04T02:54:38.654Z] LOG    5. Searching "Boston Tea Party Ships & Museum" in "Boston"
+[2026-02-04T02:54:38.654Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Boston
+[2026-02-04T02:54:38.656Z] LOG    6. Searching "Museum of Illusions Boston" in "Boston"
+[2026-02-04T02:54:38.657Z] LOG 🔍 [Google Places] Text search: "Museum of Illusions Boston" in Boston
+[2026-02-04T02:54:38.659Z] LOG    7. Searching "New England Aquarium" in "Boston"
+[2026-02-04T02:54:38.659Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Boston
+[2026-02-04T02:54:38.661Z] LOG    8. Searching "Christopher Columbus Waterfront Park" in "Boston"
+[2026-02-04T02:54:38.661Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in Boston
+[2026-02-04T02:54:38.663Z] LOG    9. Searching "Boston Harborwalk" in "Boston"
+[2026-02-04T02:54:38.663Z] LOG 🔍 [Google Places] Text search: "Boston Harborwalk" in Boston
+[2026-02-04T02:54:38.664Z] LOG    10. Searching "The Paul Revere House" in "Boston"
+[2026-02-04T02:54:38.665Z] LOG 🔍 [Google Places] Text search: "The Paul Revere House" in Boston
+[2026-02-04T02:54:39.008Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.012Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.015Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.016Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.055Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.064Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.074Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.137Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-02-04T02:54:39.140Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.141Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-02-04T02:54:39.142Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.147Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.155Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-02-04T02:54:39.156Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.176Z] LOG    ✅ Harborwalk: Got description (97 chars)
+[2026-02-04T02:54:39.178Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.179Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-02-04T02:54:39.180Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.200Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-02-04T02:54:39.203Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.208Z] LOG    ✅ Old State House: Got description (98 chars)
+[2026-02-04T02:54:39.209Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.217Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.237Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.279Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-02-04T02:54:39.282Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.342Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-02-04T02:54:39.346Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.361Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2026-02-04T02:54:39.362Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.363Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 720ms
+[2026-02-04T02:54:39.363Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T02:54:39.363Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-04T02:54:39.566Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-04T02:54:39.569Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T02:54:39.570Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T02:54:39.570Z] LOG    1. Searching "Old South Meeting House" in "Boston"
+[2026-02-04T02:54:39.571Z] LOG 🔍 [Google Places] Text search: "Old South Meeting House" in Boston
+[2026-02-04T02:54:39.572Z] LOG    2. Searching "Bunker Hill Museum" in "Boston"
+[2026-02-04T02:54:39.572Z] LOG 🔍 [Google Places] Text search: "Bunker Hill Museum" in Boston
+[2026-02-04T02:54:39.573Z] LOG    3. Searching "Gibson House Museum" in "Boston"
+[2026-02-04T02:54:39.573Z] LOG 🔍 [Google Places] Text search: "Gibson House Museum" in Boston
+[2026-02-04T02:54:39.574Z] LOG    4. Searching "Nichols House Museum" in "Boston"
+[2026-02-04T02:54:39.574Z] LOG 🔍 [Google Places] Text search: "Nichols House Museum" in Boston
+[2026-02-04T02:54:39.575Z] LOG    5. Searching "Boston Athenaeum" in "Boston"
+[2026-02-04T02:54:39.576Z] LOG 🔍 [Google Places] Text search: "Boston Athenaeum" in Boston
+[2026-02-04T02:54:39.576Z] LOG    6. Searching "Boston's Old City Hall" in "Boston"
+[2026-02-04T02:54:39.577Z] LOG 🔍 [Google Places] Text search: "Boston's Old City Hall" in Boston
+[2026-02-04T02:54:39.577Z] LOG    7. Searching "Lewis & Harriet Hayden House" in "Boston"
+[2026-02-04T02:54:39.578Z] LOG 🔍 [Google Places] Text search: "Lewis & Harriet Hayden House" in Boston
+[2026-02-04T02:54:39.579Z] LOG    8. Searching "75 Chestnut" in "Boston"
+[2026-02-04T02:54:39.579Z] LOG 🔍 [Google Places] Text search: "75 Chestnut" in Boston
+[2026-02-04T02:54:39.581Z] LOG    9. Searching "OAK Long Bar + Kitchen" in "Boston"
+[2026-02-04T02:54:39.582Z] LOG 🔍 [Google Places] Text search: "OAK Long Bar + Kitchen" in Boston
+[2026-02-04T02:54:39.582Z] LOG    10. Searching "Yvonne's" in "Boston"
+[2026-02-04T02:54:39.583Z] LOG 🔍 [Google Places] Text search: "Yvonne's" in Boston
+[2026-02-04T02:54:39.847Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.850Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.858Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.867Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.868Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.873Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.880Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.893Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.895Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.902Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T02:54:39.964Z] LOG    ✅ Nichols House Museum: Got description (100 chars)
+[2026-02-04T02:54:39.967Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.980Z] LOG    ✅ Boston Athenaeum: Got description (85 chars)
+[2026-02-04T02:54:39.982Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.990Z] LOG    ✅ Yvonne's: Got description (94 chars)
+[2026-02-04T02:54:39.991Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:39.995Z] LOG    ✅ Boston's Old City Hall: Got description (96 chars)
+[2026-02-04T02:54:39.995Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:40.001Z] LOG    ✅ OAK Long Bar + Kitchen: Got description (94 chars)
+[2026-02-04T02:54:40.002Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:40.015Z] LOG    ✅ 75 Chestnut: Got description (99 chars)
+[2026-02-04T02:54:40.016Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:40.041Z] LOG    ✅ Gibson House Museum: Got description (99 chars)
+[2026-02-04T02:54:40.042Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:40.045Z] LOG    ✅ Old South Meeting House: Got description (100 chars)
+[2026-02-04T02:54:40.046Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:40.048Z] LOG    ✅ Bunker Hill Museum: Got description (90 chars)
+[2026-02-04T02:54:40.049Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:40.051Z] LOG    ⚠️  Lewis & Harriet Hayden House: No editorial summary available
+[2026-02-04T02:54:40.052Z] LOG ✅ Found 1 places
+[2026-02-04T02:54:40.052Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 482ms
+[2026-02-04T02:54:40.053Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T02:54:40.053Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-04T02:54:40.054Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (must_have)
+[2026-02-04T02:54:40.055Z] LOG    ✅ Boston Common → Boston Common (must_have)
+[2026-02-04T02:54:40.055Z] LOG    ✅ Public Garden → Public Garden (must_have)
+[2026-02-04T02:54:40.055Z] LOG    ✅ Old State House → Old State House (must_have)
+[2026-02-04T02:54:40.056Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (must_have)
+[2026-02-04T02:54:40.056Z] LOG    ✅ Museum of Illusions Boston → Museum of Illusions Boston (nice_to_have)
+[2026-02-04T02:54:40.057Z] LOG    ✅ New England Aquarium → New England Aquarium (nice_to_have)
+[2026-02-04T02:54:40.057Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (nice_to_have)
+[2026-02-04T02:54:40.058Z] LOG    ✅ Boston Harborwalk → Harborwalk (nice_to_have)
+[2026-02-04T02:54:40.058Z] LOG    ✅ The Paul Revere House → The Paul Revere House (nice_to_have)
+[2026-02-04T02:54:40.058Z] LOG    ✅ Old South Meeting House → Old South Meeting House (nice_to_have)
+[2026-02-04T02:54:40.058Z] LOG    ✅ Bunker Hill Museum → Bunker Hill Museum (nice_to_have)
+[2026-02-04T02:54:40.059Z] LOG    ✅ Gibson House Museum → Gibson House Museum (nice_to_have)
+[2026-02-04T02:54:40.059Z] LOG    ✅ Nichols House Museum → Nichols House Museum (nice_to_have)
+[2026-02-04T02:54:40.060Z] LOG    ✅ Boston Athenaeum → Boston Athenaeum (nice_to_have)
+[2026-02-04T02:54:40.060Z] LOG    ✅ Boston's Old City Hall → Boston's Old City Hall (nice_to_have)
+[2026-02-04T02:54:40.060Z] LOG    ✅ Lewis & Harriet Hayden House → Lewis & Harriet Hayden House (nice_to_have)
+[2026-02-04T02:54:40.061Z] LOG    ✅ 75 Chestnut → 75 Chestnut (nice_to_have)
+[2026-02-04T02:54:40.061Z] LOG    ✅ OAK Long Bar + Kitchen → OAK Long Bar + Kitchen (nice_to_have)
+[2026-02-04T02:54:40.062Z] LOG    ✅ Yvonne's → Yvonne's (nice_to_have)
+[2026-02-04T02:54:40.062Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-04T02:54:40.062Z] LOG    Total enriched: 20
+[2026-02-04T02:54:40.063Z] LOG    🎯 Must-have: 5
+[2026-02-04T02:54:40.063Z] LOG    ✨ Nice-to-have: 15
+[2026-02-04T02:54:40.064Z] LOG    ❌ Failed: 0
+[2026-02-04T02:54:40.064Z] LOG    ⏱️  Enrichment took: 1426ms (1.43s)
+
+--- Summary ---
+Enrichment completed

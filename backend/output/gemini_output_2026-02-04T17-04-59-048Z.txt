@@ -1,0 +1,147 @@
+PROMPT:
+User location: Paris, France (48.853495, 2.348392)
+
+Request: "plan a romantic honeymoon in paris"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Romantic Honeymoon",
+    "total_stops": 5,
+    "estimated_duration": "3 days",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Relais Christine",
+      "category": "hotel",
+      "priority": "must_have"
+    },
+    {
+      "name": "Le Cinq",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Musée Rodin",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Eiffel Tower",
+      "category": "landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sainte-Chapelle",
+      "category": "church",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sacrée Fleur Montmartre",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bel Canto",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Au Bourguignon du Marais",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Le Tout-Paris",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "La Scène",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Les Parisiens",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "La Diva des Prés",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Le Christine",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Jardin du Luxembourg",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Square du Vert-Galant",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Pont des Arts",
+      "category": "bridge",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Notre-Dame Cathedral of Paris",
+      "category": "church",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Louvre Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Place des Vosges",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Medici Fountain",
+      "category": "sculpture",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

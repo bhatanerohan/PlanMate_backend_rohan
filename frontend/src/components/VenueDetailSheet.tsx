@@ -1,8 +1,76 @@
 // frontend/src/components/VenueDetailSheet.tsx
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import BottomSheet, { type BottomSheetHandle } from './BottomSheet';
 import type { Venue, InstagramReel } from '../types';
+
+// Image Gallery Component with thumbnails below
+const ImageGallery = ({
+    images,
+    venueName,
+    stopNumber
+}: {
+    images: string[];
+    venueName: string;
+    stopNumber?: number;
+}) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    return (
+        <div className="w-full">
+            {/* Main Image */}
+            <div className="relative h-52 w-full overflow-hidden bg-gray-100">
+                <img
+                    src={images[currentIndex]}
+                    alt={`${venueName} - Image ${currentIndex + 1}`}
+                    className="w-full h-full object-cover transition-opacity duration-300"
+                    onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = 'none';
+                    }}
+                />
+
+                {/* Stop Number Badge */}
+                {stopNumber && (
+                    <div className="absolute top-3 left-3 w-8 h-8 bg-red-500 text-white text-sm font-bold rounded-full flex items-center justify-center shadow-lg">
+                        {stopNumber}
+                    </div>
+                )}
+
+                {/* Image Counter */}
+                {images.length > 1 && (
+                    <div className="absolute top-3 right-3 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+                        {currentIndex + 1} / {images.length}
+                    </div>
+                )}
+            </div>
+
+            {/* Thumbnail Row - All images with horizontal scroll */}
+            {images.length > 1 && (
+                <div className="flex gap-2 px-4 py-2 overflow-x-auto bg-white">
+                    {images.map((img, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => setCurrentIndex(idx)}
+                            className={`w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 border-2 transition-all ${idx === currentIndex
+                                ? 'border-blue-500 ring-2 ring-blue-300'
+                                : 'border-transparent hover:border-gray-300'
+                                }`}
+                        >
+                            <img
+                                src={img}
+                                alt={`Thumbnail ${idx + 1}`}
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/56x56?text=...';
+                                }}
+                            />
+                        </button>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+};
 
 interface VenueDetailSheetProps {
     venue: Venue;
@@ -61,35 +129,37 @@ const VenueDetailSheet = ({
             defaultSnapIndex={1}
             onSnapChange={handleSnapChange}
         >
-            <div className="venue-detail-sheet h-full flex flex-col">
-                {/* Back to Chat Button - Always visible at top */}
-                <button
-                    onClick={onClose}
-                    className="flex items-center gap-2 px-4 py-2 text-sm text-blue-600 font-medium hover:text-blue-700"
-                >
-                    ← Back to Chat
-                </button>
-
+            <div className="venue-detail-sheet h-full flex flex-col relative">
                 {/* Scrollable Content */}
                 <div className="flex-1 overflow-y-auto">
-                    {/* Hero Image */}
-                    {venue.photoUrl && (
-                        <div className="relative h-48 w-full overflow-hidden">
-                            <img
-                                src={venue.photoUrl}
-                                alt={venue.name}
-                                className="w-full h-full object-cover"
-                                onError={(e) => {
-                                    (e.target as HTMLImageElement).style.display = 'none';
-                                }}
-                            />
-                            {stopNumber && (
-                                <div className="absolute top-3 left-3 w-8 h-8 bg-red-500 text-white text-sm font-bold rounded-full flex items-center justify-center shadow-lg">
-                                    {stopNumber}
-                                </div>
-                            )}
-                        </div>
-                    )}
+                    {/* Image Gallery with overlapping Back button */}
+                    {(() => {
+                        const images = venue.photos?.length ? venue.photos : (venue.photoUrl ? [venue.photoUrl] : []);
+                        if (images.length === 0) {
+                            // No images - show back button at top
+                            return (
+                                <button
+                                    onClick={onClose}
+                                    className="flex items-center gap-2 px-4 py-3 text-sm text-blue-600 font-medium hover:text-blue-700 bg-white"
+                                >
+                                    ← Back to Chat
+                                </button>
+                            );
+                        }
+
+                        return (
+                            <div className="relative">
+                                <ImageGallery images={images} venueName={venue.name} stopNumber={stopNumber} />
+                                {/* Back to Chat Button - Overlapping on image */}
+                                <button
+                                    onClick={onClose}
+                                    className="absolute top-2 left-2 z-10 flex items-center gap-1.5 px-3 py-1.5 text-sm text-white font-medium bg-black/50 hover:bg-black/70 rounded-full backdrop-blur-sm transition-colors"
+                                >
+                                    ← Back
+                                </button>
+                            </div>
+                        );
+                    })()}
 
                     {/* Content */}
                     <div className="p-4 space-y-4">
@@ -142,23 +212,38 @@ const VenueDetailSheet = ({
                         )}
 
                         {/* Action Buttons */}
-                        <div className="flex gap-3 pt-2 pb-4">
-                            {!isPrimary && (
-                                <button
-                                    onClick={handleAddToRoute}
-                                    className="flex-1 py-3 px-4 bg-green-500 text-white font-medium rounded-xl hover:bg-green-600 transition-colors"
-                                >
-                                    ➕ Add to Route
-                                </button>
-                            )}
-                            {isPrimary && stopNumber && (
-                                <button
-                                    onClick={handleRemoveFromRoute}
-                                    className="flex-1 py-3 px-4 bg-red-500 text-white font-medium rounded-xl hover:bg-red-600 transition-colors"
-                                >
-                                    ➖ Remove from Route
-                                </button>
-                            )}
+                        <div className="flex flex-col gap-3 pt-2 pb-4">
+                            <div className="flex gap-3">
+                                {!isPrimary && (
+                                    <button
+                                        onClick={handleAddToRoute}
+                                        className="flex-1 py-3 px-4 bg-green-500 text-white font-medium rounded-xl hover:bg-green-600 transition-colors"
+                                    >
+                                        ➕ Add to Route
+                                    </button>
+                                )}
+                                {isPrimary && stopNumber && (
+                                    <button
+                                        onClick={handleRemoveFromRoute}
+                                        className="flex-1 py-3 px-4 bg-red-500 text-white font-medium rounded-xl hover:bg-red-600 transition-colors"
+                                    >
+                                        ➖ Remove from Route
+                                    </button>
+                                )}
+                            </div>
+
+                            {/* Open in Google Maps Button */}
+                            <a
+                                href={venue.placeId
+                                    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.name)}&query_place_id=${venue.placeId}`
+                                    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.name + ' ' + venue.address)}`
+                                }
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-2 py-3 px-4 bg-blue-500 text-white font-medium rounded-xl hover:bg-blue-600 transition-colors"
+                            >
+                                🗺️ Open in Google Maps
+                            </a>
                         </div>
                     </div>
                 </div>

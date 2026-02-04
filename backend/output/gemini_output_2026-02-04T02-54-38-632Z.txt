@@ -1,0 +1,145 @@
+PROMPT:
+Request: "plan a day out in Boston"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Day Out",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Faneuil Hall Marketplace",
+      "category": "market",
+      "priority": "must_have"
+    },
+    {
+      "name": "Boston Common",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Public Garden",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Old State House",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Boston Tea Party Ships & Museum",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Museum of Illusions Boston",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "New England Aquarium",
+      "category": "aquarium",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Christopher Columbus Waterfront Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Harborwalk",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Paul Revere House",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Old South Meeting House",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bunker Hill Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Gibson House Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Nichols House Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Athenaeum",
+      "category": "library",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston's Old City Hall",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Lewis & Harriet Hayden House",
+      "category": "historical place",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "75 Chestnut",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "OAK Long Bar + Kitchen",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Yvonne's",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

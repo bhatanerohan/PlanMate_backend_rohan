@@ -2,7 +2,7 @@
 
 import { useState, forwardRef, useImperativeHandle } from 'react';
 import { useMutation } from '@tanstack/react-query';
-import { planApi } from '../services/api';
+import { planApi, analyticsApi } from '../services/api';
 import MessageList from './MessageList';
 import type { GeoPreferenceMode, Message, MapMarker, Venue, Event, Route, Location } from '../types';
 
@@ -110,6 +110,11 @@ const ChatInterface = forwardRef(({
       }
 
       const isModification = data.queryType === 'itinerary_modification' || data.isModification;
+
+      // Track modification for analytics
+      if (isModification) {
+        analyticsApi.trackModification(variables.prompt);
+      }
 
       const agentMessage: Message = {
         id: Date.now().toString(),

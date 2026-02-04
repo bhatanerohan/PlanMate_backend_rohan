@@ -248,7 +248,8 @@ export class ReActAgent {
       console.log(`   🎯 Must-have: ${enrichedMustHaves.length}`);
       console.log(`   ✨ Nice-to-have: ${enrichedNiceToHaves.length}`);
       console.log(`   ❌ Failed: ${failedCount}`);
-      console.log(`   ⏱️ Time: ${Date.now() - startTime}ms`);
+      const enrichmentDuration = Date.now() - startTime;
+      console.log(`   ⏱️  Enrichment took: ${enrichmentDuration}ms (${(enrichmentDuration / 1000).toFixed(2)}s)`);
 
       return {
         success: enrichedCandidates.length > 0,

@@ -1,0 +1,294 @@
+User Prompt: Plan a day of Formula-1 themed sightseeing in Monaco
+
+[2026-02-04T03:07:57.392Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-02-04T03:07:57.393Z] LOG 📝 User prompt: "Plan a day of Formula-1 themed sightseeing in Monaco"
+[2026-02-04T03:07:57.394Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-02-04T03:07:57.394Z] LOG ⏱️ Starting Gemini API call...
+[2026-02-04T03:08:00.154Z] LOG POST /api/plan
+[2026-02-04T03:08:00.157Z] LOG 
+================================================================================
+[2026-02-04T03:08:00.160Z] LOG 📥 Received: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-02-04T03:08:00.160Z] LOG ================================================================================
+[2026-02-04T03:08:00.161Z] LOG 
+🔍 Classifying intent...
+[2026-02-04T03:08:02.554Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"gemini","queryType":"itinerary_planning","reasoning":"User wants to plan an experience with multiple stops focused on halal food trucks in midtown NYC.","useGeminiGrounding":true,"hasCurrentItinerary":false,"corridorDetected":false,"explicitRouteDetected":false}
+[2026-02-04T03:08:02.558Z] LOG 
+📍 Geo preference: walkable (area anchor)
+[2026-02-04T03:08:02.560Z] LOG 
+⚡ NEW CANDIDATE FLOW: Gemini → Enrich All → Venue Selector → Mapbox
+[2026-02-04T03:08:02.561Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-02-04T03:08:02.561Z] LOG 
+🔍 STEP 2: Calling Gemini for 15-20 CANDIDATES...
+[2026-02-04T03:08:02.563Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-02-04T03:08:02.564Z] LOG 📝 User prompt: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-02-04T03:08:02.564Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-02-04T03:08:02.565Z] LOG ⏱️ Starting Gemini API call...
+[2026-02-04T03:08:07.237Z] LOG ⏱️ Gemini API call took: 4669ms (4.67s)
+[2026-02-04T03:08:07.239Z] LOG ✅ Gemini response received
+[2026-02-04T03:08:07.241Z] LOG 📄 Response length: 2008 characters
+[2026-02-04T03:08:07.242Z] LOG 📝 Logged Gemini output to C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\output\gemini_output_2026-02-04T03-08-07-241Z.txt
+[2026-02-04T03:08:07.243Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-02-04T03:08:07.244Z] LOG 📍 Grounding chunks: 36 sources
+[2026-02-04T03:08:07.245Z] LOG 🔄 Parsing Gemini response...
+[2026-02-04T03:08:07.246Z] LOG    📊 Parsed: 5 must_have, 11 nice_to_have
+[2026-02-04T03:08:07.247Z] LOG 
+✨ Parsed 16 CANDIDATES:
+[2026-02-04T03:08:07.248Z] LOG    🎯 Must-have: 5
+[2026-02-04T03:08:07.248Z] LOG    ✨ Nice-to-have: 11
+[2026-02-04T03:08:07.249Z] LOG 📋 Plan: Halal Food Truck Exploration, 5 target stops
+[2026-02-04T03:08:07.251Z] LOG ⏱️ [Perf] Gemini Generation: 4689ms
+[2026-02-04T03:08:07.252Z] LOG    ✅ Gemini returned 16 candidates
+[2026-02-04T03:08:07.253Z] LOG    🎯 Must-have: 5
+[2026-02-04T03:08:07.253Z] LOG    ✨ Nice-to-have: 11
+[2026-02-04T03:08:07.254Z] LOG 
+📍 STEP 3: Enriching ALL candidates via Google Places...
+[2026-02-04T03:08:07.260Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-04T03:08:07.263Z] LOG 📦 Processing 16 candidates from Gemini
+[2026-02-04T03:08:07.264Z] LOG    🎯 Must-have: 5
+[2026-02-04T03:08:07.264Z] LOG    ✨ Nice-to-have: 11
+[2026-02-04T03:08:07.267Z] LOG 📍 Location hint: midtown NYC
+[2026-02-04T03:08:07.271Z] LOG 
+🔍 Enriching 16 candidates in 2 batch(es)...
+[2026-02-04T03:08:07.272Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-04T03:08:07.274Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T03:08:07.275Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T03:08:07.276Z] LOG    1. Searching "The Halal Guys" in "midtown NYC"
+[2026-02-04T03:08:07.278Z] LOG 🔍 [Google Places] Text search: "The Halal Guys" in midtown NYC
+[2026-02-04T03:08:07.284Z] LOG    2. Searching "Adel's Famous Halal Food" in "midtown NYC"
+[2026-02-04T03:08:07.285Z] LOG 🔍 [Google Places] Text search: "Adel's Famous Halal Food" in midtown NYC
+[2026-02-04T03:08:07.289Z] LOG    3. Searching "Sharif's Famous" in "midtown NYC"
+[2026-02-04T03:08:07.291Z] LOG 🔍 [Google Places] Text search: "Sharif's Famous" in midtown NYC
+[2026-02-04T03:08:07.294Z] LOG    4. Searching "Famous Halal Food (Food Truck)" in "midtown NYC"
+[2026-02-04T03:08:07.295Z] LOG 🔍 [Google Places] Text search: "Famous Halal Food (Food Truck)" in midtown NYC
+[2026-02-04T03:08:07.299Z] LOG    5. Searching "MOE EATS NYC" in "midtown NYC"
+[2026-02-04T03:08:07.299Z] LOG 🔍 [Google Places] Text search: "MOE EATS NYC" in midtown NYC
+[2026-02-04T03:08:07.301Z] LOG    6. Searching "Rockefeller Center" in "midtown NYC"
+[2026-02-04T03:08:07.302Z] LOG 🔍 [Google Places] Text search: "Rockefeller Center" in midtown NYC
+[2026-02-04T03:08:07.305Z] LOG    7. Searching "Times Square" in "midtown NYC"
+[2026-02-04T03:08:07.306Z] LOG 🔍 [Google Places] Text search: "Times Square" in midtown NYC
+[2026-02-04T03:08:07.308Z] LOG    8. Searching "Bryant Park" in "midtown NYC"
+[2026-02-04T03:08:07.309Z] LOG 🔍 [Google Places] Text search: "Bryant Park" in midtown NYC
+[2026-02-04T03:08:07.313Z] LOG    9. Searching "Top of The Rock" in "midtown NYC"
+[2026-02-04T03:08:07.313Z] LOG 🔍 [Google Places] Text search: "Top of The Rock" in midtown NYC
+[2026-02-04T03:08:07.316Z] LOG    10. Searching "The Channel Gardens" in "midtown NYC"
+[2026-02-04T03:08:07.317Z] LOG 🔍 [Google Places] Text search: "The Channel Gardens" in midtown NYC
+[2026-02-04T03:08:07.693Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.703Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.705Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.712Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.744Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.755Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.765Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.779Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.784Z] LOG    ✅ Times Square: Got description (100 chars)
+[2026-02-04T03:08:07.786Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.792Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:07.804Z] LOG    ⚠️  Sharif's Famous: No editorial summary available
+[2026-02-04T03:08:07.805Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.828Z] LOG    ⚠️  The Halal Guys: No editorial summary available
+[2026-02-04T03:08:07.830Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.841Z] LOG    ✅ Top of The Rock: Got description (96 chars)
+[2026-02-04T03:08:07.842Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.844Z] LOG    ⚠️  MOE EATS NYC: No editorial summary available
+[2026-02-04T03:08:07.845Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.848Z] LOG    ✅ The Channel Gardens: Got description (96 chars)
+[2026-02-04T03:08:07.848Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.878Z] LOG    ✅ Bryant Park: Got description (99 chars)
+[2026-02-04T03:08:07.880Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.897Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2026-02-04T03:08:07.898Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:07.903Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-02-04T03:08:07.904Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.018Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.208Z] LOG    ⚠️  Famous Halal Food (Food Truck): No editorial summary available
+[2026-02-04T03:08:08.210Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.211Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 936ms
+[2026-02-04T03:08:08.211Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T03:08:08.212Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-04T03:08:08.419Z] LOG 
+   📦 Batch 2/2 (6 searches)...
+[2026-02-04T03:08:08.422Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T03:08:08.423Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2026-02-04T03:08:08.424Z] LOG    1. Searching "RiseNY" in "midtown NYC"
+[2026-02-04T03:08:08.424Z] LOG 🔍 [Google Places] Text search: "RiseNY" in midtown NYC
+[2026-02-04T03:08:08.425Z] LOG    2. Searching "The Museum of Modern Art" in "midtown NYC"
+[2026-02-04T03:08:08.426Z] LOG 🔍 [Google Places] Text search: "The Museum of Modern Art" in midtown NYC
+[2026-02-04T03:08:08.427Z] LOG    3. Searching "Empire State Building" in "midtown NYC"
+[2026-02-04T03:08:08.427Z] LOG 🔍 [Google Places] Text search: "Empire State Building" in midtown NYC
+[2026-02-04T03:08:08.429Z] LOG    4. Searching "SUMMIT One Vanderbilt" in "midtown NYC"
+[2026-02-04T03:08:08.429Z] LOG 🔍 [Google Places] Text search: "SUMMIT One Vanderbilt" in midtown NYC
+[2026-02-04T03:08:08.430Z] LOG    5. Searching "Madame Tussauds New York" in "midtown NYC"
+[2026-02-04T03:08:08.431Z] LOG 🔍 [Google Places] Text search: "Madame Tussauds New York" in midtown NYC
+[2026-02-04T03:08:08.432Z] LOG    6. Searching "Central Park" in "midtown NYC"
+[2026-02-04T03:08:08.433Z] LOG 🔍 [Google Places] Text search: "Central Park" in midtown NYC
+[2026-02-04T03:08:08.702Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.705Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.745Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.748Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.796Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2026-02-04T03:08:08.797Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.799Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:08.813Z] LOG    ⚠️  Central Park South: No editorial summary available
+[2026-02-04T03:08:08.817Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.874Z] LOG    ⚠️  SUMMIT One Vanderbilt: No editorial summary available
+[2026-02-04T03:08:08.876Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.878Z] LOG    ✅ The Museum of Modern Art: Got description (96 chars)
+[2026-02-04T03:08:08.878Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.910Z] LOG    ⚠️  RiseNY: No editorial summary available
+[2026-02-04T03:08:08.911Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:08.920Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.049Z] LOG ⏱️ Gemini API call took: 11653ms (11.65s)
+[2026-02-04T03:08:09.050Z] LOG ✅ Gemini response received
+[2026-02-04T03:08:09.051Z] LOG 📄 Response length: 2506 characters
+[2026-02-04T03:08:09.053Z] LOG 📝 Logged Gemini output to C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\output\gemini_output_2026-02-04T03-08-09-052Z.txt
+[2026-02-04T03:08:09.053Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-02-04T03:08:09.054Z] LOG 📍 Grounding chunks: 43 sources
+[2026-02-04T03:08:09.055Z] LOG 🔄 Parsing Gemini response...
+[2026-02-04T03:08:09.056Z] LOG    📊 Parsed: 5 must_have, 15 nice_to_have
+[2026-02-04T03:08:09.056Z] LOG 
+✨ Parsed 20 CANDIDATES:
+[2026-02-04T03:08:09.057Z] LOG    🎯 Must-have: 5
+[2026-02-04T03:08:09.057Z] LOG    ✨ Nice-to-have: 15
+[2026-02-04T03:08:09.059Z] LOG 📋 Plan: Formula-1 themed sightseeing, 5 target stops
+
+--- Summary ---
+Completed
+[2026-02-04T03:08:09.107Z] LOG ⏱️ [Perf] Google Places Enrichment: 1853ms
+[2026-02-04T03:08:09.108Z] LOG    ✅ Enriched 16 candidates
+[2026-02-04T03:08:09.108Z] LOG    🎯 Must-have found: 5
+[2026-02-04T03:08:09.109Z] LOG    ✨ Nice-to-have found: 11
+[2026-02-04T03:08:09.109Z] LOG 
+🎯 STEP 4: Selecting optimal venues...
+[2026-02-04T03:08:09.110Z] LOG 
+🔍 CORRIDOR DETECTION: Analyzing query...
+[2026-02-04T03:08:09.110Z] LOG    Query: "Plan a day out in midtown NYC where I could try out halal food trucks"
+[2026-02-04T03:08:09.111Z] LOG    ℹ️ No corridor pattern, using cluster mode
+[2026-02-04T03:08:09.111Z] LOG 🔍 [Google Places] Text search: "midtown NYC where I could try out halal food trucks"
+[2026-02-04T03:08:09.336Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.341Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.344Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.363Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.365Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.371Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.409Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.431Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.435Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.442Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.455Z] LOG    ⚠️  Monaco Circuit: No editorial summary available
+[2026-02-04T03:08:09.457Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.483Z] LOG    ⚠️  Monaco Grand Prix grid - Start/Finish line: No editorial summary available
+[2026-02-04T03:08:09.485Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.494Z] LOG    ⚠️  Grand Prix Monaco Billet: No editorial summary available
+[2026-02-04T03:08:09.495Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.501Z] LOG    ⚠️  Fairmont Hairpin: No editorial summary available
+[2026-02-04T03:08:09.503Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.508Z] LOG    ⚠️  F1 Car Sculpture: No editorial summary available
+[2026-02-04T03:08:09.509Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.513Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco: Got description (98 chars)
+[2026-02-04T03:08:09.514Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.522Z] LOG    ✅ Port Hercule: Got description (99 chars)
+[2026-02-04T03:08:09.523Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.579Z] LOG    ✅ Casino de Monte-Carlo: Got description (100 chars)
+[2026-02-04T03:08:09.582Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.584Z] LOG    ⚠️  Ticket Grand Prix Monaco: No editorial summary available
+[2026-02-04T03:08:09.584Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.605Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:09.623Z] LOG    ✅ Prince's Palace of Monaco: Got description (98 chars)
+[2026-02-04T03:08:09.624Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.624Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 559ms
+[2026-02-04T03:08:09.625Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T03:08:09.625Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-04T03:08:09.686Z] LOG    ✅ Adel's Famous Halal Food: Got description (85 chars)
+[2026-02-04T03:08:09.688Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:09.689Z] LOG       ✓ Geocoded "midtown NYC where I could try out halal food trucks"
+[2026-02-04T03:08:09.690Z] LOG    📍 Mode: CLUSTER
+[2026-02-04T03:08:09.690Z] LOG 
+🔍 INTENT FILTER: Analyzing user intent...
+[2026-02-04T03:08:09.828Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-04T03:08:09.831Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T03:08:09.832Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T03:08:09.833Z] LOG    1. Searching "Musée océanographique de Monaco" in "Monaco"
+[2026-02-04T03:08:09.833Z] LOG 🔍 [Google Places] Text search: "Musée océanographique de Monaco" in Monaco
+[2026-02-04T03:08:09.834Z] LOG    2. Searching "Jardin Exotique" in "Monaco"
+[2026-02-04T03:08:09.834Z] LOG 🔍 [Google Places] Text search: "Jardin Exotique" in Monaco
+[2026-02-04T03:08:09.835Z] LOG    3. Searching "Cathedral of Our Lady Immaculate" in "Monaco"
+[2026-02-04T03:08:09.836Z] LOG 🔍 [Google Places] Text search: "Cathedral of Our Lady Immaculate" in Monaco
+[2026-02-04T03:08:09.837Z] LOG    4. Searching "Princess Grace Japanese Garden" in "Monaco"
+[2026-02-04T03:08:09.837Z] LOG 🔍 [Google Places] Text search: "Princess Grace Japanese Garden" in Monaco
+[2026-02-04T03:08:09.838Z] LOG    5. Searching "Larvotto Beach" in "Monaco"
+[2026-02-04T03:08:09.838Z] LOG 🔍 [Google Places] Text search: "Larvotto Beach" in Monaco
+[2026-02-04T03:08:09.839Z] LOG    6. Searching "Théâtre du Fort Antoine" in "Monaco"
+[2026-02-04T03:08:09.840Z] LOG 🔍 [Google Places] Text search: "Théâtre du Fort Antoine" in Monaco
+[2026-02-04T03:08:09.841Z] LOG    7. Searching "La Rascasse" in "Monaco"
+[2026-02-04T03:08:09.841Z] LOG 🔍 [Google Places] Text search: "La Rascasse" in Monaco
+[2026-02-04T03:08:09.842Z] LOG    8. Searching "Place du Casino" in "Monaco"
+[2026-02-04T03:08:09.842Z] LOG 🔍 [Google Places] Text search: "Place du Casino" in Monaco
+[2026-02-04T03:08:09.843Z] LOG    9. Searching "Automobile Club of Monaco" in "Monaco"
+[2026-02-04T03:08:09.843Z] LOG 🔍 [Google Places] Text search: "Automobile Club of Monaco" in Monaco
+[2026-02-04T03:08:09.844Z] LOG    10. Searching "Église de Sainte-Dévote" in "Monaco"
+[2026-02-04T03:08:09.845Z] LOG 🔍 [Google Places] Text search: "Église de Sainte-Dévote" in Monaco
+[2026-02-04T03:08:10.102Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:10.106Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:10.110Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:10.113Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:10.131Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:10.141Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:10.152Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:10.159Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:10.163Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:10.236Z] LOG    ✅ Princess Grace Japanese Garden: Got description (95 chars)
+[2026-02-04T03:08:10.239Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:10.247Z] LOG    ✅ Théâtre du Fort Antoine: Got description (96 chars)
+[2026-02-04T03:08:10.249Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:10.250Z] LOG    ✅ Cathedral of Our Lady Immaculate: Got description (88 chars)
+[2026-02-04T03:08:10.250Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:10.255Z] LOG    ✅ Larvotto Beach: Got description (94 chars)
+[2026-02-04T03:08:10.256Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:10.264Z] LOG    ⚠️  Place du Casino: No editorial summary available
+[2026-02-04T03:08:10.265Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:10.273Z] LOG    ✅ Musée océanographique de Monaco: Got description (96 chars)
+[2026-02-04T03:08:10.274Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:10.291Z] LOG    ✅ Église de Sainte-Dévote: Got description (92 chars)
+[2026-02-04T03:08:10.292Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:10.294Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T03:08:10.296Z] LOG    ⚠️  Jardin Exotique: No editorial summary available
+[2026-02-04T03:08:10.298Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:10.301Z] LOG    ⚠️  Automobile Club of Monaco: No editorial summary available
+[2026-02-04T03:08:10.302Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:10.409Z] LOG    ✅ La Rascasse: Got description (93 chars)
+[2026-02-04T03:08:10.413Z] LOG ✅ Found 1 places
+[2026-02-04T03:08:10.415Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 583ms
+[2026-02-04T03:08:10.415Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T03:08:10.416Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-04T03:08:10.416Z] LOG    ✅ Private Cars Collection of HSH Prince of Monaco → Private Cars Collection of HSH Prince of Monaco (must_have)
+[2026-02-04T03:08:10.417Z] LOG    ✅ Monaco Circuit → Monaco Circuit (must_have)
+[2026-02-04T03:08:10.417Z] LOG    ✅ Fairmont Hairpin → Fairmont Hairpin (must_have)
+[2026-02-04T03:08:10.417Z] LOG    ✅ Casino de Monte-Carlo → Casino de Monte-Carlo (must_have)
+[2026-02-04T03:08:10.418Z] LOG    ✅ Port Hercules → Port Hercule (must_have)
+[2026-02-04T03:08:10.418Z] LOG    ✅ F1 Car Sculpture → F1 Car Sculpture (nice_to_have)
+[2026-02-04T03:08:10.419Z] LOG    ✅ Monaco Grand Prix grid - Start/Finish line → Monaco Grand Prix grid - Start/Finish line (nice_to_have)
+[2026-02-04T03:08:10.419Z] LOG    ✅ Ticket Grand Prix Monaco → Ticket Grand Prix Monaco (nice_to_have)
+[2026-02-04T03:08:10.420Z] LOG    ✅ Grand Prix Monaco Billet → Grand Prix Monaco Billet (nice_to_have)
+[2026-02-04T03:08:10.420Z] LOG    ✅ Prince's Palace of Monaco → Prince's Palace of Monaco (nice_to_have)
+[2026-02-04T03:08:10.420Z] LOG    ✅ Musée océanographique de Monaco → Musée océanographique de Monaco (nice_to_have)
+[2026-02-04T03:08:10.421Z] LOG    ✅ Jardin Exotique → Jardin Exotique (nice_to_have)
+[2026-02-04T03:08:10.421Z] LOG    ✅ Cathedral of Our Lady Immaculate → Cathedral of Our Lady Immaculate (nice_to_have)
+[2026-02-04T03:08:10.422Z] LOG    ✅ Princess Grace Japanese Garden → Princess Grace Japanese Garden (nice_to_have)
+[2026-02-04T03:08:10.422Z] LOG    ✅ Larvotto Beach → Larvotto Beach (nice_to_have)
+[2026-02-04T03:08:10.423Z] LOG    ✅ Théâtre du Fort Antoine → Théâtre du Fort Antoine (nice_to_have)
+[2026-02-04T03:08:10.423Z] LOG    ✅ La Rascasse → La Rascasse (nice_to_have)
+[2026-02-04T03:08:10.424Z] LOG    ✅ Place du Casino → Place du Casino (nice_to_have)
+[2026-02-04T03:08:10.424Z] LOG    ✅ Automobile Club of Monaco → Automobile Club of Monaco (nice_to_have)
+[2026-02-04T03:08:10.425Z] LOG    ✅ Église de Sainte-Dévote → Église de Sainte-Dévote (nice_to_have)
+[2026-02-04T03:08:10.425Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-04T03:08:10.426Z] LOG    Total enriched: 20
+[2026-02-04T03:08:10.426Z] LOG    🎯 Must-have: 5
+[2026-02-04T03:08:10.426Z] LOG    ✨ Nice-to-have: 15
+[2026-02-04T03:08:10.427Z] LOG    ❌ Failed: 0
+[2026-02-04T03:08:10.427Z] LOG    ⏱️  Enrichment took: 1367ms (1.37s)

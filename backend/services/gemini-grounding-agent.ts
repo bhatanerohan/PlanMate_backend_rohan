@@ -110,6 +110,9 @@ export class GeminiGroundingAgent {
         tools: [{ googleMaps: {} }]
       };
 
+      const startTime = Date.now();
+      console.log('⏱️ Starting Gemini API call...');
+
       if (userLocation) {
         config.toolConfig = {
           retrievalConfig: {
@@ -122,11 +125,45 @@ export class GeminiGroundingAgent {
         console.log(`🗺️ Location context: (${userLocation.lat}, ${userLocation.lng})`);
       }
 
-      response = await this.ai.models.generateContent({
-        model: 'gemini-2.5-flash',
-        contents: geminiPrompt,
-        config
-      });
+      // Retry configuration
+      const MAX_RETRIES = 3;
+      const INITIAL_DELAY_MS = 1000;
+
+      const isRetryableError = (error: any): boolean => {
+        if (!error) return false;
+        // Retry on 503 (service unavailable), 429 (rate limit), timeouts, network errors
+        const status = error?.status || error?.statusCode;
+        if (status === 503 || status === 429 || status === 500) return true;
+        const message = String(error?.message || '').toLowerCase();
+        return message.includes('timeout') ||
+          message.includes('network') ||
+          message.includes('econnreset') ||
+          message.includes('unavailable');
+      };
+
+      for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        try {
+          response = await this.ai.models.generateContent({
+            model: 'gemini-2.5-flash-lite',
+            contents: geminiPrompt,
+            config
+          });
+          break; // Success, exit retry loop
+        } catch (apiError) {
+          console.error(`❌ Gemini API attempt ${attempt}/${MAX_RETRIES} failed:`, apiError);
+
+          if (attempt === MAX_RETRIES || !isRetryableError(apiError)) {
+            throw apiError; // Either max retries reached or non-retryable error
+          }
+
+          const delay = INITIAL_DELAY_MS * Math.pow(2, attempt - 1);
+          console.log(`⏳ Retrying Gemini API in ${delay}ms (attempt ${attempt + 1}/${MAX_RETRIES})...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+      }
+
+      const duration = Date.now() - startTime;
+      console.log(`⏱️ Gemini API call took: ${duration}ms (${(duration / 1000).toFixed(2)}s)`);
 
       const text = response?.text || '';
       console.log('✅ Gemini response received');
@@ -251,7 +288,8 @@ export class GeminiGroundingAgent {
   }
 
   /**
-   * Build prompt that requests 15-20 CANDIDATES with MUST-HAVE/NICE-TO-HAVE categories
+   * Build prompt that requests 15-20 CANDIDATES with minimal fields
+   * Only ask for name + priority, Places API provides the rest
    */
   private buildGroundingPrompt(
     userPrompt: string,
@@ -262,111 +300,39 @@ export class GeminiGroundingAgent {
     let prompt = '';
 
     if (userLocation) {
-      prompt += `User's current location: ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})\n\n`;
+      prompt += `User location: ${userLocation.name} (${userLocation.lat}, ${userLocation.lng})\n\n`;
     }
 
-    prompt += `User request: "${userPrompt}"\n\n`;
+    prompt += `Request: "${userPrompt}"\n\n`;
 
-    const targetStops = userRequestedCount || '5-7';
+    const targetStops = userRequestedCount || 5;
 
-    prompt += `
-🎯 YOUR TASK: Return 15-20 CANDIDATE venues (not final picks!)
+    prompt += `Return 15-20 venue CANDIDATES as JSON. User wants ~${targetStops} final stops.
 
-The user wants approximately ${targetStops} stops in their final itinerary.
-However, YOU must provide 15-20 OPTIONS so our system can select the most 
-geographically efficient subset while preserving user intent.
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
 
-═══════════════════════════════════════════════════════════════════════════════
-📋 CATEGORIZATION RULES (CRITICAL!)
-═══════════════════════════════════════════════════════════════════════════════
-
-**MUST_HAVE** = Core to user's intent. Cannot be skipped.
-  Examples for "halal food trucks in midtown":
-  - Halal Guys → must_have (directly matches "halal food trucks")
-  - Kwik Meal → must_have (halal food truck)
-  - Adel's Famous → must_have (halal food truck)
-  
-**NICE_TO_HAVE** = Complementary attractions. Can be swapped for closer alternatives.
-  Examples for "halal food trucks in midtown":
-  - Times Square → nice_to_have (nearby attraction, not core intent)
-  - Bryant Park → nice_to_have (nice to visit, but not what they asked for)
-  - NY Public Library → nice_to_have (cultural stop, not required)
-
-═══════════════════════════════════════════════════════════════════════════════
-🎯 QUANTITY GUIDELINES
-═══════════════════════════════════════════════════════════════════════════════
-
-Return:
-- 5-8 MUST_HAVE venues (core intent options)
-- 10-12 NICE_TO_HAVE venues (complementary options)
-- Total: 15-20 candidates
-
-Why? Our optimization system will:
-1. Pick 2-3 must_haves that are geographically close to each other
-2. Fill remaining slots with nice_to_haves near those must_haves
-3. Result: Walkable route that preserves user intent
-
-═══════════════════════════════════════════════════════════════════════════════
-🗺️ GEOGRAPHIC SPREAD
-═══════════════════════════════════════════════════════════════════════════════
-
-Spread candidates across the requested area so our optimizer has options:
-- Some in north part of area
-- Some in south part
-- Some in center
-- Include hidden gems AND popular spots
-
-═══════════════════════════════════════════════════════════════════════════════
-📦 REQUIRED JSON FORMAT
-═══════════════════════════════════════════════════════════════════════════════
-
+JSON FORMAT:
 \`\`\`json
 {
   "plan": {
-    "type": "Experience type (e.g., 'Halal Food Tour', 'Bar Crawl')",
-    "total_stops": ${typeof targetStops === 'number' ? targetStops : 5},
-    "estimated_duration": "3-4 hours",
-    "travel_mode": "walking | walking + transit | transit/driving",
-    "theme": "Brief vibe description",
-    "scale": "neighborhood | district | city-wide"
+    "type": "Experience type",
+    "total_stops": ${targetStops},
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
   },
   "venues": [
-    {
-      "name": "Exact Google Maps name",
-      "description": "What makes it special (2-3 sentences)",
-      "category": "food_truck | restaurant | bar | cafe | museum | park | landmark",
-      "priority": "must_have",
-      "reasoning": "Why this is core to user's request",
-      "rating": 4.5,
-      "reviewsSummary": "What people love about it",
-      "general_location": "Neighborhood/area name"
-    },
-    {
-      "name": "Another venue",
-      "description": "Description",
-      "category": "park",
-      "priority": "nice_to_have",
-      "reasoning": "Complementary stop near the food trucks",
-      "rating": 4.3,
-      "reviewsSummary": "Reviews summary",
-      "general_location": "Area name"
-    }
-  ],
-  "context": "Brief explanation of the overall plan"
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
 }
 \`\`\`
 
-═══════════════════════════════════════════════════════════════════════════════
-⚠️ IMPORTANT REMINDERS
-═══════════════════════════════════════════════════════════════════════════════
-
-1. Return 15-20 candidates, NOT the final 5-7 picks
-2. MUST categorize each venue as "must_have" or "nice_to_have"
-3. Must_have = directly matches user's stated intent
-4. Nice_to_have = would enhance the experience but isn't required
-5. Use exact venue names that Google Maps will recognize
-6. Spread venues geographically within the requested area
-`;
+Return ONLY the JSON, no explanation.`;
 
     return prompt;
   }
@@ -523,7 +489,7 @@ Spread candidates across the requested area so our optimizer has options:
         model: 'gpt-4o-mini',
         messages: [{
           role: 'user',
-          content: `Extract venue recommendations from this text and return ONLY valid JSON.
+          content: `Extract venue names from this text and return ONLY valid JSON.
 
 INPUT TEXT:
 ${messyText}
@@ -535,25 +501,15 @@ RETURN THIS EXACT JSON FORMAT:
     "total_stops": number
   },
   "venues": [
-    {
-      "name": "exact venue name",
-      "description": "brief description",
-      "category": "restaurant|bar|cafe|museum|park|landmark|venue",
-      "priority": "must_have" or "nice_to_have",
-      "reasoning": "why this venue was recommended",
-      "rating": number or null,
-      "reviewsSummary": "key highlights from reviews" or null,
-      "general_location": "neighborhood or area name"
-    }
-  ],
-  "context": "brief summary of the recommendations"
+    { "name": "exact venue name", "priority": "must_have" },
+    { "name": "another venue", "priority": "nice_to_have" }
+  ]
 }
 
-IMPORTANT:
-- Extract ALL venues mentioned in the text
-- Venues that are core to the user's request should be "must_have"
-- Complementary/optional venues should be "nice_to_have"
-- Return ONLY the JSON, no markdown, no explanation`
+RULES:
+- Extract ALL venue names mentioned
+- Core intent venues = "must_have", complementary = "nice_to_have"
+- Return ONLY JSON, no explanation`
         }],
         response_format: { type: "json_object" },
         temperature: 0,

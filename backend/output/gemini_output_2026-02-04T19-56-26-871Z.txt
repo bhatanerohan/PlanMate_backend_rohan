@@ -1,0 +1,145 @@
+PROMPT:
+Request: "plan a soccer day in rio de jenerio"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Soccer Day",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Maracanã",
+      "category": "stadium",
+      "priority": "must_have"
+    },
+    {
+      "name": "Campo do Abóbora/rua do rio/cachambi",
+      "category": "athletic field",
+      "priority": "must_have"
+    },
+    {
+      "name": "Only 5 - Football 5 Stars",
+      "category": "athletic field",
+      "priority": "must_have"
+    },
+    {
+      "name": "Campo da Toca",
+      "category": "athletic field",
+      "priority": "must_have"
+    },
+    {
+      "name": "Campo Ranauro Fernandes",
+      "category": "athletic field",
+      "priority": "must_have"
+    },
+    {
+      "name": "Society Show",
+      "category": "athletic field",
+      "priority": "must_have"
+    },
+    {
+      "name": "ASBAC Center Club",
+      "category": "athletic field",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Arena Tuiuti",
+      "category": "athletic field",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Quinta da Boa Vista",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Campo do Seu Zé",
+      "category": "athletic field",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Stadium Giulite Coutinho",
+      "category": "stadium",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Arena Mineira",
+      "category": "athletic field",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Campo do complexo",
+      "category": "athletic field",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Campo Society Rubens Vaz",
+      "category": "athletic field",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Arraial Campo de Futebol Society da Tavares Bastos",
+      "category": "athletic field",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Clube de Regatas do Flamengo",
+      "category": "sports club",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Arena Show de Bola",
+      "category": "athletic field",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Os Imortais Bar",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "360 Sports Bar & Restaurante - Barra da Tijuca",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mix Sport Bar",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

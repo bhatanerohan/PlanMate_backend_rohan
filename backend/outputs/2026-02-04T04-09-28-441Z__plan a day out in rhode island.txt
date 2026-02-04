@@ -1,0 +1,124 @@
+User Prompt: plan a day out in rhode island
+
+[2026-02-04T04:09:28.442Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-04T04:09:28.442Z] LOG 📦 Processing 15 candidates from Gemini
+[2026-02-04T04:09:28.443Z] LOG    🎯 Must-have: 5
+[2026-02-04T04:09:28.443Z] LOG    ✨ Nice-to-have: 10
+[2026-02-04T04:09:28.444Z] LOG 📍 Location hint: rhode island
+[2026-02-04T04:09:28.444Z] LOG 
+🔍 Enriching 15 candidates in 2 batch(es)...
+[2026-02-04T04:09:28.445Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-04T04:09:28.445Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T04:09:28.448Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T04:09:28.449Z] LOG    1. Searching "Roger Williams Park Zoo" in "rhode island"
+[2026-02-04T04:09:28.449Z] LOG 🔍 [Google Places] Text search: "Roger Williams Park Zoo" in rhode island
+[2026-02-04T04:09:28.457Z] LOG    2. Searching "Roger Williams National Memorial" in "rhode island"
+[2026-02-04T04:09:28.458Z] LOG 🔍 [Google Places] Text search: "Roger Williams National Memorial" in rhode island
+[2026-02-04T04:09:28.460Z] LOG    3. Searching "Cliff Walk – South End" in "rhode island"
+[2026-02-04T04:09:28.461Z] LOG 🔍 [Google Places] Text search: "Cliff Walk – South End" in rhode island
+[2026-02-04T04:09:28.464Z] LOG    4. Searching "International Tennis Hall of Fame" in "rhode island"
+[2026-02-04T04:09:28.465Z] LOG 🔍 [Google Places] Text search: "International Tennis Hall of Fame" in rhode island
+[2026-02-04T04:09:28.466Z] LOG    5. Searching "Newport Mansions" in "rhode island"
+[2026-02-04T04:09:28.467Z] LOG 🔍 [Google Places] Text search: "Newport Mansions" in rhode island
+[2026-02-04T04:09:28.469Z] LOG    6. Searching "WaterFire Providence" in "rhode island"
+[2026-02-04T04:09:28.470Z] LOG 🔍 [Google Places] Text search: "WaterFire Providence" in rhode island
+[2026-02-04T04:09:28.472Z] LOG    7. Searching "Providence Athenaeum" in "rhode island"
+[2026-02-04T04:09:28.473Z] LOG 🔍 [Google Places] Text search: "Providence Athenaeum" in rhode island
+[2026-02-04T04:09:28.475Z] LOG    8. Searching "Benefit Street" in "rhode island"
+[2026-02-04T04:09:28.476Z] LOG 🔍 [Google Places] Text search: "Benefit Street" in rhode island
+[2026-02-04T04:09:28.481Z] LOG    9. Searching "Brown University" in "rhode island"
+[2026-02-04T04:09:28.482Z] LOG 🔍 [Google Places] Text search: "Brown University" in rhode island
+[2026-02-04T04:09:28.485Z] LOG    10. Searching "Block Island Ferry" in "rhode island"
+[2026-02-04T04:09:28.486Z] LOG 🔍 [Google Places] Text search: "Block Island Ferry" in rhode island
+[2026-02-04T04:09:28.833Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:28.847Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:28.855Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:28.865Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:28.884Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:28.891Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:28.909Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:28.946Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:28.968Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:28.979Z] LOG    ⚠️  Benefit Street: No editorial summary available
+[2026-02-04T04:09:28.980Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.002Z] LOG    ✅ WaterFire: Got description (86 chars)
+[2026-02-04T04:09:29.004Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.005Z] LOG    ✅ Roger Williams National Memorial: Got description (98 chars)
+[2026-02-04T04:09:29.005Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.010Z] LOG    ✅ Brown University: Got description (93 chars)
+[2026-02-04T04:09:29.011Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.014Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:29.016Z] LOG    ✅ The Providence Athenaeum: Got description (100 chars)
+[2026-02-04T04:09:29.016Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.017Z] LOG    ✅ Roger Williams Park Zoo: Got description (100 chars)
+[2026-02-04T04:09:29.018Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.034Z] LOG    ⚠️  Cliff Walk – South End: No editorial summary available
+[2026-02-04T04:09:29.035Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.095Z] LOG    ✅ International Tennis Hall of Fame: Got description (100 chars)
+[2026-02-04T04:09:29.104Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.110Z] LOG    ⚠️  Block Island Ferry: No editorial summary available
+[2026-02-04T04:09:29.111Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.114Z] LOG    ✅ Newport Mansions Preservation Society: Got description (100 chars)
+[2026-02-04T04:09:29.115Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.115Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 668ms
+[2026-02-04T04:09:29.116Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T04:09:29.116Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-04T04:09:29.321Z] LOG 
+   📦 Batch 2/2 (5 searches)...
+[2026-02-04T04:09:29.329Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T04:09:29.334Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2026-02-04T04:09:29.336Z] LOG    1. Searching "Ocean Drive" in "rhode island"
+[2026-02-04T04:09:29.338Z] LOG 🔍 [Google Places] Text search: "Ocean Drive" in rhode island
+[2026-02-04T04:09:29.340Z] LOG    2. Searching "The Chanler at Cliff Walk" in "rhode island"
+[2026-02-04T04:09:29.342Z] LOG 🔍 [Google Places] Text search: "The Chanler at Cliff Walk" in rhode island
+[2026-02-04T04:09:29.345Z] LOG    3. Searching "Fort Adams State Park" in "rhode island"
+[2026-02-04T04:09:29.346Z] LOG 🔍 [Google Places] Text search: "Fort Adams State Park" in rhode island
+[2026-02-04T04:09:29.349Z] LOG    4. Searching "Easton's Beach" in "rhode island"
+[2026-02-04T04:09:29.350Z] LOG 🔍 [Google Places] Text search: "Easton's Beach" in rhode island
+[2026-02-04T04:09:29.353Z] LOG    5. Searching "Ryan Family Amusements- Newport" in "rhode island"
+[2026-02-04T04:09:29.354Z] LOG 🔍 [Google Places] Text search: "Ryan Family Amusements- Newport" in rhode island
+[2026-02-04T04:09:29.624Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:29.660Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:29.679Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:29.681Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:29.705Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T04:09:29.766Z] LOG    ✅ The Chanler at Cliff Walk: Got description (89 chars)
+[2026-02-04T04:09:29.769Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.774Z] LOG    ✅ Ryan Family Amusements- Newport: Got description (99 chars)
+[2026-02-04T04:09:29.775Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.795Z] LOG    ⚠️  Ocean Drive: No editorial summary available
+[2026-02-04T04:09:29.796Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.822Z] LOG    ✅ Fort Adams State Park: Got description (100 chars)
+[2026-02-04T04:09:29.823Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.825Z] LOG    ✅ Easton's Beach: Got description (98 chars)
+[2026-02-04T04:09:29.826Z] LOG ✅ Found 1 places
+[2026-02-04T04:09:29.827Z] LOG ✅ Batch complete: 5/5 searches succeeded, 5 total venues found in 493ms
+[2026-02-04T04:09:29.827Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T04:09:29.828Z] LOG       ✅ Batch 2 complete: 5 results
+[2026-02-04T04:09:29.828Z] LOG    ✅ Roger Williams Park Zoo → Roger Williams Park Zoo (must_have)
+[2026-02-04T04:09:29.829Z] LOG    ✅ Roger Williams National Memorial → Roger Williams National Memorial (must_have)
+[2026-02-04T04:09:29.829Z] LOG    ✅ Cliff Walk – South End → Cliff Walk – South End (must_have)
+[2026-02-04T04:09:29.829Z] LOG    ✅ International Tennis Hall of Fame → International Tennis Hall of Fame (must_have)
+[2026-02-04T04:09:29.830Z] LOG    ✅ Newport Mansions → Newport Mansions Preservation Society (must_have)
+[2026-02-04T04:09:29.830Z] LOG    ✅ WaterFire Providence → WaterFire (nice_to_have)
+[2026-02-04T04:09:29.831Z] LOG    ✅ Providence Athenaeum → The Providence Athenaeum (nice_to_have)
+[2026-02-04T04:09:29.831Z] LOG    ✅ Benefit Street → Benefit Street (nice_to_have)
+[2026-02-04T04:09:29.832Z] LOG    ✅ Brown University → Brown University (nice_to_have)
+[2026-02-04T04:09:29.833Z] LOG    ✅ Block Island Ferry → Block Island Ferry (nice_to_have)
+[2026-02-04T04:09:29.833Z] LOG    ✅ Ocean Drive → Ocean Drive (nice_to_have)
+[2026-02-04T04:09:29.833Z] LOG    ✅ The Chanler at Cliff Walk → The Chanler at Cliff Walk (nice_to_have)
+[2026-02-04T04:09:29.834Z] LOG    ✅ Fort Adams State Park → Fort Adams State Park (nice_to_have)
+[2026-02-04T04:09:29.834Z] LOG    ✅ Easton's Beach → Easton's Beach (nice_to_have)
+[2026-02-04T04:09:29.835Z] LOG    ✅ Ryan Family Amusements- Newport → Ryan Family Amusements- Newport (nice_to_have)
+[2026-02-04T04:09:29.835Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-04T04:09:29.836Z] LOG    Total enriched: 15
+[2026-02-04T04:09:29.836Z] LOG    🎯 Must-have: 5
+[2026-02-04T04:09:29.837Z] LOG    ✨ Nice-to-have: 10
+[2026-02-04T04:09:29.837Z] LOG    ❌ Failed: 0
+[2026-02-04T04:09:29.837Z] LOG    ⏱️  Enrichment took: 1396ms (1.40s)
+
+--- Summary ---
+Enrichment completed

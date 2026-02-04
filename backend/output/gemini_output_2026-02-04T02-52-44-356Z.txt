@@ -1,0 +1,140 @@
+PROMPT:
+Request: "Plan a day out in midtown NYC where I could try out halal food trucks"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Halal Food Truck Crawl and Midtown Exploration",
+    "total_stops": 5,
+    "estimated_duration": "6-8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Adel's Famous Halal Food",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Halal Guys",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Shawarma Bay",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "MOE EATS NYC",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mama Halal Food",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Times Square",
+      "category": "plaza",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rockefeller Center",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Grand Central Terminal",
+      "category": "train station",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bryant Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "New York Public Library - Stephen A. Schwarzman Building",
+      "category": "library",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "St. Patrick's Cathedral",
+      "category": "church",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Museum of Modern Art",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Top of the Rock",
+      "category": "observation deck",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Intrepid Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Empire State Building",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Chrysler Building",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Radio City Music Hall",
+      "category": "concert hall",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "United Nations Headquarters",
+      "category": "building",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Central Park Zoo",
+      "category": "zoo",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

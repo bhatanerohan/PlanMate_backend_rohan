@@ -1,0 +1,142 @@
+PROMPT:
+User location: Seaport, Boston, Massachusetts, United States (42.35183, -71.04547)
+
+Request: "what are best romantic spots near me"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Romantic Experience",
+    "total_stops": 5,
+    "estimated_duration": "4-5 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Woods Hill Pier 4 - Seaport",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Ocean Prime",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "75 on Liberty Wharf",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Serafina Seaport",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Grace By Nia",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Fan Pier Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Institute of Contemporary Art",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Deck 12",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Legal Sea Foods - Harborside",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Chart House",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Lolita Fort Point",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Davio's Northern Italian Steakhouse",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mooo.... Seaport",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Del Frisco's Double Eagle Steakhouse",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Limani Grille Seaport",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Nautilus Pier 4",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Eddie Merlot's",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Moxies Boston Seaport Restaurant",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Coquette",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

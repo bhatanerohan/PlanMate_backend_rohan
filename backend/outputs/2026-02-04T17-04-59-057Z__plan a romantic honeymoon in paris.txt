@@ -1,0 +1,154 @@
+User Prompt: plan a romantic honeymoon in paris
+
+[2026-02-04T17:04:59.058Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-04T17:04:59.059Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-04T17:04:59.059Z] LOG    🎯 Must-have: 5
+[2026-02-04T17:04:59.059Z] LOG    ✨ Nice-to-have: 15
+[2026-02-04T17:04:59.060Z] LOG 📍 Location hint: paris
+[2026-02-04T17:04:59.061Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-04T17:04:59.061Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-04T17:04:59.062Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T17:04:59.063Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T17:04:59.064Z] LOG    1. Searching "Relais Christine" in "paris"
+[2026-02-04T17:04:59.065Z] LOG 🔍 [Google Places] Text search: "Relais Christine" in paris
+[2026-02-04T17:04:59.076Z] LOG    2. Searching "Le Cinq" in "paris"
+[2026-02-04T17:04:59.077Z] LOG 🔍 [Google Places] Text search: "Le Cinq" in paris
+[2026-02-04T17:04:59.079Z] LOG    3. Searching "Musée Rodin" in "paris"
+[2026-02-04T17:04:59.080Z] LOG 🔍 [Google Places] Text search: "Musée Rodin" in paris
+[2026-02-04T17:04:59.083Z] LOG    4. Searching "Eiffel Tower" in "paris"
+[2026-02-04T17:04:59.084Z] LOG 🔍 [Google Places] Text search: "Eiffel Tower" in paris
+[2026-02-04T17:04:59.086Z] LOG    5. Searching "Sainte-Chapelle" in "paris"
+[2026-02-04T17:04:59.086Z] LOG 🔍 [Google Places] Text search: "Sainte-Chapelle" in paris
+[2026-02-04T17:04:59.088Z] LOG    6. Searching "Sacrée Fleur Montmartre" in "paris"
+[2026-02-04T17:04:59.090Z] LOG 🔍 [Google Places] Text search: "Sacrée Fleur Montmartre" in paris
+[2026-02-04T17:04:59.093Z] LOG    7. Searching "Bel Canto" in "paris"
+[2026-02-04T17:04:59.093Z] LOG 🔍 [Google Places] Text search: "Bel Canto" in paris
+[2026-02-04T17:04:59.095Z] LOG    8. Searching "Au Bourguignon du Marais" in "paris"
+[2026-02-04T17:04:59.096Z] LOG 🔍 [Google Places] Text search: "Au Bourguignon du Marais" in paris
+[2026-02-04T17:04:59.099Z] LOG    9. Searching "Le Tout-Paris" in "paris"
+[2026-02-04T17:04:59.100Z] LOG 🔍 [Google Places] Text search: "Le Tout-Paris" in paris
+[2026-02-04T17:04:59.103Z] LOG    10. Searching "La Scène" in "paris"
+[2026-02-04T17:04:59.104Z] LOG 🔍 [Google Places] Text search: "La Scène" in paris
+[2026-02-04T17:04:59.502Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:04:59.509Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:04:59.516Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:04:59.545Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:04:59.549Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:04:59.552Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:04:59.570Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:04:59.584Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:04:59.589Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:04:59.628Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:04:59.696Z] LOG    ✅ Musée Rodin: Got description (98 chars)
+[2026-02-04T17:04:59.699Z] LOG ✅ Found 1 places
+[2026-02-04T17:04:59.716Z] LOG    ✅ Le Cinq: Got description (100 chars)
+[2026-02-04T17:04:59.717Z] LOG ✅ Found 1 places
+[2026-02-04T17:04:59.732Z] LOG    ✅ Relais Christine: Got description (93 chars)
+[2026-02-04T17:04:59.733Z] LOG ✅ Found 1 places
+[2026-02-04T17:04:59.735Z] LOG    ✅ Au Bourguignon du Marais: Got description (89 chars)
+[2026-02-04T17:04:59.737Z] LOG ✅ Found 1 places
+[2026-02-04T17:04:59.740Z] LOG    ✅ Eiffel Tower: Got description (96 chars)
+[2026-02-04T17:04:59.741Z] LOG ✅ Found 1 places
+[2026-02-04T17:04:59.742Z] LOG    ✅ La Scène: Got description (97 chars)
+[2026-02-04T17:04:59.743Z] LOG ✅ Found 1 places
+[2026-02-04T17:04:59.746Z] LOG    ⚠️  Bel Canto: No editorial summary available
+[2026-02-04T17:04:59.746Z] LOG ✅ Found 1 places
+[2026-02-04T17:04:59.757Z] LOG    ✅ Le Tout-Paris: Got description (96 chars)
+[2026-02-04T17:04:59.758Z] LOG ✅ Found 1 places
+[2026-02-04T17:04:59.760Z] LOG    ✅ Sacrée Fleur Montmartre: Got description (99 chars)
+[2026-02-04T17:04:59.761Z] LOG ✅ Found 1 places
+[2026-02-04T17:04:59.789Z] LOG    ✅ Sainte-Chapelle: Got description (99 chars)
+[2026-02-04T17:04:59.792Z] LOG ✅ Found 1 places
+[2026-02-04T17:04:59.793Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 730ms
+[2026-02-04T17:04:59.794Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T17:04:59.794Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-04T17:04:59.999Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-04T17:05:00.001Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-04T17:05:00.004Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-04T17:05:00.005Z] LOG    1. Searching "Les Parisiens" in "paris"
+[2026-02-04T17:05:00.006Z] LOG 🔍 [Google Places] Text search: "Les Parisiens" in paris
+[2026-02-04T17:05:00.007Z] LOG    2. Searching "La Diva des Prés" in "paris"
+[2026-02-04T17:05:00.007Z] LOG 🔍 [Google Places] Text search: "La Diva des Prés" in paris
+[2026-02-04T17:05:00.009Z] LOG    3. Searching "Le Christine" in "paris"
+[2026-02-04T17:05:00.009Z] LOG 🔍 [Google Places] Text search: "Le Christine" in paris
+[2026-02-04T17:05:00.012Z] LOG    4. Searching "Jardin du Luxembourg" in "paris"
+[2026-02-04T17:05:00.013Z] LOG 🔍 [Google Places] Text search: "Jardin du Luxembourg" in paris
+[2026-02-04T17:05:00.015Z] LOG    5. Searching "Square du Vert-Galant" in "paris"
+[2026-02-04T17:05:00.016Z] LOG 🔍 [Google Places] Text search: "Square du Vert-Galant" in paris
+[2026-02-04T17:05:00.018Z] LOG    6. Searching "Pont des Arts" in "paris"
+[2026-02-04T17:05:00.019Z] LOG 🔍 [Google Places] Text search: "Pont des Arts" in paris
+[2026-02-04T17:05:00.021Z] LOG    7. Searching "Notre-Dame Cathedral of Paris" in "paris"
+[2026-02-04T17:05:00.023Z] LOG 🔍 [Google Places] Text search: "Notre-Dame Cathedral of Paris" in paris
+[2026-02-04T17:05:00.025Z] LOG    8. Searching "Louvre Museum" in "paris"
+[2026-02-04T17:05:00.026Z] LOG 🔍 [Google Places] Text search: "Louvre Museum" in paris
+[2026-02-04T17:05:00.027Z] LOG    9. Searching "Place des Vosges" in "paris"
+[2026-02-04T17:05:00.028Z] LOG 🔍 [Google Places] Text search: "Place des Vosges" in paris
+[2026-02-04T17:05:00.030Z] LOG    10. Searching "Medici Fountain" in "paris"
+[2026-02-04T17:05:00.030Z] LOG 🔍 [Google Places] Text search: "Medici Fountain" in paris
+[2026-02-04T17:05:00.336Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:05:00.351Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:05:00.361Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:05:00.366Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:05:00.378Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:05:00.380Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:05:00.384Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:05:00.407Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:05:00.411Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:05:00.454Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-04T17:05:00.490Z] LOG    ✅ La Diva des Prés: Got description (96 chars)
+[2026-02-04T17:05:00.493Z] LOG ✅ Found 1 places
+[2026-02-04T17:05:00.516Z] LOG    ✅ Square du Vert-Galant: Got description (90 chars)
+[2026-02-04T17:05:00.518Z] LOG ✅ Found 1 places
+[2026-02-04T17:05:00.525Z] LOG    ✅ Le Christine: Got description (100 chars)
+[2026-02-04T17:05:00.526Z] LOG ✅ Found 1 places
+[2026-02-04T17:05:00.528Z] LOG    ✅ Notre-Dame Cathedral of Paris: Got description (94 chars)
+[2026-02-04T17:05:00.528Z] LOG ✅ Found 1 places
+[2026-02-04T17:05:00.529Z] LOG    ✅ Jardin du Luxembourg: Got description (99 chars)
+[2026-02-04T17:05:00.529Z] LOG ✅ Found 1 places
+[2026-02-04T17:05:00.539Z] LOG    ✅ Louvre Museum: Got description (100 chars)
+[2026-02-04T17:05:00.540Z] LOG ✅ Found 1 places
+[2026-02-04T17:05:00.547Z] LOG    ⚠️  Les Parisiens: No editorial summary available
+[2026-02-04T17:05:00.548Z] LOG ✅ Found 1 places
+[2026-02-04T17:05:00.549Z] LOG    ⚠️  Place des Vosges: No editorial summary available
+[2026-02-04T17:05:00.550Z] LOG ✅ Found 1 places
+[2026-02-04T17:05:00.554Z] LOG    ✅ Medici Fountain: Got description (96 chars)
+[2026-02-04T17:05:00.555Z] LOG ✅ Found 1 places
+[2026-02-04T17:05:00.570Z] LOG    ✅ Pont des Arts: Got description (81 chars)
+[2026-02-04T17:05:00.571Z] LOG ✅ Found 1 places
+[2026-02-04T17:05:00.572Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 568ms
+[2026-02-04T17:05:00.572Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-04T17:05:00.572Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-04T17:05:00.573Z] LOG    ✅ Relais Christine → Relais Christine (must_have)
+[2026-02-04T17:05:00.574Z] LOG    ✅ Le Cinq → Le Cinq (must_have)
+[2026-02-04T17:05:00.574Z] LOG    ✅ Musée Rodin → Musée Rodin (must_have)
+[2026-02-04T17:05:00.575Z] LOG    ✅ Eiffel Tower → Eiffel Tower (must_have)
+[2026-02-04T17:05:00.575Z] LOG    ✅ Sainte-Chapelle → Sainte-Chapelle (must_have)
+[2026-02-04T17:05:00.576Z] LOG    ✅ Sacrée Fleur Montmartre → Sacrée Fleur Montmartre (nice_to_have)
+[2026-02-04T17:05:00.576Z] LOG    ✅ Bel Canto → Bel Canto (nice_to_have)
+[2026-02-04T17:05:00.577Z] LOG    ✅ Au Bourguignon du Marais → Au Bourguignon du Marais (nice_to_have)
+[2026-02-04T17:05:00.577Z] LOG    ✅ Le Tout-Paris → Le Tout-Paris (nice_to_have)
+[2026-02-04T17:05:00.578Z] LOG    ✅ La Scène → La Scène (nice_to_have)
+[2026-02-04T17:05:00.578Z] LOG    ✅ Les Parisiens → Les Parisiens (nice_to_have)
+[2026-02-04T17:05:00.578Z] LOG    ✅ La Diva des Prés → La Diva des Prés (nice_to_have)
+[2026-02-04T17:05:00.579Z] LOG    ✅ Le Christine → Le Christine (nice_to_have)
+[2026-02-04T17:05:00.579Z] LOG    ✅ Jardin du Luxembourg → Jardin du Luxembourg (nice_to_have)
+[2026-02-04T17:05:00.580Z] LOG    ✅ Square du Vert-Galant → Square du Vert-Galant (nice_to_have)
+[2026-02-04T17:05:00.580Z] LOG    ✅ Pont des Arts → Pont des Arts (nice_to_have)
+[2026-02-04T17:05:00.580Z] LOG    ✅ Notre-Dame Cathedral of Paris → Notre-Dame Cathedral of Paris (nice_to_have)
+[2026-02-04T17:05:00.581Z] LOG    ✅ Louvre Museum → Louvre Museum (nice_to_have)
+[2026-02-04T17:05:00.581Z] LOG    ✅ Place des Vosges → Place des Vosges (nice_to_have)
+[2026-02-04T17:05:00.581Z] LOG    ✅ Medici Fountain → Medici Fountain (nice_to_have)
+[2026-02-04T17:05:00.582Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-04T17:05:00.582Z] LOG    Total enriched: 20
+[2026-02-04T17:05:00.583Z] LOG    🎯 Must-have: 5
+[2026-02-04T17:05:00.583Z] LOG    ✨ Nice-to-have: 15
+[2026-02-04T17:05:00.584Z] LOG    ❌ Failed: 0
+[2026-02-04T17:05:00.584Z] LOG    ⏱️  Enrichment took: 1527ms (1.53s)
+
+--- Summary ---
+Enrichment completed
