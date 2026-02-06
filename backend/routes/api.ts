@@ -21,6 +21,7 @@ import {
   getAllAnalytics,
   type AnalyticsEvent
 } from '../services/analytics.js';
+import { GoogleGenAI } from '@google/genai';
 
 const router = Router();
 
@@ -694,25 +695,6 @@ router.post('/plan', async (req: Request, res: Response) => {
 
       let finalVenues = modificationResult.updatedVenues || currentItinerary.venues;
 
-      if (userLocation && finalVenues.length > 0) {
-        const hasUserLocation = finalVenues.some((v: any) => v.placeId === 'user-location');
-        if (!hasUserLocation) {
-          const userLocationVenue: EnrichedCandidate = {
-            placeId: 'user-location',
-            name: 'Your Location',
-            address: userLocation.name,
-            location: { lat: userLocation.lat, lng: userLocation.lng },
-            isUserLocation: true,
-            description: 'User provided location',
-            category: 'user_location',
-            priority: 'nice_to_have',
-            enriched: false,
-            enrichmentSource: 'gemini_only'
-          };
-          finalVenues = [userLocationVenue, ...finalVenues];
-        }
-      }
-
       const preservedAlternativesMap: Record<string, any[]> = {};
       if ((currentItinerary as any).alternativesMap) {
         Object.assign(preservedAlternativesMap, (currentItinerary as any).alternativesMap);
@@ -864,14 +846,16 @@ router.post('/plan', async (req: Request, res: Response) => {
         console.log(`   📍 Cluster radius: ${selectionResult.clusterRadiusKm.toFixed(2)}km`);
 
         // ----------------------------------------------------------------------
-        // STEP 5: ROUTE OPTIMIZATION
+        // STEP 5: ROUTE OPTIMIZATION + INSTAGRAM REELS (PARALLEL)
         // ----------------------------------------------------------------------
-        console.log('\n🗺️ STEP 5: Optimizing route order...');
+        console.log('\n🗺️ STEP 5: Optimizing route...');
         const startOptimization = Date.now();
 
         let finalVenues = selectionResult.selectedVenues;
         let optimizationApplied = false;
         let optimizationStats = { distance: 0, duration: 0, startingPoint: 0 };
+
+
 
         // 🆕 Skip NN for corridor mode (already geographically ordered)
         if (selectionResult.selectionMode === 'corridor') {
@@ -967,8 +951,11 @@ router.post('/plan', async (req: Request, res: Response) => {
         perfStats['route_optimization'] = Date.now() - startOptimization;
         console.log(`⏱️ [Perf] Route Optimization: ${perfStats['route_optimization']}ms`);
 
-        // Add user location at start (AFTER optimization)
-        if (userLocation) {
+        // Add user location at start (AFTER optimization) - ONLY if includeUserLocation is true
+        const shouldIncludeUserLocation = classification.includeUserLocation ?? true; // Default to true for backward compat
+        console.log(`📍 Include user location in route: ${shouldIncludeUserLocation}`);
+
+        if (userLocation && shouldIncludeUserLocation) {
           const userLocationVenue: EnrichedCandidate = {
             placeId: 'user-location',
             name: 'Your Location',
@@ -985,26 +972,17 @@ router.post('/plan', async (req: Request, res: Response) => {
         }
 
         // ----------------------------------------------------------------------
-        // STEP 5.5: INSTAGRAM REELS ENRICHMENT
+        // AWAIT INSTAGRAM REELS (started in parallel earlier)
         // ----------------------------------------------------------------------
-        console.log('\n📸 STEP 5.5: Enriching with Instagram Reels...');
-        const startVideo = Date.now();
 
-        finalVenues = await enrichWithInstagramReels(finalVenues, { maxReelsPerVenue: 3 });
 
-        perfStats['video_enrichment'] = Date.now() - startVideo;
-        console.log(`⏱️ [Perf] Video Enrichment: ${perfStats['video_enrichment']}ms`);
+        // Apply reels to finalVenues (which may be reordered)
+
+
+
 
         // DEBUG LOGGING
-        finalVenues.forEach(v => {
-          if (v.instagramReels && v.instagramReels.length > 0) {
-            console.log(`📸 [${v.name}] Reels:`, v.instagramReels.map((r: any) => ({
-              id: r.id,
-              thumb: r.thumbnailUrl ? '✅ Has URL' : '❌ No URL',
-              url: r.thumbnailUrl
-            })));
-          }
-        });
+
 
         const resultMessage = buildResultMessage(
           finalVenues,
@@ -1483,6 +1461,146 @@ router.get('/health', (req: Request, res: Response) => {
     timestamp: new Date().toISOString(),
     service: 'PlanMate API'
   });
+});
+
+// ============================================================================
+// REELS ENDPOINT: /reels (Lazy Loading)
+// ============================================================================
+router.post('/reels', async (req: Request, res: Response) => {
+  try {
+    const { venues } = req.body; // Array of { placeId, name, address }
+
+    if (!venues || !Array.isArray(venues) || venues.length === 0) {
+      return res.status(400).json({ success: false, error: 'venues array required' });
+    }
+
+    console.log(`📸 Fetching Instagram Reels for ${venues.length} venues...`);
+
+    const enrichedVenues = await enrichWithInstagramReels(venues, { maxReelsPerVenue: 3 });
+
+    // Build a map of placeId -> reels
+    const reelsMap: Record<string, any[]> = {};
+    for (const venue of enrichedVenues) {
+      if (venue.instagramReels && venue.instagramReels.length > 0) {
+        reelsMap[venue.placeId] = venue.instagramReels;
+      }
+    }
+
+    return res.json({ success: true, reelsMap });
+  } catch (error) {
+    console.error('❌ Reels endpoint error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to fetch reels' });
+  }
+});
+
+// ============================================================================
+// VENUE CHAT ENDPOINT (Grounding with Google Search)
+// ============================================================================
+router.post('/venue-chat', async (req: Request, res: Response) => {
+  try {
+    const { venue, question, history } = req.body;
+
+    if (!venue || !question) {
+      return res.status(400).json({ success: false, error: 'Venue and question are required' });
+    }
+
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      console.error('❌ GEMINI_API_KEY missing');
+      return res.status(500).json({ success: false, error: 'Server configuration error' });
+    }
+
+    const ai = new GoogleGenAI({ apiKey });
+
+    console.log(`\n💬 VENUE CHAT: "${question}" about "${venue.name}"`);
+
+    // Build system prompt with venue context
+    const systemPrompt = `You are a helpful, knowledgeable venue guide for ${venue.name}.
+    
+VENUE DETAILS:
+- Name: ${venue.name}
+- Address: ${venue.address || 'Unknown'}
+- Category: ${venue.category || 'Unknown'}
+- Rating: ${venue.rating || 'N/A'}
+- Price Level: ${venue.priceLevel || 'N/A'}
+- Description: ${venue.description || 'N/A'}
+
+YOUR GOAL:
+Answer the user's question about this specific venue accurately using Google Search.
+Be concise (2-3 sentences usually).
+Never hallucinate details. If you can't find the answer via search, admit it.
+Focus on current, factual info (hours, tickets, parking, restrictions, etc.).
+
+USER QUESTION: "${question}"
+`;
+
+    // Construct message history for context
+    const contents = [];
+
+    // Add history if present (limit to last 10 messages to save context)
+    if (history && Array.isArray(history)) {
+      const recentHistory = history.slice(-10);
+      for (const msg of recentHistory) {
+        contents.push({
+          role: msg.role === 'user' ? 'user' : 'model',
+          parts: [{ text: msg.text }]
+        });
+      }
+    }
+
+    // Add current turn
+    contents.push({
+      role: 'user',
+      parts: [{ text: systemPrompt }]
+    });
+
+    const config: any = {
+      tools: [{ googleSearch: {} }],
+      toolConfig: {
+        functionCallingConfig: { mode: 'AUTO' } // Let model decide to use search
+      }
+    };
+
+    console.log('   🔍 Calling Gemini with Google Search...');
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.0-flash',
+      contents,
+      config
+    });
+
+    const text = response.text || '';
+
+    // Extract sources from grounding metadata
+    const sources: { title: string, url: string }[] = [];
+    const groundingMetadata = response.candidates?.[0]?.groundingMetadata;
+
+    if (groundingMetadata?.groundingChunks) {
+      groundingMetadata.groundingChunks.forEach((chunk: any) => {
+        if (chunk.web?.uri && chunk.web?.title) {
+          sources.push({
+            title: chunk.web.title,
+            url: chunk.web.uri
+          });
+        }
+      });
+    }
+
+    // Deduplicate sources
+    const uniqueSources = sources.filter((v, i, a) => a.findIndex(t => t.url === v.url) === i).slice(0, 3);
+
+    console.log(`   ✅ Response: "${text.substring(0, 50)}..."`);
+    console.log(`   🔗 Sources: ${uniqueSources.length}`);
+
+    return res.json({
+      success: true,
+      answer: text,
+      sources: uniqueSources
+    });
+
+  } catch (error) {
+    console.error('❌ Venue chat error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to get answer' });
+  }
 });
 
 export default router;

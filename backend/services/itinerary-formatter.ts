@@ -46,6 +46,7 @@ export async function formatItineraryMessage(params: {
   plan?: any;
   venues: any[];
   routes?: any[];
+  isUpdate?: boolean; // 🆕 Added isUpdate flag
 }): Promise<string | null> {
   if (!process.env.OPENAI_API_KEY) return null;
   if (!params.venues || params.venues.length === 0) return null;
@@ -59,7 +60,7 @@ export async function formatItineraryMessage(params: {
     reasoning: v?.reasoning || v?.gemini_reasoning,
     reviewsSummary: v?.reviewsSummary,
     address: v?.address,
-    isUserLocation: v?.placeId === 'user-location'
+    isUserLocation: v?.placeId === 'user-location' || v?.isUserLocation
   }));
 
   const travelSegments: RouteSegment[] = (params.routes || []).map((seg: any) => ({
@@ -102,20 +103,21 @@ export async function formatItineraryMessage(params: {
 
   const plan = params.plan
     ? {
-        type: params.plan.type,
-        estimated_duration: params.plan.estimated_duration,
-        travel_mode: params.plan.travel_mode,
-        theme: params.plan.theme
-      }
+      type: params.plan.type,
+      estimated_duration: params.plan.estimated_duration,
+      travel_mode: params.plan.travel_mode,
+      theme: params.plan.theme
+    }
     : undefined;
 
-  const input: FormatInput = {
+  const input: FormatInput & { isUpdate?: boolean } = {
     prompt: params.prompt,
     plan,
     stopCount,
     stops,
     travelSegments,
-    routeSummary
+    routeSummary,
+    isUpdate: params.isUpdate
   };
 
   try {
@@ -129,7 +131,9 @@ export async function formatItineraryMessage(params: {
 Write a clear, engaging itinerary that feels like a helpful guide.
 
 Formatting style (aim for this):
-- Start with: "🌟 Here's your curated itinerary with X stops!" (use stopCount)
+- Header: 
+  - If isUpdate is false: "🌟 Here's your curated itinerary with X stops!" (use stopCount)
+  - If isUpdate is true: Write a natural, concise confirmation of the changes made based on the prompt (e.g. "I've updated your plan and removed X...") then say "Here is your updated itinerary:"
 - Then 1-2 concise lines for duration/travel mode/theme if available.
 - List stops as a numbered list with this pattern:
   1. Stop Name (⭐ rating • priceLevel)
@@ -142,6 +146,7 @@ Formatting style (aim for this):
 Rules:
 - Keep stop order exactly as provided.
 - Do not invent stops, times, or facts.
+- Use current venue data to write short, engaging descriptions/reasoning if fields are missing.
 - Only include rating/price if provided.
 - If routeSummary is provided, include "Total Distance" and "Total Duration" lines.
 - If a stop is the user's location, label it as "Start: Your Location" and do not number it.

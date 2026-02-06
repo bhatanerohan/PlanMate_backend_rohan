@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.32419969335855, -71.10740234037613)
+
+Request: "plan a day in seaport"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Day in Seaport",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Institute of Contemporary Art",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Fan Pier Park",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Puttshack - Boston",
+      "category": "entertainment",
+      "priority": "must_have"
+    },
+    {
+      "name": "F1 Arcade Boston",
+      "category": "entertainment",
+      "priority": "must_have"
+    },
+    {
+      "name": "Woods Hill Pier 4 - Seaport",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Boston Waterfront",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Seaport Common",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Martin's Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Museum of Ice Cream",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Lawn on D",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Committee",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boqueria Seaport",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Legal Sea Foods - Harborside",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "75 on Liberty Wharf",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "bartaco",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Sporting Club",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Deck 12",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "F&G Arcade Boston",
+      "category": "entertainment",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "M.J. O'Connor's Seaport",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Scorpion Boston",
+      "category": "bar",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

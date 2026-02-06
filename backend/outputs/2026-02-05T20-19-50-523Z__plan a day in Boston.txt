@@ -1,0 +1,160 @@
+User Prompt: plan a day in Boston
+
+[2026-02-05T20:19:50.524Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-05T20:19:50.525Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-02-05T20:19:50.525Z] LOG    🎯 Must-have: 5
+[2026-02-05T20:19:50.526Z] LOG    ✨ Nice-to-have: 13
+[2026-02-05T20:19:50.526Z] LOG 📍 Location hint: Boston
+[2026-02-05T20:19:50.526Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-02-05T20:19:50.527Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-05T20:19:50.527Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-05T20:19:50.528Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-05T20:19:50.528Z] LOG    1. Searching "Faneuil Hall Marketplace" in "Boston"
+[2026-02-05T20:19:50.529Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Boston
+[2026-02-05T20:19:50.532Z] LOG    2. Searching "New England Aquarium" in "Boston"
+[2026-02-05T20:19:50.533Z] LOG 🔍 [Google Places] Text search: "New England Aquarium" in Boston
+[2026-02-05T20:19:50.536Z] LOG    3. Searching "Boston Common" in "Boston"
+[2026-02-05T20:19:50.537Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Boston
+[2026-02-05T20:19:50.539Z] LOG    4. Searching "Museum of Fine Arts, Boston" in "Boston"
+[2026-02-05T20:19:50.540Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in Boston
+[2026-02-05T20:19:50.544Z] LOG    5. Searching "View Boston" in "Boston"
+[2026-02-05T20:19:50.545Z] LOG 🔍 [Google Places] Text search: "View Boston" in Boston
+[2026-02-05T20:19:50.548Z] LOG    6. Searching "Quincy Market" in "Boston"
+[2026-02-05T20:19:50.549Z] LOG 🔍 [Google Places] Text search: "Quincy Market" in Boston
+[2026-02-05T20:19:50.552Z] LOG    7. Searching "Museum of Illusions Boston" in "Boston"
+[2026-02-05T20:19:50.553Z] LOG 🔍 [Google Places] Text search: "Museum of Illusions Boston" in Boston
+[2026-02-05T20:19:50.555Z] LOG    8. Searching "Boston Tea Party Ships & Museum" in "Boston"
+[2026-02-05T20:19:50.556Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Boston
+[2026-02-05T20:19:50.558Z] LOG    9. Searching "Public Garden" in "Boston"
+[2026-02-05T20:19:50.559Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Boston
+[2026-02-05T20:19:50.561Z] LOG    10. Searching "Boston Public Library - Central Library" in "Boston"
+[2026-02-05T20:19:50.562Z] LOG 🔍 [Google Places] Text search: "Boston Public Library - Central Library" in Boston
+[2026-02-05T20:19:50.933Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:50.953Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:50.967Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:50.973Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:50.982Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:50.998Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.033Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.037Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.052Z] LOG    ✅ Quincy Market: Got description (97 chars)
+[2026-02-05T20:19:51.053Z] LOG    📷 Quincy Market: Got 10 photos
+[2026-02-05T20:19:51.054Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.074Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-02-05T20:19:51.075Z] LOG    📷 Museum of Fine Arts, Boston: Got 10 photos
+[2026-02-05T20:19:51.075Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.084Z] LOG    ✅ New England Aquarium: Got description (99 chars)
+[2026-02-05T20:19:51.086Z] LOG    📷 New England Aquarium: Got 10 photos
+[2026-02-05T20:19:51.087Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.088Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-02-05T20:19:51.089Z] LOG    📷 Public Garden: Got 10 photos
+[2026-02-05T20:19:51.090Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.093Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-02-05T20:19:51.094Z] LOG    📷 Boston Common: Got 10 photos
+[2026-02-05T20:19:51.095Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.099Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-02-05T20:19:51.100Z] LOG    📷 View Boston: Got 10 photos
+[2026-02-05T20:19:51.101Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.147Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-02-05T20:19:51.148Z] LOG    📷 Faneuil Hall Marketplace: Got 10 photos
+[2026-02-05T20:19:51.149Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.177Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2026-02-05T20:19:51.179Z] LOG    📷 Boston Public Library - Central Library: Got 10 photos
+[2026-02-05T20:19:51.180Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.200Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.228Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.323Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-02-05T20:19:51.326Z] LOG    📷 Boston Tea Party Ships & Museum: Got 10 photos
+[2026-02-05T20:19:51.328Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.347Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2026-02-05T20:19:51.348Z] LOG    📷 Museum of Illusions Boston: Got 10 photos
+[2026-02-05T20:19:51.349Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.350Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 821ms
+[2026-02-05T20:19:51.350Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-05T20:19:51.350Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-05T20:19:51.566Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-02-05T20:19:51.569Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-05T20:19:51.571Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-02-05T20:19:51.572Z] LOG    1. Searching "Isabella Stewart Gardner Museum" in "Boston"
+[2026-02-05T20:19:51.572Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in Boston
+[2026-02-05T20:19:51.574Z] LOG    2. Searching "Boston Harborwalk" in "Boston"
+[2026-02-05T20:19:51.574Z] LOG 🔍 [Google Places] Text search: "Boston Harborwalk" in Boston
+[2026-02-05T20:19:51.575Z] LOG    3. Searching "Boston Sign" in "Boston"
+[2026-02-05T20:19:51.576Z] LOG 🔍 [Google Places] Text search: "Boston Sign" in Boston
+[2026-02-05T20:19:51.577Z] LOG    4. Searching "Museum of Science" in "Boston"
+[2026-02-05T20:19:51.577Z] LOG 🔍 [Google Places] Text search: "Museum of Science" in Boston
+[2026-02-05T20:19:51.578Z] LOG    5. Searching "The Harvard Museum of Natural History" in "Boston"
+[2026-02-05T20:19:51.578Z] LOG 🔍 [Google Places] Text search: "The Harvard Museum of Natural History" in Boston
+[2026-02-05T20:19:51.579Z] LOG    6. Searching "Castle Island" in "Boston"
+[2026-02-05T20:19:51.579Z] LOG 🔍 [Google Places] Text search: "Castle Island" in Boston
+[2026-02-05T20:19:51.580Z] LOG    7. Searching "Puttshack - Boston" in "Boston"
+[2026-02-05T20:19:51.581Z] LOG 🔍 [Google Places] Text search: "Puttshack - Boston" in Boston
+[2026-02-05T20:19:51.581Z] LOG    8. Searching "WNDR Museum" in "Boston"
+[2026-02-05T20:19:51.581Z] LOG 🔍 [Google Places] Text search: "WNDR Museum" in Boston
+[2026-02-05T20:19:51.814Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.830Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.845Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.891Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.904Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.918Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.935Z] LOG    ⚠️  WNDR Museum: No editorial summary available
+[2026-02-05T20:19:51.938Z] LOG    📷 WNDR Museum: Got 10 photos
+[2026-02-05T20:19:51.939Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.948Z] LOG    ⚠️  Puttshack - Boston: No editorial summary available
+[2026-02-05T20:19:51.949Z] LOG    📷 Puttshack - Boston: Got 10 photos
+[2026-02-05T20:19:51.950Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.952Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:51.960Z] LOG    ✅ Harborwalk: Got description (97 chars)
+[2026-02-05T20:19:51.961Z] LOG    📷 Harborwalk: Got 10 photos
+[2026-02-05T20:19:51.962Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:51.982Z] LOG    ✅ The Harvard Museum of Natural History: Got description (94 chars)
+[2026-02-05T20:19:51.983Z] LOG    📷 The Harvard Museum of Natural History: Got 10 photos
+[2026-02-05T20:19:51.983Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:52.007Z] LOG    ✅ Castle Island: Got description (83 chars)
+[2026-02-05T20:19:52.008Z] LOG    📷 Castle Island: Got 10 photos
+[2026-02-05T20:19:52.009Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:52.010Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T20:19:52.020Z] LOG    ✅ Museum of Science: Got description (99 chars)
+[2026-02-05T20:19:52.022Z] LOG    📷 Museum of Science: Got 10 photos
+[2026-02-05T20:19:52.022Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:52.051Z] LOG    ⚠️  Boston Sign: No editorial summary available
+[2026-02-05T20:19:52.052Z] LOG    📷 Boston Sign: Got 10 photos
+[2026-02-05T20:19:52.053Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:52.097Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-02-05T20:19:52.100Z] LOG    📷 Isabella Stewart Gardner Museum: Got 10 photos
+[2026-02-05T20:19:52.101Z] LOG ✅ Found 1 places
+[2026-02-05T20:19:52.101Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 530ms
+[2026-02-05T20:19:52.102Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-05T20:19:52.102Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-02-05T20:19:52.103Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (must_have)
+[2026-02-05T20:19:52.104Z] LOG    ✅ New England Aquarium → New England Aquarium (must_have)
+[2026-02-05T20:19:52.105Z] LOG    ✅ Boston Common → Boston Common (must_have)
+[2026-02-05T20:19:52.105Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (must_have)
+[2026-02-05T20:19:52.105Z] LOG    ✅ View Boston → View Boston (must_have)
+[2026-02-05T20:19:52.106Z] LOG    ✅ Quincy Market → Quincy Market (nice_to_have)
+[2026-02-05T20:19:52.106Z] LOG    ✅ Museum of Illusions Boston → Museum of Illusions Boston (nice_to_have)
+[2026-02-05T20:19:52.107Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (nice_to_have)
+[2026-02-05T20:19:52.107Z] LOG    ✅ Public Garden → Public Garden (nice_to_have)
+[2026-02-05T20:19:52.107Z] LOG    ✅ Boston Public Library - Central Library → Boston Public Library - Central Library (nice_to_have)
+[2026-02-05T20:19:52.108Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-02-05T20:19:52.108Z] LOG    ✅ Boston Harborwalk → Harborwalk (nice_to_have)
+[2026-02-05T20:19:52.108Z] LOG    ✅ Boston Sign → Boston Sign (nice_to_have)
+[2026-02-05T20:19:52.109Z] LOG    ✅ Museum of Science → Museum of Science (nice_to_have)
+[2026-02-05T20:19:52.109Z] LOG    ✅ The Harvard Museum of Natural History → The Harvard Museum of Natural History (nice_to_have)
+[2026-02-05T20:19:52.110Z] LOG    ✅ Castle Island → Castle Island (nice_to_have)
+[2026-02-05T20:19:52.111Z] LOG    ✅ Puttshack - Boston → Puttshack - Boston (nice_to_have)
+[2026-02-05T20:19:52.111Z] LOG    ✅ WNDR Museum → WNDR Museum (nice_to_have)
+[2026-02-05T20:19:52.112Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-05T20:19:52.112Z] LOG    Total enriched: 18
+[2026-02-05T20:19:52.113Z] LOG    🎯 Must-have: 5
+[2026-02-05T20:19:52.113Z] LOG    ✨ Nice-to-have: 13
+[2026-02-05T20:19:52.114Z] LOG    ❌ Failed: 0
+[2026-02-05T20:19:52.114Z] LOG    ⏱️  Enrichment took: 1591ms (1.59s)
+
+--- Summary ---
+Enrichment completed

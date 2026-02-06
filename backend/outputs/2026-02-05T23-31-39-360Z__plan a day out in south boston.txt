@@ -1,0 +1,174 @@
+User Prompt: plan a day out in south boston
+
+[2026-02-05T23:31:39.362Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-05T23:31:39.362Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-05T23:31:39.363Z] LOG    🎯 Must-have: 5
+[2026-02-05T23:31:39.363Z] LOG    ✨ Nice-to-have: 15
+[2026-02-05T23:31:39.364Z] LOG 📍 Location hint: south boston
+[2026-02-05T23:31:39.364Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-05T23:31:39.365Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-05T23:31:39.365Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-05T23:31:39.366Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-05T23:31:39.368Z] LOG    1. Searching "Boston Tea Party Ships & Museum" in "south boston"
+[2026-02-05T23:31:39.369Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in south boston
+[2026-02-05T23:31:39.374Z] LOG    2. Searching "Institute of Contemporary Art" in "south boston"
+[2026-02-05T23:31:39.375Z] LOG 🔍 [Google Places] Text search: "Institute of Contemporary Art" in south boston
+[2026-02-05T23:31:39.377Z] LOG    3. Searching "Christopher Columbus Waterfront Park" in "south boston"
+[2026-02-05T23:31:39.381Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in south boston
+[2026-02-05T23:31:39.383Z] LOG    4. Searching "Castle Island" in "south boston"
+[2026-02-05T23:31:39.384Z] LOG 🔍 [Google Places] Text search: "Castle Island" in south boston
+[2026-02-05T23:31:39.385Z] LOG    5. Searching "Lincoln Tavern & Restaurant" in "south boston"
+[2026-02-05T23:31:39.386Z] LOG 🔍 [Google Places] Text search: "Lincoln Tavern & Restaurant" in south boston
+[2026-02-05T23:31:39.389Z] LOG    6. Searching "Faneuil Hall Marketplace" in "south boston"
+[2026-02-05T23:31:39.391Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in south boston
+[2026-02-05T23:31:39.394Z] LOG    7. Searching "Boston Waterfront" in "south boston"
+[2026-02-05T23:31:39.395Z] LOG 🔍 [Google Places] Text search: "Boston Waterfront" in south boston
+[2026-02-05T23:31:39.398Z] LOG    8. Searching "Fan Pier Park" in "south boston"
+[2026-02-05T23:31:39.398Z] LOG 🔍 [Google Places] Text search: "Fan Pier Park" in south boston
+[2026-02-05T23:31:39.399Z] LOG    9. Searching "the Lawn on D" in "south boston"
+[2026-02-05T23:31:39.399Z] LOG 🔍 [Google Places] Text search: "the Lawn on D" in south boston
+[2026-02-05T23:31:39.401Z] LOG    10. Searching "Puttshack - Boston" in "south boston"
+[2026-02-05T23:31:39.402Z] LOG 🔍 [Google Places] Text search: "Puttshack - Boston" in south boston
+[2026-02-05T23:31:39.768Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:39.776Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:39.782Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:39.796Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:39.830Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:39.858Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:39.880Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:39.883Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:39.913Z] LOG    ✅ Lincoln Tavern & Restaurant: Got description (86 chars)
+[2026-02-05T23:31:39.915Z] LOG    📷 Lincoln Tavern & Restaurant: Got 10 photos
+[2026-02-05T23:31:39.916Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:39.924Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:39.927Z] LOG    ⚠️  Puttshack - Boston: No editorial summary available
+[2026-02-05T23:31:39.927Z] LOG    📷 Puttshack - Boston: Got 10 photos
+[2026-02-05T23:31:39.928Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:39.946Z] LOG    ✅ Fan Pier Park: Got description (97 chars)
+[2026-02-05T23:31:39.947Z] LOG    📷 Fan Pier Park: Got 10 photos
+[2026-02-05T23:31:39.947Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:39.955Z] LOG    ✅ the Lawn on D: Got description (96 chars)
+[2026-02-05T23:31:39.956Z] LOG    📷 the Lawn on D: Got 10 photos
+[2026-02-05T23:31:39.957Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:39.960Z] LOG    ⚠️  Boston Waterfront: No editorial summary available
+[2026-02-05T23:31:39.960Z] LOG    📷 Boston Waterfront: Got 10 photos
+[2026-02-05T23:31:39.961Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:39.989Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.007Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2026-02-05T23:31:40.008Z] LOG    📷 Institute of Contemporary Art: Got 10 photos
+[2026-02-05T23:31:40.009Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.036Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-02-05T23:31:40.037Z] LOG    📷 Christopher Columbus Waterfront Park: Got 10 photos
+[2026-02-05T23:31:40.038Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.045Z] LOG    ✅ Castle Island: Got description (83 chars)
+[2026-02-05T23:31:40.048Z] LOG    📷 Castle Island: Got 10 photos
+[2026-02-05T23:31:40.049Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.055Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-02-05T23:31:40.056Z] LOG    📷 Faneuil Hall Marketplace: Got 10 photos
+[2026-02-05T23:31:40.056Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.093Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-02-05T23:31:40.095Z] LOG    📷 Boston Tea Party Ships & Museum: Got 10 photos
+[2026-02-05T23:31:40.096Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.097Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 731ms
+[2026-02-05T23:31:40.098Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-05T23:31:40.098Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-05T23:31:40.307Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-05T23:31:40.311Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-05T23:31:40.312Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-05T23:31:40.313Z] LOG    1. Searching "Underground at Ink Block" in "south boston"
+[2026-02-05T23:31:40.313Z] LOG 🔍 [Google Places] Text search: "Underground at Ink Block" in south boston
+[2026-02-05T23:31:40.314Z] LOG    2. Searching "Martin's Park" in "south boston"
+[2026-02-05T23:31:40.314Z] LOG 🔍 [Google Places] Text search: "Martin's Park" in south boston
+[2026-02-05T23:31:40.315Z] LOG    3. Searching "South Boston Candlepin" in "south boston"
+[2026-02-05T23:31:40.316Z] LOG 🔍 [Google Places] Text search: "South Boston Candlepin" in south boston
+[2026-02-05T23:31:40.316Z] LOG    4. Searching "Museum of Ice Cream" in "south boston"
+[2026-02-05T23:31:40.316Z] LOG 🔍 [Google Places] Text search: "Museum of Ice Cream" in south boston
+[2026-02-05T23:31:40.317Z] LOG    5. Searching "Old South Meeting House" in "south boston"
+[2026-02-05T23:31:40.318Z] LOG 🔍 [Google Places] Text search: "Old South Meeting House" in south boston
+[2026-02-05T23:31:40.318Z] LOG    6. Searching "USS Constitution Museum" in "south boston"
+[2026-02-05T23:31:40.319Z] LOG 🔍 [Google Places] Text search: "USS Constitution Museum" in south boston
+[2026-02-05T23:31:40.320Z] LOG    7. Searching "Layla's American Tavern" in "south boston"
+[2026-02-05T23:31:40.320Z] LOG 🔍 [Google Places] Text search: "Layla's American Tavern" in south boston
+[2026-02-05T23:31:40.321Z] LOG    8. Searching "Shy Bird - South Boston" in "south boston"
+[2026-02-05T23:31:40.321Z] LOG 🔍 [Google Places] Text search: "Shy Bird - South Boston" in south boston
+[2026-02-05T23:31:40.321Z] LOG    9. Searching "Publico Street Bistro" in "south boston"
+[2026-02-05T23:31:40.322Z] LOG 🔍 [Google Places] Text search: "Publico Street Bistro" in south boston
+[2026-02-05T23:31:40.323Z] LOG    10. Searching "Local 149" in "south boston"
+[2026-02-05T23:31:40.323Z] LOG 🔍 [Google Places] Text search: "Local 149" in south boston
+[2026-02-05T23:31:40.587Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.593Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.598Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.621Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.663Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.667Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.668Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.692Z] LOG    ⚠️  Layla's American Tavern: No editorial summary available
+[2026-02-05T23:31:40.693Z] LOG    📷 Layla's American Tavern: Got 10 photos
+[2026-02-05T23:31:40.694Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.719Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.723Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.729Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:31:40.733Z] LOG    ⚠️  Underground at Ink Block: No editorial summary available
+[2026-02-05T23:31:40.734Z] LOG    📷 Underground at Ink Block: Got 10 photos
+[2026-02-05T23:31:40.734Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.749Z] LOG    ✅ USS Constitution Museum: Got description (98 chars)
+[2026-02-05T23:31:40.750Z] LOG    📷 USS Constitution Museum: Got 10 photos
+[2026-02-05T23:31:40.750Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.751Z] LOG    ⚠️  South Boston Candlepin: No editorial summary available
+[2026-02-05T23:31:40.751Z] LOG    📷 South Boston Candlepin: Got 10 photos
+[2026-02-05T23:31:40.752Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.758Z] LOG    ⚠️  Martin's Park: No editorial summary available
+[2026-02-05T23:31:40.760Z] LOG    📷 Martin's Park: Got 10 photos
+[2026-02-05T23:31:40.761Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.774Z] LOG    ✅ Publico Street Bistro: Got description (98 chars)
+[2026-02-05T23:31:40.775Z] LOG    📷 Publico Street Bistro: Got 10 photos
+[2026-02-05T23:31:40.775Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.847Z] LOG    ✅ Local 149: Got description (98 chars)
+[2026-02-05T23:31:40.850Z] LOG    📷 Local 149: Got 10 photos
+[2026-02-05T23:31:40.851Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.851Z] LOG    ✅ Old South Meeting House: Got description (100 chars)
+[2026-02-05T23:31:40.852Z] LOG    📷 Old South Meeting House: Got 10 photos
+[2026-02-05T23:31:40.852Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.867Z] LOG    ⚠️  Shy Bird - South Boston: No editorial summary available
+[2026-02-05T23:31:40.868Z] LOG    📷 Shy Bird - South Boston: Got 10 photos
+[2026-02-05T23:31:40.869Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.884Z] LOG    ⚠️  Museum of Ice Cream: No editorial summary available
+[2026-02-05T23:31:40.889Z] LOG    📷 Museum of Ice Cream: Got 10 photos
+[2026-02-05T23:31:40.889Z] LOG ✅ Found 1 places
+[2026-02-05T23:31:40.889Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 577ms
+[2026-02-05T23:31:40.890Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-05T23:31:40.890Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-05T23:31:40.890Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (must_have)
+[2026-02-05T23:31:40.891Z] LOG    ✅ Institute of Contemporary Art → Institute of Contemporary Art (must_have)
+[2026-02-05T23:31:40.891Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (must_have)
+[2026-02-05T23:31:40.892Z] LOG    ✅ Castle Island → Castle Island (must_have)
+[2026-02-05T23:31:40.892Z] LOG    ✅ Lincoln Tavern & Restaurant → Lincoln Tavern & Restaurant (must_have)
+[2026-02-05T23:31:40.893Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (nice_to_have)
+[2026-02-05T23:31:40.893Z] LOG    ✅ Boston Waterfront → Boston Waterfront (nice_to_have)
+[2026-02-05T23:31:40.894Z] LOG    ✅ Fan Pier Park → Fan Pier Park (nice_to_have)
+[2026-02-05T23:31:40.894Z] LOG    ✅ the Lawn on D → the Lawn on D (nice_to_have)
+[2026-02-05T23:31:40.894Z] LOG    ✅ Puttshack - Boston → Puttshack - Boston (nice_to_have)
+[2026-02-05T23:31:40.895Z] LOG    ✅ Underground at Ink Block → Underground at Ink Block (nice_to_have)
+[2026-02-05T23:31:40.895Z] LOG    ✅ Martin's Park → Martin's Park (nice_to_have)
+[2026-02-05T23:31:40.896Z] LOG    ✅ South Boston Candlepin → South Boston Candlepin (nice_to_have)
+[2026-02-05T23:31:40.896Z] LOG    ✅ Museum of Ice Cream → Museum of Ice Cream (nice_to_have)
+[2026-02-05T23:31:40.896Z] LOG    ✅ Old South Meeting House → Old South Meeting House (nice_to_have)
+[2026-02-05T23:31:40.896Z] LOG    ✅ USS Constitution Museum → USS Constitution Museum (nice_to_have)
+[2026-02-05T23:31:40.897Z] LOG    ✅ Layla's American Tavern → Layla's American Tavern (nice_to_have)
+[2026-02-05T23:31:40.897Z] LOG    ✅ Shy Bird - South Boston → Shy Bird - South Boston (nice_to_have)
+[2026-02-05T23:31:40.897Z] LOG    ✅ Publico Street Bistro → Publico Street Bistro (nice_to_have)
+[2026-02-05T23:31:40.898Z] LOG    ✅ Local 149 → Local 149 (nice_to_have)
+[2026-02-05T23:31:40.898Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-05T23:31:40.899Z] LOG    Total enriched: 20
+[2026-02-05T23:31:40.899Z] LOG    🎯 Must-have: 5
+[2026-02-05T23:31:40.899Z] LOG    ✨ Nice-to-have: 15
+[2026-02-05T23:31:40.900Z] LOG    ❌ Failed: 0
+[2026-02-05T23:31:40.901Z] LOG    ⏱️  Enrichment took: 1541ms (1.54s)
+
+--- Summary ---
+Enrichment completed

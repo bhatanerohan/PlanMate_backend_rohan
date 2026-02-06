@@ -1,0 +1,167 @@
+User Prompt: plan a day out in cambridge boston
+
+[2026-02-05T23:33:27.845Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-05T23:33:27.845Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-02-05T23:33:27.846Z] LOG    🎯 Must-have: 5
+[2026-02-05T23:33:27.846Z] LOG    ✨ Nice-to-have: 14
+[2026-02-05T23:33:27.847Z] LOG 📍 Location hint: cambridge boston
+[2026-02-05T23:33:27.847Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-02-05T23:33:27.847Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-05T23:33:27.850Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-05T23:33:27.851Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-05T23:33:27.851Z] LOG    1. Searching "Harvard University" in "cambridge boston"
+[2026-02-05T23:33:27.851Z] LOG 🔍 [Google Places] Text search: "Harvard University" in cambridge boston
+[2026-02-05T23:33:27.854Z] LOG    2. Searching "Massachusetts Institute of Technology" in "cambridge boston"
+[2026-02-05T23:33:27.855Z] LOG 🔍 [Google Places] Text search: "Massachusetts Institute of Technology" in cambridge boston
+[2026-02-05T23:33:27.862Z] LOG    3. Searching "Harvard Museum of Natural History" in "cambridge boston"
+[2026-02-05T23:33:27.863Z] LOG 🔍 [Google Places] Text search: "Harvard Museum of Natural History" in cambridge boston
+[2026-02-05T23:33:27.865Z] LOG    4. Searching "MIT Museum" in "cambridge boston"
+[2026-02-05T23:33:27.865Z] LOG 🔍 [Google Places] Text search: "MIT Museum" in cambridge boston
+[2026-02-05T23:33:27.867Z] LOG    5. Searching "Cambridge Common" in "cambridge boston"
+[2026-02-05T23:33:27.867Z] LOG 🔍 [Google Places] Text search: "Cambridge Common" in cambridge boston
+[2026-02-05T23:33:27.868Z] LOG    6. Searching "Faneuil Hall Marketplace" in "cambridge boston"
+[2026-02-05T23:33:27.869Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in cambridge boston
+[2026-02-05T23:33:27.871Z] LOG    7. Searching "Boston Common" in "cambridge boston"
+[2026-02-05T23:33:27.871Z] LOG 🔍 [Google Places] Text search: "Boston Common" in cambridge boston
+[2026-02-05T23:33:27.873Z] LOG    8. Searching "Christopher Columbus Waterfront Park" in "cambridge boston"
+[2026-02-05T23:33:27.873Z] LOG 🔍 [Google Places] Text search: "Christopher Columbus Waterfront Park" in cambridge boston
+[2026-02-05T23:33:27.875Z] LOG    9. Searching "Public Garden" in "cambridge boston"
+[2026-02-05T23:33:27.875Z] LOG 🔍 [Google Places] Text search: "Public Garden" in cambridge boston
+[2026-02-05T23:33:27.876Z] LOG    10. Searching "Old State House" in "cambridge boston"
+[2026-02-05T23:33:27.876Z] LOG 🔍 [Google Places] Text search: "Old State House" in cambridge boston
+[2026-02-05T23:33:28.271Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:28.275Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:28.283Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:28.297Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:28.302Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:28.304Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:28.329Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:28.337Z] LOG    ✅ Christopher Columbus Waterfront Park: Got description (93 chars)
+[2026-02-05T23:33:28.337Z] LOG    📷 Christopher Columbus Waterfront Park: Got 10 photos
+[2026-02-05T23:33:28.338Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:28.370Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:28.393Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:28.403Z] LOG    ✅ Cambridge Common Restaurant: Got description (83 chars)
+[2026-02-05T23:33:28.404Z] LOG    📷 Cambridge Common Restaurant: Got 10 photos
+[2026-02-05T23:33:28.404Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:28.419Z] LOG    ⚠️  Harvard University: No editorial summary available
+[2026-02-05T23:33:28.421Z] LOG    📷 Harvard University: Got 10 photos
+[2026-02-05T23:33:28.421Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:28.433Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-02-05T23:33:28.434Z] LOG    📷 Boston Common: Got 10 photos
+[2026-02-05T23:33:28.434Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:28.436Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:28.446Z] LOG    ✅ Massachusetts Institute of Technology: Got description (97 chars)
+[2026-02-05T23:33:28.447Z] LOG    📷 Massachusetts Institute of Technology: Got 10 photos
+[2026-02-05T23:33:28.448Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:28.448Z] LOG    ✅ The Harvard Museum of Natural History: Got description (94 chars)
+[2026-02-05T23:33:28.449Z] LOG    📷 The Harvard Museum of Natural History: Got 10 photos
+[2026-02-05T23:33:28.450Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:28.479Z] LOG    ✅ Urban Park (UP) Roof Garden: Got description (83 chars)
+[2026-02-05T23:33:28.480Z] LOG    📷 Urban Park (UP) Roof Garden: Got 10 photos
+[2026-02-05T23:33:28.481Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:28.499Z] LOG    ✅ MIT Museum: Got description (97 chars)
+[2026-02-05T23:33:28.500Z] LOG    📷 MIT Museum: Got 10 photos
+[2026-02-05T23:33:28.500Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:28.517Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-02-05T23:33:28.520Z] LOG    📷 Faneuil Hall Marketplace: Got 10 photos
+[2026-02-05T23:33:28.522Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:28.560Z] LOG    ✅ Old State House: Got description (98 chars)
+[2026-02-05T23:33:28.562Z] LOG    📷 Old State House: Got 10 photos
+[2026-02-05T23:33:28.563Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:28.563Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 713ms
+[2026-02-05T23:33:28.564Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-05T23:33:28.564Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-05T23:33:28.771Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-02-05T23:33:28.774Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-05T23:33:28.775Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-02-05T23:33:28.776Z] LOG    1. Searching "The Paul Revere House" in "cambridge boston"
+[2026-02-05T23:33:28.776Z] LOG 🔍 [Google Places] Text search: "The Paul Revere House" in cambridge boston
+[2026-02-05T23:33:28.777Z] LOG    2. Searching "Boston Tea Party Ships & Museum" in "cambridge boston"
+[2026-02-05T23:33:28.777Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in cambridge boston
+[2026-02-05T23:33:28.778Z] LOG    3. Searching "Boston Public Library - Central Library" in "cambridge boston"
+[2026-02-05T23:33:28.779Z] LOG 🔍 [Google Places] Text search: "Boston Public Library - Central Library" in cambridge boston
+[2026-02-05T23:33:28.780Z] LOG    4. Searching "Isabella Stewart Gardner Museum" in "cambridge boston"
+[2026-02-05T23:33:28.781Z] LOG 🔍 [Google Places] Text search: "Isabella Stewart Gardner Museum" in cambridge boston
+[2026-02-05T23:33:28.781Z] LOG    5. Searching "Museum of Fine Arts, Boston" in "cambridge boston"
+[2026-02-05T23:33:28.782Z] LOG 🔍 [Google Places] Text search: "Museum of Fine Arts, Boston" in cambridge boston
+[2026-02-05T23:33:28.783Z] LOG    6. Searching "Alden & Harlow" in "cambridge boston"
+[2026-02-05T23:33:28.784Z] LOG 🔍 [Google Places] Text search: "Alden & Harlow" in cambridge boston
+[2026-02-05T23:33:28.784Z] LOG    7. Searching "Harvest" in "cambridge boston"
+[2026-02-05T23:33:28.785Z] LOG 🔍 [Google Places] Text search: "Harvest" in cambridge boston
+[2026-02-05T23:33:28.785Z] LOG    8. Searching "Little Donkey" in "cambridge boston"
+[2026-02-05T23:33:28.786Z] LOG 🔍 [Google Places] Text search: "Little Donkey" in cambridge boston
+[2026-02-05T23:33:28.787Z] LOG    9. Searching "Oak Bistro" in "cambridge boston"
+[2026-02-05T23:33:28.787Z] LOG 🔍 [Google Places] Text search: "Oak Bistro" in cambridge boston
+[2026-02-05T23:33:29.073Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:29.078Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:29.129Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:29.132Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:29.143Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:29.153Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:29.173Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:29.176Z] LOG    ✅ Little Donkey: Got description (97 chars)
+[2026-02-05T23:33:29.176Z] LOG    📷 Little Donkey: Got 10 photos
+[2026-02-05T23:33:29.177Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:29.211Z] LOG    ✅ Harvest: Got description (96 chars)
+[2026-02-05T23:33:29.213Z] LOG    📷 Harvest: Got 10 photos
+[2026-02-05T23:33:29.213Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:29.223Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:29.234Z] LOG    ✅ Museum of Fine Arts, Boston: Got description (99 chars)
+[2026-02-05T23:33:29.234Z] LOG    📷 Museum of Fine Arts, Boston: Got 10 photos
+[2026-02-05T23:33:29.235Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:29.252Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:33:29.260Z] LOG    ✅ Alden & Harlow: Got description (98 chars)
+[2026-02-05T23:33:29.261Z] LOG    📷 Alden & Harlow: Got 10 photos
+[2026-02-05T23:33:29.261Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:29.263Z] LOG    ✅ Boston Public Library - Central Library: Got description (99 chars)
+[2026-02-05T23:33:29.264Z] LOG    📷 Boston Public Library - Central Library: Got 10 photos
+[2026-02-05T23:33:29.264Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:29.281Z] LOG    ⚠️  Oak Bistro: No editorial summary available
+[2026-02-05T23:33:29.282Z] LOG    📷 Oak Bistro: Got 10 photos
+[2026-02-05T23:33:29.283Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:29.287Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-02-05T23:33:29.288Z] LOG    📷 Boston Tea Party Ships & Museum: Got 10 photos
+[2026-02-05T23:33:29.289Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:29.289Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-02-05T23:33:29.290Z] LOG    📷 The Paul Revere House: Got 10 photos
+[2026-02-05T23:33:29.290Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:29.397Z] LOG    ✅ Isabella Stewart Gardner Museum: Got description (93 chars)
+[2026-02-05T23:33:29.400Z] LOG    📷 Isabella Stewart Gardner Museum: Got 10 photos
+[2026-02-05T23:33:29.401Z] LOG ✅ Found 1 places
+[2026-02-05T23:33:29.401Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 626ms
+[2026-02-05T23:33:29.402Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-05T23:33:29.402Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-02-05T23:33:29.403Z] LOG    ✅ Harvard University → Harvard University (must_have)
+[2026-02-05T23:33:29.403Z] LOG    ✅ Massachusetts Institute of Technology → Massachusetts Institute of Technology (must_have)
+[2026-02-05T23:33:29.404Z] LOG    ✅ Harvard Museum of Natural History → The Harvard Museum of Natural History (must_have)
+[2026-02-05T23:33:29.404Z] LOG    ✅ MIT Museum → MIT Museum (must_have)
+[2026-02-05T23:33:29.405Z] LOG    ✅ Cambridge Common → Cambridge Common Restaurant (must_have)
+[2026-02-05T23:33:29.405Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (nice_to_have)
+[2026-02-05T23:33:29.405Z] LOG    ✅ Boston Common → Boston Common (nice_to_have)
+[2026-02-05T23:33:29.406Z] LOG    ✅ Christopher Columbus Waterfront Park → Christopher Columbus Waterfront Park (nice_to_have)
+[2026-02-05T23:33:29.406Z] LOG    ✅ Public Garden → Urban Park (UP) Roof Garden (nice_to_have)
+[2026-02-05T23:33:29.407Z] LOG    ✅ Old State House → Old State House (nice_to_have)
+[2026-02-05T23:33:29.407Z] LOG    ✅ The Paul Revere House → The Paul Revere House (nice_to_have)
+[2026-02-05T23:33:29.408Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (nice_to_have)
+[2026-02-05T23:33:29.408Z] LOG    ✅ Boston Public Library - Central Library → Boston Public Library - Central Library (nice_to_have)
+[2026-02-05T23:33:29.408Z] LOG    ✅ Isabella Stewart Gardner Museum → Isabella Stewart Gardner Museum (nice_to_have)
+[2026-02-05T23:33:29.409Z] LOG    ✅ Museum of Fine Arts, Boston → Museum of Fine Arts, Boston (nice_to_have)
+[2026-02-05T23:33:29.409Z] LOG    ✅ Alden & Harlow → Alden & Harlow (nice_to_have)
+[2026-02-05T23:33:29.409Z] LOG    ✅ Harvest → Harvest (nice_to_have)
+[2026-02-05T23:33:29.410Z] LOG    ✅ Little Donkey → Little Donkey (nice_to_have)
+[2026-02-05T23:33:29.410Z] LOG    ✅ Oak Bistro → Oak Bistro (nice_to_have)
+[2026-02-05T23:33:29.411Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-05T23:33:29.411Z] LOG    Total enriched: 19
+[2026-02-05T23:33:29.412Z] LOG    🎯 Must-have: 5
+[2026-02-05T23:33:29.412Z] LOG    ✨ Nice-to-have: 14
+[2026-02-05T23:33:29.413Z] LOG    ❌ Failed: 0
+[2026-02-05T23:33:29.413Z] LOG    ⏱️  Enrichment took: 1569ms (1.57s)
+
+--- Summary ---
+Enrichment completed

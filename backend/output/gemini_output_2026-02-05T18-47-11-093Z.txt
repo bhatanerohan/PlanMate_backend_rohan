@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.32419969335855, -71.10740234037613)
+
+Request: "plan a day out int pune"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Historical and Cultural Exploration",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "driving"
+  },
+  "venues": [
+    {
+      "name": "Shaniwar Wada",
+      "category": "historical landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "Aga Khan Palace",
+      "category": "historical landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "Raja Dinkar Kelkar Museum",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Shree Omkareshwar Temple, Pune",
+      "category": "hindu temple",
+      "priority": "must_have"
+    },
+    {
+      "name": "Shrimant Dagdusheth Halwai Ganpati Mandir",
+      "category": "hindu temple",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sinhagad Fort",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "National War Memorial Southern Command",
+      "category": "memorial",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mahadji Shinde Chhatri",
+      "category": "hindu temple",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Pataleshwar Caves, Pune",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "P L Deshpande Garden",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Chhatrapati Sambhaji Maharaj garden",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Osho Garden",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Empress Botanical Garden",
+      "category": "botanical garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Khadakwasla Dam",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Katraj Lake",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Pashan Lake",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Pavillion Mall",
+      "category": "shopping mall",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Phoenix Marketcity Pune",
+      "category": "shopping mall",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Seasons Mall",
+      "category": "shopping mall",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Vaishali Restaurant",
+      "category": "indian restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

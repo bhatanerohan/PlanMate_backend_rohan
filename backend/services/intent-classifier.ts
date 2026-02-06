@@ -29,7 +29,7 @@
 
 // function detectManipulation(prompt: string): boolean {
 //   const lowerPrompt = prompt.toLowerCase();
-  
+
 //   const manipulationPatterns = [
 //     'ignore previous', 'ignore all previous', 'ignore above', 'ignore instructions',
 //     'forget instructions', 'forget previous', 'disregard', 'you are now', 'act as',
@@ -37,7 +37,7 @@
 //     'output true', 'output false', 'override', 'bypass', 'new rule', 'new instruction',
 //     'developer mode', 'admin mode', 'debug mode', 'jailbreak', 'dan mode', 'do anything now',
 //   ];
-  
+
 //   return manipulationPatterns.some(pattern => lowerPrompt.includes(pattern));
 // }
 
@@ -48,7 +48,7 @@
 //   prompt: string, 
 //   hasCurrentItinerary: boolean = false
 // ): Promise<EnhancedClassificationResult> {
-  
+
 //   if (detectManipulation(prompt)) {
 //     console.warn(`🚨 Manipulation detected in prompt: "${prompt.substring(0, 100)}..."`);
 //     return {
@@ -165,7 +165,7 @@
 //     });
 
 //     const content = response.choices[0]?.message?.content;
-    
+
 //     if (!content) {
 //       throw new Error('No response from GPT');
 //     }
@@ -214,7 +214,7 @@
 //       result.reasoning = 'No current itinerary to modify, creating new one';
 //       result.useGeminiGrounding = true;
 //     }
-    
+
 //     console.log('🎯 Classification result:', {
 //       isRelevant: result.isRelevant,
 //       routeTo: result.routeTo,
@@ -257,11 +257,11 @@
 
 //   } catch (error) {
 //     console.error('Classification error:', error);
-    
+
 //     if (error instanceof Error) {
 //       throw new Error(`Failed to classify intent: ${error.message}`);
 //     }
-    
+
 //     throw new Error('Failed to classify intent: Unknown error');
 //   }
 // }
@@ -285,6 +285,7 @@ export interface EnhancedClassificationResult {
   reasoning: string;
   prompt: string;
   useGeminiGrounding: boolean;
+  includeUserLocation: boolean; // Whether to include user's location in the route
 }
 
 interface GPTClassificationResponse {
@@ -293,6 +294,7 @@ interface GPTClassificationResponse {
   queryType: string;
   reasoning: string;
   useGeminiGrounding: boolean;
+  includeUserLocation: boolean;
 }
 
 // ============================================================================
@@ -304,7 +306,7 @@ function detectCorridorPattern(prompt: string): boolean {
     /between\s+.+?\s+and\s+.+/i,       // "between X and Y"
     /.+?\s+to\s+.+?\s+(route|walk|tour|trip)/i,  // "X to Y route"
   ];
-  
+
   return corridorPatterns.some(pattern => pattern.test(prompt));
 }
 
@@ -322,7 +324,7 @@ function detectExplicitRoutePattern(prompt: string): boolean {
 
 function detectManipulation(prompt: string): boolean {
   const lowerPrompt = prompt.toLowerCase();
-  
+
   const manipulationPatterns = [
     'ignore previous', 'ignore all previous', 'ignore above', 'ignore instructions',
     'forget instructions', 'forget previous', 'disregard', 'you are now', 'act as',
@@ -330,15 +332,15 @@ function detectManipulation(prompt: string): boolean {
     'output true', 'output false', 'override', 'bypass', 'new rule', 'new instruction',
     'developer mode', 'admin mode', 'debug mode', 'jailbreak', 'dan mode', 'do anything now',
   ];
-  
+
   return manipulationPatterns.some(pattern => lowerPrompt.includes(pattern));
 }
 
 export async function classifyIntent(
-  prompt: string, 
+  prompt: string,
   hasCurrentItinerary: boolean = false
 ): Promise<EnhancedClassificationResult> {
-  
+
   if (detectManipulation(prompt)) {
     console.warn(`🚨 Manipulation detected in prompt: "${prompt.substring(0, 100)}..."`);
     return {
@@ -348,7 +350,32 @@ export async function classifyIntent(
       category: 'not_relevant',
       reasoning: 'Detected manipulation attempt in prompt',
       prompt: prompt,
-      useGeminiGrounding: false
+      useGeminiGrounding: false,
+      includeUserLocation: false
+    };
+  }
+
+  // 🆕 FAST-PATH: Detect "add my location" / "remove my location" commands
+  // These should route directly to agent4 without needing GPT classification
+  const lowerPrompt = prompt.toLowerCase();
+  const isAddMyLocation = /\b(add|include)\s+(my\s+)?location\b/i.test(prompt) ||
+    lowerPrompt.includes('add my location');
+  const isRemoveMyLocation = /\b(remove|delete)\s+(my\s+)?location\b/i.test(prompt) ||
+    lowerPrompt.includes('remove my location');
+
+  if ((isAddMyLocation || isRemoveMyLocation) && hasCurrentItinerary) {
+    console.log(`📍 Fast-path: Detected location modification command: ${isAddMyLocation ? 'ADD' : 'REMOVE'}`);
+    return {
+      isRelevant: true,
+      routeTo: 'agent4',
+      queryType: 'itinerary_modification',
+      category: 'quick_itinerary',
+      reasoning: isAddMyLocation
+        ? 'User wants to add their location to the current itinerary'
+        : 'User wants to remove their location from the current itinerary',
+      prompt: prompt,
+      useGeminiGrounding: false,
+      includeUserLocation: isAddMyLocation
     };
   }
 
@@ -376,6 +403,7 @@ Analyze the user's query and determine:
 2. What type of query is it?
 3. Which agent should handle it?
 4. Should we use Gemini grounding for rich context?
+5. Should the user's current location be included in the route?
 
 === CONTEXT ===
 User currently has an active itinerary: ${hasCurrentItinerary ? 'YES' : 'NO'}
@@ -423,10 +451,25 @@ DON'T USE GROUNDING when:
 ❌ Query is about routing/directions to specific places
 ❌ Query is modifying existing itinerary
 
+=== USER LOCATION DECISION RULES ===
+
+INCLUDE USER LOCATION (includeUserLocation: true) when:
+✅ User says "from here", "from my location", "starting from me"
+✅ User says "near me", "around me", "close to me"
+✅ User implies proximity without specifying a different city
+✅ Query doesn't mention a specific city/area different from user's location
+
+EXCLUDE USER LOCATION (includeUserLocation: false) when:
+❌ User specifies a different city (e.g., "plan a trip in NYC" when user is in Boston)
+❌ User mentions "in [City]", "trip to [City]", "visiting [City]" where City differs from user's location
+❌ Query is about a specific distant location
+❌ User does NOT explicitly request starting from their location
+
 **Type: not_relevant**
 Not about locations, venues, or events.
 → Reject (routeTo: null)
 → Grounding: FALSE
+→ includeUserLocation: FALSE
 
 === RESPONSE FORMAT (REQUIRED) ===
 {
@@ -434,7 +477,8 @@ Not about locations, venues, or events.
   "routeTo": "gemini" or "agent2" or "agent4" or null,
   "queryType": "explicit_route" or "itinerary_planning" or "discovery" or "itinerary_modification" or "not_relevant",
   "reasoning": "brief explanation",
-  "useGeminiGrounding": true or false
+  "useGeminiGrounding": true or false,
+  "includeUserLocation": true or false
 }
 
 No other text. Just JSON.`
@@ -447,7 +491,7 @@ No other text. Just JSON.`
     });
 
     const content = response.choices[0]?.message?.content;
-    
+
     if (!content) {
       throw new Error('No response from GPT');
     }
@@ -508,7 +552,7 @@ No other text. Just JSON.`
       result.reasoning = 'No current itinerary to modify, creating new one';
       result.useGeminiGrounding = true;
     }
-    
+
     console.log('🎯 Classification result:', {
       isRelevant: result.isRelevant,
       routeTo: result.routeTo,
@@ -548,16 +592,17 @@ No other text. Just JSON.`
       category,
       reasoning: result.reasoning.trim(),
       prompt: prompt,
-      useGeminiGrounding: result.useGeminiGrounding
+      useGeminiGrounding: result.useGeminiGrounding,
+      includeUserLocation: result.includeUserLocation ?? false
     };
 
   } catch (error) {
     console.error('Classification error:', error);
-    
+
     if (error instanceof Error) {
       throw new Error(`Failed to classify intent: ${error.message}`);
     }
-    
+
     throw new Error('Failed to classify intent: Unknown error');
   }
 }

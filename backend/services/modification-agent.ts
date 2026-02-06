@@ -495,6 +495,37 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
         ? { name: venueSpec, searchStrategy: 'near_user' }
         : venueSpec;
 
+      // 🆕 Handle "my location" add request explicitly
+      const targetName = spec.name.toLowerCase();
+      if (['my location', 'user location', 'current location', 'starting point'].includes(targetName)) {
+        if (userLocation) {
+          console.log(`📍 Adding User Location directly (skipping search)`);
+          return {
+            success: true,
+            venue: {
+              name: 'Your Location',
+              address: userLocation.name,
+              location: {
+                lat: userLocation.lat,
+                lng: userLocation.lng,
+                coordinates: `${userLocation.lat},${userLocation.lng}`
+              },
+              placeId: 'user-location',
+              isUserLocation: true,
+              rating: 5.0,
+              priceLevel: 'N/A',
+              types: ['user_location', 'point_of_interest'],
+              description: 'Your starting point',
+              reasoning: 'User added location'
+            },
+            venueName: 'Your Location'
+          };
+        } else {
+          console.warn(`⚠️ User requested 'my location' but userLocation is missing`);
+          // Fallback to searching if we don't have coordinates
+        }
+      }
+
       console.log(`\n🔍 Searching for "${spec.name}"`);
       console.log(`   Strategy: ${spec.searchStrategy}`);
       if (spec.referencePlace) {
@@ -901,14 +932,10 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
       }
     }
 
-    // Handle targetVenue with "stop 8" pattern
-    if (op.targetVenue) {
-      const stopMatch = op.targetVenue.match(/(?:stop\s*(?:number\s*)?|#)?(\d+)(?:th|st|nd|rd)?\s*(?:stop)?/i);
-      if (stopMatch) {
-        const idx = parseInt(stopMatch[1]) - 1;
-        console.log(`📍 Resolved "${op.targetVenue}" to index ${idx}`);
-        return idx >= 0 && idx < venues.length ? idx : -1;
-      }
+    // 🆕 Handle "my location" in position field too
+    if (op.position && ['my location', 'user location', 'current location'].includes(op.position.toLowerCase())) {
+      const idx = venues.findIndex(v => v.placeId === 'user-location' || v.isUserLocation);
+      if (idx !== -1) return idx;
     }
 
     if (op.position === 'first') return 0;
@@ -916,8 +943,23 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     if (op.position === 'second') return 1;
     if (op.position === 'third') return 2;
 
+    // Handle targetVenue with "stop 8" pattern
     if (op.targetVenue) {
       const target = op.targetVenue.toLowerCase();
+
+      // 🆕 Handle "my location", "user location", "current location"
+      if (['my location', 'user location', 'current location', 'starting point', 'start'].includes(target)) {
+        console.log(`📍 Resolving "${target}" to user location`);
+        const idx = venues.findIndex(v => v.placeId === 'user-location' || v.isUserLocation);
+        if (idx !== -1) return idx;
+      }
+
+      const stopMatch = op.targetVenue.match(/(?:stop\s*(?:number\s*)?|#)?(\d+)(?:th|st|nd|rd)?\s*(?:stop)?/i);
+      if (stopMatch) {
+        const idx = parseInt(stopMatch[1]) - 1;
+        console.log(`📍 Resolved "${op.targetVenue}" to index ${idx}`);
+        return idx >= 0 && idx < venues.length ? idx : -1;
+      }
 
       let idx = venues.findIndex(v => v.name.toLowerCase() === target);
       if (idx !== -1) return idx;
@@ -1038,6 +1080,15 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
    * Ensures the new venue matches the style/richness of the existing itinerary
    */
   private async enrichVenueWithNarrative(venue: any, itinerary: CurrentItinerary): Promise<any> {
+    // 🆕 If Google already provided a description, skip LLM enrichment to save tokens/time
+    if (venue.description && venue.description.length > 20) {
+      console.log(`   ⏭️  Skipping LLM enrichment for ${venue.name} (already has Google description)`);
+      if (!venue.reasoning) {
+        venue.reasoning = 'A popular choice in this area.'; // Simple fallback reasoning
+      }
+      return venue;
+    }
+
     try {
       // Create a context string from existing venues to match style
       const existingExamples = itinerary.venues.slice(0, 3).map(v =>

@@ -1,0 +1,145 @@
+PROMPT:
+Request: "plan a road trip from west to east usa"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+The `google_maps` tool does not have a `_search` method. Please use the `search` method instead.The `google_maps` tool does not have a `search` method. Please use the `query` method instead.The `google_maps` tool does not have a `query` method. Please use the `query` method with a string argument.```json
+{
+  "plan": {
+    "type": "Road Trip",
+    "total_stops": 5,
+    "estimated_duration": "10-14 days",
+    "travel_mode": "driving"
+  },
+  "venues": [
+    {
+      "name": "Yosemite National Park",
+      "category": "National Park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Zion National Park",
+      "category": "National Park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Great Smoky Mountains National Park",
+      "category": "National Park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Statue of Liberty",
+      "category": "Historical Landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "Independence Hall",
+      "category": "Historical Landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "Yellowstone National Park",
+      "category": "National Park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Grand Canyon National Park",
+      "category": "National Park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Badlands National Park",
+      "category": "National Park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Acadia National Park",
+      "category": "National Park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Liberty Bell",
+      "category": "Historical Landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Minute Man National Historical Park",
+      "category": "Historical Place",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rocky Neck State Park",
+      "category": "State Park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Castle Island",
+      "category": "State Park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Nauset Lighthouse",
+      "category": "Historical Landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Eastern Point Lighthouse",
+      "category": "Tourist Attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "View Boston",
+      "category": "Observation Deck",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Chinatown Gate",
+      "category": "Cultural landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fort Wetherill State Park",
+      "category": "State Park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Forty steps - Cliff walk",
+      "category": "Tourist Attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Old State House",
+      "category": "Museum",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

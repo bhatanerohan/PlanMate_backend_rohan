@@ -1,0 +1,137 @@
+PROMPT:
+User location: Current location (42.32419969335855, -71.10740234037613)
+
+Request: "plan a day in boston"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Full Day in Boston",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Boston Common",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Public Garden",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Faneuil Hall Marketplace",
+      "category": "market",
+      "priority": "must_have"
+    },
+    {
+      "name": "New England Aquarium",
+      "category": "aquarium",
+      "priority": "must_have"
+    },
+    {
+      "name": "Museum of Fine Arts, Boston",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "View Boston",
+      "category": "observation deck",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Museum of Illusions Boston",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Quincy Market",
+      "category": "market",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Tea Party Ships & Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Museum of Science",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Harvard Museum of Natural History",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Waterfront",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Public Library - Central Library",
+      "category": "library",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Puttshack - Boston",
+      "category": "entertainment",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "WNDR Museum",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Castle Island",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Sign",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Harborwalk",
+      "category": "park",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

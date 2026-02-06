@@ -1,0 +1,137 @@
+PROMPT:
+User location: Current location (42.32419969335855, -71.10740234037613)
+
+Request: "plan a day out in pune"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "A day out in Pune",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "car"
+  },
+  "venues": [
+    {
+      "name": "Shaniwar Wada",
+      "category": "historical landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "Aga Khan Palace",
+      "category": "historical landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "Raja Dinkar Kelkar Museum",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Empress Botanical Garden",
+      "category": "botanical garden",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sinhgad Fort",
+      "category": "historical landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "P L Deshpande Garden",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Osho Teerth Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "National War Memorial Southern Command",
+      "category": "memorial",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mahatma Phule Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Khadakwasla Dam",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Saras Baug",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Vetal Tekdi",
+      "category": "hiking area",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Osho Garden",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Chatushringi Hill",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mystery Rooms - Koregaon Park, Pune (OFFICIAL Escape Rooms)",
+      "category": "amusement center",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Adventure Seekers",
+      "category": "tour agency",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Foliage Outdoors",
+      "category": "travel agency",
+      "priority": "nice_to_have"
+    },
+     {
+      "name": "Pune Tours",
+      "category": "car rental agency",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```<ctrl100>

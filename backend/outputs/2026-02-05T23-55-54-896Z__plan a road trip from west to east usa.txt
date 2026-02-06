@@ -1,0 +1,174 @@
+User Prompt: plan a road trip from west to east usa
+
+[2026-02-05T23:55:54.897Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-05T23:55:54.898Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-05T23:55:54.898Z] LOG    🎯 Must-have: 5
+[2026-02-05T23:55:54.898Z] LOG    ✨ Nice-to-have: 15
+[2026-02-05T23:55:54.903Z] LOG 📍 Location hint: nearby
+[2026-02-05T23:55:54.904Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-05T23:55:54.904Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-05T23:55:54.907Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-05T23:55:54.908Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-05T23:55:54.908Z] LOG    1. Searching "Yosemite National Park" in "nearby"
+[2026-02-05T23:55:54.909Z] LOG 🔍 [Google Places] Text search: "Yosemite National Park" in nearby
+[2026-02-05T23:55:54.915Z] LOG    2. Searching "Zion National Park" in "nearby"
+[2026-02-05T23:55:54.916Z] LOG 🔍 [Google Places] Text search: "Zion National Park" in nearby
+[2026-02-05T23:55:54.918Z] LOG    3. Searching "Great Smoky Mountains National Park" in "nearby"
+[2026-02-05T23:55:54.919Z] LOG 🔍 [Google Places] Text search: "Great Smoky Mountains National Park" in nearby
+[2026-02-05T23:55:54.920Z] LOG    4. Searching "Statue of Liberty" in "nearby"
+[2026-02-05T23:55:54.921Z] LOG 🔍 [Google Places] Text search: "Statue of Liberty" in nearby
+[2026-02-05T23:55:54.925Z] LOG    5. Searching "Independence Hall" in "nearby"
+[2026-02-05T23:55:54.925Z] LOG 🔍 [Google Places] Text search: "Independence Hall" in nearby
+[2026-02-05T23:55:54.927Z] LOG    6. Searching "Yellowstone National Park" in "nearby"
+[2026-02-05T23:55:54.927Z] LOG 🔍 [Google Places] Text search: "Yellowstone National Park" in nearby
+[2026-02-05T23:55:54.928Z] LOG    7. Searching "Grand Canyon National Park" in "nearby"
+[2026-02-05T23:55:54.929Z] LOG 🔍 [Google Places] Text search: "Grand Canyon National Park" in nearby
+[2026-02-05T23:55:54.930Z] LOG    8. Searching "Badlands National Park" in "nearby"
+[2026-02-05T23:55:54.931Z] LOG 🔍 [Google Places] Text search: "Badlands National Park" in nearby
+[2026-02-05T23:55:54.932Z] LOG    9. Searching "Acadia National Park" in "nearby"
+[2026-02-05T23:55:54.933Z] LOG 🔍 [Google Places] Text search: "Acadia National Park" in nearby
+[2026-02-05T23:55:54.934Z] LOG    10. Searching "Liberty Bell" in "nearby"
+[2026-02-05T23:55:54.935Z] LOG 🔍 [Google Places] Text search: "Liberty Bell" in nearby
+[2026-02-05T23:55:55.256Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:55.283Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:55.296Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:55.326Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:55.341Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:55.346Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:55.370Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:55.373Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:55.390Z] LOG    ✅ Yosemite Valley: Got description (93 chars)
+[2026-02-05T23:55:55.391Z] LOG    📷 Yosemite Valley: Got 10 photos
+[2026-02-05T23:55:55.392Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:55.405Z] LOG    ✅ Zion National Park: Got description (85 chars)
+[2026-02-05T23:55:55.405Z] LOG    📷 Zion National Park: Got 10 photos
+[2026-02-05T23:55:55.406Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:55.433Z] LOG    ✅ Acadia National Park: Got description (98 chars)
+[2026-02-05T23:55:55.435Z] LOG    📷 Acadia National Park: Got 10 photos
+[2026-02-05T23:55:55.435Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:55.439Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:55.458Z] LOG    ✅ Great Smoky Mountains National Park: Got description (95 chars)
+[2026-02-05T23:55:55.459Z] LOG    📷 Great Smoky Mountains National Park: Got 10 photos
+[2026-02-05T23:55:55.460Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:55.496Z] LOG    ✅ Statue of Liberty: Got description (100 chars)
+[2026-02-05T23:55:55.498Z] LOG    📷 Statue of Liberty: Got 10 photos
+[2026-02-05T23:55:55.499Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:55.504Z] LOG    ✅ Yellowstone National Park: Got description (99 chars)
+[2026-02-05T23:55:55.505Z] LOG    📷 Yellowstone National Park: Got 10 photos
+[2026-02-05T23:55:55.506Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:55.515Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:55.532Z] LOG    ✅ Independence Hall: Got description (98 chars)
+[2026-02-05T23:55:55.534Z] LOG    📷 Independence Hall: Got 10 photos
+[2026-02-05T23:55:55.535Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:55.536Z] LOG    ✅ Liberty Bell: Got description (99 chars)
+[2026-02-05T23:55:55.536Z] LOG    📷 Liberty Bell: Got 10 photos
+[2026-02-05T23:55:55.537Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:55.568Z] LOG    ✅ Grand Canyon National Park: Got description (97 chars)
+[2026-02-05T23:55:55.570Z] LOG    📷 Grand Canyon National Park: Got 10 photos
+[2026-02-05T23:55:55.571Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:55.635Z] LOG    ✅ Badlands National Park: Got description (99 chars)
+[2026-02-05T23:55:55.638Z] LOG    📷 Badlands National Park: Got 10 photos
+[2026-02-05T23:55:55.638Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:55.639Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 732ms
+[2026-02-05T23:55:55.639Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-05T23:55:55.640Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-05T23:55:55.850Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-05T23:55:55.853Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-05T23:55:55.856Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-05T23:55:55.857Z] LOG    1. Searching "Minute Man National Historical Park" in "nearby"
+[2026-02-05T23:55:55.857Z] LOG 🔍 [Google Places] Text search: "Minute Man National Historical Park" in nearby
+[2026-02-05T23:55:55.858Z] LOG    2. Searching "Rocky Neck State Park" in "nearby"
+[2026-02-05T23:55:55.859Z] LOG 🔍 [Google Places] Text search: "Rocky Neck State Park" in nearby
+[2026-02-05T23:55:55.859Z] LOG    3. Searching "Castle Island" in "nearby"
+[2026-02-05T23:55:55.860Z] LOG 🔍 [Google Places] Text search: "Castle Island" in nearby
+[2026-02-05T23:55:55.861Z] LOG    4. Searching "Nauset Lighthouse" in "nearby"
+[2026-02-05T23:55:55.861Z] LOG 🔍 [Google Places] Text search: "Nauset Lighthouse" in nearby
+[2026-02-05T23:55:55.862Z] LOG    5. Searching "Eastern Point Lighthouse" in "nearby"
+[2026-02-05T23:55:55.862Z] LOG 🔍 [Google Places] Text search: "Eastern Point Lighthouse" in nearby
+[2026-02-05T23:55:55.863Z] LOG    6. Searching "View Boston" in "nearby"
+[2026-02-05T23:55:55.864Z] LOG 🔍 [Google Places] Text search: "View Boston" in nearby
+[2026-02-05T23:55:55.864Z] LOG    7. Searching "Chinatown Gate" in "nearby"
+[2026-02-05T23:55:55.865Z] LOG 🔍 [Google Places] Text search: "Chinatown Gate" in nearby
+[2026-02-05T23:55:55.865Z] LOG    8. Searching "Fort Wetherill State Park" in "nearby"
+[2026-02-05T23:55:55.866Z] LOG 🔍 [Google Places] Text search: "Fort Wetherill State Park" in nearby
+[2026-02-05T23:55:55.866Z] LOG    9. Searching "Forty steps - Cliff walk" in "nearby"
+[2026-02-05T23:55:55.867Z] LOG 🔍 [Google Places] Text search: "Forty steps - Cliff walk" in nearby
+[2026-02-05T23:55:55.867Z] LOG    10. Searching "Old State House" in "nearby"
+[2026-02-05T23:55:55.868Z] LOG 🔍 [Google Places] Text search: "Old State House" in nearby
+[2026-02-05T23:55:56.162Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:56.171Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:56.185Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:56.200Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:56.225Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:56.228Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:56.231Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:56.260Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:56.262Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:56.271Z] LOG    ✅ Chinatown Gate: Got description (92 chars)
+[2026-02-05T23:55:56.272Z] LOG    📷 Chinatown Gate: Got 10 photos
+[2026-02-05T23:55:56.272Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:56.297Z] LOG    ✅ Old State House: Got description (98 chars)
+[2026-02-05T23:55:56.298Z] LOG    📷 Old State House: Got 10 photos
+[2026-02-05T23:55:56.299Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:56.300Z] LOG    ✅ Nauset Lighthouse: Got description (83 chars)
+[2026-02-05T23:55:56.300Z] LOG    📷 Nauset Lighthouse: Got 10 photos
+[2026-02-05T23:55:56.301Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:56.323Z] LOG    ✅ Castle Island: Got description (83 chars)
+[2026-02-05T23:55:56.325Z] LOG    📷 Castle Island: Got 10 photos
+[2026-02-05T23:55:56.325Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:56.359Z] LOG    ✅ Fort Wetherill State Park: Got description (97 chars)
+[2026-02-05T23:55:56.361Z] LOG    📷 Fort Wetherill State Park: Got 10 photos
+[2026-02-05T23:55:56.362Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:56.372Z] LOG    ⚠️  Forty steps - Cliff walk: No editorial summary available
+[2026-02-05T23:55:56.373Z] LOG    📷 Forty steps - Cliff walk: Got 10 photos
+[2026-02-05T23:55:56.373Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:56.374Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-02-05T23:55:56.374Z] LOG    📷 View Boston: Got 10 photos
+[2026-02-05T23:55:56.375Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:56.379Z] LOG    ✅ Rocky Neck State Park: Got description (95 chars)
+[2026-02-05T23:55:56.380Z] LOG    📷 Rocky Neck State Park: Got 10 photos
+[2026-02-05T23:55:56.380Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:56.391Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T23:55:56.440Z] LOG    ✅ Minute Man National Historical Park: Got description (93 chars)
+[2026-02-05T23:55:56.443Z] LOG    📷 Minute Man National Historical Park: Got 10 photos
+[2026-02-05T23:55:56.444Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:56.521Z] LOG    ✅ Eastern Point Lighthouse: Got description (99 chars)
+[2026-02-05T23:55:56.524Z] LOG    📷 Eastern Point Lighthouse: Got 10 photos
+[2026-02-05T23:55:56.525Z] LOG ✅ Found 1 places
+[2026-02-05T23:55:56.526Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 670ms
+[2026-02-05T23:55:56.527Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-05T23:55:56.527Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-05T23:55:56.528Z] LOG    ✅ Yosemite National Park → Yosemite Valley (must_have)
+[2026-02-05T23:55:56.528Z] LOG    ✅ Zion National Park → Zion National Park (must_have)
+[2026-02-05T23:55:56.528Z] LOG    ✅ Great Smoky Mountains National Park → Great Smoky Mountains National Park (must_have)
+[2026-02-05T23:55:56.529Z] LOG    ✅ Statue of Liberty → Statue of Liberty (must_have)
+[2026-02-05T23:55:56.529Z] LOG    ✅ Independence Hall → Independence Hall (must_have)
+[2026-02-05T23:55:56.529Z] LOG    ✅ Yellowstone National Park → Yellowstone National Park (nice_to_have)
+[2026-02-05T23:55:56.530Z] LOG    ✅ Grand Canyon National Park → Grand Canyon National Park (nice_to_have)
+[2026-02-05T23:55:56.530Z] LOG    ✅ Badlands National Park → Badlands National Park (nice_to_have)
+[2026-02-05T23:55:56.530Z] LOG    ✅ Acadia National Park → Acadia National Park (nice_to_have)
+[2026-02-05T23:55:56.531Z] LOG    ✅ Liberty Bell → Liberty Bell (nice_to_have)
+[2026-02-05T23:55:56.531Z] LOG    ✅ Minute Man National Historical Park → Minute Man National Historical Park (nice_to_have)
+[2026-02-05T23:55:56.531Z] LOG    ✅ Rocky Neck State Park → Rocky Neck State Park (nice_to_have)
+[2026-02-05T23:55:56.532Z] LOG    ✅ Castle Island → Castle Island (nice_to_have)
+[2026-02-05T23:55:56.532Z] LOG    ✅ Nauset Lighthouse → Nauset Lighthouse (nice_to_have)
+[2026-02-05T23:55:56.533Z] LOG    ✅ Eastern Point Lighthouse → Eastern Point Lighthouse (nice_to_have)
+[2026-02-05T23:55:56.533Z] LOG    ✅ View Boston → View Boston (nice_to_have)
+[2026-02-05T23:55:56.533Z] LOG    ✅ Chinatown Gate → Chinatown Gate (nice_to_have)
+[2026-02-05T23:55:56.534Z] LOG    ✅ Fort Wetherill State Park → Fort Wetherill State Park (nice_to_have)
+[2026-02-05T23:55:56.534Z] LOG    ✅ Forty steps - Cliff walk → Forty steps - Cliff walk (nice_to_have)
+[2026-02-05T23:55:56.535Z] LOG    ✅ Old State House → Old State House (nice_to_have)
+[2026-02-05T23:55:56.535Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-05T23:55:56.535Z] LOG    Total enriched: 20
+[2026-02-05T23:55:56.536Z] LOG    🎯 Must-have: 5
+[2026-02-05T23:55:56.536Z] LOG    ✨ Nice-to-have: 15
+[2026-02-05T23:55:56.537Z] LOG    ❌ Failed: 0
+[2026-02-05T23:55:56.537Z] LOG    ⏱️  Enrichment took: 1641ms (1.64s)
+
+--- Summary ---
+Enrichment completed

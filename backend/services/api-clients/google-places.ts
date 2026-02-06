@@ -177,10 +177,10 @@ export class GooglePlacesClient {
         if (detailsResponse.data.status === 'OK') {
           const result = detailsResponse.data.result;
 
-          // Get editorial summary
+          // Get editorial summary and save as description
           if (result?.editorial_summary?.overview) {
-            place.editorial_summary = result.editorial_summary.overview;
-            console.log(`   ✅ ${place.name}: Got description (${place.editorial_summary.length} chars)`);
+            place.description = result.editorial_summary.overview;
+            console.log(`   ✅ ${place.name}: Got description (${place.description.length} chars)`);
           } else {
             console.log(`   ⚠️  ${place.name}: No editorial summary available`);
           }

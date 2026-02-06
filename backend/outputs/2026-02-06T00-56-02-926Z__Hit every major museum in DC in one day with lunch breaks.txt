@@ -1,0 +1,174 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-02-06T00:56:02.927Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-06T00:56:02.928Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-06T00:56:02.929Z] LOG    🎯 Must-have: 5
+[2026-02-06T00:56:02.930Z] LOG    ✨ Nice-to-have: 15
+[2026-02-06T00:56:02.932Z] LOG 📍 Location hint: DC in one day
+[2026-02-06T00:56:02.932Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-06T00:56:02.933Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-06T00:56:02.934Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T00:56:02.935Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T00:56:02.936Z] LOG    1. Searching "Smithsonian National Museum of Natural History" in "DC in one day"
+[2026-02-06T00:56:02.937Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of Natural History" in DC in one day
+[2026-02-06T00:56:02.945Z] LOG    2. Searching "Smithsonian National Museum of American History" in "DC in one day"
+[2026-02-06T00:56:02.947Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of American History" in DC in one day
+[2026-02-06T00:56:02.951Z] LOG    3. Searching "National Gallery of Art" in "DC in one day"
+[2026-02-06T00:56:02.952Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in DC in one day
+[2026-02-06T00:56:02.955Z] LOG    4. Searching "National Museum of African American History and Culture" in "DC in one day"
+[2026-02-06T00:56:02.956Z] LOG 🔍 [Google Places] Text search: "National Museum of African American History and Culture" in DC in one day
+[2026-02-06T00:56:02.959Z] LOG    5. Searching "National Mall" in "DC in one day"
+[2026-02-06T00:56:02.960Z] LOG 🔍 [Google Places] Text search: "National Mall" in DC in one day
+[2026-02-06T00:56:02.964Z] LOG    6. Searching "National Museum of Asian Art" in "DC in one day"
+[2026-02-06T00:56:02.965Z] LOG 🔍 [Google Places] Text search: "National Museum of Asian Art" in DC in one day
+[2026-02-06T00:56:02.967Z] LOG    7. Searching "National Museum of the American Indian" in "DC in one day"
+[2026-02-06T00:56:02.968Z] LOG 🔍 [Google Places] Text search: "National Museum of the American Indian" in DC in one day
+[2026-02-06T00:56:02.970Z] LOG    8. Searching "Hirshhorn Museum" in "DC in one day"
+[2026-02-06T00:56:02.972Z] LOG 🔍 [Google Places] Text search: "Hirshhorn Museum" in DC in one day
+[2026-02-06T00:56:02.974Z] LOG    9. Searching "Smithsonian American Art Museum" in "DC in one day"
+[2026-02-06T00:56:02.974Z] LOG 🔍 [Google Places] Text search: "Smithsonian American Art Museum" in DC in one day
+[2026-02-06T00:56:02.976Z] LOG    10. Searching "National Portrait Gallery" in "DC in one day"
+[2026-02-06T00:56:02.976Z] LOG 🔍 [Google Places] Text search: "National Portrait Gallery" in DC in one day
+[2026-02-06T00:56:03.478Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:03.582Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:03.587Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:03.617Z] LOG    ✅ Smithsonian National Museum of American History: Got description (99 chars)
+[2026-02-06T00:56:03.620Z] LOG    📷 Smithsonian National Museum of American History: Got 10 photos
+[2026-02-06T00:56:03.622Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:03.659Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:03.672Z] LOG    ✅ Hirshhorn Museum: Got description (99 chars)
+[2026-02-06T00:56:03.673Z] LOG    📷 Hirshhorn Museum: Got 10 photos
+[2026-02-06T00:56:03.674Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:03.691Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:03.694Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:03.717Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:03.737Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-02-06T00:56:03.739Z] LOG    📷 Smithsonian National Museum of Natural History: Got 10 photos
+[2026-02-06T00:56:03.740Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:03.764Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:03.790Z] LOG    ✅ National Portrait Gallery: Got description (96 chars)
+[2026-02-06T00:56:03.791Z] LOG    📷 National Portrait Gallery: Got 10 photos
+[2026-02-06T00:56:03.791Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:03.820Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:03.824Z] LOG    ✅ National Museum of African American History and Culture: Got description (97 chars)
+[2026-02-06T00:56:03.825Z] LOG    📷 National Museum of African American History and Culture: Got 10 photos
+[2026-02-06T00:56:03.826Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:03.832Z] LOG    ✅ Smithsonian American Art Museum: Got description (98 chars)
+[2026-02-06T00:56:03.833Z] LOG    📷 Smithsonian American Art Museum: Got 10 photos
+[2026-02-06T00:56:03.833Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:03.847Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:03.852Z] LOG    ✅ National Mall: Got description (97 chars)
+[2026-02-06T00:56:03.853Z] LOG    📷 National Mall: Got 10 photos
+[2026-02-06T00:56:03.854Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:03.909Z] LOG    ✅ National Museum of the American Indian: Got description (98 chars)
+[2026-02-06T00:56:03.912Z] LOG    📷 National Museum of the American Indian: Got 10 photos
+[2026-02-06T00:56:03.914Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:03.916Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-02-06T00:56:03.916Z] LOG    📷 National Gallery of Art: Got 10 photos
+[2026-02-06T00:56:03.917Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:03.967Z] LOG    ✅ National Museum of Asian Art: Got description (84 chars)
+[2026-02-06T00:56:03.971Z] LOG    📷 National Museum of Asian Art: Got 10 photos
+[2026-02-06T00:56:03.972Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:03.972Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1037ms
+[2026-02-06T00:56:03.973Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T00:56:03.973Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-06T00:56:04.188Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-06T00:56:04.192Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T00:56:04.193Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T00:56:04.194Z] LOG    1. Searching "National Building Museum" in "DC in one day"
+[2026-02-06T00:56:04.195Z] LOG 🔍 [Google Places] Text search: "National Building Museum" in DC in one day
+[2026-02-06T00:56:04.195Z] LOG    2. Searching "National Children's Museum" in "DC in one day"
+[2026-02-06T00:56:04.196Z] LOG 🔍 [Google Places] Text search: "National Children's Museum" in DC in one day
+[2026-02-06T00:56:04.197Z] LOG    3. Searching "Smithsonian National Postal Museum" in "DC in one day"
+[2026-02-06T00:56:04.197Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Postal Museum" in DC in one day
+[2026-02-06T00:56:04.198Z] LOG    4. Searching "Renwick Gallery of the Smithsonian American Art Museum" in "DC in one day"
+[2026-02-06T00:56:04.199Z] LOG 🔍 [Google Places] Text search: "Renwick Gallery of the Smithsonian American Art Museum" in DC in one day
+[2026-02-06T00:56:04.200Z] LOG    5. Searching "National Museum of Women in the Arts" in "DC in one day"
+[2026-02-06T00:56:04.200Z] LOG 🔍 [Google Places] Text search: "National Museum of Women in the Arts" in DC in one day
+[2026-02-06T00:56:04.201Z] LOG    6. Searching "International Spy Museum" in "DC in one day"
+[2026-02-06T00:56:04.201Z] LOG 🔍 [Google Places] Text search: "International Spy Museum" in DC in one day
+[2026-02-06T00:56:04.202Z] LOG    7. Searching "United States Holocaust Memorial Museum" in "DC in one day"
+[2026-02-06T00:56:04.203Z] LOG 🔍 [Google Places] Text search: "United States Holocaust Memorial Museum" in DC in one day
+[2026-02-06T00:56:04.204Z] LOG    8. Searching "Museum of the Bible" in "DC in one day"
+[2026-02-06T00:56:04.205Z] LOG 🔍 [Google Places] Text search: "Museum of the Bible" in DC in one day
+[2026-02-06T00:56:04.205Z] LOG    9. Searching "Smithsonian National Zoological Park" in "DC in one day"
+[2026-02-06T00:56:04.206Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Zoological Park" in DC in one day
+[2026-02-06T00:56:04.207Z] LOG    10. Searching "Hillwood Estate, Museum & Gardens" in "DC in one day"
+[2026-02-06T00:56:04.208Z] LOG 🔍 [Google Places] Text search: "Hillwood Estate, Museum & Gardens" in DC in one day
+[2026-02-06T00:56:04.492Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:04.566Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:04.607Z] LOG    ✅ National Children's Museum: Got description (95 chars)
+[2026-02-06T00:56:04.610Z] LOG    📷 National Children's Museum: Got 10 photos
+[2026-02-06T00:56:04.614Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:04.646Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:04.657Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:04.663Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:04.674Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:04.701Z] LOG    ✅ National Building Museum: Got description (97 chars)
+[2026-02-06T00:56:04.702Z] LOG    📷 National Building Museum: Got 10 photos
+[2026-02-06T00:56:04.703Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:04.715Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:04.740Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:04.766Z] LOG    ✅ Renwick Gallery of the Smithsonian American Art Museum: Got description (98 chars)
+[2026-02-06T00:56:04.769Z] LOG    📷 Renwick Gallery of the Smithsonian American Art Museum: Got 10 photos
+[2026-02-06T00:56:04.770Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:04.771Z] LOG    ✅ Smithsonian National Postal Museum: Got description (100 chars)
+[2026-02-06T00:56:04.772Z] LOG    📷 Smithsonian National Postal Museum: Got 10 photos
+[2026-02-06T00:56:04.772Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:04.785Z] LOG    ✅ Hillwood Estate, Museum & Gardens: Got description (98 chars)
+[2026-02-06T00:56:04.786Z] LOG    📷 Hillwood Estate, Museum & Gardens: Got 10 photos
+[2026-02-06T00:56:04.786Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:04.789Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:04.793Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T00:56:04.795Z] LOG    ✅ Museum of the Bible: Got description (99 chars)
+[2026-02-06T00:56:04.795Z] LOG    📷 Museum of the Bible: Got 10 photos
+[2026-02-06T00:56:04.796Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:04.804Z] LOG    ✅ International Spy Museum: Got description (100 chars)
+[2026-02-06T00:56:04.805Z] LOG    📷 International Spy Museum: Got 10 photos
+[2026-02-06T00:56:04.806Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:04.856Z] LOG    ✅ Smithsonian National Zoological Park: Got description (86 chars)
+[2026-02-06T00:56:04.859Z] LOG    📷 Smithsonian National Zoological Park: Got 10 photos
+[2026-02-06T00:56:04.860Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:04.921Z] LOG    ✅ National Museum of Women in the Arts: Got description (95 chars)
+[2026-02-06T00:56:04.924Z] LOG    📷 National Museum of Women in the Arts: Got 10 photos
+[2026-02-06T00:56:04.925Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:04.930Z] LOG    ✅ United States Holocaust Memorial Museum: Got description (98 chars)
+[2026-02-06T00:56:04.931Z] LOG    📷 United States Holocaust Memorial Museum: Got 10 photos
+[2026-02-06T00:56:04.931Z] LOG ✅ Found 1 places
+[2026-02-06T00:56:04.932Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 739ms
+[2026-02-06T00:56:04.932Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T00:56:04.933Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-06T00:56:04.933Z] LOG    ✅ Smithsonian National Museum of Natural History → Smithsonian National Museum of Natural History (must_have)
+[2026-02-06T00:56:04.934Z] LOG    ✅ Smithsonian National Museum of American History → Smithsonian National Museum of American History (must_have)
+[2026-02-06T00:56:04.934Z] LOG    ✅ National Gallery of Art → National Gallery of Art (must_have)
+[2026-02-06T00:56:04.935Z] LOG    ✅ National Museum of African American History and Culture → National Museum of African American History and Culture (must_have)
+[2026-02-06T00:56:04.935Z] LOG    ✅ National Mall → National Mall (must_have)
+[2026-02-06T00:56:04.936Z] LOG    ✅ National Museum of Asian Art → National Museum of Asian Art (nice_to_have)
+[2026-02-06T00:56:04.936Z] LOG    ✅ National Museum of the American Indian → National Museum of the American Indian (nice_to_have)
+[2026-02-06T00:56:04.937Z] LOG    ✅ Hirshhorn Museum → Hirshhorn Museum (nice_to_have)
+[2026-02-06T00:56:04.937Z] LOG    ✅ Smithsonian American Art Museum → Smithsonian American Art Museum (nice_to_have)
+[2026-02-06T00:56:04.938Z] LOG    ✅ National Portrait Gallery → National Portrait Gallery (nice_to_have)
+[2026-02-06T00:56:04.938Z] LOG    ✅ National Building Museum → National Building Museum (nice_to_have)
+[2026-02-06T00:56:04.939Z] LOG    ✅ National Children's Museum → National Children's Museum (nice_to_have)
+[2026-02-06T00:56:04.939Z] LOG    ✅ Smithsonian National Postal Museum → Smithsonian National Postal Museum (nice_to_have)
+[2026-02-06T00:56:04.940Z] LOG    ✅ Renwick Gallery of the Smithsonian American Art Museum → Renwick Gallery of the Smithsonian American Art Museum (nice_to_have)
+[2026-02-06T00:56:04.941Z] LOG    ✅ National Museum of Women in the Arts → National Museum of Women in the Arts (nice_to_have)
+[2026-02-06T00:56:04.941Z] LOG    ✅ International Spy Museum → International Spy Museum (nice_to_have)
+[2026-02-06T00:56:04.942Z] LOG    ✅ United States Holocaust Memorial Museum → United States Holocaust Memorial Museum (nice_to_have)
+[2026-02-06T00:56:04.942Z] LOG    ✅ Museum of the Bible → Museum of the Bible (nice_to_have)
+[2026-02-06T00:56:04.943Z] LOG    ✅ Smithsonian National Zoological Park → Smithsonian National Zoological Park (nice_to_have)
+[2026-02-06T00:56:04.943Z] LOG    ✅ Hillwood Estate, Museum & Gardens → Hillwood Estate, Museum & Gardens (nice_to_have)
+[2026-02-06T00:56:04.944Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-06T00:56:04.944Z] LOG    Total enriched: 20
+[2026-02-06T00:56:04.945Z] LOG    🎯 Must-have: 5
+[2026-02-06T00:56:04.945Z] LOG    ✨ Nice-to-have: 15
+[2026-02-06T00:56:04.945Z] LOG    ❌ Failed: 0
+[2026-02-06T00:56:04.946Z] LOG    ⏱️  Enrichment took: 2020ms (2.02s)
+
+--- Summary ---
+Enrichment completed

@@ -1,0 +1,160 @@
+User Prompt: plan a day out in london
+
+[2026-02-05T18:53:10.623Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-05T18:53:10.623Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-02-05T18:53:10.624Z] LOG    🎯 Must-have: 5
+[2026-02-05T18:53:10.624Z] LOG    ✨ Nice-to-have: 13
+[2026-02-05T18:53:10.625Z] LOG 📍 Location hint: london
+[2026-02-05T18:53:10.626Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-02-05T18:53:10.627Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-05T18:53:10.628Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-05T18:53:10.629Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-05T18:53:10.630Z] LOG    1. Searching "Buckingham Palace" in "london"
+[2026-02-05T18:53:10.631Z] LOG 🔍 [Google Places] Text search: "Buckingham Palace" in london
+[2026-02-05T18:53:10.641Z] LOG    2. Searching "Westminster Abbey" in "london"
+[2026-02-05T18:53:10.642Z] LOG 🔍 [Google Places] Text search: "Westminster Abbey" in london
+[2026-02-05T18:53:10.644Z] LOG    3. Searching "London Eye" in "london"
+[2026-02-05T18:53:10.645Z] LOG 🔍 [Google Places] Text search: "London Eye" in london
+[2026-02-05T18:53:10.647Z] LOG    4. Searching "Tower of London" in "london"
+[2026-02-05T18:53:10.648Z] LOG 🔍 [Google Places] Text search: "Tower of London" in london
+[2026-02-05T18:53:10.650Z] LOG    5. Searching "The Shard" in "london"
+[2026-02-05T18:53:10.650Z] LOG 🔍 [Google Places] Text search: "The Shard" in london
+[2026-02-05T18:53:10.652Z] LOG    6. Searching "St James's Park" in "london"
+[2026-02-05T18:53:10.653Z] LOG 🔍 [Google Places] Text search: "St James's Park" in london
+[2026-02-05T18:53:10.655Z] LOG    7. Searching "Hyde Park" in "london"
+[2026-02-05T18:53:10.656Z] LOG 🔍 [Google Places] Text search: "Hyde Park" in london
+[2026-02-05T18:53:10.657Z] LOG    8. Searching "Trafalgar Square" in "london"
+[2026-02-05T18:53:10.658Z] LOG 🔍 [Google Places] Text search: "Trafalgar Square" in london
+[2026-02-05T18:53:10.659Z] LOG    9. Searching "Leicester Square" in "london"
+[2026-02-05T18:53:10.660Z] LOG 🔍 [Google Places] Text search: "Leicester Square" in london
+[2026-02-05T18:53:10.661Z] LOG    10. Searching "Queen Mary's Rose Gardens" in "london"
+[2026-02-05T18:53:10.661Z] LOG 🔍 [Google Places] Text search: "Queen Mary's Rose Gardens" in london
+[2026-02-05T18:53:11.021Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.025Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.035Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.060Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.066Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.071Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.110Z] LOG    ✅ Buckingham Palace: Got description (98 chars)
+[2026-02-05T18:53:11.114Z] LOG    📷 Buckingham Palace: Got 10 photos
+[2026-02-05T18:53:11.116Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:11.138Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.141Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.175Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.183Z] LOG    ✅ Leicester Square: Got description (99 chars)
+[2026-02-05T18:53:11.185Z] LOG    📷 Leicester Square: Got 10 photos
+[2026-02-05T18:53:11.186Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:11.187Z] LOG    ✅ Trafalgar Square: Got description (94 chars)
+[2026-02-05T18:53:11.187Z] LOG    📷 Trafalgar Square: Got 10 photos
+[2026-02-05T18:53:11.188Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:11.195Z] LOG    ✅ Queen Mary's Rose Gardens: Got description (93 chars)
+[2026-02-05T18:53:11.196Z] LOG    📷 Queen Mary's Rose Gardens: Got 10 photos
+[2026-02-05T18:53:11.197Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:11.202Z] LOG    ✅ The Shard: Got description (100 chars)
+[2026-02-05T18:53:11.202Z] LOG    📷 The Shard: Got 10 photos
+[2026-02-05T18:53:11.203Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:11.209Z] LOG    ⚠️  London Eye: No editorial summary available
+[2026-02-05T18:53:11.210Z] LOG    📷 London Eye: Got 10 photos
+[2026-02-05T18:53:11.211Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:11.269Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.274Z] LOG    ✅ St James's Park: Got description (96 chars)
+[2026-02-05T18:53:11.275Z] LOG    📷 St James's Park: Got 10 photos
+[2026-02-05T18:53:11.276Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:11.280Z] LOG    ✅ Tower of London: Got description (97 chars)
+[2026-02-05T18:53:11.281Z] LOG    📷 Tower of London: Got 10 photos
+[2026-02-05T18:53:11.281Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:11.302Z] LOG    ✅ Hyde Park: Got description (100 chars)
+[2026-02-05T18:53:11.304Z] LOG    📷 Hyde Park: Got 10 photos
+[2026-02-05T18:53:11.305Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:11.397Z] LOG    ✅ Westminster Abbey: Got description (92 chars)
+[2026-02-05T18:53:11.399Z] LOG    📷 Westminster Abbey: Got 10 photos
+[2026-02-05T18:53:11.401Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:11.402Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 772ms
+[2026-02-05T18:53:11.402Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-05T18:53:11.403Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-05T18:53:11.604Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-02-05T18:53:11.607Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-05T18:53:11.608Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-02-05T18:53:11.608Z] LOG    1. Searching "Kyoto Garden" in "london"
+[2026-02-05T18:53:11.609Z] LOG 🔍 [Google Places] Text search: "Kyoto Garden" in london
+[2026-02-05T18:53:11.610Z] LOG    2. Searching "Tower Bridge" in "london"
+[2026-02-05T18:53:11.610Z] LOG 🔍 [Google Places] Text search: "Tower Bridge" in london
+[2026-02-05T18:53:11.611Z] LOG    3. Searching "London Bridge" in "london"
+[2026-02-05T18:53:11.612Z] LOG 🔍 [Google Places] Text search: "London Bridge" in london
+[2026-02-05T18:53:11.613Z] LOG    4. Searching "The British Museum" in "london"
+[2026-02-05T18:53:11.613Z] LOG 🔍 [Google Places] Text search: "The British Museum" in london
+[2026-02-05T18:53:11.614Z] LOG    5. Searching "St. Paul's Cathedral" in "london"
+[2026-02-05T18:53:11.614Z] LOG 🔍 [Google Places] Text search: "St. Paul's Cathedral" in london
+[2026-02-05T18:53:11.615Z] LOG    6. Searching "Sky Garden" in "london"
+[2026-02-05T18:53:11.615Z] LOG 🔍 [Google Places] Text search: "Sky Garden" in london
+[2026-02-05T18:53:11.617Z] LOG    7. Searching "SEA LIFE London Aquarium" in "london"
+[2026-02-05T18:53:11.618Z] LOG 🔍 [Google Places] Text search: "SEA LIFE London Aquarium" in london
+[2026-02-05T18:53:11.619Z] LOG    8. Searching "Leadenhall Market" in "london"
+[2026-02-05T18:53:11.620Z] LOG 🔍 [Google Places] Text search: "Leadenhall Market" in london
+[2026-02-05T18:53:11.925Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.930Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.942Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:11.951Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:12.018Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:12.025Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:12.031Z] LOG    ✅ The British Museum: Got description (94 chars)
+[2026-02-05T18:53:12.032Z] LOG    📷 The British Museum: Got 10 photos
+[2026-02-05T18:53:12.032Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:12.037Z] LOG    ✅ St. Paul's Cathedral: Got description (90 chars)
+[2026-02-05T18:53:12.039Z] LOG    📷 St. Paul's Cathedral: Got 10 photos
+[2026-02-05T18:53:12.039Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:12.081Z] LOG    ✅ Leadenhall Market: Got description (98 chars)
+[2026-02-05T18:53:12.084Z] LOG    📷 Leadenhall Market: Got 10 photos
+[2026-02-05T18:53:12.084Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:12.085Z] LOG    ✅ Sky Garden: Got description (100 chars)
+[2026-02-05T18:53:12.086Z] LOG    📷 Sky Garden: Got 10 photos
+[2026-02-05T18:53:12.086Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:12.116Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:12.134Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-05T18:53:12.160Z] LOG    ✅ Tower Bridge: Got description (100 chars)
+[2026-02-05T18:53:12.162Z] LOG    📷 Tower Bridge: Got 10 photos
+[2026-02-05T18:53:12.163Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:12.164Z] LOG    ✅ London Bridge: Got description (82 chars)
+[2026-02-05T18:53:12.164Z] LOG    📷 London Bridge: Got 10 photos
+[2026-02-05T18:53:12.165Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:12.288Z] LOG    ✅ Kyoto Garden: Got description (94 chars)
+[2026-02-05T18:53:12.291Z] LOG    📷 Kyoto Garden: Got 10 photos
+[2026-02-05T18:53:12.292Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:12.296Z] LOG    ✅ SEA LIFE London Aquarium: Got description (98 chars)
+[2026-02-05T18:53:12.297Z] LOG    📷 SEA LIFE London Aquarium: Got 10 photos
+[2026-02-05T18:53:12.297Z] LOG ✅ Found 1 places
+[2026-02-05T18:53:12.298Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 690ms
+[2026-02-05T18:53:12.298Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-05T18:53:12.299Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-02-05T18:53:12.299Z] LOG    ✅ Buckingham Palace → Buckingham Palace (must_have)
+[2026-02-05T18:53:12.300Z] LOG    ✅ Westminster Abbey → Westminster Abbey (must_have)
+[2026-02-05T18:53:12.300Z] LOG    ✅ London Eye → London Eye (must_have)
+[2026-02-05T18:53:12.300Z] LOG    ✅ Tower of London → Tower of London (must_have)
+[2026-02-05T18:53:12.301Z] LOG    ✅ The Shard → The Shard (must_have)
+[2026-02-05T18:53:12.301Z] LOG    ✅ St James's Park → St James's Park (nice_to_have)
+[2026-02-05T18:53:12.302Z] LOG    ✅ Hyde Park → Hyde Park (nice_to_have)
+[2026-02-05T18:53:12.302Z] LOG    ✅ Trafalgar Square → Trafalgar Square (nice_to_have)
+[2026-02-05T18:53:12.302Z] LOG    ✅ Leicester Square → Leicester Square (nice_to_have)
+[2026-02-05T18:53:12.303Z] LOG    ✅ Queen Mary's Rose Gardens → Queen Mary's Rose Gardens (nice_to_have)
+[2026-02-05T18:53:12.303Z] LOG    ✅ Kyoto Garden → Kyoto Garden (nice_to_have)
+[2026-02-05T18:53:12.304Z] LOG    ✅ Tower Bridge → Tower Bridge (nice_to_have)
+[2026-02-05T18:53:12.304Z] LOG    ✅ London Bridge → London Bridge (nice_to_have)
+[2026-02-05T18:53:12.305Z] LOG    ✅ The British Museum → The British Museum (nice_to_have)
+[2026-02-05T18:53:12.305Z] LOG    ✅ St. Paul's Cathedral → St. Paul's Cathedral (nice_to_have)
+[2026-02-05T18:53:12.306Z] LOG    ✅ Sky Garden → Sky Garden (nice_to_have)
+[2026-02-05T18:53:12.306Z] LOG    ✅ SEA LIFE London Aquarium → SEA LIFE London Aquarium (nice_to_have)
+[2026-02-05T18:53:12.306Z] LOG    ✅ Leadenhall Market → Leadenhall Market (nice_to_have)
+[2026-02-05T18:53:12.307Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-05T18:53:12.307Z] LOG    Total enriched: 18
+[2026-02-05T18:53:12.308Z] LOG    🎯 Must-have: 5
+[2026-02-05T18:53:12.308Z] LOG    ✨ Nice-to-have: 13
+[2026-02-05T18:53:12.309Z] LOG    ❌ Failed: 0
+[2026-02-05T18:53:12.309Z] LOG    ⏱️  Enrichment took: 1687ms (1.69s)
+
+--- Summary ---
+Enrichment completed

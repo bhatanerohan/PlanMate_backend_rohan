@@ -1,0 +1,145 @@
+PROMPT:
+Request: "plan a day out in south boston"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Day Out",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Boston Tea Party Ships & Museum",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Institute of Contemporary Art",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Christopher Columbus Waterfront Park",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Castle Island",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Lincoln Tavern & Restaurant",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Faneuil Hall Marketplace",
+      "category": "market",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Waterfront",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fan Pier Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "the Lawn on D",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Puttshack - Boston",
+      "category": "entertainment",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Underground at Ink Block",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Martin's Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "South Boston Candlepin",
+      "category": "bowling_alley",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Museum of Ice Cream",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Old South Meeting House",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "USS Constitution Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Layla's American Tavern",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Shy Bird - South Boston",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Publico Street Bistro",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Local 149",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

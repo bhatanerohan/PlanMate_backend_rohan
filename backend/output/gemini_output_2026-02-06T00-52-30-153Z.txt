@@ -1,0 +1,145 @@
+PROMPT:
+Request: "plan a day in madrid spain"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "A Day in Madrid",
+    "total_stops": 5,
+    "estimated_duration": "10 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Royal Palace of Madrid",
+      "category": "historical place",
+      "priority": "must_have"
+    },
+    {
+      "name": "Plaza Mayor",
+      "category": "plaza",
+      "priority": "must_have"
+    },
+    {
+      "name": "Museo Nacional del Prado",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "El Retiro Park",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Temple of Debod",
+      "category": "monument",
+      "priority": "must_have"
+    },
+    {
+      "name": "Catedral de Santa María la Real de la Almudena",
+      "category": "church",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Campo del Moro",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sabatini Garden",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Puerta de Alcalá",
+      "category": "monument",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Cibeles Fountain",
+      "category": "fountain",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Museo Nacional Centro de Arte Reina Sofía",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Thyssen-Bornemisza National Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Madrid History Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Chocolatería San Ginés",
+      "category": "dessert shop",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Inclan Brutal Bar",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rosi La Loca",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Taberna El Sur",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bodega de los Secretos",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Vinitus Gran Via Restaurant",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Casa Lucio",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```
