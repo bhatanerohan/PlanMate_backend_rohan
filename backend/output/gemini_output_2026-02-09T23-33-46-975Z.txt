@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.323458768664324, -71.10724237566048)
+
+Request: "Plan a day out in midtown NYC where I could try out halal food trucks"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Food Truck Tour",
+    "total_stops": 5,
+    "estimated_duration": "4-5 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Adel's Famous Halal Food",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sharif's Famous",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Halal Guys",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mama Halal Food",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Royal Grill Halal Food",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Kwik Meal NYC",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Casbah - Halal Cart",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Famous Halal Food (Food Truck)",
+      "category": "fast food restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "NYC Halal Food Truck",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Tajeen Halal Food Truck",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Halal Street Food by Kamal",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Hooda Food Truck",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Q Halal Cart",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Best Of Best Halal Truck",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Aladdin's Mystical Cuisine Halal Food Truck",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Soho Halal Guy (Food Cart)",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Halal Food Cart",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Liberty Halal Food Cart",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Halal Food Lovers - Chicken & Gyro Food Truck",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Adam Spicy Halal Food",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

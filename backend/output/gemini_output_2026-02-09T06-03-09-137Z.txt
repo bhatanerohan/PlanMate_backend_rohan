@@ -1,0 +1,145 @@
+PROMPT:
+Request: "Hit every major museum in DC in one day with lunch breaks"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "museum tour",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "National Museum of Natural History",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "National Museum of American History",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "National Air and Space Museum",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "National Gallery of Art",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "National Museum of African American History and Culture",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "The White House",
+      "category": "landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Washington Monument",
+      "category": "landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Lincoln Memorial",
+      "category": "landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "World War II Memorial",
+      "category": "landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Tidal Basin",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "United States Capitol",
+      "category": "government building",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Supreme Court of the United States",
+      "category": "government building",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Library of Congress",
+      "category": "library",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "National Archives Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bureau of Engraving and Printing",
+      "category": "government building",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Hirshhorn Museum and Sculpture Garden",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "National Portrait Gallery",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Smithsonian National Museum of Natural History",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Ellipse",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "F Dr. Martin Luther King Jr. Memorial",
+      "category": "landmark",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

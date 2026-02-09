@@ -1,0 +1,174 @@
+User Prompt: plan a family trip in miami
+
+[2026-02-07T04:45:21.316Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-07T04:45:21.318Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-07T04:45:21.319Z] LOG    🎯 Must-have: 5
+[2026-02-07T04:45:21.320Z] LOG    ✨ Nice-to-have: 15
+[2026-02-07T04:45:21.321Z] LOG 📍 Location hint: miami
+[2026-02-07T04:45:21.322Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-07T04:45:21.322Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-07T04:45:21.323Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-07T04:45:21.325Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-07T04:45:21.328Z] LOG    1. Searching "Phillip & Patricia Frost Museum of Science" in "miami"
+[2026-02-07T04:45:21.330Z] LOG 🔍 [Google Places] Text search: "Phillip & Patricia Frost Museum of Science" in miami
+[2026-02-07T04:45:21.343Z] LOG    2. Searching "Jungle Island" in "miami"
+[2026-02-07T04:45:21.345Z] LOG 🔍 [Google Places] Text search: "Jungle Island" in miami
+[2026-02-07T04:45:21.351Z] LOG    3. Searching "Miami Children's Museum" in "miami"
+[2026-02-07T04:45:21.353Z] LOG 🔍 [Google Places] Text search: "Miami Children's Museum" in miami
+[2026-02-07T04:45:21.357Z] LOG    4. Searching "Zoo Miami" in "miami"
+[2026-02-07T04:45:21.358Z] LOG 🔍 [Google Places] Text search: "Zoo Miami" in miami
+[2026-02-07T04:45:21.364Z] LOG    5. Searching "Vizcaya Museum & Gardens" in "miami"
+[2026-02-07T04:45:21.365Z] LOG 🔍 [Google Places] Text search: "Vizcaya Museum & Gardens" in miami
+[2026-02-07T04:45:21.369Z] LOG    6. Searching "Lummus Park" in "miami"
+[2026-02-07T04:45:21.370Z] LOG 🔍 [Google Places] Text search: "Lummus Park" in miami
+[2026-02-07T04:45:21.373Z] LOG    7. Searching "Bayfront Park" in "miami"
+[2026-02-07T04:45:21.374Z] LOG 🔍 [Google Places] Text search: "Bayfront Park" in miami
+[2026-02-07T04:45:21.378Z] LOG    8. Searching "Maurice A. Ferré Park" in "miami"
+[2026-02-07T04:45:21.379Z] LOG 🔍 [Google Places] Text search: "Maurice A. Ferré Park" in miami
+[2026-02-07T04:45:21.383Z] LOG    9. Searching "The Underline" in "miami"
+[2026-02-07T04:45:21.384Z] LOG 🔍 [Google Places] Text search: "The Underline" in miami
+[2026-02-07T04:45:21.388Z] LOG    10. Searching "Watson Island Park" in "miami"
+[2026-02-07T04:45:21.390Z] LOG 🔍 [Google Places] Text search: "Watson Island Park" in miami
+[2026-02-07T04:45:21.769Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:21.780Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:21.786Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:21.790Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:21.793Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:21.795Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:21.797Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:21.842Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:21.848Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:21.851Z] LOG    ⚠️  The Underline: No editorial summary available
+[2026-02-07T04:45:21.852Z] LOG    📷 The Underline: Got 10 photos
+[2026-02-07T04:45:21.854Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:21.856Z] LOG    ✅ Phillip & Patricia Frost Museum of Science: Got description (86 chars)
+[2026-02-07T04:45:21.857Z] LOG    📷 Phillip & Patricia Frost Museum of Science: Got 10 photos
+[2026-02-07T04:45:21.858Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:21.862Z] LOG    ⚠️  Watson Island Park: No editorial summary available
+[2026-02-07T04:45:21.863Z] LOG    📷 Watson Island Park: Got 10 photos
+[2026-02-07T04:45:21.864Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:21.877Z] LOG    ✅ Bayfront Park: Got description (99 chars)
+[2026-02-07T04:45:21.879Z] LOG    📷 Bayfront Park: Got 10 photos
+[2026-02-07T04:45:21.880Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:21.895Z] LOG    ✅ Zoo Miami: Got description (95 chars)
+[2026-02-07T04:45:21.898Z] LOG    📷 Zoo Miami: Got 10 photos
+[2026-02-07T04:45:21.899Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:21.900Z] LOG    ✅ Jungle Island: Got description (98 chars)
+[2026-02-07T04:45:21.901Z] LOG    📷 Jungle Island: Got 10 photos
+[2026-02-07T04:45:21.902Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:21.915Z] LOG    ✅ Miami Children's Museum: Got description (99 chars)
+[2026-02-07T04:45:21.917Z] LOG    📷 Miami Children's Museum: Got 10 photos
+[2026-02-07T04:45:21.918Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:21.922Z] LOG    ✅ Maurice A. Ferré Park: Got description (82 chars)
+[2026-02-07T04:45:21.924Z] LOG    📷 Maurice A. Ferré Park: Got 10 photos
+[2026-02-07T04:45:21.924Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:21.928Z] LOG    ✅ Lummus Park: Got description (87 chars)
+[2026-02-07T04:45:21.929Z] LOG    📷 Lummus Park: Got 10 photos
+[2026-02-07T04:45:21.931Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:21.986Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.081Z] LOG    ✅ Vizcaya Museum & Gardens: Got description (93 chars)
+[2026-02-07T04:45:22.087Z] LOG    📷 Vizcaya Museum & Gardens: Got 10 photos
+[2026-02-07T04:45:22.088Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:22.090Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 765ms
+[2026-02-07T04:45:22.091Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-07T04:45:22.091Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-07T04:45:22.300Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-07T04:45:22.305Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-07T04:45:22.308Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-07T04:45:22.309Z] LOG    1. Searching "Brickell Key Park" in "miami"
+[2026-02-07T04:45:22.309Z] LOG 🔍 [Google Places] Text search: "Brickell Key Park" in miami
+[2026-02-07T04:45:22.312Z] LOG    2. Searching "Mary Brickell Park" in "miami"
+[2026-02-07T04:45:22.313Z] LOG 🔍 [Google Places] Text search: "Mary Brickell Park" in miami
+[2026-02-07T04:45:22.315Z] LOG    3. Searching "Margaret Pace Park" in "miami"
+[2026-02-07T04:45:22.317Z] LOG 🔍 [Google Places] Text search: "Margaret Pace Park" in miami
+[2026-02-07T04:45:22.320Z] LOG    4. Searching "David T. Kennedy Park" in "miami"
+[2026-02-07T04:45:22.321Z] LOG 🔍 [Google Places] Text search: "David T. Kennedy Park" in miami
+[2026-02-07T04:45:22.322Z] LOG    5. Searching "North Beach Oceanside Park" in "miami"
+[2026-02-07T04:45:22.323Z] LOG 🔍 [Google Places] Text search: "North Beach Oceanside Park" in miami
+[2026-02-07T04:45:22.324Z] LOG    6. Searching "Biscayne National Park" in "miami"
+[2026-02-07T04:45:22.324Z] LOG 🔍 [Google Places] Text search: "Biscayne National Park" in miami
+[2026-02-07T04:45:22.326Z] LOG    7. Searching "Amelia Earhart Park" in "miami"
+[2026-02-07T04:45:22.327Z] LOG 🔍 [Google Places] Text search: "Amelia Earhart Park" in miami
+[2026-02-07T04:45:22.328Z] LOG    8. Searching "MUSEUM OF ICE CREAM" in "miami"
+[2026-02-07T04:45:22.329Z] LOG 🔍 [Google Places] Text search: "MUSEUM OF ICE CREAM" in miami
+[2026-02-07T04:45:22.330Z] LOG    9. Searching "Wynwood Walls" in "miami"
+[2026-02-07T04:45:22.331Z] LOG 🔍 [Google Places] Text search: "Wynwood Walls" in miami
+[2026-02-07T04:45:22.332Z] LOG    10. Searching "CASA NEOS" in "miami"
+[2026-02-07T04:45:22.332Z] LOG 🔍 [Google Places] Text search: "CASA NEOS" in miami
+[2026-02-07T04:45:22.580Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.597Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.607Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.612Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.620Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.625Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.656Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.694Z] LOG    ✅ Wynwood Walls: Got description (99 chars)
+[2026-02-07T04:45:22.696Z] LOG    📷 Wynwood Walls: Got 10 photos
+[2026-02-07T04:45:22.697Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:22.720Z] LOG    ⚠️  Mary Brickell Park: No editorial summary available
+[2026-02-07T04:45:22.722Z] LOG    📷 Mary Brickell Park: Got 10 photos
+[2026-02-07T04:45:22.722Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:22.734Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.746Z] LOG    ✅ Amelia Earhart Park: Got description (96 chars)
+[2026-02-07T04:45:22.748Z] LOG    📷 Amelia Earhart Park: Got 10 photos
+[2026-02-07T04:45:22.749Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:22.751Z] LOG    ✅ David T. Kennedy Park: Got description (93 chars)
+[2026-02-07T04:45:22.751Z] LOG    📷 David T. Kennedy Park: Got 10 photos
+[2026-02-07T04:45:22.752Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:22.754Z] LOG    ✅ Margaret Pace Park: Got description (96 chars)
+[2026-02-07T04:45:22.754Z] LOG    📷 Margaret Pace Park: Got 10 photos
+[2026-02-07T04:45:22.755Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:22.768Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.771Z] LOG    ⚠️  CASA NEOS: No editorial summary available
+[2026-02-07T04:45:22.773Z] LOG    📷 CASA NEOS: Got 10 photos
+[2026-02-07T04:45:22.773Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:22.812Z] LOG    ✅ Biscayne National Park: Got description (97 chars)
+[2026-02-07T04:45:22.813Z] LOG    📷 Biscayne National Park: Got 10 photos
+[2026-02-07T04:45:22.814Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:22.866Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:45:22.877Z] LOG    ✅ North Beach Oceanside Park: Got description (92 chars)
+[2026-02-07T04:45:22.878Z] LOG    📷 North Beach Oceanside Park: Got 10 photos
+[2026-02-07T04:45:22.879Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:22.892Z] LOG    ✅ Brickell Key Park: Got description (94 chars)
+[2026-02-07T04:45:22.894Z] LOG    📷 Brickell Key Park: Got 10 photos
+[2026-02-07T04:45:22.895Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:23.020Z] LOG    ⚠️  MUSEUM OF ICE CREAM: No editorial summary available
+[2026-02-07T04:45:23.024Z] LOG    📷 MUSEUM OF ICE CREAM: Got 10 photos
+[2026-02-07T04:45:23.025Z] LOG ✅ Found 1 places
+[2026-02-07T04:45:23.026Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 718ms
+[2026-02-07T04:45:23.027Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-07T04:45:23.028Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-07T04:45:23.028Z] LOG    ✅ Phillip & Patricia Frost Museum of Science → Phillip & Patricia Frost Museum of Science (must_have)
+[2026-02-07T04:45:23.029Z] LOG    ✅ Jungle Island → Jungle Island (must_have)
+[2026-02-07T04:45:23.029Z] LOG    ✅ Miami Children's Museum → Miami Children's Museum (must_have)
+[2026-02-07T04:45:23.030Z] LOG    ✅ Zoo Miami → Zoo Miami (must_have)
+[2026-02-07T04:45:23.030Z] LOG    ✅ Vizcaya Museum & Gardens → Vizcaya Museum & Gardens (must_have)
+[2026-02-07T04:45:23.031Z] LOG    ✅ Lummus Park → Lummus Park (nice_to_have)
+[2026-02-07T04:45:23.031Z] LOG    ✅ Bayfront Park → Bayfront Park (nice_to_have)
+[2026-02-07T04:45:23.031Z] LOG    ✅ Maurice A. Ferré Park → Maurice A. Ferré Park (nice_to_have)
+[2026-02-07T04:45:23.032Z] LOG    ✅ The Underline → The Underline (nice_to_have)
+[2026-02-07T04:45:23.033Z] LOG    ✅ Watson Island Park → Watson Island Park (nice_to_have)
+[2026-02-07T04:45:23.034Z] LOG    ✅ Brickell Key Park → Brickell Key Park (nice_to_have)
+[2026-02-07T04:45:23.034Z] LOG    ✅ Mary Brickell Park → Mary Brickell Park (nice_to_have)
+[2026-02-07T04:45:23.035Z] LOG    ✅ Margaret Pace Park → Margaret Pace Park (nice_to_have)
+[2026-02-07T04:45:23.035Z] LOG    ✅ David T. Kennedy Park → David T. Kennedy Park (nice_to_have)
+[2026-02-07T04:45:23.036Z] LOG    ✅ North Beach Oceanside Park → North Beach Oceanside Park (nice_to_have)
+[2026-02-07T04:45:23.036Z] LOG    ✅ Biscayne National Park → Biscayne National Park (nice_to_have)
+[2026-02-07T04:45:23.037Z] LOG    ✅ Amelia Earhart Park → Amelia Earhart Park (nice_to_have)
+[2026-02-07T04:45:23.037Z] LOG    ✅ MUSEUM OF ICE CREAM → MUSEUM OF ICE CREAM (nice_to_have)
+[2026-02-07T04:45:23.037Z] LOG    ✅ Wynwood Walls → Wynwood Walls (nice_to_have)
+[2026-02-07T04:45:23.038Z] LOG    ✅ CASA NEOS → CASA NEOS (nice_to_have)
+[2026-02-07T04:45:23.039Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-07T04:45:23.039Z] LOG    Total enriched: 20
+[2026-02-07T04:45:23.040Z] LOG    🎯 Must-have: 5
+[2026-02-07T04:45:23.041Z] LOG    ✨ Nice-to-have: 15
+[2026-02-07T04:45:23.042Z] LOG    ❌ Failed: 0
+[2026-02-07T04:45:23.042Z] LOG    ⏱️  Enrichment took: 1728ms (1.73s)
+
+--- Summary ---
+Enrichment completed

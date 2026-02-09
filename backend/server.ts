@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import apiRoutes from './routes/api.js';
 import { initAnalyticsTable } from './services/analytics.js';
+import { initShareTable } from './services/share.js';
 
 dotenv.config();
 
@@ -108,6 +109,7 @@ let server = app.listen(PORT, '0.0.0.0', async () => {  // bind to all interface
 
   // Initialize analytics table
   await initAnalyticsTable();
+  await initShareTable();
 });
 
 // Handle listen errors (e.g., EADDRINUSE) so nodemon doesn't crash silently

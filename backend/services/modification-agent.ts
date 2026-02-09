@@ -3,6 +3,7 @@
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
 import { getGooglePlacesClient } from './api-clients/google-places.js';
+import { formatItineraryMessage } from './itinerary-formatter.js';
 
 dotenv.config();
 
@@ -120,7 +121,7 @@ export class ModificationAgent {
       // Phase 3: Check if multiple operations
       if (Array.isArray(parsed)) {
         console.log(`🎯 Multi-operation detected: ${parsed.length} operations`);
-        return await this.executeMultiOperation(parsed, currentItinerary, userLocation, embeddedVenue);
+        return await this.executeMultiOperation(parsed, currentItinerary, userLocation, embeddedVenue, cleanPrompt);
       }
 
       // Single operation (Phase 1/2)
@@ -146,7 +147,7 @@ export class ModificationAgent {
 
       switch (operation.type) {
         case 'ADD':
-          result = await this.executeAdd(operation, currentItinerary, userLocation, embeddedVenue);
+          result = await this.executeAdd(operation, currentItinerary, userLocation, embeddedVenue, cleanPrompt);
           break;
         case 'REMOVE':
           result = await this.executeRemove(operation, currentItinerary);
@@ -176,7 +177,8 @@ export class ModificationAgent {
     operations: ModificationOperation[],
     currentItinerary: CurrentItinerary,
     userLocation?: { lat: number; lng: number; name: string },
-    embeddedVenue?: any
+    embeddedVenue?: any,
+    userPrompt?: string
   ): Promise<ModificationResult> {
     console.log('\n📊 Executing Multi-Operation Sequence');
 
@@ -200,7 +202,7 @@ export class ModificationAgent {
             result = await this.executeReplace(op, workingItinerary, userLocation, embeddedVenue);
             break;
           case 'ADD':
-            result = await this.executeAdd(op, workingItinerary, userLocation, embeddedVenue);
+            result = await this.executeAdd(op, workingItinerary, userLocation, embeddedVenue, userPrompt);
             break;
           default:
             throw new Error('Unknown operation');
@@ -226,7 +228,11 @@ export class ModificationAgent {
       }
     }
 
-    const finalMessage = this.generateFullItineraryText(workingItinerary.venues, `✅ Completed ${operations.length} operations`);
+    const finalMessage = await formatItineraryMessage({
+      venues: workingItinerary.venues,
+      isUpdate: true,
+      prompt: `Completed ${operations.length} operations`
+    }) || "Here is your updated itinerary.";
 
     return {
       success: true,
@@ -300,7 +306,9 @@ For each venue to ADD or REPLACE, you must specify HOW to search:
 IMPORTANT: Pay close attention to spatial references in the user's prompt!
 - "near X" / "at X" / "around X" → near_place with referencePlace: "X"
 - "close to X" / "by X" → near_place with referencePlace: "X"
-- No spatial reference → near_user or in_city
+- "nearby" with an existing itinerary → near_place with referencePlace: "last stop"
+- No spatial reference and there is an existing itinerary → near_place with referencePlace: "last stop"
+- If user explicitly says "near me"/"my location"/"current location" → near_user
 
 === EXAMPLES ===
 
@@ -357,6 +365,17 @@ Output: {
     "searchStrategy": "near_existing"
   }],
   "positions": ["8"]
+}
+
+User: "add a coffee shop nearby"
+Output: {
+  "type": "ADD",
+  "venues": [{
+    "name": "coffee shop",
+    "searchStrategy": "near_place",
+    "referencePlace": "last stop"
+  }],
+  "positions": ["at the end"]
 }
 
 User: "replace cafe with statue of liberty"
@@ -461,11 +480,13 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     op: ModificationOperation,
     itinerary: CurrentItinerary,
     userLocation?: any,
-    embeddedVenue?: any
+    embeddedVenue?: any,
+    userPrompt?: string
   ): Promise<ModificationResult> {
     const venues = op.venues!;
     console.log(`\n➕ ADD: ${venues.length} venues`);
     console.log(`   User location available: ${userLocation ? 'Yes' : 'No'}`);
+    const explicitNearUser = this.isExplicitNearUserPrompt(userPrompt);
 
     // If we have embedded venue data, use it directly!
     if (embeddedVenue && venues.length === 1) {
@@ -476,7 +497,12 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
       const updated = [...itinerary.venues];
       updated.push(embeddedVenue);
 
-      const msg = `✅ Added venue:\n\n1. 📍 ${embeddedVenue.name}\n   (using cached data - no API call needed)`;
+      const promptMessage = `Added venue: ${embeddedVenue.name}`;
+      const msg = await formatItineraryMessage({
+        venues: updated,
+        isUpdate: true,
+        prompt: promptMessage
+      }) || "Here is your updated itinerary.";
 
       return {
         success: true,
@@ -542,6 +568,30 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
               throw new Error('near_place strategy requires referencePlace');
             }
 
+            // 🆕 Prefer itinerary venues when reference is positional (e.g., "last venue")
+            const resolvedRef = this.resolveReferenceVenue(spec.referencePlace, itinerary);
+            if (resolvedRef.venue?.location?.lat && resolvedRef.venue?.location?.lng) {
+              console.log(`➡️ Using itinerary venue "${resolvedRef.venue.name}" as reference`);
+              results = await placesClient.nearbySearch(
+                resolvedRef.venue.location.lat,
+                resolvedRef.venue.location.lng,
+                { query: spec.name, radius: 1609, maxResults: 3 }
+              );
+              console.log(`⬅️ Found ${results.length} results`);
+
+              if (results.length === 0) {
+                const city = this.extractCityFromItinerary(itinerary, userLocation);
+                console.log(`⚠️ No nearby results, retrying in city: ${city}`);
+                results = await placesClient.textSearch({
+                  query: spec.name,
+                  location: city,
+                  maxResults: 3
+                });
+                console.log(`⬅️ Found ${results.length} results`);
+              }
+              break;
+            }
+
             // Step 1: Find the reference place
             console.log(`➡️ Step 1: Finding reference place "${spec.referencePlace}"`);
             let refResults;
@@ -563,7 +613,15 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
             }
 
             if (refResults.length === 0) {
-              throw new Error(`Could not find reference place: ${spec.referencePlace}`);
+              const city = this.extractCityFromItinerary(itinerary, userLocation);
+              console.log(`⚠️ Could not find reference place, retrying in city: ${city}`);
+              results = await placesClient.textSearch({
+                query: spec.name,
+                location: city,
+                maxResults: 3
+              });
+              console.log(`⬅️ Found ${results.length} results`);
+              break;
             }
 
             const refLocation = refResults[0].location;
@@ -577,14 +635,37 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
               { query: spec.name, radius: 1609, maxResults: 3 }
             );
             console.log(`⬅️ Found ${results.length} results`);
+            if (results.length === 0) {
+              const city = this.extractCityFromItinerary(itinerary, userLocation);
+              console.log(`⚠️ No nearby results, retrying in city: ${city}`);
+              results = await placesClient.textSearch({
+                query: spec.name,
+                location: city,
+                maxResults: 3
+              });
+              console.log(`⬅️ Found ${results.length} results`);
+            }
             break;
           }
 
           case 'near_user': {
             // LLM told us to search near user's location
+            const hasItinerary = itinerary.venues.length > 0;
+            if (hasItinerary && !explicitNearUser) {
+              const city = this.extractCityFromItinerary(itinerary, undefined);
+              console.log(`⚠️ No explicit near-me request; searching in itinerary city: ${city}`);
+              results = await placesClient.textSearch({
+                query: spec.name,
+                location: city,
+                maxResults: 3
+              });
+              console.log(`⬅️ Found ${results.length} results`);
+              break;
+            }
+
             if (!userLocation) {
               console.log(`⚠️ No user location available, falling back to city search`);
-              const city = this.extractCityFromItinerary(itinerary, userLocation);
+              const city = this.extractCityFromItinerary(itinerary, undefined);
               console.log(`➡️ Searching in ${city}`);
               results = await placesClient.textSearch({
                 query: spec.name,
@@ -600,6 +681,17 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
               );
             }
             console.log(`⬅️ Found ${results.length} results`);
+
+            if (!explicitNearUser && hasItinerary && results.length === 0) {
+              const city = this.extractCityFromItinerary(itinerary, undefined);
+              console.log(`⚠️ No nearby results, retrying in city: ${city}`);
+              results = await placesClient.textSearch({
+                query: spec.name,
+                location: city,
+                maxResults: 3
+              });
+              console.log(`⬅️ Found ${results.length} results`);
+            }
             break;
           }
 
@@ -661,7 +753,12 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     enrichedVenues.forEach(v => updated.push(v));
 
     // Generate full itinerary message instead of just a diff
-    const msg = this.generateFullItineraryText(updated, `✅ Added ${found.length} venue${found.length > 1 ? 's' : ''}`);
+    const promptMessage = `Added ${found.length} venue${found.length > 1 ? 's' : ''}`;
+    const msg = await formatItineraryMessage({
+      venues: updated,
+      isUpdate: true,
+      prompt: promptMessage
+    }) || "Here is your updated itinerary.";
 
     return {
       success: true,
@@ -701,7 +798,11 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     sorted.forEach(idx => updated.splice(idx, 1));
 
     const successMsg = `Removed ${names.length} venue${names.length > 1 ? 's' : ''}: ${names.join(', ')}`;
-    const msg = this.generateFullItineraryText(updated, successMsg);
+    const msg = await formatItineraryMessage({
+      venues: updated,
+      isUpdate: true,
+      prompt: successMsg
+    }) || "Here is your updated itinerary.";
 
     return { success: true, updatedVenues: updated, message: msg };
   }
@@ -896,14 +997,19 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     enrichedResults.forEach(r => { updated[r.index] = r.venue; });
 
     const pairs = successful.map(r => `${r.oldName} → ${r.newName}`).join(', ');
-    const successMsg = `Replaced ${successful.length} venue${successful.length > 1 ? 's' : ''}: ${pairs}`;
-
-    let msg = this.generateFullItineraryText(updated, successMsg);
+    let successMsg = `Replaced ${successful.length} venue${successful.length > 1 ? 's' : ''}: ${pairs}`;
 
     const failed = results.filter(r => !r.success);
+
     if (failed.length > 0) {
-      msg += `\n⚠️ Could not find replacements for: ${failed.map(r => r.oldName).join(', ')}`;
+      successMsg += `\n⚠️ Could not find replacements for: ${failed.map(r => r.oldName).join(', ')}`;
     }
+
+    const msg = await formatItineraryMessage({
+      venues: updated,
+      isUpdate: true,
+      prompt: successMsg
+    }) || "Here is your updated itinerary.";
 
     return {
       success: true,
@@ -997,6 +1103,91 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     return -1;
   }
 
+  private isUserLocationVenue(venue: any): boolean {
+    return !!venue && (venue.placeId === 'user-location' || venue.isUserLocation);
+  }
+
+  private resolveReferenceVenue(
+    referencePlace: string,
+    itinerary: CurrentItinerary
+  ): { venue?: any; index?: number } {
+    const venues = itinerary.venues || [];
+    const normalized = referencePlace.trim().toLowerCase();
+    if (!normalized) return {};
+
+    const excludeUser = /not\s+user|not\s+my\s+location|not\s+user\s+location/i.test(normalized);
+    const nonUserIndices = venues
+      .map((v, i) => (!this.isUserLocationVenue(v) ? i : -1))
+      .filter(i => i !== -1);
+
+    const pickByIndex = (idx: number): { venue?: any; index?: number } => {
+      if (idx < 0 || idx >= venues.length) return {};
+      const venue = venues[idx];
+      if (excludeUser && this.isUserLocationVenue(venue)) return {};
+      return { venue, index: idx };
+    };
+
+    const pickLastNonUser = (): { venue?: any; index?: number } => {
+      if (nonUserIndices.length > 0) {
+        return pickByIndex(nonUserIndices[nonUserIndices.length - 1]);
+      }
+      return pickByIndex(venues.length - 1);
+    };
+
+    if (/\b(second last|2nd last|penultimate|previous)\b/i.test(normalized)) {
+      if (nonUserIndices.length >= 2) {
+        return pickByIndex(nonUserIndices[nonUserIndices.length - 2]);
+      }
+      if (nonUserIndices.length === 1) {
+        return pickByIndex(nonUserIndices[0]);
+      }
+    }
+
+    if (/\b(last|final|end)\b/i.test(normalized)) {
+      return pickLastNonUser();
+    }
+
+    const stopMatch = normalized.match(/(?:stop\s*)?(\d+)(?:st|nd|rd|th)?/i);
+    if (stopMatch) {
+      const idx = parseInt(stopMatch[1], 10) - 1;
+      const picked = pickByIndex(idx);
+      if (picked.venue) return picked;
+    }
+
+    // Try resolving using the same logic as position/target
+    const resolvedIdx = this.resolvePosition({ targetVenue: referencePlace, position: referencePlace }, itinerary);
+    if (resolvedIdx !== -1) {
+      const picked = pickByIndex(resolvedIdx);
+      if (picked.venue) return picked;
+    }
+
+    let idx = venues.findIndex(v => v?.name?.toLowerCase() === normalized);
+    if (idx !== -1) {
+      const picked = pickByIndex(idx);
+      if (picked.venue) return picked;
+    }
+
+    idx = venues.findIndex(v => v?.name?.toLowerCase().includes(normalized));
+    if (idx !== -1) {
+      const picked = pickByIndex(idx);
+      if (picked.venue) return picked;
+    }
+
+    idx = venues.findIndex(v => normalized.includes(v?.name?.toLowerCase() || ''));
+    if (idx !== -1) {
+      const picked = pickByIndex(idx);
+      if (picked.venue) return picked;
+    }
+
+    return {};
+  }
+
+  private isExplicitNearUserPrompt(userPrompt?: string): boolean {
+    if (!userPrompt) return false;
+    const normalized = userPrompt.toLowerCase();
+    return /\b(near me|around me|close to me|my location|current location|where i am)\b/.test(normalized);
+  }
+
   private formatVenue(place: any): any {
     return {
       name: place.name,
@@ -1019,54 +1210,58 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
     itinerary: CurrentItinerary,
     userLocation?: { lat: number; lng: number; name: string }
   ): string {
-    // Priority 1: Extract from user location if available
+    // Priority 1: Try to extract from first venue address
+    if (itinerary.venues.length > 0) {
+      const address = itinerary.venues[0].address;
+      if (!address) {
+        console.log(`   No address on first venue to extract city`);
+      } else {
+        console.log(`   Trying to extract city from venue address: ${address}`);
+
+        // Handle different address formats:
+        // "Retiro, 28014 Madrid, Spain" → "Madrid"
+        // "123 Main St, Boston, MA 02101" → "Boston, MA"
+        // "Pasadizo de San Ginés, 5, Centro, 28013 Madrid, Spain" → "Madrid"
+
+        const parts = address.split(',').map((p: string) => p.trim());
+
+        if (parts.length >= 2) {
+          // Try to find city part (usually before postal code or country)
+          for (let i = parts.length - 1; i >= 0; i--) {
+            const part = parts[i];
+
+            // Skip country names (common ones)
+            if (['Spain', 'United States', 'USA', 'France', 'Italy', 'UK', 'Germany'].includes(part)) {
+              continue;
+            }
+
+            // Skip parts with postal codes
+            if (/\d{5}/.test(part)) {
+              // Check if city name is in this part before postal code
+              const cityMatch = part.match(/^([A-Za-z\s]+)\s+\d{5}/);
+              if (cityMatch) {
+                console.log(`   Extracted city: ${cityMatch[1]}`);
+                return cityMatch[1];
+              }
+              continue;
+            }
+
+            // If we find a part that looks like a city (starts with capital letter, no numbers)
+            if (/^[A-Z][a-z]+/.test(part) && !/\d/.test(part)) {
+              console.log(`   Extracted city: ${part}`);
+              return part;
+            }
+          }
+        }
+      }
+    }
+
+    // Priority 2: Extract from user location if available
     if (userLocation) {
       const extractedCity = this.extractCityFromUserLocation(userLocation);
       if (extractedCity) {
         console.log(`   Using city from user location: ${extractedCity}`);
         return extractedCity;
-      }
-    }
-
-    // Priority 2: Try to extract from first venue address
-    if (itinerary.venues.length > 0) {
-      const address = itinerary.venues[0].address;
-      console.log(`   Trying to extract city from venue address: ${address}`);
-
-      // Handle different address formats:
-      // "Retiro, 28014 Madrid, Spain" → "Madrid"
-      // "123 Main St, Boston, MA 02101" → "Boston, MA"
-      // "Pasadizo de San Ginés, 5, Centro, 28013 Madrid, Spain" → "Madrid"
-
-      const parts = address.split(',').map((p: string) => p.trim());
-
-      if (parts.length >= 2) {
-        // Try to find city part (usually before postal code or country)
-        for (let i = parts.length - 1; i >= 0; i--) {
-          const part = parts[i];
-
-          // Skip country names (common ones)
-          if (['Spain', 'United States', 'USA', 'France', 'Italy', 'UK', 'Germany'].includes(part)) {
-            continue;
-          }
-
-          // Skip parts with postal codes
-          if (/\d{5}/.test(part)) {
-            // Check if city name is in this part before postal code
-            const cityMatch = part.match(/^([A-Za-z\s]+)\s+\d{5}/);
-            if (cityMatch) {
-              console.log(`   Extracted city: ${cityMatch[1]}`);
-              return cityMatch[1];
-            }
-            continue;
-          }
-
-          // If we find a part that looks like a city (starts with capital letter, no numbers)
-          if (/^[A-Z][a-z]+/.test(part) && !/\d/.test(part)) {
-            console.log(`   Extracted city: ${part}`);
-            return part;
-          }
-        }
       }
     }
 
@@ -1145,34 +1340,7 @@ Think carefully about the user's spatial intent and context. Return valid JSON.`
       return venue;
     }
   }
-
-  /**
-   * Helper to generate the rich full itinerary text
-   */
-  private generateFullItineraryText(venues: any[], headerMessage: string): string {
-    let msg = `${headerMessage}\n\nHere is your updated itinerary:\n\n`;
-
-    venues.forEach((v, i) => {
-      // Bold name, rating, price
-      msg += `${i + 1}. **${v.name}**`;
-      if (v.rating) msg += ` (⭐ ${v.rating}`;
-      if (v.priceLevel) msg += ` • ${v.priceLevel}`;
-      if (v.rating) msg += `)`;
-      msg += `\n`;
-
-      // Narrative text
-      if (v.description) msg += `${v.description}\n`;
-      if (v.reasoning) msg += `💡 Why it matters: ${v.reasoning}\n`;
-      if (v.reviewsSummary) msg += `📝 Reviewers praise: ${v.reviewsSummary}\n`;
-
-      // Travel info mock (since we don't have real routing in modification currently)
-      // msg += `Travel: ...\n`; 
-
-      msg += `\n`;
-    });
-
-    return msg;
-  }
 }
+
 
 export const modificationAgent = new ModificationAgent();

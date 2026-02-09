@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.323458768664324, -71.10724237566048)
+
+Request: "A trip to most iconic spots in Mumbai"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Sightseeing",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Gateway Of India Mumbai",
+      "category": "historical landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "Marine Drive",
+      "category": "tourist attraction",
+      "priority": "must_have"
+    },
+    {
+      "name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Hanging Gardens",
+      "category": "garden",
+      "priority": "must_have"
+    },
+    {
+      "name": "Band Stand",
+      "category": "tourist attraction",
+      "priority": "must_have"
+    },
+    {
+      "name": "Elephanta Caves",
+      "category": "historical place",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sanjay Gandhi National Park",
+      "category": "national park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Kanheri Caves",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mahakali Caves",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mandapeshwar Caves",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bandra Fort",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fort George",
+      "category": "historical place",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Marine Drive Beach,Mumbai",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Nariman Point, Mumbai",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Malabar Hill Elevated Nature Trail",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bollywood Park Filmcity Mumbai",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Dr. Bhau Daji Lad Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Flora Fountain",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rajabai Clock Tower",
+      "category": "historical place",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bandra Sea View",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

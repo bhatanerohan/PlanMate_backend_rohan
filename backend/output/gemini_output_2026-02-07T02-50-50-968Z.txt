@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "plan a wild night in las vegas"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Wild Night Out",
+    "total_stops": 5,
+    "estimated_duration": "6-8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "XS Nightclub",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "OMNIA Nightclub",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Chandelier",
+      "category": "bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Marquee Nightclub",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Carson Kitchen",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Caesars Palace",
+      "category": "casino",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bellagio Hotel & Casino",
+      "category": "casino",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "MGM Grand",
+      "category": "casino",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Venetian Las Vegas",
+      "category": "casino",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The STRAT Hotel, Casino & Tower",
+      "category": "casino",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Paris Las Vegas",
+      "category": "casino",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Excalibur Hotel & Casino",
+      "category": "casino",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Palms Casino Resort",
+      "category": "hotel",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Resort At Summerlin",
+      "category": "casino",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Wynn Las Vegas",
+      "category": "casino",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sphere",
+      "category": "event venue",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "House of Blues Las Vegas",
+      "category": "event venue",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Las Vegas Festival Grounds",
+      "category": "event venue",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Colosseum Theater at Caesars Palace",
+      "category": "performing arts theater",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fremont Street Experience",
+      "category": "shopping mall",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

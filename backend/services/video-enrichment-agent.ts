@@ -63,29 +63,43 @@ export async function enrichWithInstagramReels(
 		const client = getInstagramClient();
 
 		// Build search queries from venue names + location
-		const queries = actualVenues.map(venue => {
+		// Build search queries — TWO sanitized hashtags per venue for better coverage:
+		//   1. venue name only (e.g., "fatcatnightclub")
+		//   2. venue name + city (e.g., "fatcatnightclublasvegas")
+		const venueQueryMap = actualVenues.map(venue => {
 			const venueName = venue.name || '';
-			// Clean venue name - remove ALL special chars and spaces for hashtag searches
-			const cleanName = venueName
-				.toLowerCase()
-				.replace(/[^a-z0-9]/g, '');
+			const cleanName = venueName.toLowerCase().replace(/[^a-z0-9]/g, '');
+			const hashtags: string[] = [];
 
+			// First hashtag: just the venue name
 			if (includeLocation) {
-				// Extract city from address (e.g., "123 Main St, Boston, MA 02101" -> "Boston")
 				const addressParts = (venue.address || '').split(',').map((p: string) => p.trim());
-				let city = addressParts.length >= 2 ? addressParts[addressParts.length - 2] : '';
-				// Remove zip codes, state abbreviations, and ALL non-alphanumeric chars
-				city = city
-					.toLowerCase()
-					.replace(/\d{5}(-\d{4})?/g, '')
-					.replace(/\b[a-z]{2}\b/gi, '')
-					.replace(/[^a-z0-9]/g, '')
-					.trim();
-				// Join without spaces (hashtags can't have spaces)
-				return city ? `${cleanName}${city}` : cleanName;
+				let city = '';
+				if (addressParts.length >= 3) {
+					city = addressParts[1];
+				} else if (addressParts.length === 2) {
+					city = addressParts[0];
+				}
+				city = city.toLowerCase().replace(/[^a-z0-9]/g, '').trim();
+
+				// Disabled city-based hashtag variants for cleaner results
+				// if (city && cleanName.length > 2) {
+				// 	hashtags.push(`${cleanName}${city}`);
+				// }
+				if (cleanName.length > 2) {
+					hashtags.push(cleanName);
+				}
+			} else if (cleanName.length > 2) {
+				hashtags.push(cleanName); // fallback if location disabled
 			}
-			return cleanName;
+
+			console.log(`   🏷️ [${venueName}] hashtags: ${JSON.stringify(hashtags)}`);
+			return { venueName, hashtags };
 		});
+
+		// Flatten + deduplicate all hashtags for one batch call
+		const queries = [...new Set(venueQueryMap.flatMap(v => v.hashtags))];
+		console.log(`📸 All hashtags for batch search: ${JSON.stringify(queries)}`);
 
 		// Batch search all venues at once
 		const resultsMap = await client.batchSearchReels({
@@ -93,18 +107,34 @@ export async function enrichWithInstagramReels(
 			maxResultsPerQuery: maxReelsPerVenue
 		});
 
-		// Attach reels to each venue
-		actualVenues.forEach((venue, index) => {
-			const query = queries[index];
-			const reels = resultsMap.get(query) || [];
-			venue.instagramReels = reels;
+		console.log(`📸 Results map keys: ${JSON.stringify([...resultsMap.keys()])}`);
 
-			if (reels.length > 0) {
-				console.log(`   📸 [${venue.name}] Found ${reels.length} reel(s):`);
-				reels.forEach((r: any) => console.log(`      🔗 ${r.videoUrl}`));
+		// Attach reels to each venue — merge results from all their hashtag variants
+		actualVenues.forEach((venue, index) => {
+			const { hashtags } = venueQueryMap[index];
+			const allReels: any[] = [];
+			const seenIds = new Set<string>();
+
+			for (const tag of hashtags) {
+				const reels = resultsMap.get(tag) || [];
+				for (const reel of reels) {
+					const reelId = reel.id || reel.shortCode;
+					if (!seenIds.has(reelId)) {
+						seenIds.add(reelId);
+						allReels.push(reel);
+					}
+				}
+			}
+
+			venue.instagramReels = allReels.slice(0, maxReelsPerVenue);
+
+			if (venue.instagramReels.length > 0) {
+				console.log(`   📸 [${venue.name}] Found ${venue.instagramReels.length} reel(s):`);
+				venue.instagramReels.forEach((r: any) => console.log(`      🔗 ${r.videoUrl}`));
+			} else {
+				console.log(`   ⚪ [${venue.name}] No reels found (searched: ${hashtags.join(', ')})`);
 			}
 		});
-
 		const venuesWithReels = actualVenues.filter(v => v.instagramReels?.length > 0).length;
 		console.log(`✅ Instagram enrichment complete: ${venuesWithReels}/${actualVenues.length} venues have reels`);
 

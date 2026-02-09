@@ -1,0 +1,65 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "plan a wild trip in Miami"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+Here's a plan for a "wild trip" in Miami, focusing on exciting and adventurous activities. I've included a mix of must-have experiences and nice-to-have options to enhance your trip.
+
+```json
+{
+  "plan": {
+    "type": "Wild trip",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "driving"
+  },
+  "venues": [
+    { "name": "Everglades National Park", "category": "national park", "priority": "must_have" },
+    { "name": "Jungle Island", "category": "amusement park", "priority": "must_have" },
+    { "name": "Vizcaya Museum and Gardens", "category": "historic site", "priority": "must_have" },
+    { "name": "South Beach", "category": "beach", "priority": "must_have" },
+    { "name": "Wynwood Walls", "category": "art museum", "priority": "must_have" },
+    { "name": "Miami Seaquarium", "category": "aquarium", "priority": "nice_to_have" },
+    { "name": "Bayside Marketplace", "category": "shopping mall", "priority": "nice_to_have" },
+    { "name": "Little Havana", "category": "neighborhood", "priority": "nice_to_have" },
+    { "name": "Ocean Drive", "category": "street", "priority": "nice_to_have" },
+    { "name": "Fairchild Tropical Botanic Garden", "category": "botanical garden", "priority": "nice_to_have" },
+    { "name": "Perez Art Museum Miami", "category": "art museum", "priority": "nice_to_have" },
+    { "name": "Phillip and Patricia Frost Museum of Science", "category": "science museum", "priority": "nice_to_have" },
+    { "name": "Holocaust Memorial", "category": "memorial", "priority": "nice_to_have" },
+    { "name": "Deering Estate", "category": "historic site", "priority": "nice_to_have" },
+    { "name": "Bill Baggs Cape Florida State Park", "category": "state park", "priority": "nice_to_have" },
+    { "name": "Art Deco Historic District", "category": "historic district", "priority": "nice_to_have" }
+  ]
+}
+```

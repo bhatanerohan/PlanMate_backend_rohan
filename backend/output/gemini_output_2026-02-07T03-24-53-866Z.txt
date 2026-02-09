@@ -1,0 +1,147 @@
+PROMPT:
+User location: Miami, Florida, United States (25.773357, -80.1919)
+
+Request: "plan a wild night in Miami"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Nightlife Experience",
+    "total_stops": 5,
+    "estimated_duration": "6-8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Rosa Sky",
+      "category": "rooftop bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Blackbird Ordinary",
+      "category": "cocktail bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "E11EVEN MIAMI",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "MODE Downtown Miami",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sugar",
+      "category": "rooftop bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Tipsy Flamingo Cocktail Bar",
+      "category": "cocktail bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Dolores But You Can Call Me Lolita",
+      "category": "restaurant/bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Corner",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Over Under",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Miami Sound Bar",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mama Tried",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Better Days",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Black Market Miami",
+      "category": "sports bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Blue Martini",
+      "category": "lounge",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rosario Miami",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Sylvester",
+      "category": "cocktail bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The White Elephant Cocktail Bar",
+      "category": "speakeasy cocktail bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "DOM'S",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Cebada Rooftop",
+      "category": "restaurant/bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Key Rooftop Bar",
+      "category": "bar",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

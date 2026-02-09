@@ -1,0 +1,65 @@
+PROMPT:
+User location: San Jose, California, United States (37.336157, -121.890608)
+
+Request: "plan a day in san jose"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Day trip in San Jose",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "driving"
+  },
+  "venues": [
+    { "name": "The Tech Interactive", "category": "museum", "priority": "must_have" },
+    { "name": "San Jose Museum of Art", "category": "museum", "priority": "must_have" },
+    { "name": "San Jose Civic Auditorium", "category": "event venue", "priority": "must_have" },
+    { "name": "Plaza de Cesar Chavez", "category": "park", "priority": "must_have" },
+    { "name": "San Pedro Square Market", "category": "market", "priority": "must_have" },
+    { "name": "Japantown", "category": "neighborhood", "priority": "nice_to_have" },
+    { "name": "Kelley Park", "category": "park", "priority": "nice_to_have" },
+    { "name": "Happy Hollow Park & Zoo", "category": "amusement park", "priority": "nice_to_have" },
+    { "name": "Japanese Friendship Garden", "category": "garden", "priority": "nice_to_have" },
+    { "name": "Silver Creek Sportsplex", "category": "sports complex", "priority": "nice_to_have" },
+    { "name": "Guadalupe River Park", "category": "park", "priority": "nice_to_have" },
+    { "name": "Santana Row", "category": "shopping mall", "priority": "nice_to_have" },
+    { "name": "Boccone", "category": "restaurant", "priority": "nice_to_have" },
+    { "name": "La Foret Restaurant", "category": "restaurant", "priority": "nice_to_have" },
+    { "name": "Original Gravity Public House", "category": "bar", "priority": "nice_to_have" },
+    { "name": "La Villa Italian Restaurant", "category": "restaurant", "priority": "nice_to_have" },
+    { "name": "La Bamba Mexican Restaurant", "category": "restaurant", "priority": "nice_to_have" },
+    { "name": "Naglee Park Garage", "category": "restaurant", "priority": "nice_to_have" }
+  ]
+}
+```

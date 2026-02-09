@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.323458768664324, -71.10724237566048)
+
+Request: "Plan a day out in midtown NYC where I could try out halal food trucks"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Halal Food Truck Day Out in Midtown NYC",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "The Halal Guys",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Adel's Famous Halal Food",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sharif's Famous",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Rafiqi’s Food Cart",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Kwik Meal NYC",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Rockefeller Center",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Top of The Rock",
+      "category": "observation_deck",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "SUMMIT One Vanderbilt",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bryant Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bank of America Winter Village at Bryant Park",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Times Square",
+      "category": "plaza",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Madame Tussauds New York",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "RiseNY",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Channel Gardens",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Paley Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Circle Line Sightseeing Cruises - Midtown",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "One Times Square",
+      "category": "plaza",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "42nd Street Connector",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Door to Nowhere",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Town Square",
+      "category": "tourist_attraction",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

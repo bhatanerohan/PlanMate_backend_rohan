@@ -1,0 +1,160 @@
+User Prompt: plan a family trip in miami
+
+[2026-02-07T04:44:43.815Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-07T04:44:43.816Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-02-07T04:44:43.816Z] LOG    🎯 Must-have: 5
+[2026-02-07T04:44:43.816Z] LOG    ✨ Nice-to-have: 13
+[2026-02-07T04:44:43.817Z] LOG 📍 Location hint: miami
+[2026-02-07T04:44:43.818Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-02-07T04:44:43.819Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-07T04:44:43.819Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-07T04:44:43.821Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-07T04:44:43.821Z] LOG    1. Searching "Zoo Miami" in "miami"
+[2026-02-07T04:44:43.823Z] LOG 🔍 [Google Places] Text search: "Zoo Miami" in miami
+[2026-02-07T04:44:43.831Z] LOG    2. Searching "Phillip & Patricia Frost Museum of Science" in "miami"
+[2026-02-07T04:44:43.832Z] LOG 🔍 [Google Places] Text search: "Phillip & Patricia Frost Museum of Science" in miami
+[2026-02-07T04:44:43.836Z] LOG    3. Searching "Jungle Island" in "miami"
+[2026-02-07T04:44:43.837Z] LOG 🔍 [Google Places] Text search: "Jungle Island" in miami
+[2026-02-07T04:44:43.840Z] LOG    4. Searching "Miami Children's Museum" in "miami"
+[2026-02-07T04:44:43.840Z] LOG 🔍 [Google Places] Text search: "Miami Children's Museum" in miami
+[2026-02-07T04:44:43.843Z] LOG    5. Searching "Wynwood Walls" in "miami"
+[2026-02-07T04:44:43.844Z] LOG 🔍 [Google Places] Text search: "Wynwood Walls" in miami
+[2026-02-07T04:44:43.846Z] LOG    6. Searching "Puttshack - Miami" in "miami"
+[2026-02-07T04:44:43.847Z] LOG 🔍 [Google Places] Text search: "Puttshack - Miami" in miami
+[2026-02-07T04:44:43.849Z] LOG    7. Searching "Paradox Museum Miami" in "miami"
+[2026-02-07T04:44:43.850Z] LOG 🔍 [Google Places] Text search: "Paradox Museum Miami" in miami
+[2026-02-07T04:44:43.852Z] LOG    8. Searching "Bayfront Park" in "miami"
+[2026-02-07T04:44:43.853Z] LOG 🔍 [Google Places] Text search: "Bayfront Park" in miami
+[2026-02-07T04:44:43.855Z] LOG    9. Searching "Lummus Park" in "miami"
+[2026-02-07T04:44:43.856Z] LOG 🔍 [Google Places] Text search: "Lummus Park" in miami
+[2026-02-07T04:44:43.859Z] LOG    10. Searching "South Pointe" in "miami"
+[2026-02-07T04:44:43.860Z] LOG 🔍 [Google Places] Text search: "South Pointe" in miami
+[2026-02-07T04:44:44.248Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.253Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.264Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.266Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.297Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.300Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.303Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.314Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.316Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.331Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.395Z] LOG    ✅ Jungle Island: Got description (98 chars)
+[2026-02-07T04:44:44.398Z] LOG    📷 Jungle Island: Got 10 photos
+[2026-02-07T04:44:44.400Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:44.428Z] LOG    ⚠️  Paradox Museum Miami: No editorial summary available
+[2026-02-07T04:44:44.430Z] LOG    📷 Paradox Museum Miami: Got 10 photos
+[2026-02-07T04:44:44.431Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:44.433Z] LOG    ✅ Bayfront Park: Got description (99 chars)
+[2026-02-07T04:44:44.435Z] LOG    📷 Bayfront Park: Got 10 photos
+[2026-02-07T04:44:44.436Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:44.457Z] LOG    ✅ Zoo Miami: Got description (95 chars)
+[2026-02-07T04:44:44.458Z] LOG    📷 Zoo Miami: Got 10 photos
+[2026-02-07T04:44:44.458Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:44.460Z] LOG    ✅ Wynwood Walls: Got description (99 chars)
+[2026-02-07T04:44:44.460Z] LOG    📷 Wynwood Walls: Got 10 photos
+[2026-02-07T04:44:44.461Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:44.466Z] LOG    ⚠️  South Pointe Drive: No editorial summary available
+[2026-02-07T04:44:44.468Z] LOG    📷 South Pointe Drive: Got 10 photos
+[2026-02-07T04:44:44.469Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:44.475Z] LOG    ✅ Phillip & Patricia Frost Museum of Science: Got description (86 chars)
+[2026-02-07T04:44:44.477Z] LOG    📷 Phillip & Patricia Frost Museum of Science: Got 10 photos
+[2026-02-07T04:44:44.478Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:44.479Z] LOG    ⚠️  Puttshack - Miami: No editorial summary available
+[2026-02-07T04:44:44.480Z] LOG    📷 Puttshack - Miami: Got 10 photos
+[2026-02-07T04:44:44.481Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:44.485Z] LOG    ✅ Lummus Park: Got description (87 chars)
+[2026-02-07T04:44:44.486Z] LOG    📷 Lummus Park: Got 10 photos
+[2026-02-07T04:44:44.486Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:44.488Z] LOG    ✅ Miami Children's Museum: Got description (99 chars)
+[2026-02-07T04:44:44.489Z] LOG    📷 Miami Children's Museum: Got 10 photos
+[2026-02-07T04:44:44.489Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:44.490Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 670ms
+[2026-02-07T04:44:44.491Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-07T04:44:44.491Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-07T04:44:44.694Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-02-07T04:44:44.697Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-07T04:44:44.698Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-02-07T04:44:44.699Z] LOG    1. Searching "Miami Beach Botanical Garden" in "miami"
+[2026-02-07T04:44:44.700Z] LOG 🔍 [Google Places] Text search: "Miami Beach Botanical Garden" in miami
+[2026-02-07T04:44:44.701Z] LOG    2. Searching "Vizcaya Museum & Gardens" in "miami"
+[2026-02-07T04:44:44.702Z] LOG 🔍 [Google Places] Text search: "Vizcaya Museum & Gardens" in miami
+[2026-02-07T04:44:44.703Z] LOG    3. Searching "The Underline" in "miami"
+[2026-02-07T04:44:44.703Z] LOG 🔍 [Google Places] Text search: "The Underline" in miami
+[2026-02-07T04:44:44.704Z] LOG    4. Searching "Watson Island Park" in "miami"
+[2026-02-07T04:44:44.705Z] LOG 🔍 [Google Places] Text search: "Watson Island Park" in miami
+[2026-02-07T04:44:44.706Z] LOG    5. Searching "Miami Bull" in "miami"
+[2026-02-07T04:44:44.706Z] LOG 🔍 [Google Places] Text search: "Miami Bull" in miami
+[2026-02-07T04:44:44.707Z] LOG    6. Searching "Crazy About You" in "miami"
+[2026-02-07T04:44:44.707Z] LOG 🔍 [Google Places] Text search: "Crazy About You" in miami
+[2026-02-07T04:44:44.708Z] LOG    7. Searching "Moxies Miami Restaurant" in "miami"
+[2026-02-07T04:44:44.708Z] LOG 🔍 [Google Places] Text search: "Moxies Miami Restaurant" in miami
+[2026-02-07T04:44:44.709Z] LOG    8. Searching "Sexy Fish Miami" in "miami"
+[2026-02-07T04:44:44.710Z] LOG 🔍 [Google Places] Text search: "Sexy Fish Miami" in miami
+[2026-02-07T04:44:44.975Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.991Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.996Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:44.999Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:45.014Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:45.022Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:45.112Z] LOG    ⚠️  Miami Bull: No editorial summary available
+[2026-02-07T04:44:45.116Z] LOG    📷 Miami Bull: Got 10 photos
+[2026-02-07T04:44:45.117Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:45.118Z] LOG    ⚠️  The Underline: No editorial summary available
+[2026-02-07T04:44:45.119Z] LOG    📷 The Underline: Got 10 photos
+[2026-02-07T04:44:45.119Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:45.129Z] LOG    ✅ Sexy Fish Miami: Got description (95 chars)
+[2026-02-07T04:44:45.130Z] LOG    📷 Sexy Fish Miami: Got 10 photos
+[2026-02-07T04:44:45.131Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:45.143Z] LOG    ⚠️  Watson Island Park: No editorial summary available
+[2026-02-07T04:44:45.145Z] LOG    📷 Watson Island Park: Got 10 photos
+[2026-02-07T04:44:45.145Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:45.156Z] LOG    ✅ Crazy About You: Got description (97 chars)
+[2026-02-07T04:44:45.157Z] LOG    📷 Crazy About You: Got 10 photos
+[2026-02-07T04:44:45.158Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:45.161Z] LOG    ⚠️  Moxies Miami Restaurant: No editorial summary available
+[2026-02-07T04:44:45.162Z] LOG    📷 Moxies Miami Restaurant: Got 10 photos
+[2026-02-07T04:44:45.163Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:45.176Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:45.206Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T04:44:45.355Z] LOG    ✅ Vizcaya Museum & Gardens: Got description (93 chars)
+[2026-02-07T04:44:45.358Z] LOG    📷 Vizcaya Museum & Gardens: Got 10 photos
+[2026-02-07T04:44:45.364Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:45.368Z] LOG    ✅ Miami Beach Botanical Garden: Got description (97 chars)
+[2026-02-07T04:44:45.369Z] LOG    📷 Miami Beach Botanical Garden: Got 10 photos
+[2026-02-07T04:44:45.370Z] LOG ✅ Found 1 places
+[2026-02-07T04:44:45.371Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 673ms
+[2026-02-07T04:44:45.371Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-07T04:44:45.372Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-02-07T04:44:45.372Z] LOG    ✅ Zoo Miami → Zoo Miami (must_have)
+[2026-02-07T04:44:45.373Z] LOG    ✅ Phillip & Patricia Frost Museum of Science → Phillip & Patricia Frost Museum of Science (must_have)
+[2026-02-07T04:44:45.373Z] LOG    ✅ Jungle Island → Jungle Island (must_have)
+[2026-02-07T04:44:45.374Z] LOG    ✅ Miami Children's Museum → Miami Children's Museum (must_have)
+[2026-02-07T04:44:45.374Z] LOG    ✅ Wynwood Walls → Wynwood Walls (must_have)
+[2026-02-07T04:44:45.375Z] LOG    ✅ Puttshack - Miami → Puttshack - Miami (nice_to_have)
+[2026-02-07T04:44:45.375Z] LOG    ✅ Paradox Museum Miami → Paradox Museum Miami (nice_to_have)
+[2026-02-07T04:44:45.376Z] LOG    ✅ Bayfront Park → Bayfront Park (nice_to_have)
+[2026-02-07T04:44:45.376Z] LOG    ✅ Lummus Park → Lummus Park (nice_to_have)
+[2026-02-07T04:44:45.377Z] LOG    ✅ South Pointe → South Pointe Drive (nice_to_have)
+[2026-02-07T04:44:45.377Z] LOG    ✅ Miami Beach Botanical Garden → Miami Beach Botanical Garden (nice_to_have)
+[2026-02-07T04:44:45.378Z] LOG    ✅ Vizcaya Museum & Gardens → Vizcaya Museum & Gardens (nice_to_have)
+[2026-02-07T04:44:45.378Z] LOG    ✅ The Underline → The Underline (nice_to_have)
+[2026-02-07T04:44:45.379Z] LOG    ✅ Watson Island Park → Watson Island Park (nice_to_have)
+[2026-02-07T04:44:45.379Z] LOG    ✅ Miami Bull → Miami Bull (nice_to_have)
+[2026-02-07T04:44:45.380Z] LOG    ✅ Crazy About You → Crazy About You (nice_to_have)
+[2026-02-07T04:44:45.380Z] LOG    ✅ Moxies Miami Restaurant → Moxies Miami Restaurant (nice_to_have)
+[2026-02-07T04:44:45.381Z] LOG    ✅ Sexy Fish Miami → Sexy Fish Miami (nice_to_have)
+[2026-02-07T04:44:45.381Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-07T04:44:45.382Z] LOG    Total enriched: 18
+[2026-02-07T04:44:45.382Z] LOG    🎯 Must-have: 5
+[2026-02-07T04:44:45.382Z] LOG    ✨ Nice-to-have: 13
+[2026-02-07T04:44:45.383Z] LOG    ❌ Failed: 0
+[2026-02-07T04:44:45.383Z] LOG    ⏱️  Enrichment took: 1569ms (1.57s)
+
+--- Summary ---
+Enrichment completed

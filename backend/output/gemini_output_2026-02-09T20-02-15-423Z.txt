@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.323458768664324, -71.10724237566048)
+
+Request: "Plan a day out in midtown NYC where I could try out halal food trucks"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Halal Food Truck Day Out",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Express Halal Food truck",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sharif's Famous",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "MOE EATS NYC",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Kwik Meal NYC",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mama Halal Food",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Top of The Rock",
+      "category": "observation deck",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rockefeller Center",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "SUMMIT One Vanderbilt",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Channel Gardens",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Empire State Building",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Madame Tussauds New York",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Edge NYC",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bryant Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Museum of Modern Art",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Times Square",
+      "category": "plaza",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The High Line",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Central Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "SPYSCAPE",
+      "category": "event venue",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Herald Square Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Tenement Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```<ctrl99>

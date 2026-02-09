@@ -1,0 +1,258 @@
+PROMPT:
+User location: Miami, Florida, United States (25.773357, -80.1919)
+
+Request: "plan a wild night on miami beach and add STORY club in plan"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Night Out",
+    "total_stops": 5,
+    "estimated_duration": "6 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "STORY",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mango's - Miami",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Clevelander Bar",
+      "category": "bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Voodoo Lounge & Rooftop",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sola Miami Beach",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Wilde on the Porch",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Osteria del Mar | Miami Beach",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Meet Dalia - Mediterranean restaurant in Miami Beach",
+      "category": "mediterranean restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Osteria Positano",
+      "category": "italian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "MILA",
+      "category": "asian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Il Pastaiolo - Best Italian Restaurant South Beach, Miami Florida",
+      "category": "italian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Montana's Miami Beach",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "La Trattoria Ocean Drive",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bar Luca",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "American Bistro🍔 American Restaurant Miami Beach",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "El Patio Restaurant – Bar Habana – La Terraza Rooftop",
+      "category": "mediterranean restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Serena",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Kanoli - Italian Restaurant in Miami Beach",
+      "category": "italian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "La Grande Boucherie Miami",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Tavern - American Restaurant in Miami Beach",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+``````json
+{
+  "plan": {
+    "type": "Night Out",
+    "total_stops": 5,
+    "estimated_duration": "6 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "STORY",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mango's - Miami",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Clevelander Bar",
+      "category": "bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Voodoo Lounge & Rooftop",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Sola Miami Beach",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Wilde on the Porch",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Osteria del Mar | Miami Beach",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Meet Dalia - Mediterranean restaurant in Miami Beach",
+      "category": "mediterranean restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Osteria Positano",
+      "category": "italian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "MILA",
+      "category": "asian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Il Pastaiolo - Best Italian Restaurant South Beach, Miami Florida",
+      "category": "italian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Montana's Miami Beach",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "La Trattoria Ocean Drive",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bar Luca",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "American Bistro🍔 American Restaurant Miami Beach",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "El Patio Restaurant – Bar Habana – La Terraza Rooftop",
+      "category": "mediterranean restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Serena",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Kanoli - Italian Restaurant in Miami Beach",
+      "category": "italian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "La Grande Boucherie Miami",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Tavern - American Restaurant in Miami Beach",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

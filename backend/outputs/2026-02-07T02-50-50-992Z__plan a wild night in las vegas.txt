@@ -1,0 +1,173 @@
+User Prompt: plan a wild night in las vegas
+
+[2026-02-07T02:50:50.994Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-07T02:50:50.995Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-07T02:50:50.996Z] LOG    🎯 Must-have: 5
+[2026-02-07T02:50:50.997Z] LOG    ✨ Nice-to-have: 15
+[2026-02-07T02:50:50.999Z] LOG 📍 Location hint: las vegas
+[2026-02-07T02:50:51.001Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-07T02:50:51.002Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-07T02:50:51.005Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-07T02:50:51.006Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-07T02:50:51.008Z] LOG    1. Searching "XS Nightclub" in "las vegas"
+[2026-02-07T02:50:51.009Z] LOG 🔍 [Google Places] Text search: "XS Nightclub" in las vegas
+[2026-02-07T02:50:51.019Z] LOG    2. Searching "OMNIA Nightclub" in "las vegas"
+[2026-02-07T02:50:51.021Z] LOG 🔍 [Google Places] Text search: "OMNIA Nightclub" in las vegas
+[2026-02-07T02:50:51.027Z] LOG    3. Searching "The Chandelier" in "las vegas"
+[2026-02-07T02:50:51.029Z] LOG 🔍 [Google Places] Text search: "The Chandelier" in las vegas
+[2026-02-07T02:50:51.034Z] LOG    4. Searching "Marquee Nightclub" in "las vegas"
+[2026-02-07T02:50:51.035Z] LOG 🔍 [Google Places] Text search: "Marquee Nightclub" in las vegas
+[2026-02-07T02:50:51.039Z] LOG    5. Searching "Carson Kitchen" in "las vegas"
+[2026-02-07T02:50:51.041Z] LOG 🔍 [Google Places] Text search: "Carson Kitchen" in las vegas
+[2026-02-07T02:50:51.047Z] LOG    6. Searching "Caesars Palace" in "las vegas"
+[2026-02-07T02:50:51.048Z] LOG 🔍 [Google Places] Text search: "Caesars Palace" in las vegas
+[2026-02-07T02:50:51.056Z] LOG    7. Searching "Bellagio Hotel & Casino" in "las vegas"
+[2026-02-07T02:50:51.058Z] LOG 🔍 [Google Places] Text search: "Bellagio Hotel & Casino" in las vegas
+[2026-02-07T02:50:51.062Z] LOG    8. Searching "MGM Grand" in "las vegas"
+[2026-02-07T02:50:51.063Z] LOG 🔍 [Google Places] Text search: "MGM Grand" in las vegas
+[2026-02-07T02:50:51.067Z] LOG    9. Searching "The Venetian Las Vegas" in "las vegas"
+[2026-02-07T02:50:51.068Z] LOG 🔍 [Google Places] Text search: "The Venetian Las Vegas" in las vegas
+[2026-02-07T02:50:51.072Z] LOG    10. Searching "The STRAT Hotel, Casino & Tower" in "las vegas"
+[2026-02-07T02:50:51.073Z] LOG 🔍 [Google Places] Text search: "The STRAT Hotel, Casino & Tower" in las vegas
+[2026-02-07T02:50:51.445Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:51.454Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:51.460Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:51.484Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:51.494Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:51.499Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:51.524Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:51.562Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:51.564Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:51.648Z] LOG    ✅ Caesars Palace: Got description (97 chars)
+[2026-02-07T02:50:51.650Z] LOG    📷 Caesars Palace: Got 10 photos
+[2026-02-07T02:50:51.651Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:51.652Z] LOG    ✅ Marquee Nightclub: Got description (100 chars)
+[2026-02-07T02:50:51.653Z] LOG    📷 Marquee Nightclub: Got 10 photos
+[2026-02-07T02:50:51.654Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:51.656Z] LOG    ✅ OMNIA Nightclub: Got description (99 chars)
+[2026-02-07T02:50:51.657Z] LOG    📷 OMNIA Nightclub: Got 10 photos
+[2026-02-07T02:50:51.658Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:51.660Z] LOG    ✅ Carson Kitchen: Got description (94 chars)
+[2026-02-07T02:50:51.662Z] LOG    📷 Carson Kitchen: Got 10 photos
+[2026-02-07T02:50:51.664Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:51.671Z] LOG    ✅ The Venetian Las Vegas: Got description (98 chars)
+[2026-02-07T02:50:51.672Z] LOG    📷 The Venetian Las Vegas: Got 10 photos
+[2026-02-07T02:50:51.674Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:51.676Z] LOG    ✅ MGM Grand: Got description (96 chars)
+[2026-02-07T02:50:51.676Z] LOG    📷 MGM Grand: Got 10 photos
+[2026-02-07T02:50:51.677Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:51.679Z] LOG    ✅ The Chandelier: Got description (98 chars)
+[2026-02-07T02:50:51.681Z] LOG    📷 The Chandelier: Got 10 photos
+[2026-02-07T02:50:51.681Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:51.717Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:51.741Z] LOG    ✅ The STRAT Hotel, Casino & Tower: Got description (96 chars)
+[2026-02-07T02:50:51.742Z] LOG    📷 The STRAT Hotel, Casino & Tower: Got 10 photos
+[2026-02-07T02:50:51.744Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:51.768Z] LOG    ✅ XS Nightclub: Got description (97 chars)
+[2026-02-07T02:50:51.770Z] LOG    📷 XS Nightclub: Got 10 photos
+[2026-02-07T02:50:51.771Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:51.873Z] LOG    ✅ Bellagio Hotel & Casino: Got description (100 chars)
+[2026-02-07T02:50:51.876Z] LOG    📷 Bellagio Hotel & Casino: Got 10 photos
+[2026-02-07T02:50:51.877Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:51.878Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 872ms
+[2026-02-07T02:50:51.879Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-07T02:50:51.880Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-07T02:50:52.087Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-07T02:50:52.096Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-07T02:50:52.102Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-07T02:50:52.104Z] LOG    1. Searching "Paris Las Vegas" in "las vegas"
+[2026-02-07T02:50:52.105Z] LOG 🔍 [Google Places] Text search: "Paris Las Vegas" in las vegas
+[2026-02-07T02:50:52.107Z] LOG    2. Searching "Excalibur Hotel & Casino" in "las vegas"
+[2026-02-07T02:50:52.108Z] LOG 🔍 [Google Places] Text search: "Excalibur Hotel & Casino" in las vegas
+[2026-02-07T02:50:52.110Z] LOG    3. Searching "Palms Casino Resort" in "las vegas"
+[2026-02-07T02:50:52.111Z] LOG 🔍 [Google Places] Text search: "Palms Casino Resort" in las vegas
+[2026-02-07T02:50:52.112Z] LOG    4. Searching "The Resort At Summerlin" in "las vegas"
+[2026-02-07T02:50:52.113Z] LOG 🔍 [Google Places] Text search: "The Resort At Summerlin" in las vegas
+[2026-02-07T02:50:52.115Z] LOG    5. Searching "Wynn Las Vegas" in "las vegas"
+[2026-02-07T02:50:52.116Z] LOG 🔍 [Google Places] Text search: "Wynn Las Vegas" in las vegas
+[2026-02-07T02:50:52.118Z] LOG    6. Searching "Sphere" in "las vegas"
+[2026-02-07T02:50:52.118Z] LOG 🔍 [Google Places] Text search: "Sphere" in las vegas
+[2026-02-07T02:50:52.123Z] LOG    7. Searching "House of Blues Las Vegas" in "las vegas"
+[2026-02-07T02:50:52.125Z] LOG 🔍 [Google Places] Text search: "House of Blues Las Vegas" in las vegas
+[2026-02-07T02:50:52.126Z] LOG    8. Searching "Las Vegas Festival Grounds" in "las vegas"
+[2026-02-07T02:50:52.127Z] LOG 🔍 [Google Places] Text search: "Las Vegas Festival Grounds" in las vegas
+[2026-02-07T02:50:52.128Z] LOG    9. Searching "The Colosseum Theater at Caesars Palace" in "las vegas"
+[2026-02-07T02:50:52.129Z] LOG 🔍 [Google Places] Text search: "The Colosseum Theater at Caesars Palace" in las vegas
+[2026-02-07T02:50:52.130Z] LOG    10. Searching "Fremont Street Experience" in "las vegas"
+[2026-02-07T02:50:52.131Z] LOG 🔍 [Google Places] Text search: "Fremont Street Experience" in las vegas
+[2026-02-07T02:50:52.491Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:52.503Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:52.604Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:52.630Z] LOG    ⚠️  Sphere: No editorial summary available
+[2026-02-07T02:50:52.635Z] LOG    📷 Sphere: Got 10 photos
+[2026-02-07T02:50:52.637Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:52.642Z] LOG    ✅ The Colosseum Theater at Caesars Palace: Got description (92 chars)
+[2026-02-07T02:50:52.643Z] LOG    📷 The Colosseum Theater at Caesars Palace: Got 10 photos
+[2026-02-07T02:50:52.644Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:52.646Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:52.664Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:52.724Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:52.763Z] LOG    ✅ Excalibur Hotel & Casino: Got description (98 chars)
+[2026-02-07T02:50:52.765Z] LOG    📷 Excalibur Hotel & Casino: Got 10 photos
+[2026-02-07T02:50:52.767Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:52.795Z] LOG    ✅ Palms Casino Resort: Got description (82 chars)
+[2026-02-07T02:50:52.796Z] LOG    📷 Palms Casino Resort: Got 10 photos
+[2026-02-07T02:50:52.798Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:52.800Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:52.837Z] LOG    ✅ Wynn Las Vegas: Got description (96 chars)
+[2026-02-07T02:50:52.839Z] LOG    📷 Wynn Las Vegas: Got 10 photos
+[2026-02-07T02:50:52.840Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:52.887Z] LOG    ⚠️  Las Vegas Festival Grounds: No editorial summary available
+[2026-02-07T02:50:52.888Z] LOG    📷 Las Vegas Festival Grounds: Got 10 photos
+[2026-02-07T02:50:52.890Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:52.938Z] LOG    ⚠️  Fremont Street: No editorial summary available
+[2026-02-07T02:50:52.939Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:52.952Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:53.097Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:53.109Z] LOG    ✅ House of Blues Las Vegas: Got description (88 chars)
+[2026-02-07T02:50:53.115Z] LOG    📷 House of Blues Las Vegas: Got 10 photos
+[2026-02-07T02:50:53.117Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:53.240Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T02:50:53.277Z] LOG    ✅ Paris Las Vegas: Got description (94 chars)
+[2026-02-07T02:50:53.279Z] LOG    📷 Paris Las Vegas: Got 10 photos
+[2026-02-07T02:50:53.279Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:53.395Z] LOG    ✅ JW Marriott Las Vegas Resort & Spa: Got description (95 chars)
+[2026-02-07T02:50:53.399Z] LOG    📷 JW Marriott Las Vegas Resort & Spa: Got 10 photos
+[2026-02-07T02:50:53.401Z] LOG ✅ Found 1 places
+[2026-02-07T02:50:53.402Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1300ms
+[2026-02-07T02:50:53.403Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-07T02:50:53.403Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-07T02:50:53.404Z] LOG    ✅ XS Nightclub → XS Nightclub (must_have)
+[2026-02-07T02:50:53.405Z] LOG    ✅ OMNIA Nightclub → OMNIA Nightclub (must_have)
+[2026-02-07T02:50:53.406Z] LOG    ✅ The Chandelier → The Chandelier (must_have)
+[2026-02-07T02:50:53.406Z] LOG    ✅ Marquee Nightclub → Marquee Nightclub (must_have)
+[2026-02-07T02:50:53.407Z] LOG    ✅ Carson Kitchen → Carson Kitchen (must_have)
+[2026-02-07T02:50:53.408Z] LOG    ✅ Caesars Palace → Caesars Palace (nice_to_have)
+[2026-02-07T02:50:53.409Z] LOG    ✅ Bellagio Hotel & Casino → Bellagio Hotel & Casino (nice_to_have)
+[2026-02-07T02:50:53.409Z] LOG    ✅ MGM Grand → MGM Grand (nice_to_have)
+[2026-02-07T02:50:53.410Z] LOG    ✅ The Venetian Las Vegas → The Venetian Las Vegas (nice_to_have)
+[2026-02-07T02:50:53.411Z] LOG    ✅ The STRAT Hotel, Casino & Tower → The STRAT Hotel, Casino & Tower (nice_to_have)
+[2026-02-07T02:50:53.411Z] LOG    ✅ Paris Las Vegas → Paris Las Vegas (nice_to_have)
+[2026-02-07T02:50:53.412Z] LOG    ✅ Excalibur Hotel & Casino → Excalibur Hotel & Casino (nice_to_have)
+[2026-02-07T02:50:53.412Z] LOG    ✅ Palms Casino Resort → Palms Casino Resort (nice_to_have)
+[2026-02-07T02:50:53.413Z] LOG    ✅ The Resort At Summerlin → JW Marriott Las Vegas Resort & Spa (nice_to_have)
+[2026-02-07T02:50:53.414Z] LOG    ✅ Wynn Las Vegas → Wynn Las Vegas (nice_to_have)
+[2026-02-07T02:50:53.415Z] LOG    ✅ Sphere → Sphere (nice_to_have)
+[2026-02-07T02:50:53.416Z] LOG    ✅ House of Blues Las Vegas → House of Blues Las Vegas (nice_to_have)
+[2026-02-07T02:50:53.417Z] LOG    ✅ Las Vegas Festival Grounds → Las Vegas Festival Grounds (nice_to_have)
+[2026-02-07T02:50:53.417Z] LOG    ✅ The Colosseum Theater at Caesars Palace → The Colosseum Theater at Caesars Palace (nice_to_have)
+[2026-02-07T02:50:53.418Z] LOG    ✅ Fremont Street Experience → Fremont Street (nice_to_have)
+[2026-02-07T02:50:53.419Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-07T02:50:53.420Z] LOG    Total enriched: 20
+[2026-02-07T02:50:53.420Z] LOG    🎯 Must-have: 5
+[2026-02-07T02:50:53.421Z] LOG    ✨ Nice-to-have: 15
+[2026-02-07T02:50:53.422Z] LOG    ❌ Failed: 0
+[2026-02-07T02:50:53.423Z] LOG    ⏱️  Enrichment took: 2431ms (2.43s)
+
+--- Summary ---
+Enrichment completed

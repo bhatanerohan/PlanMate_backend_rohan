@@ -1,0 +1,36 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-02-06T18:03:00.505Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-02-06T18:03:00.506Z] LOG 📝 User prompt: "Hit every major museum in DC in one day with lunch breaks"
+[2026-02-06T18:03:00.507Z] LOG 📍 User location: Current location (42.3246936884488, -71.10748590912134)
+[2026-02-06T18:03:00.509Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-02-06T18:03:00.510Z] LOG ⏱️ Starting Gemini API call...
+[2026-02-06T18:03:00.513Z] LOG 🗺️ Location context: (42.3246936884488, -71.10748590912134)
+[2026-02-06T18:03:27.153Z] ERROR ❌ Gemini API attempt 1/3 failed: {"name":"ApiError","status":500}
+[2026-02-06T18:03:27.202Z] LOG ⏳ Retrying Gemini API in 1000ms (attempt 2/3)...
+[2026-02-06T18:03:47.965Z] LOG ⏱️ Gemini API call took: 47455ms (47.45s)
+[2026-02-06T18:03:47.969Z] LOG ✅ Gemini response received
+[2026-02-06T18:03:47.972Z] LOG 📄 Response length: 4807 characters
+[2026-02-06T18:03:47.973Z] LOG 📝 Logged Gemini output to C:\Rohan\PlanmateV2\PlanMate_backend_rohan\backend\output\gemini_output_2026-02-06T18-03-47-972Z.txt
+[2026-02-06T18:03:47.974Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-02-06T18:03:47.974Z] LOG 📍 Grounding chunks: 352 sources
+[2026-02-06T18:03:47.975Z] LOG 🔄 Parsing Gemini response...
+[2026-02-06T18:03:47.977Z] WARN ⚠️ JSON parse failed on cleaned text, trying aggressive cleanup...
+[2026-02-06T18:03:47.977Z] ERROR ❌ Failed to parse Gemini response: {}
+[2026-02-06T18:03:47.978Z] LOG 📄 Raw text start: ```json
+{
+  "plan": {
+    "type": "Museums and Lunch Tour",
+    "total_stops": 5,
+    "estimated_dur
+[2026-02-06T18:03:47.978Z] LOG 🔄 Attempting GPT-4o-mini cleanup parsing...
+[2026-02-06T18:03:57.998Z] LOG ✅ GPT-4o-mini extracted 19 venues
+[2026-02-06T18:03:58.001Z] LOG 
+✨ Parsed 19 CANDIDATES:
+[2026-02-06T18:03:58.003Z] LOG    🎯 Must-have: 5
+[2026-02-06T18:03:58.004Z] LOG    ✨ Nice-to-have: 14
+[2026-02-06T18:03:58.005Z] LOG 📋 Plan: Museums and Lunch Tour, 5 target stops
+
+--- Summary ---
+Completed

@@ -1,0 +1,430 @@
+User Prompt: plan a wild night on miami beach
+
+[2026-02-07T03:35:44.523Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-02-07T03:35:44.524Z] LOG 📝 User prompt: "plan a wild night on miami beach"
+[2026-02-07T03:35:44.525Z] LOG 📍 User location: Miami, Florida, United States (25.773357, -80.1919)
+[2026-02-07T03:35:44.525Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-02-07T03:35:44.526Z] LOG ⏱️ Starting Gemini API call...
+[2026-02-07T03:35:44.526Z] LOG 🗺️ Location context: (25.773357, -80.1919)
+[2026-02-07T03:36:14.244Z] LOG POST /api/plan
+[2026-02-07T03:36:14.248Z] LOG 
+================================================================================
+[2026-02-07T03:36:14.251Z] LOG 📥 Received: "plan a wild night on miami beach"
+[2026-02-07T03:36:14.252Z] LOG 📊 Session: d4ba91ff-5588-4f29-9e3c-27eee9e41ea5 | Device: desktop
+[2026-02-07T03:36:14.253Z] LOG 📍 User location: Miami, Florida, United States (25.773357, -80.1919)
+[2026-02-07T03:36:14.253Z] LOG ================================================================================
+[2026-02-07T03:36:14.254Z] LOG 
+🔍 Classifying intent...
+[2026-02-07T03:36:15.096Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"gemini","queryType":"itinerary_planning","reasoning":"User wants to plan an experience with multiple stops for a night out.","useGeminiGrounding":true,"hasCurrentItinerary":false,"corridorDetected":false,"explicitRouteDetected":false}
+[2026-02-07T03:36:15.104Z] LOG ⏱️ [Perf] Intent Classification: 850ms
+[2026-02-07T03:36:15.111Z] LOG 
+📍 Geo preference: spread (user override)
+[2026-02-07T03:36:15.112Z] LOG 
+⚡ NEW CANDIDATE FLOW: Gemini → Enrich All → Venue Selector → Mapbox
+[2026-02-07T03:36:15.112Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-02-07T03:36:15.113Z] LOG 
+🔍 STEP 2: Calling Gemini for 15-20 CANDIDATES...
+[2026-02-07T03:36:15.116Z] LOG 
+🌟 Gemini Grounding Agent starting (CANDIDATE MODE)...
+[2026-02-07T03:36:15.117Z] LOG 📝 User prompt: "plan a wild night on miami beach"
+[2026-02-07T03:36:15.117Z] LOG 📍 User location: Miami, Florida, United States (25.773357, -80.1919)
+[2026-02-07T03:36:15.118Z] LOG 🔮 Calling Gemini for 15-20 CANDIDATES...
+[2026-02-07T03:36:15.119Z] LOG ⏱️ Starting Gemini API call...
+[2026-02-07T03:36:15.120Z] LOG 🗺️ Location context: (25.773357, -80.1919)
+[2026-02-07T03:36:26.788Z] LOG ⏱️ Gemini API call took: 11664ms (11.66s)
+[2026-02-07T03:36:26.795Z] LOG ✅ Gemini response received
+[2026-02-07T03:36:26.797Z] LOG 📄 Response length: 2317 characters
+[2026-02-07T03:36:26.799Z] LOG 📝 Logged Gemini output to C:\Rohan\PlanmateV2\PlanMate_backend_rohan\PlanMate_backend_rohan\backend\output\gemini_output_2026-02-07T03-36-26-797Z.txt
+[2026-02-07T03:36:26.800Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-02-07T03:36:26.801Z] LOG 📍 Grounding chunks: 269 sources
+[2026-02-07T03:36:26.803Z] LOG 🔄 Parsing Gemini response...
+[2026-02-07T03:36:26.806Z] LOG    📊 Parsed: 5 must_have, 14 nice_to_have
+[2026-02-07T03:36:26.807Z] LOG 
+✨ Parsed 19 CANDIDATES:
+[2026-02-07T03:36:26.808Z] LOG    🎯 Must-have: 5
+[2026-02-07T03:36:26.808Z] LOG    ✨ Nice-to-have: 14
+[2026-02-07T03:36:26.810Z] LOG 📋 Plan: Nightlife Experience, 5 target stops
+[2026-02-07T03:36:26.812Z] LOG ⏱️ [Perf] Gemini Generation: 11698ms
+[2026-02-07T03:36:26.812Z] LOG    ✅ Gemini returned 19 candidates
+[2026-02-07T03:36:26.813Z] LOG    🎯 Must-have: 5
+[2026-02-07T03:36:26.813Z] LOG    ✨ Nice-to-have: 14
+[2026-02-07T03:36:26.814Z] LOG 
+📍 STEP 3: Enriching ALL candidates via Google Places...
+[2026-02-07T03:36:26.819Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-07T03:36:26.820Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-02-07T03:36:26.822Z] LOG    🎯 Must-have: 5
+[2026-02-07T03:36:26.824Z] LOG    ✨ Nice-to-have: 14
+[2026-02-07T03:36:26.826Z] LOG 📍 Location hint: miami
+[2026-02-07T03:36:26.827Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-02-07T03:36:26.828Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-07T03:36:26.830Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-07T03:36:26.832Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-07T03:36:26.833Z] LOG    1. Searching "Mango's - Miami" in "miami"
+[2026-02-07T03:36:26.834Z] LOG 🔍 [Google Places] Text search: "Mango's - Miami" in miami
+[2026-02-07T03:36:26.846Z] LOG    2. Searching "The Clevelander Bar" in "miami"
+[2026-02-07T03:36:26.848Z] LOG 🔍 [Google Places] Text search: "The Clevelander Bar" in miami
+[2026-02-07T03:36:26.852Z] LOG    3. Searching "Voodoo Lounge & Rooftop" in "miami"
+[2026-02-07T03:36:26.854Z] LOG 🔍 [Google Places] Text search: "Voodoo Lounge & Rooftop" in miami
+[2026-02-07T03:36:26.858Z] LOG    4. Searching "Club M2 Miami" in "miami"
+[2026-02-07T03:36:26.860Z] LOG 🔍 [Google Places] Text search: "Club M2 Miami" in miami
+[2026-02-07T03:36:26.863Z] LOG    5. Searching "Lost Weekend" in "miami"
+[2026-02-07T03:36:26.865Z] LOG 🔍 [Google Places] Text search: "Lost Weekend" in miami
+[2026-02-07T03:36:26.869Z] LOG    6. Searching "Nikki Beach Miami Beach" in "miami"
+[2026-02-07T03:36:26.870Z] LOG 🔍 [Google Places] Text search: "Nikki Beach Miami Beach" in miami
+[2026-02-07T03:36:26.875Z] LOG    7. Searching "Carnaval Rooftop" in "miami"
+[2026-02-07T03:36:26.876Z] LOG 🔍 [Google Places] Text search: "Carnaval Rooftop" in miami
+[2026-02-07T03:36:26.878Z] LOG    8. Searching "Wilde on the Porch" in "miami"
+[2026-02-07T03:36:26.881Z] LOG 🔍 [Google Places] Text search: "Wilde on the Porch" in miami
+[2026-02-07T03:36:26.885Z] LOG    9. Searching "Room 55 Speakeasy & Rooftop Cocktail Bar" in "miami"
+[2026-02-07T03:36:26.887Z] LOG 🔍 [Google Places] Text search: "Room 55 Speakeasy & Rooftop Cocktail Bar" in miami
+[2026-02-07T03:36:26.890Z] LOG    10. Searching "Delirio Tiki Bar by Swizzle" in "miami"
+[2026-02-07T03:36:26.892Z] LOG 🔍 [Google Places] Text search: "Delirio Tiki Bar by Swizzle" in miami
+[2026-02-07T03:36:27.207Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:27.216Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:27.234Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:27.298Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:27.307Z] LOG    ⚠️  Wilde on the Porch: No editorial summary available
+[2026-02-07T03:36:27.309Z] LOG    📷 Wilde on the Porch: Got 10 photos
+[2026-02-07T03:36:27.313Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:27.321Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:27.329Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:27.340Z] LOG    ⚠️  Room 55 Speakeasy & Rooftop Cocktail Bar: No editorial summary available
+[2026-02-07T03:36:27.345Z] LOG    📷 Room 55 Speakeasy & Rooftop Cocktail Bar: Got 10 photos
+[2026-02-07T03:36:27.351Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:27.360Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:27.369Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:27.379Z] LOG    ⚠️  Club M2 Miami: No editorial summary available
+[2026-02-07T03:36:27.382Z] LOG    📷 Club M2 Miami: Got 10 photos
+[2026-02-07T03:36:27.384Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:27.389Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:27.406Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:27.444Z] LOG    ✅ The Clevelander Bar: Got description (83 chars)
+[2026-02-07T03:36:27.446Z] LOG    📷 The Clevelander Bar: Got 10 photos
+[2026-02-07T03:36:27.447Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:27.453Z] LOG    ✅ Lost Weekend: Got description (100 chars)
+[2026-02-07T03:36:27.456Z] LOG    📷 Lost Weekend: Got 10 photos
+[2026-02-07T03:36:27.458Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:27.461Z] LOG    ✅ Mango's - Miami: Got description (81 chars)
+[2026-02-07T03:36:27.464Z] LOG    📷 Mango's - Miami: Got 10 photos
+[2026-02-07T03:36:27.466Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:27.470Z] LOG    ⚠️  Delirio Tiki Bar by Swizzle: No editorial summary available
+[2026-02-07T03:36:27.472Z] LOG    📷 Delirio Tiki Bar by Swizzle: Got 10 photos
+[2026-02-07T03:36:27.473Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:27.519Z] LOG    ✅ Voodoo Lounge & Rooftop: Got description (95 chars)
+[2026-02-07T03:36:27.524Z] LOG    📷 Voodoo Lounge & Rooftop: Got 10 photos
+[2026-02-07T03:36:27.527Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:27.530Z] LOG    ✅ Nikki Beach Miami Beach: Got description (68 chars)
+[2026-02-07T03:36:27.533Z] LOG    📷 Nikki Beach Miami Beach: Got 10 photos
+[2026-02-07T03:36:27.535Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:27.537Z] LOG    ⚠️  Carnaval Rooftop: No editorial summary available
+[2026-02-07T03:36:27.539Z] LOG    📷 Carnaval Rooftop: Got 10 photos
+[2026-02-07T03:36:27.541Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:27.542Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 711ms
+[2026-02-07T03:36:27.543Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-07T03:36:27.544Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-07T03:36:27.749Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-02-07T03:36:27.751Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-07T03:36:27.752Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-02-07T03:36:27.753Z] LOG    1. Searching "Bar Idol" in "miami"
+[2026-02-07T03:36:27.753Z] LOG 🔍 [Google Places] Text search: "Bar Idol" in miami
+[2026-02-07T03:36:27.754Z] LOG    2. Searching "Tiki Bar Ocean Drive" in "miami"
+[2026-02-07T03:36:27.755Z] LOG 🔍 [Google Places] Text search: "Tiki Bar Ocean Drive" in miami
+[2026-02-07T03:36:27.757Z] LOG    3. Searching "Brother's Keeper Bar" in "miami"
+[2026-02-07T03:36:27.757Z] LOG 🔍 [Google Places] Text search: "Brother's Keeper Bar" in miami
+[2026-02-07T03:36:27.758Z] LOG    4. Searching "Sweet Liberty Drinks & Supply Company" in "miami"
+[2026-02-07T03:36:27.759Z] LOG 🔍 [Google Places] Text search: "Sweet Liberty Drinks & Supply Company" in miami
+[2026-02-07T03:36:27.760Z] LOG    5. Searching "Rosa Sky" in "miami"
+[2026-02-07T03:36:27.761Z] LOG 🔍 [Google Places] Text search: "Rosa Sky" in miami
+[2026-02-07T03:36:27.764Z] LOG    6. Searching "The Baked Bear" in "miami"
+[2026-02-07T03:36:27.765Z] LOG 🔍 [Google Places] Text search: "The Baked Bear" in miami
+[2026-02-07T03:36:27.766Z] LOG    7. Searching "CIAO AMORE Italian Gelato, Caffè & Bakery" in "miami"
+[2026-02-07T03:36:27.767Z] LOG 🔍 [Google Places] Text search: "CIAO AMORE Italian Gelato, Caffè & Bakery" in miami
+[2026-02-07T03:36:27.769Z] LOG    8. Searching "Icy-N-Spicy" in "miami"
+[2026-02-07T03:36:27.769Z] LOG 🔍 [Google Places] Text search: "Icy-N-Spicy" in miami
+[2026-02-07T03:36:27.771Z] LOG    9. Searching "Insomnia Cookies" in "miami"
+[2026-02-07T03:36:27.772Z] LOG 🔍 [Google Places] Text search: "Insomnia Cookies" in miami
+[2026-02-07T03:36:28.027Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:28.030Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:28.034Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:28.041Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:28.069Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:28.073Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:28.076Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:28.094Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:28.096Z] LOG    ⚠️  Tiki Bar Ocean Drive: No editorial summary available
+[2026-02-07T03:36:28.097Z] LOG    📷 Tiki Bar Ocean Drive: Got 10 photos
+[2026-02-07T03:36:28.098Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:28.135Z] LOG    ✅ Rosa Sky: Got description (90 chars)
+[2026-02-07T03:36:28.136Z] LOG    📷 Rosa Sky: Got 10 photos
+[2026-02-07T03:36:28.137Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:28.138Z] LOG    ⚠️  Bar Idol: No editorial summary available
+[2026-02-07T03:36:28.138Z] LOG    📷 Bar Idol: Got 10 photos
+[2026-02-07T03:36:28.139Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:28.143Z] LOG    ⚠️  CIAO AMORE Italian Gelato, Caffè & Bakery: No editorial summary available
+[2026-02-07T03:36:28.144Z] LOG    📷 CIAO AMORE Italian Gelato, Caffè & Bakery: Got 10 photos
+[2026-02-07T03:36:28.145Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:28.161Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:36:28.163Z] LOG    ⚠️  The Baked Bear: No editorial summary available
+[2026-02-07T03:36:28.164Z] LOG    📷 The Baked Bear: Got 10 photos
+[2026-02-07T03:36:28.165Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:28.193Z] LOG    ✅ Sweet Liberty Drinks & Supply Company: Got description (95 chars)
+[2026-02-07T03:36:28.194Z] LOG    📷 Sweet Liberty Drinks & Supply Company: Got 10 photos
+[2026-02-07T03:36:28.195Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:28.204Z] LOG    ✅ Icy-N-Spicy: Got description (95 chars)
+[2026-02-07T03:36:28.205Z] LOG    📷 Icy-N-Spicy: Got 10 photos
+[2026-02-07T03:36:28.206Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:28.230Z] LOG    ⚠️  Brother's Keeper Bar: No editorial summary available
+[2026-02-07T03:36:28.231Z] LOG    📷 Brother's Keeper Bar: Got 10 photos
+[2026-02-07T03:36:28.232Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:28.281Z] LOG    ✅ Insomnia Cookies: Got description (71 chars)
+[2026-02-07T03:36:28.283Z] LOG    📷 Insomnia Cookies: Got 10 photos
+[2026-02-07T03:36:28.284Z] LOG ✅ Found 1 places
+[2026-02-07T03:36:28.284Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 533ms
+[2026-02-07T03:36:28.285Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-07T03:36:28.286Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-02-07T03:36:28.287Z] LOG    ✅ Mango's - Miami → Mango's - Miami (must_have)
+[2026-02-07T03:36:28.287Z] LOG    ✅ The Clevelander Bar → The Clevelander Bar (must_have)
+[2026-02-07T03:36:28.288Z] LOG    ✅ Voodoo Lounge & Rooftop → Voodoo Lounge & Rooftop (must_have)
+[2026-02-07T03:36:28.289Z] LOG    ✅ Club M2 Miami → Club M2 Miami (must_have)
+[2026-02-07T03:36:28.289Z] LOG    ✅ Lost Weekend → Lost Weekend (must_have)
+[2026-02-07T03:36:28.290Z] LOG    ✅ Nikki Beach Miami Beach → Nikki Beach Miami Beach (nice_to_have)
+[2026-02-07T03:36:28.290Z] LOG    ✅ Carnaval Rooftop → Carnaval Rooftop (nice_to_have)
+[2026-02-07T03:36:28.291Z] LOG    ✅ Wilde on the Porch → Wilde on the Porch (nice_to_have)
+[2026-02-07T03:36:28.292Z] LOG    ✅ Room 55 Speakeasy & Rooftop Cocktail Bar → Room 55 Speakeasy & Rooftop Cocktail Bar (nice_to_have)
+[2026-02-07T03:36:28.292Z] LOG    ✅ Delirio Tiki Bar by Swizzle → Delirio Tiki Bar by Swizzle (nice_to_have)
+[2026-02-07T03:36:28.293Z] LOG    ✅ Bar Idol → Bar Idol (nice_to_have)
+[2026-02-07T03:36:28.294Z] LOG    ✅ Tiki Bar Ocean Drive → Tiki Bar Ocean Drive (nice_to_have)
+[2026-02-07T03:36:28.294Z] LOG    ✅ Brother's Keeper Bar → Brother's Keeper Bar (nice_to_have)
+[2026-02-07T03:36:28.295Z] LOG    ✅ Sweet Liberty Drinks & Supply Company → Sweet Liberty Drinks & Supply Company (nice_to_have)
+[2026-02-07T03:36:28.295Z] LOG    ✅ Rosa Sky → Rosa Sky (nice_to_have)
+[2026-02-07T03:36:28.296Z] LOG    ✅ The Baked Bear → The Baked Bear (nice_to_have)
+[2026-02-07T03:36:28.296Z] LOG    ✅ CIAO AMORE Italian Gelato, Caffè & Bakery → CIAO AMORE Italian Gelato, Caffè & Bakery (nice_to_have)
+[2026-02-07T03:36:28.297Z] LOG    ✅ Icy-N-Spicy → Icy-N-Spicy (nice_to_have)
+[2026-02-07T03:36:28.297Z] LOG    ✅ Insomnia Cookies → Insomnia Cookies (nice_to_have)
+[2026-02-07T03:36:28.298Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-07T03:36:28.298Z] LOG    Total enriched: 19
+[2026-02-07T03:36:28.299Z] LOG    🎯 Must-have: 5
+[2026-02-07T03:36:28.299Z] LOG    ✨ Nice-to-have: 14
+[2026-02-07T03:36:28.300Z] LOG    ❌ Failed: 0
+[2026-02-07T03:36:28.300Z] LOG    ⏱️  Enrichment took: 1484ms (1.48s)
+[2026-02-07T03:36:28.301Z] LOG ⏱️ [Perf] Google Places Enrichment: 1486ms
+[2026-02-07T03:36:28.301Z] LOG    ✅ Enriched 19 candidates
+[2026-02-07T03:36:28.301Z] LOG    🎯 Must-have found: 5
+[2026-02-07T03:36:28.302Z] LOG    ✨ Nice-to-have found: 14
+[2026-02-07T03:36:28.302Z] LOG 
+🎯 STEP 4: Selecting optimal venues...
+[2026-02-07T03:36:28.303Z] LOG 
+🔍 CORRIDOR DETECTION: Analyzing query...
+[2026-02-07T03:36:28.303Z] LOG    Query: "plan a wild night on miami beach"
+[2026-02-07T03:36:28.304Z] LOG    ℹ️ No corridor pattern, using cluster mode
+[2026-02-07T03:36:28.304Z] LOG    📍 Mode: CLUSTER
+[2026-02-07T03:36:28.304Z] LOG 
+🔍 INTENT FILTER: Analyzing user intent...
+[2026-02-07T03:36:29.167Z] LOG    Focused query: undefined
+[2026-02-07T03:36:29.171Z] LOG    Allowed categories: ALL
+[2026-02-07T03:36:29.172Z] LOG    Reasoning: User wants variety
+[2026-02-07T03:36:29.172Z] LOG    ✅ Exploratory query - keeping all candidates
+[2026-02-07T03:36:29.173Z] LOG 
+🎯 VENUE SELECTOR: Starting geographic optimization
+[2026-02-07T03:36:29.174Z] LOG    Input: 19 candidates
+[2026-02-07T03:36:29.174Z] LOG    Target: 5 venues
+[2026-02-07T03:36:29.175Z] LOG    📍 Preference: SPREAD (maximize coverage)
+[2026-02-07T03:36:29.176Z] LOG 
+📍 SPREAD SELECTOR: Selecting venues across a wider area
+[2026-02-07T03:36:29.176Z] LOG    Candidates: 19
+[2026-02-07T03:36:29.178Z] LOG ⏱️ [Perf] Venue Selection: 876ms
+[2026-02-07T03:36:29.179Z] LOG    ✅ Selected 5 venues
+[2026-02-07T03:36:29.179Z] LOG    📍 Cluster radius: 4.50km
+[2026-02-07T03:36:29.180Z] LOG 
+🗺️ STEP 5: Optimizing route...
+[2026-02-07T03:36:29.180Z] LOG 📍 [NearestNeighbor] Optimizing with fixed start at user location (index 0)
+[2026-02-07T03:36:29.181Z] LOG 🔄 [NearestNeighbor] Optimizing 6 waypoints
+[2026-02-07T03:36:29.182Z] LOG    Testing 1 starting point(s)...
+[2026-02-07T03:36:29.182Z] LOG ✅ [NearestNeighbor] Optimization complete
+[2026-02-07T03:36:29.183Z] LOG    Best starting point: waypoint 0
+[2026-02-07T03:36:29.183Z] LOG    Original order: [0 → 1 → 2 → 3 → 4 → 5]
+[2026-02-07T03:36:29.183Z] LOG    Optimized order: [0 → 5 → 4 → 3 → 2 → 1]
+[2026-02-07T03:36:29.184Z] LOG    Original distance: 18.02 km
+[2026-02-07T03:36:29.184Z] LOG    Optimized distance: 12.74 km
+[2026-02-07T03:36:29.185Z] LOG    Improvement: 29.3%
+[2026-02-07T03:36:29.185Z] LOG    Est. walking time: 153 minutes
+[2026-02-07T03:36:29.185Z] LOG    ✅ Route optimized via Multi-Start Nearest Neighbor
+[2026-02-07T03:36:29.186Z] LOG    Best starting point: venue 0
+[2026-02-07T03:36:29.186Z] LOG    Original: Mango's - Miami → Lost Weekend → Club M2 Miami → Insomnia Cookies → Rosa Sky
+[2026-02-07T03:36:29.187Z] LOG    Optimized: Rosa Sky → Insomnia Cookies → Club M2 Miami → Lost Weekend → Mango's - Miami
+[2026-02-07T03:36:29.187Z] LOG    Total distance: 7.9 mi
+[2026-02-07T03:36:29.188Z] LOG    Est. walking time: 2h 33m
+[2026-02-07T03:36:29.188Z] LOG    Improvement: 29.3% shorter
+[2026-02-07T03:36:29.189Z] LOG ⏱️ [Perf] Route Optimization: 9ms
+[2026-02-07T03:36:29.190Z] LOG 📍 Include user location in route: false
+[2026-02-07T03:36:29.191Z] LOG 📍 Calculating route distances...
+[2026-02-07T03:36:29.192Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-02-07T03:36:29.383Z] LOG ✅ Route calculated: 2.5 mi, 48 min
+[2026-02-07T03:36:29.387Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-02-07T03:36:29.493Z] LOG ✅ Route calculated: 5.5 mi, 1h 44m
+[2026-02-07T03:36:29.499Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-02-07T03:36:29.555Z] LOG ✅ Route calculated: 0.3 mi, 5 min
+[2026-02-07T03:36:29.557Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-02-07T03:36:29.637Z] LOG ✅ Route calculated: 0.6 mi, 11 min
+[2026-02-07T03:36:29.643Z] LOG    ✅ Route calculated: 8.9 mi, 2h 49m
+[2026-02-07T03:36:35.294Z] LOG 
+════════════════════════════════════════════════════════════
+[2026-02-07T03:36:35.297Z] LOG ⚡ PERFORMANCE SUMMARY
+[2026-02-07T03:36:35.299Z] LOG ════════════════════════════════════════════════════════════
+[2026-02-07T03:36:35.300Z] LOG Classification:     0.85s
+[2026-02-07T03:36:35.301Z] LOG Gemini Generation:  11.70s
+[2026-02-07T03:36:35.301Z] LOG Enrichment:         1.49s
+[2026-02-07T03:36:35.302Z] LOG Venue Selection:    0.88s
+[2026-02-07T03:36:35.302Z] LOG Route Optimization: 0.01s
+[2026-02-07T03:36:35.303Z] LOG Video Enrichment:   NaNs
+[2026-02-07T03:36:35.303Z] LOG ────────────────────────────────────────────────────────────
+[2026-02-07T03:36:35.304Z] LOG TOTAL DURATION:     20.18s
+[2026-02-07T03:36:35.304Z] LOG ════════════════════════════════════════════════════════════
+
+[2026-02-07T03:36:35.582Z] LOG 📊 Analytics saved for session: d4ba91ff-5588-4f29-9e3c-27eee9e41ea5
+[2026-02-07T03:36:35.640Z] LOG ✅ Output saved to: C:\Rohan\PlanmateV2\PlanMate_backend_rohan\PlanMate_backend_rohan\backend\outputs\planmate_output_2026-02-07T03-36-35.txt
+[2026-02-07T03:36:35.641Z] LOG 
+================================================================================
+[2026-02-07T03:36:35.642Z] LOG ✅ REQUEST COMPLETED (NEW CANDIDATE FLOW)
+[2026-02-07T03:36:35.642Z] LOG    Candidates: 19 → Selected: 5
+[2026-02-07T03:36:35.642Z] LOG    Mode: cluster
+[2026-02-07T03:36:35.643Z] LOG    Cluster radius: 4.50km
+[2026-02-07T03:36:35.643Z] LOG ================================================================================
+
+[2026-02-07T03:36:35.704Z] LOG POST /api/reels
+[2026-02-07T03:36:35.708Z] LOG 📸 Fetching Instagram Reels for 5 venues...
+[2026-02-07T03:36:35.709Z] LOG 📸 Instagram enrichment: fetching reels for 5 venues
+[2026-02-07T03:36:35.710Z] LOG    🏷️ [Rosa Sky] hashtags: ["rosasky"]
+[2026-02-07T03:36:35.711Z] LOG    🏷️ [Insomnia Cookies] hashtags: ["insomniacookies"]
+[2026-02-07T03:36:35.712Z] LOG    🏷️ [Club M2 Miami] hashtags: ["clubm2miami"]
+[2026-02-07T03:36:35.712Z] LOG    🏷️ [Lost Weekend] hashtags: ["lostweekend"]
+[2026-02-07T03:36:35.713Z] LOG    🏷️ [Mango's - Miami] hashtags: ["mangosmiami"]
+[2026-02-07T03:36:35.713Z] LOG 📸 All hashtags for batch search: ["rosasky","insomniacookies","clubm2miami","lostweekend","mangosmiami"]
+[2026-02-07T03:36:35.714Z] LOG 📸 Batch searching Instagram Reels for 5 queries
+[2026-02-07T03:36:36.049Z] LOG ⏳ Apify batch run started: J61xpuenB6kwtfsvR, polling for completion...
+[2026-02-07T03:36:48.504Z] LOG ✅ Batch search completed for 5 queries
+[2026-02-07T03:36:48.512Z] LOG 📸 Results map keys: ["rosasky","insomniacookies","clubm2miami","lostweekend","mangosmiami"]
+[2026-02-07T03:36:48.515Z] LOG    📸 [Rosa Sky] Found 3 reel(s):
+[2026-02-07T03:36:48.515Z] LOG       🔗 https://instagram.fhex5-1.fna.fbcdn.net/o1/v/t16/f2/m86/AQP9KhnUaruUcOM3NEPXJ1guiwGZ2MRsM7QRL00q4R0_y847p2rROhobTBfAAgS0FOJQuF3JV9CLVmqiLJ4zaCETobYnEJzrRJzDmPQ.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=101&vs=709371468893532_1740835594&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC81RjQ1ODVFMjVFMzQyNzVCNDQ4QzE1NEQyQUYxMEE4M192aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HR1lqT2lOTllQMk9iLWNDQUFpdEVRTHc0V3BCYnN0VEFRQUYVAgLIARIAKAAYABsAFQAAJvz5o46Pns8%2FFQIoAkMzLBdAMkQYk3S8ahgSZGFzaF9iYXNlbGluZV8xX3YxEQB1%2Fgdl5p0BAA%3D%3D&_nc_rid=a32e510079&ccb=9-4&oh=00_AftykyHQ0WK6inmnF_ZfcXgLtvLS0wQY-i5BL8vKsPMmIA&oe=69888C34&_nc_sid=10d13b
+[2026-02-07T03:36:48.516Z] LOG       🔗 https://scontent-atl3-2.cdninstagram.com/o1/v/t16/f2/m82/AQMnPUTqLZcfTgAf2enkUEnHSc6_OYgbNNk2zsEzrhH5LPuE8nKD-k5ecEHenpYgd4yvoI5mUm6eRRPhwY_1TdlTfh_LW9e_4tw09SI.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=104&vs=937456688388207_2604364622&_nc_vs=HBksFQIYT2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfcHJvZC9CRTQ2NjNFQTM1QjI3QjQzQTNFOTZBQjUxOUFDOTQ5Ql92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQ24xTEJySnoyVUNjSm9CQUNxcS1BTHY1cWdoYnFfRUFBQUYVAgLIARIAKAAYABsAFQAAJrSdrPz5t4dAFQIoAkMzLBdAKEvGp%2B%2BdshgSZGFzaF9iYXNlbGluZV8xX3YxEQB1%2Fgdl5p0BAA%3D%3D&_nc_rid=cbd804efa1&ccb=9-4&oh=00_Afus3YsPlor-8bAqR3Yvd_3lugryl4z2vWTwwm7IwN8Gkw&oe=6988984C&_nc_sid=10d13b
+[2026-02-07T03:36:48.516Z] LOG       🔗 https://instagram.fagc1-1.fna.fbcdn.net/o1/v/t16/f2/m86/AQPaDMKkDrkP-URQCfIMZ5WO0w9XXK7bOOxnhGxlXmVLoAbfQINr1yjwwrzWKIKdRuWNDNHav_pCJejysAUKjCyjKLe46O30gztd8t0.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=101&vs=1338035641294979_289501671&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC85RjRDMDlGQjdFMEE1ODNBMzVBNUY0NTk3RjlCNkNBRV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRWlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC83Nzk4MDE1MDc5MDgyNTJfMTYzNjU3NDc4NDU2MTM5MTgzLm1wNBUCAsgBEgAoABgAGwAVAAAmkJ%2BRxIfexj8VAigCQzMsF0AbVP3ztkWiGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX%2BB2XmnQEA&_nc_rid=2e51fe0752&ccb=9-4&oh=00_AfuvsOhxmxrPaxjFnXk8WtEV0oPak-g4dn5-mXBaFSUzdg&oe=69889B5E&_nc_sid=10d13b
+[2026-02-07T03:36:48.517Z] LOG    📸 [Insomnia Cookies] Found 2 reel(s):
+[2026-02-07T03:36:48.518Z] LOG       🔗 https://scontent-ord5-1.cdninstagram.com/o1/v/t16/f2/m69/AQMddI1qtMH3Pm7CnNiQU8ospU_rf-V43u7WQskeOy2KDeVS1y8deq30hULiP6B-RQpfcld7rzFB7GzrZMYvhqld.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=111&vs=1596090014750925_1574174434&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HT3dSWmlWNm9kTXA5bE1EQUFLVVhyVXRNMXdXYnNwVEFRQUYVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzU0NDQwMDUxQ0U0MkY2QjE4NjQwQjQzNTQxNDMyNzk5X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwAVAAAmhNvekrX5wD8VAigCQzMsF0BOjMzMzMzNGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX%2BB2XmnQEA&_nc_rid=555bc17276&ccb=9-4&oh=00_Afs3vBJA_N5qNfNelrjEY4Ii1TVwdCPoDZYV7MllTlKayQ&oe=69887E66&_nc_sid=10d13b
+[2026-02-07T03:36:48.519Z] LOG       🔗 https://scontent-atl3-3.cdninstagram.com/o1/v/t16/f2/m82/AQPtzuFKIuB9eIk0AnLQD4hHjnHNo_q_HbK413ujIjVQN2PHLWVfOdEFGsG3CNKzyO119CqdyR1cP4gZY16d9sbngAiU0WVHJjzCPfw.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=107&vs=990576951987715_4255177105&_nc_vs=HBksFQIYT2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfcHJvZC9DODQ0NjY2RkI1MkRDMUNCQUZDOEUwMURBRTc3RDNBRF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSEp0eWhXN0RISC1wM1FZQUtIOHllZVlodTl3YnFfRUFBQUYVAgLIARIAKAAYABsAFQAAJvSesKSH2YRAFQIoAkMzLBdARkhysCDEnBgSZGFzaF9iYXNlbGluZV8xX3YxEQB1%2Fgdl5p0BAA%3D%3D&_nc_rid=ef9cda5088&ccb=9-4&oh=00_AfslLDqPUbidRKUcrKU1l0yjsCYdJVB8jejp1_vMFmkBYQ&oe=6988927B&_nc_sid=10d13b
+[2026-02-07T03:36:48.519Z] LOG    ⚪ [Club M2 Miami] No reels found (searched: clubm2miami)
+[2026-02-07T03:36:48.520Z] LOG    📸 [Lost Weekend] Found 2 reel(s):
+[2026-02-07T03:36:48.520Z] LOG       🔗 https://scontent-ord5-2.cdninstagram.com/o1/v/t16/f2/m86/AQOPuY2X0V0053ioHR9FZChhNowFe05LQoDYlMnYyJgTml3auCsGbJegDYpjO4zzxf6sBn3sWiUMGQUqlBfOWXczSrnTivAwWg-YSwY.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=105&vs=907699144995884_3928038718&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9EOTRCRjI3RDdDNzY5NDIxOTZEN0IyOURGODlCNTY5NF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzM2NEU2NjA3NzU4RUU3NTQ5MTRBRkJGNEIzMDNCODg2X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwAVAAAmwqv%2Bt5ycsj8VAigCQzMsF0BSFwo9cKPXGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX%2BB2XmnQEA&_nc_rid=45d1e2c905&ccb=9-4&oh=00_Afuhnie9BtvbbfmRGYmUfO4PSldWYrYnSx8oCOKOFYQ3LA&oe=69889906&_nc_sid=10d13b
+[2026-02-07T03:36:48.521Z] LOG       🔗 https://scontent-ord5-3.cdninstagram.com/o1/v/t16/f2/m86/AQOro4y0HhpawCQVIQgpZMDK872v7Roy8hQDt9B6kuCIKB5uBIsmssrvfV3UuqU8izG5QuOP92T-HB3o9LAdhYh56qpXiuCwqpvRw70.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=109&vs=589012654203067_234086548&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9DMDQ0N0Y5MEQzMUMwNDk2OTczNjFFNzFBOTM5QUY4NF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYR2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8yMjM0MTI2MDkwMzQ3NTM3XzM4MzA4NzgxOTAyNDIwMjg0MzIubXA0FQICyAESACgAGAAbABUAACbI3Pbevd%2FWPxUCKAJDMywXQD91P3ztkWgYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA%3D&_nc_rid=3569d38f67&ccb=9-4&oh=00_AfvBR4byhaJp_ibu55EpsJ0q9T58rRWcrqeHHlEnLhE_Ag&oe=698897B7&_nc_sid=10d13b
+[2026-02-07T03:36:48.522Z] LOG    📸 [Mango's - Miami] Found 3 reel(s):
+[2026-02-07T03:36:48.522Z] LOG       🔗 https://scontent-lga3-1.cdninstagram.com/o1/v/t16/f2/m82/AQNNIrFm2xoUQ-Rhumah10Ul_Uaut7kWnHhL3tIwRZbOuRRRFedLWf8ZSZb_rVbL0YRpX-plN8XtBuLso340T1CQY1D-WJKSTCkf6aM.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=102&vs=709606524639657_4039488792&_nc_vs=HBksFQIYT2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfcHJvZC8wNTQzMUM2MDg5QjkyRDE4REEzNDRGMEQwRjE4MDU4N192aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HR251b0JsMi1mZ1lIMTBCQUxUWVp1QWgzTXRsYnFfRUFBQUYVAgLIARIAKAAYABsAFQAAJo7mxbCl1vk%2FFQIoAkMzLBdAUdVP3ztkWhgSZGFzaF9iYXNlbGluZV8xX3YxEQB1%2Fgdl5p0BAA%3D%3D&_nc_rid=06675c41ff&ccb=9-4&oh=00_AftV1DbZWYsynqSWJvEm1F9_VYjemvtNDujWinpjFEpgnQ&oe=698898A8&_nc_sid=10d13b
+[2026-02-07T03:36:48.523Z] LOG       🔗 https://scontent-hou1-1.cdninstagram.com/o1/v/t16/f2/m86/AQNifYAnhoPPDp9Amkupa4kH_HC0afHxKBWKbdhjsWFaN0TlcXgIKTf-FtYLn_-W1xni5yGW_Qtmw_1RzqjEKjOJieNHZJp0oND7OS4.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=102&vs=863881495607662_3775296443&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8zNTQ0OEQ2NkEzMDgyNUQ4MTFFQjlDQzhDOTFDRDdCNV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYR2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8xMjk1NzAwODgxMzk5NTg0XzM4NzI2Mzk2MjE2MTQxNTQ1MDIubXA0FQICyAESACgAGAAbABUAACbKiJi1ss26PxUCKAJDMywXQBGZmZmZmZoYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA%3D&_nc_rid=8e9a66f0be&ccb=9-4&oh=00_AfuQVtb12rsdFvB9VOJC29Q4suZuO1mqqq_KAfJ78VNa2Q&oe=698881FE&_nc_sid=10d13b
+[2026-02-07T03:36:48.523Z] LOG       🔗 https://scontent-lga3-1.cdninstagram.com/o1/v/t16/f2/m86/AQOaZHT9naT9DTX7-MMinfXIImkOeV1cf_B8ueXY5oVkzx2WnPVXZiXkV6vM4RNEQTaSU9fztZglZChZgzyRkkJmOtHHAZTsgS_2m58.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=103&vs=2085559432262801_1193087512&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC81ODRDMENFQjBCQzBDNEJDOTY5OTk0RDAxQzRCRjNCNF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYR2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC80NDI0NTc2NTM3NzgyMDU3XzI3NjE2NTQ2MjkzMzYxMzkyNjIubXA0FQICyAESACgAGAAbABUAACbajuOX%2FJLdPxUCKAJDMywXQDCzMzMzMzMYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA%3D&_nc_rid=06a79d3abf&ccb=9-4&oh=00_AfuFoGQM5mHLT3bMfjRgpJegjn7ijfanyzWc8sCHq4ZXUw&oe=69887751&_nc_sid=10d13b
+[2026-02-07T03:36:48.524Z] LOG ✅ Instagram enrichment complete: 4/5 venues have reels
+[2026-02-07T03:37:33.961Z] LOG POST /api/plan
+[2026-02-07T03:37:33.965Z] LOG 
+================================================================================
+[2026-02-07T03:37:33.968Z] LOG 📥 Received: "plan route from my location to miami beach to STORY nightclub in miami beach"
+[2026-02-07T03:37:33.969Z] LOG 📊 Session: dc02a032-3dd6-4bde-aacd-8e3117512478 | Device: desktop
+[2026-02-07T03:37:33.969Z] LOG 📍 User location: Miami, Florida, United States (25.773357, -80.1919)
+[2026-02-07T03:37:33.970Z] LOG ================================================================================
+[2026-02-07T03:37:33.971Z] LOG 
+🔍 Classifying intent...
+[2026-02-07T03:37:33.972Z] LOG Explicit route pattern detected, preferring agent2
+[2026-02-07T03:37:34.971Z] LOG 🎯 Classification result: {"isRelevant":true,"routeTo":"agent2","queryType":"explicit_route","reasoning":"User specified exact locations to visit in order. [Explicit route pattern detected - routed to agent2]","useGeminiGrounding":false,"hasCurrentItinerary":false,"corridorDetected":true,"explicitRouteDetected":true}
+[2026-02-07T03:37:34.979Z] LOG ⏱️ [Perf] Intent Classification: 1007ms
+[2026-02-07T03:37:34.986Z] LOG 
+📍 Geo preference: walkable (walkable cue)
+[2026-02-07T03:37:34.987Z] LOG 
+🤖 DIRECT AGENT 2 FLOW
+[2026-02-07T03:37:34.987Z] LOG ────────────────────────────────────────────────────────────────────────────────
+[2026-02-07T03:37:34.989Z] LOG 
+🤖 ReAct Agent: STANDARD MODE
+[2026-02-07T03:37:34.989Z] LOG 📝 Prompt: "plan route from my location to miami beach to STORY nightclub in miami beach"
+[2026-02-07T03:37:34.993Z] LOG 
+--- Iteration 1 ---
+[2026-02-07T03:37:36.467Z] LOG 🧠 Action: search_venues
+[2026-02-07T03:37:36.470Z] LOG    Reasoning: Finding Miami Beach as a destination
+[2026-02-07T03:37:36.471Z] LOG    📤 Parameters: {"query":"Miami Beach","location":"Current location","limit":"5"}
+[2026-02-07T03:37:36.472Z] LOG ⚙️  Executing tool: search_venues
+[2026-02-07T03:37:36.474Z] LOG 🔍 [VenueSearchTool] Broad search: "Miami Beach" in "Current location"
+[2026-02-07T03:37:36.474Z] LOG 🔍 [Google Places] Text search: "Miami Beach" in Current location
+[2026-02-07T03:37:36.945Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:37:37.073Z] LOG    ⚠️  Miami Beach: No editorial summary available
+[2026-02-07T03:37:37.075Z] LOG    📷 Miami Beach: Got 10 photos
+[2026-02-07T03:37:37.076Z] LOG ✅ Found 1 places
+[2026-02-07T03:37:37.077Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2026-02-07T03:37:37.078Z] LOG    📊 Observation: Found 1: [Miami Beach|ChIJud3-Kxem2YgR62OUJUEXvjc|N/A⭐]
+[2026-02-07T03:37:37.079Z] LOG ⏱️ Iteration 1 took 2086ms
+[2026-02-07T03:37:37.079Z] LOG 
+--- Iteration 2 ---
+[2026-02-07T03:37:37.596Z] LOG 🧠 Action: search_venues
+[2026-02-07T03:37:37.597Z] LOG    Reasoning: No reasoning provided
+[2026-02-07T03:37:37.598Z] LOG    📤 Parameters: {"query":"STORY nightclub","location":"Miami Beach, Florida","limit":"5"}
+[2026-02-07T03:37:37.599Z] LOG ⚙️  Executing tool: search_venues
+[2026-02-07T03:37:37.600Z] LOG 🔍 [VenueSearchTool] Broad search: "STORY nightclub" in "Miami Beach, Florida"
+[2026-02-07T03:37:37.601Z] LOG 🔍 [Google Places] Text search: "STORY nightclub" in Miami Beach, Florida
+[2026-02-07T03:37:37.903Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:37:38.039Z] LOG    ✅ STORY: Got description (93 chars)
+[2026-02-07T03:37:38.043Z] LOG    📷 STORY: Got 10 photos
+[2026-02-07T03:37:38.044Z] LOG ✅ Found 1 places
+[2026-02-07T03:37:38.045Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2026-02-07T03:37:38.046Z] LOG    📊 Observation: Found 1: [STORY|ChIJQRnDgPG02YgR3phRlM77m0U|3⭐]
+[2026-02-07T03:37:38.047Z] LOG ⏱️ Iteration 2 took 967ms
+[2026-02-07T03:37:38.048Z] LOG 
+--- Iteration 3 ---
+[2026-02-07T03:37:40.355Z] LOG 🧠 Action: finish
+[2026-02-07T03:37:40.358Z] LOG    Reasoning: Here is your planned route from your location to Miami Beach and then to STORY nightclub.
+[2026-02-07T03:37:40.359Z] LOG 
+✅ Agent completed task
+[2026-02-07T03:37:40.360Z] LOG 📍 Calculating route distances...
+[2026-02-07T03:37:40.361Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-02-07T03:37:40.565Z] LOG ✅ Route calculated: 5.0 mi, 1h 35m
+[2026-02-07T03:37:40.569Z] LOG 🗺️  [Mapbox] Calculating walking route with 2 waypoints
+[2026-02-07T03:37:40.696Z] LOG ✅ Route calculated: 1.4 mi, 27 min
+[2026-02-07T03:37:40.700Z] LOG    ✅ Route calculated: 6.5 mi, 2h 2m
+[2026-02-07T03:37:44.682Z] LOG ✅ Output saved to: C:\Rohan\PlanmateV2\PlanMate_backend_rohan\PlanMate_backend_rohan\backend\outputs\planmate_output_2026-02-07T03-37-44.txt
+[2026-02-07T03:37:44.683Z] LOG 
+================================================================================
+[2026-02-07T03:37:44.684Z] LOG ✅ REQUEST COMPLETED
+[2026-02-07T03:37:44.684Z] LOG    Venues: 3
+[2026-02-07T03:37:44.685Z] LOG ================================================================================
+
+[2026-02-07T03:37:44.730Z] LOG POST /api/reels
+[2026-02-07T03:37:44.737Z] LOG 📸 Fetching Instagram Reels for 2 venues...
+[2026-02-07T03:37:44.739Z] LOG 📸 Instagram enrichment: fetching reels for 2 venues
+[2026-02-07T03:37:44.740Z] LOG    🏷️ [Miami Beach] hashtags: ["miamibeach"]
+[2026-02-07T03:37:44.740Z] LOG    🏷️ [STORY] hashtags: ["story"]
+[2026-02-07T03:37:44.741Z] LOG 📸 All hashtags for batch search: ["miamibeach","story"]
+[2026-02-07T03:37:44.741Z] LOG 📸 Batch searching Instagram Reels for 2 queries
+[2026-02-07T03:37:45.089Z] LOG ⏳ Apify batch run started: IwsDS7NOCxdY2W6gf, polling for completion...
+[2026-02-07T03:37:45.287Z] LOG ⏱️ Gemini API call took: 120761ms (120.76s)
+[2026-02-07T03:37:45.293Z] LOG ✅ Gemini response received
+[2026-02-07T03:37:45.295Z] LOG 📄 Response length: 191107 characters
+[2026-02-07T03:37:45.301Z] LOG 📝 Logged Gemini output to C:\Rohan\PlanmateV2\PlanMate_backend_rohan\PlanMate_backend_rohan\backend\output\gemini_output_2026-02-07T03-37-45-296Z.txt
+[2026-02-07T03:37:45.302Z] LOG 📊 Grounding: Maps=true, Search=false
+[2026-02-07T03:37:45.304Z] LOG 📍 Grounding chunks: 350 sources
+[2026-02-07T03:37:45.304Z] LOG 🔄 Parsing Gemini response...
+[2026-02-07T03:37:45.308Z] WARN ⚠️ JSON parse failed on cleaned text, trying aggressive cleanup...
+[2026-02-07T03:37:45.311Z] ERROR ❌ Failed to parse Gemini response: {}
+[2026-02-07T03:37:45.323Z] LOG 📄 Raw text start: ```json
+{
+  "plan": {
+    "type": "Night Out",
+    "total_stops": 5,
+    "estimated_duration": "6-8 
+[2026-02-07T03:37:45.326Z] LOG 🔄 Attempting GPT-4o-mini cleanup parsing...
+[2026-02-07T03:37:51.103Z] LOG ✅ GPT-4o-mini extracted 20 venues
+[2026-02-07T03:37:51.106Z] LOG 
+✨ Parsed 20 CANDIDATES:
+[2026-02-07T03:37:51.109Z] LOG    🎯 Must-have: 5
+[2026-02-07T03:37:51.110Z] LOG    ✨ Nice-to-have: 15
+[2026-02-07T03:37:51.110Z] LOG 📋 Plan: Night Out, 5 target stops
+
+--- Summary ---
+Completed

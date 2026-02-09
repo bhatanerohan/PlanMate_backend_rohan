@@ -1,0 +1,122 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "Plan a day out in midtown NYC where I could try out halal food trucks"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Halal Food Truck Crawl",
+    "total_stops": 5,
+    "estimated_duration": "6-8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Sharif's Famous",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Rafiqi’s Food Cart",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Kwik Meal NYC",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Halal Guys",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Famous Halal Food (Food Truck)",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Rockefeller Center",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Top of The Rock",
+      "category": "observation deck",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "SUMMIT One Vanderbilt",
+      "category": "observation deck",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bryant Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Times Square",
+      "category": "plaza",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Museum of Modern Art",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Empire State Building",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Madame Tussauds New York",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Circle Line Sightseeing Cruises - Midtown",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "One Times Square",
+      "category": "plaza",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

@@ -79,7 +79,7 @@ async function analyzeUserIntent(userPrompt: string): Promise<IntentFilterResult
         
         "things to do in boston"
         → {"queryType": "exploratory", "explicitVenues": [], "allowedCategories": [], "reasoning": "User wants variety"}`
-              },
+      },
       {
         role: 'user',
         content: userPrompt
@@ -91,7 +91,7 @@ async function analyzeUserIntent(userPrompt: string): Promise<IntentFilterResult
   if (!content) {
     throw new Error('No response from intent analyzer');
   }
-  
+
   return JSON.parse(content) as IntentFilterResult;
 }
 
@@ -99,41 +99,41 @@ async function filterCandidatesByIntent(
   userPrompt: string,
   candidates: EnrichedCandidate[]
 ): Promise<EnrichedCandidate[]> {
-  
+
   console.log('\n🔍 INTENT FILTER: Analyzing user intent...');
-  
+
   try {
     const filterResult = await analyzeUserIntent(userPrompt);
-    
+
     console.log(`   Focused query: ${filterResult.isFocusedQuery}`);
     console.log(`   Allowed categories: ${filterResult.allowedCategories.length > 0 ? filterResult.allowedCategories.join(', ') : 'ALL'}`);
     console.log(`   Reasoning: ${filterResult.reasoning}`);
-    
+
     if (!filterResult.isFocusedQuery || filterResult.allowedCategories.length === 0) {
       console.log('   ✅ Exploratory query - keeping all candidates');
       return candidates;
     }
-    
+
     const filtered = candidates.filter(candidate => {
       const candidateCategory = (candidate.category || '').toLowerCase();
       const candidateTypes = (candidate.types || []).map(t => t.toLowerCase());
-      
+
       return filterResult.allowedCategories.some(allowed => {
         const lowerAllowed = allowed.toLowerCase();
         return candidateCategory.includes(lowerAllowed) ||
-               candidateTypes.some(t => t.includes(lowerAllowed));
+          candidateTypes.some(t => t.includes(lowerAllowed));
       });
     });
-    
+
     console.log(`   📊 Filtered: ${candidates.length} → ${filtered.length} candidates`);
-    
+
     if (filtered.length < 3) {
       console.log('   ⚠️ Too few results after filter, keeping original candidates');
       return candidates;
     }
-    
+
     return filtered;
-    
+
   } catch (error) {
     console.error('   ❌ Intent filter error:', error);
     return candidates;
@@ -182,7 +182,7 @@ export class VenueSelector {
       anchorCoords,
       radiusKm
     } = options;
-    
+
     // 🆕 Filter by user intent BEFORE geographic selection
     let filteredCandidates = candidates;
     if (userPrompt) {
@@ -206,13 +206,13 @@ export class VenueSelector {
     if (isCorridor) {
       console.log('🛤️ CORRIDOR MODE: Selecting venues along route');
       return this.selectAlongCorridor(
-        filteredCandidates, 
-        corridorStart, 
+        filteredCandidates,
+        corridorStart,
         corridorEnd,
         options.userRequestedCount
       );
     }
-    
+
     console.log('📍 CLUSTER MODE: Selecting walkable cluster');
     return this.selectVenuesInternal(
       filteredCandidates,
@@ -234,15 +234,15 @@ export class VenueSelector {
     console.log(`   Start: (${start.lat.toFixed(4)}, ${start.lng.toFixed(4)})`);
     console.log(`   End: (${end.lat.toFixed(4)}, ${end.lng.toFixed(4)})`);
     console.log(`   Candidates: ${candidates.length}`);
-    
+
     const count = targetCount || this.config.targetCount;
     const corridorWidthKm = this.config.corridorWidthKm;
-    
+
     const corridorLengthKm = this.haversineDistance(
       start.lat, start.lng, end.lat, end.lng
     );
     console.log(`   Corridor length: ${corridorLengthKm.toFixed(2)} km`);
-    
+
     const scoredVenues = candidates.map(venue => {
       const projection = this.projectPointOntoLine(venue.location, start, end);
       return {
@@ -252,41 +252,41 @@ export class VenueSelector {
         isWithinCorridor: projection.distance <= corridorWidthKm
       };
     });
-    
+
     const inCorridor = scoredVenues.filter(v => v.isWithinCorridor);
     console.log(`   Within ${corridorWidthKm}km of corridor: ${inCorridor.length} venues`);
-    
+
     if (inCorridor.length === 0) {
       console.log('   ⚠️ No venues in corridor, falling back to cluster mode');
       return this.selectVenuesInternal(candidates, count);
     }
-    
+
     inCorridor.sort((a, b) => a.corridorPosition - b.corridorPosition);
-    
+
     const selected = this.selectEvenlyDistributed(inCorridor, count);
-    
-    const cleanedVenues = selected.map(({ 
-      corridorPosition, distanceFromCorridor, isWithinCorridor, ...venue 
+
+    const cleanedVenues = selected.map(({
+      corridorPosition, distanceFromCorridor, isWithinCorridor, ...venue
     }) => venue as EnrichedCandidate);
-    
+
     // 🆕 Build alternatives from unselected corridor venues
     const selectedPlaceIds = new Set(cleanedVenues.map(v => v.placeId));
     const unselected = inCorridor
       .filter(v => !selectedPlaceIds.has(v.placeId))
       .map(({ corridorPosition, distanceFromCorridor, isWithinCorridor, ...venue }) => venue as EnrichedCandidate);
-    
+
     const alternativesMap = this.buildAlternativesMap(cleanedVenues, unselected);
-    
+
     const center = this.calculateCentroid(cleanedVenues);
     const radius = this.calculateClusterRadius(cleanedVenues, center);
-    
+
     const mustHaveCount = cleanedVenues.filter(v => v.priority === 'must_have').length;
     const niceToHaveCount = cleanedVenues.filter(v => v.priority === 'nice_to_have').length;
-    
+
     console.log(`   ✅ Selected ${cleanedVenues.length} venues along corridor`);
     console.log(`   Route: ${cleanedVenues.map(v => v.name).join(' → ')}`);
     console.log(`   🔄 Alternatives: ${Object.values(alternativesMap).flat().length} total`);
-    
+
     return {
       success: true,
       selectedVenues: cleanedVenues,
@@ -327,7 +327,7 @@ export class VenueSelector {
         targetCount
       );
     }
-    
+
     return this.selectVenuesInternal(filteredCandidates, userRequestedCount, selectionPreference);
   }
 
@@ -341,7 +341,7 @@ export class VenueSelector {
   ): VenueSelectionResult {
     console.log('\n🎯 VENUE SELECTOR: Starting geographic optimization');
     console.log(`   Input: ${candidates.length} candidates`);
-    
+
     const targetCount = userRequestedCount || this.config.targetCount;
     console.log(`   Target: ${targetCount} venues`);
 
@@ -349,38 +349,38 @@ export class VenueSelector {
       console.log('   📍 Preference: SPREAD (maximize coverage)');
       return this.selectSpreadVenues(candidates, targetCount);
     }
-    
+
     const mustHaves = candidates.filter(c => c.priority === 'must_have');
     const niceToHaves = candidates.filter(c => c.priority === 'nice_to_have');
-    
+
     console.log(`   🎯 Must-haves available: ${mustHaves.length}`);
     console.log(`   ✨ Nice-to-haves available: ${niceToHaves.length}`);
-    
+
     // 🆕 If all candidates are same priority (after filtering), select from all
     if (mustHaves.length === 0) {
       console.log('   ⚠️ No must-haves! Selecting from nice-to-haves only');
       return this.selectFromSingleCategory(niceToHaves, targetCount, selectionPreference);
     }
-    
+
     if (niceToHaves.length === 0) {
       console.log('   ℹ️ Only must-haves available, selecting from them');
       return this.selectFromSingleCategory(mustHaves, targetCount, selectionPreference);
     }
-    
+
     // 🆕 Adjust must-have count based on target
     const mustHaveTarget = Math.min(
       mustHaves.length,
       Math.max(this.config.minMustHaves, Math.ceil(targetCount * 0.6))  // 60% must-haves
     );
-    
+
     const selectedMustHaves = this.selectTightestCluster(mustHaves, mustHaveTarget);
-    
+
     console.log(`\n   📍 Selected ${selectedMustHaves.length} must-haves:`);
     selectedMustHaves.forEach(v => console.log(`      - ${v.name}`));
-    
+
     const clusterCenter = this.calculateCentroid(selectedMustHaves);
     console.log(`   📍 Cluster center: (${clusterCenter.lat.toFixed(4)}, ${clusterCenter.lng.toFixed(4)})`);
-    
+
     const niceToHavesWithDistance: VenueWithDistance[] = niceToHaves.map(venue => ({
       ...venue,
       distanceToCenter: this.haversineDistance(
@@ -388,19 +388,19 @@ export class VenueSelector {
         venue.location.lat, venue.location.lng
       )
     }));
-    
-    niceToHavesWithDistance.sort((a, b) => 
+
+    niceToHavesWithDistance.sort((a, b) =>
       (a.distanceToCenter || Infinity) - (b.distanceToCenter || Infinity)
     );
-    
+
     const remainingSlots = targetCount - selectedMustHaves.length;
     const selectedNiceToHaves = niceToHavesWithDistance.slice(0, remainingSlots);
-    
+
     console.log(`\n   ✨ Selected ${selectedNiceToHaves.length} nice-to-haves:`);
-    selectedNiceToHaves.forEach(v => 
+    selectedNiceToHaves.forEach(v =>
       console.log(`      - ${v.name} (${(v.distanceToCenter || 0).toFixed(2)}km from center)`)
     );
-    
+
     const selectedVenues: EnrichedCandidate[] = [
       ...selectedMustHaves,
       ...selectedNiceToHaves.map(v => {
@@ -408,31 +408,31 @@ export class VenueSelector {
         return venue;
       })
     ];
-    
+
     // 🆕 Build alternatives from unselected candidates
     const selectedPlaceIds = new Set(selectedVenues.map(v => v.placeId));
     const unselectedMustHaves = mustHaves.filter(v => !selectedPlaceIds.has(v.placeId));
     const unselectedNiceToHaves = niceToHavesWithDistance
       .slice(remainingSlots)
       .map(v => { const { distanceToCenter, ...venue } = v; return venue; });
-    
+
     const allUnselected = [...unselectedMustHaves, ...unselectedNiceToHaves];
     const alternativesMap = this.buildAlternativesMap(selectedVenues, allUnselected);
-    
+
     const clusterRadiusKm = this.calculateClusterRadius(selectedVenues, clusterCenter);
-    
+
     const reasoning = this.buildReasoning(
       selectedMustHaves.length,
       selectedNiceToHaves.length,
       clusterRadiusKm
     );
-    
+
     console.log(`\n   ✅ SELECTION COMPLETE`);
     console.log(`   Total selected: ${selectedVenues.length}`);
     console.log(`   Cluster radius: ${clusterRadiusKm.toFixed(2)}km`);
     console.log(`   🔄 Alternatives: ${Object.values(alternativesMap).flat().length} total`);
     console.log(`   ${reasoning}`);
-    
+
     return {
       success: true,
       selectedVenues,
@@ -454,21 +454,21 @@ export class VenueSelector {
     unselectedCandidates: EnrichedCandidate[]
   ): Record<string, EnrichedCandidate[]> {
     const alternativesMap: Record<string, EnrichedCandidate[]> = {};
-    
+
     if (unselectedCandidates.length === 0 || selectedVenues.length === 0) {
       return alternativesMap;
     }
-    
+
     // Initialize empty arrays for each selected venue
     selectedVenues.forEach(v => {
       alternativesMap[v.placeId] = [];
     });
-    
+
     // Assign each unselected candidate to nearest selected venue
     unselectedCandidates.forEach(candidate => {
       let nearestPlaceId = selectedVenues[0].placeId;
       let nearestDistance = Infinity;
-      
+
       selectedVenues.forEach(selected => {
         const dist = this.haversineDistance(
           candidate.location.lat, candidate.location.lng,
@@ -479,20 +479,20 @@ export class VenueSelector {
           nearestPlaceId = selected.placeId;
         }
       });
-      
+
       // Limit to 3 alternatives per venue
       if (alternativesMap[nearestPlaceId].length < 3) {
         alternativesMap[nearestPlaceId].push(candidate);
       }
     });
-    
+
     // Remove empty entries
     Object.keys(alternativesMap).forEach(key => {
       if (alternativesMap[key].length === 0) {
         delete alternativesMap[key];
       }
     });
-    
+
     return alternativesMap;
   }
 
@@ -502,7 +502,7 @@ export class VenueSelector {
 
   private selectTightestCluster(venues: EnrichedCandidate[], count: number): EnrichedCandidate[] {
     if (venues.length <= count) return venues;
-    
+
     const distances: number[][] = [];
     for (let i = 0; i < venues.length; i++) {
       distances[i] = [];
@@ -513,7 +513,7 @@ export class VenueSelector {
         );
       }
     }
-    
+
     let minDist = Infinity, startI = 0, startJ = 1;
     for (let i = 0; i < venues.length; i++) {
       for (let j = i + 1; j < venues.length; j++) {
@@ -524,12 +524,12 @@ export class VenueSelector {
         }
       }
     }
-    
+
     const selected = new Set<number>([startI, startJ]);
-    
+
     while (selected.size < count) {
       let bestCandidate = -1, bestAvgDist = Infinity;
-      
+
       for (let i = 0; i < venues.length; i++) {
         if (selected.has(i)) continue;
         let totalDist = 0;
@@ -540,11 +540,11 @@ export class VenueSelector {
           bestCandidate = i;
         }
       }
-      
+
       if (bestCandidate >= 0) selected.add(bestCandidate);
       else break;
     }
-    
+
     return Array.from(selected).map(i => venues[i]);
   }
 
@@ -558,12 +558,12 @@ export class VenueSelector {
       : this.selectTightestCluster(venues, count);
     const center = this.calculateCentroid(selected);
     const radius = this.calculateClusterRadius(selected, center);
-    
+
     // 🆕 Build alternatives from unselected
     const selectedPlaceIds = new Set(selected.map(v => v.placeId));
     const unselected = venues.filter(v => !selectedPlaceIds.has(v.placeId));
     const alternativesMap = this.buildAlternativesMap(selected, unselected);
-    
+
     const reasoning = selectionPreference === 'spread'
       ? `Selected ${selected.length} venues across a wider area (${radius.toFixed(2)}km radius)`
       : `Selected ${selected.length} venues forming a tight cluster (${radius.toFixed(2)}km radius)`;
@@ -646,36 +646,36 @@ export class VenueSelector {
   ): { t: number; distance: number } {
     const latScale = 111.32;
     const lngScale = 111.32 * Math.cos((lineStart.lat * Math.PI) / 180);
-    
+
     const ax = lineStart.lng * lngScale, ay = lineStart.lat * latScale;
     const bx = lineEnd.lng * lngScale, by = lineEnd.lat * latScale;
     const px = point.lng * lngScale, py = point.lat * latScale;
-    
+
     const abx = bx - ax, aby = by - ay;
     const apx = px - ax, apy = py - ay;
     const abLenSq = abx * abx + aby * aby;
-    
+
     if (abLenSq === 0) return { t: 0, distance: Math.sqrt(apx * apx + apy * apy) };
-    
+
     let t = (apx * abx + apy * aby) / abLenSq;
     t = Math.max(0, Math.min(1, t));
-    
+
     const closestX = ax + t * abx, closestY = ay + t * aby;
     const dx = px - closestX, dy = py - closestY;
-    
+
     return { t, distance: Math.sqrt(dx * dx + dy * dy) };
   }
 
   private selectEvenlyDistributed(sortedVenues: any[], count: number): any[] {
     if (sortedVenues.length <= count) return sortedVenues;
-    
+
     const selected: any[] = [];
     const step = (sortedVenues.length - 1) / (count - 1);
-    
+
     for (let i = 0; i < count; i++) {
       selected.push(sortedVenues[Math.round(i * step)]);
     }
-    
+
     return selected;
   }
 
@@ -701,16 +701,16 @@ export class VenueSelector {
     const R = 6371;
     const dLat = this.toRad(lat2 - lat1);
     const dLng = this.toRad(lng2 - lng1);
-    const a = Math.sin(dLat/2)**2 + Math.cos(this.toRad(lat1))*Math.cos(this.toRad(lat2))*Math.sin(dLng/2)**2;
-    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(this.toRad(lat1)) * Math.cos(this.toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   }
 
   private toRad(deg: number): number { return deg * (Math.PI / 180); }
 
   private buildReasoning(mustHaveCount: number, niceToHaveCount: number, radiusKm: number): string {
     const walkability = radiusKm <= 0.5 ? 'highly walkable' :
-                        radiusKm <= 1.0 ? 'walkable' :
-                        radiusKm <= 2.0 ? 'mostly walkable' : 'spread out';
+      radiusKm <= 1.0 ? 'walkable' :
+        radiusKm <= 2.0 ? 'mostly walkable' : 'spread out';
     return `Selected ${mustHaveCount} core venues + ${niceToHaveCount} complementary stops. Route is ${walkability} (${radiusKm.toFixed(2)}km radius).`;
   }
 

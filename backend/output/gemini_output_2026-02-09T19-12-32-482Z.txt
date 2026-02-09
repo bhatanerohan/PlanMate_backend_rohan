@@ -1,0 +1,137 @@
+PROMPT:
+User location: Current location (42.323458768664324, -71.10724237566048)
+
+Request: "Plan a day of Formula-1 themed sightseeing in Monaco"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Formula 1 themed sightseeing",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Circuit de Monaco",
+      "category": "racetrack",
+      "priority": "must_have"
+    },
+    {
+      "name": "Casino de Monte-Carlo",
+      "category": "casino",
+      "priority": "must_have"
+    },
+    {
+      "name": "Palace of Monaco",
+      "category": "palace",
+      "priority": "must_have"
+    },
+    {
+      "name": "Oceanographic Museum of Monaco",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Monaco Cathedral",
+      "category": "cathedral",
+      "priority": "must_have"
+    },
+    {
+      "name": "Chapelle Sainte-Dévote",
+      "category": "chapel",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Jardin Exotique de Monaco",
+      "category": "botanical garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Larvotto Beach",
+      "category": "beach",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Yacht Club de Monaco",
+      "category": "yacht club",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Terraces of the Port Palace",
+      "category": "viewpoint",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Musée des Timbres et des Monnaies",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Jardin Japonais",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Saint-Martin Gardens",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Hôtel de Paris Monte-Carlo",
+      "category": "hotel",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Café de Paris Monte-Carlo",
+      "category": "cafe",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Louis XV - Alain Ducasse à l'Hôtel de Paris",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Michelin Star Restaurants Monaco",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Monaco-Ville",
+      "category": "historic district",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

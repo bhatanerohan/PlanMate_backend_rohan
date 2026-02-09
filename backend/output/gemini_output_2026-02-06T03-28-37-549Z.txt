@@ -1,0 +1,142 @@
+PROMPT:
+User location: San Jose, California, United States (37.336157, -121.890608)
+
+Request: "plan a touristy day in san jose, cali"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Touristy Day",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "The Tech Interactive",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "San Jose Museum of Art",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Plaza de Cesar Chavez",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Cathedral Basilica of St. Joseph",
+      "category": "church",
+      "priority": "must_have"
+    },
+    {
+      "name": "Children's Discovery Museum of San Jose",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Municipal Rose Garden",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rosicrucian Egyptian Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Winchester Mystery House",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Happy Hollow Park & Zoo",
+      "category": "zoo",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Kelley Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Discovery Meadow",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Japanese American Museum of San Jose",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Alum Rock Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "St James Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rosicrucian Park",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Monopoly in the Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Guadalupe River Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "San Jose Museum of Quilts & Textiles",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Gonzales-Peralta Adobe & Fallon House Historic Site",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

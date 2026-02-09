@@ -1,0 +1,41 @@
+User Prompt: plan route from my location to miami beach to STORY nightclub in miami beach
+
+[2026-02-07T03:48:13.708Z] LOG 
+--- Iteration 1 ---
+[2026-02-07T03:48:15.005Z] LOG 🧠 Action: search_venues
+[2026-02-07T03:48:15.010Z] LOG    Reasoning: Finding Miami Beach location
+[2026-02-07T03:48:15.013Z] LOG    📤 Parameters: {"query":"Miami Beach","location":"Current location","limit":"5"}
+[2026-02-07T03:48:15.014Z] LOG ⚙️  Executing tool: search_venues
+[2026-02-07T03:48:15.015Z] LOG 🔍 [VenueSearchTool] Broad search: "Miami Beach" in "Current location"
+[2026-02-07T03:48:15.016Z] LOG 🔍 [Google Places] Text search: "Miami Beach" in Current location
+[2026-02-07T03:48:15.655Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:48:15.733Z] LOG    ⚠️  Miami Beach: No editorial summary available
+[2026-02-07T03:48:15.738Z] LOG    📷 Miami Beach: Got 10 photos
+[2026-02-07T03:48:15.740Z] LOG ✅ Found 1 places
+[2026-02-07T03:48:15.740Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2026-02-07T03:48:15.741Z] LOG    📊 Observation: Found 1: [Miami Beach|ChIJud3-Kxem2YgR62OUJUEXvjc|N/A⭐]
+[2026-02-07T03:48:15.742Z] LOG ⏱️ Iteration 1 took 2034ms
+[2026-02-07T03:48:15.742Z] LOG 
+--- Iteration 2 ---
+[2026-02-07T03:48:16.461Z] LOG 🧠 Action: search_venues
+[2026-02-07T03:48:16.469Z] LOG    Reasoning: Finding STORY nightclub in Miami Beach
+[2026-02-07T03:48:16.472Z] LOG    📤 Parameters: {"query":"STORY nightclub","location":"Miami Beach, Florida","limit":"5"}
+[2026-02-07T03:48:16.473Z] LOG ⚙️  Executing tool: search_venues
+[2026-02-07T03:48:16.474Z] LOG 🔍 [VenueSearchTool] Broad search: "STORY nightclub" in "Miami Beach, Florida"
+[2026-02-07T03:48:16.474Z] LOG 🔍 [Google Places] Text search: "STORY nightclub" in Miami Beach, Florida
+[2026-02-07T03:48:16.749Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-07T03:48:16.890Z] LOG    ✅ STORY: Got description (93 chars)
+[2026-02-07T03:48:16.895Z] LOG    📷 STORY: Got 10 photos
+[2026-02-07T03:48:16.897Z] LOG ✅ Found 1 places
+[2026-02-07T03:48:16.898Z] LOG ✅ Tool 'search_venues' completed: SUCCESS
+[2026-02-07T03:48:16.898Z] LOG    📊 Observation: Found 1: [STORY|ChIJQRnDgPG02YgR3phRlM77m0U|3⭐]
+[2026-02-07T03:48:16.899Z] LOG ⏱️ Iteration 2 took 1157ms
+[2026-02-07T03:48:16.899Z] LOG 
+--- Iteration 3 ---
+[2026-02-07T03:48:18.577Z] LOG 🧠 Action: finish
+[2026-02-07T03:48:18.583Z] LOG    Reasoning: Here is your planned route:
+[2026-02-07T03:48:18.587Z] LOG 
+✅ Agent completed task
+
+--- Summary ---
+Completed

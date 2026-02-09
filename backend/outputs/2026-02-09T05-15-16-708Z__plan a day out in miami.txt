@@ -1,0 +1,174 @@
+User Prompt: plan a day out in miami
+
+[2026-02-09T05:15:16.711Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-09T05:15:16.712Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-09T05:15:16.714Z] LOG    🎯 Must-have: 5
+[2026-02-09T05:15:16.716Z] LOG    ✨ Nice-to-have: 15
+[2026-02-09T05:15:16.718Z] LOG 📍 Location hint: miami
+[2026-02-09T05:15:16.721Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-09T05:15:16.724Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-09T05:15:16.727Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-09T05:15:16.730Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-09T05:15:16.732Z] LOG    1. Searching "Bayside Marketplace" in "miami"
+[2026-02-09T05:15:16.733Z] LOG 🔍 [Google Places] Text search: "Bayside Marketplace" in miami
+[2026-02-09T05:15:16.757Z] LOG    2. Searching "Thriller Miami Speedboat Adventures" in "miami"
+[2026-02-09T05:15:16.759Z] LOG 🔍 [Google Places] Text search: "Thriller Miami Speedboat Adventures" in miami
+[2026-02-09T05:15:16.765Z] LOG    3. Searching "Miami Walk of Fame" in "miami"
+[2026-02-09T05:15:16.768Z] LOG 🔍 [Google Places] Text search: "Miami Walk of Fame" in miami
+[2026-02-09T05:15:16.775Z] LOG    4. Searching "Maurice A. Ferré Park" in "miami"
+[2026-02-09T05:15:16.777Z] LOG 🔍 [Google Places] Text search: "Maurice A. Ferré Park" in miami
+[2026-02-09T05:15:16.780Z] LOG    5. Searching "Phillip and Patricia Frost Museum of Science" in "miami"
+[2026-02-09T05:15:16.781Z] LOG 🔍 [Google Places] Text search: "Phillip and Patricia Frost Museum of Science" in miami
+[2026-02-09T05:15:16.785Z] LOG    6. Searching "Miami Bull" in "miami"
+[2026-02-09T05:15:16.788Z] LOG 🔍 [Google Places] Text search: "Miami Bull" in miami
+[2026-02-09T05:15:16.794Z] LOG    7. Searching "Miami Circle National Historic Landmark" in "miami"
+[2026-02-09T05:15:16.796Z] LOG 🔍 [Google Places] Text search: "Miami Circle National Historic Landmark" in miami
+[2026-02-09T05:15:16.800Z] LOG    8. Searching "The Underline" in "miami"
+[2026-02-09T05:15:16.801Z] LOG 🔍 [Google Places] Text search: "The Underline" in miami
+[2026-02-09T05:15:16.805Z] LOG    9. Searching "HistoryMiami Museum" in "miami"
+[2026-02-09T05:15:16.807Z] LOG 🔍 [Google Places] Text search: "HistoryMiami Museum" in miami
+[2026-02-09T05:15:16.815Z] LOG    10. Searching "FPL Solar Amphitheater at Bayfront Park" in "miami"
+[2026-02-09T05:15:16.819Z] LOG 🔍 [Google Places] Text search: "FPL Solar Amphitheater at Bayfront Park" in miami
+[2026-02-09T05:15:17.229Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:17.237Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:17.241Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:17.243Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:17.259Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:17.279Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:17.297Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:17.319Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:17.324Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:17.400Z] LOG    ✅ Miami Circle National Historic Landmark: Got description (98 chars)
+[2026-02-09T05:15:17.405Z] LOG    📷 Miami Circle National Historic Landmark: Got 10 photos
+[2026-02-09T05:15:17.409Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:17.416Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:17.428Z] LOG    ✅ Maurice A. Ferré Park: Got description (82 chars)
+[2026-02-09T05:15:17.433Z] LOG    📷 Maurice A. Ferré Park: Got 10 photos
+[2026-02-09T05:15:17.435Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:17.440Z] LOG    ⚠️  Miami Bull: No editorial summary available
+[2026-02-09T05:15:17.442Z] LOG    📷 Miami Bull: Got 10 photos
+[2026-02-09T05:15:17.445Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:17.453Z] LOG    ⚠️  The Underline: No editorial summary available
+[2026-02-09T05:15:17.458Z] LOG    📷 The Underline: Got 10 photos
+[2026-02-09T05:15:17.459Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:17.462Z] LOG    ⚠️  Miami Walk of Fame: No editorial summary available
+[2026-02-09T05:15:17.464Z] LOG    📷 Miami Walk of Fame: Got 10 photos
+[2026-02-09T05:15:17.465Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:17.470Z] LOG    ✅ Phillip & Patricia Frost Museum of Science: Got description (86 chars)
+[2026-02-09T05:15:17.473Z] LOG    📷 Phillip & Patricia Frost Museum of Science: Got 10 photos
+[2026-02-09T05:15:17.475Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:17.479Z] LOG    ✅ FPL Solar Amphitheater at Bayfront Park: Got description (100 chars)
+[2026-02-09T05:15:17.483Z] LOG    📷 FPL Solar Amphitheater at Bayfront Park: Got 10 photos
+[2026-02-09T05:15:17.487Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:17.495Z] LOG    ✅ HistoryMiami Museum: Got description (94 chars)
+[2026-02-09T05:15:17.497Z] LOG    📷 HistoryMiami Museum: Got 10 photos
+[2026-02-09T05:15:17.499Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:17.529Z] LOG    ✅ Thriller Miami Speedboat Adventures: Got description (91 chars)
+[2026-02-09T05:15:17.533Z] LOG    📷 Thriller Miami Speedboat Adventures: Got 10 photos
+[2026-02-09T05:15:17.537Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:17.571Z] LOG    ✅ Bayside Marketplace: Got description (96 chars)
+[2026-02-09T05:15:17.574Z] LOG    📷 Bayside Marketplace: Got 10 photos
+[2026-02-09T05:15:17.575Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:17.576Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 847ms
+[2026-02-09T05:15:17.577Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-09T05:15:17.578Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-09T05:15:17.788Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-09T05:15:17.793Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-09T05:15:17.796Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-09T05:15:17.796Z] LOG    1. Searching "Bayfront Park" in "miami"
+[2026-02-09T05:15:17.797Z] LOG 🔍 [Google Places] Text search: "Bayfront Park" in miami
+[2026-02-09T05:15:17.799Z] LOG    2. Searching "Vizcaya Museum & Gardens" in "miami"
+[2026-02-09T05:15:17.799Z] LOG 🔍 [Google Places] Text search: "Vizcaya Museum & Gardens" in miami
+[2026-02-09T05:15:17.801Z] LOG    3. Searching "Jungle Island" in "miami"
+[2026-02-09T05:15:17.802Z] LOG 🔍 [Google Places] Text search: "Jungle Island" in miami
+[2026-02-09T05:15:17.804Z] LOG    4. Searching "Superblue Miami" in "miami"
+[2026-02-09T05:15:17.805Z] LOG 🔍 [Google Places] Text search: "Superblue Miami" in miami
+[2026-02-09T05:15:17.808Z] LOG    5. Searching "Lummus Park" in "miami"
+[2026-02-09T05:15:17.810Z] LOG 🔍 [Google Places] Text search: "Lummus Park" in miami
+[2026-02-09T05:15:17.812Z] LOG    6. Searching "Everglades National Park" in "miami"
+[2026-02-09T05:15:17.813Z] LOG 🔍 [Google Places] Text search: "Everglades National Park" in miami
+[2026-02-09T05:15:17.815Z] LOG    7. Searching "Deering Estate" in "miami"
+[2026-02-09T05:15:17.818Z] LOG 🔍 [Google Places] Text search: "Deering Estate" in miami
+[2026-02-09T05:15:17.824Z] LOG    8. Searching "Crandon Park" in "miami"
+[2026-02-09T05:15:17.826Z] LOG 🔍 [Google Places] Text search: "Crandon Park" in miami
+[2026-02-09T05:15:17.829Z] LOG    9. Searching "Coral Castle" in "miami"
+[2026-02-09T05:15:17.831Z] LOG 🔍 [Google Places] Text search: "Coral Castle" in miami
+[2026-02-09T05:15:17.838Z] LOG    10. Searching "Blue Lagoon Farm Miami" in "miami"
+[2026-02-09T05:15:17.840Z] LOG 🔍 [Google Places] Text search: "Blue Lagoon Farm Miami" in miami
+[2026-02-09T05:15:18.110Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:18.126Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:18.141Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:18.148Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:18.197Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:18.205Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:18.217Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:18.225Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:18.266Z] LOG    ✅ Deering Estate: Got description (98 chars)
+[2026-02-09T05:15:18.270Z] LOG    📷 Deering Estate: Got 10 photos
+[2026-02-09T05:15:18.271Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:18.309Z] LOG    ✅ Jungle Island: Got description (98 chars)
+[2026-02-09T05:15:18.312Z] LOG    📷 Jungle Island: Got 10 photos
+[2026-02-09T05:15:18.313Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:18.314Z] LOG    ⚠️  Blue Lagoon Farm Miami: No editorial summary available
+[2026-02-09T05:15:18.314Z] LOG    📷 Blue Lagoon Farm Miami: Got 10 photos
+[2026-02-09T05:15:18.315Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:18.316Z] LOG    ✅ Coral Castle: Got description (97 chars)
+[2026-02-09T05:15:18.317Z] LOG    📷 Coral Castle: Got 10 photos
+[2026-02-09T05:15:18.317Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:18.319Z] LOG    ✅ Crandon Park: Got description (94 chars)
+[2026-02-09T05:15:18.320Z] LOG    📷 Crandon Park: Got 10 photos
+[2026-02-09T05:15:18.320Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:18.321Z] LOG    ✅ Superblue Miami: Got description (86 chars)
+[2026-02-09T05:15:18.321Z] LOG    📷 Superblue Miami: Got 10 photos
+[2026-02-09T05:15:18.322Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:18.345Z] LOG    ✅ Lummus Park: Got description (87 chars)
+[2026-02-09T05:15:18.347Z] LOG    📷 Lummus Park: Got 10 photos
+[2026-02-09T05:15:18.348Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:18.367Z] LOG    ✅ Bayfront Park: Got description (99 chars)
+[2026-02-09T05:15:18.369Z] LOG    📷 Bayfront Park: Got 10 photos
+[2026-02-09T05:15:18.372Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:18.396Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:18.481Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:15:18.540Z] LOG    ✅ Vizcaya Museum & Gardens: Got description (93 chars)
+[2026-02-09T05:15:18.545Z] LOG    📷 Vizcaya Museum & Gardens: Got 10 photos
+[2026-02-09T05:15:18.547Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:18.645Z] LOG    ✅ Everglades National Park: Got description (98 chars)
+[2026-02-09T05:15:18.652Z] LOG    📷 Everglades National Park: Got 10 photos
+[2026-02-09T05:15:18.660Z] LOG ✅ Found 1 places
+[2026-02-09T05:15:18.661Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 864ms
+[2026-02-09T05:15:18.662Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-09T05:15:18.663Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-09T05:15:18.664Z] LOG    ✅ Bayside Marketplace → Bayside Marketplace (must_have)
+[2026-02-09T05:15:18.664Z] LOG    ✅ Thriller Miami Speedboat Adventures → Thriller Miami Speedboat Adventures (must_have)
+[2026-02-09T05:15:18.665Z] LOG    ✅ Miami Walk of Fame → Miami Walk of Fame (must_have)
+[2026-02-09T05:15:18.677Z] LOG    ✅ Maurice A. Ferré Park → Maurice A. Ferré Park (must_have)
+[2026-02-09T05:15:18.679Z] LOG    ✅ Phillip and Patricia Frost Museum of Science → Phillip & Patricia Frost Museum of Science (must_have)
+[2026-02-09T05:15:18.680Z] LOG    ✅ Miami Bull → Miami Bull (nice_to_have)
+[2026-02-09T05:15:18.681Z] LOG    ✅ Miami Circle National Historic Landmark → Miami Circle National Historic Landmark (nice_to_have)
+[2026-02-09T05:15:18.682Z] LOG    ✅ The Underline → The Underline (nice_to_have)
+[2026-02-09T05:15:18.684Z] LOG    ✅ HistoryMiami Museum → HistoryMiami Museum (nice_to_have)
+[2026-02-09T05:15:18.686Z] LOG    ✅ FPL Solar Amphitheater at Bayfront Park → FPL Solar Amphitheater at Bayfront Park (nice_to_have)
+[2026-02-09T05:15:18.688Z] LOG    ✅ Bayfront Park → Bayfront Park (nice_to_have)
+[2026-02-09T05:15:18.689Z] LOG    ✅ Vizcaya Museum & Gardens → Vizcaya Museum & Gardens (nice_to_have)
+[2026-02-09T05:15:18.691Z] LOG    ✅ Jungle Island → Jungle Island (nice_to_have)
+[2026-02-09T05:15:18.692Z] LOG    ✅ Superblue Miami → Superblue Miami (nice_to_have)
+[2026-02-09T05:15:18.693Z] LOG    ✅ Lummus Park → Lummus Park (nice_to_have)
+[2026-02-09T05:15:18.694Z] LOG    ✅ Everglades National Park → Everglades National Park (nice_to_have)
+[2026-02-09T05:15:18.695Z] LOG    ✅ Deering Estate → Deering Estate (nice_to_have)
+[2026-02-09T05:15:18.695Z] LOG    ✅ Crandon Park → Crandon Park (nice_to_have)
+[2026-02-09T05:15:18.696Z] LOG    ✅ Coral Castle → Coral Castle (nice_to_have)
+[2026-02-09T05:15:18.697Z] LOG    ✅ Blue Lagoon Farm Miami → Blue Lagoon Farm Miami (nice_to_have)
+[2026-02-09T05:15:18.698Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-09T05:15:18.699Z] LOG    Total enriched: 20
+[2026-02-09T05:15:18.699Z] LOG    🎯 Must-have: 5
+[2026-02-09T05:15:18.700Z] LOG    ✨ Nice-to-have: 15
+[2026-02-09T05:15:18.701Z] LOG    ❌ Failed: 0
+[2026-02-09T05:15:18.701Z] LOG    ⏱️  Enrichment took: 1993ms (1.99s)
+
+--- Summary ---
+Enrichment completed

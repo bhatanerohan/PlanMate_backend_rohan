@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "plan a wild trip to miami"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Wild Trip",
+    "total_stops": 5,
+    "estimated_duration": "10 hours",
+    "travel_mode": "driving"
+  },
+  "venues": [
+    {
+      "name": "E11EVEN MIAMI",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Rosa Sky",
+      "category": "rooftop bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Wharf Miami",
+      "category": "event venue",
+      "priority": "must_have"
+    },
+    {
+      "name": "Wynwood Walls",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Miami Beach Boardwalk",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Lagniappe",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Blackbird Ordinary",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Giselle Miami",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "SUGAR",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rosario Miami",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Cebada Rooftop",
+      "category": "spanish restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Dolores But You Can Call Me Lolita",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sexy Fish Miami",
+      "category": "japanese restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mama Tried",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Miami Skyline Cruises",
+      "category": "tour agency",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Miami Beach",
+      "category": "beach",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "South Beach",
+      "category": "beach",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Lummus Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "South Pointe Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Nikki Beach Miami Beach",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

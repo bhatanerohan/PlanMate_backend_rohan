@@ -1,0 +1,160 @@
+User Prompt: plan a day in san jose
+
+[2026-02-06T03:27:02.722Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-06T03:27:02.723Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-02-06T03:27:02.724Z] LOG    🎯 Must-have: 5
+[2026-02-06T03:27:02.724Z] LOG    ✨ Nice-to-have: 13
+[2026-02-06T03:27:02.725Z] LOG 📍 Location hint: san jose
+[2026-02-06T03:27:02.727Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-02-06T03:27:02.727Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-06T03:27:02.730Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T03:27:02.732Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T03:27:02.732Z] LOG    1. Searching "The Tech Interactive" in "san jose"
+[2026-02-06T03:27:02.733Z] LOG 🔍 [Google Places] Text search: "The Tech Interactive" in san jose
+[2026-02-06T03:27:02.746Z] LOG    2. Searching "San Jose Museum of Art" in "san jose"
+[2026-02-06T03:27:02.747Z] LOG 🔍 [Google Places] Text search: "San Jose Museum of Art" in san jose
+[2026-02-06T03:27:02.751Z] LOG    3. Searching "San Jose Civic Auditorium" in "san jose"
+[2026-02-06T03:27:02.753Z] LOG 🔍 [Google Places] Text search: "San Jose Civic Auditorium" in san jose
+[2026-02-06T03:27:02.756Z] LOG    4. Searching "Plaza de Cesar Chavez" in "san jose"
+[2026-02-06T03:27:02.757Z] LOG 🔍 [Google Places] Text search: "Plaza de Cesar Chavez" in san jose
+[2026-02-06T03:27:02.760Z] LOG    5. Searching "San Pedro Square Market" in "san jose"
+[2026-02-06T03:27:02.763Z] LOG 🔍 [Google Places] Text search: "San Pedro Square Market" in san jose
+[2026-02-06T03:27:02.767Z] LOG    6. Searching "Japantown" in "san jose"
+[2026-02-06T03:27:02.768Z] LOG 🔍 [Google Places] Text search: "Japantown" in san jose
+[2026-02-06T03:27:02.772Z] LOG    7. Searching "Kelley Park" in "san jose"
+[2026-02-06T03:27:02.773Z] LOG 🔍 [Google Places] Text search: "Kelley Park" in san jose
+[2026-02-06T03:27:02.777Z] LOG    8. Searching "Happy Hollow Park & Zoo" in "san jose"
+[2026-02-06T03:27:02.778Z] LOG 🔍 [Google Places] Text search: "Happy Hollow Park & Zoo" in san jose
+[2026-02-06T03:27:02.781Z] LOG    9. Searching "Japanese Friendship Garden" in "san jose"
+[2026-02-06T03:27:02.783Z] LOG 🔍 [Google Places] Text search: "Japanese Friendship Garden" in san jose
+[2026-02-06T03:27:02.787Z] LOG    10. Searching "Silver Creek Sportsplex" in "san jose"
+[2026-02-06T03:27:02.788Z] LOG 🔍 [Google Places] Text search: "Silver Creek Sportsplex" in san jose
+[2026-02-06T03:27:03.142Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:03.172Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:03.180Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:03.202Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:03.286Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:03.293Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:03.295Z] LOG    ⚠️  Japantown: No editorial summary available
+[2026-02-06T03:27:03.297Z] LOG    📷 Japantown: Got 10 photos
+[2026-02-06T03:27:03.299Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:03.301Z] LOG    ⚠️  San Pedro Square Market: No editorial summary available
+[2026-02-06T03:27:03.303Z] LOG    📷 San Pedro Square Market: Got 10 photos
+[2026-02-06T03:27:03.304Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:03.319Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:03.323Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:03.337Z] LOG    ✅ The Tech Interactive: Got description (97 chars)
+[2026-02-06T03:27:03.338Z] LOG    📷 The Tech Interactive: Got 10 photos
+[2026-02-06T03:27:03.340Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:03.346Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:03.386Z] LOG    ✅ Happy Hollow Park & Zoo: Got description (99 chars)
+[2026-02-06T03:27:03.388Z] LOG    📷 Happy Hollow Park & Zoo: Got 10 photos
+[2026-02-06T03:27:03.388Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:03.397Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:03.404Z] LOG    ✅ Plaza de Cesar Chavez: Got description (99 chars)
+[2026-02-06T03:27:03.405Z] LOG    📷 Plaza de Cesar Chavez: Got 10 photos
+[2026-02-06T03:27:03.406Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:03.418Z] LOG    ✅ Kelley Park: Got description (99 chars)
+[2026-02-06T03:27:03.419Z] LOG    📷 Kelley Park: Got 10 photos
+[2026-02-06T03:27:03.420Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:03.463Z] LOG    ✅ The Plex: Got description (82 chars)
+[2026-02-06T03:27:03.466Z] LOG    📷 The Plex: Got 10 photos
+[2026-02-06T03:27:03.467Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:03.474Z] LOG    ✅ Japanese Friendship Garden: Got description (95 chars)
+[2026-02-06T03:27:03.475Z] LOG    📷 Japanese Friendship Garden: Got 10 photos
+[2026-02-06T03:27:03.476Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:03.487Z] LOG    ✅ San Jose Museum of Art: Got description (96 chars)
+[2026-02-06T03:27:03.488Z] LOG    📷 San Jose Museum of Art: Got 10 photos
+[2026-02-06T03:27:03.489Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:03.507Z] LOG    ✅ San Jose Civic: Got description (94 chars)
+[2026-02-06T03:27:03.508Z] LOG    📷 San Jose Civic: Got 10 photos
+[2026-02-06T03:27:03.509Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:03.510Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 779ms
+[2026-02-06T03:27:03.511Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T03:27:03.511Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-06T03:27:03.713Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-02-06T03:27:03.720Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T03:27:03.730Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-02-06T03:27:03.731Z] LOG    1. Searching "Guadalupe River Park" in "san jose"
+[2026-02-06T03:27:03.732Z] LOG 🔍 [Google Places] Text search: "Guadalupe River Park" in san jose
+[2026-02-06T03:27:03.733Z] LOG    2. Searching "Santana Row" in "san jose"
+[2026-02-06T03:27:03.734Z] LOG 🔍 [Google Places] Text search: "Santana Row" in san jose
+[2026-02-06T03:27:03.736Z] LOG    3. Searching "Boccone" in "san jose"
+[2026-02-06T03:27:03.737Z] LOG 🔍 [Google Places] Text search: "Boccone" in san jose
+[2026-02-06T03:27:03.738Z] LOG    4. Searching "La Foret Restaurant" in "san jose"
+[2026-02-06T03:27:03.739Z] LOG 🔍 [Google Places] Text search: "La Foret Restaurant" in san jose
+[2026-02-06T03:27:03.741Z] LOG    5. Searching "Original Gravity Public House" in "san jose"
+[2026-02-06T03:27:03.742Z] LOG 🔍 [Google Places] Text search: "Original Gravity Public House" in san jose
+[2026-02-06T03:27:03.743Z] LOG    6. Searching "La Villa Italian Restaurant" in "san jose"
+[2026-02-06T03:27:03.744Z] LOG 🔍 [Google Places] Text search: "La Villa Italian Restaurant" in san jose
+[2026-02-06T03:27:03.745Z] LOG    7. Searching "La Bamba Mexican Restaurant" in "san jose"
+[2026-02-06T03:27:03.746Z] LOG 🔍 [Google Places] Text search: "La Bamba Mexican Restaurant" in san jose
+[2026-02-06T03:27:03.747Z] LOG    8. Searching "Naglee Park Garage" in "san jose"
+[2026-02-06T03:27:03.747Z] LOG 🔍 [Google Places] Text search: "Naglee Park Garage" in san jose
+[2026-02-06T03:27:04.036Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:04.054Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:04.063Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:04.085Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:04.089Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:04.093Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:04.111Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:04.158Z] LOG    ✅ Guadalupe River Park: Got description (100 chars)
+[2026-02-06T03:27:04.160Z] LOG    📷 Guadalupe River Park: Got 10 photos
+[2026-02-06T03:27:04.162Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:04.213Z] LOG    ✅ Original Gravity Public House: Got description (100 chars)
+[2026-02-06T03:27:04.217Z] LOG    📷 Original Gravity Public House: Got 10 photos
+[2026-02-06T03:27:04.220Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:04.222Z] LOG    ⚠️  Santana Row: No editorial summary available
+[2026-02-06T03:27:04.223Z] LOG    📷 Santana Row: Got 10 photos
+[2026-02-06T03:27:04.223Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:04.225Z] LOG    ✅ La Foret: Got description (93 chars)
+[2026-02-06T03:27:04.226Z] LOG    📷 La Foret: Got 10 photos
+[2026-02-06T03:27:04.226Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:04.230Z] LOG    ✅ Naglee Park Garage: Got description (100 chars)
+[2026-02-06T03:27:04.231Z] LOG    📷 Naglee Park Garage: Got 10 photos
+[2026-02-06T03:27:04.232Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:04.239Z] LOG    ✅ Bertucelli's La Villa Gourmet: Got description (95 chars)
+[2026-02-06T03:27:04.240Z] LOG    📷 Bertucelli's La Villa Gourmet: Got 10 photos
+[2026-02-06T03:27:04.241Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:04.252Z] LOG    ⚠️  Boccone Comida Italiana, Drinks, Lasanha, Focaccia, Burrata e muito mais!: No editorial summary available
+[2026-02-06T03:27:04.253Z] LOG    📷 Boccone Comida Italiana, Drinks, Lasanha, Focaccia, Burrata e muito mais!: Got 10 photos
+[2026-02-06T03:27:04.254Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:04.340Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:27:04.484Z] LOG    ⚠️  La Bamba Tacos: No editorial summary available
+[2026-02-06T03:27:04.488Z] LOG    📷 La Bamba Tacos: Got 10 photos
+[2026-02-06T03:27:04.489Z] LOG ✅ Found 1 places
+[2026-02-06T03:27:04.490Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 760ms
+[2026-02-06T03:27:04.491Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T03:27:04.491Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-02-06T03:27:04.492Z] LOG    ✅ The Tech Interactive → The Tech Interactive (must_have)
+[2026-02-06T03:27:04.493Z] LOG    ✅ San Jose Museum of Art → San Jose Museum of Art (must_have)
+[2026-02-06T03:27:04.494Z] LOG    ✅ San Jose Civic Auditorium → San Jose Civic (must_have)
+[2026-02-06T03:27:04.494Z] LOG    ✅ Plaza de Cesar Chavez → Plaza de Cesar Chavez (must_have)
+[2026-02-06T03:27:04.494Z] LOG    ✅ San Pedro Square Market → San Pedro Square Market (must_have)
+[2026-02-06T03:27:04.495Z] LOG    ✅ Japantown → Japantown (nice_to_have)
+[2026-02-06T03:27:04.495Z] LOG    ✅ Kelley Park → Kelley Park (nice_to_have)
+[2026-02-06T03:27:04.496Z] LOG    ✅ Happy Hollow Park & Zoo → Happy Hollow Park & Zoo (nice_to_have)
+[2026-02-06T03:27:04.496Z] LOG    ✅ Japanese Friendship Garden → Japanese Friendship Garden (nice_to_have)
+[2026-02-06T03:27:04.497Z] LOG    ✅ Silver Creek Sportsplex → The Plex (nice_to_have)
+[2026-02-06T03:27:04.497Z] LOG    ✅ Guadalupe River Park → Guadalupe River Park (nice_to_have)
+[2026-02-06T03:27:04.497Z] LOG    ✅ Santana Row → Santana Row (nice_to_have)
+[2026-02-06T03:27:04.498Z] LOG    ✅ Boccone → Boccone Comida Italiana, Drinks, Lasanha, Focaccia, Burrata e muito mais! (nice_to_have)
+[2026-02-06T03:27:04.498Z] LOG    ✅ La Foret Restaurant → La Foret (nice_to_have)
+[2026-02-06T03:27:04.499Z] LOG    ✅ Original Gravity Public House → Original Gravity Public House (nice_to_have)
+[2026-02-06T03:27:04.500Z] LOG    ✅ La Villa Italian Restaurant → Bertucelli's La Villa Gourmet (nice_to_have)
+[2026-02-06T03:27:04.500Z] LOG    ✅ La Bamba Mexican Restaurant → La Bamba Tacos (nice_to_have)
+[2026-02-06T03:27:04.501Z] LOG    ✅ Naglee Park Garage → Naglee Park Garage (nice_to_have)
+[2026-02-06T03:27:04.501Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-06T03:27:04.502Z] LOG    Total enriched: 18
+[2026-02-06T03:27:04.502Z] LOG    🎯 Must-have: 5
+[2026-02-06T03:27:04.502Z] LOG    ✨ Nice-to-have: 13
+[2026-02-06T03:27:04.503Z] LOG    ❌ Failed: 0
+[2026-02-06T03:27:04.504Z] LOG    ⏱️  Enrichment took: 1784ms (1.78s)
+
+--- Summary ---
+Enrichment completed

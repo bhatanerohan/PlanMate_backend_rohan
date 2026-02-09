@@ -1,0 +1,167 @@
+User Prompt: plan a touristy day in san jose, cali
+
+[2026-02-06T03:28:37.567Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-06T03:28:37.568Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-02-06T03:28:37.569Z] LOG    🎯 Must-have: 5
+[2026-02-06T03:28:37.569Z] LOG    ✨ Nice-to-have: 14
+[2026-02-06T03:28:37.572Z] LOG 📍 Location hint: nearby
+[2026-02-06T03:28:37.574Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-02-06T03:28:37.574Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-06T03:28:37.576Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T03:28:37.578Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T03:28:37.579Z] LOG    1. Searching "The Tech Interactive" in "nearby"
+[2026-02-06T03:28:37.579Z] LOG 🔍 [Google Places] Text search: "The Tech Interactive" in nearby
+[2026-02-06T03:28:37.584Z] LOG    2. Searching "San Jose Museum of Art" in "nearby"
+[2026-02-06T03:28:37.586Z] LOG 🔍 [Google Places] Text search: "San Jose Museum of Art" in nearby
+[2026-02-06T03:28:37.591Z] LOG    3. Searching "Plaza de Cesar Chavez" in "nearby"
+[2026-02-06T03:28:37.592Z] LOG 🔍 [Google Places] Text search: "Plaza de Cesar Chavez" in nearby
+[2026-02-06T03:28:37.596Z] LOG    4. Searching "Cathedral Basilica of St. Joseph" in "nearby"
+[2026-02-06T03:28:37.597Z] LOG 🔍 [Google Places] Text search: "Cathedral Basilica of St. Joseph" in nearby
+[2026-02-06T03:28:37.600Z] LOG    5. Searching "Children's Discovery Museum of San Jose" in "nearby"
+[2026-02-06T03:28:37.601Z] LOG 🔍 [Google Places] Text search: "Children's Discovery Museum of San Jose" in nearby
+[2026-02-06T03:28:37.607Z] LOG    6. Searching "Municipal Rose Garden" in "nearby"
+[2026-02-06T03:28:37.609Z] LOG 🔍 [Google Places] Text search: "Municipal Rose Garden" in nearby
+[2026-02-06T03:28:37.613Z] LOG    7. Searching "Rosicrucian Egyptian Museum" in "nearby"
+[2026-02-06T03:28:37.614Z] LOG 🔍 [Google Places] Text search: "Rosicrucian Egyptian Museum" in nearby
+[2026-02-06T03:28:37.617Z] LOG    8. Searching "Winchester Mystery House" in "nearby"
+[2026-02-06T03:28:37.619Z] LOG 🔍 [Google Places] Text search: "Winchester Mystery House" in nearby
+[2026-02-06T03:28:37.623Z] LOG    9. Searching "Happy Hollow Park & Zoo" in "nearby"
+[2026-02-06T03:28:37.625Z] LOG 🔍 [Google Places] Text search: "Happy Hollow Park & Zoo" in nearby
+[2026-02-06T03:28:37.629Z] LOG    10. Searching "Kelley Park" in "nearby"
+[2026-02-06T03:28:37.629Z] LOG 🔍 [Google Places] Text search: "Kelley Park" in nearby
+[2026-02-06T03:28:37.960Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:37.997Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.003Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.013Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.025Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.050Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.058Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.063Z] LOG    ✅ The Tech Interactive: Got description (97 chars)
+[2026-02-06T03:28:38.065Z] LOG    📷 The Tech Interactive: Got 10 photos
+[2026-02-06T03:28:38.066Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:38.068Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.080Z] LOG    ✅ Winchester Mystery House: Got description (100 chars)
+[2026-02-06T03:28:38.082Z] LOG    📷 Winchester Mystery House: Got 10 photos
+[2026-02-06T03:28:38.084Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:38.098Z] LOG    ✅ San Jose Museum of Art: Got description (96 chars)
+[2026-02-06T03:28:38.100Z] LOG    📷 San Jose Museum of Art: Got 10 photos
+[2026-02-06T03:28:38.101Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:38.102Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.107Z] LOG    ✅ Plaza de Cesar Chavez: Got description (99 chars)
+[2026-02-06T03:28:38.108Z] LOG    📷 Plaza de Cesar Chavez: Got 10 photos
+[2026-02-06T03:28:38.109Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:38.140Z] LOG    ✅ James P. Kelleher Rose Garden: Got description (98 chars)
+[2026-02-06T03:28:38.142Z] LOG    📷 James P. Kelleher Rose Garden: Got 10 photos
+[2026-02-06T03:28:38.142Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:38.154Z] LOG    ✅ Cathedral Basilica of St. Joseph: Got description (97 chars)
+[2026-02-06T03:28:38.156Z] LOG    📷 Cathedral Basilica of St. Joseph: Got 10 photos
+[2026-02-06T03:28:38.156Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:38.163Z] LOG    ✅ Rosicrucian Egyptian Museum: Got description (99 chars)
+[2026-02-06T03:28:38.164Z] LOG    📷 Rosicrucian Egyptian Museum: Got 10 photos
+[2026-02-06T03:28:38.165Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:38.170Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.185Z] LOG    ✅ Happy Hollow Park & Zoo: Got description (99 chars)
+[2026-02-06T03:28:38.187Z] LOG    📷 Happy Hollow Park & Zoo: Got 10 photos
+[2026-02-06T03:28:38.188Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:38.190Z] LOG    ⚠️  Kelly Field Playground: No editorial summary available
+[2026-02-06T03:28:38.191Z] LOG    📷 Kelly Field Playground: Got 10 photos
+[2026-02-06T03:28:38.191Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:38.298Z] LOG    ✅ Children's Discovery Museum of San Jose: Got description (97 chars)
+[2026-02-06T03:28:38.302Z] LOG    📷 Children's Discovery Museum of San Jose: Got 10 photos
+[2026-02-06T03:28:38.308Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:38.309Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 731ms
+[2026-02-06T03:28:38.310Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T03:28:38.310Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-06T03:28:38.525Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-02-06T03:28:38.533Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T03:28:38.536Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-02-06T03:28:38.539Z] LOG    1. Searching "Discovery Meadow" in "nearby"
+[2026-02-06T03:28:38.541Z] LOG 🔍 [Google Places] Text search: "Discovery Meadow" in nearby
+[2026-02-06T03:28:38.543Z] LOG    2. Searching "Japanese American Museum of San Jose" in "nearby"
+[2026-02-06T03:28:38.544Z] LOG 🔍 [Google Places] Text search: "Japanese American Museum of San Jose" in nearby
+[2026-02-06T03:28:38.545Z] LOG    3. Searching "Alum Rock Park" in "nearby"
+[2026-02-06T03:28:38.546Z] LOG 🔍 [Google Places] Text search: "Alum Rock Park" in nearby
+[2026-02-06T03:28:38.548Z] LOG    4. Searching "St James Park" in "nearby"
+[2026-02-06T03:28:38.550Z] LOG 🔍 [Google Places] Text search: "St James Park" in nearby
+[2026-02-06T03:28:38.552Z] LOG    5. Searching "Rosicrucian Park" in "nearby"
+[2026-02-06T03:28:38.554Z] LOG 🔍 [Google Places] Text search: "Rosicrucian Park" in nearby
+[2026-02-06T03:28:38.558Z] LOG    6. Searching "Monopoly in the Park" in "nearby"
+[2026-02-06T03:28:38.560Z] LOG 🔍 [Google Places] Text search: "Monopoly in the Park" in nearby
+[2026-02-06T03:28:38.565Z] LOG    7. Searching "Guadalupe River Park" in "nearby"
+[2026-02-06T03:28:38.568Z] LOG 🔍 [Google Places] Text search: "Guadalupe River Park" in nearby
+[2026-02-06T03:28:38.578Z] LOG    8. Searching "San Jose Museum of Quilts & Textiles" in "nearby"
+[2026-02-06T03:28:38.581Z] LOG 🔍 [Google Places] Text search: "San Jose Museum of Quilts & Textiles" in nearby
+[2026-02-06T03:28:38.586Z] LOG    9. Searching "Gonzales-Peralta Adobe & Fallon House Historic Site" in "nearby"
+[2026-02-06T03:28:38.588Z] LOG 🔍 [Google Places] Text search: "Gonzales-Peralta Adobe & Fallon House Historic Site" in nearby
+[2026-02-06T03:28:38.851Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.861Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.871Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.891Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.899Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.903Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.908Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:38.995Z] LOG    ✅ Alum Rock Park: Got description (87 chars)
+[2026-02-06T03:28:39.001Z] LOG    📷 Alum Rock Park: Got 10 photos
+[2026-02-06T03:28:39.003Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:39.006Z] LOG    ✅ Gonzales-Peralta Adobe & Fallon House Historic Site: Got description (100 chars)
+[2026-02-06T03:28:39.008Z] LOG    📷 Gonzales-Peralta Adobe & Fallon House Historic Site: Got 10 photos
+[2026-02-06T03:28:39.009Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:39.012Z] LOG    ✅ Discovery Meadow: Got description (81 chars)
+[2026-02-06T03:28:39.014Z] LOG    📷 Discovery Meadow: Got 10 photos
+[2026-02-06T03:28:39.016Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:39.027Z] LOG    ✅ Rosicrucian Park: Got description (99 chars)
+[2026-02-06T03:28:39.029Z] LOG    📷 Rosicrucian Park: Got 10 photos
+[2026-02-06T03:28:39.033Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:39.039Z] LOG    ✅ Monopoly in the Park: Got description (85 chars)
+[2026-02-06T03:28:39.041Z] LOG    📷 Monopoly in the Park: Got 10 photos
+[2026-02-06T03:28:39.041Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:39.043Z] LOG    ⚠️  St. James Street Park: No editorial summary available
+[2026-02-06T03:28:39.044Z] LOG    📷 St. James Street Park: Got 9 photos
+[2026-02-06T03:28:39.046Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:39.051Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:39.056Z] LOG    ✅ San Jose Museum of Quilts & Textiles: Got description (96 chars)
+[2026-02-06T03:28:39.062Z] LOG    📷 San Jose Museum of Quilts & Textiles: Got 10 photos
+[2026-02-06T03:28:39.066Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:39.080Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:28:39.177Z] LOG    ✅ Guadalupe River State Park: Got description (94 chars)
+[2026-02-06T03:28:39.182Z] LOG    📷 Guadalupe River State Park: Got 10 photos
+[2026-02-06T03:28:39.183Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:39.226Z] LOG    ✅ Japanese American Museum of San Jose: Got description (85 chars)
+[2026-02-06T03:28:39.230Z] LOG    📷 Japanese American Museum of San Jose: Got 10 photos
+[2026-02-06T03:28:39.231Z] LOG ✅ Found 1 places
+[2026-02-06T03:28:39.231Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 695ms
+[2026-02-06T03:28:39.232Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T03:28:39.233Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-02-06T03:28:39.233Z] LOG    ✅ The Tech Interactive → The Tech Interactive (must_have)
+[2026-02-06T03:28:39.234Z] LOG    ✅ San Jose Museum of Art → San Jose Museum of Art (must_have)
+[2026-02-06T03:28:39.234Z] LOG    ✅ Plaza de Cesar Chavez → Plaza de Cesar Chavez (must_have)
+[2026-02-06T03:28:39.235Z] LOG    ✅ Cathedral Basilica of St. Joseph → Cathedral Basilica of St. Joseph (must_have)
+[2026-02-06T03:28:39.236Z] LOG    ✅ Children's Discovery Museum of San Jose → Children's Discovery Museum of San Jose (must_have)
+[2026-02-06T03:28:39.236Z] LOG    ✅ Municipal Rose Garden → James P. Kelleher Rose Garden (nice_to_have)
+[2026-02-06T03:28:39.237Z] LOG    ✅ Rosicrucian Egyptian Museum → Rosicrucian Egyptian Museum (nice_to_have)
+[2026-02-06T03:28:39.238Z] LOG    ✅ Winchester Mystery House → Winchester Mystery House (nice_to_have)
+[2026-02-06T03:28:39.238Z] LOG    ✅ Happy Hollow Park & Zoo → Happy Hollow Park & Zoo (nice_to_have)
+[2026-02-06T03:28:39.239Z] LOG    ✅ Kelley Park → Kelly Field Playground (nice_to_have)
+[2026-02-06T03:28:39.239Z] LOG    ✅ Discovery Meadow → Discovery Meadow (nice_to_have)
+[2026-02-06T03:28:39.240Z] LOG    ✅ Japanese American Museum of San Jose → Japanese American Museum of San Jose (nice_to_have)
+[2026-02-06T03:28:39.240Z] LOG    ✅ Alum Rock Park → Alum Rock Park (nice_to_have)
+[2026-02-06T03:28:39.241Z] LOG    ✅ St James Park → St. James Street Park (nice_to_have)
+[2026-02-06T03:28:39.241Z] LOG    ✅ Rosicrucian Park → Rosicrucian Park (nice_to_have)
+[2026-02-06T03:28:39.242Z] LOG    ✅ Monopoly in the Park → Monopoly in the Park (nice_to_have)
+[2026-02-06T03:28:39.243Z] LOG    ✅ Guadalupe River Park → Guadalupe River State Park (nice_to_have)
+[2026-02-06T03:28:39.243Z] LOG    ✅ San Jose Museum of Quilts & Textiles → San Jose Museum of Quilts & Textiles (nice_to_have)
+[2026-02-06T03:28:39.244Z] LOG    ✅ Gonzales-Peralta Adobe & Fallon House Historic Site → Gonzales-Peralta Adobe & Fallon House Historic Site (nice_to_have)
+[2026-02-06T03:28:39.245Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-06T03:28:39.245Z] LOG    Total enriched: 19
+[2026-02-06T03:28:39.246Z] LOG    🎯 Must-have: 5
+[2026-02-06T03:28:39.246Z] LOG    ✨ Nice-to-have: 14
+[2026-02-06T03:28:39.247Z] LOG    ❌ Failed: 0
+[2026-02-06T03:28:39.248Z] LOG    ⏱️  Enrichment took: 1683ms (1.68s)
+
+--- Summary ---
+Enrichment completed

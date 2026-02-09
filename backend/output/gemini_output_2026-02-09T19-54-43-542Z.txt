@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.323458768664324, -71.10724237566048)
+
+Request: "Hit every major museum in DC in one day with lunch breaks"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Museum tour with lunch breaks",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Smithsonian National Museum of Natural History",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Smithsonian National Museum of American History",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "National Gallery of Art",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "National Museum of African American History and Culture",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Smithsonian's National Air and Space Museum",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Founding Farmers DC",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Immigrant Food at Planet Word",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "AMBAR Restaurant, Capitol Hill",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Museum of Illusions Washington DC",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "National Museum of Asian Art",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "National Portrait Gallery",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Smithsonian American Art Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "National Building Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "S. Dillon Ripley Center",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "National Children's Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "United States Holocaust Memorial Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "International Spy Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "National Museum of the American Indian",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Hirshhorn Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Smithsonian National Postal Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

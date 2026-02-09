@@ -1,0 +1,127 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "plan a wild party trip in Miami"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Wild party trip",
+    "total_stops": 5,
+    "estimated_duration": "12 hours",
+    "travel_mode": "driving"
+  },
+  "venues": [
+    {
+      "name": "Wynwood Walls",
+      "category": "art gallery",
+      "priority": "must_have"
+    },
+    {
+      "name": "Wynwood Marketplace",
+      "category": "night club",
+      "priority": "must_have"
+    },
+    {
+      "name": "Ball & Chain",
+      "category": "night club",
+      "priority": "must_have"
+    },
+    {
+      "name": "E11EVEN MIAMI",
+      "category": "night club",
+      "priority": "must_have"
+    },
+    {
+      "name": "Story Nightclub",
+      "category": "night club",
+      "priority": "must_have"
+    },
+    {
+      "name": "Macchupicchu",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Coyo Taco",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Wynwood Brewing Company",
+      "category": "brewery",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Kiki on The River",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "ROOFTOP CAMEO",
+      "category": "night club",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "LIV Nightclub",
+      "category": "night club",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mango's Tropical Cafe",
+      "category": "night club",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Hyde Beach",
+      "category": "night club",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "South Pointe Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Ocean Drive",
+      "category": "street",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Miami Beach Boardwalk",
+      "category": "park",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "plan a romantic date tonight in boston downtown"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Romantic Date Night",
+    "total_stops": 5,
+    "estimated_duration": "4-5 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Contessa Boston",
+      "category": "Italian Restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Yvonne's",
+      "category": "American Restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mooo.... Beacon Hill",
+      "category": "Steak House",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mamma Maria",
+      "category": "Italian Restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Joia Restaurant & Lounge",
+      "category": "Italian Restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Chart House",
+      "category": "Seafood Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Carmelina's",
+      "category": "Italian Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bistro du Midi",
+      "category": "French Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Blu",
+      "category": "American Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Grace By Nia",
+      "category": "Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "La Padrona Boston",
+      "category": "Italian Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mariel",
+      "category": "Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Terra",
+      "category": "Italian Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "MIDA",
+      "category": "Italian Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Estella Restaurant",
+      "category": "Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Next Door Speakeasy",
+      "category": "Bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Carrie Nation Cocktail Club",
+      "category": "Bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "haley.henry",
+      "category": "Wine Bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Public Garden",
+      "category": "Park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boston Common",
+      "category": "Park",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

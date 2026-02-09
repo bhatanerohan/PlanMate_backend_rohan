@@ -1,0 +1,160 @@
+User Prompt: plan a day out in Boston
+
+[2026-02-09T06:14:47.019Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-09T06:14:47.020Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-02-09T06:14:47.023Z] LOG    🎯 Must-have: 5
+[2026-02-09T06:14:47.025Z] LOG    ✨ Nice-to-have: 13
+[2026-02-09T06:14:47.029Z] LOG 📍 Location hint: Boston
+[2026-02-09T06:14:47.032Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-02-09T06:14:47.034Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-09T06:14:47.038Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-09T06:14:47.044Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-09T06:14:47.050Z] LOG    1. Searching "Faneuil Hall Marketplace" in "Boston"
+[2026-02-09T06:14:47.055Z] LOG 🔍 [Google Places] Text search: "Faneuil Hall Marketplace" in Boston
+[2026-02-09T06:14:47.081Z] LOG    2. Searching "Boston Tea Party Ships & Museum" in "Boston"
+[2026-02-09T06:14:47.084Z] LOG 🔍 [Google Places] Text search: "Boston Tea Party Ships & Museum" in Boston
+[2026-02-09T06:14:47.094Z] LOG    3. Searching "Boston Common" in "Boston"
+[2026-02-09T06:14:47.097Z] LOG 🔍 [Google Places] Text search: "Boston Common" in Boston
+[2026-02-09T06:14:47.103Z] LOG    4. Searching "Public Garden" in "Boston"
+[2026-02-09T06:14:47.106Z] LOG 🔍 [Google Places] Text search: "Public Garden" in Boston
+[2026-02-09T06:14:47.114Z] LOG    5. Searching "View Boston" in "Boston"
+[2026-02-09T06:14:47.116Z] LOG 🔍 [Google Places] Text search: "View Boston" in Boston
+[2026-02-09T06:14:47.124Z] LOG    6. Searching "Quincy Market" in "Boston"
+[2026-02-09T06:14:47.129Z] LOG 🔍 [Google Places] Text search: "Quincy Market" in Boston
+[2026-02-09T06:14:47.136Z] LOG    7. Searching "Museum of Illusions Boston" in "Boston"
+[2026-02-09T06:14:47.138Z] LOG 🔍 [Google Places] Text search: "Museum of Illusions Boston" in Boston
+[2026-02-09T06:14:47.144Z] LOG    8. Searching "Boston Massacre Site" in "Boston"
+[2026-02-09T06:14:47.148Z] LOG 🔍 [Google Places] Text search: "Boston Massacre Site" in Boston
+[2026-02-09T06:14:47.155Z] LOG    9. Searching "Old State House" in "Boston"
+[2026-02-09T06:14:47.160Z] LOG 🔍 [Google Places] Text search: "Old State House" in Boston
+[2026-02-09T06:14:47.165Z] LOG    10. Searching "The Paul Revere House" in "Boston"
+[2026-02-09T06:14:47.168Z] LOG 🔍 [Google Places] Text search: "The Paul Revere House" in Boston
+[2026-02-09T06:14:47.518Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:47.537Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:47.546Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:47.578Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:47.583Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:47.588Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:47.613Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:47.625Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:47.653Z] LOG    ⚠️  View Boston: No editorial summary available
+[2026-02-09T06:14:47.656Z] LOG    📷 View Boston: Got 10 photos
+[2026-02-09T06:14:47.658Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:47.659Z] LOG    ✅ The Paul Revere House: Got description (100 chars)
+[2026-02-09T06:14:47.660Z] LOG    📷 The Paul Revere House: Got 10 photos
+[2026-02-09T06:14:47.660Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:47.669Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:47.694Z] LOG    ✅ Old State House: Got description (98 chars)
+[2026-02-09T06:14:47.701Z] LOG    📷 Old State House: Got 10 photos
+[2026-02-09T06:14:47.703Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:47.705Z] LOG    ✅ Quincy Market: Got description (97 chars)
+[2026-02-09T06:14:47.706Z] LOG    📷 Quincy Market: Got 10 photos
+[2026-02-09T06:14:47.708Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:47.713Z] LOG    ✅ Public Garden: Got description (90 chars)
+[2026-02-09T06:14:47.718Z] LOG    📷 Public Garden: Got 10 photos
+[2026-02-09T06:14:47.720Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:47.724Z] LOG    ✅ Boston Massacre Site: Got description (94 chars)
+[2026-02-09T06:14:47.728Z] LOG    📷 Boston Massacre Site: Got 10 photos
+[2026-02-09T06:14:47.733Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:47.761Z] LOG    ✅ Boston Common: Got description (93 chars)
+[2026-02-09T06:14:47.765Z] LOG    📷 Boston Common: Got 10 photos
+[2026-02-09T06:14:47.768Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:47.781Z] LOG    ✅ Faneuil Hall Marketplace: Got description (100 chars)
+[2026-02-09T06:14:47.787Z] LOG    📷 Faneuil Hall Marketplace: Got 10 photos
+[2026-02-09T06:14:47.789Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:47.795Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:47.804Z] LOG    ⚠️  Museum of Illusions Boston: No editorial summary available
+[2026-02-09T06:14:47.807Z] LOG    📷 Museum of Illusions Boston: Got 10 photos
+[2026-02-09T06:14:47.811Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:47.936Z] LOG    ✅ Boston Tea Party Ships & Museum: Got description (80 chars)
+[2026-02-09T06:14:47.943Z] LOG    📷 Boston Tea Party Ships & Museum: Got 10 photos
+[2026-02-09T06:14:47.944Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:47.946Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 902ms
+[2026-02-09T06:14:47.947Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-09T06:14:47.948Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-09T06:14:48.159Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-02-09T06:14:48.170Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-09T06:14:48.176Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-02-09T06:14:48.177Z] LOG    1. Searching "Bunker Hill Monument" in "Boston"
+[2026-02-09T06:14:48.178Z] LOG 🔍 [Google Places] Text search: "Bunker Hill Monument" in Boston
+[2026-02-09T06:14:48.179Z] LOG    2. Searching "Boston Harborwalk" in "Boston"
+[2026-02-09T06:14:48.179Z] LOG 🔍 [Google Places] Text search: "Boston Harborwalk" in Boston
+[2026-02-09T06:14:48.181Z] LOG    3. Searching "Boston Harbor City Cruises" in "Boston"
+[2026-02-09T06:14:48.183Z] LOG 🔍 [Google Places] Text search: "Boston Harbor City Cruises" in Boston
+[2026-02-09T06:14:48.185Z] LOG    4. Searching "The Greenway Carousel" in "Boston"
+[2026-02-09T06:14:48.186Z] LOG 🔍 [Google Places] Text search: "The Greenway Carousel" in Boston
+[2026-02-09T06:14:48.190Z] LOG    5. Searching "Chinatown Gate" in "Boston"
+[2026-02-09T06:14:48.194Z] LOG 🔍 [Google Places] Text search: "Chinatown Gate" in Boston
+[2026-02-09T06:14:48.197Z] LOG    6. Searching "Institute of Contemporary Art" in "Boston"
+[2026-02-09T06:14:48.199Z] LOG 🔍 [Google Places] Text search: "Institute of Contemporary Art" in Boston
+[2026-02-09T06:14:48.204Z] LOG    7. Searching "Hatch Memorial Shell" in "Boston"
+[2026-02-09T06:14:48.207Z] LOG 🔍 [Google Places] Text search: "Hatch Memorial Shell" in Boston
+[2026-02-09T06:14:48.212Z] LOG    8. Searching "Trapology Boston" in "Boston"
+[2026-02-09T06:14:48.213Z] LOG 🔍 [Google Places] Text search: "Trapology Boston" in Boston
+[2026-02-09T06:14:48.456Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:48.477Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:48.493Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:48.503Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:48.531Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:48.562Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:48.596Z] LOG    ✅ Trapology Boston: Got description (95 chars)
+[2026-02-09T06:14:48.599Z] LOG    📷 Trapology Boston: Got 10 photos
+[2026-02-09T06:14:48.600Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:48.613Z] LOG    ✅ Bunker Hill Monument: Got description (98 chars)
+[2026-02-09T06:14:48.614Z] LOG    📷 Bunker Hill Monument: Got 10 photos
+[2026-02-09T06:14:48.615Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:48.624Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:48.630Z] LOG    ✅ Hatch Memorial Shell: Got description (97 chars)
+[2026-02-09T06:14:48.634Z] LOG    📷 Hatch Memorial Shell: Got 10 photos
+[2026-02-09T06:14:48.636Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:48.640Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T06:14:48.648Z] LOG    ✅ Harborwalk: Got description (97 chars)
+[2026-02-09T06:14:48.650Z] LOG    📷 Harborwalk: Got 10 photos
+[2026-02-09T06:14:48.651Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:48.676Z] LOG    ✅ Chinatown Gate: Got description (92 chars)
+[2026-02-09T06:14:48.680Z] LOG    📷 Chinatown Gate: Got 10 photos
+[2026-02-09T06:14:48.682Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:48.701Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2026-02-09T06:14:48.703Z] LOG    📷 Institute of Contemporary Art: Got 10 photos
+[2026-02-09T06:14:48.705Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:48.781Z] LOG    ✅ The Greenway Carousel: Got description (99 chars)
+[2026-02-09T06:14:48.786Z] LOG    📷 The Greenway Carousel: Got 10 photos
+[2026-02-09T06:14:48.787Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:48.791Z] LOG    ✅ Boston Harbor City Cruises: Got description (91 chars)
+[2026-02-09T06:14:48.793Z] LOG    📷 Boston Harbor City Cruises: Got 10 photos
+[2026-02-09T06:14:48.794Z] LOG ✅ Found 1 places
+[2026-02-09T06:14:48.794Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 618ms
+[2026-02-09T06:14:48.795Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-09T06:14:48.796Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-02-09T06:14:48.796Z] LOG    ✅ Faneuil Hall Marketplace → Faneuil Hall Marketplace (must_have)
+[2026-02-09T06:14:48.797Z] LOG    ✅ Boston Tea Party Ships & Museum → Boston Tea Party Ships & Museum (must_have)
+[2026-02-09T06:14:48.797Z] LOG    ✅ Boston Common → Boston Common (must_have)
+[2026-02-09T06:14:48.798Z] LOG    ✅ Public Garden → Public Garden (must_have)
+[2026-02-09T06:14:48.798Z] LOG    ✅ View Boston → View Boston (must_have)
+[2026-02-09T06:14:48.800Z] LOG    ✅ Quincy Market → Quincy Market (nice_to_have)
+[2026-02-09T06:14:48.800Z] LOG    ✅ Museum of Illusions Boston → Museum of Illusions Boston (nice_to_have)
+[2026-02-09T06:14:48.801Z] LOG    ✅ Boston Massacre Site → Boston Massacre Site (nice_to_have)
+[2026-02-09T06:14:48.802Z] LOG    ✅ Old State House → Old State House (nice_to_have)
+[2026-02-09T06:14:48.803Z] LOG    ✅ The Paul Revere House → The Paul Revere House (nice_to_have)
+[2026-02-09T06:14:48.804Z] LOG    ✅ Bunker Hill Monument → Bunker Hill Monument (nice_to_have)
+[2026-02-09T06:14:48.805Z] LOG    ✅ Boston Harborwalk → Harborwalk (nice_to_have)
+[2026-02-09T06:14:48.807Z] LOG    ✅ Boston Harbor City Cruises → Boston Harbor City Cruises (nice_to_have)
+[2026-02-09T06:14:48.808Z] LOG    ✅ The Greenway Carousel → The Greenway Carousel (nice_to_have)
+[2026-02-09T06:14:48.809Z] LOG    ✅ Chinatown Gate → Chinatown Gate (nice_to_have)
+[2026-02-09T06:14:48.810Z] LOG    ✅ Institute of Contemporary Art → Institute of Contemporary Art (nice_to_have)
+[2026-02-09T06:14:48.811Z] LOG    ✅ Hatch Memorial Shell → Hatch Memorial Shell (nice_to_have)
+[2026-02-09T06:14:48.812Z] LOG    ✅ Trapology Boston → Trapology Boston (nice_to_have)
+[2026-02-09T06:14:48.813Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-09T06:14:48.814Z] LOG    Total enriched: 18
+[2026-02-09T06:14:48.815Z] LOG    🎯 Must-have: 5
+[2026-02-09T06:14:48.816Z] LOG    ✨ Nice-to-have: 13
+[2026-02-09T06:14:48.818Z] LOG    ❌ Failed: 0
+[2026-02-09T06:14:48.820Z] LOG    ⏱️  Enrichment took: 1805ms (1.80s)
+
+--- Summary ---
+Enrichment completed

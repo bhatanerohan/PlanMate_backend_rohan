@@ -1,0 +1,67 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "plan a romantic date tonight in boston downtown"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Romantic Date Night",
+    "total_stops": 5,
+    "estimated_duration": "6-8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Yvonne's", "category": "restaurant/bar", "priority": "must_have" },
+    { "name": "Contessa Boston", "category": "italian restaurant", "priority": "must_have" },
+    { "name": "Mamma Maria", "category": "italian restaurant", "priority": "must_have" },
+    { "name": "Ostra", "category": "seafood restaurant", "priority": "must_have" },
+    { "name": "Mooo.... Beacon Hill", "category": "steak house", "priority": "must_have" },
+    { "name": "Carrie Nation Cocktail Club", "category": "bar", "priority": "must_have" },
+    { "name": "haley.henry", "category": "wine bar", "priority": "must_have" },
+    { "name": "Farmacia", "category": "bar", "priority": "must_have" },
+    { "name": "View Boston", "category": "observation deck", "priority": "nice_to_have" },
+    { "name": "Boston Waterfront", "category": "tourist attraction", "priority": "nice_to_have" },
+    { "name": "WNDR Museum", "category": "museum", "priority": "nice_to_have" },
+    { "name": "Christopher Columbus Waterfront Park", "category": "park", "priority": "nice_to_have" },
+    { "name": "Fan Pier Park", "category": "park", "priority": "nice_to_have" },
+    { "name": "Charles River Esplanade", "category": "park", "priority": "nice_to_have" },
+    { "name": "Museum of Illusions Boston", "category": "museum", "priority": "nice_to_have" },
+    { "name": "Boston Harborwalk", "category": "park", "priority": "nice_to_have" },
+    { "name": "Orpheum Theatre", "category": "performing arts theater", "priority": "nice_to_have" },
+    { "name": "Grace By Nia", "category": "restaurant/bar with live music", "priority": "nice_to_have" },
+    { "name": "Modern Pastry Shop", "category": "bakery", "priority": "nice_to_have" },
+    { "name": "Taiyaki NYC - Boston", "category": "ice cream shop", "priority": "nice_to_have" }
+  ]
+}
+```

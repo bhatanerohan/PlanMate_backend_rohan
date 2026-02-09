@@ -1,0 +1,142 @@
+PROMPT:
+User location: Current location (42.324596456841675, -71.10740357855252)
+
+Request: "find coffee spots"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Coffee Tour",
+    "total_stops": 5,
+    "estimated_duration": "5 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Cafe La Paz",
+      "category": "coffee shop",
+      "priority": "must_have"
+    },
+    {
+      "name": "Yely's Coffee Shop",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "J.P. Licks",
+      "category": "ice cream shop",
+      "priority": "must_have"
+    },
+    {
+      "name": "Ula Café",
+      "category": "cafe",
+      "priority": "must_have"
+    },
+    {
+      "name": "South End - Jaho Coffee Roaster & Wine Bar",
+      "category": "coffee shop",
+      "priority": "must_have"
+    },
+    {
+      "name": "Cafe Siete",
+      "category": "coffee shop",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Green Haus Cafe",
+      "category": "coffee shop",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Eye Opener Cafe",
+      "category": "coffee shop",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Panera Bread",
+      "category": "cafe",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Madhouse Cafe",
+      "category": "cafe",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Panera Bread",
+      "category": "cafe",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Knight Moves Cafe",
+      "category": "cafe",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Viza Cafe",
+      "category": "coffee shop",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Heidi’s House of Coffee",
+      "category": "coffee shop",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Jadu Cafe and Wine Bar",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Solid Ground Cafe",
+      "category": "cafe",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Brothers & Sisters Co.",
+      "category": "cafe",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Paris Creperie",
+      "category": "dessert shop",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mighty Squirrel Taproom & Kitchen",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

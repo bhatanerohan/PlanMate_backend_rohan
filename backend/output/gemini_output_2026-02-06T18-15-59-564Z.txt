@@ -1,0 +1,137 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "Plan a day of Formula-1 themed sightseeing in Monaco"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Formula 1 themed sightseeing",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Monaco Circuit",
+      "category": "Race Track",
+      "priority": "must_have"
+    },
+    {
+      "name": "Private Cars Collection of HSH Prince of Monaco",
+      "category": "Museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Casino de Monte-Carlo",
+      "category": "Casino",
+      "priority": "must_have"
+    },
+    {
+      "name": "Prince's Palace of Monaco",
+      "category": "Historical Place",
+      "priority": "must_have"
+    },
+    {
+      "name": "Oceanographic Museum of Monaco",
+      "category": "Museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "F1 Car Sculpture",
+      "category": "Sculpture",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Jardin Exotique",
+      "category": "Botanical Garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Larvotto Beach",
+      "category": "Beach",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Port Hercule",
+      "category": "Port",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Cathedral of Our Lady Immaculate",
+      "category": "Church",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Théâtre du Fort Antoine",
+      "category": "Fortress",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Église de Sainte-Dévote",
+      "category": "Church",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "New National Museum of Monaco - Villa Sauber",
+      "category": "Museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Grimaldi Forum",
+      "category": "Event Venue",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Place du Casino",
+      "category": "Tourist Attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Hotel de Paris Monte-Carlo",
+      "category": "Hotel",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Museum of Stamps and Coins",
+      "category": "Museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rock of Monaco",
+      "category": "Natural Feature",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

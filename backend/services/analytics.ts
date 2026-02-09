@@ -1,6 +1,13 @@
 import { Pool } from 'pg';
 
 // Initialize connection pool with Railway Postgres
+const hasDbUrl = !!process.env.DATABASE_URL;
+console.log(`🔌 Initializing DB Pool. DATABASE_URL present: ${hasDbUrl}`);
+
+if (!hasDbUrl) {
+    console.warn('⚠️ WARNING: DATABASE_URL is not set. Defaulting to localhost (will fail in production containers).');
+}
+
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false

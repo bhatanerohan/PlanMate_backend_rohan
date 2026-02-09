@@ -1,0 +1,142 @@
+PROMPT:
+User location: Miami, Florida, United States (25.773357, -80.1919)
+
+Request: "plan a wild night on miami beach"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Nightlife Experience",
+    "total_stops": 5,
+    "estimated_duration": "5-6 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Mango's - Miami",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Clevelander Bar",
+      "category": "bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Voodoo Lounge & Rooftop",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Club M2 Miami",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Lost Weekend",
+      "category": "bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Nikki Beach Miami Beach",
+      "category": "beach club",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Carnaval Rooftop",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Wilde on the Porch",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Room 55 Speakeasy & Rooftop Cocktail Bar",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Delirio Tiki Bar by Swizzle",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bar Idol",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Tiki Bar Ocean Drive",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Brother's Keeper Bar",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sweet Liberty Drinks & Supply Company",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rosa Sky",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Baked Bear",
+      "category": "dessert restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "CIAO AMORE Italian Gelato, Caffè & Bakery",
+      "category": "ice cream shop",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Icy-N-Spicy",
+      "category": "ice cream shop",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Insomnia Cookies",
+      "category": "dessert shop",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

@@ -1,0 +1,142 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "plan a wild trip in miami"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Wild trip",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "car"
+  },
+  "venues": [
+    {
+      "name": "Everglades Safari Park",
+      "category": "tourist attraction",
+      "priority": "must_have"
+    },
+    {
+      "name": "XPLOR Adventure Group - Best ATV Tours in Miami",
+      "category": "tour agency",
+      "priority": "must_have"
+    },
+    {
+      "name": "Miami EcoAdventures",
+      "category": "tourist attraction",
+      "priority": "must_have"
+    },
+    {
+      "name": "Thriller Miami Speedboat Adventures",
+      "category": "tour agency",
+      "priority": "must_have"
+    },
+    {
+      "name": "Miami Watersports",
+      "category": "tour agency",
+      "priority": "must_have"
+    },
+    {
+      "name": "Jungle Island",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Treetop Trekking Miami",
+      "category": "amusement park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Dezerland Action Park Miami",
+      "category": "amusement center",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Paradox Museum Miami",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bayfront Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Watson Island Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Vizcaya Museum & Gardens",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Little Havana Tours",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Miami Experience Boat Party",
+      "category": "tour agency",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Miami G",
+      "category": "store",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Discovery Miami Beach",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Flyboard Miami",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "World Erotic Art Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Miami Walk of Fame",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

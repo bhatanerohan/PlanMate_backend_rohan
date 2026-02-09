@@ -1,0 +1,147 @@
+PROMPT:
+User location: San Jose, California, United States (37.336157, -121.890608)
+
+Request: "plan a day in san francisco"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "A Day in San Francisco",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "public transport"
+  },
+  "venues": [
+    {
+      "name": "Alcatraz Island",
+      "category": "historical landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "PIER 39",
+      "category": "tourist attraction",
+      "priority": "must_have"
+    },
+    {
+      "name": "Golden Gate Bridge",
+      "category": "historical landmark",
+      "priority": "must_have"
+    },
+    {
+      "name": "Golden Gate Park",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Chinatown",
+      "category": "neighborhood",
+      "priority": "must_have"
+    },
+    {
+      "name": "Ferry Building",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Coit Tower",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Union Square",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fort Point National Historic Site",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Painted Ladies",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sutro Baths",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Twin Peaks",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Japanese Tea Garden",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Aquarium of the Bay",
+      "category": "aquarium",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "California Academy of Sciences",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "de Young Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "San Francisco Maritime National Historical Park",
+      "category": "historical place",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Exploratorium",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "San Francisco Museum of Modern Art",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fog Harbor Fish House",
+      "category": "seafood restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

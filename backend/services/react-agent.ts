@@ -101,6 +101,8 @@ export class ReActAgent {
   private config: SafetyConfig;
   private evaluator: RouteEvaluator;
   private alternativesMap: AlternativesMap = {};
+  private currentUserLocation?: { lat: number; lng: number; name: string };
+  private currentMetadata?: AgentMetadata;
 
   constructor(config: SafetyConfig = DEFAULT_SAFETY_CONFIG) {
     this.config = config;
@@ -436,6 +438,8 @@ export class ReActAgent {
     console.log(`📝 Prompt: "${userPrompt}"`);
 
     this.alternativesMap = {};
+    this.currentUserLocation = userLocation;
+    this.currentMetadata = metadata;
 
     const state: AgentState = {
       status: 'thinking',
@@ -593,7 +597,9 @@ export class ReActAgent {
                   reasoning: { type: 'string', description: 'Why you are searching for this' },
                   query: { type: 'string', description: 'Search query (e.g., "Starbucks", "coffee shops", "parks")' },
                   location: { type: 'string', description: 'Location to search in (e.g., "Hudson Yards, New York", "Boston")' },
-                  limit: { type: 'string', description: 'Max results (default: 5)' }
+                  limit: { type: 'string', description: 'Max results (default: 5)' },
+                  near_coordinates: { type: 'string', description: 'Optional: Use for nearby search. Format: "lat,lng"' },
+                  radius: { type: 'string', description: 'Optional: Search radius (e.g., "1500m", "1 mile")' }
                 },
                 required: ['reasoning', 'query', 'location']
               }
@@ -700,11 +706,12 @@ export class ReActAgent {
   // ============================================================================
 
   private async act(action: AgentAction, state: AgentState): Promise<ToolResultType> {
-    console.log(`   📤 Parameters:`, JSON.stringify(action.parameters));
+    const adjustedParameters = this.adjustActionParameters(action);
+    console.log(`   📤 Parameters:`, JSON.stringify(adjustedParameters));
     try {
       const execResult = await toolRegistry.executeTool(
         action.action,
-        action.parameters,
+        adjustedParameters,
         {
           iteration: state.currentIteration,
           timestamp: Date.now(),
@@ -804,6 +811,89 @@ export class ReActAgent {
   }
 
   // ============================================================================
+  // HELPER: Adjust tool parameters (limit + location bias)
+  // ============================================================================
+  private adjustActionParameters(action: AgentAction): Record<string, any> {
+    const params: Record<string, any> = { ...(action.parameters || {}) };
+    const userLocation = this.currentUserLocation;
+    const metadata = this.currentMetadata;
+    const isExplicitRoute = !!metadata?.isItinerary;
+
+    const isCurrentLocationLabel = (label?: string): boolean => {
+      if (!label || typeof label !== 'string') return false;
+      const normalized = label.trim().toLowerCase();
+      return normalized === 'current location' ||
+        normalized === 'my location' ||
+        normalized === 'my current location' ||
+        normalized === 'near me' ||
+        normalized === 'here';
+    };
+
+    const radiusMeters = metadata?.searchRadiusKm
+      ? Math.round(metadata.searchRadiusKm * 1000)
+      : 1609; // default 1 mile
+    const radiusLabel = `${radiusMeters}m`;
+
+    if (action.action === 'search_venues') {
+      if (isExplicitRoute) {
+        const limitValue = parseInt(params.limit ?? '0', 10);
+        if (!Number.isFinite(limitValue) || limitValue > 1) {
+          params.limit = '1';
+        }
+      }
+
+      if (userLocation && !params.near_coordinates && isCurrentLocationLabel(params.location)) {
+        params.near_coordinates = `${userLocation.lat},${userLocation.lng}`;
+        params.radius = params.radius || radiusLabel;
+
+        const cityHint = this.extractCityFromUserLocation(userLocation) || userLocation.name;
+        if (cityHint) {
+          params.location = cityHint;
+        }
+      }
+    }
+
+    if (action.action === 'batch_search_venues') {
+      let searches: any[] | null = null;
+      let isString = false;
+
+      if (typeof params.searches === 'string') {
+        try {
+          searches = JSON.parse(params.searches);
+          isString = true;
+        } catch {
+          searches = null;
+        }
+      } else if (Array.isArray(params.searches)) {
+        searches = params.searches;
+      }
+
+      if (searches) {
+        const updated = searches.map((search) => {
+          const next = { ...search };
+
+          if (isExplicitRoute) {
+            const limitValue = parseInt(next.limit ?? '0', 10);
+            if (!Number.isFinite(limitValue) || limitValue > 1) {
+              next.limit = 1;
+            }
+          }
+
+          if (userLocation && isCurrentLocationLabel(next.location)) {
+            next.location = `${userLocation.lat},${userLocation.lng}`;
+          }
+
+          return next;
+        });
+
+        params.searches = isString ? JSON.stringify(updated) : updated;
+      }
+    }
+
+    return params;
+  }
+
+  // ============================================================================
   // SYSTEM PROMPT
   // ============================================================================
 
@@ -850,8 +940,10 @@ ${countContext ? `\n${countContext}` : ''}
 3. Exception: If the user asks for a route with MULTIPLE stops (e.g., "from X to Y to Z"),
    you MUST find all stops before finishing. Prefer ONE batch_search_venues call for all stops.
    In this case you may do up to 3 searches total.
-4. Pass the placeIds from search results to finish's selected_venues array
-5. If a search returns 0 results, try ONE broader search for that stop, then finish regardless
+4. For explicit routes with named stops, use limit=1 per stop to avoid extra venues.
+5. If the stop is "current location"/"near me", use coordinates (lat,lng) or near_coordinates.
+6. Pass the placeIds from search results to finish's selected_venues array
+7. If a search returns 0 results, try ONE broader search for that stop, then finish regardless
 
 === READING OBSERVATIONS ===
 After search, you'll see: "Found X: [name|placeId|rating;name|placeId|rating;...]"
@@ -863,7 +955,7 @@ Example observation: "Found 3: [Starbucks|ChIJ123|4.2⭐;Starbucks Reserve|ChIJ4
 === MULTI-STOP EXAMPLE ===
 User: "route from my location to Northeastern University to Starbucks near MIT"
 Action: batch_search_venues
-Parameters: {"searches":"[{\"query\":\"Northeastern University\",\"location\":\"Current location\"},{\"query\":\"Starbucks\",\"location\":\"MIT, Cambridge\"}]"}
+Parameters: {"searches":"[{\"query\":\"Northeastern University\",\"location\":\"42.365,-71.054\",\"limit\":1},{\"query\":\"Starbucks\",\"location\":\"MIT, Cambridge\",\"limit\":1}]"}
 Then finish with selected_venues in the same order as the route.
 
 === EXAMPLE ===

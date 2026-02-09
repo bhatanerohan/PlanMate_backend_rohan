@@ -1,0 +1,63 @@
+PROMPT:
+User location: Miami, Florida, United States (25.773357, -80.1919)
+
+Request: "plan a day out in miami"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Day out in Miami",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "South Pointe Park Pier", "category": "park", "priority": "must_have" },
+    { "name": "Joe's Stone Crab", "category": "restaurant", "priority": "must_have" },
+    { "name": "Art Deco Historic District", "category": "historic district", "priority": "must_have" },
+    { "name": "Ocean Drive", "category": "historic district", "priority": "must_have" },
+    { "name": "The Fillmore Miami Beach at Jackie Gleason Theater", "category": "music venue", "priority": "must_have" },
+    { "name": "Lummus Park", "category": "park", "priority": "nice_to_have" },
+    { "name": "South Beach", "category": "beach", "priority": "nice_to_have" },
+    { "name": "Collins Avenue", "category": "shopping street", "priority": "nice_to_have" },
+    { "name": "Lincoln Road", "category": "shopping street", "priority": "nice_to_have" },
+    { "name": " Española Way", "category": "pedestrian street", "priority": "nice_to_have" },
+    { "name": "Miami Beach Botanical Garden", "category": "garden", "priority": "nice_to_have" },
+    { "name": "The Bass", "category": "art museum", "priority": "nice_to_have" },
+    { "name": "Wolfsonian-FIU Museum", "category": "museum", "priority": "nice_to_have" },
+    { "name": "News Cafe", "category": "cafe", "priority": "nice_to_have" },
+    { "name": "Macchialina", "category": "restaurant", "priority": "nice_to_have" },
+    { "name": "St mulai church", "category": "church", "priority": "nice_to_have" }
+  ]
+}
+```

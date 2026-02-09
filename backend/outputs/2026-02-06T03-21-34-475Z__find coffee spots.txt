@@ -1,0 +1,167 @@
+User Prompt: find coffee spots
+
+[2026-02-06T03:21:34.476Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-06T03:21:34.478Z] LOG 📦 Processing 19 candidates from Gemini
+[2026-02-06T03:21:34.479Z] LOG    🎯 Must-have: 5
+[2026-02-06T03:21:34.480Z] LOG    ✨ Nice-to-have: 14
+[2026-02-06T03:21:34.482Z] LOG 📍 Location hint: nearby
+[2026-02-06T03:21:34.483Z] LOG 
+🔍 Enriching 19 candidates in 2 batch(es)...
+[2026-02-06T03:21:34.483Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-06T03:21:34.487Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T03:21:34.490Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T03:21:34.492Z] LOG    1. Searching "Cafe La Paz" in "nearby"
+[2026-02-06T03:21:34.495Z] LOG 🔍 [Google Places] Text search: "Cafe La Paz" in nearby
+[2026-02-06T03:21:34.513Z] LOG    2. Searching "Yely's Coffee Shop" in "nearby"
+[2026-02-06T03:21:34.515Z] LOG 🔍 [Google Places] Text search: "Yely's Coffee Shop" in nearby
+[2026-02-06T03:21:34.519Z] LOG    3. Searching "J.P. Licks" in "nearby"
+[2026-02-06T03:21:34.521Z] LOG 🔍 [Google Places] Text search: "J.P. Licks" in nearby
+[2026-02-06T03:21:34.524Z] LOG    4. Searching "Ula Café" in "nearby"
+[2026-02-06T03:21:34.526Z] LOG 🔍 [Google Places] Text search: "Ula Café" in nearby
+[2026-02-06T03:21:34.529Z] LOG    5. Searching "South End - Jaho Coffee Roaster & Wine Bar" in "nearby"
+[2026-02-06T03:21:34.530Z] LOG 🔍 [Google Places] Text search: "South End - Jaho Coffee Roaster & Wine Bar" in nearby
+[2026-02-06T03:21:34.533Z] LOG    6. Searching "Cafe Siete" in "nearby"
+[2026-02-06T03:21:34.534Z] LOG 🔍 [Google Places] Text search: "Cafe Siete" in nearby
+[2026-02-06T03:21:34.537Z] LOG    7. Searching "Green Haus Cafe" in "nearby"
+[2026-02-06T03:21:34.538Z] LOG 🔍 [Google Places] Text search: "Green Haus Cafe" in nearby
+[2026-02-06T03:21:34.541Z] LOG    8. Searching "Eye Opener Cafe" in "nearby"
+[2026-02-06T03:21:34.542Z] LOG 🔍 [Google Places] Text search: "Eye Opener Cafe" in nearby
+[2026-02-06T03:21:34.547Z] LOG    9. Searching "Panera Bread" in "nearby"
+[2026-02-06T03:21:34.549Z] LOG 🔍 [Google Places] Text search: "Panera Bread" in nearby
+[2026-02-06T03:21:34.553Z] LOG    10. Searching "Madhouse Cafe" in "nearby"
+[2026-02-06T03:21:34.554Z] LOG 🔍 [Google Places] Text search: "Madhouse Cafe" in nearby
+[2026-02-06T03:21:34.900Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:34.930Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:34.936Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:34.939Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:34.955Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:34.969Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:34.980Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.008Z] LOG    ✅ Ula Café: Got description (91 chars)
+[2026-02-06T03:21:35.009Z] LOG    📷 Ula Café: Got 10 photos
+[2026-02-06T03:21:35.010Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.021Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.036Z] LOG    ⚠️  Eye Opener Cafe: No editorial summary available
+[2026-02-06T03:21:35.037Z] LOG    📷 Eye Opener Cafe: Got 10 photos
+[2026-02-06T03:21:35.038Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.085Z] LOG    ⚠️  Madhouse Cafe: No editorial summary available
+[2026-02-06T03:21:35.087Z] LOG    📷 Madhouse Cafe: Got 10 photos
+[2026-02-06T03:21:35.088Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.092Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.094Z] LOG    ⚠️  Cafe Siete: No editorial summary available
+[2026-02-06T03:21:35.094Z] LOG    📷 Cafe Siete: Got 10 photos
+[2026-02-06T03:21:35.095Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.115Z] LOG    ⚠️  Cafe La Paz: No editorial summary available
+[2026-02-06T03:21:35.117Z] LOG    📷 Cafe La Paz: Got 10 photos
+[2026-02-06T03:21:35.119Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.122Z] LOG    ⚠️  Green Haus Cafe: No editorial summary available
+[2026-02-06T03:21:35.124Z] LOG    📷 Green Haus Cafe: Got 10 photos
+[2026-02-06T03:21:35.124Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.132Z] LOG    ⚠️  Yely's Coffee Shop: No editorial summary available
+[2026-02-06T03:21:35.135Z] LOG    📷 Yely's Coffee Shop: Got 10 photos
+[2026-02-06T03:21:35.137Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.154Z] LOG    ✅ J.P. Licks: Got description (100 chars)
+[2026-02-06T03:21:35.156Z] LOG    📷 J.P. Licks: Got 10 photos
+[2026-02-06T03:21:35.165Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.195Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.237Z] LOG    ✅ Panera Bread: Got description (99 chars)
+[2026-02-06T03:21:35.240Z] LOG    📷 Panera Bread: Got 10 photos
+[2026-02-06T03:21:35.241Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.322Z] LOG    ✅ South End - Jaho Coffee Roaster & Wine Bar: Got description (100 chars)
+[2026-02-06T03:21:35.325Z] LOG    📷 South End - Jaho Coffee Roaster & Wine Bar: Got 10 photos
+[2026-02-06T03:21:35.326Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.327Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 837ms
+[2026-02-06T03:21:35.328Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T03:21:35.328Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-06T03:21:35.538Z] LOG 
+   📦 Batch 2/2 (9 searches)...
+[2026-02-06T03:21:35.541Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T03:21:35.543Z] LOG 🔍 [BatchVenueSearchTool] Executing 9 searches in parallel
+[2026-02-06T03:21:35.544Z] LOG    1. Searching "Panera Bread" in "nearby"
+[2026-02-06T03:21:35.544Z] LOG 🔍 [Google Places] Text search: "Panera Bread" in nearby
+[2026-02-06T03:21:35.545Z] LOG    2. Searching "Knight Moves Cafe" in "nearby"
+[2026-02-06T03:21:35.545Z] LOG 🔍 [Google Places] Text search: "Knight Moves Cafe" in nearby
+[2026-02-06T03:21:35.546Z] LOG    3. Searching "Viza Cafe" in "nearby"
+[2026-02-06T03:21:35.546Z] LOG 🔍 [Google Places] Text search: "Viza Cafe" in nearby
+[2026-02-06T03:21:35.547Z] LOG    4. Searching "Heidi’s House of Coffee" in "nearby"
+[2026-02-06T03:21:35.547Z] LOG 🔍 [Google Places] Text search: "Heidi’s House of Coffee" in nearby
+[2026-02-06T03:21:35.548Z] LOG    5. Searching "Jadu Cafe and Wine Bar" in "nearby"
+[2026-02-06T03:21:35.549Z] LOG 🔍 [Google Places] Text search: "Jadu Cafe and Wine Bar" in nearby
+[2026-02-06T03:21:35.550Z] LOG    6. Searching "Solid Ground Cafe" in "nearby"
+[2026-02-06T03:21:35.550Z] LOG 🔍 [Google Places] Text search: "Solid Ground Cafe" in nearby
+[2026-02-06T03:21:35.551Z] LOG    7. Searching "Brothers & Sisters Co." in "nearby"
+[2026-02-06T03:21:35.551Z] LOG 🔍 [Google Places] Text search: "Brothers & Sisters Co." in nearby
+[2026-02-06T03:21:35.552Z] LOG    8. Searching "Paris Creperie" in "nearby"
+[2026-02-06T03:21:35.552Z] LOG 🔍 [Google Places] Text search: "Paris Creperie" in nearby
+[2026-02-06T03:21:35.553Z] LOG    9. Searching "Mighty Squirrel Taproom & Kitchen" in "nearby"
+[2026-02-06T03:21:35.554Z] LOG 🔍 [Google Places] Text search: "Mighty Squirrel Taproom & Kitchen" in nearby
+[2026-02-06T03:21:35.804Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.829Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.835Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.860Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.873Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.904Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.911Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.916Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:35.948Z] LOG    ⚠️  Viza Cafe: No editorial summary available
+[2026-02-06T03:21:35.949Z] LOG    📷 Viza Cafe: Got 10 photos
+[2026-02-06T03:21:35.951Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.954Z] LOG    ⚠️  Heidi’s House of Coffee: No editorial summary available
+[2026-02-06T03:21:35.955Z] LOG    📷 Heidi’s House of Coffee: Got 10 photos
+[2026-02-06T03:21:35.956Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.963Z] LOG    ✅ Paris Creperie: Got description (93 chars)
+[2026-02-06T03:21:35.964Z] LOG    📷 Paris Creperie: Got 10 photos
+[2026-02-06T03:21:35.966Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:35.988Z] LOG    ✅ Panera Bread: Got description (99 chars)
+[2026-02-06T03:21:35.990Z] LOG    📷 Panera Bread: Got 10 photos
+[2026-02-06T03:21:35.991Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:36.009Z] LOG    ✅ Solid Ground Cafe: Got description (89 chars)
+[2026-02-06T03:21:36.010Z] LOG    📷 Solid Ground Cafe: Got 10 photos
+[2026-02-06T03:21:36.010Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:36.021Z] LOG    ✅ Brothers & Sisters Co.: Got description (96 chars)
+[2026-02-06T03:21:36.022Z] LOG    📷 Brothers & Sisters Co.: Got 10 photos
+[2026-02-06T03:21:36.024Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:36.038Z] LOG    ✅ Knight Moves Cafe: Got description (84 chars)
+[2026-02-06T03:21:36.040Z] LOG    📷 Knight Moves Cafe: Got 10 photos
+[2026-02-06T03:21:36.041Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:36.046Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:21:36.072Z] LOG    ⚠️  Jadu Cafe and Wine Bar: No editorial summary available
+[2026-02-06T03:21:36.074Z] LOG    📷 Jadu Cafe and Wine Bar: Got 10 photos
+[2026-02-06T03:21:36.075Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:36.166Z] LOG    ⚠️  Mighty Squirrel Taproom & Kitchen: No editorial summary available
+[2026-02-06T03:21:36.170Z] LOG    📷 Mighty Squirrel Taproom & Kitchen: Got 10 photos
+[2026-02-06T03:21:36.172Z] LOG ✅ Found 1 places
+[2026-02-06T03:21:36.173Z] LOG ✅ Batch complete: 9/9 searches succeeded, 9 total venues found in 630ms
+[2026-02-06T03:21:36.174Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T03:21:36.175Z] LOG       ✅ Batch 2 complete: 9 results
+[2026-02-06T03:21:36.175Z] LOG    ✅ Cafe La Paz → Cafe La Paz (must_have)
+[2026-02-06T03:21:36.176Z] LOG    ✅ Yely's Coffee Shop → Yely's Coffee Shop (must_have)
+[2026-02-06T03:21:36.176Z] LOG    ✅ J.P. Licks → J.P. Licks (must_have)
+[2026-02-06T03:21:36.176Z] LOG    ✅ Ula Café → Ula Café (must_have)
+[2026-02-06T03:21:36.177Z] LOG    ✅ South End - Jaho Coffee Roaster & Wine Bar → South End - Jaho Coffee Roaster & Wine Bar (must_have)
+[2026-02-06T03:21:36.177Z] LOG    ✅ Cafe Siete → Cafe Siete (nice_to_have)
+[2026-02-06T03:21:36.178Z] LOG    ✅ Green Haus Cafe → Green Haus Cafe (nice_to_have)
+[2026-02-06T03:21:36.178Z] LOG    ✅ Eye Opener Cafe → Eye Opener Cafe (nice_to_have)
+[2026-02-06T03:21:36.179Z] LOG    ✅ Panera Bread → Panera Bread (nice_to_have)
+[2026-02-06T03:21:36.179Z] LOG    ✅ Madhouse Cafe → Madhouse Cafe (nice_to_have)
+[2026-02-06T03:21:36.180Z] LOG    ✅ Panera Bread → Panera Bread (nice_to_have)
+[2026-02-06T03:21:36.181Z] LOG    ✅ Knight Moves Cafe → Knight Moves Cafe (nice_to_have)
+[2026-02-06T03:21:36.181Z] LOG    ✅ Viza Cafe → Viza Cafe (nice_to_have)
+[2026-02-06T03:21:36.182Z] LOG    ✅ Heidi’s House of Coffee → Heidi’s House of Coffee (nice_to_have)
+[2026-02-06T03:21:36.182Z] LOG    ✅ Jadu Cafe and Wine Bar → Jadu Cafe and Wine Bar (nice_to_have)
+[2026-02-06T03:21:36.183Z] LOG    ✅ Solid Ground Cafe → Solid Ground Cafe (nice_to_have)
+[2026-02-06T03:21:36.183Z] LOG    ✅ Brothers & Sisters Co. → Brothers & Sisters Co. (nice_to_have)
+[2026-02-06T03:21:36.184Z] LOG    ✅ Paris Creperie → Paris Creperie (nice_to_have)
+[2026-02-06T03:21:36.184Z] LOG    ✅ Mighty Squirrel Taproom & Kitchen → Mighty Squirrel Taproom & Kitchen (nice_to_have)
+[2026-02-06T03:21:36.185Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-06T03:21:36.186Z] LOG    Total enriched: 19
+[2026-02-06T03:21:36.186Z] LOG    🎯 Must-have: 5
+[2026-02-06T03:21:36.187Z] LOG    ✨ Nice-to-have: 14
+[2026-02-06T03:21:36.188Z] LOG    ❌ Failed: 0
+[2026-02-06T03:21:36.189Z] LOG    ⏱️  Enrichment took: 1715ms (1.72s)
+
+--- Summary ---
+Enrichment completed

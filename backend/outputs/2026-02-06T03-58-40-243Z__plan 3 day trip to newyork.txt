@@ -1,0 +1,160 @@
+User Prompt: plan 3 day trip to newyork
+
+[2026-02-06T03:58:40.248Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-06T03:58:40.250Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-02-06T03:58:40.255Z] LOG    🎯 Must-have: 5
+[2026-02-06T03:58:40.258Z] LOG    ✨ Nice-to-have: 13
+[2026-02-06T03:58:40.275Z] LOG 📍 Location hint: nearby
+[2026-02-06T03:58:40.279Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-02-06T03:58:40.281Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-06T03:58:40.283Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T03:58:40.285Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T03:58:40.288Z] LOG    1. Searching "Statue of Liberty National Monument" in "nearby"
+[2026-02-06T03:58:40.291Z] LOG 🔍 [Google Places] Text search: "Statue of Liberty National Monument" in nearby
+[2026-02-06T03:58:40.307Z] LOG    2. Searching "Empire State Building" in "nearby"
+[2026-02-06T03:58:40.310Z] LOG 🔍 [Google Places] Text search: "Empire State Building" in nearby
+[2026-02-06T03:58:40.319Z] LOG    3. Searching "Times Square" in "nearby"
+[2026-02-06T03:58:40.322Z] LOG 🔍 [Google Places] Text search: "Times Square" in nearby
+[2026-02-06T03:58:40.332Z] LOG    4. Searching "Central Park" in "nearby"
+[2026-02-06T03:58:40.336Z] LOG 🔍 [Google Places] Text search: "Central Park" in nearby
+[2026-02-06T03:58:40.342Z] LOG    5. Searching "Metropolitan Museum of Art" in "nearby"
+[2026-02-06T03:58:40.345Z] LOG 🔍 [Google Places] Text search: "Metropolitan Museum of Art" in nearby
+[2026-02-06T03:58:40.355Z] LOG    6. Searching "One World Observatory" in "nearby"
+[2026-02-06T03:58:40.358Z] LOG 🔍 [Google Places] Text search: "One World Observatory" in nearby
+[2026-02-06T03:58:40.366Z] LOG    7. Searching "Top of the Rock Observation Deck" in "nearby"
+[2026-02-06T03:58:40.369Z] LOG 🔍 [Google Places] Text search: "Top of the Rock Observation Deck" in nearby
+[2026-02-06T03:58:40.376Z] LOG    8. Searching "Brooklyn Bridge" in "nearby"
+[2026-02-06T03:58:40.379Z] LOG 🔍 [Google Places] Text search: "Brooklyn Bridge" in nearby
+[2026-02-06T03:58:40.387Z] LOG    9. Searching "Museum of Modern Art" in "nearby"
+[2026-02-06T03:58:40.392Z] LOG 🔍 [Google Places] Text search: "Museum of Modern Art" in nearby
+[2026-02-06T03:58:40.400Z] LOG    10. Searching "American Museum of Natural History" in "nearby"
+[2026-02-06T03:58:40.401Z] LOG 🔍 [Google Places] Text search: "American Museum of Natural History" in nearby
+[2026-02-06T03:58:40.766Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:40.780Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:40.814Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:40.833Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:40.850Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:40.861Z] LOG    ✅ Empire State Building: Got description (97 chars)
+[2026-02-06T03:58:40.863Z] LOG    📷 Empire State Building: Got 10 photos
+[2026-02-06T03:58:40.865Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:40.872Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:40.899Z] LOG    ✅ Times Square: Got description (100 chars)
+[2026-02-06T03:58:40.900Z] LOG    📷 Times Square: Got 10 photos
+[2026-02-06T03:58:40.901Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:40.959Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:40.961Z] LOG    ✅ The Metropolitan Museum of Art: Got description (97 chars)
+[2026-02-06T03:58:40.962Z] LOG    📷 The Metropolitan Museum of Art: Got 10 photos
+[2026-02-06T03:58:40.962Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:40.971Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:40.973Z] LOG    ✅ American Museum of Natural History: Got description (98 chars)
+[2026-02-06T03:58:40.973Z] LOG    📷 American Museum of Natural History: Got 10 photos
+[2026-02-06T03:58:40.974Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:40.981Z] LOG    ✅ Brooklyn Bridge: Got description (95 chars)
+[2026-02-06T03:58:40.981Z] LOG    📷 Brooklyn Bridge: Got 10 photos
+[2026-02-06T03:58:40.982Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:41.000Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:41.008Z] LOG    ✅ One World Observatory: Got description (93 chars)
+[2026-02-06T03:58:41.009Z] LOG    📷 One World Observatory: Got 10 photos
+[2026-02-06T03:58:41.010Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:41.092Z] LOG    ✅ Top of The Rock: Got description (96 chars)
+[2026-02-06T03:58:41.096Z] LOG    📷 Top of The Rock: Got 10 photos
+[2026-02-06T03:58:41.099Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:41.115Z] LOG    ✅ Central Park: Got description (100 chars)
+[2026-02-06T03:58:41.117Z] LOG    📷 Central Park: Got 10 photos
+[2026-02-06T03:58:41.117Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:41.133Z] LOG    ✅ Institute of Contemporary Art: Got description (93 chars)
+[2026-02-06T03:58:41.134Z] LOG    📷 Institute of Contemporary Art: Got 10 photos
+[2026-02-06T03:58:41.135Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:41.140Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:41.263Z] LOG    ✅ Statue of Liberty: Got description (100 chars)
+[2026-02-06T03:58:41.265Z] LOG    📷 Statue of Liberty: Got 10 photos
+[2026-02-06T03:58:41.266Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:41.266Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 982ms
+[2026-02-06T03:58:41.267Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T03:58:41.268Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-06T03:58:41.468Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-02-06T03:58:41.472Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T03:58:41.474Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-02-06T03:58:41.474Z] LOG    1. Searching "9/11 Memorial & Museum" in "nearby"
+[2026-02-06T03:58:41.475Z] LOG 🔍 [Google Places] Text search: "9/11 Memorial & Museum" in nearby
+[2026-02-06T03:58:41.476Z] LOG    2. Searching "High Line" in "nearby"
+[2026-02-06T03:58:41.477Z] LOG 🔍 [Google Places] Text search: "High Line" in nearby
+[2026-02-06T03:58:41.478Z] LOG    3. Searching "Rockefeller Center" in "nearby"
+[2026-02-06T03:58:41.479Z] LOG 🔍 [Google Places] Text search: "Rockefeller Center" in nearby
+[2026-02-06T03:58:41.480Z] LOG    4. Searching "Grand Central Terminal" in "nearby"
+[2026-02-06T03:58:41.480Z] LOG 🔍 [Google Places] Text search: "Grand Central Terminal" in nearby
+[2026-02-06T03:58:41.484Z] LOG    5. Searching "St. Patrick's Cathedral" in "nearby"
+[2026-02-06T03:58:41.486Z] LOG 🔍 [Google Places] Text search: "St. Patrick's Cathedral" in nearby
+[2026-02-06T03:58:41.488Z] LOG    6. Searching "New York Public Library" in "nearby"
+[2026-02-06T03:58:41.488Z] LOG 🔍 [Google Places] Text search: "New York Public Library" in nearby
+[2026-02-06T03:58:41.489Z] LOG    7. Searching "The High Line" in "nearby"
+[2026-02-06T03:58:41.489Z] LOG 🔍 [Google Places] Text search: "The High Line" in nearby
+[2026-02-06T03:58:41.490Z] LOG    8. Searching "Intrepid Sea, Air & Space Museum" in "nearby"
+[2026-02-06T03:58:41.491Z] LOG 🔍 [Google Places] Text search: "Intrepid Sea, Air & Space Museum" in nearby
+[2026-02-06T03:58:41.789Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:41.795Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:41.799Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:41.886Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:41.895Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:41.904Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:41.941Z] LOG    ⚠️  St. Patrick Catholic Church: No editorial summary available
+[2026-02-06T03:58:41.944Z] LOG    📷 St. Patrick Catholic Church: Got 10 photos
+[2026-02-06T03:58:41.945Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:41.946Z] LOG    ✅ The High Line: Got description (85 chars)
+[2026-02-06T03:58:41.946Z] LOG    📷 The High Line: Got 10 photos
+[2026-02-06T03:58:41.947Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:41.974Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:41.983Z] LOG    ✅ The High Line: Got description (85 chars)
+[2026-02-06T03:58:41.985Z] LOG    📷 The High Line: Got 10 photos
+[2026-02-06T03:58:41.986Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:42.008Z] LOG    ✅ Rockefeller Center: Got description (92 chars)
+[2026-02-06T03:58:42.010Z] LOG    📷 Rockefeller Center: Got 10 photos
+[2026-02-06T03:58:42.011Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:42.014Z] LOG    ✅ Grand Central Terminal: Got description (95 chars)
+[2026-02-06T03:58:42.016Z] LOG    📷 Grand Central Terminal: Got 10 photos
+[2026-02-06T03:58:42.017Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:42.037Z] LOG    ✅ New York Public Library - Stephen A. Schwarzman Building: Got description (100 chars)
+[2026-02-06T03:58:42.040Z] LOG    📷 New York Public Library - Stephen A. Schwarzman Building: Got 10 photos
+[2026-02-06T03:58:42.041Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:42.048Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:58:42.102Z] LOG    ✅ Intrepid Museum: Got description (98 chars)
+[2026-02-06T03:58:42.104Z] LOG    📷 Intrepid Museum: Got 10 photos
+[2026-02-06T03:58:42.106Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:42.197Z] LOG    ✅ 9/11 Memorial & Museum: Got description (100 chars)
+[2026-02-06T03:58:42.204Z] LOG    📷 9/11 Memorial & Museum: Got 10 photos
+[2026-02-06T03:58:42.208Z] LOG ✅ Found 1 places
+[2026-02-06T03:58:42.209Z] LOG ✅ Batch complete: 8/8 searches succeeded, 8 total venues found in 735ms
+[2026-02-06T03:58:42.210Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T03:58:42.211Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-02-06T03:58:42.211Z] LOG    ✅ Statue of Liberty National Monument → Statue of Liberty (must_have)
+[2026-02-06T03:58:42.212Z] LOG    ✅ Empire State Building → Empire State Building (must_have)
+[2026-02-06T03:58:42.213Z] LOG    ✅ Times Square → Times Square (must_have)
+[2026-02-06T03:58:42.213Z] LOG    ✅ Central Park → Central Park (must_have)
+[2026-02-06T03:58:42.214Z] LOG    ✅ Metropolitan Museum of Art → The Metropolitan Museum of Art (must_have)
+[2026-02-06T03:58:42.215Z] LOG    ✅ One World Observatory → One World Observatory (nice_to_have)
+[2026-02-06T03:58:42.216Z] LOG    ✅ Top of the Rock Observation Deck → Top of The Rock (nice_to_have)
+[2026-02-06T03:58:42.218Z] LOG    ✅ Brooklyn Bridge → Brooklyn Bridge (nice_to_have)
+[2026-02-06T03:58:42.219Z] LOG    ✅ Museum of Modern Art → Institute of Contemporary Art (nice_to_have)
+[2026-02-06T03:58:42.219Z] LOG    ✅ American Museum of Natural History → American Museum of Natural History (nice_to_have)
+[2026-02-06T03:58:42.220Z] LOG    ✅ 9/11 Memorial & Museum → 9/11 Memorial & Museum (nice_to_have)
+[2026-02-06T03:58:42.221Z] LOG    ✅ High Line → The High Line (nice_to_have)
+[2026-02-06T03:58:42.222Z] LOG    ✅ Rockefeller Center → Rockefeller Center (nice_to_have)
+[2026-02-06T03:58:42.222Z] LOG    ✅ Grand Central Terminal → Grand Central Terminal (nice_to_have)
+[2026-02-06T03:58:42.223Z] LOG    ✅ St. Patrick's Cathedral → St. Patrick Catholic Church (nice_to_have)
+[2026-02-06T03:58:42.224Z] LOG    ✅ New York Public Library → New York Public Library - Stephen A. Schwarzman Building (nice_to_have)
+[2026-02-06T03:58:42.224Z] LOG    ✅ The High Line → The High Line (nice_to_have)
+[2026-02-06T03:58:42.225Z] LOG    ✅ Intrepid Sea, Air & Space Museum → Intrepid Museum (nice_to_have)
+[2026-02-06T03:58:42.226Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-06T03:58:42.226Z] LOG    Total enriched: 18
+[2026-02-06T03:58:42.227Z] LOG    🎯 Must-have: 5
+[2026-02-06T03:58:42.228Z] LOG    ✨ Nice-to-have: 13
+[2026-02-06T03:58:42.228Z] LOG    ❌ Failed: 0
+[2026-02-06T03:58:42.229Z] LOG    ⏱️  Enrichment took: 1986ms (1.99s)
+
+--- Summary ---
+Enrichment completed

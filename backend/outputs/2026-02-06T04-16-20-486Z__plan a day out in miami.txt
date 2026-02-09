@@ -1,0 +1,174 @@
+User Prompt: plan a day out in miami
+
+[2026-02-06T04:16:20.488Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-06T04:16:20.489Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-06T04:16:20.489Z] LOG    🎯 Must-have: 5
+[2026-02-06T04:16:20.490Z] LOG    ✨ Nice-to-have: 15
+[2026-02-06T04:16:20.490Z] LOG 📍 Location hint: miami
+[2026-02-06T04:16:20.491Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-06T04:16:20.491Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-06T04:16:20.493Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T04:16:20.494Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T04:16:20.495Z] LOG    1. Searching "Vizcaya Museum & Gardens" in "miami"
+[2026-02-06T04:16:20.495Z] LOG 🔍 [Google Places] Text search: "Vizcaya Museum & Gardens" in miami
+[2026-02-06T04:16:20.500Z] LOG    2. Searching "Wynwood Walls" in "miami"
+[2026-02-06T04:16:20.501Z] LOG 🔍 [Google Places] Text search: "Wynwood Walls" in miami
+[2026-02-06T04:16:20.504Z] LOG    3. Searching "South Beach - South Beach" in "miami"
+[2026-02-06T04:16:20.504Z] LOG 🔍 [Google Places] Text search: "South Beach - South Beach" in miami
+[2026-02-06T04:16:20.506Z] LOG    4. Searching "Bayside Marketplace" in "miami"
+[2026-02-06T04:16:20.507Z] LOG 🔍 [Google Places] Text search: "Bayside Marketplace" in miami
+[2026-02-06T04:16:20.509Z] LOG    5. Searching "Jungle Island" in "miami"
+[2026-02-06T04:16:20.509Z] LOG 🔍 [Google Places] Text search: "Jungle Island" in miami
+[2026-02-06T04:16:20.511Z] LOG    6. Searching "Phillip & Patricia Frost Museum of Science" in "miami"
+[2026-02-06T04:16:20.511Z] LOG 🔍 [Google Places] Text search: "Phillip & Patricia Frost Museum of Science" in miami
+[2026-02-06T04:16:20.514Z] LOG    7. Searching "Pérez Art Museum Miami" in "miami"
+[2026-02-06T04:16:20.514Z] LOG 🔍 [Google Places] Text search: "Pérez Art Museum Miami" in miami
+[2026-02-06T04:16:20.517Z] LOG    8. Searching "Maurice A. Ferré Park" in "miami"
+[2026-02-06T04:16:20.518Z] LOG 🔍 [Google Places] Text search: "Maurice A. Ferré Park" in miami
+[2026-02-06T04:16:20.519Z] LOG    9. Searching "Bayfront Park" in "miami"
+[2026-02-06T04:16:20.519Z] LOG 🔍 [Google Places] Text search: "Bayfront Park" in miami
+[2026-02-06T04:16:20.523Z] LOG    10. Searching "Lummus Park" in "miami"
+[2026-02-06T04:16:20.524Z] LOG 🔍 [Google Places] Text search: "Lummus Park" in miami
+[2026-02-06T04:16:20.877Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:20.886Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:20.890Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:20.895Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:20.896Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:20.910Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:20.933Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:20.993Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:20.998Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.001Z] LOG    ✅ Bayfront Park: Got description (99 chars)
+[2026-02-06T04:16:21.002Z] LOG    📷 Bayfront Park: Got 10 photos
+[2026-02-06T04:16:21.003Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.008Z] LOG    ✅ Phillip & Patricia Frost Museum of Science: Got description (86 chars)
+[2026-02-06T04:16:21.009Z] LOG    📷 Phillip & Patricia Frost Museum of Science: Got 10 photos
+[2026-02-06T04:16:21.010Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.029Z] LOG    ✅ Miami Beach - South Beach: Got description (97 chars)
+[2026-02-06T04:16:21.029Z] LOG    📷 Miami Beach - South Beach: Got 10 photos
+[2026-02-06T04:16:21.030Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.032Z] LOG    ✅ Maurice A. Ferré Park: Got description (82 chars)
+[2026-02-06T04:16:21.033Z] LOG    📷 Maurice A. Ferré Park: Got 10 photos
+[2026-02-06T04:16:21.033Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.035Z] LOG    ✅ Lummus Park: Got description (87 chars)
+[2026-02-06T04:16:21.036Z] LOG    📷 Lummus Park: Got 10 photos
+[2026-02-06T04:16:21.036Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.038Z] LOG    ✅ Wynwood Walls: Got description (99 chars)
+[2026-02-06T04:16:21.039Z] LOG    📷 Wynwood Walls: Got 10 photos
+[2026-02-06T04:16:21.039Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.047Z] LOG    ✅ Jungle Island: Got description (98 chars)
+[2026-02-06T04:16:21.048Z] LOG    📷 Jungle Island: Got 10 photos
+[2026-02-06T04:16:21.049Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.088Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.094Z] LOG    ✅ Bayside Marketplace: Got description (96 chars)
+[2026-02-06T04:16:21.095Z] LOG    📷 Bayside Marketplace: Got 10 photos
+[2026-02-06T04:16:21.095Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.165Z] LOG    ✅ Pérez Art Museum Miami: Got description (100 chars)
+[2026-02-06T04:16:21.170Z] LOG    📷 Pérez Art Museum Miami: Got 10 photos
+[2026-02-06T04:16:21.171Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.220Z] LOG    ✅ Vizcaya Museum & Gardens: Got description (93 chars)
+[2026-02-06T04:16:21.221Z] LOG    📷 Vizcaya Museum & Gardens: Got 10 photos
+[2026-02-06T04:16:21.222Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.223Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 729ms
+[2026-02-06T04:16:21.223Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T04:16:21.224Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-06T04:16:21.434Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-06T04:16:21.438Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T04:16:21.439Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T04:16:21.439Z] LOG    1. Searching "Miami Beach Boardwalk" in "miami"
+[2026-02-06T04:16:21.440Z] LOG 🔍 [Google Places] Text search: "Miami Beach Boardwalk" in miami
+[2026-02-06T04:16:21.441Z] LOG    2. Searching "South Pointe Park" in "miami"
+[2026-02-06T04:16:21.441Z] LOG 🔍 [Google Places] Text search: "South Pointe Park" in miami
+[2026-02-06T04:16:21.442Z] LOG    3. Searching "Everglades National Park" in "miami"
+[2026-02-06T04:16:21.442Z] LOG 🔍 [Google Places] Text search: "Everglades National Park" in miami
+[2026-02-06T04:16:21.443Z] LOG    4. Searching "Crazy About You" in "miami"
+[2026-02-06T04:16:21.443Z] LOG 🔍 [Google Places] Text search: "Crazy About You" in miami
+[2026-02-06T04:16:21.444Z] LOG    5. Searching "Giselle Miami" in "miami"
+[2026-02-06T04:16:21.444Z] LOG 🔍 [Google Places] Text search: "Giselle Miami" in miami
+[2026-02-06T04:16:21.445Z] LOG    6. Searching "RosaNegra Miami" in "miami"
+[2026-02-06T04:16:21.445Z] LOG 🔍 [Google Places] Text search: "RosaNegra Miami" in miami
+[2026-02-06T04:16:21.446Z] LOG    7. Searching "CASA NEOS" in "miami"
+[2026-02-06T04:16:21.447Z] LOG 🔍 [Google Places] Text search: "CASA NEOS" in miami
+[2026-02-06T04:16:21.447Z] LOG    8. Searching "Sexy Fish Miami" in "miami"
+[2026-02-06T04:16:21.447Z] LOG 🔍 [Google Places] Text search: "Sexy Fish Miami" in miami
+[2026-02-06T04:16:21.448Z] LOG    9. Searching "Mayami Wynwood" in "miami"
+[2026-02-06T04:16:21.449Z] LOG 🔍 [Google Places] Text search: "Mayami Wynwood" in miami
+[2026-02-06T04:16:21.450Z] LOG    10. Searching "Dolores But You Can Call Me Lolita" in "miami"
+[2026-02-06T04:16:21.451Z] LOG 🔍 [Google Places] Text search: "Dolores But You Can Call Me Lolita" in miami
+[2026-02-06T04:16:21.699Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.716Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.722Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.729Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.741Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.750Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.753Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.757Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.781Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:21.800Z] LOG    ⚠️  CASA NEOS: No editorial summary available
+[2026-02-06T04:16:21.801Z] LOG    📷 CASA NEOS: Got 10 photos
+[2026-02-06T04:16:21.801Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.844Z] LOG    ✅ Crazy About You: Got description (97 chars)
+[2026-02-06T04:16:21.848Z] LOG    📷 Crazy About You: Got 10 photos
+[2026-02-06T04:16:21.849Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.873Z] LOG    ✅ Dolores But You Can Call Me Lolita: Got description (100 chars)
+[2026-02-06T04:16:21.875Z] LOG    📷 Dolores But You Can Call Me Lolita: Got 10 photos
+[2026-02-06T04:16:21.876Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.888Z] LOG    ✅ Sexy Fish Miami: Got description (95 chars)
+[2026-02-06T04:16:21.889Z] LOG    📷 Sexy Fish Miami: Got 10 photos
+[2026-02-06T04:16:21.890Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.891Z] LOG    ⚠️  Miami Beach Boardwalk: No editorial summary available
+[2026-02-06T04:16:21.892Z] LOG    📷 Miami Beach Boardwalk: Got 10 photos
+[2026-02-06T04:16:21.892Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.893Z] LOG    ⚠️  RosaNegra Miami: No editorial summary available
+[2026-02-06T04:16:21.893Z] LOG    📷 RosaNegra Miami: Got 10 photos
+[2026-02-06T04:16:21.894Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.895Z] LOG    ✅ Mayami Wynwood: Got description (94 chars)
+[2026-02-06T04:16:21.895Z] LOG    📷 Mayami Wynwood: Got 10 photos
+[2026-02-06T04:16:21.896Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.904Z] LOG    ✅ South Pointe Park: Got description (100 chars)
+[2026-02-06T04:16:21.905Z] LOG    📷 South Pointe Park: Got 10 photos
+[2026-02-06T04:16:21.906Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:21.920Z] LOG    ⚠️  Giselle Miami: No editorial summary available
+[2026-02-06T04:16:21.921Z] LOG    📷 Giselle Miami: Got 10 photos
+[2026-02-06T04:16:21.922Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:22.126Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:16:22.247Z] LOG    ✅ Everglades National Park: Got description (98 chars)
+[2026-02-06T04:16:22.251Z] LOG    📷 Everglades National Park: Got 10 photos
+[2026-02-06T04:16:22.252Z] LOG ✅ Found 1 places
+[2026-02-06T04:16:22.253Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 814ms
+[2026-02-06T04:16:22.253Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T04:16:22.254Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-06T04:16:22.254Z] LOG    ✅ Vizcaya Museum & Gardens → Vizcaya Museum & Gardens (must_have)
+[2026-02-06T04:16:22.254Z] LOG    ✅ Wynwood Walls → Wynwood Walls (must_have)
+[2026-02-06T04:16:22.255Z] LOG    ✅ South Beach - South Beach → Miami Beach - South Beach (must_have)
+[2026-02-06T04:16:22.255Z] LOG    ✅ Bayside Marketplace → Bayside Marketplace (must_have)
+[2026-02-06T04:16:22.256Z] LOG    ✅ Jungle Island → Jungle Island (must_have)
+[2026-02-06T04:16:22.256Z] LOG    ✅ Phillip & Patricia Frost Museum of Science → Phillip & Patricia Frost Museum of Science (nice_to_have)
+[2026-02-06T04:16:22.256Z] LOG    ✅ Pérez Art Museum Miami → Pérez Art Museum Miami (nice_to_have)
+[2026-02-06T04:16:22.257Z] LOG    ✅ Maurice A. Ferré Park → Maurice A. Ferré Park (nice_to_have)
+[2026-02-06T04:16:22.257Z] LOG    ✅ Bayfront Park → Bayfront Park (nice_to_have)
+[2026-02-06T04:16:22.258Z] LOG    ✅ Lummus Park → Lummus Park (nice_to_have)
+[2026-02-06T04:16:22.258Z] LOG    ✅ Miami Beach Boardwalk → Miami Beach Boardwalk (nice_to_have)
+[2026-02-06T04:16:22.258Z] LOG    ✅ South Pointe Park → South Pointe Park (nice_to_have)
+[2026-02-06T04:16:22.259Z] LOG    ✅ Everglades National Park → Everglades National Park (nice_to_have)
+[2026-02-06T04:16:22.259Z] LOG    ✅ Crazy About You → Crazy About You (nice_to_have)
+[2026-02-06T04:16:22.259Z] LOG    ✅ Giselle Miami → Giselle Miami (nice_to_have)
+[2026-02-06T04:16:22.260Z] LOG    ✅ RosaNegra Miami → RosaNegra Miami (nice_to_have)
+[2026-02-06T04:16:22.260Z] LOG    ✅ CASA NEOS → CASA NEOS (nice_to_have)
+[2026-02-06T04:16:22.260Z] LOG    ✅ Sexy Fish Miami → Sexy Fish Miami (nice_to_have)
+[2026-02-06T04:16:22.260Z] LOG    ✅ Mayami Wynwood → Mayami Wynwood (nice_to_have)
+[2026-02-06T04:16:22.261Z] LOG    ✅ Dolores But You Can Call Me Lolita → Dolores But You Can Call Me Lolita (nice_to_have)
+[2026-02-06T04:16:22.261Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-06T04:16:22.262Z] LOG    Total enriched: 20
+[2026-02-06T04:16:22.262Z] LOG    🎯 Must-have: 5
+[2026-02-06T04:16:22.263Z] LOG    ✨ Nice-to-have: 15
+[2026-02-06T04:16:22.263Z] LOG    ❌ Failed: 0
+[2026-02-06T04:16:22.264Z] LOG    ⏱️  Enrichment took: 1778ms (1.78s)
+
+--- Summary ---
+Enrichment completed

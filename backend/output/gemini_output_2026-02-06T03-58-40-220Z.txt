@@ -1,0 +1,65 @@
+PROMPT:
+User location: San Jose, California, United States (37.336157, -121.890608)
+
+Request: "plan 3 day trip to newyork"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "New York City exploration",
+    "total_stops": 5,
+    "estimated_duration": "72 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Statue of Liberty National Monument", "category": "landmark", "priority": "must_have" },
+    { "name": "Empire State Building", "category": "observation deck", "priority": "must_have" },
+    { "name": "Times Square", "category": "landmark", "priority": "must_have" },
+    { "name": "Central Park", "category": "park", "priority": "must_have" },
+    { "name": "Metropolitan Museum of Art", "category": "museum", "priority": "must_have" },
+    { "name": "One World Observatory", "category": "observation deck", "priority": "nice_to_have" },
+    { "name": "Top of the Rock Observation Deck", "category": "observation deck", "priority": "nice_to_have" },
+    { "name": "Brooklyn Bridge", "category": "bridge", "priority": "nice_to_have" },
+    { "name": "Museum of Modern Art", "category": "museum", "priority": "nice_to_have" },
+    { "name": "American Museum of Natural History", "category": "museum", "priority": "nice_to_have" },
+    { "name": "9/11 Memorial & Museum", "category": "museum", "priority": "nice_to_have" },
+    { "name": "High Line", "category": "park", "priority": "nice_to_have" },
+    { "name": "Rockefeller Center", "category": "landmark", "priority": "nice_to_have" },
+    { "name": "Grand Central Terminal", "category": "transit station", "priority": "nice_to_have" },
+    { "name": "St. Patrick's Cathedral", "category": "cathedral", "priority": "nice_to_have" },
+    { "name": "New York Public Library", "category": "library", "priority": "nice_to_have" },
+    { "name": "The High Line", "category": "park", "priority": "nice_to_have" },
+    { "name": "Intrepid Sea, Air & Space Museum", "category": "museum", "priority": "nice_to_have" }
+  ]
+}
+```

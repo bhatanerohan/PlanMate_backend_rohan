@@ -41,7 +41,7 @@ export class BatchVenueSearchTool extends Tool {
 
     try {
       // Parse searches array
-      let searches: Array<{ query: string; location: string; limit?: number }>;
+      let searches: Array<{ query: string; location: string; limit?: number; radius?: string | number }>;
       
       if (typeof parameters.searches === 'string') {
         try {
@@ -94,12 +94,13 @@ export class BatchVenueSearchTool extends Tool {
             // Location is coordinates - use nearbySearch
             const lat = parseFloat(coordMatch[1]);
             const lng = parseFloat(coordMatch[2]);
+            const radiusMeters = this.parseRadius(search.radius);
             
             console.log(`   📍 Using nearbySearch at coordinates (${lat}, ${lng})`);
             
             places = await placesClient.nearbySearch(lat, lng, {
               query: search.query,
-              radius: 1500,  // 5km radius for "near me" searches
+              radius: radiusMeters,  // Default to 5km if no radius provided
               maxResults: search.limit || 10
             });
           } else {
@@ -189,5 +190,24 @@ export class BatchVenueSearchTool extends Tool {
   private formatPriceLevel(level?: number): string {
     if (!level) return 'N/A';
     return '$'.repeat(level);
+  }
+
+  /**
+   * Parse radius string/number to meters (default 5000m)
+   */
+  private parseRadius(radius?: string | number): number {
+    if (radius === undefined || radius === null) return 5000;
+    if (typeof radius === 'number' && Number.isFinite(radius)) return Math.round(radius);
+
+    const raw = String(radius).trim();
+    const match = raw.match(/^(\d+(?:\.\d+)?)\s*(miles?|mi|kilometers?|km|m)?$/i);
+    if (!match) return 5000;
+
+    const value = parseFloat(match[1]);
+    const unit = (match[2] || 'm').toLowerCase();
+
+    if (unit.startsWith('mi')) return Math.round(value * 1609.34);
+    if (unit.startsWith('km')) return Math.round(value * 1000);
+    return Math.round(value);
   }
 }

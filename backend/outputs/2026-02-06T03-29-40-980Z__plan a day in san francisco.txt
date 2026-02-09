@@ -1,0 +1,174 @@
+User Prompt: plan a day in san francisco
+
+[2026-02-06T03:29:40.982Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-06T03:29:40.983Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-06T03:29:40.984Z] LOG    🎯 Must-have: 5
+[2026-02-06T03:29:40.985Z] LOG    ✨ Nice-to-have: 15
+[2026-02-06T03:29:40.986Z] LOG 📍 Location hint: san francisco
+[2026-02-06T03:29:40.987Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-06T03:29:40.988Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-06T03:29:40.990Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T03:29:40.993Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T03:29:40.995Z] LOG    1. Searching "Alcatraz Island" in "san francisco"
+[2026-02-06T03:29:40.996Z] LOG 🔍 [Google Places] Text search: "Alcatraz Island" in san francisco
+[2026-02-06T03:29:41.013Z] LOG    2. Searching "PIER 39" in "san francisco"
+[2026-02-06T03:29:41.015Z] LOG 🔍 [Google Places] Text search: "PIER 39" in san francisco
+[2026-02-06T03:29:41.019Z] LOG    3. Searching "Golden Gate Bridge" in "san francisco"
+[2026-02-06T03:29:41.021Z] LOG 🔍 [Google Places] Text search: "Golden Gate Bridge" in san francisco
+[2026-02-06T03:29:41.025Z] LOG    4. Searching "Golden Gate Park" in "san francisco"
+[2026-02-06T03:29:41.027Z] LOG 🔍 [Google Places] Text search: "Golden Gate Park" in san francisco
+[2026-02-06T03:29:41.031Z] LOG    5. Searching "Chinatown" in "san francisco"
+[2026-02-06T03:29:41.034Z] LOG 🔍 [Google Places] Text search: "Chinatown" in san francisco
+[2026-02-06T03:29:41.037Z] LOG    6. Searching "Ferry Building" in "san francisco"
+[2026-02-06T03:29:41.038Z] LOG 🔍 [Google Places] Text search: "Ferry Building" in san francisco
+[2026-02-06T03:29:41.042Z] LOG    7. Searching "Coit Tower" in "san francisco"
+[2026-02-06T03:29:41.044Z] LOG 🔍 [Google Places] Text search: "Coit Tower" in san francisco
+[2026-02-06T03:29:41.046Z] LOG    8. Searching "Union Square" in "san francisco"
+[2026-02-06T03:29:41.047Z] LOG 🔍 [Google Places] Text search: "Union Square" in san francisco
+[2026-02-06T03:29:41.050Z] LOG    9. Searching "Fort Point National Historic Site" in "san francisco"
+[2026-02-06T03:29:41.050Z] LOG 🔍 [Google Places] Text search: "Fort Point National Historic Site" in san francisco
+[2026-02-06T03:29:41.055Z] LOG    10. Searching "The Painted Ladies" in "san francisco"
+[2026-02-06T03:29:41.056Z] LOG 🔍 [Google Places] Text search: "The Painted Ladies" in san francisco
+[2026-02-06T03:29:41.369Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:41.380Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:41.419Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:41.435Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:41.442Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:41.466Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:41.472Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:41.511Z] LOG    ✅ Golden Gate Park: Got description (98 chars)
+[2026-02-06T03:29:41.512Z] LOG    📷 Golden Gate Park: Got 10 photos
+[2026-02-06T03:29:41.514Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:41.517Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:41.521Z] LOG    ⚠️  Chinatown: No editorial summary available
+[2026-02-06T03:29:41.522Z] LOG    📷 Chinatown: Got 10 photos
+[2026-02-06T03:29:41.524Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:41.526Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:41.540Z] LOG    ✅ The Painted Ladies: Got description (94 chars)
+[2026-02-06T03:29:41.541Z] LOG    📷 The Painted Ladies: Got 10 photos
+[2026-02-06T03:29:41.542Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:41.558Z] LOG    ⚠️  Union Square: No editorial summary available
+[2026-02-06T03:29:41.559Z] LOG    📷 Union Square: Got 10 photos
+[2026-02-06T03:29:41.561Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:41.568Z] LOG    ✅ Alcatraz Island: Got description (96 chars)
+[2026-02-06T03:29:41.569Z] LOG    📷 Alcatraz Island: Got 10 photos
+[2026-02-06T03:29:41.570Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:41.574Z] LOG    ✅ PIER 39: Got description (98 chars)
+[2026-02-06T03:29:41.575Z] LOG    📷 PIER 39: Got 10 photos
+[2026-02-06T03:29:41.576Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:41.621Z] LOG    ✅ Golden Gate Bridge: Got description (75 chars)
+[2026-02-06T03:29:41.624Z] LOG    📷 Golden Gate Bridge: Got 10 photos
+[2026-02-06T03:29:41.626Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:41.646Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:41.651Z] LOG    ✅ Fort Point National Historic Site: Got description (96 chars)
+[2026-02-06T03:29:41.653Z] LOG    📷 Fort Point National Historic Site: Got 10 photos
+[2026-02-06T03:29:41.654Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:41.665Z] LOG    ✅ Coit Tower: Got description (98 chars)
+[2026-02-06T03:29:41.667Z] LOG    📷 Coit Tower: Got 10 photos
+[2026-02-06T03:29:41.668Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:41.786Z] LOG    ✅ Ferry Building: Got description (97 chars)
+[2026-02-06T03:29:41.796Z] LOG    📷 Ferry Building: Got 10 photos
+[2026-02-06T03:29:41.802Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:41.805Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 813ms
+[2026-02-06T03:29:41.808Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T03:29:41.810Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-06T03:29:42.018Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-06T03:29:42.027Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T03:29:42.029Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T03:29:42.030Z] LOG    1. Searching "Sutro Baths" in "san francisco"
+[2026-02-06T03:29:42.032Z] LOG 🔍 [Google Places] Text search: "Sutro Baths" in san francisco
+[2026-02-06T03:29:42.035Z] LOG    2. Searching "Twin Peaks" in "san francisco"
+[2026-02-06T03:29:42.036Z] LOG 🔍 [Google Places] Text search: "Twin Peaks" in san francisco
+[2026-02-06T03:29:42.040Z] LOG    3. Searching "Japanese Tea Garden" in "san francisco"
+[2026-02-06T03:29:42.041Z] LOG 🔍 [Google Places] Text search: "Japanese Tea Garden" in san francisco
+[2026-02-06T03:29:42.044Z] LOG    4. Searching "Aquarium of the Bay" in "san francisco"
+[2026-02-06T03:29:42.045Z] LOG 🔍 [Google Places] Text search: "Aquarium of the Bay" in san francisco
+[2026-02-06T03:29:42.049Z] LOG    5. Searching "California Academy of Sciences" in "san francisco"
+[2026-02-06T03:29:42.051Z] LOG 🔍 [Google Places] Text search: "California Academy of Sciences" in san francisco
+[2026-02-06T03:29:42.054Z] LOG    6. Searching "de Young Museum" in "san francisco"
+[2026-02-06T03:29:42.057Z] LOG 🔍 [Google Places] Text search: "de Young Museum" in san francisco
+[2026-02-06T03:29:42.059Z] LOG    7. Searching "San Francisco Maritime National Historical Park" in "san francisco"
+[2026-02-06T03:29:42.061Z] LOG 🔍 [Google Places] Text search: "San Francisco Maritime National Historical Park" in san francisco
+[2026-02-06T03:29:42.067Z] LOG    8. Searching "Exploratorium" in "san francisco"
+[2026-02-06T03:29:42.069Z] LOG 🔍 [Google Places] Text search: "Exploratorium" in san francisco
+[2026-02-06T03:29:42.071Z] LOG    9. Searching "San Francisco Museum of Modern Art" in "san francisco"
+[2026-02-06T03:29:42.072Z] LOG 🔍 [Google Places] Text search: "San Francisco Museum of Modern Art" in san francisco
+[2026-02-06T03:29:42.075Z] LOG    10. Searching "Fog Harbor Fish House" in "san francisco"
+[2026-02-06T03:29:42.077Z] LOG 🔍 [Google Places] Text search: "Fog Harbor Fish House" in san francisco
+[2026-02-06T03:29:42.330Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:42.365Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:42.373Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:42.384Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:42.391Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:42.395Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:42.403Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:42.410Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:42.427Z] LOG    ✅ Exploratorium: Got description (94 chars)
+[2026-02-06T03:29:42.430Z] LOG    📷 Exploratorium: Got 10 photos
+[2026-02-06T03:29:42.432Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:42.440Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:42.492Z] LOG    ✅ Fog Harbor Fish House: Got description (91 chars)
+[2026-02-06T03:29:42.494Z] LOG    📷 Fog Harbor Fish House: Got 10 photos
+[2026-02-06T03:29:42.496Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:42.499Z] LOG    ✅ Sutro Baths: Got description (99 chars)
+[2026-02-06T03:29:42.500Z] LOG    📷 Sutro Baths: Got 10 photos
+[2026-02-06T03:29:42.501Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:42.505Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T03:29:42.510Z] LOG    ✅ San Francisco Maritime National Historical Park: Got description (99 chars)
+[2026-02-06T03:29:42.512Z] LOG    📷 San Francisco Maritime National Historical Park: Got 10 photos
+[2026-02-06T03:29:42.513Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:42.517Z] LOG    ✅ San Francisco Museum of Modern Art: Got description (91 chars)
+[2026-02-06T03:29:42.520Z] LOG    📷 San Francisco Museum of Modern Art: Got 10 photos
+[2026-02-06T03:29:42.522Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:42.528Z] LOG    ✅ de Young Museum: Got description (98 chars)
+[2026-02-06T03:29:42.532Z] LOG    📷 de Young Museum: Got 10 photos
+[2026-02-06T03:29:42.535Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:42.540Z] LOG    ⚠️  Twin Peaks: No editorial summary available
+[2026-02-06T03:29:42.544Z] LOG    📷 Twin Peaks: Got 10 photos
+[2026-02-06T03:29:42.546Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:42.571Z] LOG    ✅ Aquarium of the Bay: Got description (99 chars)
+[2026-02-06T03:29:42.573Z] LOG    📷 Aquarium of the Bay: Got 10 photos
+[2026-02-06T03:29:42.575Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:42.581Z] LOG    ✅ California Academy of Sciences: Got description (99 chars)
+[2026-02-06T03:29:42.584Z] LOG    📷 California Academy of Sciences: Got 10 photos
+[2026-02-06T03:29:42.587Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:42.648Z] LOG    ✅ Japanese Tea Garden: Got description (99 chars)
+[2026-02-06T03:29:42.652Z] LOG    📷 Japanese Tea Garden: Got 10 photos
+[2026-02-06T03:29:42.654Z] LOG ✅ Found 1 places
+[2026-02-06T03:29:42.656Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 627ms
+[2026-02-06T03:29:42.657Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T03:29:42.658Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-06T03:29:42.659Z] LOG    ✅ Alcatraz Island → Alcatraz Island (must_have)
+[2026-02-06T03:29:42.660Z] LOG    ✅ PIER 39 → PIER 39 (must_have)
+[2026-02-06T03:29:42.661Z] LOG    ✅ Golden Gate Bridge → Golden Gate Bridge (must_have)
+[2026-02-06T03:29:42.662Z] LOG    ✅ Golden Gate Park → Golden Gate Park (must_have)
+[2026-02-06T03:29:42.663Z] LOG    ✅ Chinatown → Chinatown (must_have)
+[2026-02-06T03:29:42.664Z] LOG    ✅ Ferry Building → Ferry Building (nice_to_have)
+[2026-02-06T03:29:42.669Z] LOG    ✅ Coit Tower → Coit Tower (nice_to_have)
+[2026-02-06T03:29:42.682Z] LOG    ✅ Union Square → Union Square (nice_to_have)
+[2026-02-06T03:29:42.686Z] LOG    ✅ Fort Point National Historic Site → Fort Point National Historic Site (nice_to_have)
+[2026-02-06T03:29:42.696Z] LOG    ✅ The Painted Ladies → The Painted Ladies (nice_to_have)
+[2026-02-06T03:29:42.705Z] LOG    ✅ Sutro Baths → Sutro Baths (nice_to_have)
+[2026-02-06T03:29:42.713Z] LOG    ✅ Twin Peaks → Twin Peaks (nice_to_have)
+[2026-02-06T03:29:42.717Z] LOG    ✅ Japanese Tea Garden → Japanese Tea Garden (nice_to_have)
+[2026-02-06T03:29:42.724Z] LOG    ✅ Aquarium of the Bay → Aquarium of the Bay (nice_to_have)
+[2026-02-06T03:29:42.726Z] LOG    ✅ California Academy of Sciences → California Academy of Sciences (nice_to_have)
+[2026-02-06T03:29:42.728Z] LOG    ✅ de Young Museum → de Young Museum (nice_to_have)
+[2026-02-06T03:29:42.732Z] LOG    ✅ San Francisco Maritime National Historical Park → San Francisco Maritime National Historical Park (nice_to_have)
+[2026-02-06T03:29:42.735Z] LOG    ✅ Exploratorium → Exploratorium (nice_to_have)
+[2026-02-06T03:29:42.742Z] LOG    ✅ San Francisco Museum of Modern Art → San Francisco Museum of Modern Art (nice_to_have)
+[2026-02-06T03:29:42.745Z] LOG    ✅ Fog Harbor Fish House → Fog Harbor Fish House (nice_to_have)
+[2026-02-06T03:29:42.750Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-06T03:29:42.752Z] LOG    Total enriched: 20
+[2026-02-06T03:29:42.758Z] LOG    🎯 Must-have: 5
+[2026-02-06T03:29:42.763Z] LOG    ✨ Nice-to-have: 15
+[2026-02-06T03:29:42.767Z] LOG    ❌ Failed: 0
+[2026-02-06T03:29:42.775Z] LOG    ⏱️  Enrichment took: 1796ms (1.80s)
+
+--- Summary ---
+Enrichment completed

@@ -132,26 +132,26 @@ Write a clear, engaging itinerary that feels like a helpful guide.
 
 Formatting style (aim for this):
 - Header: 
-  - If isUpdate is false: "🌟 Here's your curated itinerary with X stops!" (use stopCount)
-  - If isUpdate is true: Write a natural, concise confirmation of the changes made based on the prompt (e.g. "I've updated your plan and removed X...") then say "Here is your updated itinerary:"
-- Then 1-2 concise lines for duration/travel mode/theme if available.
-- List stops as a numbered list with this pattern:
-  1. Stop Name (⭐ rating • priceLevel)
-     Description sentence.
-     💡 Why it matters (use reasoning if provided).
-     📝 Reviews line (use reviewsSummary if provided).
-     Travel: distance, duration (only between stops, if travelSegments provided).
+  - If isUpdate is false: "🌟 Here's your curated itinerary!"
+  - If isUpdate is true: Write a natural, concise confirmation of the changes (e.g. "I've added the coffee shop...") then say "Here is your updated itinerary:"
+- Group stops logically by time of day (Morning ☀️, Lunch 🍽️, Afternoon 🌊, Evening 🌙) based on the order and venue type.
+- Use these headers to structure the response.
+- Instead of a strict numbered list, tell a story:
+  - "Start your day at **Venue Name**..."
+  - "Next, head over to..."
+  - "For lunch, enjoy..."
+- Incorporate the details naturally:
+  - "**Venue Name** (⭐ 4.5 • $$)"
+  - Description and "Why it matters" should be blended into 2-3 engaging sentences.
+  - Mention reviews naturally ("Reviewers love the...")
 - End with a "🚶 Route Details" section listing each segment and totals (if travelSegments exist).
 
 Rules:
-- Keep stop order exactly as provided.
+- Keep stop order exactly as provided (just group them for the narrative).
 - Do not invent stops, times, or facts.
-- Use current venue data to write short, engaging descriptions/reasoning if fields are missing.
-- Only include rating/price if provided.
-- If routeSummary is provided, include "Total Distance" and "Total Duration" lines.
-- If a stop is the user's location, label it as "Start: Your Location" and do not number it.
-- Keep the output concise but informative (roughly 200-320 words).
-- Avoid long paragraphs; keep each stop to short lines.`
+- Use current venue data to write rich descriptions.
+- Keep the output engaging and immersive (roughly 250-400 words).
+- Make it feel like a local friend giving recommendations.`
         },
         {
           role: 'user',

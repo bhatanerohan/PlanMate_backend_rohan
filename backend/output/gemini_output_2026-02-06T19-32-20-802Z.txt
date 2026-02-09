@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "Rooftop bars for sunset"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Rooftop bars for sunset",
+    "total_stops": 5,
+    "estimated_duration": "4 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "The Stratus - Rooftop Bar Boston",
+      "category": "bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Apex Rooftop Bar and Lounge",
+      "category": "bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Rooftop at The Envoy",
+      "category": "bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Deck 12",
+      "category": "bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "LONG BAR & TERRACE",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "View Boston",
+      "category": "observation deck",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Lifted Restaurant",
+      "category": "bar & grill",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Harbor Lounge @ Lookout",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Landing at Long Wharf",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fireside Lounge",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "MIA Roof Deck",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bar Moxy",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Anchor",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Urban Park (UP) Roof Garden",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sunset Pier",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Lexington",
+      "category": "american restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Roof",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Terrace Rooftop Dining",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Rooftop at The Artisan",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mare Rooftop",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

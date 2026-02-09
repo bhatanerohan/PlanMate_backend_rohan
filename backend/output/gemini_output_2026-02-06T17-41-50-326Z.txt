@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.3246936884488, -71.10748590912134)
+
+Request: "plan a romantic date tonight in boston downtown"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Romantic Date Night",
+    "total_stops": 5,
+    "estimated_duration": "4-5 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Contessa Boston",
+      "category": "Italian Restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Yvonne's",
+      "category": "American Restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mooo.... Beacon Hill",
+      "category": "Steak House",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mamma Maria",
+      "category": "Italian Restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Green Dragon Tavern",
+      "category": "Bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "haley.henry",
+      "category": "Wine Bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Carrie Nation Cocktail Club",
+      "category": "Bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "1928 Beacon Hill",
+      "category": "American Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Hue Boston",
+      "category": "American Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mariel",
+      "category": "Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Parla",
+      "category": "Bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Lolita Back Bay",
+      "category": "Mexican Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Marcelino’s Seaport",
+      "category": "Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "OAK Long Bar + Kitchen",
+      "category": "Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Farmacia",
+      "category": "Bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Beehive Restaurant",
+      "category": "American Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Blu",
+      "category": "American Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bogie's Place",
+      "category": "Steak House",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Emmets",
+      "category": "Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Durty Nelly's",
+      "category": "Pub",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

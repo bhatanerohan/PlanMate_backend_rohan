@@ -1,0 +1,147 @@
+PROMPT:
+User location: Miami, Florida, United States (25.773357, -80.1919)
+
+Request: "plan a wild night on miami beach and add STORY club in plan"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Nightlife",
+    "total_stops": 5,
+    "estimated_duration": "6 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "STORY",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Mango's - Miami",
+      "category": "restaurant",
+      "priority": "must_have"
+    },
+    {
+      "name": "Voodoo Lounge & Rooftop",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Clevelander Bar",
+      "category": "bar",
+      "priority": "must_have"
+    },
+    {
+      "name": "Rosa Sky",
+      "category": "rooftop bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The ScapeGoat",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sweet Liberty Drinks & Supply Company",
+      "category": "cocktail bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Room 55 Speakeasy & Rooftop Cocktail Bar",
+      "category": "cocktail bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sola Miami Beach",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Yardbird Table & Bar",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Havana Beach Restaurant",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Lobster Shack",
+      "category": "seafood restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "A Fish Called Avalon",
+      "category": "seafood restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Santorini by Georgios",
+      "category": "Greek restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Poseidon Greek Seafood Restaurant",
+      "category": "Greek restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Cafe Americano",
+      "category": "American restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "It Italian Trattoria COLLINS",
+      "category": "italian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "DI MAURO´S ITALIAN RESTAURANT & PIZZERIA",
+      "category": "italian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Limoncello Miami",
+      "category": "italian restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Havana 1957 Cuban Cuisine Espanola Way",
+      "category": "cuban restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

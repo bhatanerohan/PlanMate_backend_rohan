@@ -1,0 +1,137 @@
+PROMPT:
+User location: Miami, Florida, United States (25.773357, -80.1919)
+
+Request: "plan a family trip in miami"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Family Trip",
+    "total_stops": 5,
+    "estimated_duration": "10 hours",
+    "travel_mode": "driving"
+  },
+  "venues": [
+    {
+      "name": "Zoo Miami",
+      "category": "zoo",
+      "priority": "must_have"
+    },
+    {
+      "name": "Phillip & Patricia Frost Museum of Science",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Jungle Island",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Miami Children's Museum",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Wynwood Walls",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Puttshack - Miami",
+      "category": "amusement center",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Paradox Museum Miami",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bayfront Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Lummus Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "South Pointe",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Miami Beach Botanical Garden",
+      "category": "botanical garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Vizcaya Museum & Gardens",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Underline",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Watson Island Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Miami Bull",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Crazy About You",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Moxies Miami Restaurant",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sexy Fish Miami",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

@@ -1,0 +1,147 @@
+PROMPT:
+User location: Miami, Florida, United States (25.773357, -80.1919)
+
+Request: "plan a day out in miami"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Day Out",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Bayside Marketplace",
+      "category": "shopping mall",
+      "priority": "must_have"
+    },
+    {
+      "name": "Thriller Miami Speedboat Adventures",
+      "category": "tour agency",
+      "priority": "must_have"
+    },
+    {
+      "name": "Miami Walk of Fame",
+      "category": "tourist attraction",
+      "priority": "must_have"
+    },
+    {
+      "name": "Maurice A. Ferré Park",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Phillip and Patricia Frost Museum of Science",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Miami Bull",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Miami Circle National Historic Landmark",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Underline",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "HistoryMiami Museum",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "FPL Solar Amphitheater at Bayfront Park",
+      "category": "performing arts theater",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Bayfront Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Vizcaya Museum & Gardens",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Jungle Island",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Superblue Miami",
+      "category": "tourist attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Lummus Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Everglades National Park",
+      "category": "national park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Deering Estate",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Crandon Park",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Coral Castle",
+      "category": "museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Blue Lagoon Farm Miami",
+      "category": "farm",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

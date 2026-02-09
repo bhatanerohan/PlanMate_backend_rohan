@@ -1,0 +1,174 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-02-09T19:57:01.807Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-09T19:57:01.809Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-09T19:57:01.812Z] LOG    🎯 Must-have: 7
+[2026-02-09T19:57:01.813Z] LOG    ✨ Nice-to-have: 13
+[2026-02-09T19:57:01.817Z] LOG 📍 Location hint: DC in one day
+[2026-02-09T19:57:01.822Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-09T19:57:01.841Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-09T19:57:01.847Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-09T19:57:01.855Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-09T19:57:01.857Z] LOG    1. Searching "National Museum of Natural History" in "DC in one day"
+[2026-02-09T19:57:01.861Z] LOG 🔍 [Google Places] Text search: "National Museum of Natural History" in DC in one day
+[2026-02-09T19:57:01.888Z] LOG    2. Searching "National Museum of American History" in "DC in one day"
+[2026-02-09T19:57:01.890Z] LOG 🔍 [Google Places] Text search: "National Museum of American History" in DC in one day
+[2026-02-09T19:57:01.897Z] LOG    3. Searching "National Air and Space Museum" in "DC in one day"
+[2026-02-09T19:57:01.900Z] LOG 🔍 [Google Places] Text search: "National Air and Space Museum" in DC in one day
+[2026-02-09T19:57:01.906Z] LOG    4. Searching "National Gallery of Art" in "DC in one day"
+[2026-02-09T19:57:01.911Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in DC in one day
+[2026-02-09T19:57:01.916Z] LOG    5. Searching "National Archives Museum" in "DC in one day"
+[2026-02-09T19:57:01.919Z] LOG 🔍 [Google Places] Text search: "National Archives Museum" in DC in one day
+[2026-02-09T19:57:01.925Z] LOG    6. Searching "Renwick Gallery" in "DC in one day"
+[2026-02-09T19:57:01.928Z] LOG 🔍 [Google Places] Text search: "Renwick Gallery" in DC in one day
+[2026-02-09T19:57:01.933Z] LOG    7. Searching "Hirshhorn Museum and Sculpture Garden" in "DC in one day"
+[2026-02-09T19:57:01.936Z] LOG 🔍 [Google Places] Text search: "Hirshhorn Museum and Sculpture Garden" in DC in one day
+[2026-02-09T19:57:01.941Z] LOG    8. Searching "Smithsonian American Art Museum" in "DC in one day"
+[2026-02-09T19:57:01.944Z] LOG 🔍 [Google Places] Text search: "Smithsonian American Art Museum" in DC in one day
+[2026-02-09T19:57:01.949Z] LOG    9. Searching "National Portrait Gallery" in "DC in one day"
+[2026-02-09T19:57:01.953Z] LOG 🔍 [Google Places] Text search: "National Portrait Gallery" in DC in one day
+[2026-02-09T19:57:01.958Z] LOG    10. Searching "The White House" in "DC in one day"
+[2026-02-09T19:57:01.964Z] LOG 🔍 [Google Places] Text search: "The White House" in DC in one day
+[2026-02-09T19:57:02.432Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:02.564Z] LOG    ✅ White House Visitor Center: Got description (91 chars)
+[2026-02-09T19:57:02.571Z] LOG    📷 White House Visitor Center: Got 10 photos
+[2026-02-09T19:57:02.577Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:02.584Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:02.608Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:02.611Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:02.616Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:02.679Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:02.702Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:02.707Z] LOG    ✅ Hirshhorn Museum: Got description (99 chars)
+[2026-02-09T19:57:02.708Z] LOG    📷 Hirshhorn Museum: Got 10 photos
+[2026-02-09T19:57:02.709Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:02.713Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:02.720Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:02.726Z] LOG    ✅ Smithsonian National Museum of American History: Got description (99 chars)
+[2026-02-09T19:57:02.730Z] LOG    📷 Smithsonian National Museum of American History: Got 10 photos
+[2026-02-09T19:57:02.731Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:02.735Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:02.743Z] LOG    ⚠️  National Archives Museum: No editorial summary available
+[2026-02-09T19:57:02.744Z] LOG    📷 National Archives Museum: Got 10 photos
+[2026-02-09T19:57:02.746Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:02.752Z] LOG    ✅ National Gallery of Art: Got description (89 chars)
+[2026-02-09T19:57:02.756Z] LOG    📷 National Gallery of Art: Got 10 photos
+[2026-02-09T19:57:02.757Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:02.796Z] LOG    ✅ Smithsonian's National Air and Space Museum: Got description (97 chars)
+[2026-02-09T19:57:02.797Z] LOG    📷 Smithsonian's National Air and Space Museum: Got 10 photos
+[2026-02-09T19:57:02.798Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:02.817Z] LOG    ✅ Smithsonian National Museum of Natural History: Got description (100 chars)
+[2026-02-09T19:57:02.818Z] LOG    📷 Smithsonian National Museum of Natural History: Got 10 photos
+[2026-02-09T19:57:02.819Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:02.824Z] LOG    ✅ Smithsonian American Art Museum: Got description (98 chars)
+[2026-02-09T19:57:02.826Z] LOG    📷 Smithsonian American Art Museum: Got 10 photos
+[2026-02-09T19:57:02.827Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:02.927Z] LOG    ✅ National Portrait Gallery: Got description (96 chars)
+[2026-02-09T19:57:02.932Z] LOG    📷 National Portrait Gallery: Got 10 photos
+[2026-02-09T19:57:02.933Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:02.954Z] LOG    ✅ Renwick Gallery of the Smithsonian American Art Museum: Got description (98 chars)
+[2026-02-09T19:57:02.958Z] LOG    📷 Renwick Gallery of the Smithsonian American Art Museum: Got 10 photos
+[2026-02-09T19:57:02.960Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:02.961Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1106ms
+[2026-02-09T19:57:02.962Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-09T19:57:02.963Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-09T19:57:03.177Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-09T19:57:03.182Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-09T19:57:03.183Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-09T19:57:03.184Z] LOG    1. Searching "Washington Monument" in "DC in one day"
+[2026-02-09T19:57:03.185Z] LOG 🔍 [Google Places] Text search: "Washington Monument" in DC in one day
+[2026-02-09T19:57:03.186Z] LOG    2. Searching "Lincoln Memorial" in "DC in one day"
+[2026-02-09T19:57:03.187Z] LOG 🔍 [Google Places] Text search: "Lincoln Memorial" in DC in one day
+[2026-02-09T19:57:03.188Z] LOG    3. Searching "World War II Memorial" in "DC in one day"
+[2026-02-09T19:57:03.189Z] LOG 🔍 [Google Places] Text search: "World War II Memorial" in DC in one day
+[2026-02-09T19:57:03.190Z] LOG    4. Searching "Tidal Basin" in "DC in one day"
+[2026-02-09T19:57:03.190Z] LOG 🔍 [Google Places] Text search: "Tidal Basin" in DC in one day
+[2026-02-09T19:57:03.191Z] LOG    5. Searching "United States Capitol" in "DC in one day"
+[2026-02-09T19:57:03.192Z] LOG 🔍 [Google Places] Text search: "United States Capitol" in DC in one day
+[2026-02-09T19:57:03.192Z] LOG    6. Searching "Library of Congress" in "DC in one day"
+[2026-02-09T19:57:03.193Z] LOG 🔍 [Google Places] Text search: "Library of Congress" in DC in one day
+[2026-02-09T19:57:03.195Z] LOG    7. Searching "Supreme Court of the United States" in "DC in one day"
+[2026-02-09T19:57:03.195Z] LOG 🔍 [Google Places] Text search: "Supreme Court of the United States" in DC in one day
+[2026-02-09T19:57:03.196Z] LOG    8. Searching "Theodore Roosevelt Island" in "DC in one day"
+[2026-02-09T19:57:03.199Z] LOG 🔍 [Google Places] Text search: "Theodore Roosevelt Island" in DC in one day
+[2026-02-09T19:57:03.202Z] LOG    9. Searching "National Mall" in "DC in one day"
+[2026-02-09T19:57:03.203Z] LOG 🔍 [Google Places] Text search: "National Mall" in DC in one day
+[2026-02-09T19:57:03.205Z] LOG    10. Searching "Rock Creek Park" in "DC in one day"
+[2026-02-09T19:57:03.206Z] LOG 🔍 [Google Places] Text search: "Rock Creek Park" in DC in one day
+[2026-02-09T19:57:03.522Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:03.543Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:03.605Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:03.632Z] LOG    ⚠️  Tidal Basin: No editorial summary available
+[2026-02-09T19:57:03.637Z] LOG    📷 Tidal Basin: Got 10 photos
+[2026-02-09T19:57:03.638Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:03.640Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:03.642Z] LOG    ✅ United States Capitol: Got description (100 chars)
+[2026-02-09T19:57:03.643Z] LOG    📷 United States Capitol: Got 10 photos
+[2026-02-09T19:57:03.644Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:03.731Z] LOG    ✅ Supreme Court of the United States: Got description (87 chars)
+[2026-02-09T19:57:03.735Z] LOG    📷 Supreme Court of the United States: Got 10 photos
+[2026-02-09T19:57:03.738Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:03.740Z] LOG    ✅ Library of Congress: Got description (100 chars)
+[2026-02-09T19:57:03.741Z] LOG    📷 Library of Congress: Got 10 photos
+[2026-02-09T19:57:03.741Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:03.750Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:03.756Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:03.795Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:03.813Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:03.864Z] LOG    ✅ Theodore Roosevelt Island: Got description (100 chars)
+[2026-02-09T19:57:03.866Z] LOG    📷 Theodore Roosevelt Island: Got 10 photos
+[2026-02-09T19:57:03.867Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:03.874Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:03.899Z] LOG    ✅ Rock Creek Park: Got description (81 chars)
+[2026-02-09T19:57:03.900Z] LOG    📷 Rock Creek Park: Got 10 photos
+[2026-02-09T19:57:03.901Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:03.925Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T19:57:03.935Z] LOG    ✅ Lincoln Memorial: Got description (100 chars)
+[2026-02-09T19:57:03.939Z] LOG    📷 Lincoln Memorial: Got 10 photos
+[2026-02-09T19:57:03.940Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:03.952Z] LOG    ✅ World War II Memorial: Got description (89 chars)
+[2026-02-09T19:57:03.953Z] LOG    📷 World War II Memorial: Got 10 photos
+[2026-02-09T19:57:03.955Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:04.018Z] LOG    ✅ National Mall: Got description (97 chars)
+[2026-02-09T19:57:04.021Z] LOG    📷 National Mall: Got 10 photos
+[2026-02-09T19:57:04.022Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:04.036Z] LOG    ✅ Washington Monument: Got description (85 chars)
+[2026-02-09T19:57:04.037Z] LOG    📷 Washington Monument: Got 10 photos
+[2026-02-09T19:57:04.038Z] LOG ✅ Found 1 places
+[2026-02-09T19:57:04.039Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 856ms
+[2026-02-09T19:57:04.039Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-09T19:57:04.040Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-09T19:57:04.041Z] LOG    ✅ National Museum of Natural History → Smithsonian National Museum of Natural History (must_have)
+[2026-02-09T19:57:04.042Z] LOG    ✅ National Museum of American History → Smithsonian National Museum of American History (must_have)
+[2026-02-09T19:57:04.042Z] LOG    ✅ National Air and Space Museum → Smithsonian's National Air and Space Museum (must_have)
+[2026-02-09T19:57:04.043Z] LOG    ✅ National Gallery of Art → National Gallery of Art (must_have)
+[2026-02-09T19:57:04.044Z] LOG    ✅ National Archives Museum → National Archives Museum (must_have)
+[2026-02-09T19:57:04.045Z] LOG    ✅ Renwick Gallery → Renwick Gallery of the Smithsonian American Art Museum (must_have)
+[2026-02-09T19:57:04.047Z] LOG    ✅ Hirshhorn Museum and Sculpture Garden → Hirshhorn Museum (must_have)
+[2026-02-09T19:57:04.047Z] LOG    ✅ Smithsonian American Art Museum → Smithsonian American Art Museum (nice_to_have)
+[2026-02-09T19:57:04.048Z] LOG    ✅ National Portrait Gallery → National Portrait Gallery (nice_to_have)
+[2026-02-09T19:57:04.049Z] LOG    ✅ The White House → White House Visitor Center (nice_to_have)
+[2026-02-09T19:57:04.050Z] LOG    ✅ Washington Monument → Washington Monument (nice_to_have)
+[2026-02-09T19:57:04.051Z] LOG    ✅ Lincoln Memorial → Lincoln Memorial (nice_to_have)
+[2026-02-09T19:57:04.052Z] LOG    ✅ World War II Memorial → World War II Memorial (nice_to_have)
+[2026-02-09T19:57:04.052Z] LOG    ✅ Tidal Basin → Tidal Basin (nice_to_have)
+[2026-02-09T19:57:04.053Z] LOG    ✅ United States Capitol → United States Capitol (nice_to_have)
+[2026-02-09T19:57:04.054Z] LOG    ✅ Library of Congress → Library of Congress (nice_to_have)
+[2026-02-09T19:57:04.056Z] LOG    ✅ Supreme Court of the United States → Supreme Court of the United States (nice_to_have)
+[2026-02-09T19:57:04.057Z] LOG    ✅ Theodore Roosevelt Island → Theodore Roosevelt Island (nice_to_have)
+[2026-02-09T19:57:04.057Z] LOG    ✅ National Mall → National Mall (nice_to_have)
+[2026-02-09T19:57:04.058Z] LOG    ✅ Rock Creek Park → Rock Creek Park (nice_to_have)
+[2026-02-09T19:57:04.059Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-09T19:57:04.059Z] LOG    Total enriched: 20
+[2026-02-09T19:57:04.060Z] LOG    🎯 Must-have: 7
+[2026-02-09T19:57:04.061Z] LOG    ✨ Nice-to-have: 13
+[2026-02-09T19:57:04.062Z] LOG    ❌ Failed: 0
+[2026-02-09T19:57:04.063Z] LOG    ⏱️  Enrichment took: 2262ms (2.26s)
+
+--- Summary ---
+Enrichment completed

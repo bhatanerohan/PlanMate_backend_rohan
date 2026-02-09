@@ -1,0 +1,174 @@
+User Prompt: plan a wild trip to miami
+
+[2026-02-06T04:31:05.021Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-06T04:31:05.022Z] LOG 📦 Processing 20 candidates from Gemini
+[2026-02-06T04:31:05.024Z] LOG    🎯 Must-have: 5
+[2026-02-06T04:31:05.025Z] LOG    ✨ Nice-to-have: 15
+[2026-02-06T04:31:05.026Z] LOG 📍 Location hint: miami
+[2026-02-06T04:31:05.027Z] LOG 
+🔍 Enriching 20 candidates in 2 batch(es)...
+[2026-02-06T04:31:05.027Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-06T04:31:05.028Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T04:31:05.030Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T04:31:05.032Z] LOG    1. Searching "E11EVEN MIAMI" in "miami"
+[2026-02-06T04:31:05.033Z] LOG 🔍 [Google Places] Text search: "E11EVEN MIAMI" in miami
+[2026-02-06T04:31:05.046Z] LOG    2. Searching "Rosa Sky" in "miami"
+[2026-02-06T04:31:05.048Z] LOG 🔍 [Google Places] Text search: "Rosa Sky" in miami
+[2026-02-06T04:31:05.053Z] LOG    3. Searching "The Wharf Miami" in "miami"
+[2026-02-06T04:31:05.055Z] LOG 🔍 [Google Places] Text search: "The Wharf Miami" in miami
+[2026-02-06T04:31:05.059Z] LOG    4. Searching "Wynwood Walls" in "miami"
+[2026-02-06T04:31:05.060Z] LOG 🔍 [Google Places] Text search: "Wynwood Walls" in miami
+[2026-02-06T04:31:05.062Z] LOG    5. Searching "Miami Beach Boardwalk" in "miami"
+[2026-02-06T04:31:05.063Z] LOG 🔍 [Google Places] Text search: "Miami Beach Boardwalk" in miami
+[2026-02-06T04:31:05.067Z] LOG    6. Searching "Lagniappe" in "miami"
+[2026-02-06T04:31:05.069Z] LOG 🔍 [Google Places] Text search: "Lagniappe" in miami
+[2026-02-06T04:31:05.073Z] LOG    7. Searching "Blackbird Ordinary" in "miami"
+[2026-02-06T04:31:05.075Z] LOG 🔍 [Google Places] Text search: "Blackbird Ordinary" in miami
+[2026-02-06T04:31:05.077Z] LOG    8. Searching "Giselle Miami" in "miami"
+[2026-02-06T04:31:05.078Z] LOG 🔍 [Google Places] Text search: "Giselle Miami" in miami
+[2026-02-06T04:31:05.081Z] LOG    9. Searching "SUGAR" in "miami"
+[2026-02-06T04:31:05.082Z] LOG 🔍 [Google Places] Text search: "SUGAR" in miami
+[2026-02-06T04:31:05.085Z] LOG    10. Searching "Rosario Miami" in "miami"
+[2026-02-06T04:31:05.086Z] LOG 🔍 [Google Places] Text search: "Rosario Miami" in miami
+[2026-02-06T04:31:05.429Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:05.440Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:05.445Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:05.470Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:05.475Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:05.480Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:05.495Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:05.505Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:05.510Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:05.515Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:05.578Z] LOG    ✅ E11EVEN MIAMI: Got description (100 chars)
+[2026-02-06T04:31:05.581Z] LOG    📷 E11EVEN MIAMI: Got 10 photos
+[2026-02-06T04:31:05.583Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:05.597Z] LOG    ⚠️  The Wharf Miami: No editorial summary available
+[2026-02-06T04:31:05.600Z] LOG    📷 The Wharf Miami: Got 10 photos
+[2026-02-06T04:31:05.601Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:05.611Z] LOG    ✅ Wynwood Walls: Got description (99 chars)
+[2026-02-06T04:31:05.614Z] LOG    📷 Wynwood Walls: Got 10 photos
+[2026-02-06T04:31:05.615Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:05.617Z] LOG    ⚠️  Giselle Miami: No editorial summary available
+[2026-02-06T04:31:05.618Z] LOG    📷 Giselle Miami: Got 10 photos
+[2026-02-06T04:31:05.619Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:05.622Z] LOG    ✅ Blackbird Ordinary: Got description (85 chars)
+[2026-02-06T04:31:05.623Z] LOG    📷 Blackbird Ordinary: Got 10 photos
+[2026-02-06T04:31:05.624Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:05.633Z] LOG    ✅ Rosa Sky: Got description (90 chars)
+[2026-02-06T04:31:05.635Z] LOG    📷 Rosa Sky: Got 10 photos
+[2026-02-06T04:31:05.635Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:05.642Z] LOG    ✅ Sugar: Got description (93 chars)
+[2026-02-06T04:31:05.644Z] LOG    📷 Sugar: Got 10 photos
+[2026-02-06T04:31:05.645Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:05.647Z] LOG    ⚠️  Miami Beach Boardwalk: No editorial summary available
+[2026-02-06T04:31:05.648Z] LOG    📷 Miami Beach Boardwalk: Got 10 photos
+[2026-02-06T04:31:05.648Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:05.650Z] LOG    ✅ Lagniappe: Got description (95 chars)
+[2026-02-06T04:31:05.651Z] LOG    📷 Lagniappe: Got 10 photos
+[2026-02-06T04:31:05.651Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:05.684Z] LOG    ⚠️  Rosario Miami: No editorial summary available
+[2026-02-06T04:31:05.685Z] LOG    📷 Rosario Miami: Got 10 photos
+[2026-02-06T04:31:05.686Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:05.687Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 658ms
+[2026-02-06T04:31:05.688Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T04:31:05.688Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-06T04:31:05.896Z] LOG 
+   📦 Batch 2/2 (10 searches)...
+[2026-02-06T04:31:05.901Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-06T04:31:05.902Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-06T04:31:05.904Z] LOG    1. Searching "Cebada Rooftop" in "miami"
+[2026-02-06T04:31:05.904Z] LOG 🔍 [Google Places] Text search: "Cebada Rooftop" in miami
+[2026-02-06T04:31:05.905Z] LOG    2. Searching "Dolores But You Can Call Me Lolita" in "miami"
+[2026-02-06T04:31:05.906Z] LOG 🔍 [Google Places] Text search: "Dolores But You Can Call Me Lolita" in miami
+[2026-02-06T04:31:05.907Z] LOG    3. Searching "Sexy Fish Miami" in "miami"
+[2026-02-06T04:31:05.908Z] LOG 🔍 [Google Places] Text search: "Sexy Fish Miami" in miami
+[2026-02-06T04:31:05.909Z] LOG    4. Searching "Mama Tried" in "miami"
+[2026-02-06T04:31:05.909Z] LOG 🔍 [Google Places] Text search: "Mama Tried" in miami
+[2026-02-06T04:31:05.911Z] LOG    5. Searching "Miami Skyline Cruises" in "miami"
+[2026-02-06T04:31:05.911Z] LOG 🔍 [Google Places] Text search: "Miami Skyline Cruises" in miami
+[2026-02-06T04:31:05.913Z] LOG    6. Searching "Miami Beach" in "miami"
+[2026-02-06T04:31:05.914Z] LOG 🔍 [Google Places] Text search: "Miami Beach" in miami
+[2026-02-06T04:31:05.914Z] LOG    7. Searching "South Beach" in "miami"
+[2026-02-06T04:31:05.915Z] LOG 🔍 [Google Places] Text search: "South Beach" in miami
+[2026-02-06T04:31:05.916Z] LOG    8. Searching "Lummus Park" in "miami"
+[2026-02-06T04:31:05.917Z] LOG 🔍 [Google Places] Text search: "Lummus Park" in miami
+[2026-02-06T04:31:05.919Z] LOG    9. Searching "South Pointe Park" in "miami"
+[2026-02-06T04:31:05.919Z] LOG 🔍 [Google Places] Text search: "South Pointe Park" in miami
+[2026-02-06T04:31:05.921Z] LOG    10. Searching "Nikki Beach Miami Beach" in "miami"
+[2026-02-06T04:31:05.922Z] LOG 🔍 [Google Places] Text search: "Nikki Beach Miami Beach" in miami
+[2026-02-06T04:31:06.218Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:06.225Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:06.233Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:06.237Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:06.241Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:06.243Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:06.255Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:06.258Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:06.278Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:06.321Z] LOG    ✅ Miami Beach - South Beach: Got description (97 chars)
+[2026-02-06T04:31:06.322Z] LOG    📷 Miami Beach - South Beach: Got 10 photos
+[2026-02-06T04:31:06.323Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:06.343Z] LOG    ✅ South Pointe Park: Got description (100 chars)
+[2026-02-06T04:31:06.344Z] LOG    📷 South Pointe Park: Got 10 photos
+[2026-02-06T04:31:06.345Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:06.349Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-06T04:31:06.352Z] LOG    ✅ Lummus Park: Got description (87 chars)
+[2026-02-06T04:31:06.353Z] LOG    📷 Lummus Park: Got 10 photos
+[2026-02-06T04:31:06.354Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:06.358Z] LOG    ⚠️  Cebada Rooftop: No editorial summary available
+[2026-02-06T04:31:06.360Z] LOG    📷 Cebada Rooftop: Got 10 photos
+[2026-02-06T04:31:06.361Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:06.363Z] LOG    ✅ Sexy Fish Miami: Got description (95 chars)
+[2026-02-06T04:31:06.364Z] LOG    📷 Sexy Fish Miami: Got 10 photos
+[2026-02-06T04:31:06.365Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:06.383Z] LOG    ✅ Dolores But You Can Call Me Lolita: Got description (100 chars)
+[2026-02-06T04:31:06.385Z] LOG    📷 Dolores But You Can Call Me Lolita: Got 10 photos
+[2026-02-06T04:31:06.385Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:06.404Z] LOG    ✅ Mama Tried: Got description (100 chars)
+[2026-02-06T04:31:06.406Z] LOG    📷 Mama Tried: Got 10 photos
+[2026-02-06T04:31:06.407Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:06.409Z] LOG    ⚠️  Miami Beach: No editorial summary available
+[2026-02-06T04:31:06.410Z] LOG    📷 Miami Beach: Got 10 photos
+[2026-02-06T04:31:06.411Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:06.415Z] LOG    ✅ Nikki Beach Miami Beach: Got description (68 chars)
+[2026-02-06T04:31:06.417Z] LOG    📷 Nikki Beach Miami Beach: Got 10 photos
+[2026-02-06T04:31:06.418Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:06.502Z] LOG    ⚠️  Miami Skyline Cruises: No editorial summary available
+[2026-02-06T04:31:06.506Z] LOG    📷 Miami Skyline Cruises: Got 10 photos
+[2026-02-06T04:31:06.509Z] LOG ✅ Found 1 places
+[2026-02-06T04:31:06.510Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 608ms
+[2026-02-06T04:31:06.510Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-06T04:31:06.511Z] LOG       ✅ Batch 2 complete: 10 results
+[2026-02-06T04:31:06.511Z] LOG    ✅ E11EVEN MIAMI → E11EVEN MIAMI (must_have)
+[2026-02-06T04:31:06.512Z] LOG    ✅ Rosa Sky → Rosa Sky (must_have)
+[2026-02-06T04:31:06.512Z] LOG    ✅ The Wharf Miami → The Wharf Miami (must_have)
+[2026-02-06T04:31:06.513Z] LOG    ✅ Wynwood Walls → Wynwood Walls (must_have)
+[2026-02-06T04:31:06.513Z] LOG    ✅ Miami Beach Boardwalk → Miami Beach Boardwalk (must_have)
+[2026-02-06T04:31:06.514Z] LOG    ✅ Lagniappe → Lagniappe (nice_to_have)
+[2026-02-06T04:31:06.515Z] LOG    ✅ Blackbird Ordinary → Blackbird Ordinary (nice_to_have)
+[2026-02-06T04:31:06.515Z] LOG    ✅ Giselle Miami → Giselle Miami (nice_to_have)
+[2026-02-06T04:31:06.515Z] LOG    ✅ SUGAR → Sugar (nice_to_have)
+[2026-02-06T04:31:06.516Z] LOG    ✅ Rosario Miami → Rosario Miami (nice_to_have)
+[2026-02-06T04:31:06.517Z] LOG    ✅ Cebada Rooftop → Cebada Rooftop (nice_to_have)
+[2026-02-06T04:31:06.517Z] LOG    ✅ Dolores But You Can Call Me Lolita → Dolores But You Can Call Me Lolita (nice_to_have)
+[2026-02-06T04:31:06.518Z] LOG    ✅ Sexy Fish Miami → Sexy Fish Miami (nice_to_have)
+[2026-02-06T04:31:06.518Z] LOG    ✅ Mama Tried → Mama Tried (nice_to_have)
+[2026-02-06T04:31:06.519Z] LOG    ✅ Miami Skyline Cruises → Miami Skyline Cruises (nice_to_have)
+[2026-02-06T04:31:06.520Z] LOG    ✅ Miami Beach → Miami Beach (nice_to_have)
+[2026-02-06T04:31:06.520Z] LOG    ✅ South Beach → Miami Beach - South Beach (nice_to_have)
+[2026-02-06T04:31:06.521Z] LOG    ✅ Lummus Park → Lummus Park (nice_to_have)
+[2026-02-06T04:31:06.522Z] LOG    ✅ South Pointe Park → South Pointe Park (nice_to_have)
+[2026-02-06T04:31:06.522Z] LOG    ✅ Nikki Beach Miami Beach → Nikki Beach Miami Beach (nice_to_have)
+[2026-02-06T04:31:06.523Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-06T04:31:06.523Z] LOG    Total enriched: 20
+[2026-02-06T04:31:06.524Z] LOG    🎯 Must-have: 5
+[2026-02-06T04:31:06.525Z] LOG    ✨ Nice-to-have: 15
+[2026-02-06T04:31:06.525Z] LOG    ❌ Failed: 0
+[2026-02-06T04:31:06.526Z] LOG    ⏱️  Enrichment took: 1507ms (1.51s)
+
+--- Summary ---
+Enrichment completed

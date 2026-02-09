@@ -1,0 +1,146 @@
+User Prompt: plan a day out in miami
+
+[2026-02-09T05:38:16.334Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-02-09T05:38:16.337Z] LOG 📦 Processing 16 candidates from Gemini
+[2026-02-09T05:38:16.339Z] LOG    🎯 Must-have: 5
+[2026-02-09T05:38:16.341Z] LOG    ✨ Nice-to-have: 11
+[2026-02-09T05:38:16.344Z] LOG 📍 Location hint: miami
+[2026-02-09T05:38:16.347Z] LOG 
+🔍 Enriching 16 candidates in 2 batch(es)...
+[2026-02-09T05:38:16.348Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-02-09T05:38:16.351Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-09T05:38:16.358Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-02-09T05:38:16.362Z] LOG    1. Searching "South Pointe Park Pier" in "miami"
+[2026-02-09T05:38:16.366Z] LOG 🔍 [Google Places] Text search: "South Pointe Park Pier" in miami
+[2026-02-09T05:38:16.391Z] LOG    2. Searching "Joe's Stone Crab" in "miami"
+[2026-02-09T05:38:16.394Z] LOG 🔍 [Google Places] Text search: "Joe's Stone Crab" in miami
+[2026-02-09T05:38:16.400Z] LOG    3. Searching "Art Deco Historic District" in "miami"
+[2026-02-09T05:38:16.403Z] LOG 🔍 [Google Places] Text search: "Art Deco Historic District" in miami
+[2026-02-09T05:38:16.413Z] LOG    4. Searching "Ocean Drive" in "miami"
+[2026-02-09T05:38:16.416Z] LOG 🔍 [Google Places] Text search: "Ocean Drive" in miami
+[2026-02-09T05:38:16.423Z] LOG    5. Searching "The Fillmore Miami Beach at Jackie Gleason Theater" in "miami"
+[2026-02-09T05:38:16.425Z] LOG 🔍 [Google Places] Text search: "The Fillmore Miami Beach at Jackie Gleason Theater" in miami
+[2026-02-09T05:38:16.431Z] LOG    6. Searching "Lummus Park" in "miami"
+[2026-02-09T05:38:16.434Z] LOG 🔍 [Google Places] Text search: "Lummus Park" in miami
+[2026-02-09T05:38:16.438Z] LOG    7. Searching "South Beach" in "miami"
+[2026-02-09T05:38:16.439Z] LOG 🔍 [Google Places] Text search: "South Beach" in miami
+[2026-02-09T05:38:16.445Z] LOG    8. Searching "Collins Avenue" in "miami"
+[2026-02-09T05:38:16.450Z] LOG 🔍 [Google Places] Text search: "Collins Avenue" in miami
+[2026-02-09T05:38:16.458Z] LOG    9. Searching "Lincoln Road" in "miami"
+[2026-02-09T05:38:16.462Z] LOG 🔍 [Google Places] Text search: "Lincoln Road" in miami
+[2026-02-09T05:38:16.470Z] LOG    10. Searching " Española Way" in "miami"
+[2026-02-09T05:38:16.474Z] LOG 🔍 [Google Places] Text search: " Española Way" in miami
+[2026-02-09T05:38:16.821Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:16.846Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:16.867Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:16.875Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:16.881Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:16.891Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:16.899Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:16.908Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:16.920Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:16.952Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:16.962Z] LOG    ✅ Española Way: Got description (78 chars)
+[2026-02-09T05:38:16.965Z] LOG    📷 Española Way: Got 10 photos
+[2026-02-09T05:38:16.967Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:16.970Z] LOG    ✅ Lummus Park: Got description (87 chars)
+[2026-02-09T05:38:16.971Z] LOG    📷 Lummus Park: Got 10 photos
+[2026-02-09T05:38:16.972Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:17.001Z] LOG    ✅ Miami Beach - South Beach: Got description (97 chars)
+[2026-02-09T05:38:17.004Z] LOG    📷 Miami Beach - South Beach: Got 10 photos
+[2026-02-09T05:38:17.012Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:17.016Z] LOG    ⚠️  Lincoln Road: No editorial summary available
+[2026-02-09T05:38:17.019Z] LOG    📷 Lincoln Road: Got 10 photos
+[2026-02-09T05:38:17.024Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:17.030Z] LOG    ✅ Joe's Stone Crab: Got description (71 chars)
+[2026-02-09T05:38:17.034Z] LOG    📷 Joe's Stone Crab: Got 10 photos
+[2026-02-09T05:38:17.036Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:17.043Z] LOG    ✅ South Pointe Park Pier: Got description (93 chars)
+[2026-02-09T05:38:17.047Z] LOG    📷 South Pointe Park Pier: Got 10 photos
+[2026-02-09T05:38:17.049Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:17.055Z] LOG    ✅ Ocean Drive: Got description (89 chars)
+[2026-02-09T05:38:17.059Z] LOG    📷 Ocean Drive: Got 10 photos
+[2026-02-09T05:38:17.061Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:17.065Z] LOG    ✅ Art Deco Welcome Center: Got description (97 chars)
+[2026-02-09T05:38:17.068Z] LOG    📷 Art Deco Welcome Center: Got 10 photos
+[2026-02-09T05:38:17.072Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:17.078Z] LOG    ✅ The Fillmore Miami Beach: Got description (99 chars)
+[2026-02-09T05:38:17.081Z] LOG    📷 The Fillmore Miami Beach: Got 10 photos
+[2026-02-09T05:38:17.084Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:17.364Z] LOG    ⚠️  Collins Avenue: No editorial summary available
+[2026-02-09T05:38:17.386Z] LOG    📷 Collins Avenue: Got 10 photos
+[2026-02-09T05:38:17.394Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:17.399Z] LOG ✅ Batch complete: 10/10 searches succeeded, 10 total venues found in 1042ms
+[2026-02-09T05:38:17.406Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-09T05:38:17.409Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-02-09T05:38:17.614Z] LOG 
+   📦 Batch 2/2 (6 searches)...
+[2026-02-09T05:38:17.619Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-02-09T05:38:17.621Z] LOG 🔍 [BatchVenueSearchTool] Executing 6 searches in parallel
+[2026-02-09T05:38:17.622Z] LOG    1. Searching "Miami Beach Botanical Garden" in "miami"
+[2026-02-09T05:38:17.623Z] LOG 🔍 [Google Places] Text search: "Miami Beach Botanical Garden" in miami
+[2026-02-09T05:38:17.624Z] LOG    2. Searching "The Bass" in "miami"
+[2026-02-09T05:38:17.625Z] LOG 🔍 [Google Places] Text search: "The Bass" in miami
+[2026-02-09T05:38:17.628Z] LOG    3. Searching "Wolfsonian-FIU Museum" in "miami"
+[2026-02-09T05:38:17.628Z] LOG 🔍 [Google Places] Text search: "Wolfsonian-FIU Museum" in miami
+[2026-02-09T05:38:17.630Z] LOG    4. Searching "News Cafe" in "miami"
+[2026-02-09T05:38:17.631Z] LOG 🔍 [Google Places] Text search: "News Cafe" in miami
+[2026-02-09T05:38:17.633Z] LOG    5. Searching "Macchialina" in "miami"
+[2026-02-09T05:38:17.633Z] LOG 🔍 [Google Places] Text search: "Macchialina" in miami
+[2026-02-09T05:38:17.635Z] LOG    6. Searching "St mulai church" in "miami"
+[2026-02-09T05:38:17.635Z] LOG 🔍 [Google Places] Text search: "St mulai church" in miami
+[2026-02-09T05:38:17.907Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:17.913Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:17.930Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:17.933Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:17.961Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:18.014Z] LOG    ✅ The Wolfsonian-Florida International University: Got description (93 chars)
+[2026-02-09T05:38:18.016Z] LOG    📷 The Wolfsonian-Florida International University: Got 10 photos
+[2026-02-09T05:38:18.017Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:18.038Z] LOG    ✅ News Cafe: Got description (100 chars)
+[2026-02-09T05:38:18.040Z] LOG    📷 News Cafe: Got 10 photos
+[2026-02-09T05:38:18.041Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:18.052Z] LOG    ✅ Macchialina: Got description (87 chars)
+[2026-02-09T05:38:18.054Z] LOG    📷 Macchialina: Got 10 photos
+[2026-02-09T05:38:18.055Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:18.062Z] LOG    ✅ The Bass: Got description (99 chars)
+[2026-02-09T05:38:18.064Z] LOG    📷 The Bass: Got 10 photos
+[2026-02-09T05:38:18.065Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:18.081Z] LOG    ⚠️  St. Michael the Archangel Catholic Church: No editorial summary available
+[2026-02-09T05:38:18.085Z] LOG    📷 St. Michael the Archangel Catholic Church: Got 10 photos
+[2026-02-09T05:38:18.087Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:18.149Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-02-09T05:38:18.278Z] LOG    ✅ Miami Beach Botanical Garden: Got description (97 chars)
+[2026-02-09T05:38:18.283Z] LOG    📷 Miami Beach Botanical Garden: Got 10 photos
+[2026-02-09T05:38:18.285Z] LOG ✅ Found 1 places
+[2026-02-09T05:38:18.287Z] LOG ✅ Batch complete: 6/6 searches succeeded, 6 total venues found in 666ms
+[2026-02-09T05:38:18.288Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-02-09T05:38:18.288Z] LOG       ✅ Batch 2 complete: 6 results
+[2026-02-09T05:38:18.290Z] LOG    ✅ South Pointe Park Pier → South Pointe Park Pier (must_have)
+[2026-02-09T05:38:18.291Z] LOG    ✅ Joe's Stone Crab → Joe's Stone Crab (must_have)
+[2026-02-09T05:38:18.292Z] LOG    ✅ Art Deco Historic District → Art Deco Welcome Center (must_have)
+[2026-02-09T05:38:18.293Z] LOG    ✅ Ocean Drive → Ocean Drive (must_have)
+[2026-02-09T05:38:18.293Z] LOG    ✅ The Fillmore Miami Beach at Jackie Gleason Theater → The Fillmore Miami Beach (must_have)
+[2026-02-09T05:38:18.294Z] LOG    ✅ Lummus Park → Lummus Park (nice_to_have)
+[2026-02-09T05:38:18.295Z] LOG    ✅ South Beach → Miami Beach - South Beach (nice_to_have)
+[2026-02-09T05:38:18.295Z] LOG    ✅ Collins Avenue → Collins Avenue (nice_to_have)
+[2026-02-09T05:38:18.296Z] LOG    ✅ Lincoln Road → Lincoln Road (nice_to_have)
+[2026-02-09T05:38:18.297Z] LOG    ✅  Española Way → Española Way (nice_to_have)
+[2026-02-09T05:38:18.298Z] LOG    ✅ Miami Beach Botanical Garden → Miami Beach Botanical Garden (nice_to_have)
+[2026-02-09T05:38:18.298Z] LOG    ✅ The Bass → The Bass (nice_to_have)
+[2026-02-09T05:38:18.299Z] LOG    ✅ Wolfsonian-FIU Museum → The Wolfsonian-Florida International University (nice_to_have)
+[2026-02-09T05:38:18.300Z] LOG    ✅ News Cafe → News Cafe (nice_to_have)
+[2026-02-09T05:38:18.300Z] LOG    ✅ Macchialina → Macchialina (nice_to_have)
+[2026-02-09T05:38:18.301Z] LOG    ✅ St mulai church → St. Michael the Archangel Catholic Church (nice_to_have)
+[2026-02-09T05:38:18.302Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-02-09T05:38:18.303Z] LOG    Total enriched: 16
+[2026-02-09T05:38:18.304Z] LOG    🎯 Must-have: 5
+[2026-02-09T05:38:18.305Z] LOG    ✨ Nice-to-have: 11
+[2026-02-09T05:38:18.306Z] LOG    ❌ Failed: 0
+[2026-02-09T05:38:18.308Z] LOG    ⏱️  Enrichment took: 1979ms (1.98s)
+
+--- Summary ---
+Enrichment completed

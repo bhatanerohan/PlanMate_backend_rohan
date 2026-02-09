@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.324596456841675, -71.10740357855252)
+
+Request: "plan a wild party night in las vegas"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Wild Party Night",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "taxi"
+  },
+  "venues": [
+    {
+      "name": "XS Nightclub",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "OMNIA Nightclub",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Drai's Beachclub & Nightclub",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Marquee Nightclub",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "Jewel Nightclub",
+      "category": "nightclub",
+      "priority": "must_have"
+    },
+    {
+      "name": "The Golden Tiki",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Frankie's Tiki Room",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Velveteen Rabbit",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Oak & Ivy",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "FANDOM BAR",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Legacy Club",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Ghost Donkey",
+      "category": "restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "1923 Prohibition Bar",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "The Chandelier",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Skyfall Panoramic Bar & Lounge",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Nocturno cocktail bar",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fuel Bar Las Vegas",
+      "category": "pub",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fat Cat",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Audio Bar",
+      "category": "bar",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Corduroy",
+      "category": "bar",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

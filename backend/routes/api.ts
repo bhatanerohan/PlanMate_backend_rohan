@@ -14,6 +14,7 @@ import { outputLogger } from '../services/output-logger.js';
 import { nearestNeighborOptimization, optimizeFromUserLocation, formatDistance, formatDuration } from '../services/utils/route_optimizer.js';
 import { formatItineraryMessage } from '../services/itinerary-formatter.js';
 import { enrichWithInstagramReels } from '../services/video-enrichment-agent.js';
+import { createSharedTrip, getSharedTrip } from '../services/share.js';
 import {
   saveAnalyticsEvent,
   trackModification,
@@ -386,6 +387,72 @@ function applyGeoPreferenceOverride(
 }
 
 // ============================================================================
+// HELPER: Anchor discovery searches to itinerary stops when user says "nearby"
+// ============================================================================
+type ItineraryAnchor = { lat: number; lng: number; name: string };
+
+function deriveItineraryAnchor(prompt: string, itinerary?: CurrentItinerary | null): ItineraryAnchor | null {
+  if (!itinerary?.venues || itinerary.venues.length === 0) return null;
+
+  const venues = itinerary.venues;
+  const normalizedPrompt = prompt.toLowerCase();
+  const hasNearbyCue = /\bnearby\b/i.test(prompt) ||
+    /\bclose\s+by\b/i.test(prompt) ||
+    NEAR_ME_PATTERNS.some(pattern => pattern.test(prompt));
+  const hasNearCue = /\bnear\b/i.test(prompt) ||
+    /\baround\b/i.test(prompt) ||
+    /\bclose\s+to\b/i.test(prompt) ||
+    /\bby\b/i.test(prompt);
+
+  const isUserLocationVenue = (venue: any): boolean =>
+    !!venue && (venue.placeId === 'user-location' || venue.isUserLocation);
+
+  const nonUserVenues = venues.filter(v =>
+    v?.location &&
+    Number.isFinite(v.location.lat) &&
+    Number.isFinite(v.location.lng) &&
+    !isUserLocationVenue(v)
+  );
+
+  const pickVenue = (venue: any): ItineraryAnchor | null => {
+    if (!venue?.location || !Number.isFinite(venue.location.lat) || !Number.isFinite(venue.location.lng)) return null;
+    return { lat: venue.location.lat, lng: venue.location.lng, name: venue.name || 'Itinerary stop' };
+  };
+
+  // Explicit stop number reference (e.g., "near stop 5")
+  const stopMatch = prompt.match(/(?:stop\s*(?:number\s*)?|#)?(\d+)(?:th|st|nd|rd)?\s*(?:stop)?/i);
+  if (stopMatch) {
+    const idx = parseInt(stopMatch[1], 10) - 1;
+    if (idx >= 0 && idx < venues.length) {
+      const anchor = pickVenue(venues[idx]);
+      if (anchor) return anchor;
+    }
+  }
+
+  // Explicit venue name reference (when "near/around/by" is used)
+  if (hasNearCue) {
+    const sortedByNameLength = [...nonUserVenues].sort(
+      (a, b) => (b.name?.length || 0) - (a.name?.length || 0)
+    );
+    for (const venue of sortedByNameLength) {
+      const name = String(venue.name || '').toLowerCase();
+      if (name.length >= 3 && normalizedPrompt.includes(name)) {
+        const anchor = pickVenue(venue);
+        if (anchor) return anchor;
+      }
+    }
+  }
+
+  // "nearby" with an existing itinerary → anchor to last non-user stop
+  if (hasNearbyCue && nonUserVenues.length > 0) {
+    const anchor = pickVenue(nonUserVenues[nonUserVenues.length - 1]);
+    if (anchor) return anchor;
+  }
+
+  return null;
+}
+
+// ============================================================================
 // HELPER: Parse requested result count from prompt
 // ============================================================================
 function parseRequestedCount(prompt: string): number | null {
@@ -661,6 +728,14 @@ router.post('/plan', async (req: Request, res: Response) => {
     const requestedCount = parseRequestedCount(prompt) ?? undefined;
     console.log(`\n📍 Geo preference: ${geoPreference.mode} (${geoPreference.reason})`);
 
+    const itineraryAnchor = deriveItineraryAnchor(prompt, currentItinerary);
+    const searchAnchorLocation = itineraryAnchor
+      ? { lat: itineraryAnchor.lat, lng: itineraryAnchor.lng, name: itineraryAnchor.name }
+      : userLocation;
+    if (itineraryAnchor) {
+      console.log(`📌 Using itinerary anchor for nearby search: ${itineraryAnchor.name} (${itineraryAnchor.lat}, ${itineraryAnchor.lng})`);
+    }
+
 
     let agentResponse: any = null;
     let mode: 'route' | 'discovery' = 'discovery';
@@ -744,7 +819,7 @@ router.post('/plan', async (req: Request, res: Response) => {
         console.warn('⚠️ Gemini returned no venues, falling back to direct Agent 2');
 
         const agent2 = new ReActAgent(DEFAULT_SAFETY_CONFIG);
-        agentResponse = await agent2.execute(prompt, userLocation, {
+        agentResponse = await agent2.execute(prompt, searchAnchorLocation, {
           isItinerary: classification.queryType === 'itinerary_planning',
           originalPrompt: prompt,
           searchPreference: geoPreference.mode,
@@ -1127,7 +1202,7 @@ router.post('/plan', async (req: Request, res: Response) => {
       console.log('─'.repeat(80));
 
       const reactAgent = new ReActAgent(DEFAULT_SAFETY_CONFIG);
-      agentResponse = await reactAgent.execute(prompt, userLocation, {
+      agentResponse = await reactAgent.execute(prompt, searchAnchorLocation, {
         isItinerary: classification.queryType === 'explicit_route',
         originalPrompt: prompt,
         searchPreference: geoPreference.mode,
@@ -1402,6 +1477,44 @@ router.post('/plan', async (req: Request, res: Response) => {
 });
 
 // ============================================================================
+// SHARE TRIP ENDPOINTS
+// ============================================================================
+
+router.post('/share-trip', async (req: Request, res: Response) => {
+  try {
+    const payload = req.body?.payload;
+    if (!payload || !Array.isArray(payload.venues) || payload.venues.length === 0) {
+      return res.status(400).json({ success: false, error: 'payload with venues is required' });
+    }
+
+    const shareId = await createSharedTrip(payload);
+    return res.json({ success: true, shareId });
+  } catch (error) {
+    console.error('❌ Share trip error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to create share link' });
+  }
+});
+
+router.get('/share-trip/:id', async (req: Request, res: Response) => {
+  try {
+    const shareId = req.params.id;
+    if (!shareId) {
+      return res.status(400).json({ success: false, error: 'shareId is required' });
+    }
+
+    const payload = await getSharedTrip(shareId);
+    if (!payload) {
+      return res.status(404).json({ success: false, error: 'Share link not found' });
+    }
+
+    return res.json({ success: true, payload });
+  } catch (error) {
+    console.error('❌ Share fetch error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to fetch share link' });
+  }
+});
+
+// ============================================================================
 // ANALYTICS ENDPOINTS
 // ============================================================================
 
@@ -1494,7 +1607,7 @@ router.post('/reels', async (req: Request, res: Response) => {
 });
 
 // ============================================================================
-// VENUE CHAT ENDPOINT (Grounding with Google Search)
+// VENUE CHAT ENDPOINT (Grounding with Google Search + Nearby Places)
 // ============================================================================
 router.post('/venue-chat', async (req: Request, res: Response) => {
   try {
@@ -1514,7 +1627,13 @@ router.post('/venue-chat', async (req: Request, res: Response) => {
 
     console.log(`\n💬 VENUE CHAT: "${question}" about "${venue.name}"`);
 
+    // Build venue location string for Places API searches
+    const venueLocationStr = venue.location
+      ? `${venue.location.lat},${venue.location.lng}`
+      : undefined;
+
     // Build system prompt with venue context
+    // Instruct Gemini to return structured JSON so we can extract mentioned places
     const systemPrompt = `You are a helpful, knowledgeable venue guide for ${venue.name}.
     
 VENUE DETAILS:
@@ -1524,12 +1643,26 @@ VENUE DETAILS:
 - Rating: ${venue.rating || 'N/A'}
 - Price Level: ${venue.priceLevel || 'N/A'}
 - Description: ${venue.description || 'N/A'}
+${venue.location ? `- Coordinates: ${venue.location.lat}, ${venue.location.lng}` : ''}
 
 YOUR GOAL:
 Answer the user's question about this specific venue accurately using Google Search.
 Be concise (2-3 sentences usually).
 Never hallucinate details. If you can't find the answer via search, admit it.
 Focus on current, factual info (hours, tickets, parking, restrictions, etc.).
+
+IMPORTANT RESPONSE FORMAT:
+You MUST respond with valid JSON in this exact format:
+{
+  "answer": "Your text answer here...",
+  "mentioned_places": ["Exact Place Name 1", "Exact Place Name 2"]
+}
+
+RULES FOR mentioned_places:
+- If your answer mentions ANY specific nearby places, restaurants, parks, attractions, restrooms, cinemas, etc. by name, list their EXACT names in mentioned_places.
+- Use the official/Google Maps name of each place so it can be looked up.
+- If no specific places are mentioned, use an empty array: []
+- Do NOT include the venue itself (${venue.name}) in this list.
 
 USER QUESTION: "${question}"
 `;
@@ -1568,7 +1701,7 @@ USER QUESTION: "${question}"
       config
     });
 
-    const text = response.text || '';
+    const rawText = response.text || '';
 
     // Extract sources from grounding metadata
     const sources: { title: string, url: string }[] = [];
@@ -1588,13 +1721,96 @@ USER QUESTION: "${question}"
     // Deduplicate sources
     const uniqueSources = sources.filter((v, i, a) => a.findIndex(t => t.url === v.url) === i).slice(0, 3);
 
-    console.log(`   ✅ Response: "${text.substring(0, 50)}..."`);
+    // Parse Gemini's structured response
+    let answerText = rawText;
+    let mentionedPlaces: string[] = [];
+
+    try {
+      // Clean markdown code blocks if present
+      let cleanJson = rawText.replace(/```json\s*|\s*```/g, '').trim();
+      const firstBrace = cleanJson.indexOf('{');
+      const lastBrace = cleanJson.lastIndexOf('}');
+      if (firstBrace !== -1 && lastBrace > firstBrace) {
+        cleanJson = cleanJson.substring(firstBrace, lastBrace + 1);
+      }
+
+      const parsed = JSON.parse(cleanJson);
+      if (parsed.answer) {
+        answerText = parsed.answer;
+      }
+      if (Array.isArray(parsed.mentioned_places)) {
+        mentionedPlaces = parsed.mentioned_places.filter(
+          (p: any) => typeof p === 'string' && p.trim().length > 0
+        );
+      }
+    } catch (parseErr) {
+      // Gemini didn't return valid JSON — use raw text as the answer
+      console.log('   ⚠️ Could not parse structured response, using raw text');
+      answerText = rawText;
+    }
+
+    console.log(`   ✅ Answer: "${answerText.substring(0, 60)}..."`);
+    console.log(`   📍 Mentioned places: ${mentionedPlaces.length > 0 ? mentionedPlaces.join(', ') : 'none'}`);
     console.log(`   🔗 Sources: ${uniqueSources.length}`);
+
+    // Resolve mentioned places via Google Places API
+    const nearbyPlaces: { name: string; address: string; location: { lat: number; lng: number }; placeId: string; type?: string }[] = [];
+
+    if (mentionedPlaces.length > 0) {
+      try {
+        const placesClient = getGooglePlacesClient();
+
+        // Resolve all mentioned places in parallel
+        const placePromises = mentionedPlaces.map(async (placeName) => {
+          try {
+            // Search near the venue's location for better results
+            const searchQuery = venueLocationStr
+              ? `${placeName} near ${venue.address || venue.name}`
+              : placeName;
+
+            const results = await placesClient.textSearch({
+              query: searchQuery,
+              location: venueLocationStr,
+              radius: 5000, // 5km radius around the venue
+              maxResults: 1
+            });
+
+            if (results && results.length > 0) {
+              const place = results[0];
+              console.log(`      ✅ Resolved "${placeName}" → ${place.name} (${place.location.lat}, ${place.location.lng})`);
+              return {
+                name: place.name,
+                address: place.address,
+                location: place.location,
+                placeId: place.placeId,
+                type: place.types?.[0]
+              };
+            } else {
+              console.log(`      ⚠️ No results for "${placeName}"`);
+              return null;
+            }
+          } catch (err) {
+            console.warn(`      ❌ Failed to resolve "${placeName}":`, err);
+            return null;
+          }
+        });
+
+        const resolvedPlaces = await Promise.all(placePromises);
+        resolvedPlaces.forEach(p => {
+          if (p) nearbyPlaces.push(p);
+        });
+
+        console.log(`   📌 Resolved ${nearbyPlaces.length}/${mentionedPlaces.length} nearby places`);
+      } catch (placesError) {
+        console.error('   ❌ Places resolution error:', placesError);
+      }
+    }
 
     return res.json({
       success: true,
-      answer: text,
-      sources: uniqueSources
+      answer: answerText,
+      sources: uniqueSources,
+      nearbyPlaces: nearbyPlaces.length > 0 ? nearbyPlaces : undefined
     });
 
   } catch (error) {

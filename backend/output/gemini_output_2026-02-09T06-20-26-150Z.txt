@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.323458768664324, -71.10724237566048)
+
+Request: "nearest river?"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "River Exploration",
+    "total_stops": 5,
+    "estimated_duration": "6 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Muddy River",
+      "category": "river",
+      "priority": "must_have"
+    },
+    {
+      "name": "Charles River Esplanade",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Lower Neponset River Trail",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Neponset River Reservation",
+      "category": "park",
+      "priority": "must_have"
+    },
+    {
+      "name": "Charles River Reservation",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mystic River State Reservation",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Charles River Basin",
+      "category": "river",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Sudbury River",
+      "category": "river",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Malden River",
+      "category": "river",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Charles River",
+      "category": "river",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Neponset River",
+      "category": "river",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Pines River",
+      "category": "river",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Little River",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Old Charles River Dam",
+      "category": "historical landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Ipswich River",
+      "category": "river",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Aberjona River",
+      "category": "river",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Harvest River Bridge",
+      "category": "bridge",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Charles River Reservation",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mystic River",
+      "category": "park",
+      "priority": "nice_to_have"
+    },
+     {
+      "name": "Neponset River Reservation",
+      "category": "park",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```
