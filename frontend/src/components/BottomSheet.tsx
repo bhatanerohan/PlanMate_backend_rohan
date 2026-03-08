@@ -29,6 +29,10 @@ const BottomSheet = forwardRef<BottomSheetHandle, BottomSheetProps>(({
     const contentRef = useRef<HTMLDivElement>(null);
     const startYRef = useRef(0);
     const startHeightRef = useRef(0);
+    const getViewportHeight = useCallback(
+        () => window.visualViewport?.height ?? window.innerHeight,
+        []
+    );
 
     const isAtMaxHeight = currentSnapIndex === snapPoints.length - 1;
 
@@ -86,14 +90,14 @@ const BottomSheet = forwardRef<BottomSheetHandle, BottomSheetProps>(({
         if (!isDragging || !dragFromHandle) return;
 
         const deltaY = startYRef.current - e.touches[0].clientY;
-        const deltaPercent = (deltaY / window.innerHeight) * 100;
+        const deltaPercent = (deltaY / getViewportHeight()) * 100;
         const newHeight = Math.max(
             snapPoints[0],
             Math.min(snapPoints[snapPoints.length - 1], startHeightRef.current + deltaPercent)
         );
 
         setCurrentHeight(newHeight);
-    }, [isDragging, dragFromHandle, snapPoints]);
+    }, [isDragging, dragFromHandle, snapPoints, getViewportHeight]);
 
     const handleHandleTouchEnd = useCallback(() => {
         if (!isDragging) return;
@@ -112,7 +116,7 @@ const BottomSheet = forwardRef<BottomSheetHandle, BottomSheetProps>(({
 
         const handleMouseMove = (e: MouseEvent) => {
             const deltaY = startYRef.current - e.clientY;
-            const deltaPercent = (deltaY / window.innerHeight) * 100;
+            const deltaPercent = (deltaY / getViewportHeight()) * 100;
             const newHeight = Math.max(
                 snapPoints[0],
                 Math.min(snapPoints[snapPoints.length - 1], startHeightRef.current + deltaPercent)
@@ -130,7 +134,7 @@ const BottomSheet = forwardRef<BottomSheetHandle, BottomSheetProps>(({
 
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('mouseup', handleMouseUp);
-    }, [currentHeight, snapPoints, snapToNearest]);
+    }, [currentHeight, snapPoints, snapToNearest, getViewportHeight]);
 
     // CONTENT touch handlers - only allows UP
     const handleContentTouchStart = useCallback((e: React.TouchEvent) => {
@@ -155,7 +159,7 @@ const BottomSheet = forwardRef<BottomSheetHandle, BottomSheetProps>(({
             return; // Ignore downward drag from content
         }
 
-        const deltaPercent = (deltaY / window.innerHeight) * 100;
+        const deltaPercent = (deltaY / getViewportHeight()) * 100;
         const newHeight = Math.min(
             snapPoints[snapPoints.length - 1],
             startHeightRef.current + deltaPercent
@@ -163,7 +167,7 @@ const BottomSheet = forwardRef<BottomSheetHandle, BottomSheetProps>(({
 
         e.preventDefault();
         setCurrentHeight(newHeight);
-    }, [isDragging, dragFromHandle, snapPoints]);
+    }, [isDragging, dragFromHandle, snapPoints, getViewportHeight]);
 
     const handleContentTouchEnd = useCallback(() => {
         if (!isDragging || dragFromHandle) return;
@@ -190,7 +194,7 @@ const BottomSheet = forwardRef<BottomSheetHandle, BottomSheetProps>(({
                 return;
             }
 
-            const deltaPercent = (deltaY / window.innerHeight) * 100;
+            const deltaPercent = (deltaY / getViewportHeight()) * 100;
             const newHeight = Math.min(
                 snapPoints[snapPoints.length - 1],
                 startHeightRef.current + deltaPercent
@@ -207,14 +211,14 @@ const BottomSheet = forwardRef<BottomSheetHandle, BottomSheetProps>(({
 
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('mouseup', handleMouseUp);
-    }, [currentHeight, snapPoints, snapToNearest, isAtMaxHeight]);
+    }, [currentHeight, snapPoints, snapToNearest, isAtMaxHeight, getViewportHeight]);
 
     return (
         <div
             ref={sheetRef}
             className={`bottom-sheet ${isDragging ? 'dragging' : ''}`}
             style={{
-                height: `${currentHeight}vh`,
+                height: `calc(var(--app-vh, 1vh) * ${currentHeight})`,
                 transition: isDragging ? 'none' : 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
         >

@@ -1,659 +1,433 @@
-// frontend/src/components/ChatInterface.tsx - ENHANCED VERSION
-
-import { useState, forwardRef, useImperativeHandle } from 'react';
-import { useMutation } from '@tanstack/react-query';
-import { planApi, analyticsApi } from '../services/api';
+import { useState, useRef, forwardRef, useImperativeHandle } from 'react';
+import planmateIcon from '../assets/planmate_icon.png';
+import { planApi } from '../services/api';
 import MessageList from './MessageList';
-import type { GeoPreferenceMode, Message, MapMarker, Venue, Event, Route, Location } from '../types';
+import GoogleLoginButton from './GoogleLoginButton';
+import type { AuthUser, Message, MapMarker, Route, Location, Venue, GeoPreferenceMode } from '../types';
 
 interface CurrentItinerary {
-  venues: Venue[];
-  originalPrompt: string;
-  mode: 'route' | 'discovery';
-  timestamp: number;
-  userLocationIndex?: number;
-  hasUserLocation?: boolean;
-  alternativesMap?: Record<string, Venue[]>;
+    venues: Venue[];
+    originalPrompt: string;
+    mode: 'route' | 'discovery';
+    timestamp: number;
+    userLocationIndex?: number;
+    hasUserLocation?: boolean;
+    alternativesMap?: Record<string, Venue[]>;
 }
 
 interface ChatInterfaceProps {
-  messages: Message[];
-  onNewPlan: (message: Message, markers: MapMarker[], routes?: Route[], isRouteQuery?: boolean, isModification?: boolean) => void;
-  onMarkerSelect: (markerId: string) => void;
-  userLocation?: Location | null;
-  onLocationChange?: (loc: Location) => void;
-  currentItinerary?: CurrentItinerary | null;
-  onClearItinerary?: () => void;
-  onNewChat?: () => void;
+    messages: Message[];
+    onNewPlan: (
+        message: Message,
+        markers: MapMarker[],
+        routes?: Route[],
+        isRouteQuery?: boolean,
+        isModification?: boolean
+    ) => void;
+    onMarkerSelect: (markerId: string) => void;
+    userLocation: Location | null;
+    onLocationChange: (location: Location) => void;
+    currentItinerary: CurrentItinerary | null;
+    onClearItinerary: () => void;
+    onNewChat: () => void;
+    onShareTrip: () => void;
+    canShare: boolean;
+    authUser: AuthUser | null;
+    authLoading: boolean;
+    authError: string | null;
+    googleClientId?: string;
+    onGoogleCredential: (credential: string) => void;
+    onLogout: () => void;
 }
 
-function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
-  const R = 6371;
-  const dLat = toRad(lat2 - lat1);
-  const dLon = toRad(lon2 - lon1);
-
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-    Math.sin(dLon / 2) * Math.sin(dLon / 2);
-
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
+export interface ChatInterfaceHandle {
+    submitCommand: (command: string) => void;
 }
 
-function toRad(degrees: number): number {
-  return degrees * (Math.PI / 180);
-}
+const stripEmbeddedVenuePayload = (text: string) =>
+    text.replace(/\s*\[VENUE:[\s\S]*\]\s*$/, '').trim();
 
-function isUserLocationInVenues(
-  userLocation: Location,
-  venues: Venue[]
-): { isIncluded: boolean; matchedVenue?: Venue } {
-  for (const venue of venues) {
-    const distance = calculateDistance(
-      venue.location.lat,
-      venue.location.lng,
-      userLocation.lat,
-      userLocation.lng
-    );
+const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
+    messages,
+    onNewPlan,
+    onMarkerSelect,
+    userLocation,
+    // onLocationChange, // unused in this simplified version but part of props
+    currentItinerary,
+    // onClearItinerary, // unused
+    onNewChat,
+    onShareTrip,
+    canShare,
+    authUser,
+    authLoading,
+    authError,
+    googleClientId,
+    onGoogleCredential,
+    onLogout
+}, ref) => {
+    const markerHasPlaceId = (marker: MapMarker): marker is MapMarker & { data: Venue } =>
+        marker.type === 'venue' && 'placeId' in marker.data;
+    const [inputValue, setInputValue] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [geoPreference, setGeoPreference] = useState<GeoPreferenceMode>('auto');
+    const inputRef = useRef<HTMLInputElement>(null);
 
-    if (distance < 0.2) {
-      console.log(`   ✅ Distance match: "${venue.name}" is ${(distance * 1000).toFixed(0)}m from user location`);
-      return { isIncluded: true, matchedVenue: venue };
-    }
+    const handleSubmit = async (e?: React.FormEvent, overrideInput?: string) => {
+        e?.preventDefault();
+        const rawPrompt = (overrideInput ?? inputValue).trim();
+        const cleanedPrompt = stripEmbeddedVenuePayload(rawPrompt);
+        const displayPrompt = cleanedPrompt || rawPrompt;
 
-    const latDiff = Math.abs(venue.location.lat - userLocation.lat);
-    const lngDiff = Math.abs(venue.location.lng - userLocation.lng);
+        if (!rawPrompt || isLoading) return;
 
-    if (latDiff < 0.001 && lngDiff < 0.001) {
-      console.log(`   ✅ Coordinate precision match: "${venue.name}"`);
-      return { isIncluded: true, matchedVenue: venue };
-    }
-  }
+        // determine if this is a modification to an existing itinerary
+        const isModification = !!currentItinerary && (
+            displayPrompt.toLowerCase().includes('change') ||
+            displayPrompt.toLowerCase().includes('replace') ||
+            displayPrompt.toLowerCase().includes('remove') ||
+            displayPrompt.toLowerCase().includes('add') ||
+            displayPrompt.toLowerCase().includes('instead')
+        );
 
-  return { isIncluded: false };
-}
+        // 1. Add User Message
+        const userMsg: Message = {
+            id: Date.now().toString(),
+            type: 'user',
+            content: displayPrompt,
+            timestamp: Date.now()
+        };
 
-const ChatInterface = forwardRef(({
-  messages,
-  onNewPlan,
-  onMarkerSelect,
-  userLocation,
-  currentItinerary,
-  onClearItinerary,
-  onNewChat
-}: ChatInterfaceProps, ref) => {
-  const [input, setInput] = useState('');
-  const [geoPreference, setGeoPreference] = useState<GeoPreferenceMode>('auto');
+        // If modifying, we might not want to clear markers immediately, logic is in App.tsx
+        onNewPlan(userMsg, [], undefined, false, isModification);
 
-  const planMutation = useMutation({
-    mutationFn: (vars: {
-      prompt: string;
-      userLocation?: Location | null;
-      currentItinerary?: CurrentItinerary | null;
-      geoPreference?: GeoPreferenceMode;
-    }) =>
-      planApi.createPlan(
-        vars.prompt,
-        vars.userLocation || undefined,
-        vars.currentItinerary || undefined,
-        vars.geoPreference
-      ),
-    onSuccess: (data, variables) => {
-      if (!data.venues) {
-        console.error('❌ Response missing venues array');
-        data.venues = [];
-      }
-      if (!data.events) {
-        console.error('❌ Response missing events array');
-        data.events = [];
-      }
+        setInputValue('');
+        setIsLoading(true);
 
-      const isModification = data.queryType === 'itinerary_modification' || data.isModification;
-
-      // Track modification for analytics
-      if (isModification) {
-        analyticsApi.trackModification(variables.prompt);
-      }
-
-      const agentMessage: Message = {
-        id: Date.now().toString(),
-        type: 'agent',
-        content: data.result || 'I found some results for you!',
-        timestamp: Date.now(),
-        data: {
-          venues: data.venues,
-          events: data.events,
-          alternativesMap: data.alternativesMap || {},
-        },
-      };
-
-      const isRouteQuery = isModification ? true : (data.mode === 'route');
-
-      let markers: MapMarker[] = [];
-
-      if (isModification) {
-        console.log('🔄 Modification: Creating markers from returned venues');
-
-        const primaryVenuesByPlaceId = new Map<string, { venue: Venue; stopNumber: number }>();
-        data.venues.forEach((venue: Venue, idx: number) => {
-          if (venue.placeId !== 'user-location') {
-            primaryVenuesByPlaceId.set(venue.placeId, { venue, stopNumber: idx + 1 });
-          }
-        });
-
-        markers = data.venues.map((venue: Venue, idx: number) => ({
-          id: venue.placeId === 'user-location' ? 'user-location' : `primary-${idx}`,
-          position: {
-            lat: venue.location.lat,
-            lng: venue.location.lng,
-          },
-          title: venue.name,
-          type: 'venue' as const,
-          data: venue,
-          metadata: {
-            isPrimary: true,
-            stopNumber: venue.placeId === 'user-location' ? undefined : idx + 1
-          }
-        }));
-
-        console.log(`   Created ${markers.length} primary markers after modification`);
-
-        // Add markers for ALTERNATIVE venues
-        if (data.alternativesMap && Object.keys(data.alternativesMap).length > 0) {
-          console.log('🔍 Adding alternative venue markers for modification...');
-
-          let altCount = 0;
-          Object.entries(data.alternativesMap).forEach(([primaryPlaceId, alternatives]) => {
-            const primaryInfo = primaryVenuesByPlaceId.get(primaryPlaceId);
-
-            (alternatives as Venue[]).forEach((altVenue: Venue) => {
-              markers.push({
-                id: `alternative-${altCount}`,
-                position: {
-                  lat: altVenue.location.lat,
-                  lng: altVenue.location.lng,
-                },
-                title: altVenue.name,
-                type: 'venue' as const,
-                data: altVenue,
-                metadata: {
-                  isPrimary: false,
-                  isAlternative: true,
-                  primaryPlaceId: primaryPlaceId,
-                  primaryVenueName: primaryInfo?.venue.name,
-                  primaryStopNumber: primaryInfo?.stopNumber
-                }
-              });
-              altCount++;
-            });
-          });
-
-          console.log(`   Created ${altCount} alternative markers`);
-        }
-      }
-      // 🆕 FIX: Check isRouteQuery FIRST before falling to discovery mode
-      else if (isRouteQuery) {
-        console.log('🗺️ Route mode: Creating primary markers for route');
-
-        // Build venue lookup map
-        const venuesByPlaceId = new Map<string, Venue>();
-        data.venues.forEach((venue: Venue) => {
-          venuesByPlaceId.set(venue.placeId, venue);
-        });
-
-        // Check if backend provided selected_venue_ids for ordering
-        const backendSelectedVenues = data.state?.finishParameters?.selected_venue_ids;
-        console.log('🔍 Debug routing:', {
-          hasState: !!data.state,
-          hasFinishParams: !!data.state?.finishParameters,
-          backendSelectedVenues,
-          venuesFromData: data.venues?.map((v: Venue) => v.name)
-        });
-        if (backendSelectedVenues && backendSelectedVenues.length > 0) {
-          // Use backend ordering
-          console.log('   Using backend selected_venue_ids for ordering');
-          let primaryStopNumber = 1;
-          backendSelectedVenues.forEach((placeId: string) => {
-            if (placeId === 'user-location') {
-              const userVenue = venuesByPlaceId.get(placeId);
-              if (userVenue?.location?.lat && userVenue?.location?.lng) {
-                markers.push({
-                  id: 'user-location',
-                  position: {
-                    lat: userVenue.location.lat,
-                    lng: userVenue.location.lng,
-                  },
-                  title: userVenue.name,
-                  type: 'venue' as const,
-                  data: userVenue,
-                  metadata: { isPrimary: true }
-                });
-              }
-              return;
-            }
-
-            const venue = venuesByPlaceId.get(placeId);
-            if (venue) {
-              markers.push({
-                id: `primary-${markers.length}`,
-                position: {
-                  lat: venue.location.lat,
-                  lng: venue.location.lng,
-                },
-                title: venue.name,
-                type: 'venue' as const,
-                data: venue,
-                metadata: {
-                  isPrimary: true,
-                  stopNumber: primaryStopNumber++
-                }
-              });
-            }
-          });
-        } else {
-          // 🆕 Use venues array directly (Gemini Grounding mode)
-          console.log('   Using venues array directly for route markers');
-          console.log('📦 Venues received in order:', data.venues.map((v: Venue) => v.name));  // ADD THIS
-
-          markers = data.venues.map((venue: Venue, idx: number) => ({
-            id: venue.placeId === 'user-location' ? 'user-location' : `primary-${idx}`,
-            position: {
-              lat: venue.location.lat,
-              lng: venue.location.lng,
-            },
-            title: venue.name,
-            type: 'venue' as const,
-            data: venue,
-            metadata: {
-              isPrimary: true,
-              stopNumber: venue.placeId === 'user-location' ? undefined : idx + 1
-            }
-          }));
-        }
-
-        console.log(`   Created ${markers.length} primary markers`);
-
-        // Add markers for ALTERNATIVE venues
-        if (data.alternativesMap && Object.keys(data.alternativesMap).length > 0) {
-          console.log('🔍 Adding alternative venue markers...');
-
-          let altCount = 0;
-          Object.entries(data.alternativesMap).forEach(([primaryPlaceId, alternatives]) => {
-            const primaryVenue = venuesByPlaceId.get(primaryPlaceId);
-            const primaryMarker = markers.find(m =>
-              m.metadata?.isPrimary && (m.data as Venue).placeId === primaryPlaceId
+        try {
+            // 2. Call API
+            const response = await planApi.createPlan(
+                rawPrompt,
+                userLocation ? {
+                    lat: userLocation.lat,
+                    lng: userLocation.lng,
+                    name: userLocation.name || 'User Location'
+                } : undefined,
+                currentItinerary || undefined,
+                geoPreference
             );
 
-            (alternatives as Venue[]).forEach((altVenue: Venue) => {
-              markers.push({
-                id: `alternative-${altCount}`,
-                position: {
-                  lat: altVenue.location.lat,
-                  lng: altVenue.location.lng,
+            // 3. Process Response
+            const agentMsg: Message = {
+                id: (Date.now() + 1).toString(),
+                type: 'agent',
+                content: response.result || '',
+                data: {
+                    venues: response.venues,
+                    events: response.events,
+                    alternativesMap: response.alternativesMap
                 },
-                title: altVenue.name,
-                type: 'venue' as const,
-                data: altVenue,
+                timestamp: Date.now()
+            };
+
+            // Convert venues to markers
+            const newMarkers: MapMarker[] = response.venues.map((v, i) => ({
+                id: `primary-${i}`, // 🆕 FIXED: Must use primary- prefix for routing to work
+                position: { lat: v.location.lat, lng: v.location.lng },
+                title: v.name,
+                type: 'venue',
+                data: v,
                 metadata: {
-                  isPrimary: false,
-                  isAlternative: true,
-                  primaryPlaceId: primaryPlaceId,
-                  primaryVenueName: primaryVenue?.name,
-                  primaryStopNumber: primaryMarker?.metadata?.stopNumber
+                    stopNumber: i + 1,
+                    isPrimary: true
                 }
-              });
-              altCount++;
-            });
-          });
+            }));
 
-          console.log(`   Created ${altCount} alternative markers`);
+            // 🆕 Add markers for alternatives if they exist
+            if (response.alternativesMap) {
+                Object.values(response.alternativesMap).forEach((alts: any[]) => {
+                    alts.forEach((alt: any) => {
+                        // Avoid duplicates if alternative is already a primary stop
+                        if (!newMarkers.find(m => markerHasPlaceId(m) && m.data.placeId === alt.placeId)) {
+                            newMarkers.push({
+                                id: `alternative-${alt.placeId}`,
+                                type: 'venue',
+                                position: { lat: alt.location.lat, lng: alt.location.lng }, // Ensure consistent structure
+                                title: alt.name,
+                                data: alt,
+                                metadata: {
+                                    isAlternative: true,
+                                    isPrimary: false
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+
+            // Convert events to markers
+            if (response.events) {
+                response.events.forEach((evt, i) => {
+                    if (evt.venue?.location) {
+                        newMarkers.push({
+                            id: `event-${i}`,
+                            position: { lat: evt.venue.location.lat, lng: evt.venue.location.lng },
+                            title: evt.name,
+                            type: 'event',
+                            data: evt
+                        });
+                    }
+                });
+            }
+
+            onNewPlan(
+                agentMsg,
+                newMarkers,
+                response.routes,
+                response.mode === 'route',
+                isModification
+            );
+
+        } catch (error) {
+            console.error('Plan failed:', error);
+            const errorMsg: Message = {
+                id: (Date.now() + 1).toString(),
+                type: 'system',
+                content: "Sorry, I encountered an issue while creating your plan. Please try again.",
+                timestamp: Date.now()
+            };
+            onNewPlan(errorMsg, [], undefined, false, false);
+        } finally {
+            setIsLoading(false);
         }
-      }
-      else {
-        // Discovery mode (non-route queries)
-        console.log('🔍 Discovery mode: Creating markers from all results');
-
-        const primaryVenuesByPlaceId = new Map<string, Venue>();
-        data.venues.forEach((venue: Venue) => {
-          if (venue.placeId) primaryVenuesByPlaceId.set(venue.placeId, venue);
-        });
-
-        const primaryMarkers = data.venues.map((venue: Venue, idx: number) => ({
-          id: `venue-${idx}`,
-          position: {
-            lat: venue.location.lat,
-            lng: venue.location.lng,
-          },
-          title: venue.name,
-          type: 'venue' as const,
-          data: venue,
-        }));
-
-        markers = [
-          ...primaryMarkers,
-          ...data.events.map((event: Event, idx: number) => ({
-            id: `event-${idx}`,
-            position: {
-              lat: event.venue.location?.lat || 0,
-              lng: event.venue.location?.lng || 0,
-            },
-            title: event.name,
-            type: 'event' as const,
-            data: event,
-          })),
-        ];
-
-        if (data.alternativesMap && Object.keys(data.alternativesMap).length > 0) {
-          console.log('Discovery mode: Adding alternative venue markers...');
-          let altCount = 0;
-          Object.entries(data.alternativesMap).forEach(([primaryPlaceId, alternatives]) => {
-            const primaryVenue = primaryVenuesByPlaceId.get(primaryPlaceId);
-            (alternatives as Venue[]).forEach((altVenue: Venue) => {
-              markers.push({
-                id: `alternative-${altCount}`,
-                position: {
-                  lat: altVenue.location.lat,
-                  lng: altVenue.location.lng,
-                },
-                title: altVenue.name,
-                type: 'venue' as const,
-                data: altVenue,
-                metadata: {
-                  isPrimary: false,
-                  isAlternative: true,
-                  primaryPlaceId: primaryPlaceId,
-                  primaryVenueName: primaryVenue?.name
-                }
-              });
-              altCount++;
-            });
-          });
-          console.log(`   Created ${altCount} alternative markers`);
-        }
-      }
-
-      // Handle user location marker for route queries
-      if (!isModification && isRouteQuery) {
-        const originalPrompt = variables.prompt.toLowerCase();
-        const mentionsUserLocation = /(my location|here|me|current location|where i am)/i.test(originalPrompt);
-
-        const userLocationMarkerExists = markers.some(m => m.id === 'user-location');
-
-        if (mentionsUserLocation && userLocation &&
-          Number.isFinite(userLocation.lat) && Number.isFinite(userLocation.lng) &&
-          !userLocationMarkerExists) {
-
-          const userMarker: MapMarker = {
-            id: 'user-location',
-            position: { lat: userLocation.lat, lng: userLocation.lng },
-            title: userLocation.name || 'Your Location',
-            type: 'venue',
-            data: {
-              name: userLocation.name || 'Your Location',
-              address: 'Current location',
-              location: {
-                lat: userLocation.lat,
-                lng: userLocation.lng,
-                coordinates: `${userLocation.lat},${userLocation.lng}`
-              },
-              placeId: 'user-location'
-            } as unknown as Venue
-          };
-
-          if (originalPrompt.includes('from my location') || originalPrompt.includes('from me')) {
-            markers.unshift(userMarker);
-          } else {
-            markers.push(userMarker);
-          }
-        }
-      }
-
-      const routes: Route[] = [];
-
-      console.log(`✅ Total markers created: ${markers.length}, primary: ${markers.filter(m => m.id.startsWith('primary-')).length}`);
-      onNewPlan(agentMessage, markers, routes, isRouteQuery, isModification);
-      // onNewPlan(agentMessage, markers, routes, isRouteQuery, isModification);
-    },
-    onError: (error: any) => {
-      let errorMessage = 'Something went wrong. Please try again.';
-
-      if (error.response?.data?.error === 'not_relevant') {
-        errorMessage = error.response.data.message ||
-          "I can only help with location-based queries like finding venues, planning routes, or discovering events.";
-      } else if (error.response?.data?.error) {
-        errorMessage = error.response.data.error;
-      } else if (error.message) {
-        errorMessage = error.message;
-      }
-
-      const errorMessageObj: Message = {
-        id: Date.now().toString(),
-        type: 'system',
-        content: `❌ ${errorMessage}`,
-        timestamp: Date.now(),
-      };
-      onNewPlan(errorMessageObj, [], []);
-    },
-  });
-
-  const submitCommand = (command: string) => {
-    if (!command.trim()) return;
-
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      type: 'user',
-      content: command,
-      timestamp: Date.now(),
     };
 
-    onNewPlan(userMessage, [], []);
+    useImperativeHandle(ref, () => ({
+        submitCommand: (command: string) => {
+            handleSubmit(undefined, command);
+        }
+    }));
 
-    const wantsMyLocation = /\bmy location\b|\bfrom my location\b|\bfrom me\b|\bhere\b/i.test(command);
-
-    const sendRequest = (loc?: Location | undefined) => {
-      const locationToSend = loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
-        ? loc
-        : (userLocation && Number.isFinite(userLocation.lat) && Number.isFinite(userLocation.lng) ? userLocation : undefined);
-
-      planMutation.mutate({
-        prompt: command,
-        userLocation: locationToSend,
-        currentItinerary: currentItinerary || undefined,
-        geoPreference
-      });
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSubmit();
+        }
     };
 
-    if (wantsMyLocation && (!userLocation || !Number.isFinite(userLocation.lat) || !Number.isFinite(userLocation.lng))) {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((pos) => {
-          const loc: Location = { lat: pos.coords.latitude, lng: pos.coords.longitude, name: 'Current location' };
-          sendRequest(loc);
-        }, (err) => {
-          console.warn('Geolocation failed, proceeding without user location', err);
-          sendRequest(undefined);
-        });
-        return;
-      }
-    }
+    return (
+        <div className="flex flex-col h-full bg-[#0b141a]">
+            {/* Header */}
+            <div className="p-4 border-b border-[#132f4c] flex justify-between items-center bg-[#081016]">
+                <div className="w-full">
+                    <div className="flex justify-between items-center gap-3">
+                        <div className="flex items-center gap-2">
+                            <img
+                                src={planmateIcon}
+                                alt="PlanMate"
+                                className="w-6 h-6 rounded-md"
+                            />
+                            <h1 className="font-bold text-lg text-white tracking-tight">PlanMate</h1>
+                        </div>
 
-    sendRequest();
-  };
+                        <div className="flex items-center gap-2">
+                            <button
+                                onClick={onShareTrip}
+                                disabled={!canShare}
+                                className={`p-2 rounded-full transition-colors ${
+                                    canShare
+                                        ? 'text-gray-300 hover:text-white hover:bg-[#132f4c]'
+                                        : 'text-gray-600 cursor-not-allowed'
+                                }`}
+                                title={canShare ? 'Share Trip' : 'Create a trip to share'}
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 12v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 6l-4-4-4 4" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v14" />
+                                </svg>
+                            </button>
+                            <button
+                                onClick={onNewChat}
+                                className="p-2 text-gray-400 hover:text-white hover:bg-[#132f4c] rounded-full transition-colors"
+                                title="New Chat"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
 
-  useImperativeHandle(ref, () => ({
-    submitCommand
-  }));
+                    <div className="mt-3 rounded-xl border border-[#17324d] bg-[#0f1b25] px-3 py-3">
+                        {authUser ? (
+                            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                                <div className="flex min-w-0 items-center gap-3">
+                                    {authUser.avatarUrl ? (
+                                        <img
+                                            src={authUser.avatarUrl}
+                                            alt={authUser.name || authUser.email}
+                                            className="h-10 w-10 rounded-full border border-[#2a4d70] object-cover"
+                                        />
+                                    ) : (
+                                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1f364d] text-sm font-semibold text-white">
+                                            {(authUser.name || authUser.email).slice(0, 1).toUpperCase()}
+                                        </div>
+                                    )}
+                                    <div className="min-w-0">
+                                        <div className="truncate text-sm font-semibold text-white">
+                                            {authUser.name || authUser.email}
+                                        </div>
+                                        <div className="truncate text-xs text-gray-400">
+                                            {authUser.email}
+                                        </div>
+                                    </div>
+                                </div>
+                                <button
+                                    onClick={onLogout}
+                                    className="rounded-lg border border-[#2a4d70] px-3 py-2 text-sm text-gray-200 transition-colors hover:bg-[#17324d] hover:text-white"
+                                >
+                                    Log out
+                                </button>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                                <div>
+                                    <div className="text-sm font-semibold text-white">Sign in with Google</div>
+                                    <div className="text-xs text-gray-400">
+                                        Keep an account identity for shared trips and future saved history.
+                                    </div>
+                                </div>
+                                {authLoading ? (
+                                    <div className="text-xs text-gray-400">Checking session...</div>
+                                ) : (
+                                    <GoogleLoginButton
+                                        clientId={googleClientId}
+                                        onCredential={onGoogleCredential}
+                                        onError={(message) => {
+                                            console.warn('Google login UI error:', message);
+                                        }}
+                                    />
+                                )}
+                            </div>
+                        )}
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-
-    submitCommand(input);
-    setInput('');
-  };
-
-  const examplePrompts = [
-    "Hit every major museum in DC in one day with lunch breaks",
-    "Plan a day out in midtown NYC where I could try out halal food trucks",
-    "Plan a day of Formula-1 themed sightseeing in Monaco",
-    "a trip to most iconic spots in mumbai",
-    "Plan a route from my location to Northeastern University to starbucks near MIT"
-  ];
-
-  const modificationPrompts = [
-    "add a coffee shop after the first stop",
-    "remove the second stop",
-    "replace the bar with a cafe",
-  ];
-
-  const handleExampleClick = (prompt: string) => {
-    setInput(prompt);
-  };
-
-  return (
-    <div className="flex flex-col h-full">
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-white">
-        <h1 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-          <span>PlanMate</span>
-          {currentItinerary && (
-            <span className="text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full font-medium">
-              Active Plan
-            </span>
-          )}
-        </h1>
-        {onNewChat && (
-          <button
-            onClick={onNewChat}
-            className="text-gray-500 hover:text-red-500 hover:bg-red-50 px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5"
-            title="Start a new chat"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-            </svg>
-            New Chat
-          </button>
-        )}
-      </div>
-
-      <div className="flex-1 overflow-hidden flex flex-col">
-        <div className="flex-1 overflow-y-auto p-3">
-          <MessageList
-            messages={messages}
-            isLoading={planMutation.isPending}
-            onMarkerSelect={onMarkerSelect}
-            currentItinerary={currentItinerary}
-          />
-        </div>
-
-        <div className="p-3 border-t border-gray-200 bg-white sticky bottom-0 z-10 safe-area-bottom">
-          {messages.length === 1 && (
-            <div className="mb-2">
-              <details className="sm:hidden">
-                <summary className="text-xs text-gray-500">Try example prompts</summary>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {(currentItinerary ? modificationPrompts : examplePrompts).map((prompt, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => handleExampleClick(prompt)}
-                      className="px-2 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition-colors"
-                    >
-                      {prompt}
-                    </button>
-                  ))}
+                        {authError && (
+                            <div className="mt-2 text-xs text-rose-300">
+                                {authError}
+                            </div>
+                        )}
+                    </div>
                 </div>
-              </details>
-
-              <div className="hidden sm:flex flex-wrap gap-2">
-                {(currentItinerary ? modificationPrompts : examplePrompts).map((prompt, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleExampleClick(prompt)}
-                    className="px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition-colors"
-                  >
-                    {prompt}
-                  </button>
-                ))}
-              </div>
             </div>
-          )}
 
-          <div className="flex items-center gap-2 mb-2 text-xs text-gray-600">
-            <span>Coverage</span>
-            <div className="flex items-center rounded-lg border border-gray-300 overflow-hidden bg-white">
-              <button
-                type="button"
-                onClick={() => setGeoPreference('auto')}
-                disabled={planMutation.isPending}
-                aria-pressed={geoPreference === 'auto'}
-                title="Auto"
-                className={`flex items-center gap-1 px-2 py-1 text-xs ${geoPreference === 'auto'
-                  ? 'bg-primary-500 text-white'
-                  : 'text-gray-700 hover:bg-gray-100'
-                  } disabled:bg-gray-100 disabled:text-gray-400`}
-              >
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M9 2h2l.6 2.1a6.9 6.9 0 0 1 2 .8L15.7 4l1.4 1.4-1 1.1c.3.6.6 1.3.8 2L19 9v2l-2.1.6a6.9 6.9 0 0 1-.8 2l1.1 1.1-1.4 1.4-1.1-1a6.9 6.9 0 0 1-2 .8L11 18h-2l-.6-2.1a6.9 6.9 0 0 1-2-.8l-1.1 1-1.4-1.4 1-1.1a6.9 6.9 0 0 1-.8-2L1 11V9l2.1-.6a6.9 6.9 0 0 1 .8-2L2.8 5.3 4.2 3.9l1.1 1a6.9 6.9 0 0 1 2-.8L9 2zm1 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
-                </svg>
-                Auto
-              </button>
-              <button
-                type="button"
-                onClick={() => setGeoPreference('walkable')}
-                disabled={planMutation.isPending}
-                aria-pressed={geoPreference === 'walkable'}
-                title="Walkable"
-                className={`flex items-center gap-1 px-2 py-1 text-xs border-l border-gray-200 ${geoPreference === 'walkable'
-                  ? 'bg-primary-500 text-white'
-                  : 'text-gray-700 hover:bg-gray-100'
-                  } disabled:bg-gray-100 disabled:text-gray-400`}
-              >
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm5.5 5.5-3 1.5-1.2 2.3 1.7 1.7-1.5 4h-2l1.3-3.3-2-2 .8-2.7L9 7l3-1.5 1.5 2zM14 12l2 6h-2l-1.2-3.5L11 13l3-1z" />
-                </svg>
-                Walkable
-              </button>
-              <button
-                type="button"
-                onClick={() => setGeoPreference('spread')}
-                disabled={planMutation.isPending}
-                aria-pressed={geoPreference === 'spread'}
-                title="Spread out"
-                className={`flex items-center gap-1 px-2 py-1 text-xs border-l border-gray-200 ${geoPreference === 'spread'
-                  ? 'bg-primary-500 text-white'
-                  : 'text-gray-700 hover:bg-gray-100'
-                  } disabled:bg-gray-100 disabled:text-gray-400`}
-              >
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M10 2l3 7H7l3-7zm6 8v2l-7 3v-2l5-2-5-2V7l7 3zm-12-3v2l5 2-5 2v2l7-3v-2l-7-3z" />
-                </svg>
-                Spread
-              </button>
-            </div>
-          </div>
-
-          <form onSubmit={handleSubmit} className="flex gap-2">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder={currentItinerary ? "Modify your itinerary..." : "What would you like to do?"}
-              disabled={planMutation.isPending}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:bg-gray-100 disabled:cursor-not-allowed text-sm"
+            {/* Messages */}
+            <MessageList
+                messages={messages}
+                isLoading={isLoading}
+                onMarkerSelect={onMarkerSelect}
+                currentItinerary={currentItinerary}
             />
-            <button
-              type="submit"
-              disabled={!input.trim() || planMutation.isPending}
-              className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors text-sm"
-            >
-              {planMutation.isPending ? '...' : 'Send'}
-            </button>
-          </form>
+
+            {/* Input Area */}
+            <div className="p-4 bg-[#0b141a] border-t border-[#132f4c]">
+                {/* Mode Selection */}
+                <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">Mode:</span>
+                    <div className="flex bg-[#162736] rounded-lg p-1 border border-[#1f364d]">
+                        <button
+                            onClick={() => setGeoPreference('auto')}
+                            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all flex items-center gap-1.5 ${geoPreference === 'auto'
+                                ? 'bg-[#1f364d] text-white shadow-sm'
+                                : 'text-gray-400 hover:text-gray-300'
+                                }`}
+                        >
+                            <span>🤖</span>
+                            Auto
+                        </button>
+                        <button
+                            onClick={() => setGeoPreference('walkable')}
+                            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all flex items-center gap-1.5 ${geoPreference === 'walkable'
+                                ? 'bg-[#1f364d] text-white shadow-sm'
+                                : 'text-gray-400 hover:text-gray-300'
+                                }`}
+                        >
+                            <span>🚶</span>
+                            Walkable
+                        </button>
+                        <button
+                            onClick={() => setGeoPreference('spread')}
+                            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all flex items-center gap-1.5 ${geoPreference === 'spread'
+                                ? 'bg-blue-900/40 text-blue-100 border border-blue-800/50 shadow-sm'
+                                : 'text-gray-400 hover:text-gray-300'
+                                }`}
+                        >
+                            <span>🌐</span>
+                            Coverage
+                        </button>
+                    </div>
+                </div>
+
+                <div className="relative">
+                    <input
+                        ref={inputRef}
+                        type="text"
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        placeholder={isLoading ? "Planning..." : "Ask for a plan (e.g. 'Date night in NYC')"}
+                        disabled={isLoading}
+                        className="w-full bg-[#162736] text-white placeholder-gray-500 rounded-xl pl-4 pr-12 py-3.5 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:bg-[#1c3041] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-inner"
+                    />
+
+                    <button
+                        onClick={() => handleSubmit()}
+                        disabled={!inputValue.trim() || isLoading}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-primary-600 text-white rounded-lg hover:bg-primary-500 disabled:opacity-30 disabled:hover:bg-primary-600 transition-all shadow-md active:scale-95"
+                    >
+                        {isLoading ? (
+                            <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                            </svg>
+                        ) : (
+                            <svg className="w-4 h-4 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
+
+                {/* Helper Hint */}
+                {messages.length <= 1 && !isLoading && (
+                    <div className="mt-3 flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+                        {[
+                            "Hit every major museum in DC in one day with lunch breaks",
+                            "Plan a day out in midtown NYC where I could try out halal food trucks",
+                            "Plan a day of Formula-1 themed sightseeing in Monaco",
+                            "A trip to most iconic spots in Mumbai",
+                            "Plan a route from my location to Northeastern University to starbucks near MIT"
+                        ].map((text, i) => (
+                            <SuggestionChip
+                                key={i}
+                                text={text}
+                                onClick={() => setInputValue(text)}
+                            />
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 });
+
+const SuggestionChip = ({ text, onClick }: { text: string; onClick: () => void }) => (
+    <button
+        onClick={onClick}
+        className="whitespace-nowrap px-3 py-1.5 bg-[#162736] hover:bg-[#1c3041] border border-[#1f364d] rounded-full text-xs text-gray-300 hover:text-white transition-colors"
+    >
+        {text}
+    </button>
+);
 
 ChatInterface.displayName = 'ChatInterface';
 

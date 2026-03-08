@@ -8,19 +8,38 @@ import mapboxgl from 'mapbox-gl';
 import type { MapMarker, Venue, Event, Route, Location, InstagramReel } from '../types';
 import React from 'react';
 
+interface CurrentItinerary {
+  venues: Venue[];
+  originalPrompt?: string;
+  mode?: 'route' | 'discovery';
+  timestamp?: number;
+  userLocationIndex?: number;
+  hasUserLocation?: boolean;
+}
+
+interface TempPin {
+  name: string;
+  address: string;
+  location: { lat: number; lng: number };
+  placeId: string;
+  type?: string;
+}
+
 interface MapViewProps {
   markers: MapMarker[];
   routes?: Route[];
+  tempPins?: TempPin[];
   selectedMarkerId: string | null;
   onMarkerClick: (markerId: string) => void;
   userLocation?: Location | null;
   onLocationChange?: (loc: Location) => void;
   isRouteMode?: boolean;
-  currentItinerary?: { venues: Venue[] } | null;
+  currentItinerary?: CurrentItinerary | null;
   onQuickAction?: (action: string) => void;
   onPlayReel?: (reel: InstagramReel, allReels?: InstagramReel[]) => void;
   isMobile?: boolean;
   onVenueSelect?: (venue: Venue, isPrimary: boolean, stopNumber?: number) => void;
+  onClearTempPins?: () => void;
 }
 
 // 🆕 Use WALKING mode for walkable itineraries
@@ -161,6 +180,7 @@ const toRad = (degrees: number): number => degrees * (Math.PI / 180);
 const MapView = ({
   markers,
   routes: providedRoutes,
+  tempPins = [],
   selectedMarkerId,
   onMarkerClick,
   userLocation,
@@ -170,10 +190,12 @@ const MapView = ({
   onQuickAction,
   onPlayReel,
   isMobile = false,
-  onVenueSelect
+  onVenueSelect,
+  onClearTempPins
 }: MapViewProps) => {
   const mapRef = useRef<MapRef>(null);
   const [popupInfo, setPopupInfo] = useState<MapMarker | null>(null);
+  const [tempPinPopup, setTempPinPopup] = useState<TempPin | null>(null);
   const [viewState, setViewState] = useState({
     longitude: userLocation?.lng ?? -71.0589,
     latitude: userLocation?.lat ?? 42.3601,
@@ -189,7 +211,25 @@ const MapView = ({
   const [inputValue, setInputValue] = useState('');
   const [selectedStop, setSelectedStop] = useState('');
   const [geoError, setGeoError] = useState<string | null>(null);
+  const [isDarkMap, setIsDarkMap] = useState(true);
   const geoErrorTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const showGeoError = (message: string) => {
+    setGeoError(message);
+    if (geoErrorTimeoutRef.current) {
+      clearTimeout(geoErrorTimeoutRef.current);
+    }
+    geoErrorTimeoutRef.current = setTimeout(() => {
+      setGeoError(null);
+      geoErrorTimeoutRef.current = null;
+    }, 6000);
+  };
+
+  const getTempPinMapsUrl = (pin: TempPin) => {
+    return pin.placeId
+      ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(pin.name)}&query_place_id=${pin.placeId}`
+      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${pin.name} ${pin.address}`)}`;
+  };
 
   // 🆕 Memoize primary markers to avoid unnecessary re-fetches
   const primaryMarkerIds = useMemo(() => {
@@ -285,6 +325,42 @@ const MapView = ({
     setViewState((s) => ({ ...s, longitude: userLocation.lng, latitude: userLocation.lat }));
   }, [userLocation]);
 
+  // Fit bounds when temp pins (from venue chat) appear
+  useEffect(() => {
+    if (tempPins.length === 0 || !mapRef.current) return;
+    const map = mapRef.current.getMap();
+
+    // Include both existing markers and temp pins in bounds
+    const allPoints = [
+      ...markers.map(m => ({ lng: m.position.lng, lat: m.position.lat })),
+      ...tempPins.map(p => ({ lng: p.location.lng, lat: p.location.lat }))
+    ];
+
+    if (allPoints.length === 0) return;
+
+    const bounds = allPoints.reduce(
+      (b, pt) => b.extend([pt.lng, pt.lat]),
+      new mapboxgl.LngLatBounds([allPoints[0].lng, allPoints[0].lat], [allPoints[0].lng, allPoints[0].lat])
+    );
+
+    map.fitBounds(bounds, {
+      padding: isMobile ? { top: 50, bottom: 300, left: 50, right: 50 } : 80,
+      maxZoom: 15,
+      duration: 1000
+    });
+  }, [tempPins]);
+
+  useEffect(() => {
+    if (!tempPinPopup) return;
+    const stillExists = tempPins.some(p =>
+      (p.placeId && p.placeId === tempPinPopup.placeId) ||
+      (p.name === tempPinPopup.name && p.address === tempPinPopup.address)
+    );
+    if (!stillExists) {
+      setTempPinPopup(null);
+    }
+  }, [tempPins, tempPinPopup]);
+
   useEffect(() => {
     if (!selectedMarkerId || !mapRef.current) return;
     const marker = markers.find(m => m.id === selectedMarkerId);
@@ -322,18 +398,36 @@ const MapView = ({
     }
   };
 
-  const handleUseMyLocation = () => {
-    if (!navigator.geolocation) {
-      setGeoError('Geolocation is not supported by your browser.');
+  const handleUseMyLocation = async () => {
+    if (!window.isSecureContext) {
+      showGeoError('Location requires a secure (HTTPS) connection.');
       return;
     }
+    if (!navigator.geolocation) {
+      showGeoError('Geolocation is not supported by your browser.');
+      return;
+    }
+
+    try {
+      if (navigator.permissions?.query) {
+        const status = await navigator.permissions.query({ name: 'geolocation' as PermissionName });
+        if (status.state === 'denied') {
+          showGeoError('Location access denied. Enable permission or use the search box.');
+          return;
+        }
+      }
+    } catch {
+      // Ignore permissions check failures and attempt request directly
+    }
+
     if (geoErrorTimeoutRef.current) {
       clearTimeout(geoErrorTimeoutRef.current);
       geoErrorTimeoutRef.current = null;
     }
     setGeoError(null);
     setIsLocating(true);
-    navigator.geolocation.getCurrentPosition(async (pos) => {
+
+    navigator.geolocation.getCurrentPosition((pos) => {
       setIsLocating(false);
       const loc: Location = { lat: pos.coords.latitude, lng: pos.coords.longitude, name: 'Current location' };
       onLocationChange?.(loc);
@@ -352,11 +446,11 @@ const MapView = ({
       } else if (err.code === err.TIMEOUT) {
         message = 'Location request timed out. Try again.';
       }
-      setGeoError(message);
-      geoErrorTimeoutRef.current = setTimeout(() => {
-        setGeoError(null);
-        geoErrorTimeoutRef.current = null;
-      }, 6000);
+      showGeoError(message);
+    }, {
+      enableHighAccuracy: false,
+      timeout: 10000,
+      maximumAge: 60000
     });
   };
 
@@ -439,10 +533,83 @@ const MapView = ({
 
   return (
     <div className="relative w-full h-full min-h-[40vh] md:min-h-full">
-      {/* Quick Actions - TOP LEFT */}
+      {/* Quick Actions - LEFT SIDE VERTICAL on Mobile, TOP LEFT on Desktop */}
       {currentItinerary && currentItinerary.venues.length > 0 && (
-        <div className="absolute top-2 left-1/2 -translate-x-1/2 z-50 bg-white rounded-lg shadow-lg p-3 w-[92vw] max-w-sm sm:top-4 sm:left-4 sm:translate-x-0 sm:w-auto sm:max-w-none sm:min-w-[280px]">
-          <form onSubmit={handleQuickActionSubmit} className="space-y-2">
+        <div className="absolute top-2 left-2 z-50 sm:top-4 sm:left-4">
+          {/* Mobile: Vertical icon-only buttons */}
+          <div className="flex flex-col gap-1.5 sm:hidden">
+            <button
+              type="button"
+              onClick={() => {
+                setActionType(actionType === 'add' ? '' : 'add');
+                setInputValue('');
+                setSelectedStop('');
+              }}
+              className={`w-10 h-10 rounded-lg shadow flex items-center justify-center text-lg transition-colors border ${actionType === 'add'
+                ? 'bg-green-500 text-white border-green-600'
+                : 'bg-white text-gray-700 hover:bg-gray-50 border-gray-200'
+                }`}
+              title="Add stop"
+            >
+              ➕
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setActionType(actionType === 'remove' ? '' : 'remove');
+                setInputValue('');
+                setSelectedStop('');
+              }}
+              className={`w-10 h-10 rounded-lg shadow flex items-center justify-center text-lg transition-colors border ${actionType === 'remove'
+                ? 'bg-red-500 text-white border-red-600'
+                : 'bg-white text-gray-700 hover:bg-gray-50 border-gray-200'
+                }`}
+              title="Remove stop"
+            >
+              ➖
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setActionType(actionType === 'replace' ? '' : 'replace');
+                setInputValue('');
+                setSelectedStop('');
+              }}
+              className={`w-10 h-10 rounded-lg shadow flex items-center justify-center text-lg transition-colors border ${actionType === 'replace'
+                ? 'bg-orange-500 text-white border-orange-600'
+                : 'bg-white text-gray-700 hover:bg-gray-50 border-gray-200'
+                }`}
+              title="Replace stop"
+            >
+              🔄
+            </button>
+
+            {/* Toggle My Location button - only show if userLocation is available */}
+            {userLocation && (
+              <button
+                type="button"
+                onClick={() => {
+                  if (currentItinerary?.hasUserLocation) {
+                    onQuickAction?.('remove my location');
+                  } else {
+                    onQuickAction?.('add my location as start');
+                  }
+                }}
+                className={`w-10 h-10 rounded-lg shadow flex items-center justify-center text-lg transition-colors border ${currentItinerary?.hasUserLocation
+                  ? 'bg-blue-500 text-white border-blue-600'
+                  : 'bg-white text-gray-700 hover:bg-gray-50 border-gray-200'
+                  }`}
+                title={currentItinerary?.hasUserLocation ? 'Remove my location' : 'Add my location'}
+              >
+                {currentItinerary?.hasUserLocation ? '📍✕' : '📍+'}
+              </button>
+            )}
+          </div>
+
+          {/* Desktop: Original horizontal layout with labels */}
+          <form onSubmit={handleQuickActionSubmit} className="hidden sm:block bg-white rounded-lg shadow-lg p-3 min-w-[280px]">
             <div className="flex gap-2">
               <button
                 type="button"
@@ -488,6 +655,26 @@ const MapView = ({
               >
                 🔄 Replace
               </button>
+
+              {/* Toggle My Location - only show if userLocation is available */}
+              {userLocation && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (currentItinerary?.hasUserLocation) {
+                      onQuickAction?.('remove my location');
+                    } else {
+                      onQuickAction?.('add my location as start');
+                    }
+                  }}
+                  className={`flex-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentItinerary?.hasUserLocation
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                >
+                  {currentItinerary?.hasUserLocation ? '📍 Remove Location' : '📍 Add Location'}
+                </button>
+              )}
             </div>
 
             {actionType === 'add' && (
@@ -518,11 +705,9 @@ const MapView = ({
                 >
                   <option value="">Select stop to remove</option>
                   {currentItinerary.venues.map((venue, idx) => (
-                    venue.placeId !== 'user-location' && (
-                      <option key={venue.placeId} value={idx + 1}>
-                        {idx + 1}. {venue.name}
-                      </option>
-                    )
+                    <option key={venue.placeId} value={idx + 1}>
+                      {idx + 1}. {venue.name}{venue.placeId === 'user-location' ? ' 📍' : ''}
+                    </option>
                   ))}
                 </select>
                 <button
@@ -544,11 +729,9 @@ const MapView = ({
                 >
                   <option value="">Select stop to replace</option>
                   {currentItinerary.venues.map((venue, idx) => (
-                    venue.placeId !== 'user-location' && (
-                      <option key={venue.placeId} value={idx + 1}>
-                        {idx + 1}. {venue.name}
-                      </option>
-                    )
+                    <option key={venue.placeId} value={idx + 1}>
+                      {idx + 1}. {venue.name}{venue.placeId === 'user-location' ? ' 📍' : ''}
+                    </option>
                   ))}
                 </select>
                 <input
@@ -568,32 +751,126 @@ const MapView = ({
               </div>
             )}
           </form>
+
+          {/* Mobile Action Popup - appears when action is selected on mobile */}
+          {actionType && (
+            <div
+              className="fixed inset-x-0 z-[100] bg-white rounded-t-2xl shadow-2xl p-4 sm:hidden animate-in slide-in-from-bottom-4"
+              style={{ bottom: isMobile ? '6rem' : '0' }}
+            >
+              <form onSubmit={handleQuickActionSubmit} className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="font-medium text-gray-900">
+                    {actionType === 'add' && '➕ Add Stop'}
+                    {actionType === 'remove' && '➖ Remove Stop'}
+                    {actionType === 'replace' && '🔄 Replace Stop'}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setActionType('')}
+                    className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                {actionType === 'add' && (
+                  <div className="space-y-2">
+                    <input
+                      type="text"
+                      value={inputValue}
+                      onChange={(e) => setInputValue(e.target.value)}
+                      placeholder="What to add? (e.g., coffee shop)"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                      autoFocus
+                    />
+                    <button
+                      type="submit"
+                      disabled={!inputValue.trim()}
+                      className="w-full px-3 py-2.5 bg-green-500 text-white rounded-lg text-sm font-medium hover:bg-green-600 disabled:bg-gray-300"
+                    >
+                      Add to Route
+                    </button>
+                  </div>
+                )}
+
+                {actionType === 'remove' && currentItinerary && (
+                  <div className="space-y-2">
+                    <select
+                      value={selectedStop}
+                      onChange={(e) => setSelectedStop(e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                    >
+                      <option value="">Select stop to remove</option>
+                      {currentItinerary.venues.map((venue, idx) => (
+                        <option key={venue.placeId} value={idx + 1}>
+                          {idx + 1}. {venue.name}{venue.placeId === 'user-location' ? ' 📍' : ''}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      type="submit"
+                      disabled={!selectedStop}
+                      className="w-full px-3 py-2.5 bg-red-500 text-white rounded-lg text-sm font-medium hover:bg-red-600 disabled:bg-gray-300"
+                    >
+                      Remove Stop
+                    </button>
+                  </div>
+                )}
+
+                {actionType === 'replace' && currentItinerary && (
+                  <div className="space-y-2">
+                    <select
+                      value={selectedStop}
+                      onChange={(e) => setSelectedStop(e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    >
+                      <option value="">Select stop to replace</option>
+                      {currentItinerary.venues.map((venue, idx) => (
+                        <option key={venue.placeId} value={idx + 1}>
+                          {idx + 1}. {venue.name}{venue.placeId === 'user-location' ? ' 📍' : ''}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="text"
+                      value={inputValue}
+                      onChange={(e) => setInputValue(e.target.value)}
+                      placeholder="Replace with... (e.g., Italian restaurant)"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    />
+                    <button
+                      type="submit"
+                      disabled={!selectedStop || !inputValue.trim()}
+                      className="w-full px-3 py-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 disabled:bg-gray-300"
+                    >
+                      Replace Stop
+                    </button>
+                  </div>
+                )}
+              </form>
+            </div>
+          )}
         </div>
       )}
 
       {/* Reel player overlay moved to App level for proper z-index on mobile */}
 
-      {/* Location Controls - TOP RIGHT */}
-      <div className="absolute bottom-4 left-3 right-3 z-50 flex flex-col gap-2 sm:bottom-auto sm:top-4 sm:right-4 sm:left-auto sm:w-auto">
-        <div className="flex flex-col gap-2 sm:flex-row">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && handleGeocodeSearch()}
-            placeholder="Search location..."
-            className="px-3 py-2 text-sm bg-white rounded-lg shadow border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-48"
-          />
+      {/* Location Controls - TOP RIGHT on both Mobile and Desktop */}
+      <div className="absolute top-2 right-2 z-50 flex flex-col gap-2 sm:top-4 sm:right-4">
+        {tempPins.length > 0 && onClearTempPins && (
           <button
-            onClick={handleGeocodeSearch}
-            className="w-full sm:w-auto px-3 py-2 bg-white rounded-lg shadow text-sm font-medium text-gray-700 hover:bg-gray-50 border border-gray-200"
+            onClick={onClearTempPins}
+            className="px-3 py-2 bg-purple-600 text-white rounded-lg shadow text-xs font-medium hover:bg-purple-700 border border-purple-700 transition-colors flex items-center gap-1.5"
+            title={`Clear ${tempPins.length} nearby place${tempPins.length === 1 ? '' : 's'}`}
           >
-            🔍
+            <span>✕</span>
+            <span className="hidden sm:inline">Clear Pins ({tempPins.length})</span>
+            <span className="sm:hidden">Clear</span>
           </button>
-        </div>
-        {/* Map Controls */}
-        <div className="flex flex-row sm:flex-col items-center sm:items-end gap-2 w-full sm:w-auto justify-end">
-          {/* Locate Me Button */}
+        )}
+        {/* Mobile search + locate (side by side) */}
+        <div className="flex sm:hidden items-center gap-2">
           <button
             onClick={handleUseMyLocation}
             disabled={isLocating}
@@ -609,12 +886,64 @@ const MapView = ({
               </svg>
             )}
           </button>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleGeocodeSearch()}
+            placeholder="Search location..."
+            className="px-3 h-10 text-sm bg-white rounded-lg shadow border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 w-36"
+          />
+          <button
+            onClick={handleGeocodeSearch}
+            className="w-10 h-10 bg-white rounded-lg shadow text-sm font-medium text-gray-700 hover:bg-gray-50 border border-gray-200"
+            aria-label="Search location"
+          >
+            🔍
+          </button>
+        </div>
+        {/* Search - Desktop */}
+        <div className="hidden sm:flex flex-row gap-2">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleGeocodeSearch()}
+            placeholder="Search location..."
+            className="px-3 py-2 text-sm bg-white rounded-lg shadow border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
+          />
+          <button
+            onClick={handleGeocodeSearch}
+            className="px-3 py-2 bg-white rounded-lg shadow text-sm font-medium text-gray-700 hover:bg-gray-50 border border-gray-200"
+          >
+            🔍
+          </button>
+        </div>
+
+        {/* Map Controls - Vertical stack on right */}
+        <div className="flex flex-col items-end gap-2">
+          {/* Locate Me Button */}
+          <button
+            onClick={handleUseMyLocation}
+            disabled={isLocating}
+            className="hidden sm:flex w-10 h-10 bg-white rounded-lg shadow items-center justify-center hover:bg-gray-50 active:bg-gray-100 transition-colors disabled:opacity-50 border border-gray-200"
+            title="My location"
+          >
+            {isLocating ? (
+              <div className="w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            ) : (
+              <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <circle cx="12" cy="12" r="3" strokeWidth="2" />
+                <path strokeLinecap="round" strokeWidth="2" d="M12 2v4m0 12v4M2 12h4m12 0h4" />
+              </svg>
+            )}
+          </button>
 
           {/* Zoom Controls */}
-          <div className="bg-white rounded-lg shadow border border-gray-200 overflow-hidden flex flex-row sm:flex-col">
+          <div className="bg-white rounded-lg shadow border border-gray-200 overflow-hidden flex flex-col">
             <button
               onClick={handleZoomIn}
-              className="w-10 h-10 flex items-center justify-center hover:bg-gray-50 active:bg-gray-100 transition-colors border-r sm:border-r-0 sm:border-b border-gray-200"
+              className="w-10 h-10 flex items-center justify-center hover:bg-gray-50 active:bg-gray-100 transition-colors border-b border-gray-200"
               title="Zoom in"
             >
               <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -631,6 +960,23 @@ const MapView = ({
               </svg>
             </button>
           </div>
+
+          {/* Light/Dark Toggle */}
+          <button
+            onClick={() => setIsDarkMap(prev => !prev)}
+            className="w-10 h-10 bg-white rounded-lg shadow flex items-center justify-center hover:bg-gray-50 active:bg-gray-100 transition-colors border border-gray-200"
+            title={isDarkMap ? 'Switch to light map' : 'Switch to dark map'}
+          >
+            {isDarkMap ? (
+              <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 4a1 1 0 011-1V1a1 1 0 10-2 0v2a1 1 0 011 1zm0 16a1 1 0 01-1 1v2a1 1 0 102 0v-2a1 1 0 01-1-1zm8-8a1 1 0 011 1h2a1 1 0 100-2h-2a1 1 0 01-1 1zM4 12a1 1 0 01-1-1H1a1 1 0 100 2h2a1 1 0 011-1zm14.95-6.36a1 1 0 011.41 0l1.42 1.42a1 1 0 01-1.42 1.41l-1.41-1.41a1 1 0 010-1.42zM5.05 18.36a1 1 0 01-1.41 0l-1.42-1.42a1 1 0 011.42-1.41l1.41 1.41a1 1 0 010 1.42zm13.9 0a1 1 0 010-1.42l1.42-1.41a1 1 0 011.41 1.41l-1.41 1.42a1 1 0 01-1.42 0zM5.05 5.64a1 1 0 010 1.42L3.63 8.47a1 1 0 01-1.41-1.41L3.63 5.64a1 1 0 011.42 0z" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21.75 15.5a.75.75 0 01-.07 1.06 9.96 9.96 0 01-6.18 2.19c-5.52 0-10-4.48-10-10 0-3.19 1.5-6.03 3.83-7.87a.75.75 0 011.13.87A8.5 8.5 0 0019.5 13.25a8.46 8.46 0 001.19-.82.75.75 0 011.06.07z" />
+              </svg>
+            )}
+          </button>
         </div>
         {geoError && (
           <div className="text-xs text-red-600 bg-white border border-red-200 rounded-lg px-3 py-2 shadow">
@@ -645,7 +991,7 @@ const MapView = ({
         onMove={evt => setViewState(evt.viewState)}
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
         style={{ width: '100%', height: '100%' }}
-        mapStyle="mapbox://styles/mapbox/streets-v12"
+        mapStyle={isDarkMap ? "mapbox://styles/mapbox/dark-v11" : "mapbox://styles/mapbox/streets-v12"}
       >
         {/* 🆕 ROUTE RENDERING - Combined into single GeoJSON source */}
         {routes.length > 0 && (
@@ -760,10 +1106,66 @@ const MapView = ({
           );
         })}
 
+        {/* TEMPORARY PINS from Venue Chat (nearby places) */}
+        {tempPins.map((pin, idx) => (
+          <Marker
+            key={`temp-pin-${pin.placeId || idx}`}
+            longitude={pin.location.lng}
+            latitude={pin.location.lat}
+            anchor="bottom"
+            onClick={(e) => {
+              e.originalEvent.stopPropagation();
+              setTempPinPopup(pin);
+            }}
+          >
+            <div className="cursor-pointer transform transition-all duration-200 hover:scale-110 group relative">
+              <div className="relative">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-600 rounded-full border-3 border-white shadow-lg flex items-center justify-center">
+                  <span className="text-white text-xs sm:text-sm font-bold">📍</span>
+                </div>
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-purple-600 rotate-45"></div>
+              </div>
+              {/* Tooltip on hover */}
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+                <div className="bg-white rounded-lg shadow-lg px-3 py-2 border border-gray-200 whitespace-nowrap max-w-[200px]">
+                  <p className="text-xs font-semibold text-gray-900 truncate">{pin.name}</p>
+                  <p className="text-[10px] text-gray-500 truncate">{pin.address}</p>
+                </div>
+              </div>
+            </div>
+          </Marker>
+        ))}
+
         {userLocation && !markers.find(m => m.id === 'user-location') && (
           <Marker longitude={userLocation.lng} latitude={userLocation.lat} anchor="center">
             <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full border-2 border-white shadow-lg animate-pulse"></div>
           </Marker>
+        )}
+
+        {tempPinPopup && (
+          <Popup
+            longitude={tempPinPopup.location.lng}
+            latitude={tempPinPopup.location.lat}
+            anchor="top"
+            onClose={() => setTempPinPopup(null)}
+            closeButton={true}
+            closeOnClick={false}
+            offset={20}
+            maxWidth="none"
+          >
+            <div className="space-y-1">
+              <div className="text-sm font-semibold text-gray-900">{tempPinPopup.name}</div>
+              <div className="text-xs text-gray-600">{tempPinPopup.address}</div>
+              <a
+                href={getTempPinMapsUrl(tempPinPopup)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 mt-1 text-xs text-blue-600 hover:text-blue-700 font-medium"
+              >
+                ↗ Directions
+              </a>
+            </div>
+          </Popup>
         )}
 
         {popupInfo && (

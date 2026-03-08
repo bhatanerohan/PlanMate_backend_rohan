@@ -4,6 +4,14 @@ import type { ReactNode } from "react";
 
 export type GeoPreferenceMode = 'auto' | 'walkable' | 'spread';
 
+export interface AuthUser {
+  id: string;
+  email: string;
+  emailVerified: boolean;
+  name: string | null;
+  avatarUrl: string | null;
+}
+
 export interface Venue {
   name: string;
   address: string;
@@ -116,6 +124,17 @@ export interface PlanResponse {
   stoppedReason?: string;
   error?: string;
   isModification?: boolean;
+}
+
+export interface SharedTripPayload {
+  result: string;
+  mode: 'route' | 'discovery';
+  venues: Venue[];
+  events?: Event[];
+  routes?: Route[];
+  alternativesMap?: Record<string, Venue[]>;
+  originalPrompt?: string;
+  createdBy?: string;
 }
 
 export interface Message {

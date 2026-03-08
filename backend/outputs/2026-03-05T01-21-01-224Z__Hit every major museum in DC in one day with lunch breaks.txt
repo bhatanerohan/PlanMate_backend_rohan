@@ -1,0 +1,106 @@
+User Prompt: Hit every major museum in DC in one day with lunch breaks
+
+[2026-03-05T01:21:01.227Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-03-05T01:21:01.230Z] LOG 📦 Processing 18 candidates from Gemini
+[2026-03-05T01:21:01.232Z] LOG    🎯 Must-have: 5
+[2026-03-05T01:21:01.233Z] LOG    ✨ Nice-to-have: 13
+[2026-03-05T01:21:01.236Z] LOG 📍 Location hint: DC in one day
+[2026-03-05T01:21:01.237Z] LOG 
+🔍 Enriching 18 candidates in 2 batch(es)...
+[2026-03-05T01:21:01.239Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-03-05T01:21:01.242Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-03-05T01:21:01.244Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-03-05T01:21:01.247Z] LOG    1. Searching "Smithsonian National Museum of Natural History" in "DC in one day"
+[2026-03-05T01:21:01.249Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of Natural History" in DC in one day
+[2026-03-05T01:21:01.271Z] LOG    2. Searching "Smithsonian National Museum of American History" in "DC in one day"
+[2026-03-05T01:21:01.274Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Museum of American History" in DC in one day
+[2026-03-05T01:21:01.279Z] LOG    3. Searching "National Gallery of Art" in "DC in one day"
+[2026-03-05T01:21:01.281Z] LOG 🔍 [Google Places] Text search: "National Gallery of Art" in DC in one day
+[2026-03-05T01:21:01.287Z] LOG    4. Searching "National Museum of African American History and Culture" in "DC in one day"
+[2026-03-05T01:21:01.289Z] LOG 🔍 [Google Places] Text search: "National Museum of African American History and Culture" in DC in one day
+[2026-03-05T01:21:01.294Z] LOG    5. Searching "National Archives Museum" in "DC in one day"
+[2026-03-05T01:21:01.296Z] LOG 🔍 [Google Places] Text search: "National Archives Museum" in DC in one day
+[2026-03-05T01:21:01.301Z] LOG    6. Searching "National Mall" in "DC in one day"
+[2026-03-05T01:21:01.303Z] LOG 🔍 [Google Places] Text search: "National Mall" in DC in one day
+[2026-03-05T01:21:01.308Z] LOG    7. Searching "Smithsonian's National Air and Space Museum" in "DC in one day"
+[2026-03-05T01:21:01.310Z] LOG 🔍 [Google Places] Text search: "Smithsonian's National Air and Space Museum" in DC in one day
+[2026-03-05T01:21:01.316Z] LOG    8. Searching "United States Holocaust Memorial Museum" in "DC in one day"
+[2026-03-05T01:21:01.317Z] LOG 🔍 [Google Places] Text search: "United States Holocaust Memorial Museum" in DC in one day
+[2026-03-05T01:21:01.322Z] LOG    9. Searching "National Museum of Asian Art" in "DC in one day"
+[2026-03-05T01:21:01.324Z] LOG 🔍 [Google Places] Text search: "National Museum of Asian Art" in DC in one day
+[2026-03-05T01:21:01.329Z] LOG    10. Searching "National Museum of African Art" in "DC in one day"
+[2026-03-05T01:21:01.331Z] LOG 🔍 [Google Places] Text search: "National Museum of African Art" in DC in one day
+[2026-03-05T01:21:01.531Z] ERROR    ❌ Search 10 failed: {}
+[2026-03-05T01:21:01.554Z] ERROR    ❌ Search 7 failed: {}
+[2026-03-05T01:21:01.558Z] ERROR    ❌ Search 9 failed: {}
+[2026-03-05T01:21:01.562Z] ERROR    ❌ Search 8 failed: {}
+[2026-03-05T01:21:01.567Z] ERROR    ❌ Search 4 failed: {}
+[2026-03-05T01:21:01.572Z] ERROR    ❌ Search 6 failed: {}
+[2026-03-05T01:21:01.578Z] ERROR    ❌ Search 3 failed: {}
+[2026-03-05T01:21:01.583Z] ERROR    ❌ Search 2 failed: {}
+[2026-03-05T01:21:01.588Z] ERROR    ❌ Search 5 failed: {}
+[2026-03-05T01:21:01.607Z] ERROR    ❌ Search 1 failed: {}
+[2026-03-05T01:21:01.610Z] LOG ✅ Batch complete: 0/10 searches succeeded, 0 total venues found in 366ms
+[2026-03-05T01:21:01.613Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-03-05T01:21:01.615Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-03-05T01:21:01.821Z] LOG 
+   📦 Batch 2/2 (8 searches)...
+[2026-03-05T01:21:01.830Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-03-05T01:21:01.832Z] LOG 🔍 [BatchVenueSearchTool] Executing 8 searches in parallel
+[2026-03-05T01:21:01.834Z] LOG    1. Searching "Hirshhorn Museum" in "DC in one day"
+[2026-03-05T01:21:01.837Z] LOG 🔍 [Google Places] Text search: "Hirshhorn Museum" in DC in one day
+[2026-03-05T01:21:01.840Z] LOG    2. Searching "National Building Museum" in "DC in one day"
+[2026-03-05T01:21:01.842Z] LOG 🔍 [Google Places] Text search: "National Building Museum" in DC in one day
+[2026-03-05T01:21:01.845Z] LOG    3. Searching "National Portrait Gallery" in "DC in one day"
+[2026-03-05T01:21:01.846Z] LOG 🔍 [Google Places] Text search: "National Portrait Gallery" in DC in one day
+[2026-03-05T01:21:01.849Z] LOG    4. Searching "Renwick Gallery of the Smithsonian American Art Museum" in "DC in one day"
+[2026-03-05T01:21:01.852Z] LOG 🔍 [Google Places] Text search: "Renwick Gallery of the Smithsonian American Art Museum" in DC in one day
+[2026-03-05T01:21:01.855Z] LOG    5. Searching "Smithsonian American Art Museum" in "DC in one day"
+[2026-03-05T01:21:01.857Z] LOG 🔍 [Google Places] Text search: "Smithsonian American Art Museum" in DC in one day
+[2026-03-05T01:21:01.860Z] LOG    6. Searching "Museum of Illusions Washington DC" in "DC in one day"
+[2026-03-05T01:21:01.861Z] LOG 🔍 [Google Places] Text search: "Museum of Illusions Washington DC" in DC in one day
+[2026-03-05T01:21:01.863Z] LOG    7. Searching "United States Botanic Garden" in "DC in one day"
+[2026-03-05T01:21:01.865Z] LOG 🔍 [Google Places] Text search: "United States Botanic Garden" in DC in one day
+[2026-03-05T01:21:01.868Z] LOG    8. Searching "Smithsonian National Postal Museum" in "DC in one day"
+[2026-03-05T01:21:01.869Z] LOG 🔍 [Google Places] Text search: "Smithsonian National Postal Museum" in DC in one day
+[2026-03-05T01:21:01.918Z] ERROR    ❌ Search 6 failed: {}
+[2026-03-05T01:21:01.925Z] ERROR    ❌ Search 2 failed: {}
+[2026-03-05T01:21:01.933Z] ERROR    ❌ Search 7 failed: {}
+[2026-03-05T01:21:01.938Z] ERROR    ❌ Search 8 failed: {}
+[2026-03-05T01:21:01.954Z] ERROR    ❌ Search 4 failed: {}
+[2026-03-05T01:21:01.959Z] ERROR    ❌ Search 1 failed: {}
+[2026-03-05T01:21:01.965Z] ERROR    ❌ Search 5 failed: {}
+[2026-03-05T01:21:01.977Z] ERROR    ❌ Search 3 failed: {}
+[2026-03-05T01:21:01.982Z] LOG ✅ Batch complete: 0/8 searches succeeded, 0 total venues found in 150ms
+[2026-03-05T01:21:01.985Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-03-05T01:21:01.987Z] LOG       ✅ Batch 2 complete: 8 results
+[2026-03-05T01:21:01.989Z] LOG    ⚠️ Smithsonian National Museum of Natural History - not found in Google Places
+[2026-03-05T01:21:01.991Z] LOG    ⚠️ Smithsonian National Museum of American History - not found in Google Places
+[2026-03-05T01:21:01.993Z] LOG    ⚠️ National Gallery of Art - not found in Google Places
+[2026-03-05T01:21:01.995Z] LOG    ⚠️ National Museum of African American History and Culture - not found in Google Places
+[2026-03-05T01:21:01.996Z] LOG    ⚠️ National Archives Museum - not found in Google Places
+[2026-03-05T01:21:01.998Z] LOG    ⚠️ National Mall - not found in Google Places
+[2026-03-05T01:21:02.001Z] LOG    ⚠️ Smithsonian's National Air and Space Museum - not found in Google Places
+[2026-03-05T01:21:02.003Z] LOG    ⚠️ United States Holocaust Memorial Museum - not found in Google Places
+[2026-03-05T01:21:02.005Z] LOG    ⚠️ National Museum of Asian Art - not found in Google Places
+[2026-03-05T01:21:02.007Z] LOG    ⚠️ National Museum of African Art - not found in Google Places
+[2026-03-05T01:21:02.009Z] LOG    ⚠️ Hirshhorn Museum - not found in Google Places
+[2026-03-05T01:21:02.011Z] LOG    ⚠️ National Building Museum - not found in Google Places
+[2026-03-05T01:21:02.013Z] LOG    ⚠️ National Portrait Gallery - not found in Google Places
+[2026-03-05T01:21:02.015Z] LOG    ⚠️ Renwick Gallery of the Smithsonian American Art Museum - not found in Google Places
+[2026-03-05T01:21:02.017Z] LOG    ⚠️ Smithsonian American Art Museum - not found in Google Places
+[2026-03-05T01:21:02.019Z] LOG    ⚠️ Museum of Illusions Washington DC - not found in Google Places
+[2026-03-05T01:21:02.022Z] LOG    ⚠️ United States Botanic Garden - not found in Google Places
+[2026-03-05T01:21:02.025Z] LOG    ⚠️ Smithsonian National Postal Museum - not found in Google Places
+[2026-03-05T01:21:02.027Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-03-05T01:21:02.030Z] LOG    Total enriched: 0
+[2026-03-05T01:21:02.032Z] LOG    🎯 Must-have: 0
+[2026-03-05T01:21:02.034Z] LOG    ✨ Nice-to-have: 0
+[2026-03-05T01:21:02.036Z] LOG    ❌ Failed: 18
+[2026-03-05T01:21:02.037Z] LOG    ⏱️  Enrichment took: 813ms (0.81s)
+
+--- Summary ---
+Enrichment completed

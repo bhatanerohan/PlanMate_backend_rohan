@@ -14,7 +14,15 @@ import { outputLogger } from '../services/output-logger.js';
 import { nearestNeighborOptimization, optimizeFromUserLocation, formatDistance, formatDuration } from '../services/utils/route_optimizer.js';
 import { formatItineraryMessage } from '../services/itinerary-formatter.js';
 import { enrichWithInstagramReels } from '../services/video-enrichment-agent.js';
+import { startReelsJob, getReelsJobStatus } from '../services/reels-job-store.js';
 import { createSharedTrip, getSharedTrip } from '../services/share.js';
+import {
+  getAuthenticatedUserFromRequest,
+  getAuthCookieName,
+  getAuthCookieOptions,
+  revokeSessionFromRequest,
+  signInWithGoogleCredential
+} from '../services/auth.js';
 import {
   saveAnalyticsEvent,
   trackModification,
@@ -25,6 +33,55 @@ import {
 import { GoogleGenAI } from '@google/genai';
 
 const router = Router();
+
+// ============================================================================
+// AUTH ROUTES
+// ============================================================================
+
+router.post('/auth/google', async (req: Request, res: Response) => {
+  try {
+    const credential = req.body?.credential;
+    if (!credential || typeof credential !== 'string') {
+      return res.status(400).json({ success: false, error: 'Google credential is required' });
+    }
+
+    const { user, sessionToken } = await signInWithGoogleCredential(credential);
+
+    res.cookie(getAuthCookieName(), sessionToken, getAuthCookieOptions());
+    return res.json({ success: true, user });
+  } catch (error) {
+    console.error('Google auth error:', error);
+    return res.status(401).json({
+      success: false,
+      error: error instanceof Error ? error.message : 'Google sign-in failed'
+    });
+  }
+});
+
+router.get('/auth/me', async (req: Request, res: Response) => {
+  try {
+    const user = await getAuthenticatedUserFromRequest(req);
+    if (!user) {
+      return res.status(401).json({ success: false, authenticated: false });
+    }
+
+    return res.json({ success: true, authenticated: true, user });
+  } catch (error) {
+    console.error('Auth me error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to fetch authenticated user' });
+  }
+});
+
+router.post('/auth/logout', async (req: Request, res: Response) => {
+  try {
+    await revokeSessionFromRequest(req);
+    res.clearCookie(getAuthCookieName(), getAuthCookieOptions());
+    return res.json({ success: true });
+  } catch (error) {
+    console.error('Logout error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to log out' });
+  }
+});
 
 // ============================================================================
 // CORRIDOR DETECTION HELPERS
@@ -1154,6 +1211,9 @@ router.post('/plan', async (req: Request, res: Response) => {
         console.log(`   Cluster radius: ${selectionResult.clusterRadiusKm.toFixed(2)}km`);
         console.log('='.repeat(80) + '\n');
 
+        // 🆕 Fire-and-forget: kick off Apify reels job in background
+        startReelsJob(sessionId, finalVenues);
+
         return res.json({
           success: true,
           session_id: sessionId,
@@ -1449,6 +1509,9 @@ router.post('/plan', async (req: Request, res: Response) => {
     console.log(`   Venues: ${enrichedVenues.length}`);
     console.log('='.repeat(80) + '\n');
 
+    // 🆕 Fire-and-forget: kick off Apify reels job in background
+    startReelsJob(sessionId, enrichedVenues);
+
     return res.json({
       success: agentResponse?.success ?? false,
       result: finalResultMessage,
@@ -1487,7 +1550,13 @@ router.post('/share-trip', async (req: Request, res: Response) => {
       return res.status(400).json({ success: false, error: 'payload with venues is required' });
     }
 
-    const shareId = await createSharedTrip(payload);
+    const authenticatedUser = await getAuthenticatedUserFromRequest(req);
+    const normalizedPayload = {
+      ...payload,
+      createdBy: authenticatedUser?.name || authenticatedUser?.email || payload.createdBy
+    };
+
+    const shareId = await createSharedTrip(normalizedPayload);
     return res.json({ success: true, shareId });
   } catch (error) {
     console.error('❌ Share trip error:', error);
@@ -1577,7 +1646,20 @@ router.get('/health', (req: Request, res: Response) => {
 });
 
 // ============================================================================
-// REELS ENDPOINT: /reels (Lazy Loading)
+// REELS STATUS ENDPOINT: /reels-status/:sessionId (Polling)
+// ============================================================================
+router.get('/reels-status/:sessionId', (req: Request, res: Response) => {
+  const { sessionId } = req.params;
+  if (!sessionId) {
+    return res.status(400).json({ success: false, error: 'sessionId is required' });
+  }
+
+  const result = getReelsJobStatus(sessionId);
+  return res.json({ success: true, ...result });
+});
+
+// ============================================================================
+// REELS ENDPOINT: /reels (Lazy Loading — fallback)
 // ============================================================================
 router.post('/reels', async (req: Request, res: Response) => {
   try {
@@ -1589,7 +1671,7 @@ router.post('/reels', async (req: Request, res: Response) => {
 
     console.log(`📸 Fetching Instagram Reels for ${venues.length} venues...`);
 
-    const enrichedVenues = await enrichWithInstagramReels(venues, { maxReelsPerVenue: 3 });
+    const enrichedVenues = await enrichWithInstagramReels(venues, { maxReelsPerVenue: 5 });
 
     // Build a map of placeId -> reels
     const reelsMap: Record<string, any[]> = {};
@@ -1688,15 +1770,12 @@ USER QUESTION: "${question}"
     });
 
     const config: any = {
-      tools: [{ googleSearch: {} }],
-      toolConfig: {
-        functionCallingConfig: { mode: 'AUTO' } // Let model decide to use search
-      }
+      tools: [{ googleSearch: {} }]
     };
 
     console.log('   🔍 Calling Gemini with Google Search...');
     const response = await ai.models.generateContent({
-      model: 'gemini-2.0-flash',
+      model: 'gemini-2.5-flash',
       contents,
       config
     });

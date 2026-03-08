@@ -6,9 +6,10 @@ import ChatInterface from './components/ChatInterface';
 import MapView from './components/MapView';
 import BottomSheet, { type BottomSheetHandle } from './components/BottomSheet';
 import VenueDetailSheet from './components/VenueDetailSheet';
+import VenueChatSheet from './components/VenueChatSheet';
 import DesktopVenueCard from './components/DesktopVenueCard';
-import { analyticsApi } from './services/api';
-import type { Message, MapMarker, Route, Location, Venue, InstagramReel } from './types';
+import { analyticsApi, authApi, planApi, getSessionId } from './services/api';
+import type { AuthUser, Message, MapMarker, Route, Location, Venue, InstagramReel, SharedTripPayload } from './types';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,6 +31,8 @@ interface CurrentItinerary {
 }
 
 function App() {
+  const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
   // Persistent State Initialization
   const [messages, setMessages] = useState<Message[]>(() => {
     try {
@@ -86,11 +89,14 @@ function App() {
       return saved ? JSON.parse(saved) : null;
     } catch { return null; }
   });
+  const [authUser, setAuthUser] = useState<AuthUser | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [authError, setAuthError] = useState<string | null>(null);
 
   const [chatWidthPx, setChatWidthPx] = useState(600);
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [activeMobilePanel, setActiveMobilePanel] = useState<'chat' | 'map'>('chat');
+  // const [activeMobilePanel, setActiveMobilePanel] = useState<'chat' | 'map'>('chat'); // Unused
   const containerRef = useRef<HTMLDivElement>(null);
   const bottomSheetRef = useRef<BottomSheetHandle>(null);
   const chatInterfaceRef = useRef<any>(null);
@@ -102,9 +108,51 @@ function App() {
     stopNumber?: number;
   } | null>(null);
 
+  // Keep viewport height in sync on mobile browsers with dynamic UI bars
+  useEffect(() => {
+    const updateViewportHeight = () => {
+      const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
+      document.documentElement.style.setProperty('--app-vh', `${viewportHeight * 0.01}px`);
+    };
+
+    updateViewportHeight();
+    window.addEventListener('resize', updateViewportHeight);
+    window.visualViewport?.addEventListener('resize', updateViewportHeight);
+    window.visualViewport?.addEventListener('scroll', updateViewportHeight);
+
+    return () => {
+      window.removeEventListener('resize', updateViewportHeight);
+      window.visualViewport?.removeEventListener('resize', updateViewportHeight);
+      window.visualViewport?.removeEventListener('scroll', updateViewportHeight);
+    };
+  }, []);
+
+  // Auto-detect location on app load — prompts the browser for permission if not yet granted
+  useEffect(() => {
+    if (userLocation || !navigator.geolocation) return;
+
+    console.log('🌍 Requesting user location...');
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const loc: Location = {
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+          name: 'Current Location'
+        };
+        setUserLocation(loc);
+        console.log('📍 Auto-detected user location:', loc);
+      },
+      (err) => {
+        console.warn('⚠️ Location request denied or failed:', err.message);
+      },
+      { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 }
+    );
+  }, [userLocation]);
+
   // Reel player state (lifted to App for proper z-index on mobile)
   const [activeReels, setActiveReels] = useState<InstagramReel[]>([]);
   const [activeReelIndex, setActiveReelIndex] = useState(0);
+  const [touchStartY, setTouchStartY] = useState<number | null>(null); // 🆕 Swipe state
 
   // Analytics: track which reel and when it was opened
   const reelOpenTimeRef = useRef<number | null>(null);
@@ -140,12 +188,205 @@ function App() {
     setActiveReelIndex(0);
   };
 
+  // 🆕 Swipe Handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartY(e.touches[0].clientY);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartY === null) return;
+    const touchEndY = e.changedTouches[0].clientY;
+    const diff = touchStartY - touchEndY;
+
+    // Swipe Up -> Next
+    if (diff > 50 && activeReelIndex < activeReels.length - 1) {
+      handleNextReel();
+    }
+    // Swipe Down -> Prev
+    else if (diff < -50 && activeReelIndex > 0) {
+      handlePrevReel();
+    }
+    setTouchStartY(null);
+  };
+
   const handlePrevReel = () => {
     setActiveReelIndex(prev => (prev > 0 ? prev - 1 : activeReels.length - 1));
   };
 
   const handleNextReel = () => {
     setActiveReelIndex(prev => (prev < activeReels.length - 1 ? prev + 1 : 0));
+  };
+
+  const [reelsLoading, setReelsLoading] = useState(false);
+  const [reelsChecked, setReelsChecked] = useState(false); // true once polling finishes (ready/failed/timeout)
+  const [venueChatTarget, setVenueChatTarget] = useState<Venue | null>(null); // 🆕 Venue Chat state
+  const [tempPins, setTempPins] = useState<{ name: string; address: string; location: { lat: number; lng: number }; placeId: string; type?: string }[]>([]);
+
+  useEffect(() => {
+    let isCancelled = false;
+
+    const loadCurrentUser = async () => {
+      setAuthLoading(true);
+      setAuthError(null);
+      const result = await authApi.getCurrentUser();
+
+      if (isCancelled) {
+        return;
+      }
+
+      if (result.authenticated && result.user) {
+        setAuthUser(result.user);
+      } else {
+        setAuthUser(null);
+      }
+
+      setAuthLoading(false);
+    };
+
+    loadCurrentUser();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
+
+  const handleGoogleCredential = async (credential: string) => {
+    setAuthError(null);
+    setAuthLoading(true);
+
+    const result = await authApi.loginWithGoogle(credential);
+    if (!result.success || !result.user) {
+      setAuthError(result.error || 'Google sign-in failed');
+      setAuthLoading(false);
+      return;
+    }
+
+    setAuthUser(result.user);
+    setAuthLoading(false);
+  };
+
+  const handleLogout = async () => {
+    setAuthError(null);
+    setAuthLoading(true);
+
+    await authApi.logout();
+    window.google?.accounts.id.disableAutoSelect();
+    setAuthUser(null);
+    setAuthLoading(false);
+  };
+
+  const handleAskVenue = (venue: Venue) => {
+    setVenueChatTarget(venue);
+  };
+
+  const buildMarkersFromPayload = (payload: SharedTripPayload): MapMarker[] => {
+    const markerHasPlaceId = (marker: MapMarker): marker is MapMarker & { data: Venue } =>
+      marker.type === 'venue' && 'placeId' in marker.data;
+
+    const newMarkers: MapMarker[] = payload.venues.map((v, i) => ({
+      id: `primary-${i}`,
+      position: { lat: v.location.lat, lng: v.location.lng },
+      title: v.name,
+      type: 'venue',
+      data: v,
+      metadata: {
+        stopNumber: i + 1,
+        isPrimary: true
+      }
+    }));
+
+    if (payload.alternativesMap) {
+      Object.values(payload.alternativesMap).forEach((alts: any[]) => {
+        alts.forEach((alt: any) => {
+          if (!newMarkers.find(m => markerHasPlaceId(m) && m.data.placeId === alt.placeId)) {
+            newMarkers.push({
+              id: `alternative-${alt.placeId}`,
+              type: 'venue',
+              position: { lat: alt.location.lat, lng: alt.location.lng },
+              title: alt.name,
+              data: alt,
+              metadata: {
+                isAlternative: true,
+                isPrimary: false
+              }
+            });
+          }
+        });
+      });
+    }
+
+    if (payload.events) {
+      payload.events.forEach((evt: any, i: number) => {
+        if (evt.venue?.location) {
+          newMarkers.push({
+            id: `event-${i}`,
+            position: { lat: evt.venue.location.lat, lng: evt.venue.location.lng },
+            title: evt.name,
+            type: 'event',
+            data: evt
+          });
+        }
+      });
+    }
+
+    return newMarkers;
+  };
+
+  const applySharedTrip = (payload: SharedTripPayload) => {
+    const agentMsg: Message = {
+      id: Date.now().toString(),
+      type: 'agent',
+      content: payload.result || 'Here is your shared trip!',
+      data: {
+        venues: payload.venues,
+        events: payload.events || [],
+        alternativesMap: payload.alternativesMap || {}
+      },
+      timestamp: Date.now()
+    };
+
+    setMessages([agentMsg]);
+    setMarkers(buildMarkersFromPayload(payload));
+    setRoutes(payload.routes || []);
+    setIsRouteMode(payload.mode === 'route');
+    setSelectedMarkerId(null);
+    setVenueChatTarget(null);
+
+    setCurrentItinerary({
+      venues: payload.venues,
+      originalPrompt: payload.originalPrompt || agentMsg.content,
+      mode: payload.mode,
+      timestamp: Date.now(),
+      alternativesMap: payload.alternativesMap || {}
+    });
+  };
+
+  const handleShareTrip = async () => {
+    if (!currentItinerary || !currentItinerary.venues?.length) return;
+
+    const latestAgent = [...messages].reverse().find(m => m.type === 'agent');
+    const payload: SharedTripPayload = {
+      result: latestAgent?.content || 'Shared trip from PlanMate',
+      mode: currentItinerary.mode,
+      venues: (latestAgent?.data?.venues as Venue[]) || currentItinerary.venues,
+      events: latestAgent?.data?.events || [],
+      routes: routes || [],
+      alternativesMap: (latestAgent?.data?.alternativesMap as Record<string, Venue[]>) || currentItinerary.alternativesMap,
+      originalPrompt: currentItinerary.originalPrompt
+    };
+
+    const response = await planApi.shareTrip(payload);
+    if (!response.success || !response.shareId) {
+      return;
+    }
+
+    const shareUrl = `${window.location.origin}/?share=${response.shareId}`;
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      alert('Share link copied to clipboard!');
+    } catch {
+      window.prompt('Copy this share link:', shareUrl);
+    }
   };
 
   const handleNewPlan = (
@@ -155,6 +396,14 @@ function App() {
     isRouteQuery?: boolean,
     isModification?: boolean
   ) => {
+    // 🆕 DEBUG: Log incoming plan data to trace "remove" issues
+    console.log('🏗️ handleNewPlan called:', {
+      type: message.type,
+      venuesCount: message.data?.venues?.length,
+      isModification,
+      hasAlternatives: !!message.data?.alternativesMap
+    });
+
     // If it's a modification, update the last agent message instead of adding a new one
     if (isModification && message.type === 'agent') {
       setMessages((prev) => {
@@ -175,6 +424,14 @@ function App() {
             data: message.data,
             timestamp: Date.now()
           };
+
+          // 🆕 UX FIX: Remove the modification prompt (user message) so it doesn't linger below the updated plan
+          // This creates a seamless "in-place update" feel
+          const lastMsg = newMessages[newMessages.length - 1];
+          if (lastMsg.type === 'user') {
+            newMessages.pop();
+          }
+
           return newMessages;
         }
         return [...prev, message];
@@ -205,18 +462,145 @@ function App() {
     }
 
     if (message.type === 'agent' && message.data?.venues && message.data.venues.length > 0) {
+      // 🆕 OPTIMIZATION: Check if we already have reels for these venues
+      const existingReelsMap = new Map<string, InstagramReel[]>();
+      if (currentItinerary?.venues) {
+        currentItinerary.venues.forEach(v => {
+          if (v.instagramReels && v.instagramReels.length > 0) {
+            existingReelsMap.set(v.placeId, v.instagramReels);
+          }
+        });
+      }
+
+      // Filter out venues that already have reels or are user-location
+      const venuesToFetch = message.data.venues.filter((v: Venue) => {
+        if (v.placeId === 'user-location') return false;
+        return !existingReelsMap.has(v.placeId);
+      });
+
+      // Preserve existing reels in the venues object immediately
+      const venuesWithPreservedReels = message.data.venues.map((v: Venue) => ({
+        ...v,
+        instagramReels: existingReelsMap.get(v.placeId) || v.instagramReels
+      }));
+
+      // Only poll if there are venues that need reels
+      if (venuesToFetch.length > 0) {
+        console.log('📸 Starting reels polling for', venuesToFetch.length, 'venues');
+        setReelsLoading(true);
+        setReelsChecked(false);
+
+        // Poll reels-status endpoint every 3 seconds
+        const sid = getSessionId();
+        if (sid) {
+          let pollCount = 0;
+          const maxPolls = 30; // 30 * 3s = 90s timeout
+
+          const pollInterval = setInterval(async () => {
+            pollCount++;
+            try {
+              const result = await planApi.pollReelsStatus(sid);
+              console.log(`📸 Reels poll #${pollCount}: status=${result.status}`);
+
+              if (result.status === 'ready' || result.status === 'failed' || result.status === 'not_found' || pollCount >= maxPolls) {
+                clearInterval(pollInterval);
+
+                if (result.status === 'ready' && result.reelsMap) {
+                  const reelsMap = result.reelsMap;
+                  console.log('📸 Reels ready!', Object.keys(reelsMap).filter(k => reelsMap[k]?.length > 0).length, 'venues with reels');
+
+                  // 1. Update Current Itinerary
+                  setCurrentItinerary(prev => {
+                    if (!prev) return null;
+                    return {
+                      ...prev,
+                      venues: prev.venues.map(v => ({
+                        ...v,
+                        instagramReels: reelsMap[v.placeId] || v.instagramReels || []
+                      }))
+                    };
+                  });
+
+                  // 2. Update Markers
+                  setMarkers(prevMarkers => {
+                    return prevMarkers.map(marker => {
+                      const venueData = marker.data as Venue;
+                      if (venueData.placeId) {
+                        return {
+                          ...marker,
+                          data: {
+                            ...venueData,
+                            instagramReels: reelsMap[venueData.placeId] || venueData.instagramReels || []
+                          }
+                        };
+                      }
+                      return marker;
+                    });
+                  });
+
+                  // 3. Update active sheet if open
+                  setSelectedVenueForSheet(prev => {
+                    if (prev) {
+                      return {
+                        ...prev,
+                        venue: {
+                          ...prev.venue,
+                          instagramReels: reelsMap[prev.venue.placeId] || prev.venue.instagramReels || []
+                        }
+                      };
+                    }
+                    return prev;
+                  });
+                } else {
+                  console.warn('📸 Reels polling ended:', result.status === 'failed' ? 'job failed' : pollCount >= maxPolls ? 'timeout' : result.status);
+                }
+
+                setReelsLoading(false);
+                setReelsChecked(true);
+              }
+            } catch (err) {
+              console.warn('📸 Reels poll error:', err);
+              clearInterval(pollInterval);
+              setReelsLoading(false);
+              setReelsChecked(true);
+            }
+          }, 3000);
+        } else {
+          // No session ID — fall back to direct fetch
+          console.log('📸 No session ID, falling back to direct fetch');
+          const payload = venuesToFetch.map((v: Venue) => ({
+            placeId: v.placeId,
+            name: v.name,
+            address: v.address || ''
+          }));
+          planApi.fetchReels(payload).then(reelsMap => {
+            setCurrentItinerary(prev => {
+              if (!prev) return null;
+              return { ...prev, venues: prev.venues.map(v => ({ ...v, instagramReels: reelsMap[v.placeId] || v.instagramReels || [] })) };
+            });
+            setMarkers(prev => prev.map(m => { const vd = m.data as Venue; return vd.placeId ? { ...m, data: { ...vd, instagramReels: reelsMap[vd.placeId] || vd.instagramReels || [] } } : m; }));
+            setSelectedVenueForSheet(prev => prev ? { ...prev, venue: { ...prev.venue, instagramReels: reelsMap[prev.venue.placeId] || prev.venue.instagramReels || [] } } : prev);
+            setReelsLoading(false);
+            setReelsChecked(true);
+          }).catch(() => { setReelsLoading(false); setReelsChecked(true); });
+        }
+      } else {
+        console.log('📸 All venues already have reels, skipping fetch.');
+        setReelsChecked(true);
+      }
+
       if (isModification) {
         // ... (existing modification specific logic for CurrentItinerary)
-        const userLocationStillPresent = message.data.venues.some((v: Venue) => v.placeId === 'user-location');
+        const userLocationStillPresent = venuesWithPreservedReels.some((v: Venue) => v.placeId === 'user-location');
         const newUserLocationIndex = userLocationStillPresent
-          ? message.data.venues.findIndex((v: Venue) => v.placeId === 'user-location')
+          ? venuesWithPreservedReels.findIndex((v: Venue) => v.placeId === 'user-location')
           : undefined;
 
         console.log('🔧 Modification: Updating currentItinerary with alternativesMap:',
           Object.keys(message.data.alternativesMap || {}).length, 'alternatives');
 
         setCurrentItinerary({
-          venues: message.data.venues,
+          venues: venuesWithPreservedReels,
           originalPrompt: currentItinerary?.originalPrompt || message.content,
           mode: 'route',
           timestamp: Date.now(),
@@ -240,7 +624,7 @@ function App() {
             Object.keys(message.data.alternativesMap || {}).length, 'alternatives');
 
           setCurrentItinerary({
-            venues: message.data.venues,
+            venues: venuesWithPreservedReels,
             originalPrompt: message.content,
             mode: isRouteQuery ? 'route' : 'discovery',
             timestamp: Date.now(),
@@ -269,6 +653,13 @@ function App() {
 
   const handleMarkerSelect = (markerId: string) => {
     setSelectedMarkerId(markerId);
+    const marker = markers.find(m => m.id === markerId);
+    if (marker?.type === 'venue') {
+      const venue = marker.data as Venue;
+      const isPrimary = marker.metadata?.isPrimary ?? marker.id.startsWith('primary-');
+      const stopNumber = marker.metadata?.stopNumber;
+      setSelectedVenueForSheet({ venue, isPrimary, stopNumber });
+    }
     // On mobile, collapse the bottom sheet to reveal the map
     if (isMobile && bottomSheetRef.current) {
       bottomSheetRef.current.collapse();
@@ -374,6 +765,23 @@ function App() {
   }, [isDragging, isMobile]);
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const shareId = params.get('share');
+    if (!shareId) return;
+
+    const loadSharedTrip = async () => {
+      const response = await planApi.getSharedTrip(shareId);
+      if (response.success && response.payload) {
+        applySharedTrip(response.payload);
+      } else {
+        alert('Shared trip not found or expired.');
+      }
+    };
+
+    loadSharedTrip();
+  }, []);
+
+  useEffect(() => {
     if (typeof window === 'undefined') return;
     const mediaQuery = window.matchMedia('(max-width: 767px)');
     const handleChange = (event: MediaQueryListEvent) => {
@@ -404,7 +812,7 @@ function App() {
       window.dispatchEvent(new Event('resize'));
     }, 150);
     return () => clearTimeout(timer);
-  }, [activeMobilePanel, isMobile]);
+  }, [isMobile]);
 
   const chatPanelStyle = isMobile ? undefined : { width: `${chatWidthPx}px` };
 
@@ -430,6 +838,14 @@ function App() {
                 currentItinerary={currentItinerary}
                 onClearItinerary={() => setCurrentItinerary(null)}
                 onNewChat={handleResetChat}
+                onShareTrip={handleShareTrip}
+                canShare={!!currentItinerary?.venues?.length}
+                authUser={authUser}
+                authLoading={authLoading}
+                authError={authError}
+                googleClientId={googleClientId}
+                onGoogleCredential={handleGoogleCredential}
+                onLogout={handleLogout}
               />
             </div>
 
@@ -451,6 +867,7 @@ function App() {
               <MapView
                 markers={markers}
                 routes={routes}
+                tempPins={tempPins}
                 selectedMarkerId={selectedMarkerId}
                 onMarkerClick={handleMarkerSelect}
                 userLocation={userLocation}
@@ -459,6 +876,7 @@ function App() {
                 currentItinerary={currentItinerary}
                 onQuickAction={handleQuickAction}
                 onPlayReel={handlePlayReel}
+                onClearTempPins={() => setTempPins([])}
                 onVenueSelect={(venue, isPrimary, stopNumber) => {
                   setSelectedVenueForSheet({ venue, isPrimary, stopNumber });
                 }}
@@ -473,6 +891,20 @@ function App() {
                   onClose={() => setSelectedVenueForSheet(null)}
                   onPlayReel={handlePlayReel}
                   onQuickAction={handleQuickAction}
+                  reelsLoading={reelsLoading}
+                  reelsChecked={reelsChecked}
+                  onAskVenue={handleAskVenue}
+                />
+              )}
+
+              {/* Venue Chat Sheet - Scoped to Map Panel on Desktop */}
+              {venueChatTarget && (
+                <VenueChatSheet
+                  venue={venueChatTarget}
+                  onClose={() => {
+                    setVenueChatTarget(null);
+                  }}
+                  onShowPins={(pins) => setTempPins(pins)}
                 />
               )}
             </div>
@@ -487,6 +919,7 @@ function App() {
               <MapView
                 markers={markers}
                 routes={routes}
+                tempPins={tempPins}
                 selectedMarkerId={selectedMarkerId}
                 onMarkerClick={handleMarkerSelect}
                 userLocation={userLocation}
@@ -496,14 +929,15 @@ function App() {
                 onQuickAction={handleQuickAction}
                 onPlayReel={handlePlayReel}
                 isMobile={true}
+                onClearTempPins={() => setTempPins([])}
                 onVenueSelect={(venue, isPrimary, stopNumber) => {
                   setSelectedVenueForSheet({ venue, isPrimary, stopNumber });
                 }}
               />
             </div>
 
-            {/* Chat in sliding BottomSheet - hidden when venue sheet is open */}
-            {!selectedVenueForSheet && (
+            {/* Chat in sliding BottomSheet - keep mounted so quick actions work */}
+            <div className={selectedVenueForSheet ? 'hidden' : ''}>
               <BottomSheet ref={bottomSheetRef} snapPoints={[20, 50, 100]} defaultSnapIndex={1}>
                 <ChatInterface
                   ref={chatInterfaceRef}
@@ -515,9 +949,17 @@ function App() {
                   currentItinerary={currentItinerary}
                   onClearItinerary={() => setCurrentItinerary(null)}
                   onNewChat={handleResetChat}
+                  onShareTrip={handleShareTrip}
+                  canShare={!!currentItinerary?.venues?.length}
+                  authUser={authUser}
+                  authLoading={authLoading}
+                  authError={authError}
+                  googleClientId={googleClientId}
+                  onGoogleCredential={handleGoogleCredential}
+                  onLogout={handleLogout}
                 />
               </BottomSheet>
-            )}
+            </div>
 
             {/* Venue Detail Sheet - shown when a venue is selected on mobile */}
             {selectedVenueForSheet && (
@@ -528,11 +970,27 @@ function App() {
                 onClose={() => setSelectedVenueForSheet(null)}
                 onPlayReel={handlePlayReel}
                 onQuickAction={handleQuickAction}
+                reelsLoading={reelsLoading}
+                reelsChecked={reelsChecked}
+                onAskVenue={handleAskVenue}
+              />
+            )}
+
+            {/* Venue Chat Sheet - Scoped to Mobile Layout */}
+            {venueChatTarget && (
+              <VenueChatSheet
+                venue={venueChatTarget}
+                onClose={() => {
+                  setVenueChatTarget(null);
+                }}
+                onShowPins={(pins) => setTempPins(pins)}
               />
             )}
           </div>
         )}
       </div>
+
+
 
       {/* Reel Player Overlay - Rendered at App level for proper z-index */}
       {activeReels.length > 0 && activeReels[activeReelIndex] && (
@@ -547,14 +1005,17 @@ function App() {
             </button>
           )}
 
-          <div className="relative w-full max-w-[350px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20">
+          <div
+            className="relative w-full max-w-[350px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20 touch-none"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             {/* Video Player */}
             <video
               key={activeReels[activeReelIndex].id}
               src={activeReels[activeReelIndex].videoUrl}
               poster={activeReels[activeReelIndex].thumbnailUrl}
-              className="w-full h-full object-cover"
-              controls
+              className="w-full h-full object-cover pointer-events-none"
               autoPlay
               playsInline
               loop

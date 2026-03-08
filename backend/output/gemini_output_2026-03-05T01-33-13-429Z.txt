@@ -1,0 +1,147 @@
+PROMPT:
+User location: Current location (42.323458768664324, -71.10724237566048)
+
+Request: "Plan a day of Formula-1 themed sightseeing in Monaco"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Formula 1 themed sightseeing",
+    "total_stops": 5,
+    "estimated_duration": "8 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Monaco Circuit",
+      "category": "Racecourse",
+      "priority": "must_have"
+    },
+    {
+      "name": "Fairmont Hairpin",
+      "category": "Tourist Attraction",
+      "priority": "must_have"
+    },
+    {
+      "name": "Casino de Monte-Carlo",
+      "category": "Casino",
+      "priority": "must_have"
+    },
+    {
+      "name": "Private Cars Collection of HSH Prince of Monaco",
+      "category": "Museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Grand Prix Monaco Billet",
+      "category": "Store",
+      "priority": "must_have"
+    },
+    {
+      "name": "F1 Car Sculpture",
+      "category": "Sculpture",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Virage Fairmont - Monaco",
+      "category": "Historical Landmark",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Portier - Monaco Grand Prix",
+      "category": "Tourist Attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "F1 Monaco race track city",
+      "category": "Tourist Attraction",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Monaco Formula1 (F1) circuit self-guided tours by Tourific",
+      "category": "Tour Agency",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Aston Martin Monaco - BPM Exclusive",
+      "category": "Car Dealer",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Rolls-Royce Motor Cars Monaco",
+      "category": "Car Dealer",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Mercedes-Benz & Smart Monaco - BPM Cars",
+      "category": "Car Dealer",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "McLaren",
+      "category": "Car Dealer",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Monaco Brewery",
+      "category": "Brewpub",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Caffè Milano",
+      "category": "Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Place du Casino",
+      "category": "Restaurant",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Souvenirs Shop Monaco",
+      "category": "Gift Shop",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Monte Carlo Art Factory",
+      "category": "Store",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Boutique Formule 1",
+      "category": "Sporting Goods Store",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

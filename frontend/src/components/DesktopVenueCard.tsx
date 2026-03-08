@@ -10,6 +10,9 @@ interface DesktopVenueCardProps {
     onQuickAction?: (action: string) => void;
     isPrimary?: boolean;
     stopNumber?: number;
+    reelsLoading?: boolean;
+    reelsChecked?: boolean;
+    onAskVenue?: (venue: Venue) => void;
 }
 
 // Snap points as percentage of viewport height
@@ -83,7 +86,10 @@ const DesktopVenueCard = ({
     onPlayReel,
     onQuickAction,
     isPrimary,
-    stopNumber
+    stopNumber,
+    reelsLoading,
+    reelsChecked,
+    onAskVenue
 }: DesktopVenueCardProps) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [sheetHeight, setSheetHeight] = useState(SNAP_HALF);
@@ -212,7 +218,7 @@ const DesktopVenueCard = ({
     return (
         <div
             ref={containerRef}
-            className="absolute bottom-0 left-0 right-0 z-50 bg-white rounded-t-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.15)] overflow-hidden"
+            className="absolute bottom-0 left-0 right-0 z-50 bg-gray-900 rounded-t-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.5)] overflow-hidden"
             style={{
                 height: `${sheetHeight}vh`,
                 transition: isDragging ? 'none' : 'height 0.3s ease-out',
@@ -221,17 +227,17 @@ const DesktopVenueCard = ({
         >
             {/* Drag Handle */}
             <div
-                className="sticky top-0 z-20 bg-white pt-2 pb-3 cursor-grab active:cursor-grabbing select-none"
+                className="sticky top-0 z-20 bg-gray-900 pt-2 pb-3 cursor-grab active:cursor-grabbing select-none"
                 onMouseDown={handleMouseDown}
                 onTouchStart={handleTouchStart}
             >
-                <div className="w-10 h-1 bg-gray-300 rounded-full mx-auto" />
+                <div className="w-10 h-1 bg-gray-600 rounded-full mx-auto" />
             </div>
 
             {/* Close button */}
             <button
                 onClick={onClose}
-                className="absolute top-2 right-3 z-20 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
+                className="absolute top-2 right-3 z-20 w-8 h-8 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-full flex items-center justify-center transition-colors"
                 aria-label="Close"
             >
                 ✕
@@ -245,7 +251,7 @@ const DesktopVenueCard = ({
                     {images.length > 0 && (
                         <div className="flex-shrink-0">
                             {/* Main Image - Large */}
-                            <div className="relative w-[480px] h-[360px] bg-gray-100 rounded-xl overflow-hidden">
+                            <div className="relative w-[480px] h-[360px] bg-gray-800 rounded-xl overflow-hidden">
                                 <img
                                     src={images[currentImageIndex]}
                                     alt={`${venue.name} - Image ${currentImageIndex + 1}`}
@@ -270,8 +276,8 @@ const DesktopVenueCard = ({
                                             key={idx}
                                             onClick={() => setCurrentImageIndex(idx)}
                                             className={`w-[72px] h-[72px] rounded-lg overflow-hidden flex-shrink-0 border-2 transition-all ${idx === currentImageIndex
-                                                ? 'border-blue-500 ring-2 ring-blue-300'
-                                                : 'border-transparent hover:border-gray-300'
+                                                ? 'border-blue-500 ring-2 ring-blue-400/50'
+                                                : 'border-transparent hover:border-gray-500'
                                                 }`}
                                         >
                                             <img
@@ -291,38 +297,51 @@ const DesktopVenueCard = ({
 
                     {/* Details - Right side */}
                     <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-bold text-gray-900 truncate pr-8">
+                        <h3 className="text-lg font-bold text-white truncate pr-8">
                             {venue.name}
                         </h3>
 
-                        <div className="flex items-center gap-2 mt-1 text-sm text-gray-600 flex-wrap">
+                        <div className="flex items-center gap-2 mt-1 text-sm text-gray-400 flex-wrap">
                             {venue.rating && (
                                 <span className="flex items-center gap-1">
                                     <span className="text-yellow-500">⭐</span>
                                     <span className="font-medium">{venue.rating}</span>
-                                    <span className="text-gray-400">{formatRatingCount(venue.userRatingCount)}</span>
+                                    <span className="text-gray-500">{formatRatingCount(venue.userRatingCount)}</span>
                                 </span>
                             )}
                             {venue.category && (
                                 <>
-                                    <span className="text-gray-300">•</span>
+                                    <span className="text-gray-600">•</span>
                                     <span>{venue.category}</span>
                                 </>
                             )}
                             {venue.priceLevel && (
                                 <>
-                                    <span className="text-gray-300">•</span>
+                                    <span className="text-gray-600">•</span>
                                     <span className="text-green-600 font-medium">{venue.priceLevel}</span>
                                 </>
                             )}
                         </div>
 
-                        <p className="text-sm text-gray-500 mt-1 truncate">
+                        <p className="text-sm text-gray-400 mt-1 truncate">
                             📍 {venue.address}
                         </p>
 
+                        {venue.description && (
+                            <p className="text-base text-gray-300 mt-2 leading-relaxed">
+                                {venue.description}
+                            </p>
+                        )}
+
                         {/* Action Buttons */}
                         <div className="flex items-center gap-2 mt-3 flex-wrap">
+                            <button
+                                onClick={() => onAskVenue?.(venue)}
+                                className="flex items-center gap-1 px-3 py-1.5 bg-purple-600 text-white text-sm font-medium rounded-lg hover:bg-purple-700 transition-colors shadow-sm"
+                            >
+                                💬 Ask
+                            </button>
+
                             <a
                                 href={googleMapsUrl}
                                 target="_blank"
@@ -351,17 +370,23 @@ const DesktopVenueCard = ({
                     </div>
                 </div>
 
-                {/* Description - Full width below */}
-                {venue.description && (
-                    <p className="text-sm text-gray-600 mt-4 leading-relaxed">
-                        {venue.description}
-                    </p>
-                )}
-
-                {/* Reels Section - Below everything */}
-                {hasReels && (
-                    <div className="mt-4 pt-4 border-t border-gray-100">
-                        <div className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                {/* Reels Section OR Skeleton */}
+                {reelsLoading ? (
+                    <div className="mt-4 pt-4 border-t border-gray-700">
+                        <div className="text-sm font-semibold text-gray-300 mb-3 flex items-center gap-2 animate-pulse">
+                            📸 Loading Reels...
+                        </div>
+                        <div className="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1 overflow-hidden">
+                            {[1, 2, 3].map((i) => (
+                                <div key={i} className="flex-shrink-0 w-36 h-52 bg-gray-700 rounded-xl animate-pulse relative overflow-hidden">
+                                    <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 animate-[shimmer_1.5s_infinite] content-['']" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : hasReels && (
+                    <div className="mt-4 pt-4 border-t border-gray-700">
+                        <div className="text-sm font-semibold text-gray-300 mb-3 flex items-center gap-2">
                             📸 Reels ({venue.instagramReels!.length})
                         </div>
                         <div className="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1">
@@ -372,6 +397,14 @@ const DesktopVenueCard = ({
                                     onClick={() => onPlayReel?.(reel, venue.instagramReels)}
                                 />
                             ))}
+                        </div>
+                    </div>
+                )}
+                {/* No reels found */}
+                {!reelsLoading && reelsChecked && !hasReels && !isPrimary && (
+                    <div className="mt-4 pt-4 border-t border-gray-700">
+                        <div className="text-sm text-gray-500 flex items-center gap-2">
+                            🎬 Add venue to get reels
                         </div>
                     </div>
                 )}

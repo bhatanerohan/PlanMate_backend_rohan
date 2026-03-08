@@ -4,12 +4,15 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import apiRoutes from './routes/api.js';
 import { initAnalyticsTable } from './services/analytics.js';
+import { initAuthTables } from './services/auth.js';
 import { initShareTable } from './services/share.js';
 
 dotenv.config();
 
 const app = express();
 const PORT = Number(process.env.PORT || 3001);
+
+app.set('trust proxy', 1);
 
 // CORS Configuration
 // Allow local dev frontend and an optional local frontend URL supplied via env
@@ -109,6 +112,7 @@ let server = app.listen(PORT, '0.0.0.0', async () => {  // bind to all interface
 
   // Initialize analytics table
   await initAnalyticsTable();
+  await initAuthTables();
   await initShareTable();
 });
 

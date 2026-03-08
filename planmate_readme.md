@@ -108,6 +108,7 @@ Create `.env` in the backend directory:
 OPENAI_API_KEY=your_openai_api_key_here
 GEMINI_API_KEY=your_gemini_api_key_here
 GOOGLE_PLACES_API_KEY=your_google_places_api_key_here
+GOOGLE_CLIENT_ID=your_google_web_client_id_here
 
 # Optional API Keys
 YOUTUBE_API_KEY=your_youtube_api_key_here          # For video enrichment
@@ -119,12 +120,14 @@ ENABLE_YOUTUBE_ENRICHMENT=false                     # Set to 'true' to enable vi
 # Server Configuration
 PORT=3001
 NODE_ENV=development
+AUTH_SESSION_TTL_DAYS=30
 ```
 
 Create `.env` in the frontend directory:
 ```env
 VITE_API_URL=http://localhost:3001
 VITE_MAPBOX_TOKEN=your_mapbox_token_here
+VITE_GOOGLE_CLIENT_ID=your_google_web_client_id_here
 ```
 
 4. **Start the application**

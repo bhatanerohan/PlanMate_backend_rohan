@@ -1,0 +1,140 @@
+PROMPT:
+Request: "Plan a day of Formula-1 themed sightseeing in Monaco"
+
+Return 15-20 venue CANDIDATES as JSON. User wants ~5 final stops.
+
+RULES:
+- "must_have" = directly matches user intent (core request)
+- "nice_to_have" = complementary/optional (nearby attractions)
+- Return 5-8 must_have + 10-12 nice_to_have
+- Use exact Google Maps venue names
+- Spread venues geographically
+
+JSON FORMAT:
+```json
+{
+  "plan": {
+    "type": "Experience type",
+    "total_stops": 5,
+    "estimated_duration": "X hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    { "name": "Exact Venue Name", "category": "restaurant", "priority": "must_have" },
+    { "name": "Another Venue", "category": "park", "priority": "nice_to_have" }
+  ]
+}
+```
+
+Return ONLY the JSON, no explanation.
+
+==================================================
+
+RESPONSE:
+```json
+{
+  "plan": {
+    "type": "Formula-1 themed sightseeing",
+    "total_stops": 5,
+    "estimated_duration": "8-10 hours",
+    "travel_mode": "walking"
+  },
+  "venues": [
+    {
+      "name": "Circuit de Monaco",
+      "category": "racetrack",
+      "priority": "must_have"
+    },
+    {
+      "name": "Jardin Exotique de Monaco",
+      "category": "garden",
+      "priority": "must_have"
+    },
+    {
+      "name": "Prince's Palace of Monaco",
+      "category": "palace",
+      "priority": "must_have"
+    },
+    {
+      "name": "Oceanographic Museum of Monaco",
+      "category": "museum",
+      "priority": "must_have"
+    },
+    {
+      "name": "Casino de Monte-Carlo",
+      "category": "casino",
+      "priority": "must_have"
+    },
+    {
+      "name": "Port Hercules",
+      "category": "harbor",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Japanese Garden",
+      "category": "garden",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Saint Nicholas Cathedral",
+      "category": "cathedral",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Monaco-Ville",
+      "category": "historic district",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Larvotto Beach",
+      "category": "beach",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Fort Antoine",
+      "category": "fortress",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Hôtel de Paris Monte-Carlo",
+      "category": "hotel",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Opera de Monte-Carlo",
+      "category": "opera house",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Villa Paloma",
+      "category": "art museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Musée des timbres et des monnaies",
+      "category": "stamp and coin museum",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Cine 4 Monaco",
+      "category": "cinema",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Louis II Stadium",
+      "category": "stadium",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Centre d'Art Contemporain Monaco",
+      "category": "art gallery",
+      "priority": "nice_to_have"
+    },
+    {
+      "name": "Chapelle Sainte-Devote",
+      "category": "chapel",
+      "priority": "nice_to_have"
+    }
+  ]
+}
+```

@@ -1,0 +1,121 @@
+User Prompt: Plan a day out in midtown NYC where I could try out halal food trucks
+
+[2026-03-05T01:25:09.599Z] LOG 
+🔄 CANDIDATE ENRICHMENT MODE
+[2026-03-05T01:25:09.602Z] LOG 📦 Processing 15 candidates from Gemini
+[2026-03-05T01:25:09.604Z] LOG    🎯 Must-have: 5
+[2026-03-05T01:25:09.606Z] LOG    ✨ Nice-to-have: 10
+[2026-03-05T01:25:09.609Z] LOG 📍 Location hint: midtown NYC
+[2026-03-05T01:25:09.611Z] LOG 
+🔍 Enriching 15 candidates in 2 batch(es)...
+[2026-03-05T01:25:09.636Z] LOG 
+   📦 Batch 1/2 (10 searches)...
+[2026-03-05T01:25:09.640Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-03-05T01:25:09.645Z] LOG 🔍 [BatchVenueSearchTool] Executing 10 searches in parallel
+[2026-03-05T01:25:09.649Z] LOG    1. Searching "The Halal Guys" in "midtown NYC"
+[2026-03-05T01:25:09.654Z] LOG 🔍 [Google Places] Text search: "The Halal Guys" in midtown NYC
+[2026-03-05T01:25:09.691Z] LOG    2. Searching "Adel's Famous Halal Food" in "midtown NYC"
+[2026-03-05T01:25:09.695Z] LOG 🔍 [Google Places] Text search: "Adel's Famous Halal Food" in midtown NYC
+[2026-03-05T01:25:09.705Z] LOG    3. Searching "Sharif's Famous" in "midtown NYC"
+[2026-03-05T01:25:09.708Z] LOG 🔍 [Google Places] Text search: "Sharif's Famous" in midtown NYC
+[2026-03-05T01:25:09.719Z] LOG    4. Searching "Famous Halal Food (Food Truck)" in "midtown NYC"
+[2026-03-05T01:25:09.723Z] LOG 🔍 [Google Places] Text search: "Famous Halal Food (Food Truck)" in midtown NYC
+[2026-03-05T01:25:09.732Z] LOG    5. Searching "Shawarma Bay" in "midtown NYC"
+[2026-03-05T01:25:09.746Z] LOG 🔍 [Google Places] Text search: "Shawarma Bay" in midtown NYC
+[2026-03-05T01:25:09.754Z] LOG    6. Searching "Times Square" in "midtown NYC"
+[2026-03-05T01:25:09.756Z] LOG 🔍 [Google Places] Text search: "Times Square" in midtown NYC
+[2026-03-05T01:25:09.765Z] LOG    7. Searching "Rockefeller Center" in "midtown NYC"
+[2026-03-05T01:25:09.771Z] LOG 🔍 [Google Places] Text search: "Rockefeller Center" in midtown NYC
+[2026-03-05T01:25:09.780Z] LOG    8. Searching "Bryant Park" in "midtown NYC"
+[2026-03-05T01:25:09.782Z] LOG 🔍 [Google Places] Text search: "Bryant Park" in midtown NYC
+[2026-03-05T01:25:09.791Z] LOG    9. Searching "Top of The Rock" in "midtown NYC"
+[2026-03-05T01:25:09.794Z] LOG 🔍 [Google Places] Text search: "Top of The Rock" in midtown NYC
+[2026-03-05T01:25:09.799Z] LOG    10. Searching "SUMMIT One Vanderbilt" in "midtown NYC"
+[2026-03-05T01:25:09.803Z] LOG 🔍 [Google Places] Text search: "SUMMIT One Vanderbilt" in midtown NYC
+[2026-03-05T01:25:09.985Z] ERROR    ❌ Search 4 failed: {}
+[2026-03-05T01:25:10.007Z] ERROR    ❌ Search 2 failed: {}
+[2026-03-05T01:25:10.014Z] ERROR    ❌ Search 9 failed: {}
+[2026-03-05T01:25:10.035Z] ERROR    ❌ Search 7 failed: {}
+[2026-03-05T01:25:10.041Z] ERROR    ❌ Search 1 failed: {}
+[2026-03-05T01:25:10.290Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-03-05T01:25:10.370Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-03-05T01:25:10.380Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-03-05T01:25:10.407Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-03-05T01:25:10.414Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-03-05T01:25:10.480Z] LOG    ⚠️  Sharif's Famous: No editorial summary available
+[2026-03-05T01:25:10.483Z] LOG    📷 Sharif's Famous: Got 10 photos
+[2026-03-05T01:25:10.485Z] LOG ✅ Found 1 places
+[2026-03-05T01:25:10.593Z] LOG    ⚠️  SUMMIT One Vanderbilt: No editorial summary available
+[2026-03-05T01:25:10.598Z] LOG    📷 SUMMIT One Vanderbilt: Got 10 photos
+[2026-03-05T01:25:10.600Z] LOG ✅ Found 1 places
+[2026-03-05T01:25:10.644Z] LOG    ✅ Bryant Park: Got description (99 chars)
+[2026-03-05T01:25:10.647Z] LOG    📷 Bryant Park: Got 10 photos
+[2026-03-05T01:25:10.649Z] LOG ✅ Found 1 places
+[2026-03-05T01:25:10.653Z] LOG    ✅ Times Square: Got description (100 chars)
+[2026-03-05T01:25:10.654Z] LOG    📷 Times Square: Got 10 photos
+[2026-03-05T01:25:10.656Z] LOG ✅ Found 1 places
+[2026-03-05T01:25:10.661Z] LOG    ⚠️  Shawarma Bay: No editorial summary available
+[2026-03-05T01:25:10.663Z] LOG    📷 Shawarma Bay: Got 10 photos
+[2026-03-05T01:25:10.666Z] LOG ✅ Found 1 places
+[2026-03-05T01:25:10.667Z] LOG ✅ Batch complete: 5/10 searches succeeded, 5 total venues found in 1023ms
+[2026-03-05T01:25:10.669Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-03-05T01:25:10.671Z] LOG       ✅ Batch 1 complete: 10 results
+[2026-03-05T01:25:10.877Z] LOG 
+   📦 Batch 2/2 (5 searches)...
+[2026-03-05T01:25:10.885Z] LOG ⚙️  Executing tool: batch_search_venues
+[2026-03-05T01:25:10.890Z] LOG 🔍 [BatchVenueSearchTool] Executing 5 searches in parallel
+[2026-03-05T01:25:10.892Z] LOG    1. Searching "The Museum of Modern Art" in "midtown NYC"
+[2026-03-05T01:25:10.894Z] LOG 🔍 [Google Places] Text search: "The Museum of Modern Art" in midtown NYC
+[2026-03-05T01:25:10.896Z] LOG    2. Searching "Empire State Building" in "midtown NYC"
+[2026-03-05T01:25:10.898Z] LOG 🔍 [Google Places] Text search: "Empire State Building" in midtown NYC
+[2026-03-05T01:25:10.900Z] LOG    3. Searching "Madison Square Park" in "midtown NYC"
+[2026-03-05T01:25:10.901Z] LOG 🔍 [Google Places] Text search: "Madison Square Park" in midtown NYC
+[2026-03-05T01:25:10.904Z] LOG    4. Searching "The Channel Gardens" in "midtown NYC"
+[2026-03-05T01:25:10.905Z] LOG 🔍 [Google Places] Text search: "The Channel Gardens" in midtown NYC
+[2026-03-05T01:25:10.909Z] LOG    5. Searching "McGraw-Hill Waterfall" in "midtown NYC"
+[2026-03-05T01:25:10.912Z] LOG 🔍 [Google Places] Text search: "McGraw-Hill Waterfall" in midtown NYC
+[2026-03-05T01:25:10.971Z] ERROR    ❌ Search 2 failed: {}
+[2026-03-05T01:25:11.231Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-03-05T01:25:11.251Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-03-05T01:25:11.268Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-03-05T01:25:11.434Z] LOG    ✅ The Channel Gardens: Got description (96 chars)
+[2026-03-05T01:25:11.441Z] LOG    📷 The Channel Gardens: Got 10 photos
+[2026-03-05T01:25:11.451Z] LOG ✅ Found 1 places
+[2026-03-05T01:25:11.455Z] LOG    ⚠️  McGraw-Hill Waterfall: No editorial summary available
+[2026-03-05T01:25:11.458Z] LOG    📷 McGraw-Hill Waterfall: Got 10 photos
+[2026-03-05T01:25:11.460Z] LOG ✅ Found 1 places
+[2026-03-05T01:25:11.525Z] LOG    ✅ Madison Square Park: Got description (84 chars)
+[2026-03-05T01:25:11.527Z] LOG    📷 Madison Square Park: Got 10 photos
+[2026-03-05T01:25:11.528Z] LOG ✅ Found 1 places
+[2026-03-05T01:25:11.862Z] LOG 📝 Fetching descriptions for 1 places...
+[2026-03-05T01:25:12.135Z] LOG    ✅ The Museum of Modern Art: Got description (96 chars)
+[2026-03-05T01:25:12.155Z] LOG    📷 The Museum of Modern Art: Got 10 photos
+[2026-03-05T01:25:12.165Z] LOG ✅ Found 1 places
+[2026-03-05T01:25:12.168Z] LOG ✅ Batch complete: 4/5 searches succeeded, 4 total venues found in 1278ms
+[2026-03-05T01:25:12.170Z] LOG ✅ Tool 'batch_search_venues' completed: SUCCESS
+[2026-03-05T01:25:12.172Z] LOG       ✅ Batch 2 complete: 5 results
+[2026-03-05T01:25:12.175Z] LOG    ⚠️ The Halal Guys - not found in Google Places
+[2026-03-05T01:25:12.178Z] LOG    ⚠️ Adel's Famous Halal Food - not found in Google Places
+[2026-03-05T01:25:12.180Z] LOG    ✅ Sharif's Famous → Sharif's Famous (must_have)
+[2026-03-05T01:25:12.183Z] LOG    ⚠️ Famous Halal Food (Food Truck) - not found in Google Places
+[2026-03-05T01:25:12.186Z] LOG    ✅ Shawarma Bay → Shawarma Bay (must_have)
+[2026-03-05T01:25:12.188Z] LOG    ✅ Times Square → Times Square (nice_to_have)
+[2026-03-05T01:25:12.189Z] LOG    ⚠️ Rockefeller Center - not found in Google Places
+[2026-03-05T01:25:12.191Z] LOG    ✅ Bryant Park → Bryant Park (nice_to_have)
+[2026-03-05T01:25:12.193Z] LOG    ⚠️ Top of The Rock - not found in Google Places
+[2026-03-05T01:25:12.195Z] LOG    ✅ SUMMIT One Vanderbilt → SUMMIT One Vanderbilt (nice_to_have)
+[2026-03-05T01:25:12.198Z] LOG    ✅ The Museum of Modern Art → The Museum of Modern Art (nice_to_have)
+[2026-03-05T01:25:12.201Z] LOG    ⚠️ Empire State Building - not found in Google Places
+[2026-03-05T01:25:12.204Z] LOG    ✅ Madison Square Park → Madison Square Park (nice_to_have)
+[2026-03-05T01:25:12.206Z] LOG    ✅ The Channel Gardens → The Channel Gardens (nice_to_have)
+[2026-03-05T01:25:12.208Z] LOG    ✅ McGraw-Hill Waterfall → McGraw-Hill Waterfall (nice_to_have)
+[2026-03-05T01:25:12.210Z] LOG 
+✅ ENRICHMENT COMPLETE
+[2026-03-05T01:25:12.212Z] LOG    Total enriched: 9
+[2026-03-05T01:25:12.214Z] LOG    🎯 Must-have: 2
+[2026-03-05T01:25:12.216Z] LOG    ✨ Nice-to-have: 7
+[2026-03-05T01:25:12.219Z] LOG    ❌ Failed: 6
+[2026-03-05T01:25:12.221Z] LOG    ⏱️  Enrichment took: 2625ms (2.63s)
+
+--- Summary ---
+Enrichment completed

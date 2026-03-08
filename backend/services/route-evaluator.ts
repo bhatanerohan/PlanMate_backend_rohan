@@ -7,9 +7,7 @@ import type { RouteEvaluation } from '../types/react-agent.js';
 
 dotenv.config();
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
+
 
 export class RouteEvaluator {
   /**
@@ -18,6 +16,14 @@ export class RouteEvaluator {
    * - Itineraries with order hints: Verify sequence matches user intent
    * - General itineraries: Skip validation (trust Agent 2)
    */
+  private openai: OpenAI;
+  constructor() {
+    this.openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY
+    });
+  }
+
+
   async evaluateRoute(
     userPrompt: string,
     selectedVenues: string[],
@@ -118,7 +124,7 @@ export class RouteEvaluator {
 
       console.log(`   Selected categories: ${selectedCategories.join(', ')}`);
 
-      const response = await openai.chat.completions.create({
+      const response = await this.openai.chat.completions.create({
         model: 'gpt-4o-mini',  // ✅ FIXED: Was 'gpt-5-mini'
         temperature: 0,
         messages: [
@@ -217,7 +223,7 @@ Does the order match the user's request?`
     console.log('   Mode: EXPLICIT ROUTE validation');
 
     try {
-      const mappingResponse = await openai.chat.completions.create({
+      const mappingResponse = await this.openai.chat.completions.create({
         model: 'gpt-4o-mini',  // ✅ FIXED: Was 'gpt-5-mini'
         temperature: 0,
         messages: [
