@@ -8,8 +8,8 @@ import BottomSheet, { type BottomSheetHandle } from './components/BottomSheet';
 import VenueDetailSheet from './components/VenueDetailSheet';
 import VenueChatSheet from './components/VenueChatSheet';
 import DesktopVenueCard from './components/DesktopVenueCard';
-import { analyticsApi, authApi, planApi, getSessionId } from './services/api';
-import type { AuthUser, Message, MapMarker, Route, Location, Venue, InstagramReel, SharedTripPayload } from './types';
+import { analyticsApi, authApi, planApi, tripsApi, getSessionId } from './services/api';
+import type { AdminDashboardData, AuthUser, Message, MapMarker, Route, Location, Venue, InstagramReel, SharedTripPayload, SavedTripSummary } from './types';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,6 +21,7 @@ const queryClient = new QueryClient({
 });
 
 interface CurrentItinerary {
+  tripId?: string;
   venues: Venue[];
   originalPrompt: string;
   mode: 'route' | 'discovery';
@@ -92,6 +93,11 @@ function App() {
   const [authUser, setAuthUser] = useState<AuthUser | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
   const [authError, setAuthError] = useState<string | null>(null);
+  const [savedTrips, setSavedTrips] = useState<SavedTripSummary[]>([]);
+  const [savedTripsLoading, setSavedTripsLoading] = useState(false);
+  const [dashboardData, setDashboardData] = useState<AdminDashboardData | null>(null);
+  const [dashboardLoading, setDashboardLoading] = useState(false);
+  const [dashboardError, setDashboardError] = useState<string | null>(null);
 
   const [chatWidthPx, setChatWidthPx] = useState(600);
   const [isDragging, setIsDragging] = useState(false);
@@ -100,6 +106,8 @@ function App() {
   const containerRef = useRef<HTMLDivElement>(null);
   const bottomSheetRef = useRef<BottomSheetHandle>(null);
   const chatInterfaceRef = useRef<any>(null);
+  const initialSharedTripRef = useRef<string | null>(null);
+  const initialPrivateTripRef = useRef<string | null>(null);
 
   // Mobile venue detail sheet state
   const [selectedVenueForSheet, setSelectedVenueForSheet] = useState<{
@@ -250,6 +258,94 @@ function App() {
     };
   }, []);
 
+  const refreshSavedTrips = async () => {
+    if (!authUser) {
+      setSavedTrips([]);
+      return;
+    }
+
+    setSavedTripsLoading(true);
+    const result = await tripsApi.getTrips();
+    if (result.success) {
+      setSavedTrips(result.trips);
+    }
+    setSavedTripsLoading(false);
+  };
+
+  const upsertSavedTripSummary = (tripSummary?: SavedTripSummary) => {
+    if (!tripSummary) {
+      return;
+    }
+
+    setSavedTrips(prev => {
+      const remaining = prev.filter(trip => trip.id !== tripSummary.id);
+      return [tripSummary, ...remaining];
+    });
+  };
+
+  const setAppUrlState = ({ tripId, shareId }: { tripId?: string; shareId?: string } = {}) => {
+    const url = new URL(window.location.href);
+
+    if (tripId) {
+      url.searchParams.set('trip', tripId);
+    } else {
+      url.searchParams.delete('trip');
+    }
+
+    if (shareId) {
+      url.searchParams.set('share', shareId);
+    } else {
+      url.searchParams.delete('share');
+    }
+
+    const nextSearch = url.searchParams.toString();
+    const nextUrl = `${url.pathname}${nextSearch ? `?${nextSearch}` : ''}`;
+    window.history.replaceState({}, '', nextUrl);
+  };
+
+  const refreshDashboard = async () => {
+    if (!authUser?.isOwner) {
+      setDashboardData(null);
+      setDashboardError(null);
+      setDashboardLoading(false);
+      return;
+    }
+
+    setDashboardLoading(true);
+    setDashboardError(null);
+    const result = await analyticsApi.getDashboard();
+
+    if (result.success && result.dashboard) {
+      setDashboardData(result.dashboard);
+    } else {
+      setDashboardData(null);
+      setDashboardError(result.error || 'Failed to fetch analytics dashboard');
+    }
+
+    setDashboardLoading(false);
+  };
+
+  useEffect(() => {
+    if (!authUser) {
+      setSavedTrips([]);
+      setSavedTripsLoading(false);
+      return;
+    }
+
+    refreshSavedTrips();
+  }, [authUser]);
+
+  useEffect(() => {
+    if (!authUser?.isOwner) {
+      setDashboardData(null);
+      setDashboardError(null);
+      setDashboardLoading(false);
+      return;
+    }
+
+    void refreshDashboard();
+  }, [authUser]);
+
   const handleGoogleCredential = async (credential: string) => {
     setAuthError(null);
     setAuthLoading(true);
@@ -272,11 +368,30 @@ function App() {
     await authApi.logout();
     window.google?.accounts.id.disableAutoSelect();
     setAuthUser(null);
+    setDashboardData(null);
+    setDashboardError(null);
+    setDashboardLoading(false);
+    initialPrivateTripRef.current = null;
+    initialSharedTripRef.current = null;
     setAuthLoading(false);
   };
 
   const handleAskVenue = (venue: Venue) => {
     setVenueChatTarget(venue);
+  };
+
+  const persistTripReels = async (
+    tripId: string | undefined,
+    reelsMap: Record<string, InstagramReel[]>
+  ) => {
+    if (!tripId || !authUser || Object.keys(reelsMap).length === 0) {
+      return;
+    }
+
+    const result = await tripsApi.persistTripReels(tripId, reelsMap);
+    if (result.success) {
+      upsertSavedTripSummary(result.tripSummary);
+    }
   };
 
   const buildMarkersFromPayload = (payload: SharedTripPayload): MapMarker[] => {
@@ -333,6 +448,8 @@ function App() {
   };
 
   const applySharedTrip = (payload: SharedTripPayload) => {
+    const userLocationIndex = payload.venues.findIndex((venue) => venue.placeId === 'user-location');
+
     const agentMsg: Message = {
       id: Date.now().toString(),
       type: 'agent',
@@ -340,7 +457,9 @@ function App() {
       data: {
         venues: payload.venues,
         events: payload.events || [],
-        alternativesMap: payload.alternativesMap || {}
+        alternativesMap: payload.alternativesMap || {},
+        originalPrompt: payload.originalPrompt,
+        tripId: payload.tripId
       },
       timestamp: Date.now()
     };
@@ -353,10 +472,13 @@ function App() {
     setVenueChatTarget(null);
 
     setCurrentItinerary({
+      tripId: payload.tripId,
       venues: payload.venues,
       originalPrompt: payload.originalPrompt || agentMsg.content,
       mode: payload.mode,
       timestamp: Date.now(),
+      userLocationIndex: userLocationIndex !== -1 ? userLocationIndex : undefined,
+      hasUserLocation: userLocationIndex !== -1,
       alternativesMap: payload.alternativesMap || {}
     });
   };
@@ -366,12 +488,13 @@ function App() {
 
     const latestAgent = [...messages].reverse().find(m => m.type === 'agent');
     const payload: SharedTripPayload = {
+      tripId: currentItinerary.tripId,
       result: latestAgent?.content || 'Shared trip from PlanMate',
       mode: currentItinerary.mode,
-      venues: (latestAgent?.data?.venues as Venue[]) || currentItinerary.venues,
+      venues: currentItinerary.venues,
       events: latestAgent?.data?.events || [],
       routes: routes || [],
-      alternativesMap: (latestAgent?.data?.alternativesMap as Record<string, Venue[]>) || currentItinerary.alternativesMap,
+      alternativesMap: currentItinerary.alternativesMap || (latestAgent?.data?.alternativesMap as Record<string, Venue[]>),
       originalPrompt: currentItinerary.originalPrompt
     };
 
@@ -387,6 +510,18 @@ function App() {
     } catch {
       window.prompt('Copy this share link:', shareUrl);
     }
+  };
+
+  const handleLoadTrip = async (tripId: string) => {
+    const response = await tripsApi.getTrip(tripId, Boolean(authUser?.isOwner));
+    if (!response.success || !response.payload) {
+      alert('Could not load that itinerary.');
+      return;
+    }
+
+    initialPrivateTripRef.current = tripId;
+    applySharedTrip(response.payload);
+    setAppUrlState({ tripId });
   };
 
   const handleNewPlan = (
@@ -444,6 +579,19 @@ function App() {
       });
     }
 
+    if (message.type === 'agent') {
+      upsertSavedTripSummary(message.data?.tripSummary);
+
+      if (message.data?.tripId) {
+        initialPrivateTripRef.current = message.data.tripId;
+        setAppUrlState({ tripId: message.data.tripId });
+      }
+
+      if (authUser?.isOwner) {
+        void refreshDashboard();
+      }
+    }
+
     if (newMarkers.length > 0) {
       setMarkers(newMarkers);
     } else if (message.type === 'agent' || message.type === 'system') {
@@ -483,6 +631,7 @@ function App() {
         ...v,
         instagramReels: existingReelsMap.get(v.placeId) || v.instagramReels
       }));
+      const persistedTripId = message.data.tripId || currentItinerary?.tripId;
 
       // Only poll if there are venues that need reels
       if (venuesToFetch.length > 0) {
@@ -551,6 +700,8 @@ function App() {
                     }
                     return prev;
                   });
+
+                  void persistTripReels(persistedTripId, reelsMap);
                 } else {
                   console.warn('📸 Reels polling ended:', result.status === 'failed' ? 'job failed' : pollCount >= maxPolls ? 'timeout' : result.status);
                 }
@@ -580,6 +731,7 @@ function App() {
             });
             setMarkers(prev => prev.map(m => { const vd = m.data as Venue; return vd.placeId ? { ...m, data: { ...vd, instagramReels: reelsMap[vd.placeId] || vd.instagramReels || [] } } : m; }));
             setSelectedVenueForSheet(prev => prev ? { ...prev, venue: { ...prev.venue, instagramReels: reelsMap[prev.venue.placeId] || prev.venue.instagramReels || [] } } : prev);
+            void persistTripReels(persistedTripId, reelsMap);
             setReelsLoading(false);
             setReelsChecked(true);
           }).catch(() => { setReelsLoading(false); setReelsChecked(true); });
@@ -600,8 +752,9 @@ function App() {
           Object.keys(message.data.alternativesMap || {}).length, 'alternatives');
 
         setCurrentItinerary({
+          tripId: message.data.tripId || currentItinerary?.tripId,
           venues: venuesWithPreservedReels,
-          originalPrompt: currentItinerary?.originalPrompt || message.content,
+          originalPrompt: message.data.originalPrompt || currentItinerary?.originalPrompt || message.content,
           mode: 'route',
           timestamp: Date.now(),
           userLocationIndex: newUserLocationIndex,
@@ -624,8 +777,9 @@ function App() {
             Object.keys(message.data.alternativesMap || {}).length, 'alternatives');
 
           setCurrentItinerary({
+            tripId: message.data.tripId,
             venues: venuesWithPreservedReels,
-            originalPrompt: message.content,
+            originalPrompt: message.data.originalPrompt || message.content,
             mode: isRouteQuery ? 'route' : 'discovery',
             timestamp: Date.now(),
             userLocationIndex: userLocationMarkerIndex !== -1 ? userLocationMarkerIndex : undefined,
@@ -718,6 +872,9 @@ function App() {
       setCurrentItinerary(null);
       setSelectedMarkerId(null);
       setIsRouteMode(false);
+      initialPrivateTripRef.current = null;
+      initialSharedTripRef.current = null;
+      setAppUrlState({});
       // We purposefully do NOT clear userLocation as that's environmental
 
       // Clear persistence immediately (optional, as effects will run, but good for safety)
@@ -767,19 +924,30 @@ function App() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const shareId = params.get('share');
-    if (!shareId) return;
+    if (shareId && shareId !== initialSharedTripRef.current) {
+      initialSharedTripRef.current = shareId;
 
-    const loadSharedTrip = async () => {
-      const response = await planApi.getSharedTrip(shareId);
-      if (response.success && response.payload) {
-        applySharedTrip(response.payload);
-      } else {
-        alert('Shared trip not found or expired.');
-      }
-    };
+      const loadSharedTrip = async () => {
+        const response = await planApi.getSharedTrip(shareId);
+        if (response.success && response.payload) {
+          applySharedTrip(response.payload);
+        } else {
+          alert('Shared trip not found or expired.');
+        }
+      };
 
-    loadSharedTrip();
-  }, []);
+      void loadSharedTrip();
+      return;
+    }
+
+    const tripId = params.get('trip');
+    if (!tripId || authLoading || !authUser || tripId === initialPrivateTripRef.current) {
+      return;
+    }
+
+    initialPrivateTripRef.current = tripId;
+    void handleLoadTrip(tripId);
+  }, [authLoading, authUser]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -846,7 +1014,14 @@ function App() {
                 googleClientId={googleClientId}
                 onGoogleCredential={handleGoogleCredential}
                 onLogout={handleLogout}
-              />
+                savedTrips={savedTrips}
+                savedTripsLoading={savedTripsLoading}
+                dashboardData={dashboardData}
+                dashboardLoading={dashboardLoading}
+                dashboardError={dashboardError}
+                onRefreshDashboard={refreshDashboard}
+                onLoadTrip={handleLoadTrip}
+                />
             </div>
 
             {/* Resizable Divider */}
@@ -957,6 +1132,19 @@ function App() {
                   googleClientId={googleClientId}
                   onGoogleCredential={handleGoogleCredential}
                   onLogout={handleLogout}
+                  savedTrips={savedTrips}
+                  savedTripsLoading={savedTripsLoading}
+                  dashboardData={dashboardData}
+                  dashboardLoading={dashboardLoading}
+                  dashboardError={dashboardError}
+                  onRefreshDashboard={refreshDashboard}
+                  onLoadTrip={async (tripId) => {
+                    await handleLoadTrip(tripId);
+                    bottomSheetRef.current?.collapse();
+                  }}
+                  onTripsTabOpen={() => bottomSheetRef.current?.expand()}
+                  onPlannerTabOpen={() => bottomSheetRef.current?.snapTo(1)}
+                  onDashboardTabOpen={() => bottomSheetRef.current?.expand()}
                 />
               </BottomSheet>
             </div>
@@ -1072,3 +1260,26 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

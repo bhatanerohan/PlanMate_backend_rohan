@@ -2,10 +2,10 @@ import { Pool } from 'pg';
 import { v4 as uuidv4 } from 'uuid';
 
 const hasDbUrl = !!process.env.DATABASE_URL;
-console.log(`🔗 Share DB Pool. DATABASE_URL present: ${hasDbUrl}`);
+console.log(`Share DB Pool. DATABASE_URL present: ${hasDbUrl}`);
 
 if (!hasDbUrl) {
-  console.warn('⚠️ WARNING: DATABASE_URL is not set. Share links will not persist.');
+  console.warn('WARNING: DATABASE_URL is not set. Share links will not persist.');
 }
 
 const pool = new Pool({
@@ -14,6 +14,7 @@ const pool = new Pool({
 });
 
 export interface SharedTripPayload {
+  tripId?: string;
   result: string;
   mode: 'route' | 'discovery';
   venues: any[];
@@ -29,21 +30,33 @@ export async function initShareTable(): Promise<void> {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS shared_trips (
         id UUID PRIMARY KEY,
+        user_id UUID REFERENCES users(id) ON DELETE SET NULL,
         created_at TIMESTAMPTZ DEFAULT NOW(),
         payload JSONB NOT NULL
       )
     `);
-    console.log('✅ Shared trips table initialized');
+
+    await pool.query(`
+      ALTER TABLE shared_trips
+      ADD COLUMN IF NOT EXISTS user_id UUID REFERENCES users(id) ON DELETE SET NULL
+    `);
+
+    await pool.query(`
+      CREATE INDEX IF NOT EXISTS idx_shared_trips_user_id
+      ON shared_trips(user_id)
+    `);
+
+    console.log('Shared trips table initialized');
   } catch (error) {
-    console.error('❌ Failed to initialize shared trips table:', error);
+    console.error('Failed to initialize shared trips table:', error);
   }
 }
 
-export async function createSharedTrip(payload: SharedTripPayload): Promise<string> {
+export async function createSharedTrip(payload: SharedTripPayload, userId?: string): Promise<string> {
   const id = uuidv4();
   await pool.query(
-    `INSERT INTO shared_trips (id, payload) VALUES ($1, $2)`,
-    [id, JSON.stringify(payload)]
+    `INSERT INTO shared_trips (id, user_id, payload) VALUES ($1, $2, $3)`,
+    [id, userId || null, JSON.stringify(payload)]
   );
   return id;
 }

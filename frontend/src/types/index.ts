@@ -1,5 +1,3 @@
-// frontend/src/types/index.ts
-
 import type { ReactNode } from "react";
 
 export type GeoPreferenceMode = 'auto' | 'walkable' | 'spread';
@@ -10,6 +8,7 @@ export interface AuthUser {
   emailVerified: boolean;
   name: string | null;
   avatarUrl: string | null;
+  isOwner: boolean;
 }
 
 export interface Venue {
@@ -92,7 +91,7 @@ export interface FinishParameters {
   result: string;
   mode: 'discovery' | 'route';
   selected_venue_ids?: string[];
-  alternatives_map?: Record<string, Venue[]>;  // 🆕 NEW: Map of primary placeId → alternative venues
+  alternatives_map?: Record<string, Venue[]>;
 }
 
 export interface AgentState {
@@ -107,16 +106,76 @@ export interface AgentState {
   error?: string;
 }
 
+export interface SavedTripSummary {
+  id: string;
+  title: string;
+  mode: 'route' | 'discovery';
+  venueCount: number;
+  originalPrompt: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+
+export interface AdminDashboardSummary {
+  totalPlans: number;
+  uniqueSessions: number;
+  mobilePlans: number;
+  desktopPlans: number;
+  avgExecutionTimeMs: number;
+  totalModificationCount: number;
+  avgModificationCount: number;
+  reelClickRate: number;
+  totalReelInteractions: number;
+  savedTrips: number;
+  sharedTrips: number;
+  totalUsers: number;
+}
+
+export interface AdminRecentAnalyticsEvent {
+  id: number;
+  sessionId: string;
+  tripId?: string;
+  timestamp: string;
+  deviceType: string | null;
+  userPrompt: string;
+  queryType: string | null;
+  totalTimeMs: number;
+  modificationCount: number;
+  clickedReels: boolean;
+  reelInteractionCount: number;
+}
+
+export interface AdminTopPrompt {
+  prompt: string;
+  count: number;
+  lastSeenAt: string;
+}
+
+export interface AdminTripSummary extends SavedTripSummary {
+  userId: string;
+  ownerEmail: string | null;
+  ownerName: string | null;
+  sharedCount: number;
+}
+
+export interface AdminDashboardData {
+  summary: AdminDashboardSummary;
+  recentEvents: AdminRecentAnalyticsEvent[];
+  topPrompts: AdminTopPrompt[];
+  recentTrips: AdminTripSummary[];
+  ownerEmail: string;
+}
 export interface PlanResponse {
   success: boolean;
-  session_id?: string;  // 🆕 Analytics session tracking
+  session_id?: string;
   result?: string;
   mode?: 'discovery' | 'route';
   queryType?: 'explicit_route' | 'itinerary_planning' | 'discovery' | 'itinerary_modification' | 'not_relevant';
   venues: Venue[];
   events: Event[];
   routes?: Route[];
-  alternativesMap?: Record<string, Venue[]>;  // 🆕 NEW: Map of primary placeId → alternative venues
+  alternativesMap?: Record<string, Venue[]>;
   state?: AgentState;
   iterations: number;
   tokensUsed: number;
@@ -124,9 +183,12 @@ export interface PlanResponse {
   stoppedReason?: string;
   error?: string;
   isModification?: boolean;
+  tripId?: string;
+  tripSummary?: SavedTripSummary;
 }
 
 export interface SharedTripPayload {
+  tripId?: string;
   result: string;
   mode: 'route' | 'discovery';
   venues: Venue[];
@@ -145,7 +207,10 @@ export interface Message {
   data?: {
     venues?: Venue[];
     events?: Event[];
-    alternativesMap?: Record<string, Venue[]>;  // 🆕 NEW: Include alternatives in message data
+    alternativesMap?: Record<string, Venue[]>;
+    originalPrompt?: string;
+    tripId?: string;
+    tripSummary?: SavedTripSummary;
   };
 }
 
@@ -166,7 +231,6 @@ export interface MapMarker {
     primaryVenueName?: string;
     primaryStopNumber?: number;
   };
-
 }
 
 export interface Location {
@@ -187,3 +251,4 @@ export interface Route {
   start?: string;
   end?: string;
 }
+

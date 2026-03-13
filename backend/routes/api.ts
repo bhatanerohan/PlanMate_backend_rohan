@@ -16,24 +16,92 @@ import { formatItineraryMessage } from '../services/itinerary-formatter.js';
 import { enrichWithInstagramReels } from '../services/video-enrichment-agent.js';
 import { startReelsJob, getReelsJobStatus } from '../services/reels-job-store.js';
 import { createSharedTrip, getSharedTrip } from '../services/share.js';
+import { getAnyUserTripById, getRecentTripSummaries, getUserTripById, getUserTripSummaries, saveUserTrip, updateUserTripReels } from '../services/user-trips.js';
 import {
   getAuthenticatedUserFromRequest,
   getAuthCookieName,
   getAuthCookieOptions,
   revokeSessionFromRequest,
-  signInWithGoogleCredential
+  signInWithGoogleCredential,
+  type AuthenticatedUser
 } from '../services/auth.js';
 import {
   saveAnalyticsEvent,
   trackModification,
   trackReelClick,
   getAllAnalytics,
+  getAnalyticsDashboardSummary,
+  getRecentAnalyticsEvents,
+  getTopAnalyticsPrompts,
   type AnalyticsEvent
 } from '../services/analytics.js';
 import { GoogleGenAI } from '@google/genai';
 
 const router = Router();
 
+type PersistedTripPayload = {
+  result: string;
+  mode: 'route' | 'discovery';
+  venues: any[];
+  events?: any[];
+  routes?: any[];
+  alternativesMap?: Record<string, any[]>;
+  originalPrompt?: string;
+  createdBy?: string;
+};
+
+async function persistTripForUser(
+  req: Request,
+  payload: PersistedTripPayload,
+  tripId?: string
+): Promise<{ tripId?: string; tripSummary?: any; userId?: string }> {
+  const authenticatedUser = await getAuthenticatedUserFromRequest(req);
+  if (!authenticatedUser) {
+    return {};
+  }
+
+  const result = await saveUserTrip(
+    authenticatedUser.id,
+    {
+      ...payload,
+      createdBy: authenticatedUser.name || authenticatedUser.email || payload.createdBy
+    },
+    tripId
+  );
+
+  return {
+    ...result,
+    userId: authenticatedUser.id
+  };
+}
+
+function startReelsJobWithPersistence(
+  sessionId: string,
+  venues: any[],
+  persistedTrip: { tripId?: string; userId?: string }
+): void {
+  startReelsJob(sessionId, venues, 5, async (reelsMap) => {
+    if (!persistedTrip.tripId || !persistedTrip.userId || Object.keys(reelsMap).length === 0) {
+      return;
+    }
+
+    await updateUserTripReels(persistedTrip.userId, persistedTrip.tripId, reelsMap);
+  });
+}
+async function requireOwnerUser(req: Request, res: Response): Promise<AuthenticatedUser | null> {
+  const authenticatedUser = await getAuthenticatedUserFromRequest(req);
+  if (!authenticatedUser) {
+    res.status(401).json({ success: false, error: 'Authentication required' });
+    return null;
+  }
+
+  if (!authenticatedUser.isOwner) {
+    res.status(403).json({ success: false, error: 'Owner access required' });
+    return null;
+  }
+
+  return authenticatedUser;
+}
 // ============================================================================
 // AUTH ROUTES
 // ============================================================================
@@ -80,6 +148,134 @@ router.post('/auth/logout', async (req: Request, res: Response) => {
   } catch (error) {
     console.error('Logout error:', error);
     return res.status(500).json({ success: false, error: 'Failed to log out' });
+  }
+});
+
+router.get('/admin/analytics/dashboard', async (req: Request, res: Response) => {
+  try {
+    const authenticatedUser = await requireOwnerUser(req, res);
+    if (!authenticatedUser) {
+      return;
+    }
+
+    const [summary, recentEvents, topPrompts, recentTrips] = await Promise.all([
+      getAnalyticsDashboardSummary(),
+      getRecentAnalyticsEvents(20),
+      getTopAnalyticsPrompts(10),
+      getRecentTripSummaries(30)
+    ]);
+
+    return res.json({
+      success: true,
+      dashboard: {
+        summary,
+        recentEvents,
+        topPrompts,
+        recentTrips,
+        ownerEmail: authenticatedUser.email
+      }
+    });
+  } catch (error) {
+    console.error('Admin dashboard error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to fetch analytics dashboard' });
+  }
+});
+
+router.get('/admin/trips/:id', async (req: Request, res: Response) => {
+  try {
+    const authenticatedUser = await requireOwnerUser(req, res);
+    if (!authenticatedUser) {
+      return;
+    }
+
+    const tripId = req.params.id;
+    if (!tripId) {
+      return res.status(400).json({ success: false, error: 'tripId is required' });
+    }
+
+    const payload = await getAnyUserTripById(tripId);
+    if (!payload) {
+      return res.status(404).json({ success: false, error: 'Trip not found' });
+    }
+
+    return res.json({ success: true, payload });
+  } catch (error) {
+    console.error('Admin trip fetch error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to fetch admin trip' });
+  }
+});
+
+router.get('/trips', async (req: Request, res: Response) => {
+  try {
+    const authenticatedUser = await getAuthenticatedUserFromRequest(req);
+    if (!authenticatedUser) {
+      return res.status(401).json({ success: false, error: 'Authentication required' });
+    }
+
+    const trips = await getUserTripSummaries(authenticatedUser.id);
+    return res.json({ success: true, trips });
+  } catch (error) {
+    console.error('Trips list error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to fetch saved trips' });
+  }
+});
+
+router.get('/trips/:id', async (req: Request, res: Response) => {
+  try {
+    const authenticatedUser = await getAuthenticatedUserFromRequest(req);
+    if (!authenticatedUser) {
+      return res.status(401).json({ success: false, error: 'Authentication required' });
+    }
+
+    const tripId = req.params.id;
+    if (!tripId) {
+      return res.status(400).json({ success: false, error: 'tripId is required' });
+    }
+
+    const payload = await getUserTripById(authenticatedUser.id, tripId);
+    if (!payload) {
+      return res.status(404).json({ success: false, error: 'Trip not found' });
+    }
+
+    return res.json({ success: true, payload });
+  } catch (error) {
+    console.error('Trip fetch error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to fetch saved trip' });
+  }
+});
+
+router.patch('/trips/:id/reels', async (req: Request, res: Response) => {
+  try {
+    const authenticatedUser = await getAuthenticatedUserFromRequest(req);
+    if (!authenticatedUser) {
+      return res.status(401).json({ success: false, error: 'Authentication required' });
+    }
+
+    const tripId = req.params.id;
+    const reelsMap = req.body?.reelsMap;
+
+    if (!tripId) {
+      return res.status(400).json({ success: false, error: 'tripId is required' });
+    }
+
+    if (!reelsMap || typeof reelsMap !== 'object' || Array.isArray(reelsMap)) {
+      return res.status(400).json({ success: false, error: 'reelsMap object is required' });
+    }
+
+    const result = await updateUserTripReels(authenticatedUser.id, tripId, reelsMap);
+    if (!result) {
+      return res.status(404).json({ success: false, error: 'Trip not found' });
+    }
+
+    return res.json({
+      success: true,
+      tripId: result.tripId,
+      tripSummary: result.tripSummary,
+      payload: result.payload
+    });
+  } catch (error) {
+    console.error('Trip reels update error:', error);
+    return res.status(500).json({ success: false, error: 'Failed to persist trip reels' });
   }
 });
 
@@ -724,6 +920,7 @@ async function calculateAndAppendRouteInfo(
 router.post('/plan', async (req: Request, res: Response) => {
   try {
     const { prompt, userLocation, currentItinerary, geoPreference: geoPreferenceOverride, deviceType } = req.body;
+    const existingTripId = typeof currentItinerary?.tripId === 'string' ? currentItinerary.tripId : undefined;
 
     // Generate session ID for analytics tracking
     const sessionId = uuidv4();
@@ -832,6 +1029,20 @@ router.post('/plan', async (req: Request, res: Response) => {
         Object.assign(preservedAlternativesMap, (currentItinerary as any).alternativesMap);
       }
 
+      const persistedTrip = await persistTripForUser(
+        req,
+        {
+          result: modificationResult.message,
+          mode: 'route',
+          venues: finalVenues,
+          events: [],
+          routes: [],
+          alternativesMap: preservedAlternativesMap,
+          originalPrompt: currentItinerary.originalPrompt || prompt
+        },
+        existingTripId
+      );
+
       return res.json({
         success: true,
         result: modificationResult.message,
@@ -841,6 +1052,8 @@ router.post('/plan', async (req: Request, res: Response) => {
         events: [],
         routes: [],
         alternativesMap: preservedAlternativesMap,
+        tripId: persistedTrip.tripId,
+        tripSummary: persistedTrip.tripSummary,
         iterations: 1,
         tokensUsed: 0,
         executionTimeMs: 0,
@@ -1153,10 +1366,21 @@ router.post('/plan', async (req: Request, res: Response) => {
         console.log(`TOTAL DURATION:     ${(totalTime / 1000).toFixed(2)}s`);
         console.log('═'.repeat(60) + '\n');
 
+        const persistedTrip = await persistTripForUser(req, {
+          result: finalResultMessage,
+          mode: 'route',
+          venues: finalVenues,
+          events: [],
+          routes,
+          alternativesMap: selectionResult.alternativesMap,
+          originalPrompt: prompt
+        });
+
         // Save analytics event
         try {
           const analyticsEvent: AnalyticsEvent = {
             session_id: sessionId,
+            trip_id: persistedTrip.tripId,
             device_type: detectedDeviceType,
             user_prompt: prompt,
             query_type: classification.queryType === 'itinerary_planning' ? 'planning' : 'discovery',
@@ -1212,7 +1436,7 @@ router.post('/plan', async (req: Request, res: Response) => {
         console.log('='.repeat(80) + '\n');
 
         // 🆕 Fire-and-forget: kick off Apify reels job in background
-        startReelsJob(sessionId, finalVenues);
+        startReelsJobWithPersistence(sessionId, finalVenues, persistedTrip);
 
         return res.json({
           success: true,
@@ -1240,6 +1464,8 @@ router.post('/plan', async (req: Request, res: Response) => {
           events: [],
           routes,
           alternativesMap: selectionResult.alternativesMap,
+          tripId: persistedTrip.tripId,
+          tripSummary: persistedTrip.tripSummary,
           geminiGroundingUsed: true,
           venueSelectionStats: {
             totalCandidates: enrichmentResult.candidates.length,
@@ -1509,8 +1735,18 @@ router.post('/plan', async (req: Request, res: Response) => {
     console.log(`   Venues: ${enrichedVenues.length}`);
     console.log('='.repeat(80) + '\n');
 
+    const persistedTrip = await persistTripForUser(req, {
+      result: finalResultMessage,
+      mode,
+      venues: enrichedVenues,
+      events,
+      routes: calculatedRoutes,
+      alternativesMap: simplifiedAlternativesMap,
+      originalPrompt: prompt
+    });
+
     // 🆕 Fire-and-forget: kick off Apify reels job in background
-    startReelsJob(sessionId, enrichedVenues);
+    startReelsJobWithPersistence(sessionId, enrichedVenues, persistedTrip);
 
     return res.json({
       success: agentResponse?.success ?? false,
@@ -1521,6 +1757,8 @@ router.post('/plan', async (req: Request, res: Response) => {
       events: events,
       routes: calculatedRoutes,
       alternativesMap: simplifiedAlternativesMap,
+      tripId: persistedTrip.tripId,
+      tripSummary: persistedTrip.tripSummary,
       state: agentResponse?.state,
       iterations: agentResponse?.iterations,
       tokensUsed: agentResponse?.tokensUsed,
@@ -1556,7 +1794,7 @@ router.post('/share-trip', async (req: Request, res: Response) => {
       createdBy: authenticatedUser?.name || authenticatedUser?.email || payload.createdBy
     };
 
-    const shareId = await createSharedTrip(normalizedPayload);
+    const shareId = await createSharedTrip(normalizedPayload, authenticatedUser?.id);
     return res.json({ success: true, shareId });
   } catch (error) {
     console.error('❌ Share trip error:', error);
@@ -1626,6 +1864,11 @@ router.post('/analytics/reel-click', async (req: Request, res: Response) => {
  */
 router.get('/analytics/export', async (req: Request, res: Response) => {
   try {
+    const authenticatedUser = await requireOwnerUser(req, res);
+    if (!authenticatedUser) {
+      return;
+    }
+
     const data = await getAllAnalytics();
     res.json({ success: true, count: data.length, data });
   } catch (error) {
@@ -1899,3 +2142,13 @@ USER QUESTION: "${question}"
 });
 
 export default router;
+
+
+
+
+
+
+
+
+
+

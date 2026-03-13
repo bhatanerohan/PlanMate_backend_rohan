@@ -1,11 +1,23 @@
-import { useState, useRef, forwardRef, useImperativeHandle } from 'react';
+import { useEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react';
 import planmateIcon from '../assets/planmate_icon.png';
 import { planApi } from '../services/api';
 import MessageList from './MessageList';
 import GoogleLoginButton from './GoogleLoginButton';
-import type { AuthUser, Message, MapMarker, Route, Location, Venue, GeoPreferenceMode } from '../types';
+import AnalyticsDashboardPanel from './AnalyticsDashboardPanel';
+import type {
+    AdminDashboardData,
+    AuthUser,
+    GeoPreferenceMode,
+    Location,
+    MapMarker,
+    Message,
+    Route,
+    SavedTripSummary,
+    Venue
+} from '../types';
 
 interface CurrentItinerary {
+    tripId?: string;
     venues: Venue[];
     originalPrompt: string;
     mode: 'route' | 'discovery';
@@ -38,6 +50,16 @@ interface ChatInterfaceProps {
     googleClientId?: string;
     onGoogleCredential: (credential: string) => void;
     onLogout: () => void;
+    savedTrips: SavedTripSummary[];
+    savedTripsLoading: boolean;
+    dashboardData: AdminDashboardData | null;
+    dashboardLoading: boolean;
+    dashboardError: string | null;
+    onRefreshDashboard: () => Promise<void>;
+    onLoadTrip: (tripId: string) => Promise<void>;
+    onTripsTabOpen?: () => void;
+    onPlannerTabOpen?: () => void;
+    onDashboardTabOpen?: () => void;
 }
 
 export interface ChatInterfaceHandle {
@@ -47,14 +69,109 @@ export interface ChatInterfaceHandle {
 const stripEmbeddedVenuePayload = (text: string) =>
     text.replace(/\s*\[VENUE:[\s\S]*\]\s*$/, '').trim();
 
+const formatTripTimestamp = (value: string) => {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) {
+        return 'Unknown time';
+    }
+
+    return date.toLocaleString(undefined, {
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit'
+    });
+};
+
+const SavedTripsPanel = ({
+    trips,
+    isLoading,
+    currentTripId,
+    onLoadTrip
+}: {
+    trips: SavedTripSummary[];
+    isLoading: boolean;
+    currentTripId?: string;
+    onLoadTrip: (tripId: string) => Promise<void>;
+    onTripsTabOpen?: () => void;
+    onPlannerTabOpen?: () => void;
+}) => {
+    const [loadingTripId, setLoadingTripId] = useState<string | null>(null);
+
+    const handleTripClick = async (tripId: string) => {
+        setLoadingTripId(tripId);
+        try {
+            await onLoadTrip(tripId);
+        } finally {
+            setLoadingTripId(null);
+        }
+    };
+
+    if (isLoading) {
+        return (
+            <div className="flex-1 overflow-y-auto p-4 text-sm text-gray-400">
+                Loading saved itineraries...
+            </div>
+        );
+    }
+
+    if (trips.length === 0) {
+        return (
+            <div className="flex-1 overflow-y-auto p-4">
+                <div className="rounded-2xl border border-[#17324d] bg-[#0f1b25] p-4 text-sm text-gray-300">
+                    Your saved itineraries will appear here after you create one while signed in.
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar bg-transparent" style={{ WebkitOverflowScrolling: 'touch' }}>
+            {trips.map((trip) => {
+                const isActive = currentTripId === trip.id;
+                const isLoadingTrip = loadingTripId === trip.id;
+
+                return (
+                    <button
+                        key={trip.id}
+                        type="button"
+                        onClick={() => handleTripClick(trip.id)}
+                        disabled={isLoadingTrip}
+                        className={`w-full rounded-2xl border p-4 text-left transition-colors ${
+                            isActive
+                                ? 'border-blue-500 bg-[#122437]'
+                                : 'border-[#17324d] bg-[#0f1b25] hover:border-[#28527a] hover:bg-[#112131]'
+                        } ${isLoadingTrip ? 'opacity-70' : ''}`}
+                    >
+                        <div className="flex items-start justify-between gap-3">
+                            <div className="min-w-0">
+                                <div className="truncate text-sm font-semibold text-white">{trip.title}</div>
+                                <div className="mt-1 text-xs text-gray-400">
+                                    {trip.venueCount} stops � {trip.mode === 'route' ? 'Route' : 'Discovery'}
+                                </div>
+                            </div>
+                            <div className="shrink-0 text-[11px] text-gray-500">
+                                {isLoadingTrip ? 'Loading...' : formatTripTimestamp(trip.updatedAt)}
+                            </div>
+                        </div>
+                        {trip.originalPrompt && (
+                            <div className="mt-3 line-clamp-2 text-xs text-gray-300">
+                                {trip.originalPrompt}
+                            </div>
+                        )}
+                    </button>
+                );
+            })}
+        </div>
+    );
+};
+
 const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
     messages,
     onNewPlan,
     onMarkerSelect,
     userLocation,
-    // onLocationChange, // unused in this simplified version but part of props
     currentItinerary,
-    // onClearItinerary, // unused
     onNewChat,
     onShareTrip,
     canShare,
@@ -63,14 +180,36 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
     authError,
     googleClientId,
     onGoogleCredential,
-    onLogout
+    onLogout,
+    savedTrips,
+    savedTripsLoading,
+    dashboardData,
+    dashboardLoading,
+    dashboardError,
+    onRefreshDashboard,
+    onLoadTrip,
+    onTripsTabOpen,
+    onPlannerTabOpen,
+    onDashboardTabOpen
 }, ref) => {
     const markerHasPlaceId = (marker: MapMarker): marker is MapMarker & { data: Venue } =>
         marker.type === 'venue' && 'placeId' in marker.data;
     const [inputValue, setInputValue] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [geoPreference, setGeoPreference] = useState<GeoPreferenceMode>('auto');
+    const [activeTab, setActiveTab] = useState<'planner' | 'trips' | 'dashboard'>('planner');
     const inputRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        if (!authUser && (activeTab === 'trips' || activeTab === 'dashboard')) {
+            setActiveTab('planner');
+            return;
+        }
+
+        if (activeTab === 'dashboard' && !authUser?.isOwner) {
+            setActiveTab('planner');
+        }
+    }, [activeTab, authUser]);
 
     const handleSubmit = async (e?: React.FormEvent, overrideInput?: string) => {
         e?.preventDefault();
@@ -80,7 +219,8 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
 
         if (!rawPrompt || isLoading) return;
 
-        // determine if this is a modification to an existing itinerary
+        setActiveTab('planner');
+
         const isModification = !!currentItinerary && (
             displayPrompt.toLowerCase().includes('change') ||
             displayPrompt.toLowerCase().includes('replace') ||
@@ -89,7 +229,6 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
             displayPrompt.toLowerCase().includes('instead')
         );
 
-        // 1. Add User Message
         const userMsg: Message = {
             id: Date.now().toString(),
             type: 'user',
@@ -97,14 +236,12 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
             timestamp: Date.now()
         };
 
-        // If modifying, we might not want to clear markers immediately, logic is in App.tsx
         onNewPlan(userMsg, [], undefined, false, isModification);
 
         setInputValue('');
         setIsLoading(true);
 
         try {
-            // 2. Call API
             const response = await planApi.createPlan(
                 rawPrompt,
                 userLocation ? {
@@ -116,7 +253,6 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                 geoPreference
             );
 
-            // 3. Process Response
             const agentMsg: Message = {
                 id: (Date.now() + 1).toString(),
                 type: 'agent',
@@ -124,14 +260,16 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                 data: {
                     venues: response.venues,
                     events: response.events,
-                    alternativesMap: response.alternativesMap
+                    alternativesMap: response.alternativesMap,
+                    originalPrompt: displayPrompt,
+                    tripId: response.tripId,
+                    tripSummary: response.tripSummary
                 },
                 timestamp: Date.now()
             };
 
-            // Convert venues to markers
             const newMarkers: MapMarker[] = response.venues.map((v, i) => ({
-                id: `primary-${i}`, // 🆕 FIXED: Must use primary- prefix for routing to work
+                id: `primary-${i}`,
                 position: { lat: v.location.lat, lng: v.location.lng },
                 title: v.name,
                 type: 'venue',
@@ -142,16 +280,14 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                 }
             }));
 
-            // 🆕 Add markers for alternatives if they exist
             if (response.alternativesMap) {
-                Object.values(response.alternativesMap).forEach((alts: any[]) => {
-                    alts.forEach((alt: any) => {
-                        // Avoid duplicates if alternative is already a primary stop
+                Object.values(response.alternativesMap).forEach((alts: Venue[]) => {
+                    alts.forEach((alt: Venue) => {
                         if (!newMarkers.find(m => markerHasPlaceId(m) && m.data.placeId === alt.placeId)) {
                             newMarkers.push({
                                 id: `alternative-${alt.placeId}`,
                                 type: 'venue',
-                                position: { lat: alt.location.lat, lng: alt.location.lng }, // Ensure consistent structure
+                                position: { lat: alt.location.lat, lng: alt.location.lng },
                                 title: alt.name,
                                 data: alt,
                                 metadata: {
@@ -164,7 +300,6 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                 });
             }
 
-            // Convert events to markers
             if (response.events) {
                 response.events.forEach((evt, i) => {
                     if (evt.venue?.location) {
@@ -186,13 +321,12 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                 response.mode === 'route',
                 isModification
             );
-
         } catch (error) {
             console.error('Plan failed:', error);
             const errorMsg: Message = {
                 id: (Date.now() + 1).toString(),
                 type: 'system',
-                content: "Sorry, I encountered an issue while creating your plan. Please try again.",
+                content: 'Sorry, I encountered an issue while creating your plan. Please try again.',
                 timestamp: Date.now()
             };
             onNewPlan(errorMsg, [], undefined, false, false);
@@ -214,9 +348,18 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
         }
     };
 
+    const handleLoadTripClick = async (tripId: string) => {
+        await onLoadTrip(tripId);
+        setActiveTab('planner');
+        onPlannerTabOpen?.();
+
+        if (window.innerWidth >= 768) {
+            inputRef.current?.focus();
+        }
+    };
+
     return (
         <div className="flex flex-col h-full bg-[#0b141a]">
-            {/* Header */}
             <div className="p-4 border-b border-[#132f4c] flex justify-between items-center bg-[#081016]">
                 <div className="w-full">
                     <div className="flex justify-between items-center gap-3">
@@ -294,7 +437,7 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                                 <div>
                                     <div className="text-sm font-semibold text-white">Sign in with Google</div>
                                     <div className="text-xs text-gray-400">
-                                        Keep an account identity for shared trips and future saved history.
+                                        Save itineraries to your account and reopen them later.
                                     </div>
                                 </div>
                                 {authLoading ? (
@@ -317,20 +460,85 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                             </div>
                         )}
                     </div>
+
+                    {authUser && (
+                        <div className="mt-3 flex gap-2 rounded-xl border border-[#17324d] bg-[#0f1b25] p-1">
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    setActiveTab('planner');
+                                    onPlannerTabOpen?.();
+                                }}
+                                className={`flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                                    activeTab === 'planner'
+                                        ? 'bg-[#17324d] text-white'
+                                        : 'text-gray-400 hover:text-white'
+                                }`}
+                            >
+                                Planner
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    setActiveTab('trips');
+                                    onTripsTabOpen?.();
+                                }}
+                                className={`flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                                    activeTab === 'trips'
+                                        ? 'bg-[#17324d] text-white'
+                                        : 'text-gray-400 hover:text-white'
+                                }`}
+                            >
+                                My Trips
+                            </button>
+                            {authUser.isOwner && (
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setActiveTab('dashboard');
+                                        onDashboardTabOpen?.();
+                                        void onRefreshDashboard();
+                                    }}
+                                    className={`flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                                        activeTab === 'dashboard'
+                                            ? 'bg-[#17324d] text-white'
+                                            : 'text-gray-400 hover:text-white'
+                                    }`}
+                                >
+                                    Dashboard
+                                </button>
+                            )}
+                        </div>
+                    )}
                 </div>
             </div>
 
-            {/* Messages */}
-            <MessageList
-                messages={messages}
-                isLoading={isLoading}
-                onMarkerSelect={onMarkerSelect}
-                currentItinerary={currentItinerary}
-            />
+            {activeTab === 'planner' ? (
+                <MessageList
+                    messages={messages}
+                    isLoading={isLoading}
+                    onMarkerSelect={onMarkerSelect}
+                    currentItinerary={currentItinerary}
+                />
+            ) : activeTab === 'trips' ? (
+                <SavedTripsPanel
+                    trips={savedTrips}
+                    isLoading={savedTripsLoading}
+                    currentTripId={currentItinerary?.tripId}
+                    onLoadTrip={handleLoadTripClick}
+                />
+            ) : (
+                <AnalyticsDashboardPanel
+                    data={dashboardData}
+                    isLoading={dashboardLoading}
+                    error={dashboardError}
+                    currentTripId={currentItinerary?.tripId}
+                    onRefresh={onRefreshDashboard}
+                    onOpenTrip={handleLoadTripClick}
+                />
+            )}
 
-            {/* Input Area */}
             <div className="p-4 bg-[#0b141a] border-t border-[#132f4c]">
-                {/* Mode Selection */}
                 <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">Mode:</span>
                     <div className="flex bg-[#162736] rounded-lg p-1 border border-[#1f364d]">
@@ -341,8 +549,7 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                                 : 'text-gray-400 hover:text-gray-300'
                                 }`}
                         >
-                            <span>🤖</span>
-                            Auto
+                            <span>Auto</span>
                         </button>
                         <button
                             onClick={() => setGeoPreference('walkable')}
@@ -351,8 +558,7 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                                 : 'text-gray-400 hover:text-gray-300'
                                 }`}
                         >
-                            <span>🚶</span>
-                            Walkable
+                            <span>Walkable</span>
                         </button>
                         <button
                             onClick={() => setGeoPreference('spread')}
@@ -361,8 +567,7 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                                 : 'text-gray-400 hover:text-gray-300'
                                 }`}
                         >
-                            <span>🌐</span>
-                            Coverage
+                            <span>Coverage</span>
                         </button>
                     </div>
                 </div>
@@ -374,7 +579,7 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        placeholder={isLoading ? "Planning..." : "Ask for a plan (e.g. 'Date night in NYC')"}
+                        placeholder={isLoading ? 'Planning...' : "Ask for a plan (e.g. 'Date night in NYC')"}
                         disabled={isLoading}
                         className="w-full bg-[#162736] text-white placeholder-gray-500 rounded-xl pl-4 pr-12 py-3.5 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:bg-[#1c3041] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-inner"
                     />
@@ -397,15 +602,14 @@ const ChatInterface = forwardRef<ChatInterfaceHandle, ChatInterfaceProps>(({
                     </button>
                 </div>
 
-                {/* Helper Hint */}
-                {messages.length <= 1 && !isLoading && (
+                {messages.length <= 1 && !isLoading && activeTab === 'planner' && (
                     <div className="mt-3 flex gap-2 overflow-x-auto pb-2 no-scrollbar">
                         {[
-                            "Hit every major museum in DC in one day with lunch breaks",
-                            "Plan a day out in midtown NYC where I could try out halal food trucks",
-                            "Plan a day of Formula-1 themed sightseeing in Monaco",
-                            "A trip to most iconic spots in Mumbai",
-                            "Plan a route from my location to Northeastern University to starbucks near MIT"
+                            'Hit every major museum in DC in one day with lunch breaks',
+                            'Plan a day out in midtown NYC where I could try out halal food trucks',
+                            'Plan a day of Formula-1 themed sightseeing in Monaco',
+                            'A trip to most iconic spots in Mumbai',
+                            'Plan a route from my location to Northeastern University to starbucks near MIT'
                         ].map((text, i) => (
                             <SuggestionChip
                                 key={i}
@@ -432,3 +636,14 @@ const SuggestionChip = ({ text, onClick }: { text: string; onClick: () => void }
 ChatInterface.displayName = 'ChatInterface';
 
 export default ChatInterface;
+
+
+
+
+
+
+
+
+
+
+

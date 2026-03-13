@@ -6,6 +6,7 @@ import apiRoutes from './routes/api.js';
 import { initAnalyticsTable } from './services/analytics.js';
 import { initAuthTables } from './services/auth.js';
 import { initShareTable } from './services/share.js';
+import { initUserTripsTable } from './services/user-trips.js';
 
 dotenv.config();
 
@@ -114,6 +115,7 @@ let server = app.listen(PORT, '0.0.0.0', async () => {  // bind to all interface
   await initAnalyticsTable();
   await initAuthTables();
   await initShareTable();
+  await initUserTripsTable();
 });
 
 // Handle listen errors (e.g., EADDRINUSE) so nodemon doesn't crash silently

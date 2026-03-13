@@ -27,6 +27,7 @@ export interface AuthenticatedUser {
   emailVerified: boolean;
   name: string | null;
   avatarUrl: string | null;
+  isOwner: boolean;
 }
 
 function getGoogleAudiences(): string[] {
@@ -65,8 +66,34 @@ function mapUserRow(row: any): AuthenticatedUser {
     email: row.email,
     emailVerified: Boolean(row.email_verified),
     name: row.name ?? null,
-    avatarUrl: row.avatar_url ?? null
+    avatarUrl: row.avatar_url ?? null,
+    isOwner: isOwnerEmail(row.email)
   };
+}
+
+function getOwnerEmails(): string[] {
+  const raw =
+    process.env.ADMIN_EMAILS ||
+    process.env.ANALYTICS_OWNER_EMAILS ||
+    process.env.ANALYTICS_OWNER_EMAIL ||
+    '';
+
+  return raw
+    .split(',')
+    .map(value => value.trim().toLowerCase())
+    .filter(Boolean);
+}
+
+export function isOwnerEmail(email?: string | null): boolean {
+  if (!email) {
+    return false;
+  }
+
+  return getOwnerEmails().includes(email.trim().toLowerCase());
+}
+
+export function isOwnerUser(user?: Pick<AuthenticatedUser, 'email'> | null): boolean {
+  return isOwnerEmail(user?.email);
 }
 
 export function getAuthCookieName(): string {
@@ -273,3 +300,4 @@ export async function revokeSessionFromRequest(req: Request): Promise<void> {
 
   await revokeSessionToken(sessionToken);
 }
+

@@ -26,6 +26,7 @@ export interface VenueSearchSpec {
 }
 
 export interface CurrentItinerary {
+  tripId?: string;
   venues: any[];
   originalPrompt: string;
   mode: 'route' | 'discovery';

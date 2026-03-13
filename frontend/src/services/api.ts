@@ -1,49 +1,54 @@
-// frontend/src/services/api.ts
-
 import axios from 'axios';
-import type { AuthUser, GeoPreferenceMode, PlanResponse, Venue, SharedTripPayload } from '../types';
+import type {
+    AdminDashboardData,
+    AuthUser,
+    GeoPreferenceMode,
+    PlanResponse,
+    SavedTripSummary,
+    SharedTripPayload,
+    Venue
+} from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+// Use same-origin /api calls so session cookies survive mobile refreshes.
+// In local dev, Vite proxies /api -> localhost:3001.
+// In production, Vercel rewrites /api -> Railway.
+const API_BASE_URL = '';
 
 const apiClient = axios.create({
     baseURL: API_BASE_URL,
-    timeout: 300000, // 5 minutes
+    timeout: 300000,
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json',
     },
 });
 
-// Request interceptor
 apiClient.interceptors.request.use(
     (config) => {
-        console.log(`🔵 API Request: ${config.method?.toUpperCase()} ${config.url}`);
+        console.log(`API Request: ${config.method?.toUpperCase()} ${config.url}`);
         return config;
     },
     (error) => {
-        console.error('🔴 API Request Error:', error);
+        console.error('API Request Error:', error);
         return Promise.reject(error);
     }
 );
 
-// Response interceptor
 apiClient.interceptors.response.use(
     (response) => {
-        console.log(`🟢 API Response: ${response.config.url}`, response.data);
+        console.log(`API Response: ${response.config.url}`, response.data);
         return response;
     },
     (error) => {
-        console.error('🔴 API Response Error:', error.response?.data || error.message);
+        console.error('API Response Error:', error.response?.data || error.message);
         return Promise.reject(error);
     }
 );
 
-// 🆕 Device type detection
 function getDeviceType(): 'mobile' | 'desktop' {
     return window.innerWidth < 768 ? 'mobile' : 'desktop';
 }
 
-// 🆕 Session ID storage
 let currentSessionId: string | null = null;
 
 export function getSessionId(): string | null {
@@ -54,13 +59,13 @@ export function setSessionId(sessionId: string): void {
     currentSessionId = sessionId;
 }
 
-// 🆕 Current Itinerary Interface
 interface CurrentItinerary {
+    tripId?: string;
     venues: Venue[];
     originalPrompt: string;
     mode: 'route' | 'discovery';
-    userLocationIndex?: number;  // 🆕 Track user-location position
-    hasUserLocation?: boolean;    // 🆕 Flag if includes user location
+    userLocationIndex?: number;
+    hasUserLocation?: boolean;
     alternativesMap?: Record<string, Venue[]>;
 }
 
@@ -68,30 +73,29 @@ export const planApi = {
     async createPlan(
         prompt: string,
         userLocation?: { lat: number; lng: number; name: string },
-        currentItinerary?: CurrentItinerary,  // 🆕 Optional itinerary for modifications
+        currentItinerary?: CurrentItinerary,
         geoPreference?: GeoPreferenceMode
     ): Promise<PlanResponse> {
         const response = await apiClient.post<PlanResponse>('/api/plan', {
             prompt,
-            deviceType: getDeviceType(),  // 🆕 Send device type
+            deviceType: getDeviceType(),
             userLocation: userLocation ? {
                 lat: userLocation.lat,
                 lng: userLocation.lng,
                 name: userLocation.name
             } : undefined,
             geoPreference,
-            currentItinerary: currentItinerary ? {  // 🆕 Send itinerary if exists
+            currentItinerary: currentItinerary ? {
+                tripId: currentItinerary.tripId,
                 venues: currentItinerary.venues,
                 originalPrompt: currentItinerary.originalPrompt,
                 mode: currentItinerary.mode,
-                // Include alternatives and user-location metadata so backend can preserve them
-                alternativesMap: (currentItinerary as any).alternativesMap,
-                userLocationIndex: (currentItinerary as any).userLocationIndex,
-                hasUserLocation: (currentItinerary as any).hasUserLocation
+                alternativesMap: currentItinerary.alternativesMap,
+                userLocationIndex: currentItinerary.userLocationIndex,
+                hasUserLocation: currentItinerary.hasUserLocation
             } : undefined
         });
 
-        // 🆕 Store session_id from response
         if (response.data.session_id) {
             currentSessionId = response.data.session_id;
         }
@@ -106,7 +110,7 @@ export const planApi = {
             });
             return response.data.reelsMap || {};
         } catch (error) {
-            console.warn('📸 Failed to fetch reels:', error);
+            console.warn('Failed to fetch reels:', error);
             return {};
         }
     },
@@ -115,11 +119,11 @@ export const planApi = {
         try {
             const response = await apiClient.get<{ success: boolean; status: string; reelsMap?: Record<string, any[]> }>(`/api/reels-status/${sessionId}`);
             return {
-                status: response.data.status as any,
+                status: response.data.status as 'pending' | 'ready' | 'failed' | 'not_found',
                 reelsMap: response.data.reelsMap
             };
         } catch (error) {
-            console.warn('📸 Failed to poll reels status:', error);
+            console.warn('Failed to poll reels status:', error);
             return { status: 'failed' };
         }
     },
@@ -142,7 +146,7 @@ export const planApi = {
             });
             return response.data;
         } catch (error) {
-            console.warn('💬 Venue chat failed:', error);
+            console.warn('Venue chat failed:', error);
             return { success: false, answer: 'Error! Retry', sources: [] };
         }
     },
@@ -152,7 +156,7 @@ export const planApi = {
             const response = await apiClient.post('/api/share-trip', { payload });
             return response.data;
         } catch (error) {
-            console.warn('🔗 Share trip failed:', error);
+            console.warn('Share trip failed:', error);
             return { success: false };
         }
     },
@@ -162,7 +166,7 @@ export const planApi = {
             const response = await apiClient.get(`/api/share-trip/${shareId}`);
             return response.data;
         } catch (error) {
-            console.warn('🔗 Fetch shared trip failed:', error);
+            console.warn('Fetch shared trip failed:', error);
             return { success: false };
         }
     },
@@ -173,7 +177,6 @@ export const planApi = {
     },
 };
 
-// 🆕 Analytics tracking functions
 export const authApi = {
     async loginWithGoogle(credential: string): Promise<{ success: boolean; user?: AuthUser; error?: string }> {
         try {
@@ -214,7 +217,62 @@ export const authApi = {
     }
 };
 
+export const tripsApi = {
+    async getTrips(): Promise<{ success: boolean; trips: SavedTripSummary[] }> {
+        try {
+            const response = await apiClient.get<{ success: boolean; trips: SavedTripSummary[] }>('/api/trips');
+            return response.data;
+        } catch (error) {
+            console.warn('Failed to fetch saved trips:', error);
+            return { success: false, trips: [] };
+        }
+    },
+
+    async getTrip(
+        tripId: string,
+        useAdminRoute = false
+    ): Promise<{ success: boolean; payload?: SharedTripPayload }> {
+        try {
+            const url = useAdminRoute ? `/api/admin/trips/${tripId}` : `/api/trips/${tripId}`;
+            const response = await apiClient.get<{ success: boolean; payload: SharedTripPayload }>(url);
+            return response.data;
+        } catch (error) {
+            console.warn('Failed to fetch saved trip:', error);
+            return { success: false };
+        }
+    },
+
+    async persistTripReels(
+        tripId: string,
+        reelsMap: Record<string, any[]>
+    ): Promise<{ success: boolean; tripSummary?: SavedTripSummary; payload?: SharedTripPayload }> {
+        try {
+            const response = await apiClient.patch<{
+                success: boolean;
+                tripSummary?: SavedTripSummary;
+                payload?: SharedTripPayload;
+            }>(`/api/trips/${tripId}/reels`, { reelsMap });
+            return response.data;
+        } catch (error) {
+            console.warn('Failed to persist trip reels:', error);
+            return { success: false };
+        }
+    }
+};
+
 export const analyticsApi = {
+    async getDashboard(): Promise<{ success: boolean; dashboard?: AdminDashboardData; error?: string }> {
+        try {
+            const response = await apiClient.get<{ success: boolean; dashboard: AdminDashboardData }>('/api/admin/analytics/dashboard');
+            return response.data;
+        } catch (error: any) {
+            return {
+                success: false,
+                error: error?.response?.data?.error || 'Failed to fetch analytics dashboard'
+            };
+        }
+    },
+
     async trackModification(prompt: string): Promise<void> {
         if (!currentSessionId) {
             console.warn('No session ID available for analytics');

@@ -47,7 +47,12 @@ function buildVenueHashtags(venues: any[]): { placeId: string; hashtags: string[
 /**
  * Start a background reels job. Returns immediately — Apify polls in the background.
  */
-export function startReelsJob(sessionId: string, venues: any[], maxReelsPerVenue = 5): void {
+export function startReelsJob(
+    sessionId: string,
+    venues: any[],
+    maxReelsPerVenue = 5,
+    onReady?: (reelsMap: Record<string, InstagramReel[]>) => Promise<void> | void
+): void {
     if (jobStore.has(sessionId)) {
         console.log(`📸 Reels job already exists for session ${sessionId}, skipping`);
         return;
@@ -108,6 +113,12 @@ export function startReelsJob(sessionId: string, venues: any[], maxReelsPerVenue
 
             job.reelsMap = reelsMap;
             job.status = 'ready';
+
+            if (onReady) {
+                Promise.resolve(onReady(reelsMap)).catch(err => {
+                    console.warn(`📸 Failed to persist reels for session ${sessionId}:`, err);
+                });
+            }
 
             const venuesWithReels = Object.values(reelsMap).filter(r => r.length > 0).length;
             console.log(`📸 Reels job completed for session ${sessionId}: ${venuesWithReels}/${venueHashtags.length} venues have reels`);
